@@ -1,0 +1,74 @@
+{
+  "@apollo/react-ssr": [
+    {
+      "id": "+wdc",
+      "file": "static/chunks/framework.267421aa1580e303f9d7.js"
+    },
+    {
+      "id": "16Al",
+      "file": "static/chunks/framework.267421aa1580e303f9d7.js"
+    },
+    {
+      "id": "17x9",
+      "file": "static/chunks/framework.267421aa1580e303f9d7.js"
+    },
+    {
+      "id": "8L3h",
+      "file": "static/chunks/framework.267421aa1580e303f9d7.js"
+    },
+    {
+      "id": "IDhZ",
+      "file": "static/chunks/framework.267421aa1580e303f9d7.js"
+    },
+    {
+      "id": "KAy6",
+      "file": "static/chunks/framework.267421aa1580e303f9d7.js"
+    },
+    {
+      "id": "QCnb",
+      "file": "static/chunks/framework.267421aa1580e303f9d7.js"
+    },
+    {
+      "id": "WbBG",
+      "file": "static/chunks/framework.267421aa1580e303f9d7.js"
+    },
+    {
+      "id": "f/k9",
+      "file": "static/chunks/framework.267421aa1580e303f9d7.js"
+    },
+    {
+      "id": "i8i4",
+      "file": "static/chunks/framework.267421aa1580e303f9d7.js"
+    },
+    {
+      "id": "q1tI",
+      "file": "static/chunks/framework.267421aa1580e303f9d7.js"
+    },
+    {
+      "id": "viRO",
+      "file": "static/chunks/framework.267421aa1580e303f9d7.js"
+    },
+    {
+      "id": "yl30",
+      "file": "static/chunks/framework.267421aa1580e303f9d7.js"
+    },
+    {
+      "id": "89Zu",
+      "file": "static/chunks/302.45f32affcad57948d93b.js"
+    },
+    {
+      "id": "ShjV",
+      "file": "static/chunks/302.45f32affcad57948d93b.js"
+    }
+  ],
+  "react-apexcharts": [
+    {
+      "id": "ujAs",
+      "file": "static/chunks/6c44d60f.e15e0f08a2255c565335.js"
+    },
+    {
+      "id": "o+DJ",
+      "file": "static/chunks/303.c113529d9774fe98a79d.js"
+    }
+  ]
+}
