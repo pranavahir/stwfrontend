@@ -620,9 +620,44 @@ const handleNotReadyToPay=()=>{
                                 Razorpay Place Order
                               </button>
                             ) : (
-                              <button type="submit" className="btn-solid btn">
-                                Gpay Place Order
-                              </button>
+                              <GooglePayButton
+                              environment="PRODUCTION"
+                              paymentRequest={{
+                                apiVersion: 2,
+                                apiVersionMinor: 0,
+                                allowedPaymentMethods: [
+                                  {
+                                    type: 'CARD',
+                                    parameters: {
+                                      allowedAuthMethods: ['PAN_ONLY', 'CRYPTOGRAM_3DS'],
+                                      allowedCardNetworks: ['MASTERCARD', 'VISA'],
+                                    },
+                                    tokenizationSpecification: {
+                                      type: 'PAYMENT_GATEWAY',
+                                      parameters: {
+                                        "gateway": "stripe",
+                                        "stripe:version": "2018-10-31",
+                                        "stripe:publishableKey": "pk_live_51IYvwgAR19qkTg2Rtd20aLk5vwFsCRajMN8I9aZl8zFfXj14qDxppEDhfLMp51b9OohTumAh7vSlO6IccIP5iIh600zA024lK7"
+                                      },
+                                    },
+                                  },
+                                ],
+                                merchantInfo: {
+                                      merchantId: 'BCR2DN6TV6DL5TL2',
+                                      merchantName: 'STW E-Commerce'
+                                },
+                                transactionInfo: {
+                                  totalPriceStatus: 'FINAL',
+                                  totalPriceLabel: 'Total',
+                                  totalPrice: '100.00',
+                                  currencyCode: 'USD',
+                                  countryCode: 'US',
+                                },
+                              }}
+                              onLoadPaymentData={paymentRequest => {
+                                console.log('load payment data', paymentRequest);
+                              }}
+                            />
                             )}
                           </div>
                         ) : (

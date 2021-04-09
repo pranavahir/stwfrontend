@@ -1,0 +1,65 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-stwcommercefrontend-dev-153934-authRole",
+      "UnauthRoleArn": "arn:aws:iam::674374284686:role/amplify-stwcommercefrontend-dev-153934-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::674374284686:role/amplify-stwcommercefrontend-dev-153934-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-stwcommercefrontend-dev-153934-deployment",
+      "UnauthRoleName": "amplify-stwcommercefrontend-dev-153934-unauthRole",
+      "StackName": "amplify-stwcommercefrontend-dev-153934",
+      "StackId": "arn:aws:cloudformation:us-east-1:674374284686:stack/amplify-stwcommercefrontend-dev-153934/8821aa60-9852-11eb-9a12-0a67bad5e0c7",
+      "AmplifyAppId": "d1tspa0k4ccchr"
+    },
+    "categories": {
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "d1tspa0k4ccchr",
+          "type": "manual"
+        }
+      }
+    }
+  },
+  "production": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-stwcommercefrontend-production-161410-authRole",
+      "UnauthRoleArn": "arn:aws:iam::674374284686:role/amplify-stwcommercefrontend-production-161410-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::674374284686:role/amplify-stwcommercefrontend-production-161410-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-stwcommercefrontend-production-161410-deployment",
+      "UnauthRoleName": "amplify-stwcommercefrontend-production-161410-unauthRole",
+      "StackName": "amplify-stwcommercefrontend-production-161410",
+      "StackId": "arn:aws:cloudformation:us-east-1:674374284686:stack/amplify-stwcommercefrontend-production-161410/5d8cfe30-9857-11eb-b991-122e54527a47",
+      "AmplifyAppId": "d1tspa0k4ccchr"
+    },
+    "categories": {
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "d1tspa0k4ccchr",
+          "type": "manual"
+        }
+      }
+    }
+  },
+  "test": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-stwcommercefrontend-test-171225-authRole",
+      "UnauthRoleArn": "arn:aws:iam::674374284686:role/amplify-stwcommercefrontend-test-171225-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::674374284686:role/amplify-stwcommercefrontend-test-171225-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-stwcommercefrontend-test-171225-deployment",
+      "UnauthRoleName": "amplify-stwcommercefrontend-test-171225-unauthRole",
+      "StackName": "amplify-stwcommercefrontend-test-171225",
+      "StackId": "arn:aws:cloudformation:us-east-1:674374284686:stack/amplify-stwcommercefrontend-test-171225/80849620-985f-11eb-834c-0a7c595099af",
+      "AmplifyAppId": "d1tspa0k4ccchr"
+    },
+    "categories": {
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "d1tspa0k4ccchr",
+          "type": "manual"
+        }
+      }
+    }
+  }
+}

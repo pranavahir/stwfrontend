@@ -30,4 +30,5 @@ const nextConfig = {
   }
 }
 
+
 module.exports = withPlugins([withImages],nextConfig);

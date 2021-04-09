@@ -1,0 +1,22 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-stwcommercefrontend-production-161410-authRole",
+      "UnauthRoleArn": "arn:aws:iam::674374284686:role/amplify-stwcommercefrontend-production-161410-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::674374284686:role/amplify-stwcommercefrontend-production-161410-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-stwcommercefrontend-production-161410-deployment",
+      "UnauthRoleName": "amplify-stwcommercefrontend-production-161410-unauthRole",
+      "StackName": "amplify-stwcommercefrontend-production-161410",
+      "StackId": "arn:aws:cloudformation:us-east-1:674374284686:stack/amplify-stwcommercefrontend-production-161410/5d8cfe30-9857-11eb-b991-122e54527a47",
+      "AmplifyAppId": "d1tspa0k4ccchr"
+    }
+  },
+  "hosting": {
+    "amplifyhosting": {
+      "service": "amplifyhosting",
+      "providerPlugin": "awscloudformation",
+      "type": "manual"
+    }
+  }
+}

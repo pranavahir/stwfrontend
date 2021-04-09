@@ -1,0 +1,23 @@
+{
+    "production": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-stwcommercefrontend-production-180352-authRole",
+            "UnauthRoleArn": "arn:aws:iam::674374284686:role/amplify-stwcommercefrontend-production-180352-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::674374284686:role/amplify-stwcommercefrontend-production-180352-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "amplify-stwcommercefrontend-production-180352-deployment",
+            "UnauthRoleName": "amplify-stwcommercefrontend-production-180352-unauthRole",
+            "StackName": "amplify-stwcommercefrontend-production-180352",
+            "StackId": "arn:aws:cloudformation:us-east-1:674374284686:stack/amplify-stwcommercefrontend-production-180352/b094a5b0-9866-11eb-9a31-127c6c2d7f71",
+            "AmplifyAppId": "d3r494oebbjtgh"
+        },
+        "categories": {
+            "hosting": {
+                "amplifyhosting": {
+                    "appId": "d3r494oebbjtgh",
+                    "type": "manual"
+                }
+            }
+        }
+    }
+}

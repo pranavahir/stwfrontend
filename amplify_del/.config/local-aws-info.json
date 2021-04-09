@@ -1,0 +1,17 @@
+{
+  "dev": {
+    "configLevel": "project",
+    "useProfile": true,
+    "profileName": "stwawsamp2"
+  },
+  "production": {
+    "configLevel": "project",
+    "useProfile": true,
+    "profileName": "stwamp2"
+  },
+  "test": {
+    "configLevel": "project",
+    "useProfile": true,
+    "profileName": "stwamp2"
+  }
+}
