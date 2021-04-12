@@ -13,51 +13,54 @@ import {WishlistContext} from '../../../helpers/wishlist/WishlistContext';
 import { CompareContext } from '../../../helpers/Compare/CompareContext';
 
 const GET_PRODUCTS = gql`
-query product($indexFrom:Int! ,$limit:Int!) {
-    productmaster_aggregate(limit: $limit , offset: $indexFrom) {
-      aggregate {
-        count
-      }
+    query  products($type:String!,$indexFrom:Int! ,$limit:Int!,$color:String!,$brand:[String!]!,$sortBy:_SortBy!,$priceMax:Int!,$priceMin:Int!) {
+        products (type: $type ,indexFrom:$indexFrom ,limit:$limit ,color:$color ,brand:$brand ,sortBy:$sortBy ,priceMax:$priceMax,priceMin:$priceMin){
+        total{
+            total
+        }
+        hasMore(limit:$limit,indexFrom:$indexFrom){
+            id
+        }
+        items(limit:$limit,indexFrom:$indexFrom){
+            id
+            name
+            departmentid
+            categoryid
+            brandid
+            linkid
+            refid
+            isvisible
+            description
+            descriptionshort
+            releasedate
+            keywords
+            title
+            isactive
+            taxcode
+            metatagdescription
+            supplierid
+            showwithoutstock
+            adwordsremarketingcode
+            lomadeecampaigncode
+            score
+            CreatedBy
+            CreatedAt
+            price
+            type
+            collection
+            brand
+            stock
+            new
+            sale
+            discount
+            images{
+                id
+                imageid
+                src
+            }
+        }
     }
-    productmaster(offset: $indexFrom, limit: $limit) {
-      id
-      name
-      departmentid
-      categoryid
-      brandid
-      linkid
-      refid
-      isvisible
-      description
-      descriptionshort
-      releasedate
-      keywords
-      title
-      isactive
-      taxcode
-      metatagdescription
-      supplierid
-      showwithoutstock
-      adwordsremarketingcode
-      lomadeecampaigncode
-      score
-      CreatedBy
-      CreatedAt
-      price
-      type
-      collection
-      brand
-      stock
-      new
-      sale
-      discount
-      images {
-        id
-        imageid
-        src
-      }
     }
-   }
 `;
 
 
@@ -90,32 +93,27 @@ const ProductList = ({ colClass, layoutList,openSidebar,noSidebar }) => {
     }, [selectedBrands, selectedColor, selectedSize, selectedPrice]);
 
     var { loading, data, fetchMore } = useQuery(GET_PRODUCTS, {
-        // variables: {
-        //     type: selectedCategory,
-        //     priceMax: selectedPrice.max,
-        //     priceMin: selectedPrice.min,
-        //     color: selectedColor,
-        //     brand: selectedBrands,
-        //     sortBy: sortBy,
-        //     indexFrom: 0,
-        //     limit: limit
-        // }
-             variables: {
+        variables: {
+            type: selectedCategory,
+            priceMax: selectedPrice.max,
+            priceMin: selectedPrice.min,
+            color: selectedColor,
+            brand: selectedBrands,
+            sortBy: sortBy,
             indexFrom: 0,
             limit: limit
         }
-
     });
     
     console.log(data);
 
     const handlePagination = () => {
         setIsLoading(true);
-        console.log(data.products.productmaster.length);
+        console.log(data.products.items.length);
         setTimeout(() =>
             fetchMore({
                 variables: {
-                    indexFrom: data.products.productmaster.length
+                    indexFrom: data.products.items.length
                 },
                 updateQuery: (prev, { fetchMoreResult }) => {
                     if (!fetchMoreResult) return prev;
@@ -123,9 +121,9 @@ const ProductList = ({ colClass, layoutList,openSidebar,noSidebar }) => {
                     return {
                         products: {
                             __typename: prev.products.__typename,
-                            productmaster_aggregate: prev.products.productmaster_aggregate,
-                            productmaster: [...prev.products.productmaster, ...fetchMoreResult.products.productmaster],
-                            hasMore: prev.products.productmaster_aggregate,
+                            total: prev.products.total,
+                            items: [...prev.products.items, ...fetchMoreResult.products.items],
+                            hasMore: fetchMoreResult.products.hasMore,
                         },
                     };
                 }
@@ -234,7 +232,7 @@ const ProductList = ({ colClass, layoutList,openSidebar,noSidebar }) => {
                                     <Col>
                                         <div className="product-filter-content">
                                             <div className="search-count">
-                                                <h5>{data ? `Showing Products 1-${data.products.productmaster.length} of ${data.products.total.total}` : 'loading'} Result</h5>
+                                                <h5>{data ? `Showing Products 1-${data.products.items.length} of ${data.products.total.total}` : 'loading'} Result</h5>
                                             </div>
                                             <div className="collection-view">
                                                 <ul>
@@ -324,7 +322,7 @@ const ProductList = ({ colClass, layoutList,openSidebar,noSidebar }) => {
                                              <PostLoader />
                                          </div>
                                      </div>
-                                        : data && data.products.productmaster.map((product, i) =>
+                                        : data && data.products.items.map((product, i) =>
                                             <div className={grid} key={i}>
                                                 <div className="product">
                                                     <div>
@@ -340,7 +338,7 @@ const ProductList = ({ colClass, layoutList,openSidebar,noSidebar }) => {
                             </div>
                             <div className="section-t-space">
                                 <div className="text-center">
-                                    {/* <Row>
+                                    <Row>
                                         <Col xl="12" md="12" sm="12">
                                             {data && data.products && data.products.hasMore.id &&
                                                 <Button onClick={() => handlePagination()}>
@@ -349,7 +347,7 @@ const ProductList = ({ colClass, layoutList,openSidebar,noSidebar }) => {
                                                     Load More
                                                 </Button>}
                                         </Col>
-                                    </Row> */}
+                                    </Row>
                                 </div>
                             </div>
                         </div>
