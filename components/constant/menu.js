@@ -1,54 +1,84 @@
 export const MENUITEMS = [
    {
-      title: 'Home', type: 'sub', children: [
+      title: 'Shop by categories', type: 'sub', children: [
          {
-            title: "New Demos", type: "sub", tag: 'new', children: [
-               { path: '/layouts/Tools', title: 'Tools', type: 'link' },
-               { path: '/layouts/Christmas', title: 'Christmas', type: 'link' },
-               { path: '/layouts/Marketplace', title: 'Marketplace', type: 'link' },
-               { path: '/layouts/Game', title: 'Game', type: 'link' },
-               { path: '/layouts/Gym', title: 'Gym', type: 'link' },
-               { path: '/layouts/Marijuana', title: 'Marijuana', type: 'link' },
-               { path: '/layouts/Leftsidebar', title: 'Left-Sidebar', type: 'link' },
-               { path: '/layouts/Jewellery', title: 'Jewellery', type: 'link' },
-               { path: '/layouts/Pets', title: 'Pets', type: 'link' },
-               { path: '/layouts/Metros', title: 'Metros', type: 'link' },
-               { path: '/layouts/Vedioslider', title: 'Video-Slider', type: 'link' },
-               { path: '/layouts/Nursery', title: 'Nursery', type: 'link' },
+            title: "Electronics", type: "sub", tag: 'new', children: [
+               { path: '/layouts/Tools', title: 'Camera, Photo & Videos', type: 'link' },
+               { path: '/layouts/Christmas', title: 'Computer & Accessories', type: 'link' },
+               { path: '/layouts/Marketplace', title: 'Desktop', type: 'link' },
+               { path: '/layouts/Game', title: 'Film Cameras', type: 'link' },
+               { path: '/layouts/Gym', title: 'Monitors', type: 'link' },
+               { path: '/layouts/Marijuana', title: 'Tablets', type: 'link' },
+               { path: '/layouts/Leftsidebar', title: 'Headphones & Earphones', type: 'link' },
+               { path: '/layouts/Jewellery', title: 'Laptops', type: 'link' },
+               { path: '/layouts/Pets', title: 'Speakers', type: 'link' },
+               { path: '/layouts/Metros', title: 'Video Games', type: 'link' }
             ]
          },
          {
-            title: 'Clothing', type: 'sub', children: [
-               { path: '/', title: 'Fashion1', type: 'link' },
-               { path: '/layouts/Fashion2', title: 'Fashion2', type: 'link' },
-               { path: '/layouts/Fashion3', title: 'Fashion3', type: 'link' },
-               { path: '/layouts/Kids', title: 'Kids', type: 'link' },
+            title: 'Fashion', type: 'sub', children: [
+               { path: '/', title: 'Clothing, Shoes & Jewelry', type: 'link' },
+               { path: '/layouts/Fashion2', title: 'Eyewear', type: 'link' },
+               { path: '/layouts/Fashion3', title: 'Handbags', type: 'link' },
+               { path: '/layouts/Kids', title: 'Backpacks', type: 'link' },
+               { path: '/layouts/Kids', title: 'Watches', type: 'link' },
+               { path: '/layouts/Kids', title: 'Jewelry', type: 'link' }
             ]
          },
          {
-            title: 'Basics', type: 'sub', children: [
-               { path: '/layouts/Basics/Lookbook', title: 'Lookbook', type: 'link' },
-               { path: '/layouts/Basics/Instagram', title: 'Instagram', type: 'link' },
-               { path: '/layouts/Basics/Video', title: 'Video', type: 'link' },
-               { path: '/layouts/Basics/Parallax', title: 'Parallax', type: 'link' },
-               { path: '/layouts/Basics/Fullpage', title: 'Full Page', type: 'link' }
+            title: 'Home & Kitchen', type: 'sub', children: [
+               { path: '/layouts/Basics/Lookbook', title: 'Bedding', type: 'link' },
+               { path: '/layouts/Basics/Instagram', title: 'Tower rings', type: 'link' },
+               { path: '/layouts/Basics/Video', title: 'Wall art', type: 'link' },
+               { path: '/layouts/Basics/Parallax', title: 'Wall clocks', type: 'link' },
+               { path: '/layouts/Basics/Fullpage', title: 'Cleaning supplies', type: 'link' },
+               { path: '/layouts/Basics/Fullpage', title: 'Kitchen & dining', type: 'link' },
+               { path: '/layouts/Basics/Fullpage', title: 'Tools & home improvement', type: 'link' },
+               { path: '/layouts/Basics/Fullpage', title: 'Home appliances', type: 'link' },
+               { path: '/layouts/Basics/Fullpage', title: 'Bar tools & drinkware supplies', type: 'link' },
+               { path: '/layouts/Basics/Fullpage', title: 'Bath', type: 'link' },
+               { path: '/layouts/Basics/Fullpage', title: 'Bathroom accessories', type: 'link' },
+               { path: '/layouts/Basics/Fullpage', title: 'Home decor', type: 'link' },
+               { path: '/layouts/Basics/Fullpage', title: "Kid's home store", type: 'link' },
+               { path: '/layouts/Basics/Fullpage', title: 'Seasonal decor', type: 'link' },
+               { path: '/layouts/Basics/Fullpage', title: 'Storage & organization', type: 'link' },
+               { path: '/layouts/Basics/Fullpage', title: 'Tower bars', type: 'link' },
+               { path: '/layouts/Basics/Fullpage', title: 'Vacuum & floor care', type: 'link' },
+               { path: '/layouts/Basics/Fullpage', title: 'Coasters', type: 'link' },
+               { path: '/layouts/Basics/Fullpage', title: 'Event & party supplies', type: 'link' },
+               { path: '/layouts/Basics/Fullpage', title: 'Furniture', type: 'link' },
+               { path: '/layouts/Basics/Fullpage', title: 'Glassware & drinkware', type: 'link' },
+               { path: '/layouts/Basics/Fullpage', title: 'Heating, Cooling & air quality', type: 'link' },
             ]
          },
-         { path: '/layouts/Beauty', title: 'Beauty', type: 'link' },
+         {  title: 'Beauty & Personal Care', type: 'sub', children: [
+               { path: '/layouts/Electronic/Electronic-1', title: 'Foot, Hand & Nail Care', type: 'link', },
+               { path: '/layouts/Electronic/Electronic-2', title: 'Concealer', type: 'link', },
+               { path: '/layouts/Electronic/Electronic-2', title: 'Foundation', type: 'link', },
+               { path: '/layouts/Electronic/Electronic-2', title: 'Compact powder', type: 'link', },
+               { path: '/layouts/Electronic/Electronic-2', title: 'Hair care & styling', type: 'link', },
+               { path: '/layouts/Electronic/Electronic-2', title: 'Conditioner', type: 'link', },
+               { path: '/layouts/Electronic/Electronic-2', title: 'Face wash', type: 'link', },
+               { path: '/layouts/Electronic/Electronic-2', title: 'Bath oils', type: 'link', },
+               { path: '/layouts/Electronic/Electronic-2', title: 'Makeup', type: 'link', },
+               { path: '/layouts/Electronic/Electronic-2', title: 'Fragrance', type: 'link', },
+               { path: '/layouts/Electronic/Electronic-2', title: 'Grooming', type: 'link', },
+               { path: '/layouts/Electronic/Electronic-2', title: 'Bleaches', type: 'link', },
+               { path: '/layouts/Electronic/Electronic-2', title: 'Hair Oils', type: 'link', },
+               { path: '/layouts/Electronic/Electronic-2', title: 'Cleansing Creams & Milks', type: 'link', },
+               { path: '/layouts/Electronic/Electronic-2', title: 'Skin Care', type: 'link', },
+               { path: '/layouts/Electronic/Electronic-2', title: 'Toners', type: 'link', },
+            ] },
          {
-            title: 'electronic', type: 'sub', children: [
+            title: 'Health & Wellness', type: 'sub', children: [
                { path: '/layouts/Electronic/Electronic-1', title: 'Electronic-1', type: 'link', },
                { path: '/layouts/Electronic/Electronic-2', title: 'Electronic-2', type: 'link', },
             ]
          },
-         { path: '/layouts/Furniture', title: 'Furniture', type: 'link' },
-         { path: '/layouts/Vegetables', title: 'Vegetables', type: 'link' },
-         { path: '/layouts/Watch', title: 'Watch', type: 'link' },
-         { path: '/layouts/Lights', title: 'Lights', type: 'link' },
-         { path: '/layouts/Goggles', title: 'Goggles', type: 'link' },
-         { path: '/layouts/Shoes', title: 'Shoes', type: 'link' },
-         { path: '/layouts/Bags', title: 'Bags', type: 'link' },
-         { path: '/layouts/Flowers', title: 'Flowers', type: 'link' },
+         { path: '/layouts/Furniture', title: 'Grocery', type: 'link' },
+         { path: '/layouts/Vegetables', title: 'Sports & Outdoors', type: 'link' },
+         { path: '/layouts/Watch', title: 'Baby & Toys', type: 'link' },
+         { path: '/layouts/Lights', title: 'Next Day Delivery', type: 'link' }
       ],
    },
    {

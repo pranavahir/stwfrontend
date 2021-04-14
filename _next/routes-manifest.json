@@ -1,1 +1,32 @@
-{"version":3,"pages404":true,"basePath":"","redirects":[{"source":"/:path+/","destination":"/:path+","internal":true,"statusCode":308,"regex":"^(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))/$"}],"rewrites":[],"headers":[],"dynamicRoutes":[{"page":"/product-details/[id]","regex":"^/product\\-details/([^/]+?)(?:/)?$","routeKeys":{"id":"id"},"namedRegex":"^/product\\-details/(?<id>[^/]+?)(?:/)?$"}],"dataRoutes":[{"page":"/page/account/common/checkout-page","dataRouteRegex":"^/_next/data/Qrfb5bfNNi0jFH5E9eF0R/page/account/common/checkout-page.json$"}]}
+{
+  "version": 3,
+  "pages404": true,
+  "basePath": "",
+  "redirects": [
+    {
+      "source": "/:path+/",
+      "destination": "/:path+",
+      "internal": true,
+      "statusCode": 308,
+      "regex": "^(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))/$"
+    }
+  ],
+  "rewrites": [],
+  "headers": [],
+  "dynamicRoutes": [
+    {
+      "page": "/product-details/[id]",
+      "regex": "^/product\\-details/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "id": "id"
+      },
+      "namedRegex": "^/product\\-details/(?<id>[^/]+?)(?:/)?$"
+    }
+  ],
+  "dataRoutes": [
+    {
+      "page": "/page/account/common/checkout-page",
+      "dataRouteRegex": "^/_next/data/Qrfb5bfNNi0jFH5E9eF0R/page/account/common/checkout-page.json$"
+    }
+  ]
+}
