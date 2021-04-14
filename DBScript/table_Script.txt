@@ -2,6 +2,8 @@
 
 -- DROP TABLE public.productmaster;
 
+
+
 CREATE TABLE public.productmaster
 (
     id integer NOT NULL DEFAULT nextval('productmaster_id_seq'::regclass),
