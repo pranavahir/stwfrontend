@@ -1,20 +1,28 @@
 import React, { useContext, useState } from "react";
+import {CardElement, useStripe, useElements} from '@stripe/react-stripe-js';
+import {Elements} from '@stripe/react-stripe-js';
+import {loadStripe} from '@stripe/stripe-js';
 import { Media, Container, Form, Row, Input, Col } from "reactstrap";
 import { PayPalButton } from "react-paypal-button";
 import CartContext from "../../../../helpers/cart";
 import paypal from "../../../../public/assets/images/paypal.png";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/router";
+import Card from '../../../../components/stripeCard/Card';
 import Axios  from "axios";
 import { CurrencyContext } from "../../../../helpers/Currency/CurrencyContext";
-import Stripe from 'stripe'
+// import Stripe from 'stripe'
 import GooglePayButton from '@google-pay/button-react';
+
 
 // import  Razorpay = require('razorpay');
 // const stripe = require('stripe')('pk_live_51IYvwgAR19qkTg2Rtd20aLk5vwFsCRajMN8I9aZl8zFfXj14qDxppEDhfLMp51b9OohTumAh7vSlO6IccIP5iIh600zA024lK7');
 
+
 const getServerSideProps = async () => {
-  const stripe = new Stripe("pk_live_51IYvwgAR19qkTg2Rtd20aLk5vwFsCRajMN8I9aZl8zFfXj14qDxppEDhfLMp51b9OohTumAh7vSlO6IccIP5iIh600zA024lK7");
+  // const stripe = new Stripe("pk_live_51IYvwgAR19qkTg2Rtd20aLk5vwFsCRajMN8I9aZl8zFfXj14qDxppEDhfLMp51b9OohTumAh7vSlO6IccIP5iIh600zA024lK7");
+
+
 
   const paymentIntent = await stripe.paymentIntents.create({
     amount: 1,
@@ -30,6 +38,7 @@ const getServerSideProps = async () => {
 
 
 const CheckoutPage = () => {
+
   const cartContext = useContext(CartContext);
   const cartItems = cartContext.state;
   const cartTotal = (cartContext.cartTotal).toFixed(2);
@@ -39,9 +48,11 @@ const CheckoutPage = () => {
   const [payment, setPayment] = useState("Gpay");
   const { register, handleSubmit, errors } = useForm(); // initialise the hook
   const router = useRouter();
- 
+  // const stripe = useStripe();
+  // const elements = useElements();
+  // const [messages, addMessage] = useMessages();
 
- 
+  const stripePromise = loadStripe("pk_live_51IYvwgAR19qkTg2Rtd20aLk5vwFsCRajMN8I9aZl8zFfXj14qDxppEDhfLMp51b9OohTumAh7vSlO6IccIP5iIh600zA024lK7");
   const checkhandle = (value) => {
     setPayment(value);
   };
@@ -70,6 +81,8 @@ const supportedInstruments = [
         }   
     } 
 ];
+
+ 
 
 var details = 
     {   
@@ -616,9 +629,13 @@ const handleNotReadyToPay=()=>{
                         {cartTotal !== 0 ? (
                           <div className="text-right">
                             {payment === "stripe" ? (
-                              <button type="submit" className="btn-solid btn">
-                                Place Order
-                              </button>
+ 
+      <React.StrictMode>
+      <Elements stripe={stripePromise}>
+      <Card />
+      </Elements>
+    </React.StrictMode>
+                            
                             ) : payment === "paypal" ? (
                               <PayPalButton
                                 paypalOptions={paypalOptions}
