@@ -127,8 +127,6 @@ const ProductList = ({ colClass, layoutList,openSidebar,noSidebar }) => {
                         },
                     };
                 }
-
-
             }), 1000)
     }
 
