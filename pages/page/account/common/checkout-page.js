@@ -7,14 +7,14 @@ import { useForm } from "react-hook-form";
 import { useRouter } from "next/router";
 import Axios  from "axios";
 import { CurrencyContext } from "../../../../helpers/Currency/CurrencyContext";
-import strip from 'stripe'
+import Stripe from 'stripe'
 import GooglePayButton from '@google-pay/button-react';
 
 // import  Razorpay = require('razorpay');
 // const stripe = require('stripe')('pk_live_51IYvwgAR19qkTg2Rtd20aLk5vwFsCRajMN8I9aZl8zFfXj14qDxppEDhfLMp51b9OohTumAh7vSlO6IccIP5iIh600zA024lK7');
 
-export const getServerSideProps = async () => {
-  const stripe = new Stripe("pk_test_51IYvwgAR19qkTg2RIHVWDgFEXkDifm6eeEgXFPxus4HkBdRYEisZHrj97vKXJXr64LlXA3XjCIqtRWvZ5c0l1JTn00X5Apw6MC");
+const getServerSideProps = async () => {
+  const stripe = new Stripe("pk_live_51IYvwgAR19qkTg2Rtd20aLk5vwFsCRajMN8I9aZl8zFfXj14qDxppEDhfLMp51b9OohTumAh7vSlO6IccIP5iIh600zA024lK7");
 
   const paymentIntent = await stripe.paymentIntents.create({
     amount: 1,
@@ -287,6 +287,29 @@ const handleNotReadyToPay=()=>{
         if(payment == "stripe")
         {
 
+         var stripe = getServerSideProps();
+          // const stripe = new Stripe("pk_test_51IYvwgAR19qkTg2RIHVWDgFEXkDifm6eeEgXFPxus4HkBdRYEisZHrj97vKXJXr64LlXA3XjCIqtRWvZ5c0l1JTn00X5Apw6MC");
+
+          // const paymentIntent = await stripe.paymentIntents.create({
+          //   amount: 1,
+          //   currency: "usd"
+          // });
+        
+          // return {
+          //   props: {
+          //     paymentIntent
+          //   }
+          // };
+          console.log(stripe);
+          const paymentIntent  =  stripe.paymentIntents.create({
+            amount: 1,
+            currency: 'usd',
+            payment_method_types: ['card'],
+            receipt_email: 'jenny.rosen@example.com',
+          }).then((res)=>{
+            console.log(res);
+          });
+
         }
         else if(payment == "Razorpay")
         {
@@ -298,16 +321,6 @@ const handleNotReadyToPay=()=>{
             // razorPayPaymentHandler(data);
         }
         
-
-      // getServerSideProps();
-      // const paymentIntent  =  stripe.paymentIntents.create({
-      //   amount: 1,
-      //   currency: 'usd',
-      //   payment_method_types: ['card'],
-      //   receipt_email: 'jenny.rosen@example.com',
-      // }).then((res)=>{
-      //   console.log(res);
-      // });
 
       // setPayment
       
