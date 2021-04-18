@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import {CardElement, useStripe, useElements} from '@stripe/react-stripe-js';
-import {Elements} from '@stripe/react-stripe-js';
-import {loadStripe} from '@stripe/stripe-js';
+
+
 import { Media, Container, Form, Row, Input, Col } from "reactstrap";
 import { PayPalButton } from "react-paypal-button";
 import CartContext from "../../../../helpers/cart";
@@ -13,7 +13,7 @@ import Axios  from "axios";
 import { CurrencyContext } from "../../../../helpers/Currency/CurrencyContext";
 // import Stripe from 'stripe'
 import GooglePayButton from '@google-pay/button-react';
-
+// import StatusMessages, {useMessages} from './StatusMessages';
 
 // import  Razorpay = require('razorpay');
 // const stripe = require('stripe')('pk_live_51IYvwgAR19qkTg2Rtd20aLk5vwFsCRajMN8I9aZl8zFfXj14qDxppEDhfLMp51b9OohTumAh7vSlO6IccIP5iIh600zA024lK7');
@@ -48,11 +48,11 @@ const CheckoutPage = () => {
   const [payment, setPayment] = useState("Gpay");
   const { register, handleSubmit, errors } = useForm(); // initialise the hook
   const router = useRouter();
-  // const stripe = useStripe();
-  // const elements = useElements();
+  const stripe = useStripe();
+  const elements = useElements();
   // const [messages, addMessage] = useMessages();
 
-  const stripePromise = loadStripe("pk_live_51IYvwgAR19qkTg2Rtd20aLk5vwFsCRajMN8I9aZl8zFfXj14qDxppEDhfLMp51b9OohTumAh7vSlO6IccIP5iIh600zA024lK7");
+  // const stripePromise = loadStripe("pk_live_51IYvwgAR19qkTg2Rtd20aLk5vwFsCRajMN8I9aZl8zFfXj14qDxppEDhfLMp51b9OohTumAh7vSlO6IccIP5iIh600zA024lK7");
   const checkhandle = (value) => {
     setPayment(value);
   };
@@ -228,6 +228,66 @@ const handleNotReadyToPay=()=>{
   }
 
 
+  const stripeSubmit = async (e,data) => {
+    // We don't want to let default form submission happen here,
+    // which would refresh the page.
+    e.preventDefault();
+
+    if (!stripe || !elements) {
+      // Stripe.js has not yet loaded.
+      // Make sure to disable form submission until Stripe.js has loaded.
+      console.log('Stripe.js has not yet loaded.');
+      return;
+    }
+
+    const {error: backendError, clientSecret} = await fetch(
+      'http://stripeserver.digitechniq.in/create-payment-intent',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          paymentMethodType: 'card',
+          amount:10,
+          currency: 'usd'
+          
+        }),
+      }
+    ).then((r) => r.json());
+
+    if (backendError) {
+      console.log(backendError.message);
+      return;
+    }
+
+    console.log('Client secret returned');
+
+    const {error: stripeError, paymentIntent} = await stripe.confirmCardPayment(
+      clientSecret,
+      {
+        payment_method: {
+          card: elements.getElement(CardElement),
+          billing_details: {
+            name: data.name,
+          },
+        },
+      }
+    );
+
+    if (stripeError) {
+      // Show error to your customer (e.g., insufficient funds)
+      console.log(stripeError.message);
+      return;
+    }
+
+    // Show a success message to your customer
+    // There's a risk of the customer closing the window before callback
+    // execution. Set up a webhook or plugin to listen for the
+    // payment_intent.succeeded event that handles any business critical
+    // post-payment actions.
+    console.log(`Payment ${paymentIntent.status}: ${paymentIntent.id}`);
+  };
 
   const razorPayPaymentHandler = async (filledData) => {
 
@@ -294,35 +354,12 @@ const handleNotReadyToPay=()=>{
     });
   };
 
-  const onSubmit = (data) => {
+  const onSubmit = (data,e) => {
     if (data !== "") {
 
         if(payment == "stripe")
         {
-
-         var stripe = getServerSideProps();
-          // const stripe = new Stripe("pk_test_51IYvwgAR19qkTg2RIHVWDgFEXkDifm6eeEgXFPxus4HkBdRYEisZHrj97vKXJXr64LlXA3XjCIqtRWvZ5c0l1JTn00X5Apw6MC");
-
-          // const paymentIntent = await stripe.paymentIntents.create({
-          //   amount: 1,
-          //   currency: "usd"
-          // });
-        
-          // return {
-          //   props: {
-          //     paymentIntent
-          //   }
-          // };
-          console.log(stripe);
-          const paymentIntent  =  stripe.paymentIntents.create({
-            amount: 1,
-            currency: 'usd',
-            payment_method_types: ['card'],
-            receipt_email: 'jenny.rosen@example.com',
-          }).then((res)=>{
-            console.log(res);
-          });
-
+          stripeSubmit(e,data);
         }
         else if(payment == "Razorpay")
         {
@@ -333,11 +370,6 @@ const handleNotReadyToPay=()=>{
           onBuyClicked();
             // razorPayPaymentHandler(data);
         }
-        
-
-      // setPayment
-      
-       
     } else {
       errors.showMessages();
     }
@@ -628,14 +660,9 @@ const handleNotReadyToPay=()=>{
                         </div>
                         {cartTotal !== 0 ? (
                           <div className="text-right">
-                            {payment === "stripe" ? (
- 
-      <React.StrictMode>
-      <Elements stripe={stripePromise}>
-      <Card />
-      </Elements>
-    </React.StrictMode>
-                            
+                            {payment === "stripe" ? 
+                            (
+                              <Card />
                             ) : payment === "paypal" ? (
                               <PayPalButton
                                 paypalOptions={paypalOptions}
@@ -666,7 +693,7 @@ const handleNotReadyToPay=()=>{
                                       type: 'PAYMENT_GATEWAY',
                                       parameters: {
                                         "gateway": "stripe",
-                                        "stripe:version": "2018-10-31",
+                                        "stripe:version": "2020-08-27",
                                         "stripe:publishableKey": "pk_live_51IYvwgAR19qkTg2Rtd20aLk5vwFsCRajMN8I9aZl8zFfXj14qDxppEDhfLMp51b9OohTumAh7vSlO6IccIP5iIh600zA024lK7"
                                       },
                                     },
