@@ -244,7 +244,7 @@ const handleNotReadyToPay=()=>{
     const signal = controller.signal;
     setTimeout(() => controller.abort(), 5000);
     const {error: backendError, clientSecret} = await fetch(
-      'http://stripeserver.digitechniq.in/create-payment-intent',{ signal },
+      'https://stripeserver.digitechniq.in/create-payment-intent',{ signal },
       {
         method: 'POST',
         headers: {
