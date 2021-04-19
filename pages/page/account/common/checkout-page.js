@@ -294,8 +294,8 @@ const handleNotReadyToPay=()=>{
       state: {
         payment: payment,
         items: cartItems,
-        orderTotal: total,
-        symbol: symbol,
+        orderTotal: 77.9,
+        symbol: symbol 
       },
     });
 
