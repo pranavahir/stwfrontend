@@ -250,7 +250,7 @@ const handleNotReadyToPay=()=>{
         },
         body: JSON.stringify({
           paymentMethodType: 'card',
-          amount:100,
+          amount:0.70,
           currency: 'usd'
           
         }),
