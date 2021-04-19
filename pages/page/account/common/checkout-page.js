@@ -241,7 +241,7 @@ const handleNotReadyToPay=()=>{
     }
 
     const {error: backendError, clientSecret} = await fetch(
-      'http://stripeserver.digitechniq.in/create-payment-intent',
+      'https://stripeserver.digitechniq.in/create-payment-intent',
       {
         method: 'POST',
         headers: {
@@ -249,7 +249,7 @@ const handleNotReadyToPay=()=>{
         },
         body: JSON.stringify({
           paymentMethodType: 'card',
-          amount:10,
+          amount:1,
           currency: 'usd'
           
         }),
@@ -287,6 +287,17 @@ const handleNotReadyToPay=()=>{
     // payment_intent.succeeded event that handles any business critical
     // post-payment actions.
     console.log(`Payment ${paymentIntent.status}: ${paymentIntent.id}`);
+
+    router.push({
+      pathname: "/page/order-success",
+      state: {
+        payment: payment,
+        items: cartItems,
+        orderTotal: total,
+        symbol: symbol,
+      },
+    });
+
   };
 
   const razorPayPaymentHandler = async (filledData) => {
