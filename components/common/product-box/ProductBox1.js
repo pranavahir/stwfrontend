@@ -147,8 +147,8 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
                         : ''
                     }
                     <h4>
-                    {((product.variants[0].price - (product.variants.price * 0.75 / 100))).toFixed(2)}
-                        <del><span className="money">{(product.variants[0].price * 1).toFixed(2) }</span></del>
+                    {currency.symbol} {((product.variants[0].price - (product.variants[0].price * 0.75 / 100))).toFixed(2)}
+                        <del><span className="money">{currency.symbol}{(product.variants[0].price * 1).toFixed(2) }</span></del>
                     </h4>
 
                     {/* {product.variants.map(vari => {
