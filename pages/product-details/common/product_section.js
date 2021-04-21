@@ -9,33 +9,47 @@ import { CompareContext } from '../../../helpers/Compare/CompareContext';
 import { useRouter } from 'next/router'
 
 const GET_PRODUCTS = gql`
-    query  products($type:_CategoryType!,$indexFrom:Int! ,$limit:Int!) {
-        products (type: $type,indexFrom:$indexFrom ,limit:$limit){
+    query  products($id:Int!) {
+        products (id: $id){
             items {
-                id
+                seqid
+                sku
                 title
                 description
-                type
-                brand
-                category 
-                price
-                new
-                stock
-                sale
-                discount
-                variants{
-                    id
-                    sku
-                    size
-                    color
-                    image_id
-                }
-                images{
-                    image_id
-                    id
-                    alt
-                    src
-                }
+                bullepoints
+                brandid
+                categoryid
+                isvisible
+                isactive
+                warehouseid
+                metatagdescription
+                seokeywords
+                weight
+                height
+                width
+                length
+                fromcurrency
+                asin
+          images{
+                productid
+                mainimageurl
+                additionalimage1
+                additionalimage2
+                additionalimage3
+                additionalimage4
+                additionalimage5
+          }
+          variants
+          {
+                variantid
+                sku
+                productid
+                color
+                size
+                processor
+                graphics
+                price 
+          }
             }
         }
     }
@@ -103,7 +117,7 @@ const ProductSection = () => {
                                         <div className="img-wrapper">
                                             <div className="front">
                                                 <a href={null}>
-                                                    <Media onClick={() => clickProductDetail(product)} src={product.images[0].src}
+                                                    <Media onClick={() => clickProductDetail(product)} src={product.images[0].mainimageurl}
                                                         className="img-fluid blur-up lazyload bg-img" alt="" /></a>
                                             </div>
                                             <div className="back">
@@ -132,7 +146,7 @@ const ProductSection = () => {
                                             <a href={null}>
                                                 <h6>{product.title}</h6>
                                             </a>
-                                            <h4>{symbol}{product.price}</h4>
+                                            <h4>{symbol}{product.variants.price}</h4>
                                             <ul className="color-variant">
                                                 <li className="bg-light0"></li>
                                                 <li className="bg-light1"></li>
@@ -154,15 +168,15 @@ const ProductSection = () => {
                             <Col lg="6" xs="12">
                                 <div className="quick-view-img">
                                     <Media  src={`${selectedProduct.variants ?
-                                        image ? image : selectedProduct.images[0].src
-                                        : selectedProduct.images[0].src
+                                        image ? image : selectedProduct.images[0].mainimageurl
+                                        : selectedProduct.images[0].mainimageurl
                                         }`} alt="" className="img-fluid" />
                                 </div>
                             </Col>
                             <Col lg="6" className="rtl-text">
                                 <div className="product-right">
                                     <h2> {selectedProduct.title} </h2>
-                                    <h3>"$" {(selectedProduct.price * 1).toFixed(2)}</h3>
+                                    <h3>"$" {(selectedProduct.variants.price * 1).toFixed(2)}</h3>
                                     {selectedProduct.variants ?
                                         <ul className="color-variant">
                                             {uniqueTags ?

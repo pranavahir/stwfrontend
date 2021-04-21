@@ -3,9 +3,9 @@ const { withPlugins } = require('next-compose-plugins');
 
 const nextConfig = {
   env: {
-      //API_URL:'http://localhost:4000/graphql',
+      API_URL:'http://localhost:4000/graphql',
     // API_URL:'https://stwecommerce.hasura.app/v1/graphql',
-     API_URL:'https://stwecommerceapi.herokuapp.com/api/graphql',
+    //  API_URL:'https://stwecommerceapi.herokuapp.com/api/graphql',
     
     //  'http://localhost:4000/graphql', // You can set your graphQL url here
     

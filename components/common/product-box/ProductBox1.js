@@ -34,7 +34,7 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
     const clickProductDetail = () => {
 
         const titleProps = product.title.split(' ').join('');
-        router.push(`/product-details/${product.id}` + '-' + `${titleProps}`);
+        router.push(`/product-details/${product.seqid}` + '-' + `${titleProps}`);
     }
 
     const variantChangeByColor = (imgId, product_images) => {
@@ -60,18 +60,18 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
                 </div>
                 <div className="front" onClick={clickProductDetail}>
                     <Media src={`${image ?
-                        image : product.images[0].src
+                        image : product.images[0].mainimageurl
                         }`}
                         className="img-fluid"
                         alt="" />
                 </div>
                 {backImage ?
-                    product.images[1] === 'undefined' ?
+                    product.images[0].mainimageurl === 'undefined' ?
                         'false'
                         :
                         <div className="back" onClick={clickProductDetail}>
                             <Media src={`${image ?
-                                image : product.images[1].src
+                                image :  product.images[0].mainimageurl
                                 }`}
                                 className="img-fluid m-auto"
                                 alt="" />
@@ -102,8 +102,8 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
                                 <Col lg="12">
                                     <div className="media">
                                         <Media src={`${product.variants ?
-                                            image ? image : product.images[0].src
-                                            : product.images[0].src
+                                            image ? image : product.images[0].mainimageurl
+                                            : product.images[0].mainimageurl
                                             }`} alt="" className="img-fluid" />
                                         <div className="media-body align-self-center text-center">
                                             <h5><i className="fa fa-check"></i>Item <span>{product.title}</span>
@@ -125,13 +125,13 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
                 </div>
                 {product.images ?
                     <ul className="product-thumb-list">
-                        {product.images.map((img, i) =>
-                            <li className={`grid_thumb_img ${img.src === image ? 'active' : ''}`} key={i}>
+                        {/* {product.images.map((img, i) => */}
+                            <li className={`grid_thumb_img ${product.images[0].mainimageurl === image ? 'active' : ''}`}>
                                 <a href={null} title="Add to Wishlist">
-                                    <Media src={`${img.src}`} alt="wishlist" onClick={() => onClickHandle(img.src)} />
+                                    <Media src={`${product.images[0].mainimageurl}`} alt="wishlist" onClick={() => onClickHandle(product.images[0].mainimageurl)} />
                                 </a>
                             </li>
-                        )}
+                        {/* )} */}
                     </ul> : ''}
 
             </div>
@@ -146,8 +146,9 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
                         <p>{product.description}</p>
                         : ''
                     }
-                    <h4>{((product.price - (product.price * product.discount / 100))).toFixed(2)}
-                        <del><span className="money">{(product.price * 1).toFixed(2) }</span></del>
+                    <h4>
+                    {((product.variants[0].price - (product.variants.price * 0.75 / 100))).toFixed(2)}
+                        <del><span className="money">{(product.variants[0].price * 1).toFixed(2) }</span></del>
                     </h4>
 
                     {/* {product.variants.map(vari => {
@@ -179,8 +180,8 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
                         <Col lg="6" xs="12">
                             <div className="quick-view-img">
                                 <Media src={`${product.variants ?
-                                    image ? image : product.images[0].src
-                                    : product.images[0].src
+                                    image ? image : product.images[0].mainimageurl
+                                    : product.images[0].mainimageurl
                                     }`} alt="" className="img-fluid" />
                             </div>
                         </Col>

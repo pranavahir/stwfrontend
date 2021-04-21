@@ -13,53 +13,56 @@ import {WishlistContext} from '../../../helpers/wishlist/WishlistContext';
 import { CompareContext } from '../../../helpers/Compare/CompareContext';
 
 const GET_PRODUCTS = gql`
-    query  products($type:String!,$indexFrom:Int! ,$limit:Int!,$color:String!,$brand:[String!]!,$sortBy:_SortBy!,$priceMax:Int!,$priceMin:Int!) {
-        products (type: $type ,indexFrom:$indexFrom ,limit:$limit ,color:$color ,brand:$brand ,sortBy:$sortBy ,priceMax:$priceMax,priceMin:$priceMin){
-        total{
+    query  products($type:String!,$indexFrom:Int! ,$limit:Int!,$color:String!,$brand:[String!]! ,$priceMax:Int!,$priceMin:Int!) {
+        products (type: $type ,indexFrom:$indexFrom ,limit:$limit ,color:$color ,brand:$brand  ,priceMax:$priceMax,priceMin:$priceMin){
+  total{
             total
         }
         hasMore(limit:$limit,indexFrom:$indexFrom){
-            id
+            seqid
         }
         items(limit:$limit,indexFrom:$indexFrom){
-            id
-            name
-            departmentid
-            categoryid
-            brandid
-            linkid
-            refid
-            isvisible
-            description
-            descriptionshort
-            releasedate
-            keywords
+            seqid
+            sku
             title
+            description
+            bullepoints
+            brandid
+            categoryid
+            isvisible
             isactive
-            taxcode
+            warehouseid
             metatagdescription
-            supplierid
-            showwithoutstock
-            adwordsremarketingcode
-            lomadeecampaigncode
-            score
-            CreatedBy
-            CreatedAt
-            price
-            type
-            collection
-            brand
-            stock
-            new
-            sale
-            discount
-            images{
-                id
-                imageid
-                src
-            }
+            seokeywords
+            weight
+            height
+            width
+            length
+            fromcurrency
+            asin
+      images{
+            productid
+            mainimageurl
+            additionalimage1
+            additionalimage2
+            additionalimage3
+            additionalimage4
+            additionalimage5
+      }
+      variants
+      {
+            variantid
+            sku
+            productid
+            color
+            size
+            processor
+            graphics
+            price 
+      }
         }
-    }
+
+        }
     }
 `;
 
@@ -94,14 +97,13 @@ const ProductList = ({ colClass, layoutList,openSidebar,noSidebar }) => {
 
     var { loading, data, fetchMore } = useQuery(GET_PRODUCTS, {
         variables: {
-            type: selectedCategory,
-            priceMax: selectedPrice.max,
-            priceMin: selectedPrice.min,
-            color: selectedColor,
-            brand: selectedBrands,
-            sortBy: sortBy,
+            type: "selectedCategory",
+            priceMax: 10,
+            priceMin: 1,
+            color: "red",
+            brand: "max",
             indexFrom: 0,
-            limit: limit
+            limit: 4
         }
     });
     
@@ -338,7 +340,7 @@ const ProductList = ({ colClass, layoutList,openSidebar,noSidebar }) => {
                                 <div className="text-center">
                                     <Row>
                                         <Col xl="12" md="12" sm="12">
-                                            {data && data.products && data.products.hasMore.id &&
+                                            {data && data.products && data.products.hasMore!=null &&
                                                 <Button onClick={() => handlePagination()}>
                                                     {isLoading &&
                                                         <Spinner animation="border" variant="light" />}

@@ -14,6 +14,7 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
     const symbol = CurContect.state.symbol
     const toggle = () => setModal(!modal);
     const product = item;
+    
     const [open, setOpen] = useState(false);
     const context = useContext(CartContext);
     const stock = context.stock;
@@ -35,10 +36,11 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
         <>
             <div className={`product-right ${stickyClass}`}>
                 <h2> {product.title} </h2>
+                <h4> {product.asin} </h4>
                 <h4>
-                    <del>{symbol}{product.price}</del>
-                    <span>{product.discount}% off</span></h4>
-                <h3>{symbol}{product.price - (product.price * product.discount / 100)} </h3>
+                    <del>{symbol}{product.variants[0].price}</del>
+                    <span>{0.75}% off</span></h4>
+                <h3>{symbol}{product.variants[0].price - (product.variants[0].price * 0.75 / 100)} </h3>
                 {product.variants.map(vari => {
                     var findItem = uniqueColor.find(x => x.color === vari.color);
                     if (!findItem)

@@ -11,28 +11,44 @@ import gql from 'graphql-tag';
 const GET_SINGLE_PRODUCTS = gql`
     query product ($id:Int!) {
         product (id:$id) {
-            id
+            seqid
+            sku
             title
             description
-            type
-            brand
-            category 
-            price
-            new
-            sale
-            discount
-            stock
-            variants{
-              id
-              sku
-              size
-              color
-              image_id
-            }
-            images{
-              alt
-              src
-            }
+            bullepoints
+            brandid
+            categoryid
+            isvisible
+            isactive
+            warehouseid
+            metatagdescription
+            seokeywords
+            weight
+            height
+            width
+            length
+            fromcurrency
+            asin
+      images{
+            productid
+            mainimageurl
+            additionalimage1
+            additionalimage2
+            additionalimage3
+            additionalimage4
+            additionalimage5
+      }
+      variants
+      {
+            variantid
+            sku
+            productid
+            color
+            size
+            processor
+            graphics
+            price 
+      }
         }
     }
 `;

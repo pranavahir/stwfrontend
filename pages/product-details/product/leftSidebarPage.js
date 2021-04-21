@@ -14,49 +14,44 @@ import { CurrencyContext } from '../../../helpers/Currency/CurrencyContext';
 const GET_SINGLE_PRODUCTS = gql`
     query product ($id:Int!) {
         product (id:$id) {
-      id
-            name
-            departmentid
-            categoryid
-            brandid
-            linkid
-            refid
-            isvisible
-            description
-            descriptionshort
-            releasedate
-            keywords
+            seqid
+            sku
             title
+            description
+            bullepoints
+            brandid
+            categoryid
+            isvisible
             isactive
-            taxcode
+            warehouseid
             metatagdescription
-            supplierid
-            showwithoutstock
-            adwordsremarketingcode
-            lomadeecampaigncode
-            score
-            CreatedBy
-            CreatedAt
-            price
-            type
-            collection
-            brand
-            stock
-            new
-            sale
-            discount
-            variants{
-                id
-                sku
-                size
-                color
-                image_id
-              }
-            images{
-                id
-                imageid
-                src
-            }
+            seokeywords
+            weight
+            height
+            width
+            length
+            fromcurrency
+            asin
+      images{
+            productid
+            mainimageurl
+            additionalimage1
+            additionalimage2
+            additionalimage3
+            additionalimage4
+            additionalimage5
+      }
+      variants
+      {
+            variantid
+            sku
+            productid
+            color
+            size
+            processor
+            graphics
+            price 
+      }
         }
     }
 `;
@@ -135,7 +130,9 @@ const LeftSidebarPage = ({ pathId }) => {
                                     <Row>
                                         <Col lg="6" className="product-thumbnail">
                                         <Slider {...products} asNavFor={nav2} ref={slider => (slider1.current = slider)} className="product-slick">
-                                                {data.product.variants.length > 0 ?
+                                        <Media src={`${data.product.images[0].mainimageurl}`}   className="img-fluid" />
+                                                
+                                                {/* {data.product.variants.length > 0 ?
                                                     data.product.images.map((vari, index) =>
                                                         <div key={index}>
                                                             <ImageZoom image={vari} />
@@ -146,20 +143,22 @@ const LeftSidebarPage = ({ pathId }) => {
                                                             <ImageZoom image={vari} />
                                                         </div>
                                                     )
-                                                }
+                                                } */}
                                             </Slider>
                                             <Slider className="slider-nav"
                                                 {...productsnav}
                                                 asNavFor={nav1}
                                                 ref={slider => (slider2.current = slider)}
                                             >
-                                                {data.product.variants ?
+                                             <Media src={`${data.product.images[0].mainimageurl}`}   className="img-fluid" />
+                                                {/* {data.product.variants ?
                                                     data.product.images.map((vari, index) =>
                                                         <div key={index}>
                                                             <Media src={`${vari.src}`} key={index} alt={vari.alt} className="img-fluid" />
                                                         </div>
-                                                    ) :
-                                                    ''}
+                                                    ) 
+                                                    :
+                                                    ''} */}
                                             </Slider>
                                         </Col>
                                         <Col lg="6" className="rtl-text">
@@ -169,7 +168,7 @@ const LeftSidebarPage = ({ pathId }) => {
                                 }
 
                             </Container>
-                            <ProductTab />
+                            <ProductTab selectedItem={data} />
                         </Col>
                     </Row>
                 </Container>
