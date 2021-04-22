@@ -132,9 +132,9 @@ const LeftSidebarPage = ({ pathId }) => {
                                     <Row>
                                         <Col lg="6" className="product-thumbnail">
                                         <Slider {...products} asNavFor={nav2} ref={slider => (slider1.current = slider)} className="product-slick">
-                                        <Media src={`${data.product.images[0].mainimageurl}`}   className="img-fluid" />
-                                                
-                                                {/* {data.product.variants.length > 0 ?
+{/*                                     
+                                        <Media src={`${data.product.images[0].mainimageurl}`}   className="img-fluid image_zoom_cls-0" />
+                                                {data.product.variants.length > 0 ?
                                                     data.product.images.map((vari, index) =>
                                                         <div key={index}>
                                                             <ImageZoom image={vari} />
@@ -146,27 +146,89 @@ const LeftSidebarPage = ({ pathId }) => {
                                                         </div>
                                                     )
                                                 } */}
+                                                {data.product.images[0].mainimageurl?
+                                                    <div>
+                                                          <Media src={`${data.product.images[0].mainimageurl}`}   className="img-fluid" />
+                                                  </div>
+                                                    :
+                                                    ''}
+                                                    {data.product.images[0].additionalimage1?
+                                                    <div>
+                                                          <Media src={`${data.product.images[0].additionalimage1}`}   className="img-fluid" />
+                                                  </div>
+                                                    :
+                                                    ''}
+                                                    {data.product.images[0].additionalimage2?
+                                                    <div>
+                                                          <Media src={`${data.product.images[0].additionalimage2}`}   className="img-fluid" />
+                                                  </div>
+                                                    :
+                                                    ''}
+                                                    {data.product.images[0].additionalimage3?
+                                                    <div>
+                                                          <Media src={`${data.product.images[0].additionalimage3}`}   className="img-fluid" />
+                                                  </div>
+                                                    :
+                                                    ''}
+                                                    {data.product.images[0].additionalimage4?
+                                                    <div>
+                                                          <Media src={`${data.product.images[0].additionalimage4}`}   className="img-fluid" />
+                                                  </div>
+                                                    :
+                                                    ''}
+                                                    {data.product.images[0].additionalimage5?
+                                                    <div>
+                                                          <Media src={`${data.product.images[0].additionalimage5}`}   className="img-fluid" />
+                                                  </div>
+                                                    :
+                                                    ''}
                                             </Slider>
                                             <Slider className="slider-nav"
                                                 {...productsnav}
                                                 asNavFor={nav1}
                                                 ref={slider => (slider2.current = slider)}
                                             >
-                                            <div>
-                                             <Media src={`${data.product.images[0].mainimageurl}`}   className="img-fluid" />
-                                            </div>
-                                            <div>
-                                             <Media src={`${data.product.images[0].mainimageurl}`}   className="img-fluid" />
-                                            </div>
-                                            <div>
-                                             <Media src={`${data.product.images[0].mainimageurl}`}   className="img-fluid" />
-                                            </div>
-                                            <div>
-                                             <Media src={`${data.product.images[0].mainimageurl}`}   className="img-fluid" />
-                                            </div>
-                                            <div>
-                                             <Media src={`${data.product.images[0].mainimageurl}`}   className="img-fluid" />
-                                            </div>
+
+                                                {data.product.images[0].mainimageurl?
+                                                    <div>
+                                                          <Media src={`${data.product.images[0].mainimageurl}`}   className="img-fluid" />
+                                                  </div>
+                                                    :
+                                                    ''}
+                                                    {data.product.images[0].additionalimage1?
+                                                    <div>
+                                                          <Media src={`${data.product.images[0].additionalimage1}`}   className="img-fluid" />
+                                                  </div>
+                                                    :
+                                                    ''}
+                                                    {data.product.images[0].additionalimage2?
+                                                    <div>
+                                                          <Media src={`${data.product.images[0].additionalimage2}`}   className="img-fluid" />
+                                                  </div>
+                                                    :
+                                                    ''}
+                                                    {data.product.images[0].additionalimage3?
+                                                    <div>
+                                                          <Media src={`${data.product.images[0].additionalimage3}`}   className="img-fluid" />
+                                                  </div>
+                                                    :
+                                                    ''}
+                                                    {data.product.images[0].additionalimage4?
+                                                    <div>
+                                                          <Media src={`${data.product.images[0].additionalimage4}`}   className="img-fluid" />
+                                                  </div>
+                                                    :
+                                                    ''}
+                                                    {data.product.images[0].additionalimage5?
+                                                    <div>
+                                                          <Media src={`${data.product.images[0].additionalimage5}`}   className="img-fluid" />
+                                                  </div>
+                                                    :
+                                                    ''}
+
+
+                                          
+                                          
                                                 {/* {data.product.variants ?
                                                     data.product.images.map((vari, index) =>
                                                         <div key={index}>
