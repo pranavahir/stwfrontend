@@ -38,6 +38,7 @@ const GET_PRODUCTS = gql`
             height
             width
             length
+      
             fromcurrency
             asin
       images{

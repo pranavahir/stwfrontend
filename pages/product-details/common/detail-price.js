@@ -36,7 +36,8 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
         <>
             <div className={`product-right ${stickyClass}`}>
                 <h2> {product.title} </h2>
-                <h4> {product.asin} </h4>
+                <h4> {product.brandname} </h4>
+                <h4> {product.categoryvalue} </h4>
                 <h4>
                     <del>{symbol}{product.variants[0].price}</del>
                     <span>{0.75}% off</span></h4>

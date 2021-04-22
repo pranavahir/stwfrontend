@@ -31,6 +31,8 @@ const GET_SINGLE_PRODUCTS = gql`
             width
             length
             fromcurrency
+            brandname
+            categoryvalue
             asin
       images{
             productid
