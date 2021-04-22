@@ -152,7 +152,21 @@ const LeftSidebarPage = ({ pathId }) => {
                                                 asNavFor={nav1}
                                                 ref={slider => (slider2.current = slider)}
                                             >
+                                            <div>
                                              <Media src={`${data.product.images[0].mainimageurl}`}   className="img-fluid" />
+                                            </div>
+                                            <div>
+                                             <Media src={`${data.product.images[0].mainimageurl}`}   className="img-fluid" />
+                                            </div>
+                                            <div>
+                                             <Media src={`${data.product.images[0].mainimageurl}`}   className="img-fluid" />
+                                            </div>
+                                            <div>
+                                             <Media src={`${data.product.images[0].mainimageurl}`}   className="img-fluid" />
+                                            </div>
+                                            <div>
+                                             <Media src={`${data.product.images[0].mainimageurl}`}   className="img-fluid" />
+                                            </div>
                                                 {/* {data.product.variants ?
                                                     data.product.images.map((vari, index) =>
                                                         <div key={index}>

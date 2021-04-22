@@ -45,6 +45,18 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
         })
     }
 
+    const descriptionFormation=(description)=>{
+        var str = description;
+        var res =null;
+        
+        if(str!=null && str!=undefined)
+        {
+             res = str.split("|");    
+        }
+        console.log(res);
+        return res;
+    }
+
     let RatingStars = []
     let rating = 5;
     for (var i = 0; i < rating; i++) {
@@ -211,7 +223,16 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
                                     </ul> : ''}
                                 <div className="border-product">
                                     <h6 className="product-title">product details</h6>
-                                    <p>{product.description}</p>
+
+                                    {descriptionFormation(product.bullepoints) ?
+                                            <div className="size-box">
+                                                <ul>
+                                                    {descriptionFormation(product.bullepoints).map((size, i) => {
+                                                        return <li key={i}><a href={null}>{size}</a></li>
+                                                    })}
+                                                </ul>
+                                            </div> : ''}
+                                     
                                 </div>
                                 <div className="product-description border-product">
                                     {/* {product.size ?

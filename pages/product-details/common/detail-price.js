@@ -31,7 +31,17 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
     const changeQty = (e) => {
         setQuantity(parseInt(e.target.value));
     }
-
+    const descriptionFormation=(description)=>{
+        var str = description;
+        var res =null;
+        
+        if(str!=null && str!=undefined)
+        {
+             res = str.split("|");    
+        }
+        console.log(res);
+        return res;
+    }
     return (
         <>
             <div className={`product-right ${stickyClass}`}>
@@ -121,7 +131,15 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
                 </div>
                 <div className="border-product">
                     <h6 className="product-title">product details</h6>
-                    <p>{product.description}</p>
+                    
+                    {descriptionFormation(product.bullepoints) ?
+                                            <div >
+                                                <ol>
+                                                    {descriptionFormation(product.bullepoints).map((size, i) => {
+                                                        return <li key={i}>{size}<br/></li>
+                                                    })}
+                                                </ol>
+                                            </div> : ''}
                 </div>
                 <div className="border-product">
                     <h6 className="product-title">share it</h6>
