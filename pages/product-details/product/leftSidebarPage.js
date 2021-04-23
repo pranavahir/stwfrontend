@@ -42,7 +42,43 @@ const GET_SINGLE_PRODUCTS = gql`
             additionalimage3
             additionalimage4
             additionalimage5
-      }
+      }        
+      specifications
+      {
+        seqid
+        productid
+        upc
+        mpn
+        partnumber
+        isbn
+        screendisplaysize
+        maxscreenresolution
+        processor
+        ram
+        memoryspeed
+        harddrive
+        graphiccoprocessor
+        chipsetbrand
+        carddescription
+        wirelesstype
+        numberofusb2port
+        numberofusb3port
+        avgbatterylife
+        series
+        operatingsystem
+        processorbrand
+        processorcount
+        computermemorytype
+        flashmemorysize
+        hardriveinterface
+        harddriverotationalspeed
+        batteries
+        itemdimension
+        productdimension
+        opticalzoom
+        publisher
+        size
+       }
       variants
       {
             variantid
@@ -54,7 +90,7 @@ const GET_SINGLE_PRODUCTS = gql`
             graphics
             price 
       }
-        }
+      }
     }
 `;
 

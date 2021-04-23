@@ -9,8 +9,8 @@ import { CompareContext } from '../../../helpers/Compare/CompareContext';
 import { useRouter } from 'next/router'
 
 const GET_PRODUCTS = gql`
-    query  products($id:Int!) {
-        products (id: $id){
+    query  product($id:Int!) {
+        product (id: $id){
             items {
                 seqid
                 sku
@@ -50,7 +50,28 @@ const GET_PRODUCTS = gql`
                 graphics
                 price 
           }
-            }
+          specifications
+          {
+            seqid
+            productid
+            upc
+            mpn
+            partnumber
+            isbn
+            screendisplaysize
+            maxscreenresolution
+            processor
+            ram
+            memoryspeed
+            harddrive
+            operatingsystem
+            processorbrand
+            hardriveinterface
+            itemdimension
+            productdimension
+            size
+           }
+          }
         }
     }
 `;
