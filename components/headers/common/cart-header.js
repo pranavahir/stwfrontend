@@ -16,6 +16,24 @@ const CartHeader = ({ item, symbol }) => {
                 return res;
     }
 
+    const priceCollection = (variantData) =>{
+        var sellPrice = null;
+        if(variantData !=null && variantData !=undefined)
+        {
+            if(variantData.length > 0)
+            {
+                sellPrice = ((variantData[0].conversionrate *  ((variantData[0].price +2 ) * 1.0825 )  + (variantData[0].frieghtrate)) * (1 + variantData[0].duty)) * Math.round((1/(1-((variantData[0].taxes / (1 + (variantData[0].taxes)))+(variantData[0].fees / (1 + (variantData[0].fees)))+(variantData[0].margin / (1 + (variantData[0].margin)))))),4);
+                console.log(sellPrice);
+            }
+            else
+            {
+                sellPrice = 0;
+            }
+            
+        }
+        return sellPrice
+    }
+
 
     return (
         <Fragment>
@@ -31,7 +49,7 @@ const CartHeader = ({ item, symbol }) => {
                             <a><h4>{getName(item.title)}</h4></a>
                         </Link>
                         
-                        <h4><span>{item.qty} x {symbol} {(item.variants[0].price - (item.variants[0].price * 0.75 / 100)).toFixed(2)}</span></h4>
+                        <h4><span>{item.qty} x {symbol} {( priceCollection(item.variants) - (priceCollection(item.variants) * 0.75 / 100)).toFixed(2)}</span></h4>
                     </div>
                 </div>
                 <div className="close-circle">

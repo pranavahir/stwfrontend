@@ -43,6 +43,23 @@ const CartPage = () => {
         }
     }
 
+    const priceCollection = (variantData) =>{
+        var sellPrice = null;
+        if(variantData !=null && variantData !=undefined)
+        {
+            if(variantData.length > 0)
+            {
+                sellPrice = ((variantData[0].conversionrate *  ((variantData[0].price +2 ) * 1.0825 )  + (variantData[0].frieghtrate)) * (1 + variantData[0].duty)) * Math.round((1/(1-((variantData[0].taxes / (1 + (variantData[0].taxes)))+(variantData[0].fees / (1 + (variantData[0].fees)))+(variantData[0].margin / (1 + (variantData[0].margin)))))),4);
+                console.log(sellPrice);
+            }
+            else
+            {
+                sellPrice = 0;
+            }
+            
+        }
+        return sellPrice
+    }
 
     const plusQty = (product) => {
         if (product.stock >= quantity) {
@@ -107,7 +124,7 @@ const CartPage = () => {
                                                         </div>{(item.qty >= item.stock) ? 'out of Stock' : ''}
                                                             </div>
                                                             <div className="col-xs-3">
-                                                                <h2 className="td-color">{symbol}{(item.variants[0].price - (item.variants[0].price * 0.75 / 100)).toFixed(2)}</h2>
+                                                                <h2 className="td-color">{symbol}{(priceCollection(item.variants) - (priceCollection(item.variants) * 0.75 / 100)).toFixed(2)}</h2>
                                                             </div>
                                                             <div className="col-xs-3">
                                                                 <h2 className="td-color"><a href="#" className="icon"><i className="fa fa-times"  onClick={() => removeFromCart(item)}></i></a>
@@ -115,7 +132,7 @@ const CartPage = () => {
                                                             </div>
                                                         </div>
                                                     </td>
-                                                    <td><h2>{symbol}{(item.variants[0].price - (item.variants[0].price * 0.75 / 100)).  toFixed(2)}</h2></td>
+                                                    <td><h2>{symbol}{(priceCollection(item.variants) - (priceCollection(item.variants) * 0.75 / 100)).  toFixed(2)}</h2></td>
                                                     <td>
                                                         <div className="qty-box">
                                                             <div className="input-group">
