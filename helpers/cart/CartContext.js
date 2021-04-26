@@ -34,10 +34,10 @@ const CartProvider = (props) => {
     const index = cartItems.findIndex(itm => itm.id === item.id)
     if (index !== -1) {
       const product = cartItems[index];
-      cartItems[index] = { ...item, ...item, qty: quantity, gst:gstCollection(item.variants), total:(gstCollection(item.variants)+(priceCollection(item.variants) - (priceCollection(item.variants) * 0.75 / 100))) * quantity };
+      cartItems[index] = { ...item, ...item, qty: quantity, gst:gstCollection(item.variants), total:(gstCollection(item.variants)+(priceCollection(item.variants) - (priceCollection(item.variants) * discountCalculation(item.variants) / 100))) * quantity };
       setCartItems([...cartItems])
     } else {
-      const product = { ...item, qty: quantity,gst:gstCollection(item.variants), total: (gstCollection(item.variants)+(priceCollection(item.variants) - (priceCollection(item.variants) * 0.75 / 100))) }
+      const product = { ...item, qty: quantity,gst:gstCollection(item.variants), total: (gstCollection(item.variants)+(priceCollection(item.variants) - (priceCollection(item.variants) * discountCalculation(item.variants) / 100))) }
       setCartItems([...cartItems, product])
     }
   }
@@ -98,6 +98,23 @@ const gstCollection = (variantData) =>{
   return gstPrice
 }
 
+const discountCalculation = (variantData) =>{
+  var discount = null;
+  // CommonFun.publicMethod();
+  if(variantData !=null && variantData !=undefined)
+  {
+      if(variantData.length > 0)
+      {
+          discount = variantData[0].discount;
+          console.log(discount);
+      }
+      else
+      {
+          discount = 0;
+      }
+  }
+  return discount
+}
 
    // Update Product Quantity
    const updateQty = (item, quantity) => {
@@ -105,12 +122,12 @@ const gstCollection = (variantData) =>{
       const index = cartItems.findIndex(itm => itm.id === item.id)
       if(index !== -1){
         const product = cartItems[index];
-        cartItems[index] = { ...product, ...item, qty: quantity, total: ((priceCollection(item.variants) - (priceCollection(item.variants) * 0.75 / 100))+gstCollection(item.variants)) * quantity  }; 
+        cartItems[index] = { ...product, ...item, qty: quantity, total: ((priceCollection(item.variants) - (priceCollection(item.variants) * discountCalculation(item.variants) / 100))+gstCollection(item.variants)) * quantity  }; 
 
         setCartItems([...cartItems])
         toast.info("Product Quantity Updated !");
       }else{
-        const product = {...item, qty: quantity, total: (gstCollection(item.variants)+(priceCollection(item.variants) - (priceCollection(item.variants) * 0.75 / 100))) * quantity }
+        const product = {...item, qty: quantity, total: (gstCollection(item.variants)+(priceCollection(item.variants) - (priceCollection(item.variants) * discountCalculation(item.variants) / 100))) * quantity }
         setCartItems([...cartItems, product])
         toast.success("Product Added Updated !");
       }

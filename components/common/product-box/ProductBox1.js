@@ -49,6 +49,26 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
         return sellPrice
     }
 
+
+    const discountCalculation = (variantData) =>{
+        var discount = null;
+        // CommonFun.publicMethod();
+        if(variantData !=null && variantData !=undefined)
+        {
+            if(variantData.length > 0)
+            {
+                discount = variantData[0].discount;
+                console.log(discount);
+            }
+            else
+            {
+                discount = 0;
+            }
+        }
+        return discount
+    }
+    
+
     const clickProductDetail = () => {
 
         const titleProps = product.title.split(' ').join('-');
@@ -176,7 +196,7 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
                         : ''
                     }
                     <h4>
-                    {currency.symbol} {((priceCollection(product.variants) - (priceCollection(product.variants) * 0.75 / 100))).toFixed(2)}
+                    {currency.symbol} {((priceCollection(product.variants) - (priceCollection(product.variants) * discountCalculation(product.variants) / 100))).toFixed(2)}
                         <del><span className="money">{currency.symbol}{(priceCollection(product.variants) * 1).toFixed(2) }</span></del>
                     </h4>
 

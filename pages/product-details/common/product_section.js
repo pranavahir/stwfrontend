@@ -48,6 +48,7 @@ const GET_PRODUCTS = gql`
                 size
                 processor
                 graphics
+                discount
                 price 
                 conversionrate
                 frieghtrate
