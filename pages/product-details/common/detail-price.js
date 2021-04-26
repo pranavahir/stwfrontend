@@ -5,7 +5,7 @@ import { Modal, ModalBody, ModalHeader, Media, Input } from 'reactstrap';
 import { CurrencyContext } from '../../../helpers/Currency/CurrencyContext';
 import CartContext from '../../../helpers/cart';
 import CountdownComponent from '../../../components/common/widgets/countdownComponent';
-
+// import { CommonFun } from '../../../components/Utility/PriceCalculator';
 
 const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
 
@@ -30,6 +30,7 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
 
     const priceCollection = (variantData) =>{
         var sellPrice = null;
+        // CommonFun.publicMethod();
         if(variantData !=null && variantData !=undefined)
         {
             if(variantData.length > 0)

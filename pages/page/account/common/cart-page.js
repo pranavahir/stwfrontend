@@ -4,7 +4,7 @@ import CartContext from '../../../../helpers/cart';
 import { Container, Row, Col, Media, Input } from 'reactstrap';
 import { CurrencyContext } from '../../../../helpers/Currency/CurrencyContext';
 import cart from '../../../../public/assets/images/icon-empty-cart.png';
-
+// import  CommonFunctionality  from '../../../../components/Utility/PriceCalculator';
 const CartPage = () => {
     const context = useContext(CartContext);
     const cartItems = context.state;
@@ -45,10 +45,12 @@ const CartPage = () => {
 
     const priceCollection = (variantData) =>{
         var sellPrice = null;
+        // CommonFunctionality.publicMethod();
         if(variantData !=null && variantData !=undefined)
         {
             if(variantData.length > 0)
             {
+                
                 sellPrice = ((variantData[0].conversionrate *  ((variantData[0].price +2 ) * 1.0825 )  + (variantData[0].frieghtrate)) * (1 + variantData[0].duty)) * Math.round((1/(1-((variantData[0].taxes / (1 + (variantData[0].taxes)))+(variantData[0].fees / (1 + (variantData[0].fees)))+(variantData[0].margin / (1 + (variantData[0].margin)))))),4);
                 console.log(sellPrice);
             }
@@ -82,6 +84,7 @@ const CartPage = () => {
                                             <th scope="col">image</th>
                                             <th scope="col">product name</th>
                                             <th scope="col">price</th>
+                                            <th scope="col">GST</th>
                                             <th scope="col">quantity</th>
                                             <th scope="col">action</th>
                                             <th scope="col">total</th>
@@ -133,6 +136,7 @@ const CartPage = () => {
                                                         </div>
                                                     </td>
                                                     <td><h2>{symbol}{(priceCollection(item.variants) - (priceCollection(item.variants) * 0.75 / 100)).  toFixed(2)}</h2></td>
+                                                    <td><h2>{symbol}{item.gst}</h2></td>
                                                     <td>
                                                         <div className="qty-box">
                                                             <div className="input-group">
@@ -152,7 +156,7 @@ const CartPage = () => {
                                                         <i className="fa fa-times" onClick={() => removeFromCart(item)}></i>
                                                        
                                                     </td>
-                                                    <td><h2 className="td-color">{symbol}{item.total}</h2></td>
+                                                    <td><h2 className="td-color">{symbol}{item.total.toFixed(2)}</h2></td>
                                                 </tr>
                                             </tbody>)
                                     })}
@@ -161,7 +165,7 @@ const CartPage = () => {
                                     <tfoot>
                                         <tr>
                                             <td>total price :</td>
-                                            <td><h2>{symbol} {total} </h2></td>
+                                            <td><h2>{symbol} {total.toFixed(2)} </h2></td>
                                         </tr>
                                     </tfoot>
                                 </table>

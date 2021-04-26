@@ -22,6 +22,8 @@ const CartHeader = ({ item, symbol }) => {
         {
             if(variantData.length > 0)
             {
+
+                
                 sellPrice = ((variantData[0].conversionrate *  ((variantData[0].price +2 ) * 1.0825 )  + (variantData[0].frieghtrate)) * (1 + variantData[0].duty)) * Math.round((1/(1-((variantData[0].taxes / (1 + (variantData[0].taxes)))+(variantData[0].fees / (1 + (variantData[0].fees)))+(variantData[0].margin / (1 + (variantData[0].margin)))))),4);
                 console.log(sellPrice);
             }

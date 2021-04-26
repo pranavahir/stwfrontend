@@ -11,7 +11,7 @@ const CartContainer = ({icon}) => {
     const symbol = currContext.state.symbol;
     const cartList = context.state;
     const total = context.cartTotal;
-
+ 
     return (
         <Fragment>
             <li className="onhover-div mobile-cart" >
@@ -30,7 +30,7 @@ const CartContainer = ({icon}) => {
                         <div>
                             <li>
                                 <div className="total">
-                                    <h5>subtotal : <span>{symbol}{total}</span></h5>
+                                    <h5>subtotal : <span>{symbol}{total.toFixed(2)}</span></h5>
                                 </div>
                             </li>
                             <li>

@@ -7,6 +7,7 @@ import gql from 'graphql-tag';
 import { useQuery } from '@apollo/react-hooks';
 import ImageZoom from '../common/image-zoom';
 import DetailsWithPrice from '../common/detail-price';
+
 import Filter from '../common/filter';
 import { Container, Row, Col, Media } from 'reactstrap';
 import { CurrencyContext } from '../../../helpers/Currency/CurrencyContext';
