@@ -28,6 +28,24 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
         setOpen(false)
     };
 
+    const priceCollection = (variantData) =>{
+        var sellPrice = null;
+        if(variantData !=null && variantData !=undefined)
+        {
+            if(variantData.length > 0)
+            {
+                sellPrice = ((variantData[0].conversionrate *  ((variantData[0].price +2 ) * 1.0825 )  + (variantData[0].frieghtrate)) * (1 + variantData[0].duty)) * Math.round((1/(1-((variantData[0].taxes / (1 + (variantData[0].taxes)))+(variantData[0].fees / (1 + (variantData[0].fees)))+(variantData[0].margin / (1 + (variantData[0].margin)))))),4);
+                console.log(sellPrice);
+            }
+            else
+            {
+                sellPrice = 0;
+            }
+            
+        }
+        return sellPrice
+    }
+
     const changeQty = (e) => {
         setQuantity(parseInt(e.target.value));
     }
@@ -51,9 +69,9 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
                 <h4> {product.brandname} </h4>
                 {/* <h4> {product.categoryvalue} </h4> */}
                 <h4>
-                    <del>{symbol}{(product.variants[0].price * 1).toFixed(2)}</del>
+                    <del>{symbol}{(priceCollection(product.variants) * 1).toFixed(2)}</del>
                     <span>{0.75}% off</span></h4>
-                <h3>{symbol}{(product.variants[0].price - (product.variants[0].price * 0.75 / 100)).toFixed(2)} </h3>
+                <h3>{symbol}{(priceCollection(product.variants) - (priceCollection(product.variants) * 0.75 / 100)).toFixed(2)} </h3>
                 {product.variants.map(vari => {
                     var findItem = uniqueColor.find(x => x.color === vari.color);
                     if (!findItem)
@@ -86,7 +104,7 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
                         </>
                 }
 
-                <div className="product-description border-product">
+                {/* <div className="product-description border-product">
                     {product.variants ?
                         <div>
                             <h6 className="product-title size-text">select size
@@ -124,7 +142,7 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
                             </span>
                         </div>
                     </div>
-                </div>
+                </div> */}
                 <div className="product-buttons" >
                     <a href={null} className="btn btn-solid" onClick={() => context.addToCart(product, quantity)}>add to cart</a>
                     <Link href={`/page/account/checkout`}  ><a className="btn btn-solid" >buy now</a></Link>

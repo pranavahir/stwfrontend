@@ -25,7 +25,12 @@ const CartPage = () => {
             setQuantityError(true)
         }
     }
+    const clickProductDetail = (title) => {
 
+        var titleProps = title.split(' ').join('-');
+        // router.push(`/product-details/${product.seqid}` + '-' + `${titleProps}`);
+        return titleProps;
+    }
 
     const changeQty = (e) => {
         setQuantity(parseInt(e.target.value));
@@ -71,17 +76,17 @@ const CartPage = () => {
                                             <tbody key={index}>
                                                 <tr>
                                                     <td>
-                                                        <Link href={`/left-sidebar/product/` + item.id}>
+                                                        <Link href={`/product-details/${item.seqid}` + '-' + `${clickProductDetail(item.title)}`}>
                                                             <a>
                                                                 <Media src={item.images ?
-                                                                    item.images[0].src
-                                                                    : item.images[0].src} alt="" />
+                                                                    item.images[0].mainimageurl
+                                                                    : item.images[0].mainimageurl} alt="" />
                                                             </a>
                                                         </Link>
 
                                                     </td>
                                                     <td>
-                                                        <Link href={`/left-sidebar/product/` + item.id}>
+                                                        <Link href={`/product-details/${item.seqid}` + '-' + `${clickProductDetail(item.title)}`}>
                                                             <a>
                                                                 {item.title}
                                                             </a>
@@ -102,7 +107,7 @@ const CartPage = () => {
                                                         </div>{(item.qty >= item.stock) ? 'out of Stock' : ''}
                                                             </div>
                                                             <div className="col-xs-3">
-                                                                <h2 className="td-color">{symbol}{item.price - (item.price * item.discount / 100)}</h2>
+                                                                <h2 className="td-color">{symbol}{(item.variants[0].price - (item.variants[0].price * 0.75 / 100)).toFixed(2)}</h2>
                                                             </div>
                                                             <div className="col-xs-3">
                                                                 <h2 className="td-color"><a href="#" className="icon"><i className="fa fa-times"  onClick={() => removeFromCart(item)}></i></a>
@@ -110,7 +115,7 @@ const CartPage = () => {
                                                             </div>
                                                         </div>
                                                     </td>
-                                                    <td><h2>{symbol}{item.price - (item.price * item.discount / 100)}</h2></td>
+                                                    <td><h2>{symbol}{(item.variants[0].price - (item.variants[0].price * 0.75 / 100)).  toFixed(2)}</h2></td>
                                                     <td>
                                                         <div className="qty-box">
                                                             <div className="input-group">

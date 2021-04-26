@@ -31,9 +31,27 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
         setQuantity(parseInt(e.target.value))
     }
 
+    const priceCollection = (variantData) =>{
+        var sellPrice = null;
+        if(variantData !=null && variantData !=undefined)
+        {
+            if(variantData.length > 0)
+            {
+                sellPrice = ((variantData[0].conversionrate *  ((variantData[0].price +2 ) * 1.0825 )  + (variantData[0].frieghtrate)) * (1 + variantData[0].duty)) * Math.round((1/(1-((variantData[0].taxes / (1 + (variantData[0].taxes)))+(variantData[0].fees / (1 + (variantData[0].fees)))+(variantData[0].margin / (1 + (variantData[0].margin)))))),4);
+                console.log(sellPrice);
+            }
+            else
+            {
+                sellPrice = 0;
+            }
+            
+        }
+        return sellPrice
+    }
+
     const clickProductDetail = () => {
 
-        const titleProps = product.title.split(' ').join('');
+        const titleProps = product.title.split(' ').join('-');
         router.push(`/product-details/${product.seqid}` + '-' + `${titleProps}`);
     }
 
@@ -53,7 +71,6 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
         {
              res = str.split("|");    
         }
-        console.log(res);
         return res;
     }
 
@@ -159,8 +176,8 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
                         : ''
                     }
                     <h4>
-                    {currency.symbol} {((product.variants[0].price - (product.variants[0].price * 0.75 / 100))).toFixed(2)}
-                        <del><span className="money">{currency.symbol}{(product.variants[0].price * 1).toFixed(2) }</span></del>
+                    {currency.symbol} {((priceCollection(product.variants) - (priceCollection(product.variants) * 0.75 / 100))).toFixed(2)}
+                        <del><span className="money">{currency.symbol}{(priceCollection(product.variants) * 1).toFixed(2) }</span></del>
                     </h4>
 
                     {/* {product.variants.map(vari => {

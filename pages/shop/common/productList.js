@@ -60,6 +60,12 @@ const GET_PRODUCTS = gql`
             processor
             graphics
             price 
+            conversionrate
+            frieghtrate
+            duty
+            taxes
+            fees
+            margin
       }
         }
 
@@ -104,11 +110,13 @@ const ProductList = ({ colClass, layoutList,openSidebar,noSidebar }) => {
             color: "red",
             brand: "max",
             indexFrom: 0,
-            limit: 4
+            limit: 10
         }
     });
     
     console.log(data);
+
+
 
     const handlePagination = () => {
         setIsLoading(true);

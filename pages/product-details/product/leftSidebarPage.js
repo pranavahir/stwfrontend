@@ -89,6 +89,12 @@ const GET_SINGLE_PRODUCTS = gql`
             processor
             graphics
             price 
+            conversionrate
+            frieghtrate
+            duty
+            taxes
+            fees
+            margin
       }
       }
     }

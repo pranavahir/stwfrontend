@@ -49,6 +49,12 @@ const GET_PRODUCTS = gql`
                 processor
                 graphics
                 price 
+                conversionrate
+                frieghtrate
+                duty
+                taxes
+                fees
+                margin
           }
           specifications
           {
@@ -105,7 +111,7 @@ const ProductSection = () => {
         const titleProps = product.title.split(' ').join('');
         router.push(`/product-details/${product.id}` + '-' + `${titleProps}`);
     }
-
+   
     const getSelectedProduct = (item) => {
         setSelectedProduct(item)
         toggle()
