@@ -240,7 +240,7 @@ const handleNotReadyToPay=()=>{
       return;
     }
 
-    
+    var amount = cartTotal * 100;
     const {error: backendError, clientSecret} = await fetch(
       'https://stripeserver.digitechniq.in/create-payment-intent', 
       {
@@ -250,9 +250,9 @@ const handleNotReadyToPay=()=>{
         },
         body: JSON.stringify({
           paymentMethodType: 'card',
-          amount:100,
-          currency: 'usd'
-          
+          amount:amount,
+          currency: 'inr',
+          customer: data.email,
         }),
       }
     ).then((r) => r.json());
@@ -263,14 +263,14 @@ const handleNotReadyToPay=()=>{
     }
 
     console.log('Client secret returned');
-
+    var customerInfo = data.first_name+" - " + data.last_name+" - "+data.phone+" - "+data.email;
     const {error: stripeError, paymentIntent} = await stripe.confirmCardPayment(
       clientSecret,
       {
         payment_method: {
           card: elements.getElement(CardElement),
           billing_details: {
-            name: data.name,
+            name: customerInfo,
           },
         },
       }
