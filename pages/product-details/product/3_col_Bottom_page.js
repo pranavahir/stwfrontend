@@ -9,32 +9,92 @@ import Detail from '../common/detailPage';
 import { CurrencyContext } from '../../../helpers/Currency/CurrencyContext';
 
 const GET_SINGLE_PRODUCTS = gql`
-    query product ($id:Int!) {
-        product (id:$id) {
-            id
+    query product ($asin:String!) {
+        product (asin:$asin) { seqid
+            sku
             title
             description
-            type
-            brand
-            category 
-            price
-            new
-            sale
+            bullepoints
+            brandid
+            categoryid
+            isvisible
+            isactive
+            warehouseid
+            metatagdescription
+            seokeywords
+            weight
+            height
+            width
+            length
+            fromcurrency
+            brandname
+            categoryvalue
+            asin
+      images{
+          productid
+          mainimageurl
+          additionalimage1
+          additionalimage2
+          additionalimage3
+          additionalimage4
+          additionalimage5
+      }
+         specifications
+      {
+           seqid
+            productid
+            upc
+            mpn
+            partnumber
+            isbn
+            screendisplaysize
+            maxscreenresolution
+            processor
+            ram
+            memoryspeed
+            harddrive
+            graphiccoprocessor
+            chipsetbrand
+            carddescription
+            wirelesstype
+            numberofusb2port
+            numberofusb3port
+            avgbatterylife
+            series
+            operatingsystem
+            processorbrand
+            processorcount
+            computermemorytype
+            flashmemorysize
+            hardriveinterface
+            harddriverotationalspeed
+            batteries
+            itemdimension
+            productdimension
+            opticalzoom
+            publisher
+            size
+
+       }
+      variants
+      {
+            variantid
+            sku
+            productid
+            color
+            size
+            processor
+            graphics
             discount
-            stock
-            variants
-            {
-                id
-                color
-                image_id
-                variant_id
-                size
-            }
-            images
-            {
-                image_id
-                src
-            }
+            conversionrate
+                frieghtrate
+                duty
+                taxes
+                fees
+                margin
+            price 
+      }
+
         }
     }
 `;
@@ -47,7 +107,7 @@ const ThreeColRightPage = () => {
     const slider2 = useRef();
     var { loading, data } = useQuery(GET_SINGLE_PRODUCTS, {
         variables: {
-            id: 1
+            asin: "1"
         }
     });
     var products = {

@@ -13,9 +13,8 @@ import { Container, Row, Col, Media } from 'reactstrap';
 import { CurrencyContext } from '../../../helpers/Currency/CurrencyContext';
 
 const GET_SINGLE_PRODUCTS = gql`
-    query product ($id:Int!) {
-        product (id:$id) {
-            seqid
+    query product ($asin:String!) {
+        product (asin:$asin) { seqid
             sku
             title
             description
@@ -36,49 +35,50 @@ const GET_SINGLE_PRODUCTS = gql`
             categoryvalue
             asin
       images{
-            productid
-            mainimageurl
-            additionalimage1
-            additionalimage2
-            additionalimage3
-            additionalimage4
-            additionalimage5
-      }        
-      specifications
+          productid
+          mainimageurl
+          additionalimage1
+          additionalimage2
+          additionalimage3
+          additionalimage4
+          additionalimage5
+      }
+         specifications
       {
-        seqid
-        productid
-        upc
-        mpn
-        partnumber
-        isbn
-        screendisplaysize
-        maxscreenresolution
-        processor
-        ram
-        memoryspeed
-        harddrive
-        graphiccoprocessor
-        chipsetbrand
-        carddescription
-        wirelesstype
-        numberofusb2port
-        numberofusb3port
-        avgbatterylife
-        series
-        operatingsystem
-        processorbrand
-        processorcount
-        computermemorytype
-        flashmemorysize
-        hardriveinterface
-        harddriverotationalspeed
-        batteries
-        itemdimension
-        productdimension
-        opticalzoom
-        publisher
-        size
+           seqid
+            productid
+            upc
+            mpn
+            partnumber
+            isbn
+            screendisplaysize
+            maxscreenresolution
+            processor
+            ram
+            memoryspeed
+            harddrive
+            graphiccoprocessor
+            chipsetbrand
+            carddescription
+            wirelesstype
+            numberofusb2port
+            numberofusb3port
+            avgbatterylife
+            series
+            operatingsystem
+            processorbrand
+            processorcount
+            computermemorytype
+            flashmemorysize
+            hardriveinterface
+            harddriverotationalspeed
+            batteries
+            itemdimension
+            productdimension
+            opticalzoom
+            publisher
+            size
+
        }
       variants
       {
@@ -90,25 +90,28 @@ const GET_SINGLE_PRODUCTS = gql`
             processor
             graphics
             discount
-            price 
             conversionrate
-            frieghtrate
-            duty
-            taxes
-            fees
-            margin
+                frieghtrate
+                duty
+                taxes
+                fees
+                margin
+            price 
       }
-      }
+
+        }
     }
 `;
 
 const LeftSidebarPage = ({ pathId }) => {
 
+    const asin =  pathId.slice(0,pathId.search("-"));
     const curContext = useContext(CurrencyContext);
     const symbol = curContext.state.symbol;
     var { loading, data } = useQuery(GET_SINGLE_PRODUCTS, {
         variables: {
-            id: parseInt(pathId)
+            // id: parseInt(pathId),
+            asin:asin
         }
     });
 

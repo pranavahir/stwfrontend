@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
-import { Container, Row, Col, TabContent, TabPane, Nav, NavItem, NavLink } from 'reactstrap';
-
+// import { Container, Row, Col, TabContent, TabPane, Nav, NavItem, NavLink } from 'reactstrap';
+import { Container, Row, Col, Media, Card, CardBody, Input, NavItem, NavLink, TabContent, Nav, TabPane ,Modal,ModalBody ,ModalFooter,ModalHeader, Button, Label } from 'reactstrap';
 
 const ProductTab = ({selectedItem}) => {
     const productData = selectedItem;
@@ -13,8 +13,9 @@ const ProductTab = ({selectedItem}) => {
         return JSON.parse(JSON.stringify(Value))
     }
 
-    const specFormation=(specifications)=>{
+    const specFormation=(product)=>{
 
+        var specifications = product.specifications[0]
         var specificationsDetails = [];
         var data={
                 key:null,
@@ -24,6 +25,12 @@ const ProductTab = ({selectedItem}) => {
         {
           
             
+            if(product.asin!=null && product.asin!=undefined && product.asin!="")
+            {
+                data.key = "ASIN";
+                data.value = product.asin;
+                specificationsDetails.push(JsonCopy(data));
+            }
             if(specifications.upc!=null && specifications.upc!=undefined && specifications.upc!="")
             {
                 data.key = "UPC";
@@ -254,76 +261,67 @@ const ProductTab = ({selectedItem}) => {
     if(productData!=null || productData!=undefined)
     {
         productDesc = productData.product.description;
-        bulletpoints = productData.product.bullepoints;
-        SpecificationsData = specFormation(productData.product.specifications[0]);
+        if(productDesc==null || productDesc=="" || productDesc==undefined)
+        {
+            productDesc = "<--- No description available --->";     
+        }
+        SpecificationsData = specFormation(productData.product);
     }
 
     const productDescriptions = productDesc;
-    const productbulletpoints = bulletpoints;
 
     const [activeTab, setActiveTab] = useState('1');
   
     return (
    
-        <section className="tab-product m-0">
-            <Container>
+        <section className="section-b-space typography_section">
+        <Container>
                 <Row>
-                    <Col sm="12" lg="12">
-                        <Row className="product-page-main m-0">
-                            <Nav tabs className="nav-material">
-                                <NavItem className="nav nav-tabs" id="myTab" role="tablist">
-                                    <NavLink className={activeTab === '1' ? 'active' : ''} onClick={() => setActiveTab('1')}>
-                                        Description
-                                        </NavLink>
-                                </NavItem>
-                                <NavItem className="nav nav-tabs" id="myTab" role="tablist">
-                                    <NavLink className={activeTab === '2' ? 'active' : ''} onClick={() => setActiveTab('2')}>
-                                    Specifications
-                                        </NavLink>
-                                </NavItem>
-                                <NavItem className="nav nav-tabs" id="myTab" role="tablist">
-                                    <NavLink className={activeTab === '3' ? 'active' : ''} onClick={() => setActiveTab('3')}>
-                                        Vedio
-                                        </NavLink>
-                                </NavItem>
-                                <NavItem className="nav nav-tabs" id="myTab" role="tablist">
-                                    <NavLink className={activeTab === '4' ? 'active' : ''} onClick={() => setActiveTab('4')}>
-                                        Write Review
-                                        </NavLink>
-                                </NavItem>
-                            </Nav>
-                            <TabContent activeTab={activeTab} className="nav-material">
-                                <TabPane tabId="1">
-                                    <p className="mb-0 pb-0">{productDescriptions}</p>
-                                </TabPane>
-                                <TabPane tabId="2">
-                                    {/* <p className="mb-0 pb-0">{SpecificationsData}</p> */}
-                                    
-                                            <table>
-                                                <thead>
-                                                <tr>
-                                                    <th>Name</th>
-                                                    <th>Value</th>
-                                                </tr>
-                                                </thead>
-                                                <tbody>
+                   
+                        <Col lg="12">
+                           
+                            <div className="typography-box">
+                                <div className="headings">
+                                    <h3>Description</h3>
+                                </div>
+                                <div className="typo-content">
+                                    <p><strong>{productDescriptions}</strong></p>
+                                </div>
+                            </div>
+                            <div className="typography-box">
+                                <div className="headings">
+                                    <h3>Specifications</h3>
+                                </div>
+                                <div className="typo-content">
+                                    <p><strong>
+                                    <Col lg="12">
+                                        <Card className="dashboard-table" style={{border:"none"}}>
+                                            <CardBody>
+                                                {/* <h3>Specifications</h3> */}
+                                                <table className="table mb-0">
+                                                    {/* <thead>
+                                                        <tr>
+                                                            <th scope="col">order id</th>
+                                                            <th scope="col">product details</th>
+                                                            <th scope="col">status</th>
+                                                        </tr>
+                                                    </thead> */}
+
+                                                    <tbody>
                                                     {SpecificationsData.map(spec => {
-                                                    return <tr><td>{spec.key}</td><td>{spec.value}</td></tr>;
+                                                    return <tr><th  style={{backgroundColor:"#f3f3f3"}} >{spec.key}</th><td>{spec.value}</td></tr>;
                                                     })}
                                                 </tbody>
-                                            </table>
-                                    
-                                </TabPane>
-                                <TabPane tabId="3">
-                                    <p className="mb-0 pb-0"> sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-                                </TabPane>
-                                <TabPane tabId="4">
-                                    <p className="mb-0 pb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-                                </TabPane>
-                            </TabContent>
+
+                                                </table>
+                                            </CardBody>
+                                        </Card>
+                                    </Col>
+                                    </strong></p>
+                                </div>
+                            </div>
+                        </Col>
                         </Row>
-                    </Col>
-                </Row>
             </Container>
         </section>
     )

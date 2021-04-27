@@ -11,6 +11,7 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
     const cartContext = useContext(CartContext);
     const curContext = useContext(CurrencyContext);
     const currency = curContext.state;
+    const symbol = curContext.state.symbol;
     const plusQty = cartContext.plusQty;
     const minusQty = cartContext.minusQty;
     const quantity = cartContext.quantity;
@@ -37,8 +38,9 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
         {
             if(variantData.length > 0)
             {
-                sellPrice = ((variantData[0].conversionrate *  ((variantData[0].price +2 ) * 1.0825 )  + (variantData[0].frieghtrate)) * (1 + variantData[0].duty)) * Math.round((1/(1-((variantData[0].taxes / (1 + (variantData[0].taxes)))+(variantData[0].fees / (1 + (variantData[0].fees)))+(variantData[0].margin / (1 + (variantData[0].margin)))))),4);
-                console.log(sellPrice);
+                sellPrice = Math.floor(((variantData[0].conversionrate *  ((variantData[0].price +2 ) * 1.0825 )  + (variantData[0].frieghtrate)) * (1 + variantData[0].duty)) * (1/(1-((variantData[0].fees / (1 + (variantData[0].fees)))+(variantData[0].margin / (1 + (variantData[0].margin)))))),0);
+
+                // sellPrice = ((variantData[0].conversionrate *  ((variantData[0].price +2 ) * 1.0825 )  + (variantData[0].frieghtrate)) * (1 + variantData[0].duty)) * Math.round((1/(1-((variantData[0].taxes / (1 + (variantData[0].taxes)))+(variantData[0].fees / (1 + (variantData[0].fees)))+(variantData[0].margin / (1 + (variantData[0].margin)))))),4);
             }
             else
             {
@@ -58,7 +60,6 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
             if(variantData.length > 0)
             {
                 discount = variantData[0].discount;
-                console.log(discount);
             }
             else
             {
@@ -71,8 +72,11 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
 
     const clickProductDetail = () => {
 
-        const titleProps = product.title.split(' ').join('-');
-        router.push(`/product-details/${product.seqid}` + '-' + `${titleProps}`);
+        var titleProps = product.title.split(' ').join('-');
+        titleProps = titleProps.replace(/[^\w\s]/gi, '-');
+        titleProps = titleProps.replace('---', '-');
+        titleProps = titleProps.replace('--', '-');
+        router.push(`/product-details/${product.asin}` + '-' + `${titleProps}`);
     }
 
     const variantChangeByColor = (imgId, product_images) => {
@@ -196,7 +200,7 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
                         : ''
                     }
                     <h4>
-                    {currency.symbol} {((priceCollection(product.variants) - (priceCollection(product.variants) * discountCalculation(product.variants) / 100))).toFixed(2)}
+                    {currency.symbol} {Math.floor(((priceCollection(product.variants) - (priceCollection(product.variants) * discountCalculation(product.variants) / 100)))).toFixed(2)}
                         <del><span className="money">{currency.symbol}{(priceCollection(product.variants) * 1).toFixed(2) }</span></del>
                     </h4>
 
@@ -237,7 +241,10 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
                         <Col lg="6" className="rtl-text">
                             <div className="product-right">
                                 <h2> {product.title} </h2>
-                                <h3> $ {(product.price * 1).toFixed(2)}</h3>
+                                <h4>
+                    <del>{symbol}{(priceCollection(product.variants) * 1).toFixed(2)}</del>
+                    <span>{discountCalculation(product.variants)}% off</span></h4>
+                <h3>{symbol}{Math.floor((priceCollection(product.variants) - (priceCollection(product.variants) * discountCalculation(product.variants) / 100))).toFixed(2)} </h3>
                                 {product.variants ?
                                     <ul className="color-variant">
                                         {uniqueTags ?
@@ -258,19 +265,19 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
                                                 } */}
                                             </ul> : ''}
                                     </ul> : ''}
-                                <div className="border-product">
-                                    <h6 className="product-title">product details</h6>
-
-                                    {descriptionFormation(product.bullepoints) ?
-                                            <div className="size-box">
+                                    <div className="border-product">
+                    <h6 className="product-title">product details</h6>
+                    
+                    {descriptionFormation(product.bullepoints) ?
+                                            <div >
                                                 <ul>
                                                     {descriptionFormation(product.bullepoints).map((size, i) => {
-                                                        return <li key={i}><a href={null}>{size}</a></li>
+                                                        return <li key={i}><i className="fa fa-angle-double-right mr-2"></i>{size}<br/></li>
                                                     })}
                                                 </ul>
                                             </div> : ''}
-                                     
-                                </div>
+                </div>
+                                
                                 <div className="product-description border-product">
                                     {/* {product.size ?
                                         <div className="size-box">

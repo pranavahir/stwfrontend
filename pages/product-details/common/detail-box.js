@@ -9,9 +9,8 @@ import { useQuery } from '@apollo/react-hooks';
 import gql from 'graphql-tag';
 
 const GET_SINGLE_PRODUCTS = gql`
-    query product ($id:Int!) {
-        product (id:$id) {
-            seqid
+    query product ($asin:String!) {
+        product (asin:$asin) { seqid
             sku
             title
             description
@@ -28,16 +27,55 @@ const GET_SINGLE_PRODUCTS = gql`
             width
             length
             fromcurrency
+            brandname
+            categoryvalue
             asin
       images{
-            productid
-            mainimageurl
-            additionalimage1
-            additionalimage2
-            additionalimage3
-            additionalimage4
-            additionalimage5
+          productid
+          mainimageurl
+          additionalimage1
+          additionalimage2
+          additionalimage3
+          additionalimage4
+          additionalimage5
       }
+         specifications
+      {
+           seqid
+            productid
+            upc
+            mpn
+            partnumber
+            isbn
+            screendisplaysize
+            maxscreenresolution
+            processor
+            ram
+            memoryspeed
+            harddrive
+            graphiccoprocessor
+            chipsetbrand
+            carddescription
+            wirelesstype
+            numberofusb2port
+            numberofusb3port
+            avgbatterylife
+            series
+            operatingsystem
+            processorbrand
+            processorcount
+            computermemorytype
+            flashmemorysize
+            hardriveinterface
+            harddriverotationalspeed
+            batteries
+            itemdimension
+            productdimension
+            opticalzoom
+            publisher
+            size
+
+       }
       variants
       {
             variantid
@@ -47,8 +85,16 @@ const GET_SINGLE_PRODUCTS = gql`
             size
             processor
             graphics
+            discount
+            conversionrate
+                frieghtrate
+                duty
+                taxes
+                fees
+                margin
             price 
       }
+
         }
     }
 `;

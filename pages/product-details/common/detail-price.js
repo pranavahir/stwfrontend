@@ -35,7 +35,7 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
         {
             if(variantData.length > 0)
             {
-                sellPrice = ((variantData[0].conversionrate *  ((variantData[0].price +2 ) * 1.0825 )  + (variantData[0].frieghtrate)) * (1 + variantData[0].duty)) * Math.round((1/(1-((variantData[0].taxes / (1 + (variantData[0].taxes)))+(variantData[0].fees / (1 + (variantData[0].fees)))+(variantData[0].margin / (1 + (variantData[0].margin)))))),4);
+                sellPrice = Math.floor(((variantData[0].conversionrate *  ((variantData[0].price +2 ) * 1.0825 )  + (variantData[0].frieghtrate)) * (1 + variantData[0].duty)) * (1/(1-((variantData[0].fees / (1 + (variantData[0].fees)))+(variantData[0].margin / (1 + (variantData[0].margin)))))),0);
                 
             }
             else
@@ -91,7 +91,7 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
                 <h4>
                     <del>{symbol}{(priceCollection(product.variants) * 1).toFixed(2)}</del>
                     <span>{discountCalculation(product.variants)}% off</span></h4>
-                <h3>{symbol}{(priceCollection(product.variants) - (priceCollection(product.variants) * discountCalculation(product.variants) / 100)).toFixed(2)} </h3>
+                <h3>{symbol}{Math.floor((priceCollection(product.variants) - (priceCollection(product.variants) * discountCalculation(product.variants) / 100))).toFixed(2)} </h3>
                 {product.variants.map(vari => {
                     var findItem = uniqueColor.find(x => x.color === vari.color);
                     if (!findItem)
@@ -172,11 +172,11 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
                     
                     {descriptionFormation(product.bullepoints) ?
                                             <div >
-                                                <ol>
+                                                <ul>
                                                     {descriptionFormation(product.bullepoints).map((size, i) => {
-                                                        return <li key={i}>{size}<br/></li>
+                                                        return <li key={i}><i className="fa fa-angle-double-right mr-2"></i>{size}<br/></li>
                                                     })}
-                                                </ol>
+                                                </ul>
                                             </div> : ''}
                 </div>
                 <div className="border-product">

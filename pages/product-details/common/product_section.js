@@ -110,7 +110,7 @@ const ProductSection = () => {
 
     const clickProductDetail = (product) => {
         const titleProps = product.title.split(' ').join('');
-        router.push(`/product-details/${product.id}` + '-' + `${titleProps}`);
+        router.push(`/product-details/${product.asin}` + '-' + `${titleProps}`);
     }
    
     const getSelectedProduct = (item) => {

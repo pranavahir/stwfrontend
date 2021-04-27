@@ -1806,7 +1806,7 @@ export default {
 
     decimalToNear: function(number) {
         console.log("number");
-        number = Math.ceil(number);
+        number = Math.floor(number);
         return number;
     },
 
