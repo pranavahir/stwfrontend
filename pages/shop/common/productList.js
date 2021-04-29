@@ -10,18 +10,18 @@ import { useRouter } from 'next/router';
 import PostLoader from '../../../components/common/PostLoader';
 import CartContext from '../../../helpers/cart';
 import {WishlistContext} from '../../../helpers/wishlist/WishlistContext';
-import { CompareContext } from '../../../helpers/Compare/CompareContext';
+import {CompareContext} from '../../../helpers/Compare/CompareContext';
 
 const GET_PRODUCTS = gql`
-    query  products($type:String!,$indexFrom:Int! ,$limit:Int!,$color:String!,$brand:[String!]! ,$priceMax:Int!,$priceMin:Int!) {
-        products (type: $type ,indexFrom:$indexFrom ,limit:$limit ,color:$color ,brand:$brand  ,priceMax:$priceMax,priceMin:$priceMin){
-  total{
+    query  products($type:String!,$indexFrom:Int! ,$limit:Int!,$color:String!,$brand:[String!]! ,$priceMax:Int!,$priceMin:Int!,$keyword:String!) {
+        products (type: $type ,indexFrom:$indexFrom ,limit:$limit ,color:$color ,brand:$brand  ,priceMax:$priceMax,priceMin:$priceMin,keyword:$keyword){
+  total(keyword:$keyword){
             total
         }
-        hasMore(limit:$limit,indexFrom:$indexFrom){
+        hasMore(limit:$limit,indexFrom:$indexFrom,keyword:$keyword){
             seqid
         }
-        items(limit:$limit,indexFrom:$indexFrom){
+        items(limit:$limit,indexFrom:$indexFrom,keyword:$keyword){
             seqid
             sku
             title
@@ -86,6 +86,7 @@ const ProductList = ({ colClass, layoutList,openSidebar,noSidebar }) => {
     const [grid, setGrid] = useState(colClass)
     const symbol = curContext.state.symbol;
     const filterContext = useContext(FilterContext);
+    const selectedKeyword = filterContext.selectedKeyword;
     const selectedBrands = filterContext.selectedBrands;
     const selectedColor = filterContext.selectedColor;
     const selectedPrice = filterContext.selectedPrice;
@@ -95,6 +96,9 @@ const ProductList = ({ colClass, layoutList,openSidebar,noSidebar }) => {
     const [isLoading, setIsLoading] = useState(false);
     const [layout, setLayout] = useState(layoutList);
     const [url, setUrl] = useState();
+
+
+    console.log(selectedKeyword);
 
     useEffect(() => {
         const pathname = window.location.pathname;
@@ -111,7 +115,8 @@ const ProductList = ({ colClass, layoutList,openSidebar,noSidebar }) => {
             color: "red",
             brand: "max",
             indexFrom: 0,
-            limit: 10
+            limit: 10,
+            keyword:selectedKeyword
         }
     });
     

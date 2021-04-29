@@ -35,7 +35,7 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
         {
             if(variantData.length > 0)
             {
-                sellPrice = Math.floor(((variantData[0].conversionrate *  ((variantData[0].price +2 ) * 1.0825 )  + (variantData[0].frieghtrate)) * (1 + variantData[0].duty)) * (1/(1-((variantData[0].fees / (1 + (variantData[0].fees)))+(variantData[0].margin / (1 + (variantData[0].margin)))))),0);
+                sellPrice = Math.floor(((variantData[0].conversionrate *  ((variantData[0].price +2 ) * 1.0825 )  + (variantData[0].frieghtrate)) * (1 + variantData[0].duty)) * (1/(1-((variantData[0].fees / (1 + (variantData[0].fees)))+(variantData[0].margin / (1 + (variantData[0].margin)))))),-1);
                 
             }
             else
@@ -190,10 +190,10 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
                         </ul>
                     </div>
                 </div>
-                <div className="border-product">
+                {/* <div className="border-product">
                     <h6 className="product-title">Time Reminder</h6>
                     <CountdownComponent />
-                </div>
+                </div> */}
             </div>
             <Modal open={open} onClose={onCloseModal} center>
                 <div className="modal-dialog modal-dialog-centered" role="document">
