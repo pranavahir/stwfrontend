@@ -120,7 +120,7 @@ const CheckoutPage = ({ isPublic = false }) => {
   const OrderedMail = async (productDetail,customerDetail) =>{
 
     const { error: backendMailError, clientMail } = await fetch(
-      "http://razorpaypayment.digitechniq.in/email/send",
+      "https://razorpaypayment.digitechniq.in/email/send",
       {
         method: "POST",
         headers: {
@@ -150,6 +150,68 @@ const CheckoutPage = ({ isPublic = false }) => {
       if(paymentGateway == "Razorpay")
       {
 
+        var OrderDetail = {
+          orderdetailid: 2,
+          productsku: "item.sku",
+          producttitle: "item.title",
+          quantity: 1,
+          totalprice: 0,
+          customerid: 1,
+          customername: customerData.first_name,
+          paymentmethod: "Card - Razorpay - "+PaymentDetail.id,
+          trackingnumber: "stw-tkno-0123",
+          orderstatus: "Order - Placed",
+        };
+    
+        var orderResult = 0;
+        cartItems.map((item, index) => {
+          OrderDetail = {
+            orderdetailid: 2,
+            productsku: item.sku,
+            producttitle: item.title,
+            quantity: 1,
+            totalprice: item.total,
+            customerid: 1,
+            customername: customerData.first_name,
+            paymentmethod: "Card - Razorpay - "+PaymentDetail.id,
+            trackingnumber: "stw-tkno-0123",
+            orderstatus: "Order - Placed",
+          };
+    
+          try {
+            var orderData = createOrder({
+              variables: { order: { ...OrderDetail } },
+            });
+            //  history.push('/multikart-admin/menus/list-menu')
+            //  toast.success("Successfully Added !")
+      
+          } catch (err) {
+            console.log(err.message);
+          }
+        });
+
+        if(cartItems.length==1)
+        {
+          OrderedMail(cartItems[0],customerData);
+        }
+        else
+        {
+          for(var i=0;i>cartItems.length;i++)
+          {
+            OrderedMail(cartItems[i],customerData);
+          }
+        }
+
+        router.push({
+          pathname: "/page/order-success",
+          state: {
+            payment: payment,
+            items: cartItems,
+            orderTotal: 77.9,
+            symbol: symbol,
+          },
+        });
+
       }
       else if(paymentGateway=="Stripe")
       {
@@ -162,7 +224,7 @@ const CheckoutPage = ({ isPublic = false }) => {
             totalprice: 0,
             customerid: 1,
             customername: customerData.first_name,
-            paymentmethod: "Card - "+PaymentDetail.id,
+            paymentmethod: "Card - Stripe - "+PaymentDetail.id,
             trackingnumber: "stw-tkno-0123",
             orderstatus: "Order - Placed",
           };
@@ -177,7 +239,7 @@ const CheckoutPage = ({ isPublic = false }) => {
               totalprice: item.total,
               customerid: 1,
               customername: customerData.first_name,
-              paymentmethod: "Card - "+PaymentDetail.id,
+              paymentmethod: "Card - Stripe - "+PaymentDetail.id,
               trackingnumber: "stw-tkno-0123",
               orderstatus: "Order - Placed",
             };
@@ -390,7 +452,7 @@ const CheckoutPage = ({ isPublic = false }) => {
       return;
     }
 
-    const API_URL = `http://razorpaypayment.digitechniq.in/razorpay/`;
+    const API_URL = `https://razorpaypayment.digitechniq.in/razorpay/`;
     const orderUrl = `${API_URL}order`;
     const response = await Axios.post(orderUrl, { amount: cartTotal });
     const { data } = response;
@@ -405,7 +467,7 @@ const CheckoutPage = ({ isPublic = false }) => {
         try {
           const paymentId = response.razorpay_payment_id;
           console.log(paymentId);
-          const url = `http://razorpaypayment.digitechniq.in/razorpay/capture/${paymentId}`;
+          const url = `https://razorpaypayment.digitechniq.in/razorpay/capture/${paymentId}`;
           const captureResponse = await Axios.post(url, {
             amount: cartTotal,
           });

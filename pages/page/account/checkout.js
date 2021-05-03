@@ -9,7 +9,7 @@ import { ApolloProvider, useQuery } from "@apollo/react-hooks"
 import ApolloClient from "apollo-boost"
 
 const client = new ApolloClient({
-    uri: "http://localhost:4000/graphql"
+    uri: "https://stwecommerceapi.herokuapp.com/api/graphql"
   })
 
   
