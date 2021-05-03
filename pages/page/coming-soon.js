@@ -47,7 +47,7 @@ const ComingSoon = () => {
                                 </div>
                             </div>
                             <div id="powered">
-                                <p>© 2021, Powered by Multikart.</p>
+                                <p>© 2021, Powered by Shop The World.</p>
                             </div>
                         </div>
                     </div>

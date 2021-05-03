@@ -14,15 +14,16 @@ const TopBarDark = ({ topClass, fluid }) => {
         <div className={topClass}>
             <Container fluid={fluid}>
                 <Row>
-                    <Col lg="6">
+                    <Col lg="8">
                         <div className="header-contact">
                             <ul>
-                                <li>Welcome to Our store Multikart</li>
-                                <li><i className="fa fa-phone" aria-hidden="true"></i>Call Us: 123 - 456 - 7890</li>
+                                <li>Welcome to Our store Shop The World</li>
+                                <li><i className="fa fa-phone" aria-hidden="true"></i>Call Us: +91 9820168421</li>
+                                <li><i className="fa fa-whatsapp" aria-hidden="true"></i>WhatsApp: +91 9820168421</li>
                             </ul>
                         </div>
                     </Col>
-                    <Col lg="6" className="text-right">
+                    <Col lg="4" className="text-right">
                         <ul className="header-dropdown">
                             <li className="mobile-wishlist">
                                 <Link href="/page/account/wishlist">

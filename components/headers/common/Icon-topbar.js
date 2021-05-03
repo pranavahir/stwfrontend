@@ -35,11 +35,12 @@ const IconTopbar = () => {
             <div className="top-header">
                 <Container>
                     <Row className="main-menu">
-                        <Col sm="6">
+                        <Col sm="8">
                             <div className="header-contact">
                                 <ul>
-                                    <li>Welcome to Our store Multikart</li>
-                                    <li><i className="fa fa-phone" aria-hidden="true"></i>Call Us: 123 - 456 - 7890</li>
+                                    <li>Welcome to Our store Shop The World</li>
+                                    <li><i className="fa fa-phone" aria-hidden="true"></i>Call Us: +91 9820168421</li>
+                                    <li><i className="fa fa-whatsapp" aria-hidden="true"></i>WhatsApp: +91 9820168421</li>
                                 </ul>
                             </div>
                             <div className="menu-left">
@@ -55,7 +56,7 @@ const IconTopbar = () => {
                                 </div>
                             </div>
                         </Col>
-                        <Col sm="6">
+                        <Col sm="4">
                             <div className="menu-right pull-right">
                                 <ul className="header-dropdown">
                                     <li className="mobile-wishlist">

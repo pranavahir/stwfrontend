@@ -5,6 +5,14 @@ import CheckoutPage from './common/checkout-page';
 import Login from '../../page/account/login-auth'
 import {Elements} from '@stripe/react-stripe-js';
 import {loadStripe} from '@stripe/stripe-js';
+import { ApolloProvider, useQuery } from "@apollo/react-hooks"
+import ApolloClient from "apollo-boost"
+
+const client = new ApolloClient({
+    uri: "http://localhost:4000/graphql"
+  })
+
+  
 
 const Checkout = () => {
     const [currentUser, setCurrentUser] = useState(false);
@@ -15,6 +23,7 @@ const Checkout = () => {
     return (
         <>
         {currentUser !== null ?
+            <ApolloProvider client={client}>
             <CommonLayout parent="home" title="checkout">
                 <React.StrictMode>
                     <Elements stripe={stripePromise}>
@@ -22,6 +31,7 @@ const Checkout = () => {
                     </Elements>
                 </React.StrictMode>
             </CommonLayout>
+            </ApolloProvider>
         :
         <Login/>
         }

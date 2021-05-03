@@ -25,8 +25,8 @@ const Contact = () => {
                                             <h6>Contact Us</h6>
                                         </div>
                                         <div className="media-body">
-                                            <p>+91 123 - 456 - 7890</p>
-                                            <p>+86 163 - 451 - 7894</p>
+                                            <p>+91 9820168421</p>
+                                            <p>+91 9820168421</p>
                                         </div>
                                     </li>
                                     <li>

@@ -35,11 +35,11 @@ const ProfilePage = () => {
                                 </div>
                                 <div className="profile-detail">
                                     <div>
-                                        <p>Based in United States, Fashion store has been an Multikart member since May 15, 2017.
+                                        <p>Based in United States, Fashion store has been an Shop The World member since May 15, 2017.
                                         Fashion Store are engaged in all kinds of western clothing. In garment field we have
                                         maintained 3 years exporting experience. company insist in the principle of "Customer
                                 first, Quality uppermost".Based in United States, Fashion store has been an </p>
-                                        <p>Based in United States, Fashion store has been an Multikart member since May 15, 2017.
+                                        <p>Based in United States, Fashion store has been an Shop The World member since May 15, 2017.
                                         Fashion Store are engaged in all kinds of western clothing. In garment field we have
                                         maintained 3 years exporting experience. company insist in the principle of "Customer
                                         first, Quality uppermost"

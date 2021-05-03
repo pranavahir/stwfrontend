@@ -13,7 +13,7 @@ const Become = () => {
                                 className="img-fluid blur-up lazyload" alt="" /></div>
                         </Col>
                         <Col sm="12">
-                            <h4>Start your business with Multikart & reach customers across the World...</h4>
+                            <h4>Start your business with Shop The World & reach customers across the World...</h4>
                             <p className="mb-0">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,</p>
                             <p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and
                             demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee
@@ -228,12 +228,12 @@ const Become = () => {
                     <Col>
                         <div>
                             <h4>start selling</h4>
-                            <p>Multikart marketplace is India’s leading platform for selling online. Be it a manufacturer, vendor or
-                            supplier, simply sell your products online on Multikart and become a top ecommerce player with
+                            <p>Shop The World marketplace is India’s leading platform for selling online. Be it a manufacturer, vendor or
+                            supplier, simply sell your products online on Shop The World and become a top ecommerce player with
                             minimum investment. Through a team of experts offering exclusive seller workshops, training, seller
-                            support and convenient seller portal, Multikart focuses on educating and empowering sellers across
+                            support and convenient seller portal, Shop The World focuses on educating and empowering sellers across
                             India.
-                            Selling on Multikart.com is easy and absolutely free. All you need is to register, list your
+                            Selling on Shop The World.com is easy and absolutely free. All you need is to register, list your
                     catalogue and start selling your products.</p>
                             <Form>
                                 <Row>

@@ -1,6 +1,6 @@
 /*-----------------------------------------------------------------------------------
 
-    Template Name:Multikart
+    Template Name:Shop The World
     Template URI: themes.pixelstrap.com/multikart
     Description: This is E-commerce website
     Author: Pixelstrap
@@ -50,7 +50,7 @@ body {
   font-family: $font_0, $font_1;
   position: relative;
   background: $white;
-  font-size: 14px;
+  font-size: 10px;
   overflow-x: hidden;
   letter-spacing: 0.8px;
 
@@ -1305,8 +1305,8 @@ header {
 
 .onhover-div {
   position: relative;
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding-top: 15px;
+  padding-bottom: 15px;
   font-family: $font_0, $font_1;
 
   img,
@@ -1430,7 +1430,7 @@ header {
 
     li {
       color: $header-font;
-      font-size: 14px;
+      font-size: 10px;
       padding-right: 25px;
 
       i {
@@ -1650,8 +1650,9 @@ header {
 
   .brand-logo {
     display: inline-block;
-    padding-top: 35px;
-    padding-bottom: 35px;
+    // padding-top: 35px;
+    // padding-bottom: 35px;
+    width: 200px;
   }
 
   .menu-left {
@@ -1660,7 +1661,7 @@ header {
 
     .navbar {
       display: inline-block;
-      padding: 40px 45px 40px 0;
+      padding: 15px 20px 15px 0;
 
       i {
         font-size: 28px;
@@ -8640,9 +8641,9 @@ footer {
     li {
       position: relative;
       display: inherit;
-      padding-top: 13px;
+      padding-top: 10px;
       text-transform: capitalize;
-      font-size: 14px;
+      font-size: 12px;
       color: $grey;
 
       a {

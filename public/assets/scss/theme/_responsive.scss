@@ -501,7 +501,7 @@ body {
   .footer-theme {
     .sub-title {
       h4 {
-        font-size: 16px;
+        font-size: 13px;
       }
       .contact-list {
         li {
@@ -801,8 +801,8 @@ body {
       &.sticky {
         &.fixed {
           .toggle-nav {
-            padding-top: 40px;
-            padding-bottom: 40px;
+            padding-top: 15px;
+            padding-bottom: 15px;
           }
         }
       }
@@ -4254,8 +4254,8 @@ body {
   }
   // inner pages //
   .blog-detail-page .comment-section li {
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: 15px;
+    padding-bottom: 15px;
   }
   .product-pagination {
     .pagination {

@@ -120,13 +120,13 @@ const FooterFour = ({ logoName , layoutClass ,footerClass ,newLatter}) => {
                                 </div>
                                 <div className="footer-contant">
                                     <ul className="contact-list">
-                                        <li><i className="fa fa-map-marker"></i>Multikart Demo Store, Demo store
-                                                India 345-659
+                                    <li><i className="fa fa-map-marker"></i>Shop The World
                                             </li>
-                                        <li><i className="fa fa-phone"></i>Call Us: 123-456-7898</li>
+                                        <li><i className="fa fa-phone"></i>Call Us: +91 9820168421</li>
+                                        <li><i className="fa fa-fax"></i>WhatsApp: +91 9820168421</li>
                                         <li><i className="fa fa-envelope-o"></i>Email Us: <a
-                                            href="#">Support@Fiot.com</a></li>
-                                        <li><i className="fa fa-fax"></i>Fax: 123456</li>
+                                            href="#">care@shoptheworldonline.com</a></li>
+                                      
                                     </ul>
                                 </div>
                             </div>

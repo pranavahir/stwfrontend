@@ -52,10 +52,13 @@ const FooterSix = ({layoutClass ,logoName ,footerClass}) => {
                                         <h4>store information</h4></div>
                                     <div className="footer-contant">
                                         <ul className="contact-details">
-                                            <li>Multikart Demo Store, Demo store India 345-659</li>
-                                            <li>Call Us: 123-456-7898</li>
-                                            <li>Email Us: <a href={null}>Support@Fiot.com</a></li>
-                                            <li>Fax: 123456</li>
+                                        <li><i className="fa fa-map-marker"></i>Shop The World
+                                            </li>
+                                        <li><i className="fa fa-phone"></i>Call Us: +91 9820168421</li>
+                                        <li><i className="fa fa-fax"></i>WhatsApp: +91 9820168421</li>
+                                        <li><i className="fa fa-envelope-o"></i>Email Us: <a
+                                            href="#">care@shoptheworldonline.com</a></li>
+                                      
                                         </ul>
                                     </div>
                                 </Col>

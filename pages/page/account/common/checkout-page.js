@@ -1,6 +1,5 @@
 import React, { useContext, useState } from "react";
-import {CardElement, useStripe, useElements} from '@stripe/react-stripe-js';
-
+import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 
 import { Media, Container, Form, Row, Input, Col } from "reactstrap";
 import { PayPalButton } from "react-paypal-button";
@@ -8,196 +7,283 @@ import CartContext from "../../../../helpers/cart";
 import paypal from "../../../../public/assets/images/paypal.png";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/router";
-import Card from '../../../../components/stripeCard/Card';
-import Axios  from "axios";
+import Card from "../../../../components/stripeCard/Card";
+import Axios from "axios";
+import { useMutation } from "@apollo/react-hooks";
+import gql from "graphql-tag";
 import { CurrencyContext } from "../../../../helpers/Currency/CurrencyContext";
-// import Stripe from 'stripe'
-import GooglePayButton from '@google-pay/button-react';
-// import StatusMessages, {useMessages} from './StatusMessages';
+import GooglePayButton from "@google-pay/button-react";
 
-// import  Razorpay = require('razorpay');
-// const stripe = require('stripe')('pk_live_51IYvwgAR19qkTg2Rtd20aLk5vwFsCRajMN8I9aZl8zFfXj14qDxppEDhfLMp51b9OohTumAh7vSlO6IccIP5iIh600zA024lK7');
-
-
-const getServerSideProps = async () => {
-  // const stripe = new Stripe("pk_live_51IYvwgAR19qkTg2Rtd20aLk5vwFsCRajMN8I9aZl8zFfXj14qDxppEDhfLMp51b9OohTumAh7vSlO6IccIP5iIh600zA024lK7");
-
-
-
-  const paymentIntent = await stripe.paymentIntents.create({
-    amount: 1,
-    currency: "usd"
-  });
-
-  return {
-    props: {
-      paymentIntent
+const CREATE_OREDER = gql`
+  mutation CreateOrderDetail($order: OrderDetail!) {
+    CreateOrderDetail(order: $order) {
+      orderdetailid
     }
-  };
-};
+  }
+`;
 
-
-const CheckoutPage = () => {
-
+const CheckoutPage = ({ isPublic = false }) => {
   const cartContext = useContext(CartContext);
   const cartItems = cartContext.state;
-  const cartTotal = (cartContext.cartTotal).toFixed(2);
+  const cartTotal = cartContext.cartTotal.toFixed(2);
   const curContext = useContext(CurrencyContext);
   const symbol = curContext.state.symbol;
   const [obj, setObj] = useState({});
-  const [payment, setPayment] = useState("Gpay");
+  const [payment, setPayment] = useState("stripe");
   const { register, handleSubmit, errors } = useForm(); // initialise the hook
   const router = useRouter();
   const stripe = useStripe();
   const elements = useElements();
-  // const [messages, addMessage] = useMessages();
-
-  // const stripePromise = loadStripe("pk_live_51IYvwgAR19qkTg2Rtd20aLk5vwFsCRajMN8I9aZl8zFfXj14qDxppEDhfLMp51b9OohTumAh7vSlO6IccIP5iIh600zA024lK7");
   const checkhandle = (value) => {
     setPayment(value);
   };
 
-/** Launches payment request flow when user taps on buy button. */
-const onBuyClicked = () =>{
-  const creditCardPaymentMethod = {
-    supportedMethods: 'basic-card',
-    data: {
-        supportedNetworks: ['visa', 'mastercard'],
-        supportedTypes: ['credit', 'debit']
-    }
-};
-const supportedInstruments = [   
-    {     
-        supportedMethods: ['https://tez.google.com/pay'],
+  // const [createOrder] = useMutation(CREATE_OREDER);
+
+  const [createOrder, { orderedData }] = useMutation(CREATE_OREDER);
+
+  /** Launches payment request flow when user taps on buy button. */
+  const onBuyClicked = () => {
+    const creditCardPaymentMethod = {
+      supportedMethods: "basic-card",
+      data: {
+        supportedNetworks: ["visa", "mastercard"],
+        supportedTypes: ["credit", "debit"],
+      },
+    };
+    const supportedInstruments = [
+      {
+        supportedMethods: ["https://tez.google.com/pay"],
         //supportedMethods:[creditCardPaymentMethod],
         data: {
+          pa: "shoptheworld@dbs",
+          pn: "STW E-Commerce",
+          tr: "123456ABCDEFSD",
+          url: "http://localhost:3000/page/account/checkout",
+          mc: "5045",
+          tn: "Purchase in Merchant",
+        },
+      },
+    ];
 
-            pa:'shoptheworld@dbs',
-            pn:'STW E-Commerce',
-            tr:'123456ABCDEFSD',
-            url:'http://localhost:3000/page/account/checkout',
-            mc:'5045',
-            tn:'Purchase in Merchant'
-        }   
-    } 
-];
-
- 
-
-var details = 
-    {   
-    total: 
-        {     
-        label:'Total',     
-        amount: {       
-            currency:'INR',       
-            value:'10.01' //sample amount 
-        }
-    },
-    displayItems: [
+    var details = {
+      total: {
+        label: "Total",
+        amount: {
+          currency: "INR",
+          value: "10.01", //sample amount
+        },
+      },
+      displayItems: [
         {
-            label:'Original Amount',     
-            amount: {       
-                currency:'INR',       
-                value:'10.01'
-            }
-        }
-    ]
-};
-var request =null;
-try {
-    request = new PaymentRequest(supportedInstruments, details);
-    console.log(request);
-    /*request.show()
+          label: "Original Amount",
+          amount: {
+            currency: "INR",
+            value: "10.01",
+          },
+        },
+      ],
+    };
+    var request = null;
+    try {
+      request = new PaymentRequest(supportedInstruments, details);
+      console.log(request);
+      /*request.show()
     .then(function(result){
         alert("hai");
     })
      .catch(function(err){
         alert('Payment Request Error: '+ err.message+' 74'); 
     });*/
-}catch (e) {
-    alert('Payment Request Error: '+ e.message+'77'); 
-    console.log('Payment Request Error: '+ e.message);
-    //return;
-} 
-if (!request) {  
-    alert('Web payments are not supported in this browser 77'); 
-    console.log('Web payments are not supported in this browser.'); 
-    // return;
-} 
+    } catch (e) {
+      alert("Payment Request Error: " + e.message + "77");
+      console.log("Payment Request Error: " + e.message);
+      //return;
+    }
+    if (!request) {
+      alert("Web payments are not supported in this browser 77");
+      console.log("Web payments are not supported in this browser.");
+      // return;
+    }
 
-var canMakePaymentPromise = checkCanMakePayment(request);
-canMakePaymentPromise
-.then(function(result){
-    showPaymentUI(request,result)
-})
-.catch(function(err){
-    console.log('Error in calling checkCanMakePayment: ' + err); 
-});
-};
-const canMakePaymentCache = 'canMakePaymentCache';
+    var canMakePaymentPromise = checkCanMakePayment(request);
+    canMakePaymentPromise
+      .then(function (result) {
+        showPaymentUI(request, result);
+      })
+      .catch(function (err) {
+        console.log("Error in calling checkCanMakePayment: " + err);
+      });
+  };
+  const canMakePaymentCache = "canMakePaymentCache";
 
-// const loadScript=(src) => 
-const checkCanMakePayment=(request)=>{
-// Checks canMakePayment cache, and use the cache result if it exists. 
-if(sessionStorage.hasOwnProperty(canMakePaymentCache)){
-  return Promise.resolve(JSON.parse(sessionStorage[canMakePaymentCache]));
-}
+  const OrderedMail = async (productDetail,customerDetail) =>{
 
-// If canMakePayment() isn't available, default to assuming that the method is supported
-var canMakePaymentPromise = request.canMakePayment();
+    const { error: backendMailError, clientMail } = await fetch(
+      "http://razorpaypayment.digitechniq.in/email/send",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          OrderDetail:productDetail,
+          CustomerDetail:customerDetail
 
-if(request.canMakePayment){
-  canMakePaymentPromise = request.canMakePayment();
-}
+        }),
+      }
+    ).then((r) => r.json());
 
-return canMakePaymentPromise
-.then(function(result){
-  sessionStorage[canMakePaymentCache] = result;
-  return result;
-})
-.catch(function (err){
-  alert('Error calling canMakePayment: '+ err);
-  console.log('Error calling canMakePayment: '+ err);
-});
-};
+    if (backendMailError) {
+      console.log(backendError.message);
+      return;
+    }
+    // else
+    // {
+    //   console.log(clientMail);
+    // }
 
-const showPaymentUI=(request, canMakePayment)=>{
-  if(!canMakePayment){
-    handleNotReadyToPay();
-    return;
-}
-// Set payment timeout.
-var paymentTimeout = window.setTimeout(function(){
-    window.clearTimeout(paymentTimeout);
-    request.abort()
-    .then(function(){
-        alert('Payment timed out after 20 mins 129');
-        console.log('Payment timed out after 20 mins');
-    }).catch(function(){
-        alert('Unable to abort,user is in process of paying 132');
-        console.log('Unable to abort,user is in process of paying');
-    }); 
-}, 20 * 60 * 1000);
-request.show()
-.then(function(paymentResponse){
-    window.clearTimeout(paymentTimeout);
-    alert("Request Success");
-    console.log(paymentResponse);
-    processResponse(paymentResponse); // Handle response from browser
-})
-.catch(function (err){
-   alert(err +'142');
-   console.log(err);
-});
+  }
+
+  const Orderconformation = (paymentGateway,PaymentDetail,customerData)=>{
+
+      if(paymentGateway == "Razorpay")
+      {
+
+      }
+      else if(paymentGateway=="Stripe")
+      {
+
+          var OrderDetail = {
+            orderdetailid: 2,
+            productsku: "item.sku",
+            producttitle: "item.title",
+            quantity: 1,
+            totalprice: 0,
+            customerid: 1,
+            customername: customerData.first_name,
+            paymentmethod: "Card - "+PaymentDetail.id,
+            trackingnumber: "stw-tkno-0123",
+            orderstatus: "Order - Placed",
+          };
+      
+          var orderResult = 0;
+          cartItems.map((item, index) => {
+            OrderDetail = {
+              orderdetailid: 2,
+              productsku: item.sku,
+              producttitle: item.title,
+              quantity: 1,
+              totalprice: item.total,
+              customerid: 1,
+              customername: customerData.first_name,
+              paymentmethod: "Card - "+PaymentDetail.id,
+              trackingnumber: "stw-tkno-0123",
+              orderstatus: "Order - Placed",
+            };
+      
+            try {
+              var orderData = createOrder({
+                variables: { order: { ...OrderDetail } },
+              });
+              //  history.push('/multikart-admin/menus/list-menu')
+              //  toast.success("Successfully Added !")
+        
+            } catch (err) {
+              console.log(err.message);
+            }
+          });
+
+          if(cartItems.length==1)
+          {
+            OrderedMail(cartItems[0],customerData);
+          }
+          else
+          {
+            for(var i=0;i>cartItems.length;i++)
+            {
+              OrderedMail(cartItems[i],customerData);
+            }
+          }
+
+          router.push({
+            pathname: "/page/order-success",
+            state: {
+              payment: payment,
+              items: cartItems,
+              orderTotal: 77.9,
+              symbol: symbol,
+            },
+          });
+         
+
+      }
+
+
+  }
+  // const loadScript=(src) =>
+  const checkCanMakePayment = (request) => {
+    // Checks canMakePayment cache, and use the cache result if it exists.
+    if (sessionStorage.hasOwnProperty(canMakePaymentCache)) {
+      return Promise.resolve(JSON.parse(sessionStorage[canMakePaymentCache]));
+    }
+
+    // If canMakePayment() isn't available, default to assuming that the method is supported
+    var canMakePaymentPromise = request.canMakePayment();
+
+    if (request.canMakePayment) {
+      canMakePaymentPromise = request.canMakePayment();
+    }
+
+    return canMakePaymentPromise
+      .then(function (result) {
+        sessionStorage[canMakePaymentCache] = result;
+        return result;
+      })
+      .catch(function (err) {
+        alert("Error calling canMakePayment: " + err);
+        console.log("Error calling canMakePayment: " + err);
+      });
   };
 
-  
-const handleNotReadyToPay=()=>{
-  alert("Tez is not ready to handle 149");
+  const showPaymentUI = (request, canMakePayment) => {
+    if (!canMakePayment) {
+      handleNotReadyToPay();
+      return;
+    }
+    // Set payment timeout.
+    var paymentTimeout = window.setTimeout(function () {
+      window.clearTimeout(paymentTimeout);
+      request
+        .abort()
+        .then(function () {
+          alert("Payment timed out after 20 mins 129");
+          console.log("Payment timed out after 20 mins");
+        })
+        .catch(function () {
+          alert("Unable to abort,user is in process of paying 132");
+          console.log("Unable to abort,user is in process of paying");
+        });
+    }, 20 * 60 * 1000);
+    request
+      .show()
+      .then(function (paymentResponse) {
+        window.clearTimeout(paymentTimeout);
+        alert("Request Success");
+        console.log(paymentResponse);
+        processResponse(paymentResponse); // Handle response from browser
+      })
+      .catch(function (err) {
+        alert(err + "142");
+        console.log(err);
+      });
   };
-  
-  const processResponse = (paymentResponse)=>{
+
+  const handleNotReadyToPay = () => {
+    alert("Tez is not ready to handle 149");
+  };
+
+  const processResponse = (paymentResponse) => {
     var paymentResponseString = paymentResponseToJsonString(paymentResponse);
     console.log(paymentResponseString);
     /* fetch('/buy',{
@@ -211,11 +297,11 @@ const handleNotReadyToPay=()=>{
     .catch(function(err){
       console.log('Unable to process payment. '+err);   
     });*/
-    };
+  };
 
-  const loadScript=(src) => {
+  const loadScript = (src) => {
     return new Promise((resolve) => {
-      const script = document.createElement('script');
+      const script = document.createElement("script");
       script.src = src;
       script.onload = () => {
         resolve(true);
@@ -225,10 +311,9 @@ const handleNotReadyToPay=()=>{
       };
       document.body.appendChild(script);
     });
-  }
+  };
 
-
-  const stripeSubmit = async (e,data) => {
+  const stripeSubmit = async (e, customerData) => {
     // We don't want to let default form submission happen here,
     // which would refresh the page.
     e.preventDefault();
@@ -236,23 +321,23 @@ const handleNotReadyToPay=()=>{
     if (!stripe || !elements) {
       // Stripe.js has not yet loaded.
       // Make sure to disable form submission until Stripe.js has loaded.
-      console.log('Stripe.js has not yet loaded.');
+      console.log("Stripe.js has not yet loaded.");
       return;
     }
 
     var amount = cartTotal * 100;
-    const {error: backendError, clientSecret} = await fetch(
-      'https://stripeserver.digitechniq.in/create-payment-intent', 
+    const { error: backendError, clientSecret } = await fetch(
+      "https://stripeserver.digitechniq.in/create-payment-intent",
       {
-        method: 'POST',
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          paymentMethodType: 'card',
-          amount:amount,
-          currency: 'inr',
-          customer: data.email,
+          paymentMethodType: "card",
+          amount: amount,
+          currency: "inr",
+          customer: customerData.email,
         }),
       }
     ).then((r) => r.json());
@@ -262,75 +347,67 @@ const handleNotReadyToPay=()=>{
       return;
     }
 
-    console.log('Client secret returned');
-    var customerInfo = data.first_name+" - " + data.last_name+" - "+data.phone+" - "+data.email;
-    const {error: stripeError, paymentIntent} = await stripe.confirmCardPayment(
-      clientSecret,
-      {
-        payment_method: {
-          card: elements.getElement(CardElement),
-          billing_details: {
-            name: customerInfo,
-          },
+    // console.log('Client secret returned');
+    var customerInfo =
+      customerData.first_name +
+      " - " +
+      customerData.last_name +
+      " - " +
+      customerData.phone +
+      " - " +
+      customerData.email;
+    const {
+      error: stripeError,
+      paymentIntent,
+    } = await stripe.confirmCardPayment(clientSecret, {
+      payment_method: {
+        card: elements.getElement(CardElement),
+        billing_details: {
+          name: customerInfo,
         },
-      }
-    );
+      },
+    });
 
     if (stripeError) {
       // Show error to your customer (e.g., insufficient funds)
       console.log(stripeError.message);
       return;
+    } else {
+      Orderconformation("Stripe",paymentIntent,customerData);
     }
 
-    // Show a success message to your customer
-    // There's a risk of the customer closing the window before callback
-    // execution. Set up a webhook or plugin to listen for the
-    // payment_intent.succeeded event that handles any business critical
-    // post-payment actions.
-    console.log(`Payment ${paymentIntent.status}: ${paymentIntent.id}`);
-
-    router.push({
-      pathname: "/page/order-success",
-      state: {
-        payment: payment,
-        items: cartItems,
-        orderTotal: 77.9,
-        symbol: symbol 
-      },
-    });
-
+    // console.log(`Payment ${paymentIntent.status}: ${paymentIntent.id}`);
+ 
   };
 
   const razorPayPaymentHandler = async (filledData) => {
-
     const res = await loadScript(
-      'https://checkout.razorpay.com/v1/checkout.js'
+      "https://checkout.razorpay.com/v1/checkout.js"
     );
 
     if (!res) {
-      alert('Razorpay SDK failed to load. Are you online?');
+      alert("Razorpay SDK failed to load. Are you online?");
       return;
     }
 
-
-    const API_URL = `http://localhost:7000/razorpay/`;
+    const API_URL = `http://razorpaypayment.digitechniq.in/razorpay/`;
     const orderUrl = `${API_URL}order`;
-    const response = await Axios.post(orderUrl, { amount: 1 });
+    const response = await Axios.post(orderUrl, { amount: cartTotal });
     const { data } = response;
     console.log("App -> razorPayPaymentHandler -> data", data);
 
     const options = {
-      key: "",//replace razorpay API key
-      name: filledData.name,
-      description: filledData.firstName,
+      key: "", //replace razorpay API key
+      name: filledData.first_name,
+      description: cartItems[0].title,
       order_id: data.id,
       handler: async (response) => {
         try {
           const paymentId = response.razorpay_payment_id;
           console.log(paymentId);
-          const url = `http://localhost:7000/razorpay/capture/${paymentId}`;
+          const url = `http://razorpaypayment.digitechniq.in/razorpay/capture/${paymentId}`;
           const captureResponse = await Axios.post(url, {
-            amount: 1,
+            amount: cartTotal,
           });
           const successObj = JSON.parse(captureResponse.data);
           const captured = successObj.captured;
@@ -338,7 +415,10 @@ const handleNotReadyToPay=()=>{
           if (captured) {
             // swal("Payment Successfull", "", "success");
             console.log("success");
-            this.setState({ name: "", decription: "", amount: "",});
+            this.setState({ name: "", decription: "", amount: "" });
+            // id
+            Orderconformation("Razorpay",successObj,filledData);
+
           }
         } catch (err) {
           console.log(err);
@@ -351,7 +431,6 @@ const handleNotReadyToPay=()=>{
     const rzp1 = new window.Razorpay(options);
     rzp1.open();
   };
-
 
   const onSuccess = (payment) => {
     console.log(payment);
@@ -366,22 +445,16 @@ const handleNotReadyToPay=()=>{
     });
   };
 
-  const onSubmit = (data,e) => {
+  const onSubmit = (data, e) => {
     if (data !== "") {
-
-        if(payment == "stripe")
-        {
-          stripeSubmit(e,data);
-        }
-        else if(payment == "Razorpay")
-        {
-            razorPayPaymentHandler(data);
-        }
-        else if(payment == "Gpay")
-        {
-          onBuyClicked();
-            // razorPayPaymentHandler(data);
-        }
+      if (payment == "stripe") {
+        stripeSubmit(e, data);
+      } else if (payment == "Razorpay") {
+        razorPayPaymentHandler(data);
+      } else if (payment == "Gpay") {
+        onBuyClicked();
+        // razorPayPaymentHandler(data);
+      }
     } else {
       errors.showMessages();
     }
@@ -392,7 +465,7 @@ const handleNotReadyToPay=()=>{
     setObj(obj);
   };
 
-  const onCancel = (data,) => {
+  const onCancel = (data) => {
     console.log("The payment was cancelled!", data);
   };
 
@@ -401,13 +474,12 @@ const handleNotReadyToPay=()=>{
     console.log("Error!", err);
   };
 
-
-
   const paypalOptions = {
-    clientId:"ASgLRZ4iCd_ijakIF5qE9CLiJY-lOiQN9kF50GNJ4d4g5lCJq5PhIaqhOSI9bJObkp4X6mgD0Op_DBCf",
-    currency:"USD",
-    debug:true,
-    intent:"capture"
+    clientId:
+      "ASgLRZ4iCd_ijakIF5qE9CLiJY-lOiQN9kF50GNJ4d4g5lCJq5PhIaqhOSI9bJObkp4X6mgD0Op_DBCf",
+    currency: "USD",
+    debug: true,
+    intent: "capture",
   };
 
   return (
@@ -564,7 +636,7 @@ const handleNotReadyToPay=()=>{
                               {item.title} × {item.qty}
                               <span>
                                 {symbol}
-                                {(item.total).toFixed(2)}
+                                {item.total.toFixed(2)}
                               </span>
                             </li>
                           ))}
@@ -617,7 +689,7 @@ const handleNotReadyToPay=()=>{
                         <div className="upper-box">
                           <div className="payment-options">
                             <ul>
-                            <li>
+                              {/* <li>
                                 <div className="radio-option gpay">
                                   <input
                                     type="radio"
@@ -628,8 +700,8 @@ const handleNotReadyToPay=()=>{
                                   />
                                   <label htmlFor="payment-4">Gpay</label>
                                 </div>
-                              </li>
-                            <li>
+                              </li> */}
+                              <li>
                                 <div className="radio-option Razorpay">
                                   <input
                                     type="radio"
@@ -646,6 +718,7 @@ const handleNotReadyToPay=()=>{
                                     type="radio"
                                     name="payment-group"
                                     id="payment-2"
+                                    defaultChecked={true}
                                     onClick={() => checkhandle("stripe")}
                                   />
                                   <label htmlFor="payment-2">Stripe</label>
@@ -672,8 +745,7 @@ const handleNotReadyToPay=()=>{
                         </div>
                         {cartTotal !== 0 ? (
                           <div className="text-right">
-                            {payment === "stripe" ? 
-                            (
+                            {payment === "stripe" ? (
                               <Card />
                             ) : payment === "paypal" ? (
                               <PayPalButton
@@ -690,43 +762,53 @@ const handleNotReadyToPay=()=>{
                               </button>
                             ) : (
                               <GooglePayButton
-                              environment="PRODUCTION"
-                              paymentRequest={{
-                                apiVersion: 2,
-                                apiVersionMinor: 0,
-                                allowedPaymentMethods: [
-                                  {
-                                    type: 'CARD',
-                                    parameters: {
-                                      allowedAuthMethods: ['PAN_ONLY', 'CRYPTOGRAM_3DS'],
-                                      allowedCardNetworks: ['MASTERCARD', 'VISA'],
-                                    },
-                                    tokenizationSpecification: {
-                                      type: 'PAYMENT_GATEWAY',
+                                environment="PRODUCTION"
+                                paymentRequest={{
+                                  apiVersion: 2,
+                                  apiVersionMinor: 0,
+                                  allowedPaymentMethods: [
+                                    {
+                                      type: "CARD",
                                       parameters: {
-                                        "gateway": "stripe",
-                                        "stripe:version": "2020-08-27",
-                                        "stripe:publishableKey": "pk_live_51IYvwgAR19qkTg2Rtd20aLk5vwFsCRajMN8I9aZl8zFfXj14qDxppEDhfLMp51b9OohTumAh7vSlO6IccIP5iIh600zA024lK7"
+                                        allowedAuthMethods: [
+                                          "PAN_ONLY",
+                                          "CRYPTOGRAM_3DS",
+                                        ],
+                                        allowedCardNetworks: [
+                                          "MASTERCARD",
+                                          "VISA",
+                                        ],
+                                      },
+                                      tokenizationSpecification: {
+                                        type: "PAYMENT_GATEWAY",
+                                        parameters: {
+                                          gateway: "stripe",
+                                          "stripe:version": "2020-08-27",
+                                          "stripe:publishableKey":
+                                            "pk_live_51IYvwgAR19qkTg2Rtd20aLk5vwFsCRajMN8I9aZl8zFfXj14qDxppEDhfLMp51b9OohTumAh7vSlO6IccIP5iIh600zA024lK7",
+                                        },
                                       },
                                     },
+                                  ],
+                                  merchantInfo: {
+                                    merchantId: "BCR2DN6TV6DL5TL2",
+                                    merchantName: "STW E-Commerce",
                                   },
-                                ],
-                                merchantInfo: {
-                                      merchantId: 'BCR2DN6TV6DL5TL2',
-                                      merchantName: 'STW E-Commerce'
-                                },
-                                transactionInfo: {
-                                  totalPriceStatus: 'FINAL',
-                                  totalPriceLabel: 'Total',
-                                  totalPrice: '1.00',
-                                  currencyCode: 'USD',
-                                  countryCode: 'US',
-                                },
-                              }}
-                              onLoadPaymentData={paymentRequest => {
-                                console.log('load payment data', paymentRequest);
-                              }}
-                            />
+                                  transactionInfo: {
+                                    totalPriceStatus: "FINAL",
+                                    totalPriceLabel: "Total",
+                                    totalPrice: "1.00",
+                                    currencyCode: "USD",
+                                    countryCode: "US",
+                                  },
+                                }}
+                                onLoadPaymentData={(paymentRequest) => {
+                                  console.log(
+                                    "load payment data",
+                                    paymentRequest
+                                  );
+                                }}
+                              />
                             )}
                           </div>
                         ) : (

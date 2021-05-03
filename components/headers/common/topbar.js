@@ -10,7 +10,7 @@ const TopBar = ({topClass}) => {
                     <Col lg="6">
                         <div className="header-contact">
                             <ul>
-                                <li><i className="fa fa-phone" aria-hidden="true"></i>{('call_us')}:  123 - 456 - 7890</li>
+                                <li><i className="fa fa-phone" aria-hidden="true"></i>{('call_us')}:  +91 9820168421</li>
                             </ul>
                         </div>
                     </Col>
