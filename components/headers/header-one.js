@@ -132,7 +132,7 @@ const HeaderOne = ({ logoName, headerClass, topClass, noTopBar ,direction }) => 
 								</div>
 								<div className="menu-right pull-right">
 									{/*Top Navigation Bar Component*/}
-									<NavBar />
+									{/* <NavBar /> */}
 
 									<div>
 										<div className="icon-nav">

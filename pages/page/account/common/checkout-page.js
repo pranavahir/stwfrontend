@@ -29,6 +29,7 @@ const CheckoutPage = ({ isPublic = false }) => {
   const curContext = useContext(CurrencyContext);
   const symbol = curContext.state.symbol;
   const [obj, setObj] = useState({});
+  const [url, setUrl] = useState();
   const [payment, setPayment] = useState("stripe");
   const { register, handleSubmit, errors } = useForm(); // initialise the hook
   const router = useRouter();

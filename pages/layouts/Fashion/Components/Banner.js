@@ -1,9 +1,40 @@
-import React, { Fragment } from 'react';
+import React, {useState, useContext,Fragment} from 'react';
+import FilterContext from '../../../../helpers/filter/FilterContext';
 import Slider from 'react-slick';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { Container, Row, Col } from 'reactstrap';
 
 const Banner = () => {
+
+  const filterContext = useContext(FilterContext);
+	const selectedKeyword = filterContext.selectedKeyword;
+    const selectedBrands = filterContext.selectedBrands;
+    const selectedColor = filterContext.selectedColor;
+    const selectedPrice = filterContext.selectedPrice;
+    const selectedCategory = filterContext.state;
+    const selectedSize = filterContext.selectedSize;
+    const [url, setUrl] = useState();
+    const router = useRouter();
+
+  const CategoryFilter = (category) => {
+    // router.push(`/product-details/${product.id}` + '-' + `${titleProps}`);
+  const pathname = window.location.pathname;
+  setUrl(pathname);
+  if(pathname=="/shop/six_grid")
+  {
+    var URL = pathname;	
+  }
+  else 
+  {
+    var URL = "/shop/six_grid";
+  }
+  console.log(category)
+        filterContext.setSelectedCategory(category)
+        console.log(selectedCategory);
+      router.push(`${URL}?${selectedCategory}&brand=${selectedBrands}&color=${selectedColor}&size=${selectedSize}&minPrice=${selectedPrice.min}&maxPrice=${selectedPrice.max}&keyword=${selectedKeyword}`)
+}
+
   return (
     <Fragment>
       <section className="p-0">
@@ -15,11 +46,9 @@ const Banner = () => {
                   <Col>
                     <div className="slider-contain">
                       <div>
-                        <h4>welcome to fashion</h4>
-                        <h1>men fashion</h1>
-                        <Link href={`/left-sidebar/collection`}> 
-                          <a className="btn btn-solid">shop now </a>
-                        </Link>
+                        <h4>welcome to electronics</h4>
+                        <h1>electronics</h1>
+                          <a onClick={() => CategoryFilter("Electronics")} className="btn btn-solid">shop now </a>
                       </div>
                     </div>
                   </Col>
