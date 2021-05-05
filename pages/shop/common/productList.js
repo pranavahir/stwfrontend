@@ -15,13 +15,13 @@ import {CompareContext} from '../../../helpers/Compare/CompareContext';
 const GET_PRODUCTS = gql`
     query  products($type:String!,$indexFrom:Int! ,$limit:Int!,$color:String!,$brand:[String!]! ,$priceMax:Int!,$priceMin:Int!,$keyword:String!) {
         products (type: $type ,indexFrom:$indexFrom ,limit:$limit ,color:$color ,brand:$brand  ,priceMax:$priceMax,priceMin:$priceMin,keyword:$keyword){
-  total(keyword:$keyword){
+  total(keyword:$keyword,type:$type){
             total
         }
-        hasMore(limit:$limit,indexFrom:$indexFrom,keyword:$keyword){
+        hasMore(limit:$limit,indexFrom:$indexFrom,keyword:$keyword,type:$type){
             seqid
         }
-        items(limit:$limit,indexFrom:$indexFrom,keyword:$keyword){
+        items(limit:$limit,indexFrom:$indexFrom,keyword:$keyword,type:$type){
             seqid
             sku
             title
@@ -98,7 +98,6 @@ const ProductList = ({ colClass, layoutList,openSidebar,noSidebar }) => {
     const [url, setUrl] = useState();
 
 
-    console.log(selectedKeyword);
 
     useEffect(() => {
         const pathname = window.location.pathname;
@@ -109,7 +108,7 @@ const ProductList = ({ colClass, layoutList,openSidebar,noSidebar }) => {
 
     var { loading, data, fetchMore } = useQuery(GET_PRODUCTS, {
         variables: {
-            type: "selectedCategory",
+            type: selectedCategory,
             priceMax: 10,
             priceMin: 1,
             color: "red",
@@ -121,6 +120,13 @@ const ProductList = ({ colClass, layoutList,openSidebar,noSidebar }) => {
     });
     
     console.log(data);
+    if(data!=undefined)
+    {
+        if(data.products.total.total==0)
+        {
+            // router.push("/page/coming-soon")
+        }
+    }
 
 
 
@@ -176,17 +182,73 @@ const ProductList = ({ colClass, layoutList,openSidebar,noSidebar }) => {
                 <Row>
                     <Col sm="12">
                         <div className="top-banner-wrapper">
-                            <a href={null}><Media src={Menu2} className="img-fluid blur-up lazyload" alt="" /></a>
+                            
+                            {data && data.products.total.total>0? 
+                             
                             <div className="top-banner-content small-section">
-                                <h4>fashion</h4>
+                            <a href={null}><Media src={Menu2} className="img-fluid blur-up lazyload" alt="" /></a>
+                                <h4>{selectedCategory}</h4>
                                 <h5>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                             </h5>
                                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled
                                 it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release
                             of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
                             </div>
+                            
+                            : <div className="template-password">
+                <div className="container">
+                    <div id="container" className="text-center">
+                        <div>
+                            <div id="login">
+                                <div>
+                                    <div className="logo mb-4">
+                                        <a href="#">
+                                            <img src="../assets/images/icon/logo.png" alt="Multikart_fashion" className="img-fluid" />
+                                        </a>
+                                    </div>
+                                    <h2 className="mb-3">
+                                    {selectedCategory} Will be Comming Soon!
+                            </h2>
+                                </div>
+                                <div className="row">
+                                    <div className="col-sm-12">
+                                        <form action="#" className="theme-form">
+                                            <div className="col-md-12 mt-2">
+                                                <h3>Enter Your Email: </h3>
+                                            </div>
+                                            <div className="form-row">
+                                                <div className="col-md-12">
+                                                    <input type="password" name="password" id="password" className="form-control"
+                                                        autoFocus="" />
+                                                </div>
+                                                <div className="col-md-12">
+                                                    <div className="actions">
+                                                        <button type="submit" className="btn btn-solid">notify me</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </form>
+                                    </div>
+                                </div>
+                                <div id="footer" className="mt-4">
+                                    <div id="owner">
+                                        Are you the store owner? <a href="#">Log in here</a> or <a href="#">change your password
+                                    settings</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="powered">
+                                <p>© 2021, Powered by Shop The World.</p>
+                            </div>
                         </div>
-                        <Row>
+                    </div>
+                </div>
+            </div>
+                            }
+                        </div>
+                       {data && data.products.total.total>0? 
+                       <Row>
                                     <Col xs="12">
                                         <ul className="product-filter-tags">
                                             {
@@ -229,7 +291,10 @@ const ProductList = ({ colClass, layoutList,openSidebar,noSidebar }) => {
                                         </ul>
                                     </Col>
                                 </Row>
-                        <div className="collection-product-wrapper">
+                                : data ? "":""
+                                }
+                                {data && data.products.total.total>0? 
+                                 <div className="collection-product-wrapper">
                             <div className="product-top-filter">
                                 {!noSidebar?
                                 <Row>
@@ -366,8 +431,11 @@ const ProductList = ({ colClass, layoutList,openSidebar,noSidebar }) => {
                                 </div>
                             </div>
                         </div>
+                        : data ? "":""
+                                }
                     </Col>
                 </Row>
+                
             </div>
         </Col>
     )

@@ -64,7 +64,6 @@ const HeaderOne = ({ logoName, headerClass, topClass, noTopBar ,direction }) => 
 			
 			filterContext.setselectedKeyword(e.target[0].value)
 			var category = ""
-			console.log(selectedKeyword)
         	router.push(`${URL}?${category}&brand=${selectedBrands}&color=${selectedColor}&size=${selectedSize}&minPrice=${selectedPrice.min}&maxPrice=${selectedPrice.max}&keyword=${selectedKeyword}`)
 			closeSearch();
 		}

@@ -1,13 +1,47 @@
-import React, {Fragment} from 'react';
+import React, {useState, useContext,Fragment} from 'react';
+// import React, { useState, useContext, useEffect } from 'react';
 import {Row, Col, Media} from 'reactstrap';
+import FilterContext from '../../../helpers/filter/FilterContext';
 import fashion from '../../../public/assets/images/mega-menu/fashion.jpg';
+import Link from 'next/link'
+import { useRouter } from 'next/router';
+
 
 const SideBar = () => {
 
+    const filterContext = useContext(FilterContext);
+	const selectedKeyword = filterContext.selectedKeyword;
+    const selectedBrands = filterContext.selectedBrands;
+    const selectedColor = filterContext.selectedColor;
+    const selectedPrice = filterContext.selectedPrice;
+    const selectedCategory = filterContext.state;
+    const selectedSize = filterContext.selectedSize;
+    const [url, setUrl] = useState();
+    const router = useRouter();
+    
     const closeNav = () => {
         var closemyslide = document.getElementById("mySidenav");
         if (closemyslide)
             closemyslide.classList.remove('open-side');
+    }
+
+
+    const CategoryFilter = (category) => {
+        // router.push(`/product-details/${product.id}` + '-' + `${titleProps}`);
+			const pathname = window.location.pathname;
+			setUrl(pathname);
+			if(pathname=="/shop/six_grid")
+			{
+				var URL = pathname;	
+			}
+			else 
+			{
+				var URL = "/shop/six_grid";
+			}
+			console.log(category)
+            filterContext.setSelectedCategory(category)
+            console.log(selectedCategory);
+        	router.push(`${URL}?${selectedCategory}&brand=${selectedBrands}&color=${selectedColor}&size=${selectedSize}&minPrice=${selectedPrice.min}&maxPrice=${selectedPrice.max}&keyword=${selectedKeyword}`)
     }
 
     const handleSubmenu = (event) => {
@@ -65,7 +99,7 @@ const SideBar = () => {
         }
     }
 
-    const handleMegaSubmenu = (event) => {
+    const handleMegaSubmenu = (event,menu) => {
         if (event.target.classList.contains('sub-arrow'))
             return;
 
@@ -74,6 +108,8 @@ const SideBar = () => {
         else {
             event.target.nextElementSibling.classList.add('opensidesubmenu')
         }
+
+        CategoryFilter(menu);
     }
 
     return (
@@ -89,7 +125,7 @@ const SideBar = () => {
                     </a>
                     <ul id="sub-menu" className="sidebar-menu">
                         <li>
-                            <a href="#" onClick={(e) => handleMegaSubmenu(e)}>
+                            <a href="#" onClick={(e) => handleMegaSubmenu(e,"Electronics")}>
                                 Electronics
                                 <span className="sub-arrow"></span>
                             </a>
@@ -101,40 +137,43 @@ const SideBar = () => {
                                                 <h5>Camera, Photo & Videos</h5>
                                                 <ul>
                                                     <li>
-                                                        <a href="#">DSLR</a>
+                                                        <a onClick={() => CategoryFilter("DSLR")}>DSLR</a>
+                                                        {/* <Link href={`/shop/six_grid`} >
+                                                            <a>DSLR</a>
+                                                        </Link> */}
                                                     </li>
                                                     <li>
-                                                        <a href="#">Lenses</a>
+                                                        <a onClick={() => CategoryFilter("Lenses")}>Lenses</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Mirrorless Camera</a>
+                                                        <a onClick={() => CategoryFilter("Mirrorless Camera")}>Mirrorless Camera</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Tripods & Monopods</a>
+                                                        <a onClick={() => CategoryFilter("Tripods & Monopods")}>Tripods & Monopods</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Video Cameras</a>
+                                                        <a onClick={() => CategoryFilter("Video Cameras")}>Video Cameras</a>
                                                     </li>
                                                 </ul>
                                                 <h5>Speakers</h5>
                                                 <ul>
                                                     <li>
-                                                        <a href="#">Ceiling Speakers</a>
+                                                        <a onClick={() => CategoryFilter("Ceiling Speakers")}>Ceiling Speakers</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Center Channel Speakers</a>
+                                                        <a onClick={() => CategoryFilter("Center Channel Speakers")}>Center Channel Speakers</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Portable Speakers</a>
+                                                        <a onClick={() => CategoryFilter("Portable Speakers")}>Portable Speakers</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Soundbars</a>
+                                                        <a onClick={() => CategoryFilter("Soundbars")}>Soundbars</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Subwoofers</a>
+                                                        <a onClick={() => CategoryFilter("Subwoofers")}>Subwoofers</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Wireless & Bluetooth Speakers</a>
+                                                        <a onClick={() => CategoryFilter("Wireless & Bluetooth Speakers")}>Wireless & Bluetooth Speakers</a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -144,36 +183,36 @@ const SideBar = () => {
                                                 <h5>Desktops</h5>
                                                 <ul>
                                                     <li>
-                                                        <a href="#">All in Ones</a>
+                                                        <a onClick={() => CategoryFilter("All in Ones")}>All in Ones</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Minis</a>
+                                                        <a onClick={() => CategoryFilter("Minis")}>Minis</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Towers</a>
+                                                        <a onClick={() => CategoryFilter("Towers")}>Towers</a>
                                                     </li>
                                                 </ul>
                                                 <h5>Film Cameras</h5>
                                                 <ul>
                                                     <li>
-                                                        <a href="#">Instant Cameras</a>
+                                                        <a onClick={() => CategoryFilter("Instant Cameras")}>Instant Cameras</a>
                                                     </li>
                                                 </ul>
-                                                <h5>Monitors</h5>
+                                                <h5><a onClick={() => CategoryFilter("Monitors")}>Monitors</a></h5>
                                                 <h5>Tablets</h5>
                                                 <h5>Video Games</h5>
                                                 <ul>
                                                     <li>
-                                                        <a href="#">Accessories</a>
+                                                        <a onClick={() => CategoryFilter("Accessories")}>Accessories</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Consoles</a>
+                                                        <a onClick={() => CategoryFilter("Consoles")}>Consoles</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Games</a>
+                                                        <a onClick={() => CategoryFilter("Games")}>Games</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Nintendo</a>
+                                                        <a onClick={() => CategoryFilter("Nintendo")}>Nintendo</a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -183,40 +222,40 @@ const SideBar = () => {
                                                 <h5>Headphones & Earphones</h5>
                                                 <ul>
                                                     <li>
-                                                        <a href="#">Bluetooth Headphones</a>
+                                                        <a onClick={() => CategoryFilter("Bluetooth Headphones")}>Bluetooth Headphones</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">DJ/Professional Headphones</a>
+                                                        <a onClick={() => CategoryFilter("DJ/Professional Headphones")}>DJ/Professional Headphones</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">In Ear Earbud Headphones</a>
+                                                        <a onClick={() => CategoryFilter("In Ear Earbud Headphones")}>In Ear Earbud Headphones</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Noise-Cancelling Headphones</a>
+                                                        <a onClick={() => CategoryFilter("Noise-Cancelling Headphones")}>Noise-Cancelling Headphones</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">On-Ear Headphones</a>
+                                                        <a onClick={() => CategoryFilter("On-Ear Headphones")}>On-Ear Headphones</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Over-Ear Headphones</a>
+                                                        <a onClick={() => CategoryFilter("Over-Ear Headphones")}>Over-Ear Headphones</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Premium Audio Headphones</a>
+                                                        <a onClick={() => CategoryFilter("Premium Audio Headphones")}>Premium Audio Headphones</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Sports & Fitness Headphones</a>
+                                                        <a onClick={() => CategoryFilter("Sports & Fitness Headphones")}>Sports & Fitness Headphones</a>
                                                     </li>
                                                 </ul>
                                                 <h5>Computer & Accessories</h5>
                                                 <ul>
                                                     <li>
-                                                        <a href="#">Chargers & Adapters</a>
+                                                        <a onClick={() => CategoryFilter("Chargers & Adapters")}>Chargers & Adapters</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Data Storage</a>
+                                                        <a onClick={() => CategoryFilter("Data Storage")}>Data Storage</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Keyboards</a>
+                                                        <a onClick={() => CategoryFilter("Keyboards")}>Keyboards</a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -226,7 +265,7 @@ const SideBar = () => {
                             </ul>
                         </li>
                         <li>
-                            <a href="#" onClick={(e) => handleMegaSubmenu(e)}>
+                            <a href="#" onClick={(e) => handleMegaSubmenu(e,"Fashion")}>
                                 Fashion
                                 <span className="sub-arrow"></span>
                             </a>
@@ -238,34 +277,34 @@ const SideBar = () => {
                                                 <h5>Clothing, Shoes & Jewelry</h5>
                                                 <ul>
                                                     <li>
-                                                        <a href="#">Kid's Fashion</a>
+                                                        <a onClick={() => CategoryFilter("Kid's Fashion")}>Kid's Fashion</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Men's Fashion</a>
+                                                        <a onClick={() => CategoryFilter("Men's Fashion")}>Men's Fashion</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Shoes</a>
+                                                        <a onClick={() => CategoryFilter("Shoes")}>Shoes</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Women's Fashion</a>
+                                                        <a onClick={() => CategoryFilter("Women's Fashion")}>Women's Fashion</a>
                                                     </li>
                                                 </ul>
                                                 <h5>Eyewear</h5>
                                                 <ul>
                                                     <li>
-                                                        <a href="#">Eyeglass Cases</a>
+                                                        <a onClick={() => CategoryFilter("Eyeglass Cases")}>Eyeglass Cases</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Eyeglass Chains</a>
+                                                        <a onClick={() => CategoryFilter("Eyeglass Chains")}>Eyeglass Chains</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Eyeglass Frames</a>
+                                                        <a onClick={() => CategoryFilter("Eyeglass Frames")}>Eyeglass Frames</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Replacement Sunglass Lenses</a>
+                                                        <a onClick={() => CategoryFilter("Replacement Sunglass Lenses")}>Replacement Sunglass Lenses</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Sunglasses</a>
+                                                        <a onClick={() => CategoryFilter("Sunglasses")}>Sunglasses</a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -275,34 +314,34 @@ const SideBar = () => {
                                                 <h5>Handbags</h5>
                                                 <ul>
                                                     <li>
-                                                        <a href="#">Clutches & Evening Bags</a>
+                                                        <a onClick={() => CategoryFilter("Clutches & Evening Bags")}>Clutches & Evening Bags</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Crossbody Bags</a>
+                                                        <a onClick={() => CategoryFilter("Crossbody Bags")}>Crossbody Bags</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Fashion Backpacks</a>
+                                                        <a onClick={() => CategoryFilter("Fashion Backpacks")}>Fashion Backpacks</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Hobo Bags</a>
+                                                        <a onClick={() => CategoryFilter("Hobo Bags")}>Hobo Bags</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Satchels</a>
+                                                        <a onClick={() => CategoryFilter("Satchels")}>Satchels</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Shoulder bags</a>
+                                                        <a onClick={() => CategoryFilter("Shoulder bags")}>Shoulder bags</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Top-Handle Bags</a>
+                                                        <a onClick={() => CategoryFilter("Top-Handle Bags")}>Top-Handle Bags</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Totes</a>
+                                                        <a onClick={() => CategoryFilter("Totes")}>Totes</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Wallets</a>
+                                                        <a onClick={() => CategoryFilter("Wallets")}>Wallets</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Wristlets</a>
+                                                        <a onClick={() => CategoryFilter("Wristlets")}>Wristlets</a>
                                                     </li>
                                                 </ul>
                                                 <h5>Backpacks</h5>
@@ -313,16 +352,16 @@ const SideBar = () => {
                                                 <h5>Watches</h5>
                                                 <ul>
                                                     <li>
-                                                        <a href="#">Pocket Watches</a>
+                                                        <a onClick={() => CategoryFilter("Pocket Watches")}>Pocket Watches</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Smartwatches</a>
+                                                        <a onClick={() => CategoryFilter("Smartwatches")}>Smartwatches</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Watch Bands</a>
+                                                        <a onClick={() => CategoryFilter("Watch Bands")}>Watch Bands</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Wrist Watches</a>
+                                                        <a onClick={() => CategoryFilter("Wrist Watches")}>Wrist Watches</a>
                                                     </li>
                                                 </ul>
                                                 <h5>Jewellery</h5>
@@ -333,7 +372,7 @@ const SideBar = () => {
                             </ul>
                         </li>
                         <li>
-                            <a href="#" onClick={(e) => handleMegaSubmenu(e)}>
+                            <a href="#" onClick={(e) => handleMegaSubmenu(e,"Home & Kitchen")}>
                                 Home & Kitchen
                                 <span className="sub-arrow"></span>
                             </a>
@@ -345,19 +384,19 @@ const SideBar = () => {
                                                 <h5>Bedding</h5>
                                                 <ul>
                                                     <li>
-                                                        <a href="#">Bedding & Accessories</a>
+                                                        <a onClick={() => CategoryFilter("Bedding & Accessories")}>Bedding & Accessories</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Bedding Sets & Collections</a>
+                                                        <a onClick={() => CategoryFilter("Bedding Sets & Collections")}>Bedding Sets & Collections</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Bedspreads, Coverlets & Sets</a>
+                                                        <a onClick={() => CategoryFilter("Bedspreads, Coverlets & Sets")}>Bedspreads, Coverlets & Sets</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Kid's Bedding</a>
+                                                        <a onClick={() => CategoryFilter("Kid's Bedding")}>Kid's Bedding</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Quilts & Sets</a>
+                                                        <a onClick={() => CategoryFilter("Quilts & Sets")}>Quilts & Sets</a>
                                                     </li>
                                                 </ul>
                                                 <h5>Tower Rings</h5>
@@ -373,31 +412,31 @@ const SideBar = () => {
                                                 <h5>Kitchen & Dinning</h5>
                                                 <ul>
                                                     <li>
-                                                        <a href="#">Bakeware</a>
+                                                        <a onClick={() => CategoryFilter("Bakeware")}>Bakeware</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Coffee, Tea & Espresso</a>
+                                                        <a onClick={() => CategoryFilter("Coffee, Tea & Espresso")}>Coffee, Tea & Espresso</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Cookware</a>
+                                                        <a onClick={() => CategoryFilter("Cookware")}>Cookware</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Cutlery & Knife Accessories</a>
+                                                        <a onClick={() => CategoryFilter("Cutlery & Knife Accessories")}>Cutlery & Knife Accessories</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Dining & Entertaining</a>
+                                                        <a onClick={() => CategoryFilter("Dining & Entertaining")}>Dining & Entertaining</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Small Appliances</a>
+                                                        <a onClick={() => CategoryFilter("Small Appliances")}>Small Appliances</a>
                                                     </li>
                                                 </ul>
                                                 <h5>Tools & Home Improvement</h5>
                                                 <ul>
                                                     <li>
-                                                        <a href="#">Ceramic Tiles</a>
+                                                        <a onClick={() => CategoryFilter("Ceramic Tiles")}>Ceramic Tiles</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Wall Plates</a>
+                                                        <a onClick={() => CategoryFilter("Wall Plates")}>Wall Plates</a>
                                                     </li>
                                                 </ul>
                                                 <h5>Home Appliances</h5>
@@ -409,28 +448,28 @@ const SideBar = () => {
                                                 <h5>Home Decor</h5>
                                                 <ul>
                                                     <li>
-                                                        <a href="#">Artificial Plants & Flowers</a>
+                                                        <a onClick={() => CategoryFilter("Artificial Plants & Flowers")}>Artificial Plants & Flowers</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Candles & Holders</a>
+                                                        <a onClick={() => CategoryFilter("Candles & Holders")}>Candles & Holders</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Clocks</a>
+                                                        <a onClick={() => CategoryFilter("Clocks")}>Clocks</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Decorative Pillows</a>
+                                                        <a onClick={() => CategoryFilter("Decorative Pillows")}>Decorative Pillows</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Home Decor Accents</a>
+                                                        <a onClick={() => CategoryFilter("Home Decor Accents")}>Home Decor Accents</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Home Fragrance</a>
+                                                        <a onClick={() => CategoryFilter("Home Fragrance")}>Home Fragrance</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Mirrors</a>
+                                                        <a onClick={() => CategoryFilter("Mirrors")}>Mirrors</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Nursery Decor</a>
+                                                        <a onClick={() => CategoryFilter("Nursery Decor")}>Nursery Decor</a>
                                                     </li>
                                                 </ul>
                                                 <h5>Kids' Home Store</h5>
@@ -444,16 +483,16 @@ const SideBar = () => {
                                                 <h5>Vacuum & Floor care</h5>
                                                 <ul>
                                                     <li>
-                                                        <a href="#">Carpet & Upholstery Cleaners & Accessories</a>
+                                                        <a onClick={() => CategoryFilter("Carpet & Upholstery Cleaners & Accessories")}>Carpet & Upholstery Cleaners & Accessories</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Floor Buffers & Parts</a>
+                                                        <a onClick={() => CategoryFilter("Floor Buffers & Parts")}>Floor Buffers & Parts</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Vacuum Parts & Accessories</a>
+                                                        <a onClick={() => CategoryFilter("Vacuum Parts & Accessories")}>Vacuum Parts & Accessories</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Vacuum</a>
+                                                        <a onClick={() => CategoryFilter("Vacuum")}>Vacuum</a>
                                                     </li>
                                                 </ul>
                                                 <h5>Coasters</h5>
@@ -468,7 +507,7 @@ const SideBar = () => {
                             </ul>
                         </li>
                         <li>
-                            <a href="#" onClick={(e) => handleMegaSubmenu(e)}>
+                            <a href="#" onClick={(e) => handleMegaSubmenu(e,"Beauty & Personal Care")}>
                                 Beauty & Personal Care
                                 <span className="sub-arrow"></span>
                             </a>
@@ -480,16 +519,16 @@ const SideBar = () => {
                                                 <h5>Foot, Hand & Nail Care</h5>
                                                 <ul>
                                                     <li>
-                                                        <a href="#">Foot & Hand Care</a>
+                                                        <a onClick={() => CategoryFilter("Foot & Hand Care")}>Foot & Hand Care</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Nail Art & Polish</a>
+                                                        <a onClick={() => CategoryFilter("Nail Art & Polish")}>Nail Art & Polish</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Nail Care</a>
+                                                        <a onClick={() => CategoryFilter("Nail Care")}>Nail Care</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Tools & Accessories</a>
+                                                        <a onClick={() => CategoryFilter("Tools & Accessories")}>Tools & Accessories</a>
                                                     </li>
                                                 </ul>
                                                 <h5>Concealer</h5>
@@ -502,22 +541,22 @@ const SideBar = () => {
                                                 <h5>Hair Care & Styling</h5>
                                                 <ul>
                                                     <li>
-                                                        <a href="#">Hair & Scalp Treatments</a>
+                                                        <a onClick={() => CategoryFilter("Hair & Scalp Treatments")}>Hair & Scalp Treatments</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Hair Coloring Products</a>
+                                                        <a onClick={() => CategoryFilter("Hair Coloring Products")}>Hair Coloring Products</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Hair Dryers</a>
+                                                        <a onClick={() => CategoryFilter("Hair Dryers")}>Hair Dryers</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Shampoos</a>
+                                                        <a onClick={() => CategoryFilter("Shampoos")}>Shampoos</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Styling Products</a>
+                                                        <a onClick={() => CategoryFilter("Styling Products")}>Styling Products</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Styling Tools & Appliances</a>
+                                                        <a onClick={() => CategoryFilter("Styling Tools & Appliances")}>Styling Tools & Appliances</a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -527,19 +566,19 @@ const SideBar = () => {
                                                 <h5>Makeup</h5>
                                                 <ul>
                                                     <li>
-                                                        <a href="#">Eyebrow Color</a>
+                                                        <a onClick={() => CategoryFilter("Eyebrow Color")}>Eyebrow Color</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Eyeliners</a>
+                                                        <a onClick={() => CategoryFilter("Eyeliners")}>Eyeliners</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Eyeshadow</a>
+                                                        <a onClick={() => CategoryFilter("Eyeshadow")}>Eyeshadow</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Eyeshadow Bases & Primers</a>
+                                                        <a onClick={() => CategoryFilter("Eyeshadow Bases & Primers")}>Eyeshadow Bases & Primers</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Lipstick</a>
+                                                        <a onClick={() => CategoryFilter("Lipstick")}>Lipstick</a>
                                                     </li>
                                                 </ul>
                                                 <h5>Fragrance</h5>
@@ -563,7 +602,7 @@ const SideBar = () => {
                             </ul>
                         </li>
                         <li>
-                            <a href="#" onClick={(e) => handleMegaSubmenu(e)}>
+                            <a href="#" onClick={(e) => handleMegaSubmenu(e,"Health & Wellness")}>
                                 Health & Wellness
                                 <span className="sub-arrow"></span>
                             </a>
@@ -575,43 +614,43 @@ const SideBar = () => {
                                                 <h5>Sports Nutrition</h5>
                                                 <ul>
                                                     <li>
-                                                        <a href="#">Amino Acids</a>
+                                                        <a onClick={() => CategoryFilter("Amino Acids")}>Amino Acids</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Endurance & Energy</a>
+                                                        <a onClick={() => CategoryFilter("Endurance & Energy")}>Endurance & Energy</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Healthy Snacks & Beverages</a>
+                                                        <a onClick={() => CategoryFilter("Healthy Snacks & Beverages")}>Healthy Snacks & Beverages</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Hydration</a>
+                                                        <a onClick={() => CategoryFilter("Hydration")}>Hydration</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Nutrition Bars</a>
+                                                        <a onClick={() => CategoryFilter("Nutrition Bars")}>Nutrition Bars</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Protein</a>
+                                                        <a onClick={() => CategoryFilter("Protein")}>Protein</a>
                                                     </li>
                                                 </ul>
                                                 <h5>Vitamins & Dietary Supplements</h5>
                                                 <ul>
                                                     <li>
-                                                        <a href="#">Blended Vitamin & Mineral Supplements</a>
+                                                        <a onClick={() => CategoryFilter("Blended Vitamin & Mineral Supplements")}>Blended Vitamin & Mineral Supplements</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Herbal Supplements</a>
+                                                        <a onClick={() => CategoryFilter("Herbal Supplements")}>Herbal Supplements</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Minerals</a>
+                                                        <a onClick={() => CategoryFilter("Minerals")}>Minerals</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Supplements</a>
+                                                        <a onClick={() => CategoryFilter("Supplements")}>Supplements</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Vitamins</a>
+                                                        <a onClick={() => CategoryFilter("Vitamins")}>Vitamins</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Weight Loss</a>
+                                                        <a onClick={() => CategoryFilter("Weight Loss")}>Weight Loss</a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -621,28 +660,28 @@ const SideBar = () => {
                                                 <h5>Baby & Child Care</h5>
                                                 <ul>
                                                     <li>
-                                                        <a href="#">Diaper Care</a>
+                                                        <a onClick={() => CategoryFilter("Diaper Care")}>Diaper Care</a>
                                                     </li>
                                                 </ul>
                                                 <h5>Health Care</h5>
                                                 <ul>
                                                     <li>
-                                                        <a href="#">Alternative Medicine</a>
+                                                        <a onClick={() => CategoryFilter("Alternative Medicine")}>Alternative Medicine</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Diabetes Care</a>
+                                                        <a onClick={() => CategoryFilter("Diabetes Care")}>Diabetes Care</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Ear Care</a>
+                                                        <a onClick={() => CategoryFilter("Ear Care")}>Ear Care</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Eye Health</a>
+                                                        <a onClick={() => CategoryFilter("Eye Health")}>Eye Health</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Feminine Care</a>
+                                                        <a onClick={() => CategoryFilter("Feminine Care")}>Feminine Care</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">First Aid</a>
+                                                        <a onClick={() => CategoryFilter("First Aid")}>First Aid</a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -652,19 +691,19 @@ const SideBar = () => {
                                                 <h5>Personal Care</h5>
                                                 <ul>
                                                     <li>
-                                                        <a href="#">Bath & Bathing Accessories</a>
+                                                        <a onClick={() => CategoryFilter("Bath & Bathing Accessories")}>Bath & Bathing Accessories</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Deodorants & Antiperspirants</a>
+                                                        <a onClick={() => CategoryFilter("Deodorants & Antiperspirants")}>Deodorants & Antiperspirants</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Hair Care</a>
+                                                        <a onClick={() => CategoryFilter("Hair Care")}>Hair Care</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Lip Care</a>
+                                                        <a onClick={() => CategoryFilter("Lip Care")}>Lip Care</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Skin Care</a>
+                                                        <a onClick={() => CategoryFilter("Skin Care")}>Skin Care</a>
                                                     </li>
                                                 </ul>
                                                 <h5>Aromatherapy</h5>
@@ -678,7 +717,7 @@ const SideBar = () => {
                             </ul>
                         </li>
                         <li>
-                            <a href="#" onClick={(e) => handleMegaSubmenu(e)}>
+                            <a href="#" onClick={(e) => handleMegaSubmenu(e,"Grocery")}>
                                 Grocery
                                 <span className="sub-arrow"></span>
                             </a>
@@ -690,31 +729,31 @@ const SideBar = () => {
                                                 <h5>Baby Food</h5>
                                                 <ul>
                                                     <li>
-                                                        <a href="#">Cereal</a>
+                                                        <a onClick={() => CategoryFilter("Cereal")}>Cereal</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Formula</a>
+                                                        <a onClick={() => CategoryFilter("Formula")}>Formula</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Meals</a>
+                                                        <a onClick={() => CategoryFilter("Meals")}>Meals</a>
                                                     </li>
                                                 </ul>
                                                 <h5>Beverages</h5>
                                                 <ul>
                                                     <li>
-                                                        <a href="#">Bottled Beverages, Water & Drink Mixes</a>
+                                                        <a onClick={() => CategoryFilter("Bottled Beverages, Water & Drink Mixes")}>Bottled Beverages, Water & Drink Mixes</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Coffee, Tea & Cocoa</a>
+                                                        <a onClick={() => CategoryFilter("Coffee, Tea & Cocoa")}>Coffee, Tea & Cocoa</a>
                                                     </li>
                                                 </ul>
                                                 <h5>Breakfast Food</h5>
                                                 <ul>
                                                     <li>
-                                                        <a href="#">Breakfast & Cereal Bars</a>
+                                                        <a onClick={() => CategoryFilter("Breakfast & Cereal Bars")}>Breakfast & Cereal Bars</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Breakfast Cereals</a>
+                                                        <a onClick={() => CategoryFilter("Breakfast Cereals")}>Breakfast Cereals</a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -724,25 +763,25 @@ const SideBar = () => {
                                                 <h5>Candy & Chocolate</h5>
                                                 <ul>
                                                     <li>
-                                                        <a href="#">Brittle, Caramel & Toffee</a>
+                                                        <a onClick={() => CategoryFilter("Brittle, Caramel & Toffee")}>Brittle, Caramel & Toffee</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Candied & Chocolate-Covered Snacks</a>
+                                                        <a onClick={() => CategoryFilter("Candied & Chocolate-Covered Snacks")}>Candied & Chocolate-Covered Snacks</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Candy & Chocolate Assortments</a>
+                                                        <a onClick={() => CategoryFilter("Candy & Chocolate Assortments")}>Candy & Chocolate Assortments</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Candy & Chocolate Bars</a>
+                                                        <a onClick={() => CategoryFilter("Candy & Chocolate Bars")}>Candy & Chocolate Bars</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Candy & Chocolate Gifts</a>
+                                                        <a onClick={() => CategoryFilter("Candy & Chocolate Gifts")}>Candy & Chocolate Gifts</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Marshmallows</a>
+                                                        <a onClick={() => CategoryFilter("Marshmallows")}>Marshmallows</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Mints</a>
+                                                        <a onClick={() => CategoryFilter("Mints")}>Mints</a>
                                                     </li>
                                                 </ul>
                                                 <h5>Canned, Dry & Packaged Food</h5>
@@ -756,19 +795,19 @@ const SideBar = () => {
                                                 <h5>Snack Food</h5>
                                                 <ul>
                                                     <li>
-                                                        <a href="#">Bars</a>
+                                                        <a onClick={() => CategoryFilter("Bars")}>Bars</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Chips & Crisps</a>
+                                                        <a onClick={() => CategoryFilter("Chips & Crisps")}>Chips & Crisps</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Cookies</a>
+                                                        <a onClick={() => CategoryFilter("Cookies")}>Cookies</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Crackers</a>
+                                                        <a onClick={() => CategoryFilter("Crackers")}>Crackers</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Dried Food & Raisins</a>
+                                                        <a onClick={() => CategoryFilter("Dried Food & Raisins")}>Dried Food & Raisins</a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -778,7 +817,7 @@ const SideBar = () => {
                             </ul>
                         </li>
                         <li>
-                            <a href="#" onClick={(e) => handleMegaSubmenu(e)}>
+                            <a href="#" onClick={(e) => handleMegaSubmenu(e,"Sports & Outdoors")}>
                                 Sports & Outdoors
                                 <span className="sub-arrow"></span>
                             </a>
@@ -814,7 +853,7 @@ const SideBar = () => {
                             </ul>
                         </li>
                         <li>
-                            <a href="#" onClick={(e) => handleMegaSubmenu(e)}>
+                            <a href="#" onClick={(e) => handleMegaSubmenu(e,"Baby & Toys")}>
                                 Baby & Toys
                                 <span className="sub-arrow"></span>
                             </a>
