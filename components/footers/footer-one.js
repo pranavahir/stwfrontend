@@ -84,23 +84,14 @@ const FooterOne = ({ fluid, logoName ,layoutClass ,footerClass }) => {
                         <Col className="offset-xl-1">
                             <div className="sub-title">
                                 <div className="footer-title">
-                                    <h4>my account</h4>
+                                    <h4>Get to Know Us</h4>
                                 </div>
                                 <div className="footer-contant">
                                     <ul>
                                         <li>
-                                            <Link href={`/shop/left_sidebar`} >
-                                                <a>womens</a>
+                                            <Link href={`/page/about-us`} >
+                                                <a>about us</a>
                                             </Link>
-                                        </li>
-                                        <li>
-                                            <Link href={`/shop/left_sidebar`} ><a> clothing </a></Link>
-                                        </li>
-                                        <li>
-                                            <Link href={`/shop/left_sidebar`} ><a>accessories</a></Link>
-                                        </li>
-                                        <li>
-                                            <Link href={`/shop/left_sidebar`} ><a> featured </a></Link>
                                         </li>
                                     </ul>
                                 </div>

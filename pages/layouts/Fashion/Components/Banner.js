@@ -46,9 +46,9 @@ const Banner = () => {
                   <Col>
                     <div className="slider-contain">
                       <div>
-                        <h4>welcome to electronics</h4>
-                        <h1>electronics</h1>
-                          <a onClick={() => CategoryFilter("Electronics")} className="btn btn-solid">shop now </a>
+                        <h4>welcome to Shop The World</h4>
+                        <h1>Fashion</h1>
+                          <a onClick={() => CategoryFilter("Fashion")} className="btn btn-solid">shop now </a>
                       </div>
                     </div>
                   </Col>
@@ -57,17 +57,15 @@ const Banner = () => {
             </div>
           </div>
           <div>
-            <div className="home home2 text-center">
+            <div className="home home1 text-center">
               <Container>
                 <Row>
                   <Col>
                     <div className="slider-contain">
                       <div>
-                        <h4>welcome to fashion</h4>
-                        <h1>women fashion</h1>
-                        <Link href={`/left-sidebar/collection`}> 
-                        <a className="btn btn-solid">shop now </a>
-                        </Link>
+                        <h4>welcome to Shop The World</h4>
+                        <h1>women's <br/> fashion</h1>
+                        <a onClick={() => CategoryFilter("women's fashion")} className="btn btn-solid">shop now </a>
                       </div>
                     </div>
                   </Col>

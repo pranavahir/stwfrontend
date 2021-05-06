@@ -114,7 +114,7 @@ const LeftSidebarPage = ({ pathId }) => {
             asin:asin
         }
     });
-
+console.log(data);
     const [state, setState] = useState({ nav1: null, nav2: null });
     const slider1 = useRef();
     const slider2 = useRef();

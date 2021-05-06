@@ -129,17 +129,37 @@ const HeaderOne = ({ logoName, headerClass, topClass, noTopBar ,direction }) => 
 									<div className="brand-logo">
 										<LogoImage logo={logoName} />
 									</div>
+								
 								</div>
 								<div className="menu-right pull-right">
 									{/*Top Navigation Bar Component*/}
 									{/* <NavBar /> */}
-
+									
 									<div>
 										<div className="icon-nav">
 											<ul>
 												<li className="onhover-div mobile-search">
-													<div><Media src={search} onClick={openSearch} className="img-fluid" alt="" />
-														<i className="fa fa-search" onClick={openSearch}></i></div>
+													{/* <div><Media src={search} onClick={openSearch} className="img-fluid" alt="" />
+														<i className="fa fa-search" onClick={openSearch}></i></div> */}
+														<section className="search-block">
+																<Container>
+																	<Row>
+																		<Col lg="12">
+																			<form className="form-header" onSubmit={handleSubmit(onSubmit)}>
+																				<div className="input-group">
+																					<Input type="text" className="form-control" aria-label="Amount (to the nearest dollar)"
+																						placeholder="Search Products......" name="keyword"  />
+																					<div className="input-group-append">
+																						<button className="btn btn-solid"><i className="fa fa-search"></i>Search</button>
+																					</div>
+																				</div>
+																			</form>
+																		</Col>
+																	</Row>
+																</Container>
+															</section>
+															
+														 
 												</li>
 												<Currency icon={settings} />
 												{/*Header Cart Component */}
@@ -166,12 +186,12 @@ const HeaderOne = ({ logoName, headerClass, topClass, noTopBar ,direction }) => 
 						<Container>
 							<Row>
 								<Col>
-									<Form onSubmit={handleSubmit(onSubmit)}>
+									{/* <Form onSubmit={handleSubmit(onSubmit)}>
 										<div className="form-group">
 											<Input type="text" className="form-control" name="keyword" id="exampleInputPassword1" placeholder="Search a Product" />
 										</div>
 										<Button type="submit" className="btn btn-primary"><i className="fa fa-search"></i></Button>
-									</Form>
+									</Form> */}
 								</Col>
 							</Row>
 						</Container>

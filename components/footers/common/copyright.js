@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import Link from 'next/link'
 import { Container ,Row ,Col ,Media} from 'reactstrap';
 import visa from '../../../public/assets/images/icon/visa.png';
 import mastercard from '../../../public/assets/images/icon/mastercard.png';
@@ -7,17 +8,51 @@ import americanexpress from '../../../public/assets/images/icon/american-express
 import discover from '../../../public/assets/images/icon/discover.png';
 
 const CopyRight = ({layout, fluid}) => {
+
+    const styleObj = {
+        fontSize: 10,
+        color: "#4a54f1",
+        textAlign: "center"
+        }
+
+        
+    const styleHeaderObj = {
+        fontSize: 12,
+        color: "#4a54f1",
+        textAlign: "center"
+        }
+
     return (
         <Fragment>
             <div className={`sub-footer ${layout}`}>
                 <Container fluid={fluid}>
                     <Row>
-                        <Col xl="6" md="6" sm="12">
+                        <Col xl="12" md="12" sm="12">
                             <div className="footer-end">
-                                <p><i className="fa fa-copyright" aria-hidden="true"></i> 2020-21 Shop The World | All Rights Reserved.</p>
+                                
+                            <ul style={styleHeaderObj}>
+                                    <li>
+                                    <p> <h6><i className="fa fa-copyright" aria-hidden="true"></i> 2020-21 Shop The World | All Rights Reserved.</h6></p>
+                                    </li>
+                                    <li>
+                                    <Link href={`/page/privacy-policy`} >
+                                    <p style={styleObj} ><a href="#"> &nbsp; Privacy Policy </a> | </p>
+                                    </Link>
+                                    </li>
+                                    <li>
+                                    <Link href={`/page/about-us`} >
+                                    <p style={styleObj}><a href="#"> &nbsp; Terms & Conditions </a> | </p>
+                                    </Link>
+                                    </li>
+                                    <li>
+                                    <Link href={`/page/about-us`} >
+                                    <p style={styleObj}><a href="#"> &nbsp; Seller</a></p>
+                                    </Link>
+                                    </li>
+                                </ul>
                             </div>
                         </Col>
-                        <Col xl="6" md="6" sm="12">
+                        {/* <Col xl="6" md="6" sm="12">
                             <div className="payment-card-bottom">
                                 <ul>
                                     <li>
@@ -37,7 +72,7 @@ const CopyRight = ({layout, fluid}) => {
                                     </li>
                                 </ul>
                             </div>
-                        </Col>
+                        </Col> */}
                     </Row>
                 </Container>
             </div>
