@@ -26,9 +26,9 @@ const PrivacyPolicy = () => {
                     <Container>
                         <Row>
                             <Col lg="12">
-                                <div className="banner-section">
+                                {/* <div className="banner-section">
                                     <Media src={aboutus}
-                                        className="img-fluid blur-up lazyload" alt="" /></div>
+                                        className="img-fluid blur-up lazyload" alt="" /></div> */}
                             </Col>
                             <Col sm="12 offset-xl-1">
 

@@ -18,10 +18,10 @@ const AccordianExample = () => {
                 className="fa fa-star"></i> <i className="fa fa-star"></i> <i className="fa fa-star"></i></div>
             <div className="product-icon mb-3">
                 <ul className="product-social">
-                    <li><a href="https://www.facebook.com" target="_blank"><i className="fa fa-facebook"></i></a></li>
+                    <li><a href="https://www.facebook.com/shoptheworldstore/" target="_blank"><i className="fa fa-facebook"></i></a></li>
                     <li><a href="https://plus.google.com" target="_blank"><i className="fa fa-google-plus"></i></a></li>
                     <li><a href="https://twitter.com" target="_blank"><i className="fa fa-twitter"></i></a></li>
-                    <li><a href="https://www.instagram.com" target="_blank"><i className="fa fa-instagram"></i></a></li>
+                    <li><a href="https://www.instagram.com/stw_insta_in/" target="_blank"><i className="fa fa-instagram"></i></a></li>
                     <li><a href="https://rss.com" target="_blank"><i className="fa fa-rss"></i></a></li>
                 </ul>
                 <form className="d-inline-block">

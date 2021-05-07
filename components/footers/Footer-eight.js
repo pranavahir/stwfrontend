@@ -63,16 +63,16 @@ const FooterEight = ({ logoName ,layoutClass }) => {
                                 <div className="footer-social">
                                     <ul>
                                         <li>
-                                            <a href="https://www.facebook.com/" target="_blank"><i className="fa fa-facebook" aria-hidden="true"></i></a>
+                                            <a href="https://www.facebook.com/shoptheworldstore/" target="_blank"><i className="fa fa-facebook" aria-hidden="true"></i></a>
                                         </li>
                                         <li>
                                             <a href="https://plus.google.com" target="_blank"> <i className="fa fa-google-plus" aria-hidden="true"></i></a>
                                         </li>
                                         <li>
-                                            <a href="https://twitter.com/" target="_blank"> <i className="fa fa-twitter" aria-hidden="true"></i></a>
+                                            <a href="https://twitter.com/ShopTheWorld6" target="_blank"> <i className="fa fa-twitter" aria-hidden="true"></i></a>
                                         </li>
                                         <li>
-                                            <a href="https://www.instagram.com/" target="_blank"><i className="fa fa-instagram" aria-hidden="true"></i></a>
+                                            <a href="https://www.instagram.com/stw_insta_in/" target="_blank"><i className="fa fa-instagram" aria-hidden="true"></i></a>
                                         </li>
                                         <li>
                                             <a href="https://rss.com" target="_blank"><i className="fa fa-rss" aria-hidden="true"></i></a>
@@ -133,8 +133,7 @@ const FooterEight = ({ logoName ,layoutClass }) => {
                                             </li>
                                         <li><i className="fa fa-phone"></i>Call Us: +91 9820168421</li>
                                         <li><i className="fa fa-fax"></i>WhatsApp: +91 9820168421</li>
-                                        <li><i className="fa fa-envelope-o"></i>Email Us: <a
-                                            href="#">care@shoptheworldonline.com</a></li>
+                                        <li><i className="fa fa-envelope-o"></i>Email Us: <a href="#">care@shoptheworldonline.com</a></li>
                                         
                                     </ul>
                                 </div>

@@ -183,10 +183,10 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
                     <h6 className="product-title">share it</h6>
                     <div className="product-icon">
                         <ul className="product-social">
-                            <li><a href="https://www.facebook.com" target="_blank" ><i className="fa fa-facebook"></i></a></li>
+                            <li><a href="https://www.facebook.com/shoptheworldstore/" target="_blank" ><i className="fa fa-facebook"></i></a></li>
                             <li><a href="https://plus.google.com" target="_blank"><i className="fa fa-google-plus"></i></a></li>
                             <li><a href="https://twitter.com" target="_blank"><i className="fa fa-twitter"></i></a></li>
-                            <li><a href="https://www.instagram.com" target="_blank" ><i className="fa fa-instagram"></i></a></li>
+                            <li><a href="https://www.instagram.com/stw_insta_in/" target="_blank" ><i className="fa fa-instagram"></i></a></li>
                         </ul>
                     </div>
                 </div>

@@ -33,7 +33,7 @@ const CopyRight = ({layout, fluid}) => {
                             <ul style={styleHeaderObj}>
                                     <li>
                                     <p> <h6><i className="fa fa-copyright" aria-hidden="true"></i> 2020-21 Shop The World | All Rights Reserved.</h6></p>
-                                    </li>
+                                    </li>   
                                     <li>
                                     <Link href={`/page/privacy-policy`} >
                                     <p style={styleObj} ><a href="#"> &nbsp; Privacy Policy </a> | </p>

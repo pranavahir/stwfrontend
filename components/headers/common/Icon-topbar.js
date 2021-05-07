@@ -38,7 +38,7 @@ const IconTopbar = () => {
                         <Col sm="8">
                             <div className="header-contact">
                                 <ul>
-                                    <li>Welcome to Our store Shop The World</li>
+                                    <li>Welcome to Shop The World</li>
                                     <li><i className="fa fa-phone" aria-hidden="true"></i>Call Us: +91 9820168421</li>
                                     <li><i className="fa fa-whatsapp" aria-hidden="true"></i>WhatsApp: +91 9820168421</li>
                                 </ul>

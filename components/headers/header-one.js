@@ -157,7 +157,7 @@ const HeaderOne = ({ logoName, headerClass, topClass, noTopBar ,direction }) => 
 																		</Col>
 																	</Row>
 																</Container>
-															</section>
+															</section>	
 															
 														 
 												</li>

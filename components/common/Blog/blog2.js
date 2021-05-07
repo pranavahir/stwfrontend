@@ -38,7 +38,7 @@ const BlogBanner = () => {
                                 <div className="blog-details">
                                     <h4>25 January 2018</h4>
                                     <a href="#">
-                                        <p>Lorem ipsum dolor sit consectetur adipiscing elit, </p>
+                                        <p>Lorem test ipsum dolor sit consectetur adipiscing elit, </p>
                                     </a>
                                     <hr className="style1" />
                                     <h6>by: John Dio , 2 Comment</h6>

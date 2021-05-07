@@ -44,23 +44,47 @@ const BlogSection = ({ type, sectionClass, title, inner, hrClass }) => {
 
                             </div>
                             <Slider {...Slider3} className="slide-3 no-arrow ">
-                                {data && data.blog.map((item, index) =>
-                                    <Col md="12" key={index}>
-                                        <Link href={`/blogs/blog_detail`} >
+                                 
+                                    <Col md="12">
+                                         
                                             <div className="classic-effect" >
-                                                <Media src={item.img} className="img-fluid" alt="" />
+                                                {/* <Media src={item.img} className="img-fluid" alt="" /> */}
                                                 <span></span>
                                             </div>
-                                        </Link>
                                         <div className="blog-details">
-                                            <h4>{item.title}</h4>
-                                            <Link href={`/blogs/blog_detail`} >
-                                                <p>{item.desc} </p></Link>
+                                            <h4>Cheaper than amazon Price</h4>
+                                                {/* <p> </p> */}
                                             <hr className="style1" />
-                                            <h6>by: {item.date}</h6>
+                                            <h6>Best Deal</h6>
                                         </div>
                                     </Col>
-                                )}
+                                    <Col md="12">
+                                         
+                                            <div className="classic-effect" >
+                                                {/* <Media src={item.img} className="img-fluid" alt="" /> */}
+                                                <span></span>
+                                            </div>
+                                        <div className="blog-details">
+                                            <h4>Same day shipping</h4>
+                                                {/* <p> </p> */}
+                                            <hr className="style1" />
+                                            <h6>Fast Delivery</h6>
+                                        </div>
+                                    </Col>
+                                    <Col md="12">
+                                         
+                                            <div className="classic-effect" >
+                                                {/* <Media src={item.img} className="img-fluid" alt="" /> */}
+                                                <span></span>
+                                            </div>
+                                        <div className="blog-details">
+                                            <h4>Less than 99.Rs products</h4>
+                                                {/* <p> </p> */}
+                                            <hr className="style1" />
+                                            <h6>Cheap and Best Quality</h6>
+                                        </div>
+                                    </Col>
+                                
                             </Slider>
                         </Col>
                     </Row>

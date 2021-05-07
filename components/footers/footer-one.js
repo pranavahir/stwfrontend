@@ -19,7 +19,12 @@ const FooterOne = ({ fluid, logoName ,layoutClass ,footerClass }) => {
             });
         }
     }, [])
-
+const styleObject = {
+    textAlign: 'justify',
+    fontSize: 12,
+    lineHeight: 1.7,
+}
+    
     return (
         <footer className={`footer-light ${footerClass}`}>
             <div className="light-layout upper-footer">
@@ -58,30 +63,29 @@ const FooterOne = ({ fluid, logoName ,layoutClass ,footerClass }) => {
                                 <div className="footer-logo">
                                     <LogoImage logo={logoName} />
                                 </div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, </p>
+                                <p style={styleObject}><b>We provide an ocean of products across the globe at the best possible price. We have larget collection of items in every single category and we also make it a point to sell items which are cheaper than amazon and other market places. We work with the reputed vendors who give the best of their price to us and we pass on the same to our customers. We welcome you to browse through our collection to see for yourself.</b></p>
                                 <div className="footer-social">
                                     <ul>
                                         <li>
-                                            <a href="https://www.facebook.com" target="_blank">  <i className="fa fa-facebook" aria-hidden="true"></i> </a>
+                                            <a href="https://www.facebook.com/shoptheworldstore/" target="_blank">  <i className="fa fa-facebook" aria-hidden="true"></i> </a>
                                         </li>
-                                        <li>
+                                        {/* <li>
                                             <a href="https://plus.google.com" target="_blank"> <i className="fa fa-google-plus" aria-hidden="true"></i></a>
+                                        </li> */}
+                                        <li>
+                                            <a href="https://twitter.com/ShopTheWorld6/" target="_blank"> <i className="fa fa-twitter" aria-hidden="true"></i></a>
                                         </li>
                                         <li>
-                                            <a href="https://twitter.com" target="_blank"> <i className="fa fa-twitter" aria-hidden="true"></i></a>
+                                            <a href="https://www.instagram.com/stw_insta_in/" target="_blank"><i className="fa fa-instagram" aria-hidden="true"></i></a>
                                         </li>
-                                        <li>
-                                            <a href="https://www.instagram.com" target="_blank"><i className="fa fa-instagram" aria-hidden="true"></i></a>
-                                        </li>
-                                        <li>
+                                        {/* <li>
                                             <a href="https://rss.com" target="_blank"><i className="fa fa-rss" aria-hidden="true"></i></a>
-                                        </li>
+                                        </li> */}
                                     </ul>
                                 </div>
                             </div>
                         </Col>
-                        <Col className="offset-xl-1">
+                        <Col lg="2" md="3">
                             <div className="sub-title">
                                 <div className="footer-title">
                                     <h4>Get to Know Us</h4>
@@ -97,7 +101,7 @@ const FooterOne = ({ fluid, logoName ,layoutClass ,footerClass }) => {
                                 </div>
                             </div>
                         </Col>
-                        <Col>
+                        <Col lg="2" md="3">
                             <div className="sub-title">
                                 <div className="footer-title">
                                     <h4>why we choose</h4>
@@ -123,9 +127,8 @@ const FooterOne = ({ fluid, logoName ,layoutClass ,footerClass }) => {
                                     <li><i className="fa fa-map-marker"></i>Shop The World
                                             </li>
                                         <li><i className="fa fa-phone"></i>Call Us: +91 9820168421</li>
-                                        <li><i className="fa fa-fax"></i>WhatsApp: +91 9820168421</li>
-                                        <li><i className="fa fa-envelope-o"></i>Email Us: <a
-                                            href="#">care@shoptheworldonline.com</a></li>
+                                        <li><i className="fa fa-whatsapp"></i>WhatsApp: +91 9820168421</li>
+                                        <li><i className="fa fa-envelope-o"></i>Email Us: <a href="#">care@shoptheworldonline.com</a></li>
                                       
                                     </ul>
                                 </div>
