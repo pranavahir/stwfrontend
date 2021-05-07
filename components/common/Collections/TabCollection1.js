@@ -12,6 +12,7 @@ import { CurrencyContext } from '../../../helpers/Currency/CurrencyContext';
 import emptySearch from '../../../public/assets/images/empty-search.jpg';
 
 
+
 const GET_PRODUCTS = gql`
     query  products($type:_CategoryType!,$indexFrom:Int! ,$limit:Int!) {
         products (type: $type,indexFrom:$indexFrom ,limit:$limit){

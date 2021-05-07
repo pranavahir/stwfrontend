@@ -5,6 +5,9 @@ import gql from 'graphql-tag';
 import { useQuery } from '@apollo/react-hooks';
 import { Slider3 } from "../../../services/script"
 import { Media, Container, Row, Col } from 'reactstrap';
+import ser1 from '../../../public/assets/images/blog/1_1.jpg';
+import ser2 from '../../../public/assets/images/blog/1_2.jpg';
+import ser3 from '../../../public/assets/images/blog/1_3.jpg';
 
 
 const GET_PRODUCTS = gql`
@@ -48,7 +51,7 @@ const BlogSection = ({ type, sectionClass, title, inner, hrClass }) => {
                                     <Col md="12">
                                          
                                             <div className="classic-effect" >
-                                                {/* <Media src={item.img} className="img-fluid" alt="" /> */}
+                                                <Media src={ser1} className="img-fluid" alt="" />
                                                 <span></span>
                                             </div>
                                         <div className="blog-details">
@@ -61,7 +64,7 @@ const BlogSection = ({ type, sectionClass, title, inner, hrClass }) => {
                                     <Col md="12">
                                          
                                             <div className="classic-effect" >
-                                                {/* <Media src={item.img} className="img-fluid" alt="" /> */}
+                                                <Media src={ser2} className="img-fluid" alt="" />
                                                 <span></span>
                                             </div>
                                         <div className="blog-details">
@@ -74,7 +77,7 @@ const BlogSection = ({ type, sectionClass, title, inner, hrClass }) => {
                                     <Col md="12">
                                          
                                             <div className="classic-effect" >
-                                                {/* <Media src={item.img} className="img-fluid" alt="" /> */}
+                                                <Media src={ser3} className="img-fluid" alt="" />
                                                 <span></span>
                                             </div>
                                         <div className="blog-details">
