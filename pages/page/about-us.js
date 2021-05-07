@@ -1,7 +1,7 @@
 import React from 'react';
 import CommonLayout from '../../components/shop/common-layout';
 import { Container, Row, Col, Media } from 'reactstrap';
-import aboutus from '../../public/assets/images/icon/logo.png';
+import aboutus from '../../public/assets/images/about/about_us.jpg';
 import avtar from '../../public/assets/images/avtar.png';
 import two from '../../public/assets/images/2.jpg';
 import Slider from 'react-slick';
@@ -16,6 +16,9 @@ const AboutUs = () => {
     const styleObj = {
         fontSize: 12,
         }
+        const styleListObj = {
+            color: 'red',
+            }
 
     return (
         <>
@@ -26,41 +29,42 @@ const AboutUs = () => {
                     <Container>
                         <Row>
                             <Col lg="12">
-                                {/* <div className="banner-section">
+                                <div className="banner-section">
                                     <Media src={aboutus}
-                                        className="img-fluid blur-up lazyload" alt="" /></div> */}
+                                        className="img-fluid blur-up lazyload" alt="about" /></div>
                             </Col>
-                            <Col sm="12 offset-xl-1">
-                            
-                                <h4>We have operations at 9 countries (INDIA , UAE, KSA, Singapore, Australia, USA, Canada , Mexico & Brazil) and Shipping to 186 countries </h4>
-                                
-                                <p><h5>No. of products offering will  be Reaching 10M!<br/></h5></p>
+                            <Col sm="12">
                                 <br/>
-                                <h2>Why Buy from Shop The World? </h2>
+                                <br/>   
+                                <h5> <b> ShopTheWorld started its jounry in 2015 as a simple ECommerce site. We have evolved into what we are now after many transformations and experiences. Our experience helps us to give the best of price and service to our customers and we continue to work to give more variety of products. We do not just add products to our catalogues, they come with the best of price and quality in every step.</b> </h5>
+                                <br/>   
+                                <p><h5>At present,we operate in 9 Countries (INDIA , UAE, KSA, Singapore, Australia, USA, Canada , Mexico & Brazil) and ship to 186 countries worldwide, more than 10M products in our shelves.<br/></h5></p>
+                                <br/>
+                                <h2>WHY BUY FROM SHOP THE WORLD? </h2>
+                                <hr color="red" />
                                 <div className="sub-title">
                                 <div className="footer-title">
                                     <h4>Get to Know Us</h4>
                                 </div>
                                 <div className="footer-contant">
                                 <ul>
-                                        <li><h5><i className="fa fa-angle-double-right mr-2"></i>Wide choice of goods from across the World <br/></h5></li>
-                                        <li><h5><i className="fa fa-angle-double-right mr-2"></i>Access to many variants like  New, New Bulk , Factory Refurbished , Seller Refurbished, Used & Parts only ( not working  )<br/></h5></li>
-                                        <li><h5><i className="fa fa-angle-double-right mr-2"></i>Referral Discounts <br/></h5></li>
-                                        <li><h5><i className="fa fa-angle-double-right mr-2"></i>More buy more points  <br/></h5></li>
-                                        <li><h5><i className="fa fa-angle-double-right mr-2"></i>GST / VAT  invoice to get Tax  credit for business buyer <br/></h5></li>
-                                        <li><h5><i className="fa fa-angle-double-right mr-2"></i>Bulk discount for business buyers <br/></h5></li>
-                                        <li><h5><i className="fa fa-angle-double-right mr-2"></i>Presales support <br/></h5></li>
-                                        <li><h5><i className="fa fa-angle-double-right mr-2"></i>Post sales support<br/></h5></li>
-                                        <li><h5><i className="fa fa-angle-double-right mr-2"></i>Sourcing option - the product not found in our store can be sourced and delivered at your door step<br/></h5></li>
-                                        <li><h5><i className="fa fa-angle-double-right mr-2"></i>Easy chat thro whats up <br/></h5></li>
-                                        <li><h5><i className="fa fa-angle-double-right mr-2"></i>More Choice of products like configurable laptops , Personalised Gifts, Personalised banners etc <br/></h5></li>
-                                        <li><h5><i className="fa fa-angle-double-right mr-2"></i>Offer your price feature - one can demand better price from seller <br/></h5></li>
-                                        <li><h5><i className="fa fa-angle-double-right mr-2"></i>Competitive price comparing other panels <br/></h5></li>
-                                        <li><h5><i className="fa fa-angle-double-right mr-2"></i>Faster Delivery - thro No 1 Logistis Partners <br/></h5></li>
-                                        <li><h5><i className="fa fa-angle-double-right mr-2"></i>Serving E-Commerce Industry over past 5 years <br/></h5></li>
+                                        <li><h5><i style={styleListObj}  className="fa fa-angle-double-right mr-2"></i>Wide choice of goods from across the World.<br/></h5></li>
+                                        <li><h5><i style={styleListObj} className="fa fa-angle-double-right mr-2"></i>Reliability. We know our customers and products very well. You can buy from us confidently (welcome to check our google and trustpilot reviews) and we serve some of the big brands in the industry including Amazon, Google, etc.<br/></h5></li>
+                                        <li><h5><i style={styleListObj} className="fa fa-angle-double-right mr-2"></i>Access to many variants like New, New Bulk , Factory Refurbished , Seller Refurbished, Used. <br/></h5></li>
+                                        <li><h5><i style={styleListObj} className="fa fa-angle-double-right mr-2"></i>Referral Discounts. <br/></h5></li>
+                                        <li><h5><i style={styleListObj} className="fa fa-angle-double-right mr-2"></i>GST / VAT invoice to get Tax credit for business buyers. <br/></h5></li>
+                                        <li><h5><i style={styleListObj} className="fa fa-angle-double-right mr-2"></i>Bulk discount for volume buyers. <br/></h5></li>
+                                        <li><h5><i style={styleListObj} className="fa fa-angle-double-right mr-2"></i>Excellent presales support and post sales support. <br/></h5></li>
+                                        <li><h5><i style={styleListObj} className="fa fa-angle-double-right mr-2"></i>We help you to get products even if not in our listings. We check with our network of suppliers and arrange to deliver to your doorstep.<br/></h5></li>
+                                        <li><h5><i style={styleListObj} className="fa fa-angle-double-right mr-2"></i>Easy communication. We respond to our messages and mails quickly, all days of the year, never no vacation.<br/></h5></li>
+                                        <li><h5><i style={styleListObj} className="fa fa-angle-double-right mr-2"></i>More Choice of products than amazon like customized laptops, desktops, personalised gifts, personalised banners etc. <br/></h5></li>
+                                        <li><h5><i style={styleListObj} className="fa fa-angle-double-right mr-2"></i>We try to beat amazon price, if you feel we priced high, you can ask for a better price. <br/></h5></li>
+                                        <li><h5><i style={styleListObj} className="fa fa-angle-double-right mr-2"></i>Our price comparison feature  makes it easy to compare our prices with amazon, giving price satisfaction to the shopper .  <br/></h5></li>
+                                        <li><h5><i style={styleListObj} className="fa fa-angle-double-right mr-2"></i>Faster Delivery. We use reputed couriers with express mode that can be tracked end to end.  <br/></h5></li>
                                     </ul>
                                     </div>
                                     </div>
+                                    <div> <center> <h2 style={styleListObj}> Thank you for shopping !!! </h2></center> </div>
                             </Col>
                         </Row>
                     </Container>

@@ -34,7 +34,7 @@ const ServiceLayout = ({sectionClass}) => {
                             <div dangerouslySetInnerHTML={{ __html: svgoffer }} />
                             <div className="media-body">
                                 <h4>Always cheaper than Amazon</h4>
-                                <p>Only in Price, not in service</p>
+                                <p>100% price satisfaction</p>
                             </div>
                         </div>
                     </Col>
