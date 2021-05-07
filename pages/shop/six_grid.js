@@ -7,13 +7,13 @@ import ProductList from './common/productList';
 const SixGrid = () => {
     return (
         <CommonLayout title="collection" parent="home" >
-             <section className="section-b-space">
+             {/* <section className="section-b-space"> */}
             <Container>
                 <Row>
-                    <ProductList colClass="col-lg-2 col-6 col-grid-box" layoutList='' noSidebar={true} />
+                    <ProductList colClass="col-lg-3 col-6 col-grid-box" layoutList='' noSidebar={true} />
                 </Row>
             </Container>
-            </section>
+            {/* </section> */}
         </CommonLayout>
     )
 }

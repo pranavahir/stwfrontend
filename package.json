@@ -74,6 +74,7 @@
     "react-helmet": "^6.1.0",
     "react-hook-form": "^6.8.6",
     "react-i18next": "^11.7.2",
+    "react-image-autofit-frame": "^0.1.0",
     "react-image-lightbox": "^5.1.1",
     "react-image-lightbox-next": "^4.3.0",
     "react-images-upload": "^1.2.7",

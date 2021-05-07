@@ -186,16 +186,12 @@ const ProductList = ({ colClass, layoutList,openSidebar,noSidebar }) => {
                             {data && data.products.total.total>0? 
                              
                             <div className="top-banner-content small-section">
-                            <a href={null}><Media src={Menu2} className="img-fluid blur-up lazyload" alt="" /></a>
-                                <h4>{selectedCategory}</h4>
-                                <h5>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                            </h5>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled
-                                it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release
-                            of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                {/* <h4>{selectedCategory}</h4> */}
+                                <h5>{data ? `${selectedCategory}  1-${data.products.items.length} of ${data.products.total.total}` : 'loading'}</h5>
                             </div>
                             
-                            : <div className="template-password">
+                            :  [( data && data.products.total.total>0? 
+                            <div className="template-password">
                 <div className="container">
                     <div id="container" className="text-center">
                         <div>
@@ -244,7 +240,7 @@ const ProductList = ({ colClass, layoutList,openSidebar,noSidebar }) => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>:"loading...")]
                             }
                         </div>
                        {data && data.products.total.total>0? 
@@ -280,14 +276,14 @@ const ProductList = ({ colClass, layoutList,openSidebar,noSidebar }) => {
                                                     </li>
                                                 )
                                             }
-                                            {
+                                            {/* {
                                                
                                                     <li>
                                                         <a href={null} className="filter_tag">
                                                            price: {selectedPrice.min}- {selectedPrice.max}
                                                         </a>
                                                     </li>
-                                            }
+                                            } */}
                                         </ul>
                                     </Col>
                                 </Row>
@@ -295,7 +291,7 @@ const ProductList = ({ colClass, layoutList,openSidebar,noSidebar }) => {
                                 }
                                 {data && data.products.total.total>0? 
                                  <div className="collection-product-wrapper">
-                            <div className="product-top-filter">
+                            <div>
                                 {!noSidebar?
                                 <Row>
                                     <Col xl="12">
@@ -308,7 +304,7 @@ const ProductList = ({ colClass, layoutList,openSidebar,noSidebar }) => {
                                 </Row>
                                 :""
                                 }   
-                                <Row>
+                                {/* <Row>
                                     <Col>
                                         <div className="product-filter-content">
                                             <div className="search-count">
@@ -371,7 +367,7 @@ const ProductList = ({ colClass, layoutList,openSidebar,noSidebar }) => {
                                             </div>
                                         </div>
                                     </Col>
-                                </Row>
+                                </Row> */}
                             </div>
                             <div className={`product-wrapper-grid ${layout}`}>
                                 <Row>
@@ -404,6 +400,7 @@ const ProductList = ({ colClass, layoutList,openSidebar,noSidebar }) => {
                                      </div>
                                         : data && data.products.items.map((product, i) =>
                                             <div className={grid} key={i}>
+                                            <div className="product-top-filter"></div>
                                                 <div className="product">
                                                     <div>
                                                         <ProductItem des={true} product={product} symbol={symbol} cartClass="cart-info cart-wrap"
@@ -412,6 +409,7 @@ const ProductList = ({ colClass, layoutList,openSidebar,noSidebar }) => {
                                                             addCart={() => cartContext.addToCart(product,quantity)} />
                                                     </div>
                                                 </div>
+                                                
                                             </div>
                                         )}
                                 </Row>

@@ -75,8 +75,8 @@ const CardForm = () => {
       <div id="payment-form" onSubmit={handleSubmit}>
         <label htmlFor="card">Card</label>
         <CardElement id="card" />
-
-        <button type="submit">Pay</button>
+        <br/>
+        <button className="btn-solid btn" type="submit">Pay</button>
       </div>
       {/* <StatusMessages messages={messages} /> */}
     </>

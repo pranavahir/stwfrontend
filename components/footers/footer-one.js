@@ -63,7 +63,7 @@ const styleObject = {
                                 <div className="footer-logo">
                                     <LogoImage logo={logoName} />
                                 </div>
-                                <p style={styleObject}><b>We provide an ocean of products across the globe at the best possible price. We have larget collection of items in every single category and we also make it a point to sell items which are cheaper than amazon and other market places. We work with the reputed vendors who give the best of their price to us and we pass on the same to our customers. We welcome you to browse through our collection to see for yourself.</b></p>
+                                <p style={styleObject}>We provide an ocean of products across the globe at the best possible price. We have larget collection of items in every single category and we also make it a point to sell items which are cheaper than amazon and other market places. We work with the reputed vendors who give the best of their price to us and we pass on the same to our customers. We welcome you to browse through our collection to see for yourself.</p>
                                 <div className="footer-social">
                                     <ul>
                                         <li>
@@ -112,7 +112,11 @@ const styleObject = {
                                         <li><a href="#">secure shopping</a></li>
                                         <li><a href="#">gallary</a></li>
                                         <li><a href="#">affiliates</a></li>
-                                        <li><a href="#">contacts</a></li>
+                                        <li>
+                                        <Link href={`/page/account/contact`} >
+                                        <a>contacts</a>
+                                        </Link>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
@@ -124,7 +128,13 @@ const styleObject = {
                                 </div>
                                 <div className="footer-contant">
                                     <ul className="contact-list">
-                                    <li><i className="fa fa-map-marker"></i>Shop The World
+                                    <li><i className="fa fa-map-marker"></i><b> STW ECommerce pvt Ltd</b> <br/>
+
+612 Accord Classic, Station Road
+
+Next to Anupam cinema ,
+
+Goregoan east, Mumbai 400063
                                             </li>
                                         <li><i className="fa fa-phone"></i>Call Us: +91 9820168421</li>
                                         <li><i className="fa fa-whatsapp"></i>WhatsApp: +91 9820168421</li>

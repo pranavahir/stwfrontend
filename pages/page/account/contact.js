@@ -3,17 +3,21 @@ import CommonLayout from '../../../components/shop/common-layout';
 import { Container, Row, Col, Media, Form, Label, Input } from 'reactstrap';
 import Phone from '../../../public/assets/images/icon/phone.png';
 import Email from '../../../public/assets/images/icon/email.png';
+import contactus from '../../../public/assets/images/contactus.jpg';
 
 const Contact = () => {
+    const contactFontStyle= {
+        fontSize:12
+    }
     return (
         <CommonLayout parent="home" title="Contact">
             <section className="contact-page section-b-space">
                 <Container>
                     <Row className="section-b-space">
                         <Col lg="7" className="map">
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1605.811957341231!2d25.45976406005396!3d36.3940974010114!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1550912388321"
-                                allowFullScreen></iframe>
+                            <img
+                                src={contactus}
+                                    ></img>
                         </Col>
                         <Col lg="5">
                             <div className="contact-right">
@@ -24,18 +28,22 @@ const Contact = () => {
                                                 alt="Generic placeholder image" className="m-auto" />
                                             <h6>Contact Us</h6>
                                         </div>
-                                        <div className="media-body">
-                                            <p>+91 9820168421</p>
-                                            <p>+91 9820168421</p>
+                                        <div className="media-body" style={contactFontStyle}>
+                                            <p style={contactFontStyle}>+91 9820168421</p>
+                                            <p style={contactFontStyle}>+91 9820168421</p>
                                         </div>
                                     </li>
                                     <li>
                                         <div className="contact-icon"><i className="fa fa-map-marker" aria-hidden="true"></i>
                                             <h6>Address</h6>
                                         </div>
-                                        <div className="media-body">
-                                            <p>ABC Complex,Near xyz, New York</p>
-                                            <p>USA 123456</p>
+                                        <div className="media-body" style={contactFontStyle}>
+                                          
+                                            <p style={contactFontStyle}>STW ECommerce pvt Ltd </p>
+                                            <p style={contactFontStyle}> 612 Accord Classic, Station Road </p>
+                                            <p style={contactFontStyle}>Next to Anupam cinema , </p>
+                                            <p style={contactFontStyle}>Goregoan east, Mumbai 400063</p>
+                                            
                                         </div>
                                     </li>
                                     <li>
@@ -45,11 +53,11 @@ const Contact = () => {
                                             <h6>Address</h6>
                                         </div>
                                         <div className="media-body">
-                                            <p>Support@Shopcart.com</p>
-                                            <p>info@shopcart.com</p>
+                                            <p style={contactFontStyle}>Care@Shoptheworldonline.Com</p>
+                                            {/* <p>info@shopcart.com</p> */}
                                         </div>
                                     </li>
-                                    <li>
+                                    {/* <li>
                                         <div className="contact-icon"><i className="fa fa-fax" aria-hidden="true"></i>
                                             <h6>Fax</h6>
                                         </div>
@@ -57,7 +65,7 @@ const Contact = () => {
                                             <p>Support@Shopcart.com</p>
                                             <p>info@shopcart.com</p>
                                         </div>
-                                    </li>
+                                    </li> */}
                                 </ul>
                             </div>
                         </Col>

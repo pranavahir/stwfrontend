@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import { Row, Col, Media, Modal, ModalBody } from 'reactstrap';
 import CartContext from '../../../helpers/cart';
 import { CurrencyContext } from '../../../helpers/Currency/CurrencyContext';
+import AutoFitImage from 'react-image-autofit-frame';
 
 const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass, productDetail, addCompare, title }) => {
     // eslint-disable-next-line
@@ -28,6 +29,16 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
         setImage(img);
     }
 
+    const getName = (title)=> {
+        var str = null;
+        if(title !=null && title!=undefined)
+        {
+            str = title; 
+            var res = str.slice(0, 150);
+            // res= res+"....";
+        }
+                return res;
+    }
     const changeQty = (e) => {
         setQuantity(parseInt(e.target.value))
     }
@@ -103,6 +114,10 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
     for (var i = 0; i < rating; i++) {
         RatingStars.push(<i className="fa fa-star" key={i}></i>)
     }
+    const linkStyle ={
+        fontSize:12,
+        cursor: 'pointer',
+    }
 
     return (
         <div className="product-box product-wrap">
@@ -111,18 +126,21 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
                     {(product.new === true) ? <span className="lable3">new</span> : ''}
                     {(product.sale === true) ? <span className="lable4">on sale</span> : ''}
                 </div>
-                <div className="front" onClick={clickProductDetail}>
-                    <Media src={`${image ?
+                <div style={linkStyle} className="front" onClick={clickProductDetail}>
+                    {/* <Media src={`${image ?
                         image : product.images.length>0 ? product.images[0].mainimageurl :""
                         }`}
                         className="img-fluid"
-                        alt="" />
+                        alt="" /> */}
+                           <AutoFitImage frameWidth="200px" frameHeight="160px" imgSrc={`${image ?
+                        image : product.images.length>0 ? product.images[0].mainimageurl :""
+                        }`}/>
                 </div>
                 {backImage ?
                     product.images.length == 0 ?
                         'false'
                         :
-                        <div className="back" onClick={clickProductDetail}>
+                        <div style={linkStyle} className="back" onClick={clickProductDetail}>
                             <Media src={`${image ?
                                 image :  product.images.length>0 ? product.images[0].mainimageurl :""
                                 }`}
@@ -194,7 +212,7 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
                     <div className="rating">
                         {RatingStars}
                     </div>: ''}
-                    <h6>{product.title}</h6>
+                    <div style={linkStyle} onClick={clickProductDetail} >{product.title}</div>
                     {des ?
                         <p>{product.description}</p>
                         : ''

@@ -9,7 +9,7 @@ const Breadcrubs = ({title ,parent ,subTitle}) => {
                 <Row>
                     <Col sm="6">
                         <div className="page-title">
-                            <h2>{title}</h2>
+                            <h5>{title}</h5>
                         </div>
                     </Col>
                     <Col sm="6">

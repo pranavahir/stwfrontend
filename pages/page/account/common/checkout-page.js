@@ -784,7 +784,7 @@ const CheckoutPage = ({ isPublic = false }) => {
                                     defaultChecked={true}
                                     onClick={() => checkhandle("stripe")}
                                   />
-                                  <label htmlFor="payment-2">Stripe</label>
+                                  <label htmlFor="payment-2">Credit Cards / Debit Cards</label>
                                 </div>
                               </li>
                               <li>
@@ -813,7 +813,7 @@ const CheckoutPage = ({ isPublic = false }) => {
                             ) : payment === "paypal" ? (
                               <PayPalButton
                                 paypalOptions={paypalOptions}
-                                amount={1}
+                                amount={cartTotal}
                                 onPaymentSuccess={onSuccess}
                                 onPaymentError={onError}
                                 onApprove={onSuccess}
