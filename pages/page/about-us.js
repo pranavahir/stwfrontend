@@ -247,13 +247,9 @@ const AboutUs = () => {
                       </div>
                       <div className="media-body">
                         <p style={styleObj}>
-                          Thank You !<br />
-                          Shop The World <br />
-                          for helping us to get in to e -commerce, from offline
-                          retail seller over 18+ years, now able to sell
-                          products acrosss many countries Our sales increased
-                          multi fold. E commerce presence helped us to generate
-                          revenue during the pandemic lock down period.
+                          
+                        Director and founder of ShopTheWorld.
+20 years of experience in logistics and servicing to businesses.
                           <br />
                           -www.schoolmateplus.in
                         </p>
@@ -273,15 +269,11 @@ const AboutUs = () => {
                       </div>
                       <div className="media-body">
                         <p style={styleObj}>
-                          Thank You !<br />
-                          Shop The World <br />
-                          for helping us to get in to e -commerce, from offline
-                          retail seller over 18+ years, now able to sell
-                          products acrosss many countries Our sales increased
-                          multi fold. E commerce presence helped us to generate
-                          revenue during the pandemic lock down period.
+                        Started the journey with ShopTheWorld 5 years ago. Takes care of all tools and system works. 
+Growing as all rounder, explores every new tool with enthusiasm and helps the team to grow.
+
                           <br />
-                          -www.schoolmateplus.in
+                          
                         </p>
                       </div>
                     </div>
@@ -298,15 +290,7 @@ const AboutUs = () => {
                       </div>
                       <div className="media-body">
                         <p style={styleObj}>
-                          Thank You !<br />
-                          Shop The World <br />
-                          for helping us to get in to e -commerce, from offline
-                          retail seller over 18+ years, now able to sell
-                          products acrosss many countries Our sales increased
-                          multi fold. E commerce presence helped us to generate
-                          revenue during the pandemic lock down period.
-                          <br />
-                          -www.schoolmateplus.in
+                        A one stop shop software developer, provides sophisticated solutions, ability to learn new technologies and masters in a fews weeks.
                         </p>
                       </div>
                     </div>
