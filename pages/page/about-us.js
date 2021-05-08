@@ -250,8 +250,7 @@ const AboutUs = () => {
                           
                         Director and founder of ShopTheWorld.
 20 years of experience in logistics and servicing to businesses.
-                          <br />
-                          -www.schoolmateplus.in
+                          
                         </p>
                       </div>
                     </div>
