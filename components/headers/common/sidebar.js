@@ -43,9 +43,7 @@ const SideBar = () => {
 			{
 				var URL = "/shop/six_grid";
 			}
-			console.log(category)
             filterContext.setSelectedCategory(category)
-            console.log(selectedCategory);
         	router.push(`${URL}?${selectedCategory}&brand=${selectedBrands}&color=${selectedColor}&size=${selectedSize}&minPrice=${selectedPrice.min}&maxPrice=${selectedPrice.max}&keyword=${selectedKeyword}`)
     }
 

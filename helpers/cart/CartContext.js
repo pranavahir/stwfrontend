@@ -68,8 +68,9 @@ const CartProvider = (props) => {
     {
         if(variantData.length > 0)
         {
-          sellPrice = Math.floor(((variantData[0].conversionrate *  ((variantData[0].price +2 ) * 1.0825 )  + (variantData[0].frieghtrate)) * (1 + variantData[0].duty)) * (1/(1-((variantData[0].fees / (1 + (variantData[0].fees)))+(variantData[0].margin / (1 + (variantData[0].margin)))))),-1);
-            console.log(sellPrice);
+          // sellPrice = Math.floor(((variantData[0].conversionrate *  ((variantData[0].price +2 ) * 1.0825 )  + (variantData[0].frieghtrate)) * (1 + variantData[0].duty)) * (1/(1-((variantData[0].fees / (1 + (variantData[0].fees)))+(variantData[0].margin / (1 + (variantData[0].margin)))))),-1);
+          sellPrice = Math.floor(((variantData[0].conversionrate * ((variantData[0].price +2 ) * 1.0825 )  + (variantData[0].frieghtrate)) * (1 + variantData[0].duty)) * (1/(1-((variantData[0].fees / (1 + (variantData[0].fees)))+(variantData[0].margin / (1 + (variantData[0].margin)))))),0);
+            // console.log(sellPrice);
         }
         else
         {
@@ -82,13 +83,14 @@ const CartProvider = (props) => {
 
 const gstCollection = (variantData) =>{
   var gstPrice = null;
+  
   if(variantData !=null && variantData !=undefined)
   {
       if(variantData.length > 0)
       {
-
-        gstPrice = Math.floor(((variantData[0].conversionrate *  ((variantData[0].price +2 ) * 1.0825 )  + (variantData[0].frieghtrate)) * (1 + variantData[0].duty)) * (1/(1-((variantData[0].taxes / (1 + (variantData[0].taxes)))+(variantData[0].fees / (1 + (variantData[0].fees)))+(variantData[0].margin / (1 + (variantData[0].margin)))))),-1) - Math.floor(((variantData[0].conversionrate *  ((variantData[0].price +2 ) * 1.0825 )  + (variantData[0].frieghtrate)) * (1 + variantData[0].duty)) * (1/(1-((variantData[0].fees / (1 + (variantData[0].fees)))+(variantData[0].margin / (1 + (variantData[0].margin)))))),-1);
-        console.log(gstPrice);
+        // gstPrice = Math.floor(((variantData[0].conversionrate *  ((variantData[0].price +2 ) * 1.0825 )  + (variantData[0].frieghtrate)) * (1 + variantData[0].duty)) * (1/(1-((variantData[0].taxes / (1 + (variantData[0].taxes)))+(variantData[0].fees / (1 + (variantData[0].fees)))+(variantData[0].margin / (1 + (variantData[0].margin)))))),-1) - Math.floor(((variantData[0].conversionrate *  ((variantData[0].price +2 ) * 1.0825 )  + (variantData[0].frieghtrate)) * (1 + variantData[0].duty)) * (1/(1-((variantData[0].fees / (1 + (variantData[0].fees)))+(variantData[0].margin / (1 + (variantData[0].margin)))))),-1);
+        gstPrice = Math.floor(((variantData[0].conversionrate * ((variantData[0].price +2 ) * 1.0825 )  + (variantData[0].frieghtrate)) * (1 + variantData[0].duty)) * (1/(1-((variantData[0].fees / (1 + (variantData[0].fees)))+(variantData[0].margin / (1 + (variantData[0].margin))))))  *  variantData[0].taxes ,0)
+         
       }
       else
       {
@@ -106,7 +108,6 @@ const discountCalculation = (variantData) =>{
       if(variantData.length > 0)
       {
           discount = variantData[0].discount;
-          console.log(discount);
       }
       else
       {
@@ -118,16 +119,16 @@ const discountCalculation = (variantData) =>{
 
    // Update Product Quantity
    const updateQty = (item, quantity) => {
+     
     if(quantity >= 1 ){
       const index = cartItems.findIndex(itm => itm.id === item.id)
       if(index !== -1){
         const product = cartItems[index];
         cartItems[index] = { ...product, ...item, qty: quantity, total: ((priceCollection(item.variants) - (priceCollection(item.variants) * discountCalculation(item.variants) / 100))+gstCollection(item.variants)) * quantity  }; 
-
         setCartItems([...cartItems])
         toast.info("Product Quantity Updated !");
       }else{
-        const product = {...item, qty: quantity, total: (gstCollection(item.variants)+(priceCollection(item.variants) - (priceCollection(item.variants) * discountCalculation(item.variants) / 100))) * quantity }
+        const product = {...item, qty: quantity, total: ((priceCollection(item.variants) - (priceCollection(item.variants) * discountCalculation(item.variants) / 100))+gstCollection(item.variants)) * quantity }
         setCartItems([...cartItems, product])
         toast.success("Product Added Updated !");
       }
@@ -141,7 +142,7 @@ const discountCalculation = (variantData) =>{
     <Context.Provider
       value={{
         ...props,
-        state: cartItems, cartTotal,setQuantity ,quantity,stock,
+        state: cartItems, cartTotal,setQuantity,quantity,stock,
         addToCart: addToCart,
         removeFromCart: removeFromCart,
         plusQty: plusQty,

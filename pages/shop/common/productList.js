@@ -119,7 +119,6 @@ const ProductList = ({ colClass, layoutList,openSidebar,noSidebar }) => {
         }
     });
     
-    console.log(data);
     if(data!=undefined)
     {
         if(data.products.total.total==0)
@@ -132,7 +131,6 @@ const ProductList = ({ colClass, layoutList,openSidebar,noSidebar }) => {
 
     const handlePagination = () => {
         setIsLoading(true);
-        console.log(data.products.items.length);
         setTimeout(() =>
             fetchMore({
                 variables: {
@@ -190,7 +188,7 @@ const ProductList = ({ colClass, layoutList,openSidebar,noSidebar }) => {
                                 <h5>{data ? `${selectedCategory}  1-${data.products.items.length} of ${data.products.total.total}` : 'loading'}</h5>
                             </div>
                             
-                            :  [( data && data.products.total.total>0? 
+                            :  [( data && data.products.total.total==0? 
                             <div className="template-password">
                 <div className="container">
                     <div id="container" className="text-center">

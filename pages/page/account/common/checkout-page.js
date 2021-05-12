@@ -88,7 +88,6 @@ const CheckoutPage = ({ isPublic = false }) => {
     var request = null;
     try {
       request = new PaymentRequest(supportedInstruments, details);
-      console.log(request);
       /*request.show()
     .then(function(result){
         alert("hai");

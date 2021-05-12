@@ -45,8 +45,8 @@ const CopyRight = ({layout, fluid}) => {
                                     </Link>
                                     </li>
                                     <li>
-                                    <Link href={`/page/about-us`} >
-                                    <p style={styleObj}><a href="#"> &nbsp; Seller</a></p>
+                                    <Link href={`/page/faq`} >
+                                    <p style={styleObj}><a href="#"> &nbsp; FAQ</a></p>
                                     </Link>
                                     </li>
                                 </ul>

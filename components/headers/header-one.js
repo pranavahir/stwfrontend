@@ -47,7 +47,6 @@ const HeaderOne = ({ logoName, headerClass, topClass, noTopBar ,direction }) => 
 	}, []);
 
 	const onSubmit = (data,e) => {
-		console.log(e.target[0].value);
 
 		if(e.target[0].value!=null && e.target[0].value!=undefined && e.target[0].value!="")
 		{
