@@ -201,7 +201,7 @@ const ProductList = ({ colClass, layoutList,openSidebar,noSidebar }) => {
                                         </a>
                                     </div>
                                     <h2 className="mb-3">
-                                    {selectedCategory} Will be Comming Soon!
+                                    {selectedCategory} Will be Coming Soon!
                             </h2>
                                 </div>
                                 <div className="row">

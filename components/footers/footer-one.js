@@ -63,7 +63,7 @@ const styleObject = {
                                 <div className="footer-logo">
                                     <LogoImage logo={logoName} />
                                 </div>
-                                <p style={styleObject}>We provide an ocean of products across the globe at the best possible price. We have larget collection of items in every single category and we also make it a point to sell items which are cheaper than amazon and other market places. We work with the reputed vendors who give the best of their price to us and we pass on the same to our customers. We welcome you to browse through our collection to see for yourself.</p>
+                                <p style={styleObject}>We provide an ocean of products across the globe at the best possible price. We have large collection of items in every single category and we also make it a point to sell items which are cheaper than amazon and other market places. We work with the reputed vendors who give the best of their price to us and we pass on the same to our customers. We welcome you to browse through our collection to see for yourself.</p>
                                 <div className="footer-social">
                                     <ul>
                                         <li>
