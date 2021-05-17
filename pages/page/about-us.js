@@ -44,7 +44,7 @@ const AboutUs = () => {
                   {" "}
                   <b>
                     {" "}
-                    ShopTheWorld started its jounry in 2015 as a simple
+                    ShopTheWorld started its journey in 2015 as a simple
                     ECommerce site. We have evolved into what we are now after
                     many transformations and experiences. Our experience helps
                     us to give the best of price and service to our customers
