@@ -9,10 +9,13 @@ import Link from 'next/link';
 const Login = () => {
 
     const router = useRouter();
-    const [email, setEmail] = useState("coolmani0201@gmail.com");
-    const [password, setPassword] = useState("Passwprd123*");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
     const [name, setName] = useState(
         localStorage.getItem('Name')
+    );
+    const [historyLogin, setHistoryLogin] = useState(
+        localStorage.getItem('historyLogin')
     );
     
     useEffect(() => {
@@ -24,12 +27,12 @@ const Login = () => {
             await firebase.auth().signInWithEmailAndPassword(email, password).then(function () {                
                 setName(email);
                 setTimeout(() => {
-                    router.push(`/`);
+                    router.push(historyLogin);
                 }, 200);
                 })
         } catch (error) {
             setTimeout(() => {
-                toast.error("error", error);
+                toast.error("error : Please enter Valid username and Password", error);
             }, 200);
         }
     }
@@ -37,9 +40,9 @@ const Login = () => {
     const loginGuest = async (email,password) => {
         try {
             await firebase.auth().signInWithEmailAndPassword("coolmani0201@gmail.com", "Passwprd123*").then(function () {                
-                setName("Guest");
+                setName("");
                 setTimeout(() => {
-                    router.push(`/`);
+                    router.push(historyLogin);
                 }, 200);
                 })
         } catch (error) {
@@ -55,7 +58,7 @@ const Login = () => {
                 firebase.auth().signInWithPopup(googleProvider).then(function (result) {
                 setName(result.user.displayName);
                 setTimeout(() => {
-                    router.push(`/`);
+                    router.push(historyLogin);
                 }, 200);
             
             });
@@ -71,7 +74,7 @@ const Login = () => {
                 firebase.auth().signInWithPopup(facebookProvider).then(function (result) {
                 setName(result.user.displayName)
                 setTimeout(() => {
-                    router.push(`/`);
+                    router.push(historyLogin);
                 }, 200);
             });
         } catch (error) {

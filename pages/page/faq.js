@@ -79,10 +79,7 @@ const faqData = [
             point: "WHEN CAN I CONTACT CUSTOMER CARE AND HOW?",
             ans: "You can email/watsapp/call/live chat with us anytime with the details provided on 'Contact us' page."
           },
-          {
-            point: "WHAT DO YOU MEAN BY FULFILLED AND NON FULFILLED PRODUCTS?",
-            ans:""
-          },
+          
           {
             point: "DO YOU HAVE PHYSICAL STORE?",
             ans: "We have are 100% online store only. So we do not have any physical store as of now. All our items are sourced internationally."
@@ -146,39 +143,14 @@ const faqData = [
             point: "DO I NEED TO PAY ANYTHING EXTRA AT THE TIME OF DELIVERY?",
             ans:  "No, we do not charge anything other than what you pay at the time of check out.If you are requested to pay again then please contact us immediately."
           },
-          {
-            point: "HOW TO CALCULATE SHIPPING AND CUSTOMS FEES?",
-            ans:""
-          },
-          {
-            point: "DO I NEED TO PAY OTHER CHARGES?",
-            ans:""
-          },
+           
         ],
       },
     ],
   },
   {
-    qus: "CUSTOMS CLEARANCE & CANCELLATION",
+    qus: "CANCELLATION",
     ans: [
-      {
-        Header: "CUSTOMS CLEARANCE",
-        Points: [
-          {
-            point: "DO I NEED TO PAY EXTRA AMOUNT FOR CUSTOMS AFTER PLACING AN ORDER?",
-            ans:""
-          },
-          {
-            point: "WHO WILL BE RESPONSIBLE FOR CUSTOMS CLEARANCE?",
-            ans:""
-          },
-          {
-            point: "WHAT WILL HAPPEN IF SHIPMENT STUCK IN CUSTOMS?",
-            ans:""
-          },
-        ],
-      },
-
       {
         Header: "CANCELLATION",
         Points: [
@@ -218,10 +190,7 @@ const faqData = [
       {
         Header: "DELIVERY",
         Points: [
-          {
-            point: "HOW MUCH REFUND I GET IN CASE OF REFUSED DELIVERY?",
-            ans:""
-          },
+          
           {
             point: "WHAT IS THE ESTIMATED TIME OF DELIVERY FOR THE PRODUCTS?",
             ans: "In general, you will receive your item within the chosen shipping method 12 Business days or sooner. We update the orders with tracking information and you can check the status of the order. "
@@ -262,15 +231,6 @@ const faqData = [
       {
         Header: "REFUNDS",
         Points: [
-         
-          {
-            point: "WHAT IS THE PROCEDURE IN CASE OF MISSING PRODUCT IN PARCEL?",
-            ans:""
-          },
-          {
-            point: "ON WHICH SCENARIO PARTIAL REFUND GRANTED?",
-            ans:""
-          },
           {
             point: "HOW SHOULD REFUND PROCESS ON RETURN?",
             ans: "Once your product returned, we will send you an email to notify you that we have received your returned product. The product will be then inspected and on that basis the approval or rejection of refund determines. Once it’s approved, your refund will be processed to original method of payment. Transaction settlement will take couple of days depending on your card issuer’s policy."

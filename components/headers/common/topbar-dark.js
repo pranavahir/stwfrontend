@@ -9,15 +9,31 @@ const TopBarDark = ({ topClass, fluid }) => {
     const [name, setName] = useState(
         localStorage.getItem('Name')
     );
+    const [historyLogin, setHistoryLogin] = useState(
+        localStorage.getItem('historyLogin')
+    );
     useEffect(() => {
         localStorage.setItem('Name', name);
-    }, [name]);
+        localStorage.setItem('historyLogin', historyLogin);
+    }, [name,historyLogin]);
 
-    console.log(name);
+    console.log(historyLogin);
     const firebaseLogout = () => {
         firebase.auth().signOut()  
         setName(""); 
         router.push("/page/account/login-auth")
+    }
+    const Login = () => {
+        var pathname = window.location.pathname;
+        console.log(pathname);
+        setHistoryLogin(pathname); 
+        router.push("/page/account/login-auth")
+    }
+    const Register = () => {
+        var pathname = window.location.pathname;
+        console.log(pathname);
+        setHistoryLogin(pathname); 
+        router.push("/page/account/register")
     }
     return (
         <div className={topClass}>
@@ -49,15 +65,11 @@ const TopBarDark = ({ topClass, fluid }) => {
                             </li>:<li className="onhover-dropdown mobile-account">
                                 <i className="fa fa-user" aria-hidden="true"></i> My Account
                                     <ul className="onhover-show-div">
-                                    <li>
-                                        <Link href={`/page/account/login-auth`}>
+                                    <li onClick={() => Login()} >
                                             <a>Login</a>
-                                        </Link>
                                     </li>
-                                    <li>
-                                        <Link href={`/page/account/register`}>
+                                    <li onClick={() => Register()}>
                                             <a>Register</a>
-                                        </Link>
                                     </li>
                                 </ul>
                             </li>} 
