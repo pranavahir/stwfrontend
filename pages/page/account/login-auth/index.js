@@ -26,6 +26,9 @@ const Login = () => {
         try {
             await firebase.auth().signInWithEmailAndPassword(email, password).then(function () {                
                 setName(email);
+                if(historyLogin==null)
+                setHistoryLogin('/');
+
                 setTimeout(() => {
                     router.push(historyLogin);
                 }, 200);
@@ -41,6 +44,8 @@ const Login = () => {
         try {
             await firebase.auth().signInWithEmailAndPassword("coolmani0201@gmail.com", "Passwprd123*").then(function () {                
                 setName("");
+                if(historyLogin==null)
+                setHistoryLogin('/');
                 setTimeout(() => {
                     router.push(historyLogin);
                 }, 200);
@@ -57,6 +62,10 @@ const Login = () => {
         try {
                 firebase.auth().signInWithPopup(googleProvider).then(function (result) {
                 setName(result.user.displayName);
+                
+                if(historyLogin==null)
+                setHistoryLogin('/');
+
                 setTimeout(() => {
                     router.push(historyLogin);
                 }, 200);
@@ -73,6 +82,11 @@ const Login = () => {
         try {
                 firebase.auth().signInWithPopup(facebookProvider).then(function (result) {
                 setName(result.user.displayName)
+
+                if(historyLogin==null)
+                setHistoryLogin('/');
+
+
                 setTimeout(() => {
                     router.push(historyLogin);
                 }, 200);
