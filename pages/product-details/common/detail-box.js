@@ -174,8 +174,9 @@ const DetailBox = ({ item ,changeColorVar }) => {
                     </div>
                 </div>
             </div>
-            <div className="product-buttons"><a href={null} data-toggle="modal" data-target="#addtocart" onClick={() => addToCart(item,quantity)}
-                className="btn btn-solid">add to cart</a> <a href="#" className="btn btn-solid">buy now</a>
+            <div className="product-buttons">
+            <a href={null} data-toggle="modal" data-target="#addtocart" onClick={() => addToCart(item,quantity)}className="btn btn-solid">add to cart</a> 
+            <a href="#"  className="btn btn-solid">buy now</a>
             </div>
         </div>
     )

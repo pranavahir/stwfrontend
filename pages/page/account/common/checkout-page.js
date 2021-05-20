@@ -119,6 +119,9 @@ const CheckoutPage = ({ isPublic = false }) => {
 
   const OrderedMail = async (productDetail,customerDetail) =>{
 
+    console.log(productDetail);
+    // razorpaypayment.digitechniq.in
+
     const { error: backendMailError, clientMail } = await fetch(
       "https://razorpaypayment.digitechniq.in/email/send",
       {
@@ -145,6 +148,17 @@ const CheckoutPage = ({ isPublic = false }) => {
 
   }
 
+  const titleTrim=(title)=>{
+    var res = null
+    if(title!=null)
+      res = title.substring(1, 250);
+    else
+     res = title;
+
+    return res;
+
+  }
+
   const Orderconformation = (paymentGateway,PaymentDetail,customerData)=>{
 
       if(paymentGateway == "Razorpay")
@@ -168,7 +182,7 @@ const CheckoutPage = ({ isPublic = false }) => {
           OrderDetail = {
             orderdetailid: 2,
             productsku: item.sku,
-            producttitle: item.title,
+            producttitle: titleTrim(item.title),
             quantity: 1,
             totalprice: item.total,
             customerid: 1,
@@ -179,6 +193,8 @@ const CheckoutPage = ({ isPublic = false }) => {
           };
     
           try {
+
+            console.log(OrderDetail);
             var orderData = createOrder({
               variables: { order: { ...OrderDetail } },
             });
@@ -453,6 +469,8 @@ const CheckoutPage = ({ isPublic = false }) => {
     }
 
     const API_URL = `https://razorpaypayment.digitechniq.in/razorpay/`;
+    // const API_URL = `http://localhost:7000/razorpay/`;
+    
     const orderUrl = `${API_URL}order`;
     const response = await Axios.post(orderUrl, { amount: cartTotal });
     const { data } = response;
@@ -461,12 +479,13 @@ const CheckoutPage = ({ isPublic = false }) => {
     const options = {
       key: "", //replace razorpay API key
       name: filledData.first_name,
-      description: cartItems[0].title,
+      description: titleTrim(cartItems[0].title),
       order_id: data.id,
       handler: async (response) => {
         try {
           const paymentId = response.razorpay_payment_id;
           console.log(paymentId);
+          // const url = `https://razorpaypayment.digitechniq.in/razorpay/capture/${paymentId}`;
           const url = `https://razorpaypayment.digitechniq.in/razorpay/capture/${paymentId}`;
           const captureResponse = await Axios.post(url, {
             amount: cartTotal,
@@ -475,19 +494,17 @@ const CheckoutPage = ({ isPublic = false }) => {
           const captured = successObj.captured;
           console.log("App -> razorPayPaymentHandler -> captured", successObj);
           if (captured) {
-            // swal("Payment Successfull", "", "success");
             console.log("success");
-            this.setState({ name: "", decription: "", amount: "" });
+            // this.setState({ name: "", decription: "", amount: "" });
             // id
             Orderconformation("Razorpay",successObj,filledData);
-
           }
         } catch (err) {
           console.log(err);
         }
       },
       theme: {
-        color: "#686CFD",
+        color: "#ff4c3b",
       },
     };
     const rzp1 = new window.Razorpay(options);

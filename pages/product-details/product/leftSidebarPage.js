@@ -90,6 +90,9 @@ const GET_SINGLE_PRODUCTS = gql`
             processor
             graphics
             discount
+            daystoship
+            pwfee
+            purchasetax
             conversionrate
                 frieghtrate
                 duty

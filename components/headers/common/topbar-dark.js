@@ -1,4 +1,4 @@
-import React from 'react';
+import React ,{useState,useEffect} from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import Link from 'next/link';
 import firebase from '../../../config/base'
@@ -6,8 +6,17 @@ import { useRouter } from 'next/router';
 
 const TopBarDark = ({ topClass, fluid }) => {
     const router = useRouter();
+    const [name, setName] = useState(
+        localStorage.getItem('Name')
+    );
+    useEffect(() => {
+        localStorage.setItem('Name', name);
+    }, [name]);
+
+    console.log(name);
     const firebaseLogout = () => {
-        firebase.auth().signOut()   
+        firebase.auth().signOut()  
+        setName(""); 
         router.push("/page/account/login-auth")
     }
     return (
@@ -30,11 +39,18 @@ const TopBarDark = ({ topClass, fluid }) => {
                                     <a><i className="fa fa-heart" aria-hidden="true"></i> wishlist</a>
                                 </Link>
                             </li>
-                            <li className="onhover-dropdown mobile-account">
+                            {name!="" && name!=null && name ?<li className="onhover-dropdown mobile-account">
+                                <i className="fa fa-user" aria-hidden="true"></i> {name}
+                                    <ul className="onhover-show-div">
+                                    <li onClick={() => firebaseLogout()}>
+                                        <a>Logout</a>
+                                    </li>
+                                </ul>
+                            </li>:<li className="onhover-dropdown mobile-account">
                                 <i className="fa fa-user" aria-hidden="true"></i> My Account
                                     <ul className="onhover-show-div">
                                     <li>
-                                        <Link href={`/page/account/login`}>
+                                        <Link href={`/page/account/login-auth`}>
                                             <a>Login</a>
                                         </Link>
                                     </li>
@@ -43,11 +59,8 @@ const TopBarDark = ({ topClass, fluid }) => {
                                             <a>Register</a>
                                         </Link>
                                     </li>
-                                    <li onClick={() => firebaseLogout()}>
-                                        <a>Logout</a>
-                                    </li>
                                 </ul>
-                            </li>
+                            </li>} 
                         </ul>
                     </Col>
                 </Row>

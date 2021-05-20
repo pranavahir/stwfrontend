@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 import Link from 'next/link'
 import sizeChart from '../../../public/assets/images/size-chart.jpg';
+import { useRouter } from "next/router";
 import { Modal, ModalBody, ModalHeader, Media, Input } from 'reactstrap';
 import { CurrencyContext } from '../../../helpers/Currency/CurrencyContext';
 import CartContext from '../../../helpers/cart';
@@ -14,7 +15,7 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
     const symbol = CurContect.state.symbol
     const toggle = () => setModal(!modal);
     const product = item;
-    
+    const router = useRouter();
     const [open, setOpen] = useState(false);
     const context = useContext(CartContext);
     const stock = context.stock;
@@ -28,6 +29,20 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
         setOpen(false)
     };
 
+    
+    const smallobj={
+        fontSize: "12px",
+    fontWeight: "bold",
+    color: "black"
+    }
+
+    const buyNow = (product, quantity) => {
+        context.addToCart(product, quantity);
+        router.push({
+            pathname: "/page/account/checkout",
+          });
+    };
+
     const priceCollection = (variantData) =>{
         var sellPrice = null;
         // CommonFun.publicMethod();
@@ -36,7 +51,8 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
             if(variantData.length > 0)
             {
                 // sellPrice = Math.floor(((variantData[0].conversionrate *  ((variantData[0].price +2 ) * 1.0825 )  + (variantData[0].frieghtrate)) * (1 + variantData[0].duty)) * (1/(1-((variantData[0].fees / (1 + (variantData[0].fees)))+(variantData[0].margin / (1 + (variantData[0].margin)))))),-1);
-                sellPrice = Math.floor(((variantData[0].conversionrate * ((variantData[0].price +2 ) * 1.0825 )  + (variantData[0].frieghtrate)) * (1 + variantData[0].duty)) * (1/(1-((variantData[0].fees / (1 + (variantData[0].fees)))+(variantData[0].margin / (1 + (variantData[0].margin)))))),0);
+                // sellPrice = Math.floor(((variantData[0].conversionrate * ((variantData[0].price +2 ) * 1.0825 )  + (variantData[0].frieghtrate)) * (1 + variantData[0].duty)) * (1/(1-((variantData[0].fees / (1 + (variantData[0].fees)))+(variantData[0].margin / (1 + (variantData[0].margin)))))),0);
+                sellPrice =  Math.floor(((variantData[0].conversionrate *  ((variantData[0].price +variantData[0].pwfee ) * (1+ (variantData[0].purchasetax/100)))    + (variantData[0].frieghtrate)) * (1 + variantData[0].duty)) * (1/(1-((variantData[0].fees / (1 + (variantData[0].fees)))+(variantData[0].margin / (1 + (variantData[0].margin)))))),0);
             }
             else
             {
@@ -85,10 +101,11 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
                 
                 <h2> {product.title} </h2>
                 <h4> {product.brandname} </h4>
+
                 {/* <h4> {product.categoryvalue} </h4> */}
-                <h4>
-                    <del>{symbol}{(priceCollection(product.variants) * 1).toFixed(2)}</del>
-                    <span>{discountCalculation(product.variants)}% off</span></h4>
+                <h6 style={smallobj} >Products will be shipped in {product.variants[0].daystoship} days.</h6>
+                {discountCalculation(product.variants)?<h4><del>{symbol}{(priceCollection(product.variants) * 1).toFixed(2)}</del>
+                    <span>{discountCalculation(product.variants)}% off</span></h4>:""}
                 <h3>{symbol}{Math.floor((priceCollection(product.variants) - (priceCollection(product.variants) * discountCalculation(product.variants) / 100))).toFixed(2)} </h3>
                 {product.variants.map(vari => {
                     var findItem = uniqueColor.find(x => x.color === vari.color);
@@ -163,7 +180,7 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
                 </div> */}
                 <div className="product-buttons" >
                     <a href={null} className="btn btn-solid" onClick={() => context.addToCart(product, quantity)}>add to cart</a>
-                    <Link href={`/page/account/checkout`}  ><a className="btn btn-solid" >buy now</a></Link>
+                     <a className="btn btn-solid" onClick={() => buyNow(product, quantity)}  >buy now</a> 
                 </div>
                 <div className="border-product">
                     <h6 className="product-title">product details</h6>

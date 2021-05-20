@@ -61,6 +61,9 @@ const GET_PRODUCTS = gql`
             graphics
             discount
             price 
+            daystoship
+            pwfee
+            purchasetax
             conversionrate
             frieghtrate
             duty
@@ -189,7 +192,7 @@ const ProductList = ({ colClass, layoutList,openSidebar,noSidebar }) => {
                             </div>
                             
                             :  [( data && data.products.total.total==0? 
-                            <div className="template-password">
+                            <div>
                 <div className="container">
                     <div id="container" className="text-center">
                         <div>
@@ -197,7 +200,7 @@ const ProductList = ({ colClass, layoutList,openSidebar,noSidebar }) => {
                                 <div>
                                     <div className="logo mb-4">
                                         <a href="#">
-                                            <img src="../assets/images/icon/logo.png" alt="Multikart_fashion" className="img-fluid" />
+                                            {/* <img src="../assets/images/icon/logo.png" alt="Multikart_fashion" className="img-fluid" /> */}
                                         </a>
                                     </div>
                                     <h2 className="mb-3">

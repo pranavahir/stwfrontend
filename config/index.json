@@ -1,10 +1,12 @@
 {
     "firebase" : {
-        "apiKey": "AIzaSyB48VO9ib0Va5F_6dYs8BnjYldwNxbfuBQ",
-        "authDomain": "multikart-react.firebaseapp.com",
-        "projectId": "multikart-react",
-        "storageBucket": "multikart-react.appspot.com",
-        "messagingSenderId": "298873485216",
-        "appId": "1:298873485216:web:e719b33e1427c8cfde56c5"
+        "apiKey": "AIzaSyBGu5er7Bzg6C2ieg7gDtj2wKjlJ-5PBSI",
+        "authDomain": "stw-ecommerce.firebaseapp.com",
+        "projectId": "stw-ecommerce",
+        "storageBucket": "stw-ecommerce.appspot.com",
+        "messagingSenderId": "1045283105633",
+        "appId": "1:1045283105633:web:a9f9b5930e956421b4f320"
     }
 }
+
+ 
