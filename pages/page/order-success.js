@@ -11,6 +11,7 @@ const OrderSuccess = () => {
     const cartTotal = cartContext.cartTotal;
     const curContext = useContext(CurrencyContext);
     const symbol = curContext.state.symbol;
+    const OrderDetail = cartItems.OrderDetail
 
     const deliveryDate = (variantData) =>{
         var someFormattedDate =null;
@@ -113,28 +114,29 @@ const OrderSuccess = () => {
                                     <h4>summary</h4>
                                     <ul className="order-detail">
                                         <li>order ID: 5563853658932</li>
-                                        <li>Order Date: {deliveryDate(item.variants)}</li>
+                                        <li>Order Date: {new Date()}</li>
                                         <li>Order Total: <span>{symbol}{cartTotal}</span></li>
                                     </ul>
                                 </Col>
+                              
                                 <Col sm="6">
                                     <h4>shipping address</h4>
                                     <ul className="order-detail">
-                                        <li>gerg harvell</li>
-                                        <li>568, suite ave.</li>
-                                        <li>Austrlia, 235153</li>
-                                        <li>Contact No. 987456321</li>
+                                        <li>{OrderDetail.address1}</li>
+                                        <li>{OrderDetail.city} {OrderDetail.state}</li>
+                                        <li>{OrderDetail.country}, {OrderDetail.pin}</li>
+                                        <li>Contact No. {OrderDetail.phone}</li>
+                                        <li>Contact mail. {OrderDetail.emailid}</li>
                                     </ul>
                                 </Col>
                                 <Col sm="12" className="payment-mode">
                                     <h4>payment method</h4>
-                                    <p>Pay on Delivery (Cash/Card). Cash on delivery (COD) available. Card/Net banking
-                                acceptance subject to device availability.</p>
+                                    <p>{OrderDetail.paymentmethod}</p>
                                 </Col>
                                 <Col md="12">
                                     <div className="delivery-sec">
                                         <h3>expected date of delivery</h3>
-                                        <h2>october 22, 2021</h2>
+                                        <h2>{deliveryDate(item.variants)}</h2>
                                     </div>
                                 </Col>
                             </Row>

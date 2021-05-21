@@ -239,8 +239,9 @@ const CheckoutPage = ({ isPublic = false }) => {
           state: {
             payment: payment,
             items: cartItems,
-            orderTotal: 77.9,
+            orderTotal: cartTotal,
             symbol: symbol,
+            OrderDetail:OrderDetail
           },
         });
 
@@ -321,8 +322,9 @@ const CheckoutPage = ({ isPublic = false }) => {
             state: {
               payment: payment,
               items: cartItems,
-              orderTotal: 77.9,
+              orderTotal: cartTotal,
               symbol: symbol,
+              OrderDetail:OrderDetail
             },
           });
          
@@ -550,8 +552,9 @@ const CheckoutPage = ({ isPublic = false }) => {
       state: {
         payment: payment,
         items: cartItems,
-        orderTotal: total,
+        orderTotal: cartTotal,
         symbol: symbol,
+        OrderDetail:OrderDetail
       },
     });
   };
@@ -834,6 +837,7 @@ const CheckoutPage = ({ isPublic = false }) => {
                                   />
                                   <label htmlFor="payment-2">Credit Cards / Debit Cards</label>
                                 </div>
+                                {/* {cartTotal !== 0 ? (<div className="text-right">{payment === "stripe" ? (<Card />) :""} </div>):""} */}
                               </li>
                               <li>
                                 <div className="radio-option paypal">

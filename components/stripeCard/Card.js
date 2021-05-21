@@ -68,12 +68,12 @@ const CardForm = () => {
 
   return (
     <>
-      <h1>Card</h1>
+      {/* <h1>Card</h1> */}
 
    
 
       <div id="payment-form" onSubmit={handleSubmit}>
-        <label htmlFor="card">Card</label>
+        <label htmlFor="card">Credit Cards / Debit Cards</label>
         <CardElement id="card" />
         <br/>
         <button className="btn-solid btn" type="submit">Pay</button>
