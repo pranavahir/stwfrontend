@@ -100,7 +100,7 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
                 
                 
                 <h2> {product.title} </h2>
-                <h4> {product.brandname} </h4>
+                <h4 style={smallobj}> {product.brandname} </h4>
 
                 {/* <h4> {product.categoryvalue} </h4> */}
                 {product.variants.length?<h6 style={smallobj} >Shipping in {product.variants[0].daystoship} days.</h6>:""} 

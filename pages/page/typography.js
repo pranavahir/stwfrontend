@@ -114,6 +114,7 @@ const Typography = () => {
                                 <div className="headings">
                                     <h3>loader</h3>
                                 </div>
+                                
                                 <div className="typo-content loader-typo">
                                     <div className="pre-loader"></div>
                                 </div>

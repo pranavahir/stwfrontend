@@ -245,7 +245,16 @@ const ProductList = ({ colClass, layoutList,openSidebar,noSidebar }) => {
                         </div>
                     </div>
                 </div>
-            </div>:"loading...")]
+            </div>:
+             
+            <div className="typography_section"> 
+            <div className="typography-box"> 
+            <div  className="custom-load typo-content loader-typo">
+                                    <div className="pre-loader"></div>
+                                </div>
+                                </div>
+                                </div>
+                                )]
                             }
                         </div>
                        {data && data.products.total.total>0? 
