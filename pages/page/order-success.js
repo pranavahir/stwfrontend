@@ -12,6 +12,42 @@ const OrderSuccess = () => {
     const curContext = useContext(CurrencyContext);
     const symbol = curContext.state.symbol;
 
+    const deliveryDate = (variantData) =>{
+        var someFormattedDate =null;
+
+        if(variantData !=null && variantData !=undefined)
+        {
+            if(variantData.length > 0)
+            {
+                var someDate = new Date();
+                var numberOfDaysToAdd = variantData[0].daystoship;
+                someDate.setDate(someDate.getDate() + numberOfDaysToAdd); 
+
+                var dd = someDate.getDate();
+                var mm = someDate.getMonth() + 1;
+                var y = someDate.getFullYear();
+                
+                someFormattedDate = dd + '/'+ mm + '/'+ y;
+            }
+            else
+            {
+                someFormattedDate = null;
+            }
+            
+        }
+        return someFormattedDate
+    }
+
+    const titleTrim=(title)=>{
+        var res = null
+        if(title!=null)
+          res = title.substring(0, 100);
+        else
+         res = title;
+    
+        return res;
+    
+      }
     return (
         <CommonLayout parent="home" title="order success">
             <section className="section-b-space light-layout">
@@ -38,13 +74,13 @@ const OrderSuccess = () => {
                                 {cartItems.map((item, i) =>
                                     <Row className="product-order-detail" key={i}>
                                         <Col xs="3" >
-                                            <Media src={item.images[0].src} alt=""
+                                            <Media src={item.images[0].mainimageurl} alt=""
                                                 className="img-fluid blur-up lazyload" />
                                         </Col>
                                         <Col xs="3" className="order_detail">
                                             <div>
                                                 <h4>product name</h4>
-                                                <h5>{item.title}</h5>
+                                                <h5>{titleTrim(item.title)}</h5>
                                             </div>
                                         </Col>
                                         <Col xs="3" className="order_detail">
@@ -56,7 +92,7 @@ const OrderSuccess = () => {
                                         <Col xs="3" className="order_detail">
                                             <div>
                                                 <h4>price</h4>
-                                                <h5>{symbol}{item.price}</h5>
+                                                <h5>{symbol}{item.total}</h5>
                                             </div>
                                         </Col>
                                     </Row>
@@ -74,11 +110,11 @@ const OrderSuccess = () => {
                         <Col lg="6">
                             <Row className="order-success-sec">
                                 <Col sm="6">
-                                    <h4>summery</h4>
+                                    <h4>summary</h4>
                                     <ul className="order-detail">
                                         <li>order ID: 5563853658932</li>
-                                        <li>Order Date: October 22, 2021</li>
-                                        <li>Order Total: $907.28</li>
+                                        <li>Order Date: {deliveryDate(item.variants)}</li>
+                                        <li>Order Total: <span>{symbol}{cartTotal}</span></li>
                                     </ul>
                                 </Col>
                                 <Col sm="6">

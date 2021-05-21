@@ -33,7 +33,7 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
     const smallobj={
         fontSize: "12px",
     fontWeight: "bold",
-    color: "black"
+    color: "red"
     }
 
     const buyNow = (product, quantity) => {
@@ -103,7 +103,7 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
                 <h4> {product.brandname} </h4>
 
                 {/* <h4> {product.categoryvalue} </h4> */}
-                <h6 style={smallobj} >Products will be shipped in {product.variants[0].daystoship} days.</h6>
+                {product.variants.length?<h6 style={smallobj} >Shipping in {product.variants[0].daystoship} days.</h6>:""} 
                 {discountCalculation(product.variants)?<h4><del>{symbol}{(priceCollection(product.variants) * 1).toFixed(2)}</del>
                     <span>{discountCalculation(product.variants)}% off</span></h4>:""}
                 <h3>{symbol}{Math.floor((priceCollection(product.variants) - (priceCollection(product.variants) * discountCalculation(product.variants) / 100))).toFixed(2)} </h3>

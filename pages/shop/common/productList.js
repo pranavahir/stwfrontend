@@ -109,6 +109,10 @@ const ProductList = ({ colClass, layoutList,openSidebar,noSidebar }) => {
         
     }, [selectedBrands, selectedColor, selectedSize, selectedPrice]);
 
+    var limitSet = 10;
+    if(selectedKeyword)
+        limitSet = 15;
+ 
     var { loading, data, fetchMore } = useQuery(GET_PRODUCTS, {
         variables: {
             type: selectedCategory,
@@ -117,7 +121,7 @@ const ProductList = ({ colClass, layoutList,openSidebar,noSidebar }) => {
             color: "red",
             brand: "max",
             indexFrom: 0,
-            limit: 10,
+            limit: limitSet,
             keyword:selectedKeyword
         }
     });
@@ -204,7 +208,7 @@ const ProductList = ({ colClass, layoutList,openSidebar,noSidebar }) => {
                                         </a>
                                     </div>
                                     <h2 className="mb-3">
-                                    {selectedCategory} Will be Coming Soon!
+                                     Will be Coming Soon!
                             </h2>
                                 </div>
                                 <div className="row">
@@ -230,7 +234,7 @@ const ProductList = ({ colClass, layoutList,openSidebar,noSidebar }) => {
                                 </div>
                                 <div id="footer" className="mt-4">
                                     <div id="owner">
-                                        Are you the store owner? <a href="#">Log in here</a> or <a href="#">change your password
+                                        <a href="#">Log in here</a> or <a href="#">change your password
                                     settings</a>
                                     </div>
                                 </div>

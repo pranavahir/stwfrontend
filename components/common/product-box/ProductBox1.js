@@ -28,7 +28,7 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
     const smallobj={
         fontSize: "12px",
     fontWeight: "bold",
-    color: "black"
+    color: "red"
     }
 
     const onClickHandle = (img) => {
@@ -124,7 +124,8 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
         fontSize:12,
         cursor: 'pointer',
     }
-
+    // console.log(product.variants.length)
+    // console.log(product.variants[0].daystoship)
     return (
         <div className="product-box product-wrap">
             <div className="img-wrapper">
@@ -223,7 +224,7 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
                         <p>{product.description}</p>
                         : ''
                     }
-                    <h6 style={smallobj} >Products will be shipped in {product.variants[0].daystoship} days.</h6>
+                    {product.variants.length?<h6 style={smallobj} >Shipping in {product.variants[0].daystoship} days.</h6>:""} 
                     <h4>
                     {currency.symbol} {Math.floor(((priceCollection(product.variants) - (priceCollection(product.variants) * discountCalculation(product.variants) / 100)))).toFixed(2)}
                         <br/>

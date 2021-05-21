@@ -8,12 +8,25 @@ const Breadcrubs = ({title ,parent ,subTitle}) => {
             <Container>
                 <Row>
                     <Col sm="6">
-                        <div className="page-title">
+                        {/* <div className="page-title">
                             <h5>{title}</h5>
-                        </div>
+                        </div> */}
+                        <nav aria-label="breadcrumb" className="page-title">
+                            <ol className="breadcrumb">
+                                <li className="breadcrumb-item"><a href="#">{parent}</a></li>
+                                <li className="breadcrumb-item" aria-current="page"><b>{title}</b></li>
+                                {
+                                    subTitle === undefined ?
+                                    ''
+                                    :
+                                    <li className="breadcrumb-item active" aria-current="page"><b>{subTitle}</b></li>
+                                }
+                                
+                            </ol>
+                        </nav>
                     </Col>
                     <Col sm="6">
-                        <nav aria-label="breadcrumb" className="theme-breadcrumb">
+                        {/* <nav aria-label="breadcrumb" className="theme-breadcrumb">
                             <ol className="breadcrumb">
                                 <li className="breadcrumb-item"><a href="#">{parent}</a></li>
                                 <li className="breadcrumb-item" aria-current="page">{title}</li>
@@ -25,7 +38,7 @@ const Breadcrubs = ({title ,parent ,subTitle}) => {
                                 }
                                 
                             </ol>
-                        </nav>
+                        </nav> */}
                     </Col>
                 </Row>
             </Container>

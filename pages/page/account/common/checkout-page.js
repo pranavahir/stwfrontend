@@ -151,7 +151,7 @@ const CheckoutPage = ({ isPublic = false }) => {
   const titleTrim=(title)=>{
     var res = null
     if(title!=null)
-      res = title.substring(1, 250);
+      res = title.substring(0, 250);
     else
      res = title;
 
@@ -175,6 +175,14 @@ const CheckoutPage = ({ isPublic = false }) => {
           paymentmethod: "Card - Razorpay - "+PaymentDetail.id,
           trackingnumber: "stw-tkno-0123",
           orderstatus: "Order - Placed",
+          address1:customerData.address,
+          address2:"",
+          city:customerData.city,
+          state:customerData.state,
+          country:customerData.country,
+          pin:customerData.pincode,
+          phone:customerData.phone,
+          emailid:customerData.email
         };
     
         var orderResult = 0;
@@ -190,11 +198,19 @@ const CheckoutPage = ({ isPublic = false }) => {
             paymentmethod: "Card - Razorpay - "+PaymentDetail.id,
             trackingnumber: "stw-tkno-0123",
             orderstatus: "Order - Placed",
+            address1:customerData.address,
+            address2:"",
+            city:customerData.city,
+            state:customerData.state,
+            country:customerData.country,
+            pin:customerData.pincode,
+            phone:customerData.phone,
+            emailid:customerData.email
           };
     
           try {
 
-            console.log(OrderDetail);
+            // console.log(OrderDetail);
             var orderData = createOrder({
               variables: { order: { ...OrderDetail } },
             });
@@ -243,6 +259,14 @@ const CheckoutPage = ({ isPublic = false }) => {
             paymentmethod: "Card - Stripe - "+PaymentDetail.id,
             trackingnumber: "stw-tkno-0123",
             orderstatus: "Order - Placed",
+            address1:customerData.address,
+            address2:"",
+            city:customerData.city,
+            state:customerData.state,
+            country:customerData.country,
+            pin:customerData.pincode,
+            phone:customerData.phone,
+            emailid:customerData.email
           };
       
           var orderResult = 0;
@@ -258,6 +282,14 @@ const CheckoutPage = ({ isPublic = false }) => {
               paymentmethod: "Card - Stripe - "+PaymentDetail.id,
               trackingnumber: "stw-tkno-0123",
               orderstatus: "Order - Placed",
+              address1:customerData.address,
+              address2:"",
+              city:customerData.city,
+              state:customerData.state,
+              country:customerData.country,
+              pin:customerData.pincode,
+              phone:customerData.phone,
+              emailid:customerData.email
             };
       
             try {

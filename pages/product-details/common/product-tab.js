@@ -263,7 +263,7 @@ const ProductTab = ({selectedItem}) => {
         productDesc = productData.product.description;
         if(productDesc==null || productDesc=="" || productDesc==undefined)
         {
-            productDesc = "<--- No description available --->";     
+            productDesc = productData.product.title;     
         }
         SpecificationsData = specFormation(productData.product);
     }
