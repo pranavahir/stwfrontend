@@ -1,18 +1,24 @@
-import React, { useContext } from 'react';
+import React, { useContext,useState } from 'react';
 import CommonLayout from '../../components/shop/common-layout';
 import { Container, Row, Col, Media } from 'reactstrap';
 import one from '../../public/assets/images/pro3/1.jpg';
 import CartContext from '../../helpers/cart';
 import { CurrencyContext } from '../../helpers/Currency/CurrencyContext';
 
-const OrderSuccess = () => {
+const OrderSuccess = props => {
     const cartContext = useContext(CartContext);
     const cartItems = cartContext.state;
     const cartTotal = cartContext.cartTotal;
     const curContext = useContext(CurrencyContext);
     const symbol = curContext.state.symbol;
-    const OrderDetail = cartItems.OrderDetail
+    
 
+    const [orderObj, setOrderObj] = useState(
+        localStorage.getItem('orderObj')
+    );
+    const OrderMaster = JSON.parse(orderObj);
+
+    
     const deliveryDate = (variantData) =>{
         var someFormattedDate =null;
 
@@ -114,7 +120,7 @@ const OrderSuccess = () => {
                                     <h4>summary</h4>
                                     <ul className="order-detail">
                                         <li>order ID: 5563853658932</li>
-                                        <li>Order Date: {new Date()}</li>
+                                        {/* <li>Order Date: {new Date()}</li> */}
                                         <li>Order Total: <span>{symbol}{cartTotal}</span></li>
                                     </ul>
                                 </Col>
@@ -122,21 +128,21 @@ const OrderSuccess = () => {
                                 <Col sm="6">
                                     <h4>shipping address</h4>
                                     <ul className="order-detail">
-                                        <li>{OrderDetail.address1}</li>
-                                        <li>{OrderDetail.city} {OrderDetail.state}</li>
-                                        <li>{OrderDetail.country}, {OrderDetail.pin}</li>
-                                        <li>Contact No. {OrderDetail.phone}</li>
-                                        <li>Contact mail. {OrderDetail.emailid}</li>
+                                        <li>{OrderMaster.OrderDetail.address1}</li>
+                                        <li>{OrderMaster.OrderDetail.city} {OrderMaster.OrderDetail.state}</li>
+                                        <li>{OrderMaster.OrderDetail.country}, {OrderMaster.OrderDetail.pin}</li>
+                                        <li>Contact No. {OrderMaster.OrderDetail.phone}</li>
+                                        <li>Contact mail. {OrderMaster.OrderDetail.emailid}</li>
                                     </ul>
                                 </Col>
                                 <Col sm="12" className="payment-mode">
                                     <h4>payment method</h4>
-                                    <p>{OrderDetail.paymentmethod}</p>
+                                    <p>{OrderMaster.OrderDetail.paymentmethod}</p>
                                 </Col>
                                 <Col md="12">
                                     <div className="delivery-sec">
                                         <h3>expected date of delivery</h3>
-                                        <h2>{deliveryDate(item.variants)}</h2>
+                                        <h2>{deliveryDate(cartItems[0].variants)}</h2>
                                     </div>
                                 </Col>
                             </Row>

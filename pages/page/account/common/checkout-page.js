@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState,useEffect } from "react";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 
 import { Media, Container, Form, Row, Input, Col } from "reactstrap";
@@ -29,6 +29,24 @@ const CheckoutPage = ({ isPublic = false }) => {
   const curContext = useContext(CurrencyContext);
   const symbol = curContext.state.symbol;
   const [obj, setObj] = useState({});
+  // const [successObj, setSuccessObj] = useState({});
+  const [state, setState] = useState({
+    payment: null,
+    items: null,
+    orderTotal: null,
+    symbol: null,
+    OrderDetail:null
+
+  });
+
+  const [orderObj, setOrderObj] = useState(
+    localStorage.getItem('orderObj')
+);
+useEffect(() => {
+    localStorage.setItem('orderObj', orderObj);
+}, [orderObj]);
+
+
   const [url, setUrl] = useState();
   const [payment, setPayment] = useState("stripe");
   const { register, handleSubmit, errors } = useForm(); // initialise the hook
@@ -120,10 +138,9 @@ const CheckoutPage = ({ isPublic = false }) => {
   const OrderedMail = async (productDetail,customerDetail) =>{
 
     console.log(productDetail);
-    // razorpaypayment.digitechniq.in
 
     const { error: backendMailError, clientMail } = await fetch(
-      "https://razorpaypayment.digitechniq.in/email/send",
+      "http://razorpaypayment.digitechniq.in/email/send",
       {
         method: "POST",
         headers: {
@@ -147,6 +164,32 @@ const CheckoutPage = ({ isPublic = false }) => {
     // }
 
   }
+
+  const deliveryDate = (variantData) =>{
+    var someFormattedDate =null;
+
+    if(variantData !=null && variantData !=undefined)
+    {
+        if(variantData.length > 0)
+        {
+            var someDate = new Date();
+            var numberOfDaysToAdd = variantData[0].daystoship;
+            someDate.setDate(someDate.getDate() + numberOfDaysToAdd); 
+
+            var dd = someDate.getDate();
+            var mm = someDate.getMonth() + 1;
+            var y = someDate.getFullYear();
+            
+            someFormattedDate = dd + '/'+ mm + '/'+ y;
+        }
+        else
+        {
+            someFormattedDate = null;
+        }
+        
+    }
+    return someFormattedDate
+}
 
   const titleTrim=(title)=>{
     var res = null
@@ -172,7 +215,7 @@ const CheckoutPage = ({ isPublic = false }) => {
           totalprice: 0,
           customerid: 1,
           customername: customerData.first_name,
-          paymentmethod: "Card - Razorpay - "+PaymentDetail.id,
+          paymentmethod: "Card - Razorpay - ",//+PaymentDetail.id,
           trackingnumber: "stw-tkno-0123",
           orderstatus: "Order - Placed",
           address1:customerData.address,
@@ -182,7 +225,7 @@ const CheckoutPage = ({ isPublic = false }) => {
           country:customerData.country,
           pin:customerData.pincode,
           phone:customerData.phone,
-          emailid:customerData.email
+          emailid:customerData.email 
         };
     
         var orderResult = 0;
@@ -195,7 +238,7 @@ const CheckoutPage = ({ isPublic = false }) => {
             totalprice: item.total,
             customerid: 1,
             customername: customerData.first_name,
-            paymentmethod: "Card - Razorpay - "+PaymentDetail.id,
+            paymentmethod: "Card - Razorpay - ",//+PaymentDetail.id,
             trackingnumber: "stw-tkno-0123",
             orderstatus: "Order - Placed",
             address1:customerData.address,
@@ -205,7 +248,7 @@ const CheckoutPage = ({ isPublic = false }) => {
             country:customerData.country,
             pin:customerData.pincode,
             phone:customerData.phone,
-            emailid:customerData.email
+            emailid:customerData.email 
           };
     
           try {
@@ -224,25 +267,29 @@ const CheckoutPage = ({ isPublic = false }) => {
 
         if(cartItems.length==1)
         {
+          // console.log("test");
           OrderedMail(cartItems[0],customerData);
         }
         else
         {
           for(var i=0;i>cartItems.length;i++)
           {
+            // console.log("test");
             OrderedMail(cartItems[i],customerData);
           }
         }
 
-        router.push({
-          pathname: "/page/order-success",
-          state: {
-            payment: payment,
+        // console.log(successObj);
+         var newObj={
+          payment: payment,
             items: cartItems,
             orderTotal: cartTotal,
             symbol: symbol,
             OrderDetail:OrderDetail
-          },
+        }
+        setOrderObj(JSON.stringify(newObj));
+        router.push({
+          pathname: "/page/order-success",
         });
 
       }
@@ -267,7 +314,7 @@ const CheckoutPage = ({ isPublic = false }) => {
             country:customerData.country,
             pin:customerData.pincode,
             phone:customerData.phone,
-            emailid:customerData.email
+            emailid:customerData.email 
           };
       
           var orderResult = 0;
@@ -290,7 +337,7 @@ const CheckoutPage = ({ isPublic = false }) => {
               country:customerData.country,
               pin:customerData.pincode,
               phone:customerData.phone,
-              emailid:customerData.email
+              emailid:customerData.email 
             };
       
             try {
@@ -493,56 +540,59 @@ const CheckoutPage = ({ isPublic = false }) => {
   };
 
   const razorPayPaymentHandler = async (filledData) => {
-    const res = await loadScript(
-      "https://checkout.razorpay.com/v1/checkout.js"
-    );
 
-    if (!res) {
-      alert("Razorpay SDK failed to load. Are you online?");
-      return;
-    }
+    Orderconformation("Razorpay","test",filledData);
 
-    const API_URL = `https://razorpaypayment.digitechniq.in/razorpay/`;
-    // const API_URL = `http://localhost:7000/razorpay/`;
+    // const res = await loadScript(
+    //   "https://checkout.razorpay.com/v1/checkout.js"
+    // );
+
+    // if (!res) {
+    //   alert("Razorpay SDK failed to load. Are you online?");
+    //   return;
+    // }
+
+    // const API_URL = `http://razorpaypayment.digitechniq.in/razorpay/`;
+    // // const API_URL = `http://localhost:7000/razorpay/`;
     
-    const orderUrl = `${API_URL}order`;
-    const response = await Axios.post(orderUrl, { amount: cartTotal });
-    const { data } = response;
-    console.log("App -> razorPayPaymentHandler -> data", data);
+    // const orderUrl = `${API_URL}order`;
+    // const response = await Axios.post(orderUrl, { amount: cartTotal });
+    // const { data } = response;
+    // console.log("App -> razorPayPaymentHandler -> data", data);
 
-    const options = {
-      key: "", //replace razorpay API key
-      name: filledData.first_name,
-      description: titleTrim(cartItems[0].title),
-      order_id: data.id,
-      handler: async (response) => {
-        try {
-          const paymentId = response.razorpay_payment_id;
-          console.log(paymentId);
-          // const url = `https://razorpaypayment.digitechniq.in/razorpay/capture/${paymentId}`;
-          const url = `https://razorpaypayment.digitechniq.in/razorpay/capture/${paymentId}`;
-          const captureResponse = await Axios.post(url, {
-            amount: cartTotal,
-          });
-          const successObj = JSON.parse(captureResponse.data);
-          const captured = successObj.captured;
-          console.log("App -> razorPayPaymentHandler -> captured", successObj);
-          if (captured) {
-            console.log("success");
-            // this.setState({ name: "", decription: "", amount: "" });
-            // id
-            Orderconformation("Razorpay",successObj,filledData);
-          }
-        } catch (err) {
-          console.log(err);
-        }
-      },
-      theme: {
-        color: "#ff4c3b",
-      },
-    };
-    const rzp1 = new window.Razorpay(options);
-    rzp1.open();
+    // const options = {
+    //   key: "", //replace razorpay API key
+    //   name: filledData.first_name,
+    //   description: titleTrim(cartItems[0].title),
+    //   order_id: data.id,
+    //   handler: async (response) => {
+    //     try {
+    //       const paymentId = response.razorpay_payment_id;
+    //       console.log(paymentId);
+    //       // const url = `http://razorpaypayment.digitechniq.in/razorpay/capture/${paymentId}`;
+    //       const url = `http://razorpaypayment.digitechniq.in/razorpay/capture/${paymentId}`;
+    //       const captureResponse = await Axios.post(url, {
+    //         amount: cartTotal,
+    //       });
+    //       const successObj = JSON.parse(captureResponse.data);
+    //       const captured = successObj.captured;
+    //       console.log("App -> razorPayPaymentHandler -> captured", successObj);
+    //       if (captured) {
+    //         console.log("success");
+    //         // this.setState({ name: "", decription: "", amount: "" });
+    //         // id
+    //         Orderconformation("Razorpay",successObj,filledData);
+    //       }
+    //     } catch (err) {
+    //       console.log(err);
+    //     }
+    //   },
+    //   theme: {
+    //     color: "#ff4c3b",
+    //   },
+    // };
+    // const rzp1 = new window.Razorpay(options);
+    // rzp1.open();
   };
 
   const onSuccess = (payment) => {
@@ -554,7 +604,7 @@ const CheckoutPage = ({ isPublic = false }) => {
         items: cartItems,
         orderTotal: cartTotal,
         symbol: symbol,
-        OrderDetail:OrderDetail
+        OrderDetail: OrderDetail
       },
     });
   };
@@ -577,6 +627,7 @@ const CheckoutPage = ({ isPublic = false }) => {
   const setStateFromInput = (event) => {
     obj[event.target.name] = event.target.value;
     setObj(obj);
+    console.log(obj);
   };
 
   const onCancel = (data) => {
