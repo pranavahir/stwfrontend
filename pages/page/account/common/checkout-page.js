@@ -140,7 +140,7 @@ useEffect(() => {
     console.log(productDetail);
 
     const { error: backendMailError, clientMail } = await fetch(
-      "http://razorpaypayment.digitechniq.in/email/send",
+      "https://razorpaypayment.digitechniq.in/email/send",
       {
         method: "POST",
         headers: {
@@ -552,7 +552,7 @@ useEffect(() => {
       return;
     }
 
-    const API_URL = `http://razorpaypayment.digitechniq.in/razorpay/`;
+    const API_URL = `https://razorpaypayment.digitechniq.in/razorpay/`;
     // const API_URL = `http://localhost:7000/razorpay/`;
     
     const orderUrl = `${API_URL}order`;
@@ -569,8 +569,8 @@ useEffect(() => {
         try {
           const paymentId = response.razorpay_payment_id;
           console.log(paymentId);
-          // const url = `http://razorpaypayment.digitechniq.in/razorpay/capture/${paymentId}`;
-          const url = `http://razorpaypayment.digitechniq.in/razorpay/capture/${paymentId}`;
+          // const url = `https://razorpaypayment.digitechniq.in/razorpay/capture/${paymentId}`;
+          const url = `https://razorpaypayment.digitechniq.in/razorpay/capture/${paymentId}`;
           const captureResponse = await Axios.post(url, {
             amount: cartTotal,
           });
