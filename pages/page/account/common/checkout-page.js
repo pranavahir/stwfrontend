@@ -541,58 +541,58 @@ useEffect(() => {
 
   const razorPayPaymentHandler = async (filledData) => {
 
-    Orderconformation("Razorpay","test",filledData);
+    // Orderconformation("Razorpay","test",filledData);
 
-    // const res = await loadScript(
-    //   "https://checkout.razorpay.com/v1/checkout.js"
-    // );
+    const res = await loadScript(
+      "https://checkout.razorpay.com/v1/checkout.js"
+    );
 
-    // if (!res) {
-    //   alert("Razorpay SDK failed to load. Are you online?");
-    //   return;
-    // }
+    if (!res) {
+      alert("Razorpay SDK failed to load. Are you online?");
+      return;
+    }
 
-    // const API_URL = `http://razorpaypayment.digitechniq.in/razorpay/`;
-    // // const API_URL = `http://localhost:7000/razorpay/`;
+    const API_URL = `http://razorpaypayment.digitechniq.in/razorpay/`;
+    // const API_URL = `http://localhost:7000/razorpay/`;
     
-    // const orderUrl = `${API_URL}order`;
-    // const response = await Axios.post(orderUrl, { amount: cartTotal });
-    // const { data } = response;
-    // console.log("App -> razorPayPaymentHandler -> data", data);
+    const orderUrl = `${API_URL}order`;
+    const response = await Axios.post(orderUrl, { amount: cartTotal });
+    const { data } = response;
+    console.log("App -> razorPayPaymentHandler -> data", data);
 
-    // const options = {
-    //   key: "", //replace razorpay API key
-    //   name: filledData.first_name,
-    //   description: titleTrim(cartItems[0].title),
-    //   order_id: data.id,
-    //   handler: async (response) => {
-    //     try {
-    //       const paymentId = response.razorpay_payment_id;
-    //       console.log(paymentId);
-    //       // const url = `http://razorpaypayment.digitechniq.in/razorpay/capture/${paymentId}`;
-    //       const url = `http://razorpaypayment.digitechniq.in/razorpay/capture/${paymentId}`;
-    //       const captureResponse = await Axios.post(url, {
-    //         amount: cartTotal,
-    //       });
-    //       const successObj = JSON.parse(captureResponse.data);
-    //       const captured = successObj.captured;
-    //       console.log("App -> razorPayPaymentHandler -> captured", successObj);
-    //       if (captured) {
-    //         console.log("success");
-    //         // this.setState({ name: "", decription: "", amount: "" });
-    //         // id
-    //         Orderconformation("Razorpay",successObj,filledData);
-    //       }
-    //     } catch (err) {
-    //       console.log(err);
-    //     }
-    //   },
-    //   theme: {
-    //     color: "#ff4c3b",
-    //   },
-    // };
-    // const rzp1 = new window.Razorpay(options);
-    // rzp1.open();
+    const options = {
+      key: "", //replace razorpay API key
+      name: filledData.first_name,
+      description: titleTrim(cartItems[0].title),
+      order_id: data.id,
+      handler: async (response) => {
+        try {
+          const paymentId = response.razorpay_payment_id;
+          console.log(paymentId);
+          // const url = `http://razorpaypayment.digitechniq.in/razorpay/capture/${paymentId}`;
+          const url = `http://razorpaypayment.digitechniq.in/razorpay/capture/${paymentId}`;
+          const captureResponse = await Axios.post(url, {
+            amount: cartTotal,
+          });
+          const successObj = JSON.parse(captureResponse.data);
+          const captured = successObj.captured;
+          console.log("App -> razorPayPaymentHandler -> captured", successObj);
+          if (captured) {
+            console.log("success");
+            // this.setState({ name: "", decription: "", amount: "" });
+            // id
+            Orderconformation("Razorpay",successObj,filledData);
+          }
+        } catch (err) {
+          console.log(err);
+        }
+      },
+      theme: {
+        color: "#ff4c3b",
+      },
+    };
+    const rzp1 = new window.Razorpay(options);
+    rzp1.open();
   };
 
   const onSuccess = (payment) => {
