@@ -322,7 +322,7 @@ useEffect(() => {
             OrderDetail = {
               orderdetailid: 2,
               productsku: item.sku,
-              producttitle: item.title,
+              producttitle: titleTrim(item.title),
               quantity: 1,
               totalprice: item.total,
               customerid: 1,

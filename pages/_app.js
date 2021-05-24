@@ -52,7 +52,7 @@ export default function MyApp({ Component, pageProps }) {
             />
           <Helmet>
             <meta name="viewport" content="width=device-width, initial-scale=1" />
-            <title>Shop The World - Multi-purpopse E-commerce React Template</title>
+            <title>Shop The World - Always cheaper than amazon price</title>
           </Helmet>
             <div>
               <SettingProvider>

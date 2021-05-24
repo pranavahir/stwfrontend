@@ -32,8 +32,8 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
     
     const smallobj={
         fontSize: "12px",
-    fontWeight: "bold",
-    color: "red"
+        fontWeight: "bold",
+        color: "red"
     }
 
     const buyNow = (product, quantity) => {
