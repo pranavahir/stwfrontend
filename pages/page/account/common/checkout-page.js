@@ -206,7 +206,6 @@ useEffect(() => {
 
       if(paymentGateway == "Razorpay")
       {
-
         var OrderDetail = {
           orderdetailid: 2,
           productsku: "item.sku",
@@ -364,16 +363,19 @@ useEffect(() => {
             }
           }
 
-          router.push({
-            pathname: "/page/order-success",
-            state: {
-              payment: payment,
-              items: cartItems,
-              orderTotal: cartTotal,
-              symbol: symbol,
-              OrderDetail:OrderDetail
-            },
-          });
+        // console.log(successObj);
+        var newObj={
+          payment: payment,
+            items: cartItems,
+            orderTotal: cartTotal,
+            symbol: symbol,
+            OrderDetail:OrderDetail
+        }
+        setOrderObj(JSON.stringify(newObj));
+        router.push({
+          pathname: "/page/order-success",
+        });
+
          
 
       }
@@ -473,6 +475,7 @@ useEffect(() => {
   };
 
   const stripeSubmit = async (e, customerData) => {
+    // Orderconformation("Stripe","paymentIntent",customerData);
     // We don't want to let default form submission happen here,
     // which would refresh the page.
     e.preventDefault();
@@ -535,7 +538,7 @@ useEffect(() => {
       Orderconformation("Stripe",paymentIntent,customerData);
     }
 
-    // console.log(`Payment ${paymentIntent.status}: ${paymentIntent.id}`);
+    console.log(`Payment ${paymentIntent.status}: ${paymentIntent.id}`);
  
   };
 
