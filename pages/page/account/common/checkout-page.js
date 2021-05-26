@@ -214,7 +214,7 @@ useEffect(() => {
           totalprice: 0,
           customerid: 1,
           customername: customerData.first_name,
-          paymentmethod: "Card - Razorpay - ",//+PaymentDetail.id,
+          paymentmethod: "Card - Razorpay - "+PaymentDetail.id,
           trackingnumber: "stw-tkno-0123",
           orderstatus: "Order - Placed",
           address1:customerData.address,
@@ -237,7 +237,7 @@ useEffect(() => {
             totalprice: item.total,
             customerid: 1,
             customername: customerData.first_name,
-            paymentmethod: "Card - Razorpay - ",//+PaymentDetail.id,
+            paymentmethod: "Card - Razorpay - "+PaymentDetail.id,
             trackingnumber: "stw-tkno-0123",
             orderstatus: "Order - Placed",
             address1:customerData.address,
@@ -475,70 +475,70 @@ useEffect(() => {
   };
 
   const stripeSubmit = async (e, customerData) => {
-    Orderconformation("Stripe","paymentIntent",customerData);
-    // // We don't want to let default form submission happen here,
-    // // which would refresh the page.
-    // e.preventDefault();
+    // Orderconformation("Stripe","paymentIntent",customerData);
+    // We don't want to let default form submission happen here,
+    // which would refresh the page.
+    e.preventDefault();
 
-    // if (!stripe || !elements) {
-    //   // Stripe.js has not yet loaded.
-    //   // Make sure to disable form submission until Stripe.js has loaded.
-    //   console.log("Stripe.js has not yet loaded.");
-    //   return;
-    // }
+    if (!stripe || !elements) {
+      // Stripe.js has not yet loaded.
+      // Make sure to disable form submission until Stripe.js has loaded.
+      console.log("Stripe.js has not yet loaded.");
+      return;
+    }
 
-    // var amount = cartTotal * 100;
-    // const { error: backendError, clientSecret } = await fetch(
-    //   "https://stripeserver.digitechniq.in/create-payment-intent",
-    //   {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify({
-    //       paymentMethodType: "card",
-    //       amount: amount,
-    //       currency: "inr",
-    //       customer: customerData.email,
-    //     }),
-    //   }
-    // ).then((r) => r.json());
+    var amount = cartTotal * 100;
+    const { error: backendError, clientSecret } = await fetch(
+      "https://stripeserver.digitechniq.in/create-payment-intent",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          paymentMethodType: "card",
+          amount: amount,
+          currency: "inr",
+          customer: customerData.email,
+        }),
+      }
+    ).then((r) => r.json());
 
-    // if (backendError) {
-    //   console.log(backendError.message);
-    //   return;
-    // }
+    if (backendError) {
+      console.log(backendError.message);
+      return;
+    }
 
-    // // console.log('Client secret returned');
-    // var customerInfo =
-    //   customerData.first_name +
-    //   " - " +
-    //   customerData.last_name +
-    //   " - " +
-    //   customerData.phone +
-    //   " - " +
-    //   customerData.email;
-    // const {
-    //   error: stripeError,
-    //   paymentIntent,
-    // } = await stripe.confirmCardPayment(clientSecret, {
-    //   payment_method: {
-    //     card: elements.getElement(CardElement),
-    //     billing_details: {
-    //       name: customerInfo,
-    //     },
-    //   },
-    // });
+    // console.log('Client secret returned');
+    var customerInfo =
+      customerData.first_name +
+      " - " +
+      customerData.last_name +
+      " - " +
+      customerData.phone +
+      " - " +
+      customerData.email;
+    const {
+      error: stripeError,
+      paymentIntent,
+    } = await stripe.confirmCardPayment(clientSecret, {
+      payment_method: {
+        card: elements.getElement(CardElement),
+        billing_details: {
+          name: customerInfo,
+        },
+      },
+    });
 
-    // if (stripeError) {
-    //   // Show error to your customer (e.g., insufficient funds)
-    //   console.log(stripeError.message);
-    //   return;
-    // } else {
-    //   Orderconformation("Stripe",paymentIntent,customerData);
-    // }
+    if (stripeError) {
+      // Show error to your customer (e.g., insufficient funds)
+      console.log(stripeError.message);
+      return;
+    } else {
+      Orderconformation("Stripe",paymentIntent,customerData);
+    }
 
-    // console.log(`Payment ${paymentIntent.status}: ${paymentIntent.id}`);
+    console.log(`Payment ${paymentIntent.status}: ${paymentIntent.id}`);
  
   };
 
