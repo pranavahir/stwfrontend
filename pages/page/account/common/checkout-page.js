@@ -140,7 +140,7 @@ useEffect(() => {
     console.log(productDetail);
 
     const { error: backendMailError, clientMail } = await fetch(
-      "http://support.digitechniq.in/email/send",
+      "https://support.digitechniq.in/email/send",
       {
         method: "POST",
         headers: {
