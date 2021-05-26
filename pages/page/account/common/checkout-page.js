@@ -140,7 +140,7 @@ useEffect(() => {
     console.log(productDetail);
 
     const { error: backendMailError, clientMail } = await fetch(
-      "https://razorpaypayment.digitechniq.in/email/send",
+      "http://support.digitechniq.in/email/send",
       {
         method: "POST",
         headers: {
