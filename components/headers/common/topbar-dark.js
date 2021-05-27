@@ -55,7 +55,7 @@ const TopBarDark = ({ topClass, fluid }) => {
                                     <a><i className="fa fa-heart" aria-hidden="true"></i> wishlist</a>
                                 </Link>
                             </li>
-                            {name!="" && name!=null && name ?<li className="onhover-dropdown mobile-account">
+                            {name!="" && name!=null && name!="null" && name ?<li className="onhover-dropdown mobile-account">
                                 <i className="fa fa-user" aria-hidden="true"></i> {name}
                                     <ul className="onhover-show-div">
                                     <li onClick={() => firebaseLogout()}>

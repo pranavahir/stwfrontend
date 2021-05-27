@@ -91,9 +91,9 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
 
         var titleProps = product.title.split(' ').join('-');
         titleProps = titleProps.replace(/[^\w\s]/gi, '-');
-        titleProps = titleProps.replace('---', '-');
-        titleProps = titleProps.replace('--', '-');
-        router.push(`/product-details/${product.asin}` + '-' + `${titleProps}`);
+        titleProps = titleProps.replace(/---/gi, '-');
+        titleProps = titleProps.replace(/--/gi, '-');
+        router.push(`/p/${product.asin}` + '-' + `${titleProps}`);
     }
 
     const variantChangeByColor = (imgId, product_images) => {

@@ -28,7 +28,7 @@ const ProductItem = ({ product, addCart, addWishlist, addCompare }) => {
     const clickProductDetail = () => {
 
         const titleProps = product.title.split(' ').join('');
-        router.push(`/product-details/${product.id}` + '-' + `${titleProps}`);
+        router.push(`/p/${product.id}` + '-' + `${titleProps}`);
     }
 
     return (

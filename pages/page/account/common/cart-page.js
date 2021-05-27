@@ -28,7 +28,7 @@ const CartPage = () => {
     const clickProductDetail = (title) => {
 
         var titleProps = title.split(' ').join('-');
-        // router.push(`/product-details/${product.seqid}` + '-' + `${titleProps}`);
+        // router.push(`/p/${product.seqid}` + '-' + `${titleProps}`);
         return titleProps;
     }
 
@@ -114,7 +114,7 @@ const CartPage = () => {
                                             <tbody key={index}>
                                                 <tr>
                                                     <td>
-                                                        <Link href={`/product-details/${item.seqid}` + '-' + `${clickProductDetail(item.title)}`}>
+                                                        <Link href={`/p/${item.seqid}` + '-' + `${clickProductDetail(item.title)}`}>
                                                             <a>
                                                                 <Media src={item.images ?
                                                                     item.images[0].mainimageurl
@@ -124,7 +124,7 @@ const CartPage = () => {
 
                                                     </td>
                                                     <td>
-                                                        <Link href={`/product-details/${item.seqid}` + '-' + `${clickProductDetail(item.title)}`}>
+                                                        <Link href={`/p/${item.seqid}` + '-' + `${clickProductDetail(item.title)}`}>
                                                             <a>
                                                                 {item.title}
                                                             </a>

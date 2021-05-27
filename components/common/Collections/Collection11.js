@@ -78,7 +78,7 @@ const ProductSection = ({ type }) => {
 
     const clickProductDetail = (product) => {
         const titleProps = product.title.split(' ').join('');
-        router.push(`/product-details/${product.id}` + '-' + `${titleProps}`);
+        router.push(`/p/${product.id}` + '-' + `${titleProps}`);
     }
 
     var { loading, data } = useQuery(GET_PRODUCTS, {

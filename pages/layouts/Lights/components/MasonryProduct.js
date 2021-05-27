@@ -100,7 +100,7 @@ const MasonryProduct = ({type,cartClass}) => {
 
     const clickProductDetail = (product) => {
         const titleProps = product.title.split(' ').join('');
-        router.push(`/product-details/${product.id}` + '-' + `${titleProps}`);
+        router.push(`/p/${product.id}` + '-' + `${titleProps}`);
     }
 
     return (

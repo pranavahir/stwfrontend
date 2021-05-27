@@ -32,7 +32,7 @@ const SideBar = () => {
 
 
     const CategoryFilter = (category) => {
-        // router.push(`/product-details/${product.id}` + '-' + `${titleProps}`);
+        // router.push(`/p/${product.id}` + '-' + `${titleProps}`);
 			const pathname = window.location.pathname;
 			setUrl(pathname);
 			if(pathname=="/shop/six_grid")

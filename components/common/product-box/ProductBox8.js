@@ -35,7 +35,7 @@ const ProductItem = ({ product, addCart, addWishlist, addCompareList }) => {
     const clickProductDetail = () => {
 
         const titleProps = product.title.split(' ').join('');
-        router.push(`/product-details/${product.id}` + '-' + `${titleProps}`);
+        router.push(`/p/${product.id}` + '-' + `${titleProps}`);
     }
 
     const variantChangeByColor = (imgId, product_images) => {
