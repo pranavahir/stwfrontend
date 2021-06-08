@@ -112,7 +112,17 @@ const DetailBox = ({ item ,changeColorVar }) => {
     const quantity = cartContext.quantity;
     const uniqueColor = [];
     const uniqueSize = [];
-    
+    const IsRight = CurContext.state.IsRight;
+    let leftSymbol=null;
+    let rightSymbol = null;
+    if(IsRight ==true)
+    {
+        rightSymbol = symbol;
+    }
+    else
+    {
+        leftSymbol = symbol;
+    }
 
     const onCloseModal = () => {
         setOpen(false)
@@ -125,7 +135,7 @@ const DetailBox = ({ item ,changeColorVar }) => {
     return (
         <div className="product-right product-form-box">
             <h4><del>{item.price}%</del><span>{item.discount}% off</span></h4>
-            <h3>{symbol}{item.price}</h3>
+            <h3>{leftSymbol}{item.price}{rightSymbol}</h3>
             <ul>
                 {item.variants.map(vari => {
                     var findItem = uniqueColor.find(x => x.color === vari.color);

@@ -12,6 +12,17 @@ const CartComponent = ({ icon ,layout}) => {
     const total = context.cartTotal;
     const removeFromCart = context.removeFromCart;
     const [openSide, setOpenSide] = useState(false);
+    const IsRight = currContext.state.IsRight;
+    let leftSymbol=null;
+    let rightSymbol = null;
+    if(IsRight ==true)
+    {
+        rightSymbol = symbol;
+    }
+    else
+    {
+        leftSymbol = symbol;
+    }
 
     return (
         <Fragment>

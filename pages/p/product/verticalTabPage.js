@@ -107,6 +107,17 @@ const VerticalTabPage = ({pathId}) => {
     const curContext = useContext(CurrencyContext);
     const symbol = curContext.state.symbol;
     const [state, setState] = useState({ nav1: null, nav2: null });
+    const IsRight = curContext.state.IsRight;
+    let leftSymbol=null;
+    let rightSymbol = null;
+    if(IsRight ==true)
+    {
+        rightSymbol = symbol;
+    }
+    else
+    {
+        leftSymbol = symbol;
+    }
     const slider1 = useRef();
     const slider2 = useRef();
     var { loading, data } = useQuery(GET_SINGLE_PRODUCTS, {

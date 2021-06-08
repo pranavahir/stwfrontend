@@ -22,8 +22,20 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
     const plusQty = context.plusQty;
     const minusQty = context.minusQty;
     const quantity = context.quantity;
+    
     const uniqueColor = [];
     const uniqueSize = [];
+    const IsRight = CurContect.state.IsRight;
+    let leftSymbol=null;
+    let rightSymbol = null;
+    if(IsRight ==true)
+    {
+        rightSymbol = symbol;
+    }
+    else
+    {
+        leftSymbol = symbol;
+    }
 
     const onCloseModal = () => {
         setOpen(false)
@@ -34,6 +46,18 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
         fontSize: "12px",
         fontWeight: "bold",
         color: "red"
+    }
+
+    const smallh6obj={
+        fontSize: "8px",
+        fontWeight: "bold",
+    }
+
+
+    const objbrand={
+        fontSize: "12px",
+        fontWeight: "bold",
+        color: "#ec693f"
     }
 
     const buyNow = (product, quantity) => {
@@ -99,14 +123,14 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
             <div className={`product-right ${stickyClass}`}>
                 
                 
-                <h2> {product.title} </h2>
-                <h4 style={smallobj}> {product.brandname} </h4>
+                <h3> {product.title} </h3>
+                <h4 style={objbrand}> {product.brandname} </h4>
 
                 {/* <h4> {product.categoryvalue} </h4> */}
                 {product.variants.length?<h6 style={smallobj} >Shipping in {product.variants[0].daystoship} days.</h6>:""} 
-                {discountCalculation(product.variants)?<h4><del>{symbol}{(priceCollection(product.variants) * 1).toFixed(2)}</del>
+                {discountCalculation(product.variants)?<h4><del>{leftSymbol}{(priceCollection(product.variants) * 1).toFixed(2)}{rightSymbol}</del>
                     <span>{discountCalculation(product.variants)}% off</span></h4>:""}
-                <h3>{symbol}{Math.floor((priceCollection(product.variants) - (priceCollection(product.variants) * discountCalculation(product.variants) / 100))).toFixed(2)} </h3>
+                <h3>{leftSymbol}{Math.floor((priceCollection(product.variants) - (priceCollection(product.variants) * discountCalculation(product.variants) / 100))).toFixed(2)}{rightSymbol} </h3>
                 {product.variants.map(vari => {
                     var findItem = uniqueColor.find(x => x.color === vari.color);
                     if (!findItem)
@@ -181,7 +205,9 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
                 <div className="product-buttons" >
                     <a href={null} className="btn btn-solid" onClick={() => context.addToCart(product, quantity)}>add to cart</a>
                      <a className="btn btn-solid" onClick={() => buyNow(product, quantity)}  >buy now</a> 
+                     
                 </div>
+                <h6><p style={smallh6obj} >Within 7 days of delivery, you may return new, unopened merchandise in its original condition. Exceptions and restrictions apply. See our <a href="#">Return Policy</a></p></h6>
                 <div className="border-product">
                     <h6 className="product-title">product details</h6>
                     

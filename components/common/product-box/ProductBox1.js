@@ -13,10 +13,21 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
     const curContext = useContext(CurrencyContext);
     const currency = curContext.state;
     const symbol = curContext.state.symbol;
+    const IsRight = curContext.state.IsRight;
     const plusQty = cartContext.plusQty;
     const minusQty = cartContext.minusQty;
     const quantity = cartContext.quantity;
     const setQuantity = cartContext.setQuantity;
+    let leftSymbol=null;
+    let rightSymbol = null;
+    if(IsRight ==true)
+    {
+        leftSymbol = symbol;
+    }
+    else
+    {
+        rightSymbol = symbol;
+    }
 
     const [image, setImage] = useState('');
     const [modal, setModal] = useState(false);
@@ -269,9 +280,9 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
                             <div className="product-right">
                                 <h2> {product.title} </h2>
                                 
-                    {discountCalculation(product.variants)?<h4><del>{symbol}{(priceCollection(product.variants) * 1).toFixed(2)}</del>
+                    {discountCalculation(product.variants)?<h4><del>{leftSymbol}{(priceCollection(product.variants) * 1).toFixed(2)}{rightSymbol}</del>
                     <span>{discountCalculation(product.variants)}% off</span></h4>:""} 
-                <h3>{symbol}{Math.floor((priceCollection(product.variants) - (priceCollection(product.variants) * discountCalculation(product.variants) / 100))).toFixed(2)} </h3>
+                <h3>{leftSymbol}{Math.floor((priceCollection(product.variants) - (priceCollection(product.variants) * discountCalculation(product.variants) / 100))).toFixed(2)}{rightSymbol} </h3>
                                 {product.variants ?
                                     <ul className="color-variant">
                                         {uniqueTags ?

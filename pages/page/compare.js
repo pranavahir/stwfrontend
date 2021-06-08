@@ -8,6 +8,17 @@ const Compare = () => {
     const contextCompare = useContext(CompareContext);
     const curContext = useContext(CurrencyContext);
     const symbol = curContext.state.symbol;
+    const IsRight = curContext.state.IsRight;
+    let leftSymbol=null;
+    let rightSymbol = null;
+    if(IsRight ==true)
+    {
+        rightSymbol = symbol;
+    }
+    else
+    {
+        leftSymbol = symbol;
+    }
     const compareItem = contextCompare.compareItems;
 
     return (
@@ -44,7 +55,7 @@ const Compare = () => {
                                                         <td className="item-row" key={i}><img src={item.images[0].src} alt=""
                                                             className="featured-image" />
                                                             <div className="product-price product_price"><strong>On Sale:
-                                                            </strong><span>{symbol}{item.price}</span></div>
+                                                            </strong><span>{leftSymbol}{item.price}{rightSymbol}</span></div>
                                                             <form className="variants clearfix">
                                                                 <input type="hidden" />
                                                                 <button title="Add to Cart" className="add-to-cart btn btn-solid">Add to

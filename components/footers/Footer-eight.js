@@ -4,8 +4,12 @@ import { SlideUpDown } from "../../services/script"
 import LogoImage from "../headers/common/logo"
 import { Container, Row, Col, Form, FormGroup, Input, Button } from 'reactstrap';
 import CopyRight from './common/copyright';
+import { CurrencyContext } from '../../helpers/Currency/CurrencyContext';
 
 const FooterEight = ({ logoName ,layoutClass }) => {
+
+    const curContext = useContext(CurrencyContext);
+    const phone = curContext.state.symbol;
 
     useEffect(() => {
         var contentwidth = window.innerWidth;

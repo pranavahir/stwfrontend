@@ -105,7 +105,17 @@ const StickyPage = () => {
 
     const curContext = useContext(CurrencyContext);
     const symbol = curContext.state.symbol;
-
+    const IsRight = curContext.state.IsRight;
+    let leftSymbol=null;
+    let rightSymbol = null;
+    if(IsRight ==true)
+    {
+        rightSymbol = symbol;
+    }
+    else
+    {
+        leftSymbol = symbol;
+    }
     var { loading, data } = useQuery(GET_SINGLE_PRODUCTS, {
         variables: {
             asin: "1"

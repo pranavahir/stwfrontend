@@ -13,8 +13,8 @@ import {WishlistContext} from '../../../helpers/wishlist/WishlistContext';
 import {CompareContext} from '../../../helpers/Compare/CompareContext';
 
 const GET_PRODUCTS = gql`
-    query  products($type:String!,$indexFrom:Int! ,$limit:Int!,$color:String!,$brand:[String!]! ,$priceMax:Int!,$priceMin:Int!,$keyword:String!) {
-        products (type: $type ,indexFrom:$indexFrom ,limit:$limit ,color:$color ,brand:$brand  ,priceMax:$priceMax,priceMin:$priceMin,keyword:$keyword){
+    query  products($type:String!,$indexFrom:Int! ,$limit:Int!,$color:String!,$brand:[String!]! ,$priceMax:Int!,$priceMin:Int!,$keyword:String!,$country:String!,$panel:String!) {
+        products (type: $type ,indexFrom:$indexFrom ,limit:$limit ,color:$color ,brand:$brand  ,priceMax:$priceMax,priceMin:$priceMin,keyword:$keyword,country:$country,panel:$panel){
   total(keyword:$keyword,type:$type){
             total
         }
@@ -50,7 +50,7 @@ const GET_PRODUCTS = gql`
             additionalimage4
             additionalimage5
       }
-      variants
+      variants(country:$country,panel:$panel)
       {
             variantid
             sku
@@ -88,6 +88,9 @@ const ProductList = ({ colClass, layoutList,openSidebar,noSidebar }) => {
     const curContext = useContext(CurrencyContext);
     const [grid, setGrid] = useState(colClass)
     const symbol = curContext.state.symbol;
+    const IsRight = curContext.state.IsRight;
+    const country = curContext.state.country;
+    const panel = curContext.state.panel;
     const filterContext = useContext(FilterContext);
     const selectedKeyword = filterContext.selectedKeyword;
     const selectedBrands = filterContext.selectedBrands;
@@ -99,7 +102,16 @@ const ProductList = ({ colClass, layoutList,openSidebar,noSidebar }) => {
     const [isLoading, setIsLoading] = useState(false);
     const [layout, setLayout] = useState(layoutList);
     const [url, setUrl] = useState();
-
+    let leftSymbol=null;
+    let rightSymbol = null;
+    if(IsRight ==true)
+    {
+        rightSymbol = symbol;
+    }
+    else
+    {
+        leftSymbol = symbol;
+    }
 
 
     useEffect(() => {
@@ -122,7 +134,9 @@ const ProductList = ({ colClass, layoutList,openSidebar,noSidebar }) => {
             brand: "max",
             indexFrom: 0,
             limit: limitSet,
-            keyword:selectedKeyword
+            keyword:selectedKeyword,
+            country:country,
+            panel:panel
         }
     });
     

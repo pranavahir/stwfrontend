@@ -27,8 +27,26 @@ const CheckoutPage = ({ isPublic = false }) => {
   const cartItems = cartContext.state;
   const cartTotal = cartContext.cartTotal.toFixed(2);
   const curContext = useContext(CurrencyContext);
+  const currency = curContext.state.currency;
   const symbol = curContext.state.symbol;
+  const GST = curContext.state.gstortax;
   const [obj, setObj] = useState({});
+  const [IsValidGst, setIsValidGst] = useState(false);
+  const [customerId, setCustomerId] = useState(
+    localStorage.getItem('CustomerId')
+);
+const IsRight = curContext.state.IsRight;
+const country = curContext.state.country;
+let leftSymbol=null;
+let rightSymbol = null;
+if(IsRight ==true)
+{
+    rightSymbol = symbol;
+}
+else
+{
+    leftSymbol = symbol;
+}
   // const [successObj, setSuccessObj] = useState({});
   const [state, setState] = useState({
     payment: null,
@@ -40,10 +58,13 @@ const CheckoutPage = ({ isPublic = false }) => {
   });
 
   const [orderObj, setOrderObj] = useState(
-    localStorage.getItem('orderObj')
+    sessionStorage.getItem('orderObj')
 );
+const [GstView,setGSTView] = useState(false)
+    
+    
 useEffect(() => {
-    localStorage.setItem('orderObj', orderObj);
+  sessionStorage.setItem('orderObj', orderObj);
 }, [orderObj]);
 
 
@@ -70,6 +91,9 @@ useEffect(() => {
         supportedTypes: ["credit", "debit"],
       },
     };
+
+
+
     const supportedInstruments = [
       {
         supportedMethods: ["https://tez.google.com/pay"],
@@ -133,6 +157,44 @@ useEffect(() => {
         console.log("Error in calling checkCanMakePayment: " + err);
       });
   };
+
+  const changeGst = (e) => {
+    if(e.target!=null)
+    {
+      var inputvalues = e.target.value;
+      var gstinformat = new RegExp('^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$');  
+      if (gstinformat.test(inputvalues)) {  
+        setIsValidGst(true);
+        console.log(IsValidGst);  
+      } else {  
+        setIsValidGst(false);
+        console.log("false"+IsValidGst);  
+      } 
+    }
+ 
+}
+
+const changeGstcheck = (e) => {
+  let isChecked = e.target.checked;
+  if(isChecked)
+  {
+    if(country == "India")
+    {
+      setPayment("Razorpay");
+    }
+    else
+    {
+      setPayment("stripe");  
+    }
+  }
+  else{
+    setPayment("stripe");
+  }
+  setGSTView(isChecked)
+}
+
+
+
   const canMakePaymentCache = "canMakePaymentCache";
 
   const OrderedMail = async (productDetail,customerDetail) =>{
@@ -212,7 +274,7 @@ useEffect(() => {
           producttitle: "item.title",
           quantity: 1,
           totalprice: 0,
-          customerid: 1,
+          customerid: customerId,
           customername: customerData.first_name,
           paymentmethod: "Card - Razorpay - "+PaymentDetail.id,
           trackingnumber: "stw-tkno-0123",
@@ -224,7 +286,9 @@ useEffect(() => {
           country:customerData.country,
           pin:customerData.pincode,
           phone:customerData.phone,
-          emailid:customerData.email 
+          emailid:customerData.email,
+          gst:customerData.GST,
+          gstname:customerData.GSTName
         };
     
         var orderResult = 0;
@@ -235,7 +299,7 @@ useEffect(() => {
             producttitle: titleTrim(item.title),
             quantity: 1,
             totalprice: item.total,
-            customerid: 1,
+            customerid: customerId,
             customername: customerData.first_name,
             paymentmethod: "Card - Razorpay - "+PaymentDetail.id,
             trackingnumber: "stw-tkno-0123",
@@ -247,7 +311,9 @@ useEffect(() => {
             country:customerData.country,
             pin:customerData.pincode,
             phone:customerData.phone,
-            emailid:customerData.email 
+            emailid:customerData.email,
+            gst:customerData.GST,
+            gstname:customerData.GSTName
           };
     
           try {
@@ -294,14 +360,13 @@ useEffect(() => {
       }
       else if(paymentGateway=="Stripe")
       {
-
           var OrderDetail = {
             orderdetailid: 2,
             productsku: "item.sku",
             producttitle: "item.title",
             quantity: 1,
             totalprice: 0,
-            customerid: 1,
+            customerid: customerId,
             customername: customerData.first_name,
             paymentmethod: "Card - Stripe - "+PaymentDetail.id,
             trackingnumber: "stw-tkno-0123",
@@ -313,7 +378,9 @@ useEffect(() => {
             country:customerData.country,
             pin:customerData.pincode,
             phone:customerData.phone,
-            emailid:customerData.email 
+            emailid:customerData.email,
+            gst:customerData.GST,
+            gstname:customerData.GSTName
           };
       
           var orderResult = 0;
@@ -324,7 +391,7 @@ useEffect(() => {
               producttitle: titleTrim(item.title),
               quantity: 1,
               totalprice: item.total,
-              customerid: 1,
+              customerid: customerId,
               customername: customerData.first_name,
               paymentmethod: "Card - Stripe - "+PaymentDetail.id,
               trackingnumber: "stw-tkno-0123",
@@ -336,7 +403,9 @@ useEffect(() => {
               country:customerData.country,
               pin:customerData.pincode,
               phone:customerData.phone,
-              emailid:customerData.email 
+              emailid:customerData.email,
+              gst:customerData.GST,
+              gstname:customerData.GSTName
             };
       
             try {
@@ -345,7 +414,6 @@ useEffect(() => {
               });
               //  history.push('/multikart-admin/menus/list-menu')
               //  toast.success("Successfully Added !")
-        
             } catch (err) {
               console.log(err.message);
             }
@@ -376,11 +444,7 @@ useEffect(() => {
           pathname: "/page/order-success",
         });
 
-         
-
       }
-
-
   }
   // const loadScript=(src) =>
   const checkCanMakePayment = (request) => {
@@ -498,7 +562,7 @@ useEffect(() => {
         body: JSON.stringify({
           paymentMethodType: "card",
           amount: amount,
-          currency: "inr",
+          currency: currency,
           customer: customerData.email,
         }),
       }
@@ -537,14 +601,12 @@ useEffect(() => {
     } else {
       Orderconformation("Stripe",paymentIntent,customerData);
     }
-
     console.log(`Payment ${paymentIntent.status}: ${paymentIntent.id}`);
- 
   };
 
   const razorPayPaymentHandler = async (filledData) => {
 
-    // Orderconformation("Razorpay","test",filledData);
+  // Orderconformation("Razorpay","test",filledData);
 
     const res = await loadScript(
       "https://checkout.razorpay.com/v1/checkout.js"
@@ -650,6 +712,17 @@ useEffect(() => {
     intent: "capture",
   };
 
+  const smallh6obj = {
+    fontSize: "10px",
+    fontWeight: "bold",
+}
+const smallcontain = {
+  marginTop: "10px",
+  borderBottom: "solid 0.5px red",
+  paddingBottom: "5px"
+}
+
+
   return (
     <section className="section-b-space">
       <Container>
@@ -666,12 +739,12 @@ useEffect(() => {
                       <div className="field-label">First Name</div>
                       <input
                         type="text"
-                        className={`${errors.firstName ? "error_border" : ""}`}
+                        className={`${errors.first_name ? "error_border" : ""}`}
                         name="first_name"
                         ref={register({ required: true })}
                       />
                       <span className="error-message">
-                        {errors.firstName && "First name is required"}
+                        {errors.first_name && "First name is required"}
                       </span>
                     </div>
                     <div className="form-group col-md-6 col-sm-6 col-xs-12">
@@ -715,14 +788,56 @@ useEffect(() => {
                       </span>
                     </div>
                     <div className="form-group col-md-12 col-sm-12 col-xs-12">
+                    <div className="shopping-option">
+                                <input
+                                  type="checkbox"
+                                  name="free_shipping"
+                                  id="free-shipping"
+                                  onChange={changeGstcheck}
+                                />&nbsp;
+                                <label htmlFor="free-shipping" className="field-label">
+                                {GST} Invoice
+                                </label>
+                              </div>
+                       
+                    </div>
+                   {GstView==true?
+ 
+                   <div className="form-group col-md-6 col-sm-6 col-xs-12">
+                      <div className="field-label">{GST} Number</div>
+                      <input
+                        className="form-control"
+                        onChange={changeGst}
+                        type="text"
+                        name="GST"
+                        className={`${errors.gstnum ? "error_border" : ""}`}
+                        ref={register({ pattern: /^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$/ })}
+                      />
+                      <span className="error-message">
+                        {errors.GST && "Please enter number for " + {Gst} +"Number."}
+                      </span>
+                    </div>:""} 
+                    {GstView==true?
+                    <div className="form-group col-md-6 col-sm-6 col-xs-12">
+                      <div className="field-label">Company name as in {GST}</div>
+                      <input
+                        className="form-control"
+                        type="text"
+                        name="GSTName"
+                      /></div>  
+                      :""} 
+                 
+                   
+                    <div className="form-group col-md-12 col-sm-12 col-xs-12">
                       <div className="field-label">Country</div>
                       <select name="country" ref={register({ required: true })}>
-                        <option>India</option>
-                        <option>South Africa</option>
+                        <option>{country}</option>
+                        {/* <option>South Africa</option>
                         <option>United State</option>
-                        <option>Australia</option>
+                        <option>Australia</option> */}
                       </select>
                     </div>
+
                     <div className="form-group col-md-12 col-sm-12 col-xs-12">
                       <div className="field-label">Address</div>
                       <input
@@ -817,31 +932,7 @@ useEffect(() => {
                               {cartTotal}
                             </span>
                           </li>
-                          <li>
-                            Shipping
-                            <div className="shipping">
-                              <div className="shopping-option">
-                                <input
-                                  type="checkbox"
-                                  name="free-shipping"
-                                  id="free-shipping"
-                                />
-                                <label htmlFor="free-shipping">
-                                  Free Shipping
-                                </label>
-                              </div>
-                              <div className="shopping-option">
-                                <input
-                                  type="checkbox"
-                                  name="local-pickup"
-                                  id="local-pickup"
-                                />
-                                <label htmlFor="local-pickup">
-                                  Local Pickup
-                                </label>
-                              </div>
-                            </div>
-                          </li>
+                       
                         </ul>
                         <ul className="total">
                           <li>
@@ -869,18 +960,19 @@ useEffect(() => {
                                   <label htmlFor="payment-4">Gpay</label>
                                 </div>
                               </li> */}
-                              <li>
+                              {(GstView && country == "India")?<li>
                                 <div className="radio-option Razorpay">
                                   <input
                                     type="radio"
                                     name="payment-group"
                                     id="payment-3"
+                                    defaultChecked={true}
                                     onClick={() => checkhandle("Razorpay")}
                                   />
                                   <label htmlFor="payment-3">Razorpay</label>
                                 </div>
-                              </li>
-                              <li>
+                              </li> : ""  } 
+                              {!GstView || (GstView && country != "India") ?<li>
                                 <div className="radio-option stripe">
                                   <input
                                     type="radio"
@@ -892,8 +984,8 @@ useEffect(() => {
                                   <label htmlFor="payment-2">Credit Cards / Debit Cards</label>
                                 </div>
                                 {/* {cartTotal !== 0 ? (<div className="text-right">{payment === "stripe" ? (<Card />) :""} </div>):""} */}
-                              </li>
-                              <li>
+                              </li>: ""  } 
+                              {/* <li>
                                 <div className="radio-option paypal">
                                   <input
                                     type="radio"
@@ -908,7 +1000,7 @@ useEffect(() => {
                                     </span>
                                   </label>
                                 </div>
-                              </li>
+                              </li> */}
                             </ul>
                           </div>
                         </div>
@@ -988,8 +1080,11 @@ useEffect(() => {
                   ) : (
                     ""
                   )}
+                  <h6 style={smallcontain}><p style={smallh6obj} >* * Within 7 days of delivery, you may return new, unopened merchandise in its original condition. Exceptions and restrictions apply. See our <a href="#">Return Policy</a></p>
+                  <p style={smallh6obj} >* *  100% safe and secure</p></h6>
                 </Col>
               </Row>
+              
             </Form>
           </div>
         </div>

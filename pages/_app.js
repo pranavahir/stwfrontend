@@ -12,12 +12,22 @@ import SettingProvider from '../helpers/theme-setting/SettingProvider';
 import { CompareContextProvider } from '../helpers/Compare/CompareContext';
 import { CurrencyContextProvider } from '../helpers/Currency/CurrencyContext';
 import Helmet from 'react-helmet';
+import { useRouter } from 'next/router'
+import { ApolloProvider, useQuery } from "@apollo/react-hooks"
+import ApolloClient from "apollo-boost"
 
+// import * as ga from '../pages/lib/ga'
+const client = new ApolloClient({
+  // uri: "http://localhost:4000/graphql"
+     uri:'https://stwecommerceapi.herokuapp.com/api/graphql',
+  
+})
 
 export default function MyApp({ Component, pageProps }) {
   const [isLoading, setIsLoading] = useState(true);
   const [url, setUrl] = useState();
-
+  const router = useRouter()
+   
   useEffect(() => {
     const path = window.location.pathname.split('/');
     const url = path[path.length - 1];
@@ -27,7 +37,22 @@ export default function MyApp({ Component, pageProps }) {
       setIsLoading(false)
     }, 1000);
 
-  }, []);
+    const handleRouteChange = (url) => {
+      window.gtag('config', 'UA-185043489-2', {
+        page_path: url,
+      })
+    }
+    //When the component is mounted, subscribe to router changes
+    //and log those page views
+    router.events.on('routeChangeComplete', handleRouteChange)
+
+    // If the component is unmounted, unsubscribe
+    // from the event with the `off` method
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange)
+    }
+
+  }, [router.events]);
   return (
     <>
       {
@@ -55,6 +80,7 @@ export default function MyApp({ Component, pageProps }) {
             <title>Shop The World - Always cheaper than amazon price</title>
           </Helmet>
             <div>
+            <ApolloProvider client={client}>
               <SettingProvider>
                 <CompareContextProvider>
                   <CurrencyContextProvider>
@@ -73,6 +99,7 @@ export default function MyApp({ Component, pageProps }) {
               </SettingProvider>
               <ToastContainer />
               <TapTop />
+              </ApolloProvider>
             </div>
           </>
       }

@@ -8,10 +8,22 @@ import { CurrencyContext } from '../../helpers/Currency/CurrencyContext';
 const CartContainer = ({icon}) => {
     const context = useContext(CartContext);
     const currContext = useContext(CurrencyContext);
+    console.log(currContext.state);
     const symbol = currContext.state.symbol;
     const cartList = context.state;
     const total = context.cartTotal;
- 
+    const IsRight = currContext.state.IsRight;
+    let leftSymbol=null;
+    let rightSymbol = null;
+    if(IsRight ==true)
+    {
+        rightSymbol = symbol;
+    }
+    else
+    {
+        leftSymbol = symbol;
+    }
+
     return (
         <Fragment>
             <li className="onhover-div mobile-cart" >
@@ -30,7 +42,7 @@ const CartContainer = ({icon}) => {
                         <div>
                             <li>
                                 <div className="total">
-                                    <h5>subtotal : <span>{symbol}{total.toFixed(2)}</span></h5>
+                                    <h5>subtotal : <span>{leftSymbol}{total.toFixed(2)}{rightSymbol}</span></h5>
                                 </div>
                             </li>
                             <li>

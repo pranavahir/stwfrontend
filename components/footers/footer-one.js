@@ -1,11 +1,17 @@
-import React, { useEffect } from 'react';
+import React, {useContext, useEffect } from 'react';
 import Link from 'next/link'
 import { SlideUpDown } from "../../services/script"
 import LogoImage from "../headers/common/logo"
 import { Container, Row, Col, Form, FormGroup, Input, Button } from 'reactstrap';
 import CopyRight from './common/copyright';
+import { CurrencyContext } from '../../helpers/Currency/CurrencyContext';
 
 const FooterOne = ({ fluid, logoName ,layoutClass ,footerClass }) => {
+
+    const curContext = useContext(CurrencyContext);
+    const phone = curContext.state.phone;
+    const emailid = curContext.state.emailid;
+    const address = curContext.state.address;
 
     useEffect(() => {
         var contentwidth = window.innerWidth;
@@ -129,16 +135,11 @@ const styleObject = {
                                 <div className="footer-contant">
                                     <ul className="contact-list">
                                     <li><i className="fa fa-map-marker"></i><b> STW ECommerce pvt Ltd</b> <br/>
-
-612 Accord Classic, Station Road
-
-Next to Anupam cinema ,
-
-Goregoan east, Mumbai 400063
+{address}
                                             </li>
-                                        <li><i className="fa fa-phone"></i>Call Us: +91 9820168421</li>
-                                        <li><i className="fa fa-whatsapp"></i>WhatsApp: +91 9820168421</li>
-                                        <li><i className="fa fa-envelope-o"></i>Email Us: <a href="#">care@shoptheworldonline.com</a></li>
+                                        <li><i className="fa fa-phone"></i>Call Us: {phone}</li>
+                                        <li><i className="fa fa-whatsapp"></i>WhatsApp: {phone}</li>
+                                        <li><i className="fa fa-envelope-o"></i>Email Us: <a href="#">{emailid}</a></li>
                                       
                                     </ul>
                                 </div>

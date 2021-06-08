@@ -13,7 +13,7 @@ import { Container, Row, Col, Media } from 'reactstrap';
 import { CurrencyContext } from '../../../helpers/Currency/CurrencyContext';
 
 const GET_SINGLE_PRODUCTS = gql`
-    query product ($asin:String!) {
+    query product ($asin:String!,$country:String!,$panel:String!) {
         product (asin:$asin) { seqid
             sku
             title
@@ -80,7 +80,7 @@ const GET_SINGLE_PRODUCTS = gql`
             size
 
        }
-      variants
+      variants(country:$country,panel:$panel)
       {
             variantid
             sku
@@ -111,10 +111,25 @@ const LeftSidebarPage = ({ pathId }) => {
     const asin =  pathId.slice(0,pathId.search("-"));
     const curContext = useContext(CurrencyContext);
     const symbol = curContext.state.symbol;
+    const IsRight = curContext.state.IsRight;
+    const country = curContext.state.country;
+    const panel = curContext.state.panel;
+    let leftSymbol=null;
+    let rightSymbol = null;
+    if(IsRight ==true)
+    {
+        rightSymbol = symbol;
+    }
+    else
+    {
+        leftSymbol = symbol;
+    }
     var { loading, data } = useQuery(GET_SINGLE_PRODUCTS, {
         variables: {
             // id: parseInt(pathId),
-            asin:asin
+            asin:asin,
+            country:country,
+            panel:panel
         }
     });
     const [state, setState] = useState({ nav1: null, nav2: null });
@@ -159,10 +174,10 @@ const LeftSidebarPage = ({ pathId }) => {
                 <Container>
                     <Row>
                         <Col sm="3" className="collection-filter">
-                            <Filter />
+                            {/* <Filter /> */}
                             <Service />
                             {/* <!-- side-bar single product slider start --> */}
-                            <NewProduct />
+                            {/* <NewProduct /> */}
                             {/* <!-- side-bar single product slider end --> */}
                         </Col>
                         <Col lg="9" sm="12" xs="12" >

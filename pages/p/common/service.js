@@ -66,8 +66,8 @@ const Service = () => {
                             fill="#ff4c3b" />
                     </svg>
                     <div className="media-body">
-                        <h4>festival offer</h4>
-                        <p>new online special festival offer</p>
+                        <h4>Better price than amazon</h4>
+                        <p>GST Invoice available</p>
                     </div>
                 </div>
                 <div className="media border-0 m-0">
@@ -105,7 +105,7 @@ const Service = () => {
                     </svg>
                     <div className="media-body">
                         <h4>online payment</h4>
-                        <p>Contrary to popular belief.</p>
+                        <p>100% safe & secure.</p>
                     </div>
                 </div>
             </div>

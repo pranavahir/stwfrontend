@@ -22,6 +22,18 @@ const SwatchDetailsWithPrice = (params) => {
     const quantity = cartContext.quantity;
     const uniqueColor = [];
     const uniqueSize = [];
+    const IsRight = CurContect.state.IsRight;
+    let leftSymbol=null;
+    let rightSymbol = null;
+    if(IsRight ==true)
+    {
+        rightSymbol = symbol;
+    }
+    else
+    {
+        leftSymbol = symbol;
+    }
+
 
     const onCloseModal = () => {
         setOpen(false)
@@ -35,9 +47,9 @@ const SwatchDetailsWithPrice = (params) => {
             <div className={`product-right ${params.stickyClass}`}>
                 <h2> {product.title} </h2>
                 <h4>
-                    <del>{symbol}{product.price}</del>
+                    <del>{leftSymbol}{product.price}{rightSymbol}</del>
                     <span>{product.discount}% off</span></h4>
-                <h3>{symbol}{product.price - (product.price * product.discount / 100)} </h3>
+                <h3>{leftSymbol}{product.price - (product.price * product.discount / 100)}{rightSymbol} </h3>
                 {product.variants.map(vari => {
                     var findItem = uniqueColor.find(x => x.color === vari.color);
                     if (!findItem)

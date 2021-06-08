@@ -103,6 +103,17 @@ const ProductSection = () => {
     const [modal, setModal] = useState(false);
     const toggle = () => setModal(!modal);
     const uniqueTags = [];
+    const IsRight = curContext.state.IsRight;
+    let leftSymbol=null;
+    let rightSymbol = null;
+    if(IsRight ==true)
+    {
+        rightSymbol = symbol;
+    }
+    else
+    {
+        leftSymbol = symbol;
+    }
 
     const changeQty = (e) => {
         setQuantity(parseInt(e.target.value))
@@ -174,7 +185,7 @@ const ProductSection = () => {
                                             <a href={null}>
                                                 <h6>{product.title}</h6>
                                             </a>
-                                            <h4>{symbol}{product.variants.price}</h4>
+                                            <h4>{leftSymbol}{product.variants.price}{rightSymbol}</h4>
                                             <ul className="color-variant">
                                                 <li className="bg-light0"></li>
                                                 <li className="bg-light1"></li>
@@ -259,6 +270,7 @@ const ProductSection = () => {
                                         <button className="btn btn-solid" onClick={() => addToCart(selectedProduct,quantity)} >add to cart</button>
                                         <button className="btn btn-solid" onClick={() => clickProductDetail(selectedProduct)} >View detail</button>
                                     </div>
+                                    
                                 </div>
                             </Col>
                         </Row>

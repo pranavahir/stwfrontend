@@ -120,6 +120,17 @@ const OutsideImagePage = () => {
     const quantity = context.quantity;
     const uniqueColor = [];
     const uniqueSize = [];
+    const IsRight = curContext.state.IsRight;
+    let leftSymbol=null;
+    let rightSymbol = null;
+    if(IsRight ==true)
+    {
+        rightSymbol = symbol;
+    }
+    else
+    {
+        leftSymbol = symbol;
+    }
 
     const onCloseModal = () => {
         setOpen(false)
@@ -191,9 +202,9 @@ const OutsideImagePage = () => {
                                         <div className="product-right">
                                             <h2> {data.product.name} </h2>
                                             <h4>
-                                                <del>{symbol}{data.product.price}</del>
+                                                <del>{leftSymbol}{data.product.price}{rightSymbol}</del>
                                                 <span>{data.product.discount}% off</span></h4>
-                                            <h3>{symbol}{data.product.price - (data.product.price * data.product.discount / 100)} </h3>
+                                            <h3>{leftSymbol}{data.product.price - (data.product.price * data.product.discount / 100)}{rightSymbol} </h3>
                                             {data.product.variants.map(vari => {
                                                 var findItem = uniqueColor.find(x => x.color === vari.color);
                                                 if (!findItem)

@@ -16,7 +16,17 @@ const CartPage = () => {
     const [quantity, setQty] = useState(1)
     const [quantityError, setQuantityError] = useState(false);
     const updateQty = context.updateQty;
-
+    const IsRight = curContext.state.IsRight;
+    let leftSymbol=null;
+    let rightSymbol = null;
+    if(IsRight ==true)
+    {
+        rightSymbol = symbol;
+    }
+    else
+    {
+        leftSymbol = symbol;
+    }
     const handleQtyUpdate = (item, quantity) => {
         if (quantity >= 1) {
             setQuantityError(false)
@@ -145,7 +155,7 @@ const CartPage = () => {
                                                         </div>{(item.qty >= item.stock) ? 'out of Stock' : ''}
                                                             </div>
                                                             <div className="col-xs-3">
-                                                                <h2 className="td-color">{symbol}{(priceCollection(item.variants) - (priceCollection(item.variants) * discountCalculation(item.variants) / 100)).toFixed(2)}</h2>
+                                                                <h2 className="td-color">{leftSymbol}{(priceCollection(item.variants) - (priceCollection(item.variants) * discountCalculation(item.variants) / 100)).toFixed(2)}{leftSymbol}</h2>
                                                             </div>
                                                             <div className="col-xs-3">
                                                                 <h2 className="td-color"><a href="#" className="icon"><i className="fa fa-times"  onClick={() => removeFromCart(item)}></i></a>
@@ -153,8 +163,8 @@ const CartPage = () => {
                                                             </div>
                                                         </div>
                                                     </td>
-                                                    <td><h2>{symbol}{(priceCollection(item.variants) - (priceCollection(item.variants) * discountCalculation(item.variants) / 100)).  toFixed(2)}</h2></td>
-                                                    <td><h2>{symbol}{item.gst}</h2></td>
+                                                    <td><h2>{leftSymbol}{(priceCollection(item.variants) - (priceCollection(item.variants) * discountCalculation(item.variants) / 100)).  toFixed(2)}{rightSymbol}</h2></td>
+                                                    <td><h2>{leftSymbol}{item.gst}{rightSymbol}</h2></td>
                                                     <td>
                                                         <div className="qty-box">
                                                             <div className="input-group">
@@ -174,7 +184,7 @@ const CartPage = () => {
                                                         <i className="fa fa-times" onClick={() => removeFromCart(item)}></i>
                                                        
                                                     </td>
-                                                    <td><h2 className="td-color">{symbol}{item.total.toFixed(2)}</h2></td>
+                                                    <td><h2 className="td-color">{leftSymbol}{item.total.toFixed(2)}{rightSymbol}</h2></td>
                                                 </tr>
                                             </tbody>)
                                     })}
@@ -183,7 +193,7 @@ const CartPage = () => {
                                     <tfoot>
                                         <tr>
                                             <td>total price :</td>
-                                            <td><h2>{symbol} {total.toFixed(2)} </h2></td>
+                                            <td><h2>{leftSymbol} {total.toFixed(2)} {rightSymbol}</h2></td>
                                         </tr>
                                     </tfoot>
                                 </table>

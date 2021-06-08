@@ -1,10 +1,26 @@
 import React, { Fragment, useContext } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import CartContext from '../../../helpers/cart';
 import { Media } from 'reactstrap';
+import { CurrencyContext } from '../../../helpers/Currency/CurrencyContext';
 
 const CartHeader = ({ item, symbol }) => {
     const context = useContext(CartContext);
+    const currContext = useContext(CurrencyContext);
+    const router = useRouter();
+    const IsRight = currContext.state.IsRight;
+    let leftSymbol=null;
+    let rightSymbol = null;
+    if(IsRight ==true)
+    {
+        rightSymbol = symbol;
+    }
+    else
+    {
+        leftSymbol = symbol;
+    }
+
     const getName = (title)=>{
         var str = null;
         if(title !=null && title!=undefined)
@@ -55,21 +71,26 @@ const CartHeader = ({ item, symbol }) => {
         return discount
       }
 
+      const clickProductDetail = () => {
+
+        var titleProps = item.title.split(' ').join('-');
+        titleProps = titleProps.replace(/[^\w\s]/gi, '-');
+        titleProps = titleProps.replace(/---/gi, '-');
+        titleProps = titleProps.replace(/--/gi, '-');
+        router.push(`/p/${item.asin}` + '-' + `${titleProps}`);
+    }
 
     return (
         <Fragment>
             <li >
                 <div className="media">
-                    <Link href={'/product/' + item.id}>
-                        <a>
+                     
+                        <a onClick={clickProductDetail}>
                             <Media alt="" className="mr-3" src={`${item.images[0].mainimageurl}`} />
                         </a>
-                    </Link>
+                    
                     <div className="media-body">
-                        <Link href={'/product/' + item.id}>
-                            <a><h4>{getName(item.title)}</h4></a>
-                        </Link>
-                        
+                            <a href="#" onClick={clickProductDetail}> <h4>{getName(item.title)}</h4></a>
                         <h4><span>{item.qty} x {symbol} {( priceCollection(item.variants) - (priceCollection(item.variants) * discountCalculation(item.variants) / 100)).toFixed(2)}</span></h4>
                     </div>
                 </div>

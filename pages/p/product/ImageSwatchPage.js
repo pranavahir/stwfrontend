@@ -108,6 +108,17 @@ const ImageSwatchPage = () => {
     const addToCart = context.addToCart;
     const curContext = useContext(CurrencyContext);
     const symbol = curContext.state.symbol;
+    const IsRight = curContext.state.IsRight;
+    let leftSymbol=null;
+    let rightSymbol = null;
+    if(IsRight ==true)
+    {
+        rightSymbol = symbol;
+    }
+    else
+    {
+        leftSymbol = symbol;
+    }
     const [state, setState] = useState({ nav1: null, nav2: null });
     const slider1 = useRef();
     const slider2 = useRef();

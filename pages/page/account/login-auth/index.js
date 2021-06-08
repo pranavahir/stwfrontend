@@ -6,7 +6,8 @@ import { toast } from 'react-toastify';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 
-const Login = () => {
+const Login = ({isCheckOut}) => {
+    // ({item,stickyClass,changeColorVar})
 
     const router = useRouter();
     const [email, setEmail] = useState("");
@@ -14,26 +15,48 @@ const Login = () => {
     const [name, setName] = useState(
         localStorage.getItem('Name')
     );
+    const [photoURL, setPhotoURL] = useState(
+        sessionStorage.getItem('photoURL')
+    );
+
     const [historyLogin, setHistoryLogin] = useState(
         localStorage.getItem('historyLogin')
     );
-    
+    const [customerId, setCustomerId] = useState(
+        localStorage.getItem('CustomerId')
+    );
+
+
     useEffect(() => {
         localStorage.setItem('Name', name);
-    }, [name]);
+        localStorage.setItem('CustomerId', customerId);
+        sessionStorage.setItem('photoURL',photoURL)
+    }, [name,customerId,photoURL]);
 
     const loginAuth = async (email,password) => {
         try {
-            await firebase.auth().signInWithEmailAndPassword(email, password).then(function () {                
+            await firebase.auth().signInWithEmailAndPassword(email, password).then(function (result) {                
                 setName(email);
+                setCustomerId(result.user.uid);
                 if(historyLogin==null)
-                setHistoryLogin('/');
+                {
+                    setHistoryLogin('/');
+                }
+                else if(historyLogin == "/page/account/forget-pwd")
+                {
+                    router.push("/");
+                }
+                 else{
+                    setTimeout(() => {
+                        router.push(historyLogin);
+                    }, 200);
+    
+                 }
+                 
 
-                setTimeout(() => {
-                    router.push(historyLogin);
-                }, 200);
                 })
         } catch (error) {
+            console.log(error);
             setTimeout(() => {
                 toast.error("error : Please enter Valid username and Password", error);
             }, 200);
@@ -47,7 +70,7 @@ const Login = () => {
                 if(historyLogin==null)
                 setHistoryLogin('/');
                 setTimeout(() => {
-                    router.push(historyLogin);
+                    router.push("/page/account/checkout");
                 }, 200);
                 })
         } catch (error) {
@@ -62,7 +85,8 @@ const Login = () => {
         try {
                 firebase.auth().signInWithPopup(googleProvider).then(function (result) {
                 setName(result.user.displayName);
-                
+                setPhotoURL(result.user.photoURL)
+                setCustomerId(result.user.uid);
                 if(historyLogin==null)
                 setHistoryLogin('/');
 
@@ -117,18 +141,24 @@ const Login = () => {
                                         <Input type="password" onChange={e => setPassword(e.target.value)} className="form-control" id="review"
                                             placeholder="Enter your password" required="" />
                                     </div>
+                                    <div className="form-group">
+                                    
+                                    <Link href="/page/account/forget-pwd">
+                                        <Label for="review">forget password</Label>
+                                    </Link>
+                                    </div>
                                     
                                     
 
                                     <ul>
                                         <li><a href="#" className="btn btn-solid" onClick={() => loginAuth(email,password)}>Login</a></li>
-                                        <li><a href="#" className="btn btn-solid" onClick={() => loginGuest(email,password)}>Guest</a></li>
+                                        {isCheckOut?<li><a href="#" className="btn btn-solid" onClick={() => loginGuest(email,password)}>Guest</a></li>:""}
                                     </ul>
 
                                     <div className="footer-social">
                                     <ul>
-                                        <li onClick={facebookAuth}><i className="fa fa-facebook" aria-hidden="true"></i></li>
-                                        <li onClick={googleAuth}><a><i className="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                                        {/* <li onClick={facebookAuth}><i className="fa fa-facebook" aria-hidden="true"></i></li> */}
+                                        <li onClick={googleAuth}><a><i className="fa fa-google-plus" aria-hidden="true"></i> <span>Log in with Gmail </span></a></li>
                                     </ul>
                                 </div>
                                 </Form>

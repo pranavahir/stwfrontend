@@ -120,6 +120,17 @@ const FourImagePage = () => {
     }
     const curContext = useContext(CurrencyContext);
     const symbol = curContext.state.symbol;
+    const IsRight = curContext.state.IsRight;
+    let leftSymbol=null;
+    let rightSymbol = null;
+    if(IsRight ==true)
+    {
+        rightSymbol = symbol;
+    }
+    else
+    {
+        leftSymbol = symbol;
+    }
     const { nav1, nav2 } = state;
 
     return (

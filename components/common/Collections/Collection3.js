@@ -68,7 +68,7 @@ const TopCollection = ({ type, title, subtitle, designClass, noSlider, cartClass
         }
         
         setTimeout(() => {
-            setDelayProduct(false)  
+                (false)  
         }, 5000);
 
     }, [delayProduct])

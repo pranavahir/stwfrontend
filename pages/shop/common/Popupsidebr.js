@@ -73,7 +73,18 @@ const Popupsidebar = ({ colClass, layoutList }) => {
     const [layout, setLayout] = useState(layoutList);
     const [openFilter, setOpenFilter] = useState(false);
     const [sidebarView,setSidebarView] = useState(false)
-
+    const IsRight = curContext.state.IsRight;
+    let leftSymbol=null;
+    let rightSymbol = null;
+    if(IsRight ==true)
+    {
+        rightSymbol = symbol;
+    }
+    else
+    {
+        leftSymbol = symbol;
+    }
+    
     var { loading, data, fetchMore } = useQuery(GET_PRODUCTS, {
         variables: {
             type: selectedCategory,
