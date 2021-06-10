@@ -170,7 +170,7 @@ useEffect(() => {
         setIsValidGst(false);
         console.log("false"+IsValidGst);  
       } 
-    }
+    }``
  
 }
 
@@ -192,7 +192,7 @@ const changeGstcheck = (e) => {
   }
   setGSTView(isChecked)
 }
-
+ 
 
 
   const canMakePaymentCache = "canMakePaymentCache";
@@ -1080,7 +1080,7 @@ const smallcontain = {
                   ) : (
                     ""
                   )}
-                  <h6 style={smallcontain}><p style={smallh6obj} >* * Within 7 days of delivery, you may return new, unopened merchandise in its original condition. Exceptions and restrictions apply. See our <a href="#">Return Policy</a></p>
+                  <h6 style={smallcontain}><p style={smallh6obj} >* * Within 7 days of delivery, you may return new, unopened merchandise in its original condition. Exceptions and restrictions apply. See our <a href="#"><Link href={`/page/privacy-policy`} >Return Policy</Link></a></p>
                   <p style={smallh6obj} >* *  100% safe and secure</p></h6>
                 </Col>
               </Row>

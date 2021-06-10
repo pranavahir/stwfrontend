@@ -54,8 +54,39 @@ const CartProvider = (props) => {
     }
 }
 
+ 
+
+
   const plusQty = (item) => {
-    if (item.stock >= quantity) {
+    if(item.stock!=undefined)
+    {
+      if (item.stock >= quantity) {
+        setQuantity(quantity + 1)
+      } else {
+        setStock("Out of Stock !")
+      }
+    }
+    else
+    {
+      if (item.quantity >= quantity) {
+        setQuantity(quantity + 1)
+      } else {
+        setStock("Out of Stock !")
+      }
+    }
+    
+  }
+
+
+  const ProductMinusQty = (quantity) => {
+    if (quantity > 1) {
+        setQuantity(ProductQuantity - 1);
+        setStock('InStock')
+    }
+}
+
+  const ProductPlusQty = (quantity) => {
+    if (quantity >= quantity) {
       setQuantity(quantity + 1)
     } else {
       setStock("Out of Stock !")
@@ -148,7 +179,10 @@ const discountCalculation = (variantData) =>{
         removeFromCart: removeFromCart,
         plusQty: plusQty,
         minusQty:minusQty,
-        updateQty:updateQty
+        updateQty:updateQty,
+        ProductMinusQty:ProductMinusQty,
+        ProductPlusQty:ProductPlusQty
+
       }}
     >
       {props.children}

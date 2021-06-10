@@ -13,56 +13,56 @@ const LogoBlock = ({designClass}) => {
                         <div>
                                 <div className="logo-block">
                                     <a href={null}>
-                                        <Media src={`/assets/images/logos/1.png`} alt="" />
+                                        <Media src={`/assets/images/logos/11.svg`} alt="" />
                                     </a>
                                 </div>
                             </div>
                             <div>
                                 <div className="logo-block">
                                     <a href={null}>
-                                        <Media src={`/assets/images/logos/2.png`} alt="" />
+                                        <Media src={`/assets/images/logos/12.png`} alt="" />
                                     </a>
                                 </div>
                             </div>
                             <div>
                                 <div className="logo-block">
                                     <a href={null}>
-                                        <Media src={`/assets/images/logos/3.png`} alt="" />
+                                        <Media src={`/assets/images/logos/13.png`} alt="" />
                                     </a>
                                 </div>
                             </div>
                             <div>
                                 <div className="logo-block">
                                     <a href={null}>
-                                        <Media src={`/assets/images/logos/4.png`} alt="" />
+                                        <Media src={`/assets/images/logos/14.png`} alt="" />
                                     </a>
                                 </div>
                             </div>
                             <div>
                                 <div className="logo-block">
                                     <a href={null}>
-                                        <Media src={`/assets/images/logos/5.png`} alt="" />
+                                        <Media src={`/assets/images/logos/15.svg`} alt="" />
                                     </a>
                                 </div>
                             </div>
                             <div>
                                 <div className="logo-block">
                                     <a href={null}>
-                                        <Media src={`/assets/images/logos/6.png`} alt="" />
+                                        <Media src={`/assets/images/logos/16.png`} alt="" />
                                     </a>
                                 </div>
                             </div>
                             <div>
                                 <div className="logo-block">
                                     <a href={null}>
-                                        <Media src={`/assets/images/logos/7.png`} alt="" />
+                                        <Media src={`/assets/images/logos/18.png`} alt="" />
                                     </a>
                                 </div>
                             </div>
                             <div>
                                 <div className="logo-block">
                                     <a href={null}>
-                                        <Media src={`/assets/images/logos/8.png`} alt="" />
+                                        <Media src={`/assets/images/logos/20.png`} alt="" />
                                     </a>
                                 </div>
                             </div>

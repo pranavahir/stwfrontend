@@ -22,7 +22,6 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
     const plusQty = context.plusQty;
     const minusQty = context.minusQty;
     const quantity = context.quantity;
-    
     const uniqueColor = [];
     const uniqueSize = [];
     const IsRight = CurContect.state.IsRight;
@@ -163,8 +162,8 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
                         </>
                 }
 
-                {/* <div className="product-description border-product">
-                    {product.variants ?
+                <div className="product-description border-product">
+                    {/* {product.variants ?
                         <div>
                             <h6 className="product-title size-text">select size
                                     <span><a href={null} data-toggle="modal"
@@ -183,31 +182,35 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
                                     })}
                                 </ul>
                             </div>
-                        </div> : ''}
-                    <span className="instock-cls">{stock}</span>
+                        </div> : ''} */}
+                        {product.variants[0].quantity > 0 ?   
+                        <div>
+                        <span className="instock-cls">{stock}</span>
                     <h6 className="product-title">quantity</h6>
                     <div className="qty-box">
                         <div className="input-group">
                             <span className="input-group-prepend">
-                                <button type="button" className="btn quantity-left-minus" onClick={minusQty} data-type="minus" data-field="">
+                                <button type="button" className="btn quantity-left-minus" onClick={minusQty()} data-type="minus" data-field="">
                                     <i className="fa fa-angle-left"></i>
                                 </button>
                             </span>
                             <Input type="text" name="quantity" value={quantity} onChange={changeQty} className="form-control input-number" />
                             <span className="input-group-prepend">
-                                <button type="button" className="btn quantity-right-plus" onClick={() => plusQty(product)} data-type="plus" data-field="">
+                                <button type="button" className="btn quantity-right-plus" onClick={() => plusQty(product.variants[0])} data-type="plus" data-field="">
                                     <i className="fa fa-angle-right"></i>
                                 </button>
                             </span>
                         </div>
-                    </div>
-                </div> */}
+                    </div> </div>
+                    : ""}
+                  
+                </div>
                 <div className="product-buttons" >
                     <a href={null} className="btn btn-solid" onClick={() => context.addToCart(product, quantity)}>add to cart</a>
                      <a className="btn btn-solid" onClick={() => buyNow(product, quantity)}  >buy now</a> 
                      
                 </div>
-                <h6><p style={smallh6obj} >Within 7 days of delivery, you may return new, unopened merchandise in its original condition. Exceptions and restrictions apply. See our <a href="#">Return Policy</a></p></h6>
+                <h6><p style={smallh6obj} >Within 7 days of delivery, you may return new, unopened merchandise in its original condition. Exceptions and restrictions apply. See our <a href="#"><Link href={`/page/privacy-policy`} >Return Policy</Link></a></p></h6>
                 <div className="border-product">
                     <h6 className="product-title">product details</h6>
                     

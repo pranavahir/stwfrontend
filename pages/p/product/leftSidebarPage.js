@@ -100,6 +100,7 @@ const GET_SINGLE_PRODUCTS = gql`
                 fees
                 margin
             price 
+            quantity
       }
 
         }

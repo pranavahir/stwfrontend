@@ -8,7 +8,6 @@ import { CurrencyContext } from '../../helpers/Currency/CurrencyContext';
 const CartContainer = ({icon}) => {
     const context = useContext(CartContext);
     const currContext = useContext(CurrencyContext);
-    console.log(currContext.state);
     const symbol = currContext.state.symbol;
     const cartList = context.state;
     const total = context.cartTotal;

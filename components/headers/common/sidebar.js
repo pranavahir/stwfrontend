@@ -195,6 +195,19 @@ const SideBar = () => {
                                                         <a style={linkStyle}  onClick={() => CategoryFilter("Towers")}>Towers</a>
                                                     </li>
                                                 </ul>
+                                                <h5><div style={linkStyle} onClick={() => CategoryFilter("Laptop")}>Laptops</div></h5> 
+                                                <h5><div style={linkStyle} onClick={() => CategoryFilter("Phones")}>Phones</div></h5> 
+                                                {/* <ul>
+                                                    <li>
+                                                        <a style={linkStyle}  onClick={() => CategoryFilter("Light use")}>All in Ones</a>
+                                                    </li>
+                                                    <li>
+                                                        <a style={linkStyle}  onClick={() => CategoryFilter("Medium use")}>Minis</a>
+                                                    </li>
+                                                    <li>
+                                                        <a style={linkStyle}  onClick={() => CategoryFilter("Heavy and Demanding use")}>Towers</a>
+                                                    </li>
+                                                </ul> */}
                                                 <h5><div style={linkStyle} onClick={() => CategoryFilter("Film Cameras")}>Film Cameras</div></h5> 
                                                 <ul>
                                                     <li>
