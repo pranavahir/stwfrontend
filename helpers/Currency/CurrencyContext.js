@@ -209,6 +209,27 @@ var ListConfig=[
   phone: "+91 9820168421",
   twitteracct: null,
 
+},
+{
+  currency: 'Euro',
+  currencyCode:'EUR',
+  symbol: '€', 
+  value:1, 
+  IsRight : true,
+  country:"EU",
+  panel:"STW EU",
+  address: "612, Accord Classic, near Anupam Cinema, Station Road, Goreagon East, Mumbai, 400063",
+  domain: "shoptheworld.eu",
+  emailid: "care@shoptheworldonline.com",
+  facebookacct: null,
+  googleacct: null,
+  gstortax: "VAT",
+  instagramacct: null,
+  paymentforbusiness: "stripe",
+  paymentnonbusiness: "stripe",
+  phone: "+91 9820168421",
+  twitteracct: null,
+
 }
 
 ]
