@@ -52,6 +52,29 @@ var ListConfig=[
     panel:"STW India",
     address: "612, Accord Classic, near Anupam Cinema, Station Road, Goreagon East, Mumbai, 400063",
     domain: "localhost",
+    fullDomain: "localhost",
+    emailid: "care@shoptheworldonline.com",
+    facebookacct: null,
+    googleacct: null,
+    gstortax: "GST",
+    instagramacct: null,
+    paymentforbusiness: "stripe",
+    paymentnonbusiness: "stripe",
+    phone: "+91 9820168421",
+    twitteracct: null,
+  
+  },
+  {
+    currency: 'INR',
+    currencyCode:'inr',
+    symbol: '₹', 
+    value:1, 
+    IsRight : false,
+    country:"India",
+    panel:"STW India",
+    address: "612, Accord Classic, near Anupam Cinema, Station Road, Goreagon East, Mumbai, 400063",
+    domain: "shoptheworlds.com",
+    fullDomain: "www.shoptheworlds.com",
     emailid: "care@shoptheworldonline.com",
     facebookacct: null,
     googleacct: null,
@@ -73,6 +96,7 @@ var ListConfig=[
   panel:"STW India",
   address: "612, Accord Classic, near Anupam Cinema, Station Road, Goreagon East, Mumbai, 400063",
   domain: "shoptheworld.in",
+  fullDomain:"www.shoptheworld.in"
   emailid: "care@shoptheworldonline.com",
   facebookacct: null,
   googleacct: null,
@@ -94,6 +118,7 @@ var ListConfig=[
   panel:"STW UAE",
   address: "Villa No 63,Al Manar Street,Al Salama,Umm Al khwain,UAE",
   domain: "shoptheworld.ae",
+  fullDomain: "www.shoptheworld.ae",
   emailid: "care@shoptheworldonline.com",
   facebookacct: null,
   googleacct: null,
@@ -115,6 +140,7 @@ var ListConfig=[
   panel:"STW Singapore",
   address: "Simei St 4 21B 05-48 Singapore, 528719 Singapore",
   domain: "shoptheworld.sg",
+  fullDomain: "www.shoptheworld.sg",
   emailid: "care@shoptheworldonline.com",
   facebookacct: null,
   googleacct: null,
@@ -136,6 +162,7 @@ var ListConfig=[
   panel:"STW KSA",
   address: "PO Box 5101, Riyadh 11422, Saudi Arabia",
   domain: "shoptheworld.sa.com",
+  fullDomain: "www.shoptheworld.sa.com",
   emailid: "care@shoptheworldonline.com",
   facebookacct: null,
   googleacct: null,
@@ -157,6 +184,7 @@ var ListConfig=[
   panel:"STW GBR",
   address: "71 Cherry Court SOUTHAMPTON SO53 5PD UK",
   domain: "shoptheworld.uk",
+  fullDomain: "www.shoptheworld.uk",
   emailid: "care@shoptheworldonline.com",
   facebookacct: null,
   googleacct: null,
@@ -178,6 +206,7 @@ var ListConfig=[
   panel:"STW Mexico",
   address: "612, Accord Classic, near Anupam Cinema, Station Road, Goreagon East, Mumbai, 400063",
   domain: "shoptheworld.mx",
+  fullDomain: "www.shoptheworld.mx",
   emailid: "care@shoptheworldonline.com",
   facebookacct: null,
   googleacct: null,
@@ -199,6 +228,7 @@ var ListConfig=[
   panel:"STW Brazil",
   address: "612, Accord Classic, near Anupam Cinema, Station Road, Goreagon East, Mumbai, 400063",
   domain: "shoptheworld.com.br",
+  fullDomain: "www.shoptheworld.com.br",
   emailid: "care@shoptheworldonline.com",
   facebookacct: null,
   googleacct: null,
@@ -220,6 +250,7 @@ var ListConfig=[
   panel:"STW EU",
   address: "612, Accord Classic, near Anupam Cinema, Station Road, Goreagon East, Mumbai, 400063",
   domain: "shoptheworld.eu",
+  fullDomain: "www.shoptheworld.eu",
   emailid: "care@shoptheworldonline.com",
   facebookacct: null,
   googleacct: null,
@@ -240,13 +271,11 @@ var domain = window.location.hostname;
 console.log(domain);
 for(var i=0;i<ListConfig.length;i++)
 {
-  console.log("test"+ListConfig[i].domain)
-  if(ListConfig[i].domain == domain)
+  if(ListConfig[i].domain == domain || ListConfig[i].fullDomain == domain)
   {
     selectedConfig =  ListConfig[i];
   }
 }
-console.log(domain);
 console.log(selectedConfig);
 const [selectedCurr, selectedCurrency] = useState(selectedConfig);
  
