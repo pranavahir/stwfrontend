@@ -188,6 +188,27 @@ var ListConfig=[
   phone: "+91 9820168421",
   twitteracct: null,
 
+},
+{
+  currency: 'BRL',
+  currencyCode:'BRL',
+  symbol: 'R$', 
+  value:1, 
+  IsRight : true,
+  country:"Brazil",
+  panel:"STW Brazil",
+  address: "612, Accord Classic, near Anupam Cinema, Station Road, Goreagon East, Mumbai, 400063",
+  domain: "shoptheworld.com.br",
+  emailid: "care@shoptheworldonline.com",
+  facebookacct: null,
+  googleacct: null,
+  gstortax: "VAT",
+  instagramacct: null,
+  paymentforbusiness: "stripe",
+  paymentnonbusiness: "stripe",
+  phone: "+91 9820168421",
+  twitteracct: null,
+
 }
 
 ]
