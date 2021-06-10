@@ -96,7 +96,7 @@ var ListConfig=[
   panel:"STW India",
   address: "612, Accord Classic, near Anupam Cinema, Station Road, Goreagon East, Mumbai, 400063",
   domain: "shoptheworld.in",
-  fullDomain:"www.shoptheworld.in"
+  fullDomain:"www.shoptheworld.in",
   emailid: "care@shoptheworldonline.com",
   facebookacct: null,
   googleacct: null,
