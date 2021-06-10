@@ -104,7 +104,71 @@ var ListConfig=[
   phone: "+971 554885120",
   twitteracct: null,
 
-} 
+},
+{
+  currency: 'SGD',
+  currencyCode:'sgd',
+  symbol: '$', 
+  value:1, 
+  IsRight : true,
+  country:"Singapore",
+  panel:"STW Singapore",
+  address: "Simei St 4 21B 05-48 Singapore, 528719 Singapore",
+  domain: "shoptheworld.sg",
+  emailid: "care@shoptheworldonline.com",
+  facebookacct: null,
+  googleacct: null,
+  gstortax: "VAT",
+  instagramacct: null,
+  paymentforbusiness: "stripe",
+  paymentnonbusiness: "stripe",
+  phone: "+65 94871296",
+  twitteracct: null,
+
+},
+{
+  currency: 'SAR',
+  currencyCode:'sar',
+  symbol: 'SAR', 
+  value:1, 
+  IsRight : true,
+  country:"KSA",
+  panel:"STW KSA",
+  address: "PO Box 5101, Riyadh 11422, Saudi Arabia",
+  domain: "shoptheworld.sa.com",
+  emailid: "care@shoptheworldonline.com",
+  facebookacct: null,
+  googleacct: null,
+  gstortax: "VAT",
+  instagramacct: null,
+  paymentforbusiness: "stripe",
+  paymentnonbusiness: "stripe",
+  phone: "+966 505556099",
+  twitteracct: null,
+
+},
+{
+  currency: 'GBP',
+  currencyCode:'gbp',
+  symbol: '£', 
+  value:1, 
+  IsRight : true,
+  country:"GBR",
+  panel:"STW GBR",
+  address: "71 Cherry Court SOUTHAMPTON SO53 5PD UK",
+  domain: "shoptheworld.uk",
+  emailid: "care@shoptheworldonline.com",
+  facebookacct: null,
+  googleacct: null,
+  gstortax: "VAT",
+  instagramacct: null,
+  paymentforbusiness: "stripe",
+  paymentnonbusiness: "stripe",
+  phone: "+966 505556099",
+  twitteracct: null,
+
+}
+
 ]
 
 var selectedConfig=null;
