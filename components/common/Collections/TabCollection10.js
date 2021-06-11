@@ -64,7 +64,7 @@ const Collection = ({ type }) => {
         <>
             <div className="title4  section-t-space">
                 <h4>special offer</h4>
-                <h2 className="title-inner4">top collection</h2>
+                <h2 className="title-inner4">Explore Our Top Collection</h2>
                 <div className="line">
                     <span></span>
                 </div>

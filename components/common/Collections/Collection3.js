@@ -9,37 +9,69 @@ import { WishlistContext } from '../../../helpers/wishlist/WishlistContext';
 import PostLoader from '../PostLoader';
 import { CompareContext } from '../../../helpers/Compare/CompareContext';
 import search from '../../../public/assets/images/empty-search.jpg'
-
+import { CurrencyContext } from '../../../helpers/Currency/CurrencyContext';
 
 const GET_PRODUCTS = gql`
-    query  products($type:_CategoryType!,$indexFrom:Int! ,$limit:Int!) {
-        products (type: $type,indexFrom:$indexFrom ,limit:$limit){
-            items {
-                id
-                title
-                description
-                type
-                brand
-                category 
-                price
-                new
-                stock
-                sale
-                discount
-                variants{
-                    id
-                    sku
-                    size
-                    color
-                    image_id
-                }
-                images{
-                    image_id
-                    id
-                    alt
-                    src
-                }
-            }
+    query  products($type:String!,$indexFrom:Int! ,$limit:Int!,$color:String!,$brand:[String!]! ,$priceMax:Int!,$priceMin:Int!,$keyword:String!,$country:String!,$panel:String!,$promoflag:[String!]) {
+        products (type: $type ,indexFrom:$indexFrom ,limit:$limit ,color:$color ,brand:$brand  ,priceMax:$priceMax,priceMin:$priceMin,keyword:$keyword,country:$country,panel:$panel,promoflag:$promoflag){
+  total(keyword:$keyword,type:$type){
+            total
+        }
+        hasMore(limit:$limit,indexFrom:$indexFrom,keyword:$keyword,type:$type){
+            seqid
+        }
+        items(limit:$limit,indexFrom:$indexFrom,keyword:$keyword,type:$type){
+            seqid
+            sku
+            title
+            description
+            bullepoints
+            brandid
+            categoryid
+            isvisible
+            isactive
+            warehouseid
+            metatagdescription
+            seokeywords
+            weight
+            height
+            width
+            length
+      
+            fromcurrency
+            asin
+      images{
+            productid
+            mainimageurl
+            additionalimage1
+            additionalimage2
+            additionalimage3
+            additionalimage4
+            additionalimage5
+      }
+      variants(country:$country,panel:$panel)
+      {
+            variantid
+            sku
+            productid
+            color
+            size
+            processor
+            graphics
+            discount
+            price 
+            daystoship
+            pwfee
+            purchasetax
+            conversionrate
+            frieghtrate
+            duty
+            taxes
+            fees
+            margin
+      }
+        }
+
         }
     }
 `;
@@ -52,14 +84,35 @@ const TopCollection = ({ type, title, subtitle, designClass, noSlider, cartClass
     const quantity = context.quantity;
     const [delayProduct,setDelayProduct] = useState(true)
 
-    var { loading, data } =  useQuery(GET_PRODUCTS, {
+    const curContext = useContext(CurrencyContext);
+    const symbol = curContext.state.symbol;
+    const IsRight = curContext.state.IsRight;
+    const country = curContext.state.country;
+    const panel = curContext.state.panel;
+
+    // var { loading, data } =  useQuery(GET_PRODUCTS, {
+    //     variables: {
+    //         type: type,
+    //         indexFrom: 0,
+    //         limit: 8
+    //     }
+    // });
+    
+    var { loading, data } = useQuery(GET_PRODUCTS, {
         variables: {
-            type: type,
+            type: "",
+            priceMax: 10,
+            priceMin: 1,
+            color: "red",
+            brand: "max",
             indexFrom: 0,
-            limit: 8
+            limit: 8,
+            keyword:"",
+            country:country,
+            panel:panel,
+            promoflag:['iphone','samsung','oneplus','google']
         }
     });
-    
     useEffect(() => {
         if (data === undefined) {
             noSlider === false;
@@ -94,25 +147,8 @@ const TopCollection = ({ type, title, subtitle, designClass, noSlider, cartClass
                                         </div>
                                 }
 
-                                {(delayProduct) ?
-
-                                <div className="row mx-0 margin-default">
-                                <div className="col-xl-3 col-lg-4 col-6">
-                                    <PostLoader />
-                                </div>
-                                <div className="col-xl-3 col-lg-4 col-6">
-                                    <PostLoader />
-                                </div>
-                                <div className="col-xl-3 col-lg-4 col-6">
-                                    <PostLoader />
-                                </div>
-                                <div className="col-xl-3 col-lg-4 col-6">
-                                    <PostLoader />
-                                </div>
-                                </div>
-                                
-                                :
-                                
+                                {data && data.products.total.total>0 ?
+                                                                
                                 <Slider {...productSlider} className="product-m no-arrow">
                                     
                                         
@@ -126,9 +162,24 @@ const TopCollection = ({ type, title, subtitle, designClass, noSlider, cartClass
                                                     cartClass={cartClass} backImage={backImage} />
                                             </div>
                                             )}
-
-                                      
                                 </Slider>
+
+                                :
+                                <div className="row mx-0 margin-default">
+                                <div className="col-xl-3 col-lg-4 col-6">
+
+                                    <PostLoader />
+                                </div>
+                                <div className="col-xl-3 col-lg-4 col-6">
+                                    <PostLoader />
+                                </div>
+                                <div className="col-xl-3 col-lg-4 col-6">
+                                    <PostLoader />
+                                </div>
+                                <div className="col-xl-3 col-lg-4 col-6">
+                                    <PostLoader />
+                                </div>
+                                </div>
                                 }
                             </Col>
                         </Row>

@@ -31,7 +31,7 @@ const Pets = () => {
         <LogoBlock />
       </div>
       <BannerSection />
-      <TopCollection inner="title-inner1" innerClass="title1 title5" titleClass={true} type="pets" title="top collection" subtitle="special offer" designClass="section-b-space j-box pets-box ratio_square" productSlider={Product4} noSlider="true" cartClass="cart-info cart-wrap" />
+      <TopCollection inner="title-inner1" innerClass="title1 title5" titleClass={true} type="pets" title="Explore Our Top Collection" subtitle="special offer" designClass="section-b-space j-box pets-box ratio_square" productSlider={Product4} noSlider="true" cartClass="cart-info cart-wrap" />
       <ParallaxBanner />
       <TopCollection inner="title-inner1" innerClass="title1 title5" titleClass={true} type="pets" title="save and extra" designClass="j-box pets-box ratio_square" productSlider={Product4} noSlider="true" cartClass="cart-info cart-wrap" />
       <Blog type="pets" sectionClass="section-b-space" title="title1 title5" inner="title-inner1" hrClass={true} />

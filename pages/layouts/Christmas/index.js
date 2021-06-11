@@ -32,7 +32,7 @@ const Christmas = () => {
             <HeaderOne logoName={'logo/f5.png'} topClass="top-header" headerClass="header-christmas video-header" />
             <HomeBanner />
             <CollectionBanner />
-            <TopCollection innerClass="title1" backImage={true} inner="title-inner1" type="christmas" title="top collection" subtitle="special offer" productSlider={Product4} designClass="product-4 product-christmas section-b-space product-m no-arrow slick-initialized slick-slider" noSlider="true" cartClass="cart-info cart-wrap" />
+            <TopCollection innerClass="title1" backImage={true} inner="title-inner1" type="christmas" title="Explore Our Top Collection" subtitle="special offer" productSlider={Product4} designClass="product-4 product-christmas section-b-space product-m no-arrow slick-initialized slick-slider" noSlider="true" cartClass="cart-info cart-wrap" />
             <ParallaxBanner />
             <SpecialProducts type="christmas" backImage={true}  line={true} title="title1 section-t-space" heading="exclusive title" inner="title-inner1" designClass="section-b-space product-christmas p-t-0" noSlider="true" cartClass="cart-info cart-wrap" />
             <Section />

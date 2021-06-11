@@ -35,7 +35,7 @@ const Tools = () => {
                 <Category />
                 <TopCollection spanClass={true} type="tools" title="Popular products" productSlider={Product4} designClass="section-b-space tools-grey ratio_square" noSlider="true" />
                 <ParallaxSlider />
-                <NewProduct spanClass={true} type="tools" title="Top Collections" subtitle="trend" designClass="tools-grey ratio_square" cartClass="cart-info cart-wrap" noSlider="true" />
+                <NewProduct spanClass={true} type="tools" title="Explore Our Top Collections" subtitle="trend" designClass="tools-grey ratio_square" cartClass="cart-info cart-wrap" noSlider="true" />
                 <div className="tools-brand section-b-space">
                     <LogoBlock />
                 </div>

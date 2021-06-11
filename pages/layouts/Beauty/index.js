@@ -37,7 +37,7 @@ const Beauty = () => {
             <div className="section-b-space">
                 <VideoSection />
             </div>
-            <TopCollection innerClass="title1" inner="title-inner1" type='beauty' productSlider={Product5} title="Top Collections" subtitle="special offer" designClass="p-t-0 ratio_asos" noSlider="true" cartClass="cart-info cart-wrap" />
+            <TopCollection innerClass="title1" inner="title-inner1" type='beauty' productSlider={Product5} title="Explore Our Top Collections" subtitle="special offer" designClass="p-t-0 ratio_asos" noSlider="true" cartClass="cart-info cart-wrap" />
             <Blog type="beauty" title="title1" inner="title-inner1" />
             <section className="instagram ratio_square section-b-space">
                 <Instagram type="beauty" />

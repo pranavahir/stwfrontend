@@ -11,37 +11,70 @@ import { CompareContext } from '../../../helpers/Compare/CompareContext';
 
 
 const GET_PRODUCTS = gql`
-    query  products($type:_CategoryType!,$indexFrom:Int! ,$limit:Int!) {
-        products (type: $type,indexFrom:$indexFrom ,limit:$limit){
-            items {
-                id
-                title
-                description
-                type
-                brand
-                category 
-                price
-                stock
-                new
-                sale
-                discount
-                variants{
-                    id
-                    sku
-                    size
-                    color
-                    image_id
-                }
-                images{
-                    image_id
-                    id
-                    alt
-                    src
-                }
-            }
+    query  products($type:String!,$indexFrom:Int! ,$limit:Int!,$color:String!,$brand:[String!]! ,$priceMax:Int!,$priceMin:Int!,$keyword:String!,$country:String!,$panel:String!) {
+        products (type: $type ,indexFrom:$indexFrom ,limit:$limit ,color:$color ,brand:$brand  ,priceMax:$priceMax,priceMin:$priceMin,keyword:$keyword,country:$country,panel:$panel){
+  total(keyword:$keyword,type:$type){
+            total
+        }
+        hasMore(limit:$limit,indexFrom:$indexFrom,keyword:$keyword,type:$type){
+            seqid
+        }
+        items(limit:$limit,indexFrom:$indexFrom,keyword:$keyword,type:$type){
+            seqid
+            sku
+            title
+            description
+            bullepoints
+            brandid
+            categoryid
+            isvisible
+            isactive
+            warehouseid
+            metatagdescription
+            seokeywords
+            weight
+            height
+            width
+            length
+      
+            fromcurrency
+            asin
+      images{
+            productid
+            mainimageurl
+            additionalimage1
+            additionalimage2
+            additionalimage3
+            additionalimage4
+            additionalimage5
+      }
+      variants(country:$country,panel:$panel)
+      {
+            variantid
+            sku
+            productid
+            color
+            size
+            processor
+            graphics
+            discount
+            price 
+            daystoship
+            pwfee
+            purchasetax
+            conversionrate
+            frieghtrate
+            duty
+            taxes
+            fees
+            margin
+      }
+        }
+
         }
     }
 `;
+
 
 const SpecialProducts = ({ type, designClass, cartClass, noTitle }) => {
     const [activeTab, setActiveTab] = useState(type);
@@ -52,9 +85,16 @@ const SpecialProducts = ({ type, designClass, cartClass, noTitle }) => {
 
     var { loading, data } = useQuery(GET_PRODUCTS, {
         variables: {
-            type: activeTab,
+            type: "",
+            priceMax: 10,
+            priceMin: 1,
+            color: "red",
+            brand: "max",
             indexFrom: 0,
-            limit: 8
+            limit: 8,
+            keyword:"Electronics",
+            country:country,
+            panel:panel
         }
     });
 
@@ -66,7 +106,7 @@ const SpecialProducts = ({ type, designClass, cartClass, noTitle }) => {
                     :
                     <div className="title1 section-t-space">
                         <h4>exclusive products</h4>
-                        <h2 className="title-inner1">special products</h2>
+                        <h2 className="title-inner1">special products </h2>
                     </div>
             }
 

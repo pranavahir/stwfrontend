@@ -62,18 +62,18 @@ const TabCollection = ({ type, cartClass }) => {
         <>
             <div className="title1  section-t-space">
                 <h4>special offer</h4>
-                <h2 className="title-inner1">top collection</h2>
+                <h2 className="title-inner1">Explore Our Top Collection</h2>
             </div>
             <section className="game-product ratio_asos pt-0">
                 <Container>
                     <Row>
-                        <Col lg="6" className="m-auto">
+                        {/* <Col lg="6" className="m-auto">
                             <div className="product-para">
                                 <p className="text-center">Lorem Ipsum is simply dummy text of the printing and typesetting
                                 industry. Lorem Ipsum has been the industry's
-                            standard dummy text ever since the 1500s,</p>
+                            standard dummy text ever since the 5500s,</p>
                             </div>
-                        </Col>
+                        </Col> */}
                     </Row>
                     <Row>
                         <Col>

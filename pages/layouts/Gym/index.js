@@ -30,7 +30,7 @@ const Gym = () => {
             <HeaderNine logoName={'logo/f6.png'} topClass="top-header top-header-dark2" />
             <HomeSlider />
             <BannerSection />
-            <TopCollection type="gym" title="Top Collections" subtitle="special offer" designClass="p-t-0 section-b-space partition-cls gym-product ratio_square" cartClass="cart-info cart-wrap" noSlider="false" />
+            <TopCollection type="gym" title="Explore Our Top Collections" subtitle="special offer" designClass="p-t-0 section-b-space partition-cls gym-product ratio_square" cartClass="cart-info cart-wrap" noSlider="false" />
             <div className="full-banner gym-parallax parallax-banner25 p-0 ratio_square">
                 <Paragraph title="title1 section-t-space" inner="title-inner1" hrClass={false} />
                 <ProductSlider type="gym" type="gym" designClass="p-t-0 section-b-space gym-product ratio_square" cartClass="cart-info cart-wrap" noSlider="false" />

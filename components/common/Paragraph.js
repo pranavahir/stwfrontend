@@ -6,7 +6,7 @@ const Paragraph = ({title, inner, line ,hrClass}) => {
         <>
             <div className={title}>
                 <h4>special offer</h4>
-                <h2 className={inner}>top collection</h2>
+                <h2 className={inner}>Explore Our Top Collection</h2>
                 {
                     line ?
                         <div className="line"></div> : 
@@ -17,13 +17,13 @@ const Paragraph = ({title, inner, line ,hrClass}) => {
             </div>
             <Container>
                 <Row>
-                    <Col lg="6" className="m-auto">
+                    {/* <Col lg="6" className="m-auto">
                         <div className="product-para">
                             <p className="text-center">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                             Lorem Ipsum has been the industry's
                         standard dummy text ever since the 1500s,</p>
                         </div>
-                    </Col>
+                    </Col> */}
                 </Row>
             </Container>
         </>

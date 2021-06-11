@@ -42,7 +42,7 @@ const Bags = () => {
                     <ServiceLayout />
                 </div>
                 <CategoryTwo />
-                <TopCollection type="bags" title="Top Collection" subtitle="special offer" productSlider={Product4} designClass="ratio_asos" noSlider="true" cartClass="cart-detail" inner="title-inner1" innerClass="title1" />
+                <TopCollection type="bags" title="Explore Our Top Collection" subtitle="special offer" productSlider={Product4} designClass="ratio_asos" noSlider="true" cartClass="cart-detail" inner="title-inner1" innerClass="title1" />
                 <Blog type="bags" sectionClass="blog ratio3_2" inner="title-inner1" title="title1" />
                 <Instagram type="bags" />
                 <FooterOne logoName={'layout3/footerlogo.png'} layoutClass="darker-subfooter" />

@@ -14,34 +14,66 @@ import emptySearch from '../../../public/assets/images/empty-search.jpg';
 
 
 const GET_PRODUCTS = gql`
-    query  products($type:_CategoryType!,$indexFrom:Int! ,$limit:Int!) {
-        products (type: $type,indexFrom:$indexFrom ,limit:$limit){
-            items {
-                id
-                title
-                description
-                type
-                brand
-                category 
-                price
-                new
-                stock
-                sale
-                discount
-                variants{
-                    id
-                    sku
-                    size
-                    color
-                    image_id
-                }
-                images{
-                    image_id
-                    id
-                    alt
-                    src
-                }
-            }
+    query  products($type:String!,$indexFrom:Int! ,$limit:Int!,$color:String!,$brand:[String!]! ,$priceMax:Int!,$priceMin:Int!,$keyword:String!,$country:String!,$panel:String!,$promoflag:[String!]) {
+        products (type: $type ,indexFrom:$indexFrom ,limit:$limit ,color:$color ,brand:$brand  ,priceMax:$priceMax,priceMin:$priceMin,keyword:$keyword,country:$country,panel:$panel,promoflag:$promoflag){
+  total(keyword:$keyword,type:$type){
+            total
+        }
+        hasMore(limit:$limit,indexFrom:$indexFrom,keyword:$keyword,type:$type){
+            seqid
+        }
+        items(limit:$limit,indexFrom:$indexFrom,keyword:$keyword,type:$type){
+            seqid
+            sku
+            title
+            description
+            bullepoints
+            brandid
+            categoryid
+            isvisible
+            isactive
+            warehouseid
+            metatagdescription
+            seokeywords
+            weight
+            height
+            width
+            length
+      
+            fromcurrency
+            asin
+      images{
+            productid
+            mainimageurl
+            additionalimage1
+            additionalimage2
+            additionalimage3
+            additionalimage4
+            additionalimage5
+      }
+      variants(country:$country,panel:$panel)
+      {
+            variantid
+            sku
+            productid
+            color
+            size
+            processor
+            graphics
+            discount
+            price 
+            daystoship
+            pwfee
+            purchasetax
+            conversionrate
+            frieghtrate
+            duty
+            taxes
+            fees
+            margin
+      }
+        }
+
         }
     }
 `;
@@ -54,15 +86,71 @@ const SpecialProducts = ({ type, fluid, designClass, cartClass, heading, noTitle
     const curContext = useContext(CurrencyContext);
     const currency = curContext.state;
     const quantity = context.quantity;
+     
+    const symbol = curContext.state.symbol;
+    const IsRight = curContext.state.IsRight;
+    const country = curContext.state.country;
+    const panel = curContext.state.panel;
+
 
     var { loading, data } = useQuery(GET_PRODUCTS, {
         variables: {
-            type: activeTab,
+            type: "",
+            priceMax: 10,
+            priceMin: 1,
+            color: "red",
+            brand: "max",
             indexFrom: 0,
-            limit: 8
+            limit: 8,
+            keyword:"",
+            country:country,
+            panel:panel,
+            promoflag:['asuslaptop','delllaptop','acerlaptop','hplaptop','apple','microsoft']
+
         }
     });
 
+    
+
+    var { loading2, data2 } = useQuery(GET_PRODUCTS, {
+        variables: {
+            type: "",
+            priceMax: 10,
+            priceMin: 1,
+            color: "red",
+            brand: "max",
+            indexFrom: 0,
+            limit: 8,
+            keyword:"",
+            country:country,
+            panel:panel,
+            promoflag:['desktop','monitor']
+
+        }
+    });
+
+    
+    
+
+    var { loading3, data3 } = useQuery(GET_PRODUCTS, {
+        variables: {
+            type: "",
+            priceMax: 10,
+            priceMin: 1,
+            color: "red",
+            brand: "max",
+            indexFrom: 0,
+            limit: 8,
+            keyword:"",
+            country:country,
+            panel:panel,
+            promoflag:['projector']
+
+        }
+    });
+
+    
+    
     return (
         <div>
             <section className={designClass}>
@@ -135,8 +223,8 @@ const SpecialProducts = ({ type, fluid, designClass, cartClass, heading, noTitle
                         </TabPanel>
                         <TabPanel>
                             <Row className="no-slider">
-                                {(!data || !data.products || !data.products.items || data.products.items.length === 0 || loading) ?
-                                    (data && data.products && data.products.items && data.products.items.length === 0) ?
+                                {(!data2 || !data2.products || !data2.products.items || data2.products.items.length === 0 || loading2) ?
+                                    (data2 && data2.products && data2.products.items && data2.products.items.length === 0) ?
                                         <Col xs="12">
                                             <div>
                                                 <div className="col-sm-12 empty-cart-cls text-center">
@@ -154,7 +242,7 @@ const SpecialProducts = ({ type, fluid, designClass, cartClass, heading, noTitle
                                         </>
                                     :
 
-                                    data && data.products.items.slice(0, 8).map((product, i) =>
+                                    data2 && data2.products.items.slice(0, 8).map((product, i) =>
                                         <ProductItem product={product} symbol={currency.symbol} key={i}
                                             addCompare={() => compareContext.addToCompare(product)}
                                             addCart={() => context.addToCart(product, quantity)}
@@ -165,8 +253,8 @@ const SpecialProducts = ({ type, fluid, designClass, cartClass, heading, noTitle
                         </TabPanel>
                         <TabPanel>
                             <Row className="no-slider">
-                                {(!data || !data.products || !data.products.items || data.products.items.length === 0 || loading) ?
-                                    (data && data.products && data.products.items && data.products.items.length === 0) ?
+                                {(!data3 || !data3.products || !data3.products.items || data3.products.items.length === 0 || loading3) ?
+                                    (data3 && data3.products && data3.products.items && data3.products.items.length === 0) ?
                                         <Col xs="12">
                                             <div>
                                                 <div className="col-sm-12 empty-cart-cls text-center">
@@ -184,7 +272,7 @@ const SpecialProducts = ({ type, fluid, designClass, cartClass, heading, noTitle
                                         </>
                                     :
 
-                                    data && data.products.items.slice(0, 8).map((product, i) =>
+                                    data3 && data3.products.items.slice(0, 8).map((product, i) =>
                                         <ProductItem product={product} symbol={currency.symbol} key={i}
                                             addCompare={() => compareContext.addToCompare(product)}
                                             addCart={() => context.addToCart(product, quantity)}
