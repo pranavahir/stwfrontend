@@ -185,7 +185,7 @@ const SpecialProducts = ({ type, fluid, designClass, cartClass, heading, noTitle
                         </TabPanel>
                         <TabPanel>
                             <Row className="no-slider">
-                                {(!data || !data.products || !data.products.items || data.products.items.length === 0 || loading2) ?
+                                {(!data || !data.products || !data.products.items || data.products.items.length === 0 || loading) ?
                                     (data && data.products && data.products.items && data.products.items.length === 0) ?
                                         <Col xs="12">
                                             <div>
@@ -215,7 +215,7 @@ const SpecialProducts = ({ type, fluid, designClass, cartClass, heading, noTitle
                         </TabPanel>
                         <TabPanel>
                             <Row className="no-slider">
-                                {(!data || !data.products || !data.products.items || data.products.items.length === 0 || loading3) ?
+                                {(!data || !data.products || !data.products.items || data.products.items.length === 0 || loading) ?
                                     (data && data.products && data.products.items && data.products.items.length === 0) ?
                                         <Col xs="12">
                                             <div>
