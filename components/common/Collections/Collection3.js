@@ -12,15 +12,15 @@ import search from '../../../public/assets/images/empty-search.jpg'
 import { CurrencyContext } from '../../../helpers/Currency/CurrencyContext';
 
 const GET_PRODUCTS = gql`
-    query  products($type:String!,$indexFrom:Int! ,$limit:Int!,$color:String!,$brand:[String!]! ,$priceMax:Int!,$priceMin:Int!,$keyword:String!,$country:String!,$panel:String!,$promoflag:[String!]) {
+    query  products($type:String!,$indexFrom:Int! ,$limit:Int!,$color:String!,$brand:[String!]! ,$priceMax:Int!,$priceMin:Int!,$keyword:String!,$country:String!,$panel:String!,$promoflag:String!) {
         products (type: $type ,indexFrom:$indexFrom ,limit:$limit ,color:$color ,brand:$brand  ,priceMax:$priceMax,priceMin:$priceMin,keyword:$keyword,country:$country,panel:$panel,promoflag:$promoflag){
-  total(keyword:$keyword,type:$type){
+  total(keyword:$keyword,type:$type,promoflag:$promoflag){
             total
         }
-        hasMore(limit:$limit,indexFrom:$indexFrom,keyword:$keyword,type:$type){
+        hasMore(limit:$limit,indexFrom:$indexFrom,keyword:$keyword,type:$type,promoflag:$promoflag){
             seqid
         }
-        items(limit:$limit,indexFrom:$indexFrom,keyword:$keyword,type:$type){
+        items(limit:$limit,indexFrom:$indexFrom,keyword:$keyword,type:$type,promoflag:$promoflag){
             seqid
             sku
             title
@@ -110,7 +110,7 @@ const TopCollection = ({ type, title, subtitle, designClass, noSlider, cartClass
             keyword:"",
             country:country,
             panel:panel,
-            promoflag:['iphone','samsung','oneplus','google']
+            promoflag:"highlight1"
         }
     });
     useEffect(() => {

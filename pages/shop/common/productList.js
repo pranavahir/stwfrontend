@@ -13,15 +13,15 @@ import {WishlistContext} from '../../../helpers/wishlist/WishlistContext';
 import {CompareContext} from '../../../helpers/Compare/CompareContext';
 
 const GET_PRODUCTS = gql`
-    query  products($type:String!,$indexFrom:Int! ,$limit:Int!,$color:String!,$brand:[String!]! ,$priceMax:Int!,$priceMin:Int!,$keyword:String!,$country:String!,$panel:String!) {
-        products (type: $type ,indexFrom:$indexFrom ,limit:$limit ,color:$color ,brand:$brand  ,priceMax:$priceMax,priceMin:$priceMin,keyword:$keyword,country:$country,panel:$panel){
-  total(keyword:$keyword,type:$type){
+    query  products($type:String!,$indexFrom:Int! ,$limit:Int!,$color:String!,$brand:[String!]! ,$priceMax:Int!,$priceMin:Int!,$keyword:String!,$country:String!,$panel:String!,$promoflag:String!) {
+        products (type: $type ,indexFrom:$indexFrom ,limit:$limit ,color:$color ,brand:$brand  ,priceMax:$priceMax,priceMin:$priceMin,keyword:$keyword,country:$country,panel:$panel,promoflag:$promoflag){
+  total(keyword:$keyword,type:$type,promoflag:$promoflag){
             total
         }
-        hasMore(limit:$limit,indexFrom:$indexFrom,keyword:$keyword,type:$type){
+        hasMore(limit:$limit,indexFrom:$indexFrom,keyword:$keyword,type:$type,promoflag:$promoflag){
             seqid
         }
-        items(limit:$limit,indexFrom:$indexFrom,keyword:$keyword,type:$type){
+        items(limit:$limit,indexFrom:$indexFrom,keyword:$keyword,type:$type,promoflag:$promoflag){
             seqid
             sku
             title
@@ -136,7 +136,9 @@ const ProductList = ({ colClass, layoutList,openSidebar,noSidebar }) => {
             limit: limitSet,
             keyword:selectedKeyword,
             country:country,
-            panel:panel
+            panel:panel,
+            promoflag:""
+            
         }
     });
     
