@@ -261,8 +261,29 @@ var ListConfig=[
   phone: "+91 9820168421",
   twitteracct: null,
 
-}
+},
+{
+  currency: 'Qatari Rial',
+  currencyCode:'QAR',
+  symbol: 'QAR', 
+  value:1, 
+  IsRight : true,
+  country:"Qatar",
+  panel:"STW Qatar",
+  address: "612, Accord Classic, near Anupam Cinema, Station Road, Goreagon East, Mumbai, 400063",
+  domain: "shoptheworld.qa",
+  fullDomain: "www.shoptheworld.qa",
+  emailid: "care@shoptheworldonline.com",
+  facebookacct: null,
+  googleacct: null,
+  gstortax: "VAT",
+  instagramacct: null,
+  paymentforbusiness: "stripe",
+  paymentnonbusiness: "stripe",
+  phone: "+91 9820168421",
+  twitteracct: null,
 
+}
 ]
 
 var selectedConfig=null;
