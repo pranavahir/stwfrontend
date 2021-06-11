@@ -204,7 +204,7 @@ const SpecialProducts = ({ type, fluid, designClass, cartClass, heading, noTitle
                                         </>
                                     :
 
-                                    data2 && data.products.items.slice(0, 8).map((product, i) =>
+                                    data && data.products.items.slice(0, 8).map((product, i) =>
                                         <ProductItem product={product} symbol={currency.symbol} key={i}
                                             addCompare={() => compareContext.addToCompare(product)}
                                             addCart={() => context.addToCart(product, quantity)}
@@ -234,7 +234,7 @@ const SpecialProducts = ({ type, fluid, designClass, cartClass, heading, noTitle
                                         </>
                                     :
 
-                                    data3 && data.products.items.slice(0, 8).map((product, i) =>
+                                    data && data.products.items.slice(0, 8).map((product, i) =>
                                         <ProductItem product={product} symbol={currency.symbol} key={i}
                                             addCompare={() => compareContext.addToCompare(product)}
                                             addCart={() => context.addToCart(product, quantity)}

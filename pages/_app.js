@@ -18,8 +18,8 @@ import ApolloClient from "apollo-boost"
 
 // import * as ga from '../pages/lib/ga'
 const client = new ApolloClient({
-  // uri: "http://localhost:4000/graphql"
-     uri:'https://stwecommerceapi.herokuapp.com/api/graphql',
+  uri: "http://localhost:4000/graphql"
+    //  uri:'https://stwecommerceapi.herokuapp.com/api/graphql',
   
 })
 
