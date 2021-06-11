@@ -264,7 +264,7 @@ var ListConfig=[
 },
 {
   currency: 'Qatari Rial',
-  currencyCode:'QAR',
+  currencyCode:'qar',
   symbol: 'QAR', 
   value:1, 
   IsRight : true,
