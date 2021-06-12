@@ -231,7 +231,7 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
                     <div className="rating">
                         {RatingStars}
                     </div>: ''}
-                    <div style={linkStyle} onClick={clickProductDetail} >{product.title}</div>
+                    <div style={linkStyle} onClick={clickProductDetail} >{product.title} </div>
                     {des ?
                         <p>{product.description}</p>
                         : ''
@@ -242,7 +242,9 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
                         <br/>
                         {discountCalculation(product.variants)? <del><span className="money">{currency.symbol}{(priceCollection(product.variants) * 1).toFixed(2) }</span></del>:""}
                     </h4>
-
+                    <h4>test 
+                    {product.variants[0].quantity}
+</h4>
                     {/* {product.variants.map(vari => {
                         var findItem = uniqueTags.find(x => x.color === vari.color);
                         if (!findItem)

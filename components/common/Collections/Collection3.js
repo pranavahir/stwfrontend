@@ -69,6 +69,7 @@ const GET_PRODUCTS = gql`
             taxes
             fees
             margin
+            quantity
       }
         }
 

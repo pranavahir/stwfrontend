@@ -33,6 +33,9 @@ const styleObject = {
     lineHeight: 1.7,
 }
     
+const allSmall = {
+    textTransform: 'lowercase' 
+   }
     return (
         <footer className={`footer-light ${footerClass}`}>
             <div className="light-layout upper-footer">
@@ -142,7 +145,7 @@ const styleObject = {
                                             
                                         <li><i className="fa fa-phone"></i>Call Us: {phone}</li>
                                         <li><i className="fa fa-whatsapp"></i>WhatsApp: {phone}</li>
-                                        <li><i className="fa fa-envelope-o"></i>Email Us: <a href="#">{emailid}</a></li>
+                                        <li><i className="fa fa-envelope-o"></i>Email Us: <a style={allSmall} href="#">{emailid}</a></li>
                                       
                                     </ul>
                                 </div>
