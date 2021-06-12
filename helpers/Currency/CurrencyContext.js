@@ -50,7 +50,7 @@ var ListConfig=[
     IsRight : false,
     country:"India",
     panel:"STW India",
-    address: "612, Accord Classic, near Anupam Cinema, Station Road, Goreagon East, Mumbai, 400063",
+    address: "612, Accord Classic, Station Road, Goreagon East, Mumbai, 400063",
     addressOne: "19640 griffin road southwest ranches florida 33332 USA",
     addressTwo: "103 Office no 21 Opal Towers Business Bay Dubai UAE",
     domain: "localhost",
@@ -88,7 +88,7 @@ var ListConfig=[
     paymentnonbusiness: "stripe",
     phone: "+91 9820168421",
     twitteracct: null,
-  
+    CurrencyConvertionRate:73.23
   },
   {
   currency: 'INR',
@@ -98,7 +98,7 @@ var ListConfig=[
   IsRight : false,
   country:"India",
   panel:"STW India",
-  address: "612, Accord Classic, near Anupam Cinema, Station Road, Goreagon East, Mumbai, 400063",
+  address: "612, Accord Classic, Station Road, Goreagon East, Mumbai, 400063",
   addressOne: "19640 griffin road southwest ranches florida 33332 USA",
   addressTwo: "103 Office no 21 Opal Towers Business Bay Dubai UAE",
   domain: "shoptheworld.in",
@@ -112,7 +112,7 @@ var ListConfig=[
   paymentnonbusiness: "stripe",
   phone: "+91 9820168421",
   twitteracct: null,
-
+  CurrencyConvertionRate:73.23
 },
 {
   currency: 'AED',

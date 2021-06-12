@@ -136,11 +136,10 @@ const styleObject = {
                                 </div>
                                 <div className="footer-contant">
                                     <ul className="contact-list">
-                                    <li><i className="fa fa-map-marker"></i><b> STW ECommerce pvt Ltd</b> <br/>
-                                                                        {address}<br/>
-                                                                        {addressOne}<br/>
-                                                                        {addressTwo}
-                                            </li>
+                                    <li><i className="fa fa-map-marker"></i>{address}<br/></li>
+                                    <li><i className="fa fa-map-marker"></i>{addressOne}<br/></li>
+                                    <li><i className="fa fa-map-marker"></i>{addressTwo}</li>
+                                            
                                         <li><i className="fa fa-phone"></i>Call Us: {phone}</li>
                                         <li><i className="fa fa-whatsapp"></i>WhatsApp: {phone}</li>
                                         <li><i className="fa fa-envelope-o"></i>Email Us: <a href="#">{emailid}</a></li>

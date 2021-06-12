@@ -169,9 +169,10 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
                 }
 
                 <div className={cartClass}>
+                {product.variants[0].quantity > 0 ?
                     <button title="Add to cart" onClick={addCart}>
                         <i className="fa fa-shopping-cart" aria-hidden="true"></i>
-                    </button>
+                    </button> :""}
                     <a href={null} title="Add to Wishlist" onClick={addWishlist}>
                         <i className="fa fa-heart" aria-hidden="true"></i>
                     </a>

@@ -47,6 +47,13 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
         color: "red"
     }
 
+    const smallredobj={
+        fontSize: "15px",
+        fontWeight: "bold",
+        color: "red"
+    }
+
+
     const smallh6obj={
         fontSize: "8px",
         fontWeight: "bold",
@@ -205,11 +212,13 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
                     : ""}
                   
                 </div>
+                {product.variants[0].quantity > 0 ?  
                 <div className="product-buttons" >
                     <a href={null} className="btn btn-solid" onClick={() => context.addToCart(product, quantity)}>add to cart</a>
                      <a className="btn btn-solid" onClick={() => buyNow(product, quantity)}  >buy now</a> 
                      
-                </div>
+                </div> :
+                <h5 style={smallredobj}> unavailable...! </h5>};
                 <h6><p style={smallh6obj} >Within 7 days of delivery, you may return new, unopened merchandise in its original condition. Exceptions and restrictions apply. See our <a href="#"><Link href={`/page/faq`} >Return Policy</Link></a></p></h6>
                 <div className="border-product">
                     <h6 className="product-title">product details</h6>
