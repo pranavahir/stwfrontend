@@ -210,7 +210,7 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
                      <a className="btn btn-solid" onClick={() => buyNow(product, quantity)}  >buy now</a> 
                      
                 </div>
-                <h6><p style={smallh6obj} >Within 7 days of delivery, you may return new, unopened merchandise in its original condition. Exceptions and restrictions apply. See our <a href="#"><Link href={`/page/privacy-policy`} >Return Policy</Link></a></p></h6>
+                <h6><p style={smallh6obj} >Within 7 days of delivery, you may return new, unopened merchandise in its original condition. Exceptions and restrictions apply. See our <a href="#"><Link href={`/page/faq`} >Return Policy</Link></a></p></h6>
                 <div className="border-product">
                     <h6 className="product-title">product details</h6>
                     

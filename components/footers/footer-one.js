@@ -12,6 +12,8 @@ const FooterOne = ({ fluid, logoName ,layoutClass ,footerClass }) => {
     const phone = curContext.state.phone;
     const emailid = curContext.state.emailid;
     const address = curContext.state.address;
+    const addressOne = curContext.state.addressOne;
+    const addressTwo = curContext.state.addressTwo;
 
     useEffect(() => {
         var contentwidth = window.innerWidth;
@@ -61,7 +63,7 @@ const styleObject = {
             <section className="section-b-space light-layout">
                 <Container  fluid={fluid}>
                     <Row className="footer-theme partition-f">
-                        <Col lg="4" md="6">
+                        <Col lg="3" md="4">
                             <div className="footer-title footer-mobile-title">
                                 <h4>about</h4>
                             </div>
@@ -135,7 +137,9 @@ const styleObject = {
                                 <div className="footer-contant">
                                     <ul className="contact-list">
                                     <li><i className="fa fa-map-marker"></i><b> STW ECommerce pvt Ltd</b> <br/>
-{address}
+                                                                        {address}<br/>
+                                                                        {addressOne}<br/>
+                                                                        {addressTwo}
                                             </li>
                                         <li><i className="fa fa-phone"></i>Call Us: {phone}</li>
                                         <li><i className="fa fa-whatsapp"></i>WhatsApp: {phone}</li>

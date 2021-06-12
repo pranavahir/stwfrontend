@@ -29,6 +29,8 @@ const CheckoutPage = ({ isPublic = false }) => {
   const curContext = useContext(CurrencyContext);
   const currency = curContext.state.currency;
   const symbol = curContext.state.symbol;
+  const CurrencyConvertionRate = curContext.state.CurrencyConvertionRate;
+  
   const GST = curContext.state.gstortax;
   const [obj, setObj] = useState({});
   const [IsValidGst, setIsValidGst] = useState(false);
@@ -91,6 +93,7 @@ useEffect(() => {
         supportedTypes: ["credit", "debit"],
       },
     };
+
 
 
 
@@ -157,6 +160,47 @@ useEffect(() => {
         console.log("Error in calling checkCanMakePayment: " + err);
       });
   };
+
+  const getPaypalAmount = (amount) =>{
+    var finalCurrency = amount;
+    finalCurrency = (amount/CurrencyConvertionRate).toFixed(2);
+    return finalCurrency;
+  }
+  
+  const priceCollection = (variantData) =>{
+    var sellPrice = null;
+    if(variantData !=null && variantData !=undefined)
+    {
+        if(variantData.length > 0)
+        {
+            sellPrice =  Math.floor(((variantData[0].conversionrate *  ((variantData[0].price +variantData[0].pwfee ) * (1+ (variantData[0].purchasetax/100)))    + (variantData[0].frieghtrate)) * (1 + variantData[0].duty)) * (1/(1-((variantData[0].fees / (1 + (variantData[0].fees)))+(variantData[0].margin / (1 + (variantData[0].margin)))))),0);
+        }
+        else
+        {
+            sellPrice = 0;
+        }
+        
+    }
+    return sellPrice
+}
+
+const discountCalculation = (variantData) =>{
+    var discount = null;
+    // CommonFun.publicMethod();
+    if(variantData !=null && variantData !=undefined)
+    {
+        if(variantData.length > 0)
+        {
+            discount = variantData[0].discount;
+        }
+        else
+        {
+            discount = 0;
+        }
+    }
+    return discount
+  }
+
 
   const changeGst = (e) => {
     if(e.target!=null)
@@ -919,12 +963,21 @@ const smallcontain = {
                               {item.title} × {item.qty}
                               <span>
                                 {symbol}
-                                {item.total.toFixed(2)}
+                                {/* {item.total.toFixed(2)} */}
+                                {( priceCollection(item.variants) - (priceCollection(item.variants) * discountCalculation(item.variants) / 100)).toFixed(2)}
                               </span>
                             </li>
                           ))}
                         </ul>
                         <ul className="sub-total">
+                          
+                          <li>
+                          {GST}
+                            <span className="count">
+                              {symbol}
+                              {((cartTotal) - ( priceCollection(cartItems[0].variants) - (priceCollection(cartItems[0].variants) * discountCalculation(cartItems[0].variants) / 100))).toFixed(2)}
+                            </span>
+                          </li>
                           <li>
                             Subtotal
                             <span className="count">
@@ -985,7 +1038,7 @@ const smallcontain = {
                                 </div>
                                 {/* {cartTotal !== 0 ? (<div className="text-right">{payment === "stripe" ? (<Card />) :""} </div>):""} */}
                               </li>: ""  } 
-                              {/* <li>
+                              <li>
                                 <div className="radio-option paypal">
                                   <input
                                     type="radio"
@@ -1000,7 +1053,7 @@ const smallcontain = {
                                     </span>
                                   </label>
                                 </div>
-                              </li> */}
+                              </li>
                             </ul>
                           </div>
                         </div>
@@ -1011,7 +1064,7 @@ const smallcontain = {
                             ) : payment === "paypal" ? (
                               <PayPalButton
                                 paypalOptions={paypalOptions}
-                                amount={cartTotal}
+                                amount={ getPaypalAmount(cartTotal)}
                                 onPaymentSuccess={onSuccess}
                                 onPaymentError={onError}
                                 onApprove={onSuccess}
@@ -1080,7 +1133,7 @@ const smallcontain = {
                   ) : (
                     ""
                   )}
-                  <h6 style={smallcontain}><p style={smallh6obj} >* * Within 7 days of delivery, you may return new, unopened merchandise in its original condition. Exceptions and restrictions apply. See our <a href="#"><Link href={`/page/privacy-policy`} >Return Policy</Link></a></p>
+                  <h6 style={smallcontain}><p style={smallh6obj} >* * Within 7 days of delivery, you may return new, unopened merchandise in its original condition. Exceptions and restrictions apply. See our <a href="#"><Link href={`/page/faq`} >Return Policy</Link></a></p>
                   <p style={smallh6obj} >* *  100% safe and secure</p></h6>
                 </Col>
               </Row>

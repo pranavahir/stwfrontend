@@ -74,6 +74,35 @@ const CopyRight = ({layout, fluid}) => {
                             </div>
                         </Col> */}
                     </Row>
+                    <Row>
+                        <Col xl="12" md="12" sm="12">
+                            <div className="footer-end">
+                            <hr/>
+                            </div>
+                            </Col>
+                            </Row>
+                    <Row>
+                        <Col xl="12" md="12" sm="12">
+                            <div className="footer-end">
+                            <ul style={styleHeaderObj}>
+                                    <li>
+                                    <h6>  &nbsp; 5+ Years | 500k Orders Delivered | 9+ Countries Presence | 1M+ Products| Delivering 184+ Countries  </h6>
+                                    </li>
+                                </ul>
+                            </div>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col xl="12" md="12" sm="12">
+                            <div className="footer-end">
+                            <ul style={styleHeaderObj}>
+                                    <li>
+                                    <h6> &nbsp; INDIA|USA|CANADA|MEXICO|BRAZIL|UAE|KSA|AUSTRALIA|SINGAPORE </h6>
+                                    </li>
+                                </ul>
+                            </div>
+                        </Col>
+                    </Row>
                 </Container>
             </div>
         </Fragment>

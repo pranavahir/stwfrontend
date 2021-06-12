@@ -38,6 +38,7 @@ const TopBarDark = ({ topClass, fluid }) => {
         firebase.auth().signOut()  
         setName(""); 
         setPhotoURL("");
+        setCustomerId("");
         router.push("/page/account/login-auth")
     }
     const Login = () => {
@@ -82,11 +83,13 @@ const TopBarDark = ({ topClass, fluid }) => {
                     </Col>
                     <Col lg="6" className="text-right">
                         <ul className="header-dropdown">
+                        {customerId !="" ?  
                             <li className="mobile-wishlist">
                                 <Link href="/page/account/my-order">
                                     <a><i className="fa fa-heart" aria-hidden="true"></i>My Orders</a>
                                 </Link>
-                            </li>
+                            </li> : ""
+                        }
                             <li className="mobile-wishlist">
                                 <Link href="/page/account/wishlist">
                                     <a><i className="fa fa-heart" aria-hidden="true"></i> wishlist</a>
