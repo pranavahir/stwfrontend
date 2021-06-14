@@ -136,7 +136,7 @@ var ListConfig=[
   paymentnonbusiness: "stripe",
   phone: "+971 554885120",
   twitteracct: null,
-
+  CurrencyConvertionRate:3.67
 },
 {
   currency: 'SGD',
@@ -160,7 +160,7 @@ var ListConfig=[
   paymentnonbusiness: "stripe",
   phone: "+65 94871296",
   twitteracct: null,
-
+  CurrencyConvertionRate:1.33
 },
 {
   currency: 'SAR',
@@ -184,7 +184,7 @@ var ListConfig=[
   paymentnonbusiness: "stripe",
   phone: "+966 505556099",
   twitteracct: null,
-
+  CurrencyConvertionRate:3.75
 },
 {
   currency: 'GBP',
@@ -208,7 +208,7 @@ var ListConfig=[
   paymentnonbusiness: "stripe",
   phone: "+91 9820168421",
   twitteracct: null,
-
+  CurrencyConvertionRate:0.71
 },
 {
   currency: 'MXN',
@@ -232,7 +232,7 @@ var ListConfig=[
   paymentnonbusiness: "stripe",
   phone: "+91 9820168421",
   twitteracct: null,
-
+  CurrencyConvertionRate:19.87
 },
 {
   currency: 'BRL',
@@ -256,7 +256,7 @@ var ListConfig=[
   paymentnonbusiness: "stripe",
   phone: "+91 9820168421",
   twitteracct: null,
-
+  CurrencyConvertionRate:5.12
 },
 {
   currency: 'Euro',
@@ -280,7 +280,7 @@ var ListConfig=[
   paymentnonbusiness: "stripe",
   phone: "+91 9820168421",
   twitteracct: null,
-
+  CurrencyConvertionRate:0.83
 },
 {
   currency: 'Qatari Rial',
@@ -304,7 +304,7 @@ var ListConfig=[
   paymentnonbusiness: "stripe",
   phone: "+91 9820168421",
   twitteracct: null,
-
+  CurrencyConvertionRate:3.64
 },
 {
   currency: 'Kenyan shilling',
@@ -328,7 +328,7 @@ var ListConfig=[
   paymentnonbusiness: "stripe",
   phone: "+91 9820168421",
   twitteracct: null,
-
+  CurrencyConvertionRate:108.24
 }
 ]
 
