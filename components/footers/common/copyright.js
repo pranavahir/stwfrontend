@@ -15,6 +15,14 @@ const CopyRight = ({layout, fluid}) => {
         textAlign: "center"
         }
 
+        const styebar = {
+            fontSize: "20px",
+            color: "red",
+            textAlign: "center",
+            paddingLeft: "2px",
+            paddingRight: "2px"
+        }
+
         
     const styleHeaderObj = {
         fontSize: 12,
@@ -26,6 +34,29 @@ const CopyRight = ({layout, fluid}) => {
         <Fragment>
             <div className={`sub-footer ${layout}`}>
                 <Container fluid={fluid}>
+                <Row>
+                        <Col xl="12" md="12" sm="12">
+                            <div className="footer-end">
+                            <ul style={styleHeaderObj}>
+                                    <li>
+                                    <h6>  &nbsp; 5+ Years <span style={styebar}>|</span> 500k Orders Delivered <span style={styebar}>|</span> 9+ Countries Presence <span style={styebar}>|</span> 1M+ Products <span style={styebar}>|</span> Delivering 184+ Countries  </h6>
+                                    </li>
+                                </ul>
+                            </div>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col xl="12" md="12" sm="12">
+                            <div className="footer-end">
+                            <ul style={styleHeaderObj}>
+                                    <li>
+                                    <h6> &nbsp; INDIA <span style={styebar}>|</span> USA <span style={styebar}>|</span> CANADA <span style={styebar}>|</span> MEXICO <span style={styebar}>|</span> BRAZIL <span style={styebar}>|</span> UAE <span style={styebar}>|</span> KSA <span style={styebar}>|</span> AUSTRALIA <span style={styebar}>|</span> SINGAPORE </h6>
+                                    </li>
+                                </ul>
+                            </div>
+                            <hr/>
+                        </Col>
+                    </Row>
                     <Row>
                         <Col xl="12" md="12" sm="12">
                             <div className="footer-end">
@@ -74,35 +105,8 @@ const CopyRight = ({layout, fluid}) => {
                             </div>
                         </Col> */}
                     </Row>
-                    <Row>
-                        <Col xl="12" md="12" sm="12">
-                            <div className="footer-end">
-                            <hr/>
-                            </div>
-                            </Col>
-                            </Row>
-                    <Row>
-                        <Col xl="12" md="12" sm="12">
-                            <div className="footer-end">
-                            <ul style={styleHeaderObj}>
-                                    <li>
-                                    <h6>  &nbsp; 5+ Years | 500k Orders Delivered | 9+ Countries Presence | 1M+ Products| Delivering 184+ Countries  </h6>
-                                    </li>
-                                </ul>
-                            </div>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col xl="12" md="12" sm="12">
-                            <div className="footer-end">
-                            <ul style={styleHeaderObj}>
-                                    <li>
-                                    <h6> &nbsp; INDIA|USA|CANADA|MEXICO|BRAZIL|UAE|KSA|AUSTRALIA|SINGAPORE </h6>
-                                    </li>
-                                </ul>
-                            </div>
-                        </Col>
-                    </Row>
+
+
                 </Container>
             </div>
         </Fragment>

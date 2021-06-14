@@ -236,7 +236,7 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
                         <p>{product.description}</p>
                         : ''
                     }
-                    {product.variants.length?<h6 style={smallobj} >Shipping in {product.variants[0].daystoship} days.</h6>:""} 
+                    {product.variants.length || product.variants[0].daystoship > 0 ? <h6 style={smallobj} >Shipping in {product.variants[0].daystoship} days.</h6>:""} 
                     <h4>
                     {currency.symbol} {Math.floor(((priceCollection(product.variants) - (priceCollection(product.variants) * discountCalculation(product.variants) / 100)))).toFixed(2)}
                         <br/>
