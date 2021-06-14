@@ -43,14 +43,14 @@ export const Provider = props => {
 
 var ListConfig=[
   {
-    currency: 'INR',
-    currencyCode:'inr',
-    symbol: '₹', 
+    currency: 'SGD',
+    currencyCode:'sgd',
+    symbol: '$', 
     value:1, 
-    IsRight : false,
-    country:"India",
-    panel:"STW India",
-    address: "612, Accord Classic, Station Road, Goreagon East, Mumbai, 400063",
+    IsRight : true,
+    country:"Singapore",
+    panel:"STW Singapore",
+    address: "Simei St 4 21B 05-48 Singapore, 528719 Singapore",
     addressOne: "19640 griffin road southwest ranches florida 33332 USA",
     addressTwo: "103 Office no 21 Opal Towers Business Bay Dubai UAE",
     domain: "localhost",
@@ -58,13 +58,13 @@ var ListConfig=[
     emailid: "care@shoptheworldonline.com",
     facebookacct: null,
     googleacct: null,
-    gstortax: "GST",
+    gstortax: "VAT",
     instagramacct: null,
     paymentforbusiness: "stripe",
     paymentnonbusiness: "stripe",
-    phone: "+91 9820168421",
+    phone: "+65 94871296",
     twitteracct: null,
-    CurrencyConvertionRate:73.23
+    CurrencyConvertionRate:1.33
   },
   {
     currency: 'INR',

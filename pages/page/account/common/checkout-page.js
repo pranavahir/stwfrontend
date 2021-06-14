@@ -766,6 +766,9 @@ const smallcontain = {
   paddingBottom: "5px"
 }
 
+const rightAligh = {
+  textAlign:"Right"
+}
 
   return (
     <section className="section-b-space">
@@ -961,7 +964,7 @@ const smallcontain = {
                           {cartItems.map((item, index) => (
                             <li key={index}>
                               {item.title} × {item.qty}
-                              <span>
+                              <span style = {rightAligh}>
                                 {symbol}
                                 {/* {item.total.toFixed(2)} */}
                                 {( priceCollection(item.variants) - (priceCollection(item.variants) * discountCalculation(item.variants) / 100)).toFixed(2)}
@@ -973,24 +976,25 @@ const smallcontain = {
                           
                           <li>
                           {GST}
-                            <span className="count">
+                            <span className="count" style = {rightAligh}>
                               {symbol}
                               {((cartTotal) - ( priceCollection(cartItems[0].variants) - (priceCollection(cartItems[0].variants) * discountCalculation(cartItems[0].variants) / 100))).toFixed(2)}
                             </span>
                           </li>
+                          </ul>
+                          <ul className="sub-total">
                           <li>
                             Subtotal
-                            <span className="count">
+                            <span className="count" style = {rightAligh}>
                               {symbol}
                               {cartTotal}
                             </span>
                           </li>
-                       
                         </ul>
                         <ul className="total">
                           <li>
                             Total{" "}
-                            <span className="count">
+                            <span className="count" style = {rightAligh}>
                               {symbol}
                               {cartTotal}
                             </span>
