@@ -329,7 +329,32 @@ var ListConfig=[
   phone: "+91 9820168421",
   twitteracct: null,
   CurrencyConvertionRate:108.24
+},
+{
+  currency: 'Canadian Dollar',
+  currencyCode:'CAD',
+  symbol: 'CA$', 
+  value:1, 
+  IsRight : true,
+  country:"Canada",
+  panel:"STW Canada",
+  address: "612, Accord Classic, Station Road, Goreagon East, Mumbai, 400063",
+  addressOne: "19640 griffin road southwest ranches florida 33332 USA",
+  addressTwo: "103 Office no 21 Opal Towers Business Bay Dubai UAE",
+  domain: "shoptheworld.ke",
+  fullDomain: "www.shoptheworld.ca",
+  emailid: "care@shoptheworldonline.com",
+  facebookacct: null,
+  googleacct: null,
+  gstortax: "VAT",
+  instagramacct: null,
+  paymentforbusiness: "stripe",
+  paymentnonbusiness: "stripe",
+  phone: "+91 9820168421",
+  twitteracct: null,
+  CurrencyConvertionRate:1.22
 }
+
 ]
 
 var selectedConfig=null;
