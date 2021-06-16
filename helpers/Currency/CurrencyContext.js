@@ -341,7 +341,7 @@ var ListConfig=[
   address: "612, Accord Classic, Station Road, Goreagon East, Mumbai, 400063",
   addressOne: "19640 griffin road southwest ranches florida 33332 USA",
   addressTwo: "103 Office no 21 Opal Towers Business Bay Dubai UAE",
-  domain: "shoptheworld.ke",
+  domain: "shoptheworld.ca",
   fullDomain: "www.shoptheworld.ca",
   emailid: "care@shoptheworldonline.com",
   facebookacct: null,
