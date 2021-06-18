@@ -79,7 +79,8 @@ const GET_PRODUCTS = gql`
 `;
 
 
-const ProductList = ({ colClass, layoutList,openSidebar,noSidebar }) => {
+const ProductList = ({ colClass, layoutList,openSidebar,noSidebar,pathId }) => {
+     
     const cartContext = useContext(CartContext);
     const quantity = cartContext.quantity;
     const wishlistContext = useContext(WishlistContext);
@@ -97,6 +98,12 @@ const ProductList = ({ colClass, layoutList,openSidebar,noSidebar }) => {
     const selectedBrands = filterContext.selectedBrands;
     const selectedColor = filterContext.selectedColor;
     const selectedPrice = filterContext.selectedPrice;
+    var category = "";
+    if(pathId!=null & pathId != undefined && pathId!="")
+    category = pathId;
+    else
+    category = filterContext.state;
+    
     const selectedCategory = filterContext.state;
     const selectedSize = filterContext.selectedSize
     const [sortBy, setSortBy] = useState('AscOrder');

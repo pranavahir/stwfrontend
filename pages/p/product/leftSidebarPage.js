@@ -12,8 +12,8 @@ import { Container, Row, Col, Media } from 'reactstrap';
 import { CurrencyContext } from '../../../helpers/Currency/CurrencyContext';
 
 const GET_SINGLE_PRODUCTS = gql`
-    query product ($asin:String!,$country:String!,$panel:String!) {
-        product (asin:$asin) { seqid
+    query product ($asin:String!,$type:String!,$country:String!,$panel:String!) {
+        product (asin:$asin,type:$type) { seqid
             sku
             title
             description
@@ -106,9 +106,24 @@ const GET_SINGLE_PRODUCTS = gql`
     }
 `;
 
-const LeftSidebarPage = ({ pathId }) => {
+const LeftSidebarPage = ({ pathId, type }) => {
 
-    const asin =  pathId.slice(0,pathId.search("-"));
+    var asinData = "";
+    if(type == "url")
+    {
+        asinData = pathId;
+    }
+    else
+    {
+        
+        if(pathId.search("-")==0)
+        asinData =  pathId
+        else
+        asinData =  pathId.slice(0,pathId.search("-"));
+
+    }
+
+    const asin = asinData;
     const curContext = useContext(CurrencyContext);
     const symbol = curContext.state.symbol;
     const IsRight = curContext.state.IsRight;
@@ -128,6 +143,7 @@ const LeftSidebarPage = ({ pathId }) => {
         variables: {
             // id: parseInt(pathId),
             asin:asin,
+            type:type,
             country:country,
             panel:panel
         }

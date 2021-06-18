@@ -18,10 +18,13 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
     const router = useRouter();
     const [open, setOpen] = useState(false);
     const context = useContext(CartContext);
-    const stock = context.stock;
-    const plusQty = context.plusQty;
-    const minusQty = context.minusQty;
-    const quantity = context.quantity;
+    // const stock = context.stock;
+    // const plusQty = context.plusQty;
+    // const minusQty = context.minusQty;
+    const [quantity, setQuantity] = useState(3);
+    // const setQuantity = context.setQuantity;
+    const [stock, setStock] = useState('InStock');
+    // const setStock = context.setStock;
     const uniqueColor = [];
     const uniqueSize = [];
     const IsRight = CurContect.state.IsRight;
@@ -112,7 +115,25 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
     
 
     const changeQty = (e) => {
-        setQuantity(parseInt(e.target.value));
+        if(e.target.value != "")
+            setQuantity(parseInt(e.target.value));
+        else
+        setQuantity("");
+    }
+
+    const minusQty = () =>{
+        if (quantity > 1) {
+              setQuantity(quantity - 1);
+              setStock('InStock')
+          }
+    }
+    
+    const plusQty = (item) =>{
+        if (item.quantity >= quantity) {
+            setQuantity(quantity + 1);
+          } else {
+            setStock("Out of Stock !")
+          }
     }
     const descriptionFormation=(description)=>{
         var str = description;
@@ -198,13 +219,13 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
                         <div className="input-group">
                             <span className="input-group-prepend">
                                 <button type="button" className="btn quantity-left-minus" onClick={minusQty()} data-type="minus" data-field="">
-                                    <i className="fa fa-angle-left"></i>
+                                    <i className="fa fa-minus"></i>
                                 </button>
                             </span>
                             <Input type="text" name="quantity" value={quantity} onChange={changeQty} className="form-control input-number" />
                             <span className="input-group-prepend">
                                 <button type="button" className="btn quantity-right-plus" onClick={() => plusQty(product.variants[0])} data-type="plus" data-field="">
-                                    <i className="fa fa-angle-right"></i>
+                                    <i className="fa fa-plus"></i>
                                 </button>
                             </span>
                         </div>

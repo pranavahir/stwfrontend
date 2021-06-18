@@ -10,7 +10,7 @@ import { useRouter } from 'next/router';
 const SideBar = () => {
 
     const filterContext = useContext(FilterContext);
-	const selectedKeyword = filterContext.selectedKeyword;
+	const selectedKeyword = "";
     const selectedBrands = filterContext.selectedBrands;
     const selectedColor = filterContext.selectedColor;
     const selectedPrice = filterContext.selectedPrice;
@@ -44,6 +44,7 @@ const SideBar = () => {
 				var URL = "/shop/six_grid";
 			}
             filterContext.setSelectedCategory(category)
+            console.log(category);
         	router.push(`${URL}?${selectedCategory}&brand=${selectedBrands}&color=${selectedColor}&size=${selectedSize}&minPrice=${selectedPrice.min}&maxPrice=${selectedPrice.max}&keyword=${selectedKeyword}`)
     }
 
@@ -195,7 +196,7 @@ const SideBar = () => {
                                                         <a style={linkStyle}  onClick={() => CategoryFilter("Towers")}>Towers</a>
                                                     </li>
                                                 </ul>
-                                                <h5><div style={linkStyle} onClick={() => CategoryFilter("Laptop")}>Laptops</div></h5> 
+                                                <h5><div style={linkStyle} onClick={() => CategoryFilter("Laptops")}>Laptops</div></h5> 
                                                 <h5><div style={linkStyle} onClick={() => CategoryFilter("Phones")}>Phones</div></h5> 
                                                 {/* <ul>
                                                     <li>
@@ -281,7 +282,7 @@ const SideBar = () => {
                             </ul>
                         </li>
                         <li>
-                            <a href="#" onClick={(e) => handleMegaSubmenu(e,"Fashion")}>
+                            <a href="#" onClick={(e) => handleMegaSubmenu(e,"FASHION")}>
                                 Fashion
                                 <span className="sub-arrow"></span>
                             </a>

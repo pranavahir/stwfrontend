@@ -21,6 +21,8 @@ const CartProvider = (props) => {
   const [quantity, setQuantity] = useState(1);
   const [stock, setStock] = useState('InStock');
 
+  var nQuality = 1
+
   useEffect(() => {
     const Total = cartItems.reduce((a, b) => +a + +b.total, 0)
     setCartTotal(Total);
@@ -33,8 +35,8 @@ const CartProvider = (props) => {
     toast.success("Product Added Successfully !");
     const index = cartItems.findIndex(itm => itm.id === item.id)
     if (index !== -1) {
-      const product = cartItems[index];
-      cartItems[index] = { ...item, ...item, qty: quantity, gst:gstCollection(item.variants), total:(gstCollection(item.variants)+(priceCollection(item.variants) - (priceCollection(item.variants) * discountCalculation(item.variants) / 100))) * quantity };
+       const product = cartItems[index];
+      cartItems.push({ ...item, qty: quantity, total: ((priceCollection(item.variants) - (priceCollection(item.variants) * discountCalculation(item.variants) / 100))+gstCollection(item.variants)) * quantity  });  
       setCartItems([...cartItems])
     } else {
       const product = { ...item, qty: quantity,gst:gstCollection(item.variants), total: (gstCollection(item.variants)+(priceCollection(item.variants) - (priceCollection(item.variants) * discountCalculation(item.variants) / 100))) }
@@ -49,7 +51,8 @@ const CartProvider = (props) => {
 
   const minusQty = () => {
     if (quantity > 1) {
-        setQuantity(quantity - 1);
+      nQuality = quantity - 1;
+        // setQuantity(qty);
         setStock('InStock')
     }
 }
@@ -61,7 +64,8 @@ const CartProvider = (props) => {
     if(item.stock!=undefined)
     {
       if (item.stock >= quantity) {
-        setQuantity(quantity + 1)
+        nQuality = quantity + 1;
+        // setQuantity(qty);
       } else {
         setStock("Out of Stock !")
       }
@@ -69,8 +73,9 @@ const CartProvider = (props) => {
     else
     {
       if (item.quantity >= quantity) {
-        setQuantity(quantity + 1)
-        setStock("Out of Stock !")
+        nQuality = quantity + 1;
+        // setQuantity(qty);
+        // setStock("Out of Stock !")
       } else {
         setStock("Out of Stock !")
       }
@@ -154,7 +159,7 @@ const discountCalculation = (variantData) =>{
       const index = cartItems.findIndex(itm => itm.id === item.id)
       if(index !== -1){
         const product = cartItems[index];
-        cartItems[index] = { ...product, ...item, qty: quantity, total: ((priceCollection(item.variants) - (priceCollection(item.variants) * discountCalculation(item.variants) / 100))+gstCollection(item.variants)) * quantity  }; 
+        cartItems = { ...product, ...item, qty: quantity, total: ((priceCollection(item.variants) - (priceCollection(item.variants) * discountCalculation(item.variants) / 100))+gstCollection(item.variants)) * quantity  };  
         setCartItems([...cartItems])
         toast.info("Product Quantity Updated !");
       }else{
@@ -179,7 +184,8 @@ const discountCalculation = (variantData) =>{
         minusQty:minusQty,
         updateQty:updateQty,
         ProductMinusQty:ProductMinusQty,
-        ProductPlusQty:ProductPlusQty
+        ProductPlusQty:ProductPlusQty,
+        setStock:setStock
 
       }}
     >
