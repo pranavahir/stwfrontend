@@ -3,9 +3,9 @@ const { withPlugins } = require('next-compose-plugins');
 
 const nextConfig = {
   env: {
-// uri: "http://localhost:4000/graphql"  //local
-uri: "https://cryptic-mountain-48315.herokuapp.com/api/graphql"  //Test env
-//  uri:'https://stwecommerceapi.herokuapp.com/api/graphql', //production env
+//  API_URL: "http://localhost:4000/graphql"  //local
+API_URL: "https://cryptic-mountain-48315.herokuapp.com/api/graphql"  //Test env
+//   API_URL:'https://stwecommerceapi.herokuapp.com/api/graphql', //production env
 
     
   },
