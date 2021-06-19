@@ -18,6 +18,10 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
     const minusQty = cartContext.minusQty;
     const quantity = cartContext.quantity;
     const setQuantity = cartContext.setQuantity;
+    const gstCollection = cartContext.gstCollection;
+    const discountCalculation = cartContext.discountCalculation;
+    const priceCollection = cartContext.priceCollection;
+    const withDiscount = cartContext.withDiscount;
     let leftSymbol=null;
     let rightSymbol = null;
     if(IsRight ==true)
@@ -60,42 +64,10 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
         setQuantity(parseInt(e.target.value))
     }
 
-    const priceCollection = (variantData) =>{
-        var sellPrice = null;
-        if(variantData !=null && variantData !=undefined)
-        {
-            if(variantData.length > 0)
-            {
-                // sellPrice = Math.floor(((variantData[0].conversionrate *  ((variantData[0].price +2 ) * 1.0825 )  + (variantData[0].frieghtrate)) * (1 + variantData[0].duty)) * (1/(1-((variantData[0].fees / (1 + (variantData[0].fees)))+(variantData[0].margin / (1 + (variantData[0].margin)))))),-1);
-                // sellPrice = Math.floor(((variantData[0].conversionrate * ((variantData[0].price +2 ) * 1.0825 )  + (variantData[0].frieghtrate)) * (1 + variantData[0].duty)) * (1/(1-((variantData[0].fees / (1 + (variantData[0].fees)))+(variantData[0].margin / (1 + (variantData[0].margin)))))),0);
-                sellPrice =  Math.floor(((variantData[0].conversionrate *  ((variantData[0].price +variantData[0].pwfee ) * (1+ (variantData[0].purchasetax/100)))    + (variantData[0].frieghtrate)) * (1 + variantData[0].duty)) * (1/(1-((variantData[0].fees / (1 + (variantData[0].fees)))+(variantData[0].margin / (1 + (variantData[0].margin)))))),0);
-            }
-            else
-            {
-                sellPrice = 0;
-            }
-            
-        }
-        return sellPrice
-    }
+    
 
-
-    const discountCalculation = (variantData) =>{
-        var discount = null;
-        // CommonFun.publicMethod();
-        if(variantData !=null && variantData !=undefined)
-        {
-            if(variantData.length > 0)
-            {
-                discount = variantData[0].discount;
-            }
-            else
-            {
-                discount = 0;
-            }
-        }
-        return discount
-    }
+ 
+    
     
 
     const clickProductDetail = () => {
@@ -134,7 +106,12 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
     const linkStyle ={
         fontSize:12,
         cursor: 'pointer',
+        objectFit: "cover",
+        width: "100%",
+        height: "100%"
     }
+
+     
     // console.log(product.variants.length)
     // console.log(product.variants[0].daystoship)
     return (
@@ -150,7 +127,7 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
                         }`}
                         className="img-fluid"
                         alt="" /> */}
-                           <AutoFitImage frameWidth="200px" frameHeight="160px" imgSrc={`${image ?
+                           <AutoFitImage frameWidth="200px" imgSize="contain" frameHeight="160px" imgSrc={`${image ?
                         image : product.images.length>0 ? product.images[0].mainimageurl :""
                         }`}/>
                 </div>
@@ -238,9 +215,9 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
                     }
                     {product.variants.length && product.variants[0].daystoship > 0 ? <h6 style={smallobj} >Shipping in {product.variants[0].daystoship} days.</h6>:""} 
                     <h4>
-                    {currency.symbol} {Math.floor(((priceCollection(product.variants) - (priceCollection(product.variants) * discountCalculation(product.variants) / 100)))).toFixed(2)}
+                    {currency.symbol} {Math.floor(withDiscount(product.variants)).toFixed(2)}
                         <br/>
-                        {discountCalculation(product.variants)? <del><span className="money">{currency.symbol}{(priceCollection(product.variants) * 1).toFixed(2) }</span></del>:""}
+                        {discountCalculation(product.variants)? <del><span className="money">{currency.symbol}{(withDiscount(product.variants) * 1).toFixed(2) }</span></del>:""}
                     </h4>
                     {/* {product.variants.map(vari => {
                         var findItem = uniqueTags.find(x => x.color === vari.color);
@@ -280,9 +257,9 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
                             <div className="product-right">
                                 <h2> {product.title} </h2>
                                 
-                    {discountCalculation(product.variants)?<h4><del>{leftSymbol}{(priceCollection(product.variants) * 1).toFixed(2)}{rightSymbol}</del>
+                    {discountCalculation(product.variants)?<h4><del>{leftSymbol}{(withDiscount(product.variants) * 1).toFixed(2)}{rightSymbol}</del>
                     <span>{discountCalculation(product.variants)}% off</span></h4>:""} 
-                <h3>{leftSymbol}{Math.floor((priceCollection(product.variants) - (priceCollection(product.variants) * discountCalculation(product.variants) / 100))).toFixed(2)}{rightSymbol} </h3>
+                <h3>{leftSymbol}{Math.floor(withDiscount(product.variants)).toFixed(2)}{rightSymbol} </h3>
                                 {product.variants ?
                                     <ul className="color-variant">
                                         {uniqueTags ?

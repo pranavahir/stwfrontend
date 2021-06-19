@@ -30,6 +30,8 @@ const CheckoutPage = ({ isPublic = false }) => {
   const currency = curContext.state.currency;
   const symbol = curContext.state.symbol;
   const CurrencyConvertionRate = curContext.state.CurrencyConvertionRate;
+  const withDiscount = cartContext.withDiscount;
+  const priceCollection = cartContext.withDiscount;
   
   const GST = curContext.state.gstortax;
   const [obj, setObj] = useState({});
@@ -167,40 +169,9 @@ useEffect(() => {
     return finalCurrency;
   }
   
-  const priceCollection = (variantData) =>{
-    var sellPrice = null;
-    if(variantData !=null && variantData !=undefined)
-    {
-        if(variantData.length > 0)
-        {
-            sellPrice =  Math.floor(((variantData[0].conversionrate *  ((variantData[0].price +variantData[0].pwfee ) * (1+ (variantData[0].purchasetax/100)))    + (variantData[0].frieghtrate)) * (1 + variantData[0].duty)) * (1/(1-((variantData[0].fees / (1 + (variantData[0].fees)))+(variantData[0].margin / (1 + (variantData[0].margin)))))),0);
-        }
-        else
-        {
-            sellPrice = 0;
-        }
-        
-    }
-    return sellPrice
-}
+   
 
-const discountCalculation = (variantData) =>{
-    var discount = null;
-    // CommonFun.publicMethod();
-    if(variantData !=null && variantData !=undefined)
-    {
-        if(variantData.length > 0)
-        {
-            discount = variantData[0].discount;
-        }
-        else
-        {
-            discount = 0;
-        }
-    }
-    return discount
-  }
-
+ 
 
   const changeGst = (e) => {
     if(e.target!=null)
@@ -967,7 +938,7 @@ const rightAligh = {
                               <span style = {rightAligh}>
                                 {symbol}
                                 {/* {item.total.toFixed(2)} */}
-                                {( priceCollection(item.variants) - (priceCollection(item.variants) * discountCalculation(item.variants) / 100)).toFixed(2)}
+                                {(withDiscount(item.variants))}
                               </span>
                             </li>
                           ))}

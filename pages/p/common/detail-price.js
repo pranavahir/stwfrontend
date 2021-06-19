@@ -18,6 +18,10 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
     const router = useRouter();
     const [open, setOpen] = useState(false);
     const context = useContext(CartContext);
+    const gstCollection = context.gstCollection;
+    const discountCalculation = context.discountCalculation;
+    const priceCollection = context.priceCollection
+    const withDiscount = context.withDiscount
     // const stock = context.stock;
     // const plusQty = context.plusQty;
     // const minusQty = context.minusQty;
@@ -76,42 +80,7 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
           });
     };
 
-    const priceCollection = (variantData) =>{
-        var sellPrice = null;
-        // CommonFun.publicMethod();
-        if(variantData !=null && variantData !=undefined)
-        {
-            if(variantData.length > 0)
-            {
-                // sellPrice = Math.floor(((variantData[0].conversionrate *  ((variantData[0].price +2 ) * 1.0825 )  + (variantData[0].frieghtrate)) * (1 + variantData[0].duty)) * (1/(1-((variantData[0].fees / (1 + (variantData[0].fees)))+(variantData[0].margin / (1 + (variantData[0].margin)))))),-1);
-                // sellPrice = Math.floor(((variantData[0].conversionrate * ((variantData[0].price +2 ) * 1.0825 )  + (variantData[0].frieghtrate)) * (1 + variantData[0].duty)) * (1/(1-((variantData[0].fees / (1 + (variantData[0].fees)))+(variantData[0].margin / (1 + (variantData[0].margin)))))),0);
-                sellPrice =  Math.floor(((variantData[0].conversionrate *  ((variantData[0].price +variantData[0].pwfee ) * (1+ (variantData[0].purchasetax/100)))    + (variantData[0].frieghtrate)) * (1 + variantData[0].duty)) * (1/(1-((variantData[0].fees / (1 + (variantData[0].fees)))+(variantData[0].margin / (1 + (variantData[0].margin)))))),0);
-            }
-            else
-            {
-                sellPrice = 0;
-            }
-            
-        }
-        return sellPrice
-    }
-
-    const discountCalculation = (variantData) =>{
-        var discount = null;
-        // CommonFun.publicMethod();
-        if(variantData !=null && variantData !=undefined)
-        {
-            if(variantData.length > 0)
-            {
-                discount = variantData[0].discount;
-            }
-            else
-            {
-                discount = 0;
-            }
-        }
-        return discount
-    }
+     
     
 
     const changeQty = (e) => {
@@ -155,9 +124,9 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
 
                 {/* <h4> {product.categoryvalue} </h4> */}
                 {product.variants.length?<h6 style={smallobj} >Shipping in {product.variants[0].daystoship} days.</h6>:""} 
-                {discountCalculation(product.variants)?<h4><del>{leftSymbol}{(priceCollection(product.variants) * 1).toFixed(2)}{rightSymbol}</del>
+                {discountCalculation(product.variants)?<h4><del>{leftSymbol}{((priceCollection(product.variants) * 1)+gstCollection(product.variants)).toFixed(2)}{rightSymbol}</del>
                     <span>{discountCalculation(product.variants)}% off</span></h4>:""}
-                <h3>{leftSymbol}{Math.floor((priceCollection(product.variants) - (priceCollection(product.variants) * discountCalculation(product.variants) / 100))).toFixed(2)}{rightSymbol} </h3>
+                <h3>{leftSymbol}{Math.floor(withDiscount(product.variants)).toFixed(2)}{rightSymbol} </h3>
                 {product.variants.map(vari => {
                     var findItem = uniqueColor.find(x => x.color === vari.color);
                     if (!findItem)

@@ -29,20 +29,22 @@ const Contact = () => {
                                             <h6>Contact Us</h6>
                                         </div>
                                         <div className="media-body" style={contactFontStyle}>
-                                            <p style={contactFontStyle}>+91 9820168421</p>
-                                            <p style={contactFontStyle}>+91 9820168421</p>
+                                        <a href="tel:+91 9820168421"><p style={contactFontStyle}>+91 9820168421</p></a> 
+                                        <a href="tel:+91 9820168421"><p style={contactFontStyle}>+91 9820168421</p></a> 
                                         </div>
                                     </li>
                                     <li>
-                                        <div className="contact-icon"><i className="fa fa-map-marker" aria-hidden="true"></i>
-                                            <h6>Address</h6>
+                                        <div className="contact-icon">
+                                        <a href="https://goo.gl/maps/13b5uYh1CGQ9qdeE8" target="new">
+                                        <i className="fa fa-map-marker" aria-hidden="true"></i>
+                                            <h6>Address</h6></a>
                                         </div>
                                         <div className="media-body" style={contactFontStyle}>
-                                          
+                                        <a href="https://goo.gl/maps/13b5uYh1CGQ9qdeE8" target="new">
                                             <p style={contactFontStyle}>STW ECommerce pvt Ltd </p>
                                             <p style={contactFontStyle}> 612 Accord Classic, Station Road </p>
                                             <p style={contactFontStyle}>Next to Anupam cinema , </p>
-                                            <p style={contactFontStyle}>Goregoan east, Mumbai 400063</p>
+                                            <p style={contactFontStyle}>Goregoan east, Mumbai 400063</p></a>
                                             
                                         </div>
                                     </li>
@@ -53,7 +55,7 @@ const Contact = () => {
                                             <h6>Address</h6>
                                         </div>
                                         <div className="media-body">
-                                            <p style={contactFontStyle}>Care@Shoptheworldonline.Com</p>
+                                        <a href = "mailto: Care@Shoptheworldonline.Com">  <p style={contactFontStyle}>Care@Shoptheworldonline.Com</p></a>
                                             {/* <p>info@shopcart.com</p> */}
                                         </div>
                                     </li>

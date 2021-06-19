@@ -98,6 +98,12 @@ const TopCollection = ({ type, title, subtitle, designClass, noSlider, cartClass
     //         limit: 8
     //     }
     // });
+        const loaderStyle={
+        margin: "auto",
+        width: "60%",
+ 
+        padding: "10px",
+    }
     
     var { loading, data } = useQuery(GET_PRODUCTS, {
         variables: {
@@ -169,16 +175,68 @@ const TopCollection = ({ type, title, subtitle, designClass, noSlider, cartClass
                                 <div className="row mx-0 margin-default">
                                 <div className="col-xl-3 col-lg-4 col-6">
 
-                                    <PostLoader />
+                                <div className="top-banner-wrapper" style={loaderStyle}> 
+                                    <div className="row mx-0 margin-default">
+                                            <div className="col-xl-12 col-lg-12 col-12">
+                                            <div className="typography_section"> 
+                                                <div className="typography-box"> 
+                                                    <div  className="custom-load typo-content loader-typo" >
+                                                        
+                                                         <div className="pre-loader"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            </div>
+                                            </div>
+                                            </div>
                                 </div>
                                 <div className="col-xl-3 col-lg-4 col-6">
-                                    <PostLoader />
+                                <div className="top-banner-wrapper" style={loaderStyle}> 
+                                    <div className="row mx-0 margin-default">
+                                            <div className="col-xl-12 col-lg-12 col-12">
+                                            <div className="typography_section"> 
+                                                <div className="typography-box"> 
+                                                    <div  className="custom-load typo-content loader-typo" >
+                                                        
+                                                         <div className="pre-loader"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            </div>
+                                            </div>
+                                            </div>
                                 </div>
                                 <div className="col-xl-3 col-lg-4 col-6">
-                                    <PostLoader />
+                                <div className="top-banner-wrapper" style={loaderStyle}> 
+                                    <div className="row mx-0 margin-default">
+                                            <div className="col-xl-12 col-lg-12 col-12">
+                                            <div className="typography_section"> 
+                                                <div className="typography-box"> 
+                                                    <div  className="custom-load typo-content loader-typo" >
+                                                        
+                                                         <div className="pre-loader"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            </div>
+                                            </div>
+                                            </div>
                                 </div>
                                 <div className="col-xl-3 col-lg-4 col-6">
-                                    <PostLoader />
+                                <div className="top-banner-wrapper" style={loaderStyle}> 
+                                    <div className="row mx-0 margin-default">
+                                            <div className="col-xl-12 col-lg-12 col-12">
+                                            <div className="typography_section"> 
+                                                <div className="typography-box"> 
+                                                    <div  className="custom-load typo-content loader-typo" >
+                                                        
+                                                         <div className="pre-loader"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            </div>
+                                            </div>
+                                            </div>
                                 </div>
                                 </div>
                                 }
@@ -196,21 +254,20 @@ const TopCollection = ({ type, title, subtitle, designClass, noSlider, cartClass
                             <Row className="margin-default">
                                 {(!data || !data.products || !data.products.items || !data.products.items.length === 0 || !loading) ?
                                     
-                                    
-                                    <div className="row margin-default">
-                                        <div className="col-xl-3 col-lg-4 col-6">
-                                            <PostLoader />
-                                        </div>
-                                        <div className="col-xl-3 col-lg-4 col-6">
-                                            <PostLoader />
-                                        </div>
-                                        <div className="col-xl-3 col-lg-4 col-6">
-                                            <PostLoader />
-                                        </div>
-                                        <div className="col-xl-3 col-lg-4 col-6">
-                                            <PostLoader />
-                                        </div>
-                                    </div>
+                                    <div className="top-banner-wrapper" style={loaderStyle}> 
+                                    <div className="row mx-0 margin-default">
+                                            <div className="col-xl-12 col-lg-12 col-12">
+                                            <div className="typography_section"> 
+                                                <div className="typography-box"> 
+                                                    <div  className="custom-load typo-content loader-typo" >
+                                                        
+                                                         <div className="pre-loader"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            </div>
+                                            </div>
+                                            </div>
                                     :
                                     data && data.products.items.slice(0, 8).map((product, index) =>
                                         <Col xl="3" sm="6" key={index}>

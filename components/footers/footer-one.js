@@ -115,7 +115,7 @@ const allSmall = {
                         <Col lg="2" md="3">
                             <div className="sub-title">
                                 <div className="footer-title">
-                                    <h4>why we choose</h4>
+                                    <h4>Quick Links</h4>
                                 </div>
                                 <div className="footer-contant">
                                     <ul>

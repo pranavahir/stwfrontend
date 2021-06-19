@@ -17,6 +17,10 @@ const CartPage = () => {
     const [quantityError, setQuantityError] = useState(false);
     const updateQty = context.updateQty;
     const IsRight = curContext.state.IsRight;
+    const gstCollection = context.gstCollection;
+    const discountCalculation = context.discountCalculation;
+    const priceCollection = context.priceCollection;
+    const withDiscount= context.withDiscount;
     let leftSymbol=null;
     let rightSymbol = null;
     if(IsRight ==true)
@@ -53,43 +57,9 @@ const CartPage = () => {
         }
     }
 
-    const priceCollection = (variantData) =>{
-        var sellPrice = null;
-        // CommonFunctionality.publicMethod();
-        if(variantData !=null && variantData !=undefined)
-        {
-            if(variantData.length > 0)
-            {
-                // sellPrice = Math.floor(((variantData[0].conversionrate * ((variantData[0].price +2 ) * 1.0825 )  + (variantData[0].frieghtrate)) * (1 + variantData[0].duty)) * (1/(1-((variantData[0].fees / (1 + (variantData[0].fees)))+(variantData[0].margin / (1 + (variantData[0].margin)))))),0);
-                // sellPrice = Math.floor(((variantData[0].conversionrate *  ((variantData[0].price +2 ) * 1.0825 )  + (variantData[0].frieghtrate)) * (1 + variantData[0].duty)) * (1/(1-((variantData[0].fees / (1 + (variantData[0].fees)))+(variantData[0].margin / (1 + (variantData[0].margin)))))),-1);
-                sellPrice =  Math.floor(((variantData[0].conversionrate *  ((variantData[0].price +variantData[0].pwfee ) * (1+ (variantData[0].purchasetax/100)))    + (variantData[0].frieghtrate)) * (1 + variantData[0].duty)) * (1/(1-((variantData[0].fees / (1 + (variantData[0].fees)))+(variantData[0].margin / (1 + (variantData[0].margin)))))),0);
-                // console.log(sellPrice);
-            }
-            else
-            {
-                sellPrice = 0;
-            }
-            
-        }
-        return sellPrice
-    }
+ 
 
-    const discountCalculation = (variantData) =>{
-        var discount = null;
-        // CommonFun.publicMethod();
-        if(variantData !=null && variantData !=undefined)
-        {
-            if(variantData.length > 0)
-            {
-                discount = variantData[0].discount;
-            }
-            else
-            {
-                discount = 0;
-            }
-        }
-        return discount
-      }
+ 
 
     const plusQty = (product) => {
         if (product.stock >= quantity) {
@@ -155,7 +125,7 @@ const CartPage = () => {
                                                         </div>{(item.qty >= item.stock) ? 'out of Stock' : ''}
                                                             </div>
                                                             <div className="col-xs-3">
-                                                                <h2 className="td-color">{leftSymbol}{(priceCollection(item.variants) - (priceCollection(item.variants) * discountCalculation(item.variants) / 100)).toFixed(2)}{leftSymbol}</h2>
+                                                                <h2 className="td-color">{leftSymbol}{(withDiscount(item.variants))}{leftSymbol}</h2>
                                                             </div>
                                                             <div className="col-xs-3">
                                                                 <h2 className="td-color"><a href="#" className="icon"><i className="fa fa-times"  onClick={() => removeFromCart(item)}></i></a>
@@ -163,7 +133,7 @@ const CartPage = () => {
                                                             </div>
                                                         </div>
                                                     </td>
-                                                    <td><h2>{leftSymbol}{(priceCollection(item.variants) - (priceCollection(item.variants) * discountCalculation(item.variants) / 100)).  toFixed(2)}{rightSymbol}</h2></td>
+                                                    <td><h2>{leftSymbol}{(priceCollection(item.variants))}{rightSymbol}</h2></td>
                                                     <td><h2>{leftSymbol}{item.gst}{rightSymbol}</h2></td>
                                                     <td>
                                                         <div className="qty-box">

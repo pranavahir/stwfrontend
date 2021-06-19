@@ -160,7 +160,7 @@ const HeaderOne = ({ logoName, headerClass, topClass, noTopBar ,direction }) => 
 															
 														 
 												</li>
-												<Currency icon={settings} />
+												{/* <Currency icon={settings} /> */}
 												{/*Header Cart Component */}
 												{
 													direction === undefined ?

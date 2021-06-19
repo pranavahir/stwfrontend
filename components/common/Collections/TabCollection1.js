@@ -93,6 +93,12 @@ const SpecialProducts = ({ type, fluid, designClass, cartClass, heading, noTitle
     const country = curContext.state.country;
     const panel = curContext.state.panel;
 
+    const loaderStyle={
+        margin: "auto",
+        width: "60%",
+ 
+        padding: "10px",
+    }
 
     var { loading, data } = useQuery(GET_PRODUCTS, {
         variables: {
@@ -158,29 +164,29 @@ const SpecialProducts = ({ type, fluid, designClass, cartClass, heading, noTitle
                                             </div>
                                         </Col>
                                         :
-                                        <div className="row mx-0 margin-default">
-                                            <div className="col-xl-3 col-lg-4 col-6">
-                                                <PostLoader />
+                                        <div className="top-banner-wrapper" style={loaderStyle}> 
+                                    <div className="row mx-0 margin-default">
+                                            <div className="col-xl-12 col-lg-12 col-12">
+                                            <div className="typography_section"> 
+                                                <div className="typography-box"> 
+                                                    <div  className="custom-load typo-content loader-typo" >
+                                                        
+                                                         <div className="pre-loader"></div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div className="col-xl-3 col-lg-4 col-6">
-                                                <PostLoader />
                                             </div>
-                                            <div className="col-xl-3 col-lg-4 col-6">
-                                                <PostLoader />
                                             </div>
-                                            <div className="col-xl-3 col-lg-4 col-6">
-                                                <PostLoader />
                                             </div>
-                                        </div>
                                     :
-
                                     data && data.products.items.slice(0, 8).map((product, i) =>
                                         <ProductItem key={i} product={product} symbol={currency.symbol}
                                             addCompare={() => compareContext.addToCompare(product)}
                                             addCart={() => context.addToCart(product, quantity)}
                                             addWishlist={() => wishListContext.addToWish(product)}
-                                            cartClass={cartClass} backImage={backImage} />
-                                    )}
+                                            cartClass={cartClass} backImage={backImage} />) 
+                                   
+                                     }
                             </Row>
 
                         </TabPanel>

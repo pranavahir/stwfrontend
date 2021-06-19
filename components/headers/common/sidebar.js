@@ -44,8 +44,8 @@ const SideBar = () => {
 				var URL = "/shop/six_grid";
 			}
             filterContext.setSelectedCategory(category)
-            console.log(category);
-        	router.push(`${URL}?${selectedCategory}&brand=${selectedBrands}&color=${selectedColor}&size=${selectedSize}&minPrice=${selectedPrice.min}&maxPrice=${selectedPrice.max}&keyword=${selectedKeyword}`)
+            filterContext.setselectedKeyword("")
+        	router.push(`${URL}?${selectedCategory}&brand=${selectedBrands}&color=${selectedColor}&size=${selectedSize}&minPrice=${selectedPrice.min}&maxPrice=${selectedPrice.max}&keyword=`)
     }
 
     const handleSubmenu = (event) => {
