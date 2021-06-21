@@ -31,7 +31,9 @@ const CheckoutPage = ({ isPublic = false }) => {
   const symbol = curContext.state.symbol;
   const CurrencyConvertionRate = curContext.state.CurrencyConvertionRate;
   const withDiscount = cartContext.withDiscount;
-  const priceCollection = cartContext.withDiscount;
+  const priceCollection = cartContext.priceCollection;
+  const discountCalculation  = cartContext.discountCalculation ;
+  
   
   const GST = curContext.state.gstortax;
   const [obj, setObj] = useState({});

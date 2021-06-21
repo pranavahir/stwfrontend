@@ -282,7 +282,7 @@ const SideBar = () => {
                             </ul>
                         </li>
                         <li>
-                            <a href="#" onClick={(e) => handleMegaSubmenu(e,"FASHION")}>
+                            <a href="#" onClick={(e) => handleMegaSubmenu(e,"Fashion")}>
                                 Fashion
                                 <span className="sub-arrow"></span>
                             </a>
@@ -416,7 +416,7 @@ const SideBar = () => {
                                                         <a style={linkStyle}  onClick={() => CategoryFilter("Quilts & Sets")}>Quilts & Sets</a>
                                                     </li>
                                                 </ul>
-                                                <h5><div style={linkStyle} onClick={() => CategoryFilter("Tower Rings")}>Tower Rings</div></h5> 
+                                                <h5><div style={linkStyle} onClick={() => CategoryFilter("Towel Rings")}>Towel Rings</div></h5> 
                                                 <h5><div style={linkStyle} onClick={() => CategoryFilter("Wall Art")}>Wall Art</div></h5> 
                                                 <h5><div style={linkStyle} onClick={() => CategoryFilter("Wall Clocks")}>Wall Clocks</div></h5> 
                                                 <h5><div style={linkStyle} onClick={() => CategoryFilter("Cleaning Supplies")}>Cleaning Supplies</div></h5> 

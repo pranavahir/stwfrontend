@@ -33,7 +33,7 @@ const CartProvider = (props) => {
   // Add Product To Cart
   const addToCart = (item ,quantity) => {
     toast.success("Product Added Successfully !");
-    const index = cartItems.findIndex(itm => itm.id === item.id)
+    const index = cartItems.findIndex(itm => itm.seqid === item.seqid)
     if (index !== -1) {
        const product = cartItems[index];
       cartItems.push({ ...item, qty: quantity,gst:gstCollection(item.variants), total: ((withDiscount(item.variants))) * quantity  });  
@@ -46,7 +46,7 @@ const CartProvider = (props) => {
 
   const removeFromCart = (item) => {
     toast.error("Product Removed Successfully !");
-    setCartItems(cartItems.filter((e) => (e.id !== item.id)))
+    setCartItems(cartItems.filter((e) => (e.seqid !== item.seqid)))
   }
 
   const minusQty = () => {

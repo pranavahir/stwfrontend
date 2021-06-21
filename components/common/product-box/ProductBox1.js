@@ -22,6 +22,7 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
     const discountCalculation = cartContext.discountCalculation;
     const priceCollection = cartContext.priceCollection;
     const withDiscount = cartContext.withDiscount;
+     
     let leftSymbol=null;
     let rightSymbol = null;
     if(IsRight ==true)
@@ -79,6 +80,18 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
         router.push(`/p/${product.asin}` + '-' + `${titleProps}`);
     }
 
+    const makeURL = () => {
+        var domain = window.location.hostname;
+        var titleProps = product.title.split(' ').join('-');
+        titleProps = titleProps.replace(/[^\w\s]/gi, '-');
+        titleProps = titleProps.replace(/---/gi, '-');
+        titleProps = titleProps.replace(/--/gi, '-');
+        var url = `/p/${product.asin}` + '-' + `${titleProps}`;
+        return url;
+    }
+
+    const productUrl  = makeURL();
+
     const variantChangeByColor = (imgId, product_images) => {
         product_images.map((data) => {
             if (data.image_id == imgId) {
@@ -121,6 +134,7 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
                     {(product.new === true) ? <span className="lable3">new</span> : ''}
                     {(product.sale === true) ? <span className="lable4">on sale</span> : ''}
                 </div>
+             
                 <div style={linkStyle} className="front" onClick={clickProductDetail}>
                     {/* <Media src={`${image ?
                         image : product.images.length>0 ? product.images[0].mainimageurl :""
@@ -131,10 +145,12 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
                         image : product.images.length>0 ? product.images[0].mainimageurl :""
                         }`}/>
                 </div>
+                
                 {backImage ?
                     product.images.length == 0 ?
                         'false'
                         :
+                      
                         <div style={linkStyle} className="back" onClick={clickProductDetail}>
                             <Media src={`${image ?
                                 image :  product.images.length>0 ? product.images[0].mainimageurl :""
@@ -142,6 +158,7 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
                                 className="img-fluid m-auto"
                                 alt="" />
                         </div>
+                        
                     : ''
                 }
 
@@ -208,7 +225,7 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
                     <div className="rating">
                         {RatingStars}
                     </div>: ''}
-                    <div style={linkStyle} onClick={clickProductDetail} >{product.title} </div>
+                     <div style={linkStyle} onClick = {clickProductDetail}> {product.title} </div>
                     {des ?
                         <p>{product.description}</p>
                         : ''

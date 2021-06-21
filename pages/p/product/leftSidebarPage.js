@@ -10,6 +10,7 @@ import DetailsWithPrice from '../common/detail-price';
 import Filter from '../common/filter';
 import { Container, Row, Col, Media } from 'reactstrap';
 import { CurrencyContext } from '../../../helpers/Currency/CurrencyContext';
+import Helmet from 'react-helmet';
 
 const GET_SINGLE_PRODUCTS = gql`
     query product ($asin:String!,$type:String!,$country:String!,$panel:String!) {
@@ -129,6 +130,7 @@ const LeftSidebarPage = ({ pathId, type }) => {
     const IsRight = curContext.state.IsRight;
     const country = curContext.state.country;
     const panel = curContext.state.panel;
+    const currency = curContext.state.currency
     let leftSymbol=null;
     let rightSymbol = null;
     if(IsRight ==true)
@@ -148,6 +150,23 @@ const LeftSidebarPage = ({ pathId, type }) => {
             panel:panel
         }
     });
+
+    // const getUrl = (data.product.title) => {
+        
+    // }
+
+    const getUrl = (product) => {
+        
+        var domain = window.location.hostname;
+        var titleProps = product.title.split(' ').join('-');
+        titleProps = titleProps.replace(/[^\w\s]/gi, '-');
+        titleProps = titleProps.replace(/---/gi, '-');
+        titleProps = titleProps.replace(/--/gi, '-');
+        var url = domain + '/p/'+ product.asin  + '-' + 'titleProps';
+        return url;
+    }
+
+
     const [state, setState] = useState({ nav1: null, nav2: null });
     const slider1 = useRef();
     const slider2 = useRef();
@@ -184,9 +203,46 @@ const LeftSidebarPage = ({ pathId, type }) => {
         slider2.current.slickGoTo(img_id)
     }
 
+    const loaderStyle={
+        margin: "auto",
+        width: "60%",
+ 
+        padding: "10px",
+    }
+
     return (
         <section className="">
             <div className="collection-wrapper">
+            {(!data || !data.product || data.product.length === 0 || loading) ?'':
+            <Helmet>
+        <title data-react-helmet="true">{data.product.title} - Shop The World</title>
+        <meta data-react-helmet="true" name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta data-react-helmet="true" name="copyright" content="Shop The World"/>
+        <meta data-react-helmet="true" name="author" content="Shop The World"/>
+        <meta data-react-helmet="true" name="country" content={country}/>
+        <meta data-react-helmet="true" name="language" content="en-US"/>
+        <meta data-react-helmet="true" name="currency" content={currency}/>
+        <meta data-react-helmet="true" name="robots" content="index, follow"/>
+        <meta data-react-helmet="true" name="description" content={data.product.title}/>
+        <meta data-react-helmet="true" property="og:type" content="product"/>
+        <meta data-react-helmet="true" property="og:title" content={data.product.title}/>
+        <meta data-react-helmet="true" property="og:url" content={getUrl(data.product)}/>
+        <meta data-react-helmet="true" property="og:description" content={data.product.title}/>
+        <meta data-react-helmet="true" property="product:sku" content={data.product.sku}/>
+        <meta data-react-helmet="true" property="product:condition" content="new"/>
+        <meta data-react-helmet="true" property="product:brand" content={data.product.brandname}/>
+        <meta data-react-helmet="true" property="product:retailer_item_id" content={data.product.asin}/>
+        <meta data-react-helmet="true" property="product:price:currency" content={currency}/>
+        {/* <meta data-react-helmet="true" property="og:image" content="https://shoptheworld.vtexassets.com/arquivos/ids/156142/image_1.jpg?v=637397231439730000"/>
+        <meta data-react-helmet="true" property="og:image" content="https://shoptheworld.vtexassets.com/arquivos/ids/160165/image_2.jpg?v=637397237219400000"/>
+        <meta data-react-helmet="true" property="og:image" content="https://shoptheworld.vtexassets.com/arquivos/ids/162518/image_3.jpg?v=637397240736970000"/> */}
+        <meta data-react-helmet="true" property="product:availability" content="instock"/>
+        <meta data-react-helmet="true" property="product:price:amount" content="228"/>
+
+        <link data-react-helmet="true" rel="canonical" href="https://www.shoptheworldonline.com/in/x2-nivea-men-face-wash-oil-control-10x-vitamin-c-150ml/p"/>
+        <link data-react-helmet="true" rel="preload" as="image" href={`${data.product.images[0].additionalimage4}`} crossOrigin="anonymous"/>
+             </Helmet> }
+
                 <Container>
                     <Row>
                         <Col sm="3" className="collection-filter">
@@ -207,7 +263,19 @@ const LeftSidebarPage = ({ pathId, type }) => {
                                     </Col>
                                 </Row>
                                 {(!data || !data.product || data.product.length === 0 || loading) ?
-                                    'loading'
+                                    <div className="top-banner-wrapper" style={loaderStyle}> 
+                                    <div className="row mx-0 margin-default">
+                                            <div className="col-xl-12 col-lg-12 col-12">
+                                            <div className="typography_section"> 
+                                                <div className="typography-box"> 
+                                                    <div  className="custom-load typo-content loader-typo" >
+                                                         <div className="pre-loader"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            </div>
+                                            </div>
+                                            </div>
                                     :
                                     <Row>
                                         <Col lg="6" className="product-thumbnail">
@@ -263,11 +331,8 @@ const LeftSidebarPage = ({ pathId, type }) => {
                                                     :
                                                     ''}
                                             </Slider>
-                                            <Slider className="slider-nav"
-                                                {...productsnav}
-                                                asNavFor={nav1}
-                                                ref={slider => (slider2.current = slider)}
-                                            >
+
+                                            <Slider className="slider-nav" {...productsnav} asNavFor={nav1} ref={slider => (slider2.current = slider)}>
 
                                                 {data.product.images[0].mainimageurl?
                                                     <div>

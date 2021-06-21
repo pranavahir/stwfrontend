@@ -25,8 +25,8 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
     // const stock = context.stock;
     // const plusQty = context.plusQty;
     // const minusQty = context.minusQty;
-    const [quantity, setQuantity] = useState(3);
-    // const setQuantity = context.setQuantity;
+    const [productQty, setproductQty] = useState(1);
+    // const setproductQty = context.setproductQty;
     const [stock, setStock] = useState('InStock');
     // const setStock = context.setStock;
     const uniqueColor = [];
@@ -73,8 +73,8 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
         color: "#ec693f"
     }
 
-    const buyNow = (product, quantity) => {
-        context.addToCart(product, quantity);
+    const buyNow = (product, productQty) => {
+        context.addToCart(product, productQty);
         router.push({
             pathname: "/page/account/checkout",
           });
@@ -85,21 +85,22 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
 
     const changeQty = (e) => {
         if(e.target.value != "")
-            setQuantity(parseInt(e.target.value));
+            setproductQty(parseInt(e.target.value));
         else
-        setQuantity("");
+        setproductQty("");
     }
 
-    const minusQty = () =>{
-        if (quantity > 1) {
-              setQuantity(quantity - 1);
+ 
+    
+    const minusProductQty = () =>{
+        if (productQty > 1) {
+              setproductQty(productQty - 1);
               setStock('InStock')
           }
     }
-    
     const plusQty = (item) =>{
-        if (item.quantity >= quantity) {
-            setQuantity(quantity + 1);
+        if (item.quantity > productQty) {
+            setproductQty(productQty + 1);
           } else {
             setStock("Out of Stock !")
           }
@@ -187,11 +188,11 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
                     <div className="qty-box">
                         <div className="input-group">
                             <span className="input-group-prepend">
-                                <button type="button" className="btn quantity-left-minus" onClick={minusQty()} data-type="minus" data-field="">
+                                <button type="button" className="btn quantity-left-minus" onClick={() => minusProductQty()} data-type="minus" data-field="">
                                     <i className="fa fa-minus"></i>
                                 </button>
                             </span>
-                            <Input type="text" name="quantity" value={quantity} onChange={changeQty} className="form-control input-number" />
+                            <Input type="text" name="quantity" value={productQty} onChange={changeQty} className="form-control input-number" />
                             <span className="input-group-prepend">
                                 <button type="button" className="btn quantity-right-plus" onClick={() => plusQty(product.variants[0])} data-type="plus" data-field="">
                                     <i className="fa fa-plus"></i>
@@ -204,8 +205,8 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
                 </div>
                 {product.variants[0].quantity > 0 ?  
                 <div className="product-buttons" >
-                    <a href={null} className="btn btn-solid" onClick={() => context.addToCart(product, quantity)}>add to cart</a>
-                     <a className="btn btn-solid" onClick={() => buyNow(product, quantity)}  >buy now</a> 
+                    <a href={null} className="btn btn-solid" onClick={() => context.addToCart(product, productQty)}>add to cart</a>
+                     <a className="btn btn-solid" onClick={() => buyNow(product, productQty)}  >buy now</a> 
                      
                 </div> :
                 <h5 style={smallredobj}> unavailable...! </h5>};

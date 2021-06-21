@@ -23,9 +23,11 @@ const Fashion = () => {
   return (
     <>
       <Helmet>
+        
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" type="image/x-icon" href={favicon?favicon:''} />
-      </Helmet>
+        <link data-react-helmet="true" href={favicon?favicon:''} sizes="32x32" type="png" rel="icon"/>
+             </Helmet>
       {/* <ModalComponent /> */}
       <HeaderOne logoName={'logo.png'} topClass="top-header" />
       <Banner /> 

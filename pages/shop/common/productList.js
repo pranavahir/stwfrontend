@@ -441,7 +441,7 @@ const ProductList = ({ colClass, layoutList,openSidebar,noSidebar,pathId }) => {
                                             <div className="product-top-filter"></div>
                                                 <div className="product">
                                                     <div>
-                                                        <ProductItem des={true} product={product} symbol={symbol} cartClass="cart-info cart-wrap"
+                                                        <ProductItem des={true} product={product} symbol={symbol}  cartClass="cart-info cart-wrap"
                                                             addCompare={() => compareContext.addToCompare(product)}
                                                             addWishlist={() => wishlistContext.addToWish(product)}
                                                             addCart={() => cartContext.addToCart(product,quantity)} />
