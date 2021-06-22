@@ -183,7 +183,16 @@ useEffect(() => {
   }
    
   const shippingCharges = calcDomesticFreight(cartItems);
-  const fullPrice = parseFloat(shippingCharges) + parseFloat(cartTotal);
+  var price = 0;
+  if(shippingCharges!=undefined && shippingCharges!="" && shippingCharges!=0 && shippingCharges > 0)
+  {
+    price = parseFloat(shippingCharges) + parseFloat(cartTotal);
+  }
+  else
+  {
+    price =  parseFloat(cartTotal);
+  }
+  const fullPrice = price;
 
 
   const changeGst = (e) => {
