@@ -19,8 +19,8 @@ import ApolloClient from "apollo-boost"
 // import * as ga from '../pages/lib/ga'
 const client = new ApolloClient({
     // uri: "http://localhost:4000/graphql"  //local
-       uri: "https://cryptic-mountain-48315.herokuapp.com/api/graphql"  //Test env
-    // uri:'https://stwecommerceapi.herokuapp.com/api/graphql', //production env
+      //  uri: "https://cryptic-mountain-48315.herokuapp.com/api/graphql"  //Test env
+    uri:'https://stwecommerceapi.herokuapp.com/api/graphql', //production env
 })
 
 export default function MyApp({ Component, pageProps }) {

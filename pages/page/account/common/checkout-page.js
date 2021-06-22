@@ -84,6 +84,8 @@ useEffect(() => {
     setPayment(value);
   };
 
+  
+
   // const [createOrder] = useMutation(CREATE_OREDER);
 
   const [createOrder, { orderedData }] = useMutation(CREATE_OREDER);
@@ -171,9 +173,18 @@ useEffect(() => {
     return finalCurrency;
   }
   
+  const calcDomesticFreight = (productList) => {
+    var domestic = 0;
+    for(var i = 0; i <productList.length; i++)
+    {
+      domestic += productList[i].variants[0].domesticfreight
+    }
+    return domestic;
+  }
    
+  const shippingCharges = calcDomesticFreight(cartItems);
+  const fullPrice = parseFloat(shippingCharges) + parseFloat(cartTotal);
 
- 
 
   const changeGst = (e) => {
     if(e.target!=null)
@@ -365,7 +376,7 @@ const changeGstcheck = (e) => {
          var newObj={
           payment: payment,
             items: cartItems,
-            orderTotal: cartTotal,
+            orderTotal: fullPrice,
             symbol: symbol,
             OrderDetail:OrderDetail
         }
@@ -452,7 +463,7 @@ const changeGstcheck = (e) => {
         var newObj={
           payment: payment,
             items: cartItems,
-            orderTotal: cartTotal,
+            orderTotal: fullPrice,
             symbol: symbol,
             OrderDetail:OrderDetail
         }
@@ -568,7 +579,7 @@ const changeGstcheck = (e) => {
       return;
     }
 
-    var amount = cartTotal * 100;
+    var amount = fullPrice * 100;
     const { error: backendError, clientSecret } = await fetch(
       "https://stripeserver.digitechniq.in/create-payment-intent",
       {
@@ -638,7 +649,7 @@ const changeGstcheck = (e) => {
     // const API_URL = `http://localhost:7000/razorpay/`;
     
     const orderUrl = `${API_URL}order`;
-    const response = await Axios.post(orderUrl, { amount: cartTotal });
+    const response = await Axios.post(orderUrl, { amount: fullPrice });
     const { data } = response;
     console.log("App -> razorPayPaymentHandler -> data", data);
 
@@ -654,7 +665,7 @@ const changeGstcheck = (e) => {
           // const url = `https://razorpaypayment.digitechniq.in/razorpay/capture/${paymentId}`;
           const url = `https://razorpaypayment.digitechniq.in/razorpay/capture/${paymentId}`;
           const captureResponse = await Axios.post(url, {
-            amount: cartTotal,
+            amount: fullPrice,
           });
           const successObj = JSON.parse(captureResponse.data);
           const captured = successObj.captured;
@@ -684,7 +695,7 @@ const changeGstcheck = (e) => {
       state: {
         payment: payment,
         items: cartItems,
-        orderTotal: cartTotal,
+        orderTotal: fullPrice,
         symbol: symbol,
         OrderDetail: OrderDetail
       },
@@ -946,21 +957,28 @@ const rightAligh = {
                           ))}
                         </ul>
                         <ul className="sub-total">
-                          
-                          {/* <li>
-                          {GST}
+                          <li>
+                          Delivery charges
+                            {shippingCharges!=undefined && shippingCharges!="" && shippingCharges!=0 && shippingCharges > 0 ?
                             <span className="count" style = {rightAligh}>
                               {symbol}
-                              {((cartTotal) - ( priceCollection(cartItems[0].variants) - (priceCollection(cartItems[0].variants) * discountCalculation(cartItems[0].variants) / 100))).toFixed(2)}
+                              {parseFloat(shippingCharges)}
+                            </span>:
+                            <span className="count" style = {rightAligh}>
+                            Free - {symbol}
+                               0.00
                             </span>
-                          </li> */}
+                             }
+                            
+                          
+                          </li>
                           </ul>
                           <ul className="sub-total">
                           <li>
                             Subtotal
                             <span className="count" style = {rightAligh}>
                               {symbol}
-                              {cartTotal}
+                              {fullPrice}
                             </span>
                           </li>
                         </ul>
@@ -969,7 +987,7 @@ const rightAligh = {
                             Total{" "}
                             <span className="count" style = {rightAligh}>
                               {symbol}
-                              {cartTotal}
+                              {fullPrice}
                             </span>
                           </li>
                         </ul>
@@ -1034,14 +1052,14 @@ const rightAligh = {
                             </ul>
                           </div>
                         </div>
-                        {cartTotal !== 0 ? (
+                        {fullPrice !== 0 ? (
                           <div className="text-right">
                             {payment === "stripe" ? (
                               <Card />
                             ) : payment === "paypal" ? (
                               <PayPalButton
                                 paypalOptions={paypalOptions}
-                                amount={ getPaypalAmount(cartTotal)}
+                                amount={ getPaypalAmount(fullPrice)}
                                 onPaymentSuccess={onSuccess}
                                 onPaymentError={onError}
                                 onApprove={onSuccess}

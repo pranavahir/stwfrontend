@@ -69,6 +69,7 @@ const GET_PRODUCTS = gql`
             fees
             margin
             quantity
+            domesticfreight
       }
         }
 

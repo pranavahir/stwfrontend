@@ -181,7 +181,7 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
                                 </ul>
                             </div>
                         </div> : ''} */}
-                        {product.variants[0].quantity > 0 ?   
+                        {product.variants.length > 0 && product.variants[0].quantity > 0 ?   
                         <div>
                         <span className="instock-cls">{stock}</span>
                     <h6 className="product-title">quantity</h6>
@@ -203,7 +203,7 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
                     : ""}
                   
                 </div>
-                {product.variants[0].quantity > 0 ?  
+                {product.variants.length > 0 && product.variants[0].quantity > 0 ?  
                 <div className="product-buttons" >
                     <a href={null} className="btn btn-solid" onClick={() => context.addToCart(product, productQty)}>add to cart</a>
                      <a className="btn btn-solid" onClick={() => buyNow(product, productQty)}  >buy now</a> 
