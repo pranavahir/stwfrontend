@@ -947,13 +947,13 @@ const rightAligh = {
                         </ul>
                         <ul className="sub-total">
                           
-                          <li>
+                          {/* <li>
                           {GST}
                             <span className="count" style = {rightAligh}>
                               {symbol}
                               {((cartTotal) - ( priceCollection(cartItems[0].variants) - (priceCollection(cartItems[0].variants) * discountCalculation(cartItems[0].variants) / 100))).toFixed(2)}
                             </span>
-                          </li>
+                          </li> */}
                           </ul>
                           <ul className="sub-total">
                           <li>
