@@ -33,9 +33,9 @@ const Fashion = () => {
       <Banner /> 
       <CollectionBanner />
       <Paragraph title="title1 section-t-space" inner="title-inner1" hrClass={false} />
-      <TopCollection noTitle="null" backImage={true} type="fashion" title="Explore Our Top Collection" subtitle="special offer"  productSlider={Product4} designClass="section-b-space p-t-0 ratio_asos" noSlider="false" cartClass="cart-info cart-wrap" />
+      <TopCollection noTitle="null" backImage={true} type="fashion" title="Explore Our Top Collection" subtitle="special offer"  productSlider={Product4} designClass="ratio_asos" noSlider="false" cartClass="cart-info cart-wrap" />
       <Parallax />
-      <SpecialProducts type="fashion" backImage={true} productSlider={Product4} line={true} title="title1 section-t-space" inner="title-inner1"  designClass="section-b-space p-t-0 ratio_asos" noSlider="true" cartClass="cart-info cart-wrap" /> 
+      <SpecialProducts type="fashion" backImage={true} productSlider={Product4} line={true} title="title1" inner="title-inner1"  designClass="ratio_asos" noSlider="false" cartClass="cart-info cart-wrap" /> 
       <ServiceLayout sectionClass="border-section small-section" />
       <Blog type="Electronics" title="title1" inner="title-inner1" />
       {/* <Instagram type="fashion"/> */}

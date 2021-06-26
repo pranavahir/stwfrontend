@@ -151,6 +151,7 @@ const withDiscount = (variantData) =>{
 const withTax = (variantData) =>{
 
  var sellprice = priceCollection(variantData);
+ console.log(sellprice);
  var tax = gstCollection(variantData);
  var totalPrice = (sellprice + tax).toFixed(2); 
  

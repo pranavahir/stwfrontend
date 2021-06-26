@@ -13,7 +13,8 @@ import { useMutation } from "@apollo/react-hooks";
 import gql from "graphql-tag";
 import { CurrencyContext } from "../../../../helpers/Currency/CurrencyContext";
 import GooglePayButton from "@google-pay/button-react";
-
+import { useQuery } from '@apollo/react-hooks';
+ 
 const CREATE_OREDER = gql`
   mutation CreateOrderDetail($order: OrderDetail!) {
     CreateOrderDetail(order: $order) {
@@ -21,7 +22,30 @@ const CREATE_OREDER = gql`
     }
   }
 `;
-
+const UPDATE_CUSTOMER = gql`
+  mutation UpdateCustomerDetail($Customer: Customerinfo!) {
+    UpdateCustomerDetail(Customer: $Customer) {
+        customerredid
+    }
+  }
+`;
+const GET_CUSTOMER_BY_UID = gql`
+query CustomerByUID ($uid:String!) {
+    CustomerByUID (uid:$uid) {
+  customerredid
+  customername
+  phonenumber
+  address1
+  address2
+  city
+  state
+  country
+  emailid
+  googleid
+  facebookid
+    }
+}
+`;
 const CheckoutPage = ({ isPublic = false }) => {
   const cartContext = useContext(CartContext);
   const cartItems = cartContext.state;
@@ -34,6 +58,7 @@ const CheckoutPage = ({ isPublic = false }) => {
   const priceCollection = cartContext.priceCollection;
   const discountCalculation  = cartContext.discountCalculation ;
   
+ 
   
   const GST = curContext.state.gstortax;
   const [obj, setObj] = useState({});
@@ -41,6 +66,13 @@ const CheckoutPage = ({ isPublic = false }) => {
   const [customerId, setCustomerId] = useState(
     localStorage.getItem('CustomerId')
 );
+
+var { loading, data } = useQuery(GET_CUSTOMER_BY_UID, {
+  variables: {
+      uid: customerId,
+  }
+});
+
 const IsRight = curContext.state.IsRight;
 const country = curContext.state.country;
 let leftSymbol=null;
@@ -89,6 +121,7 @@ useEffect(() => {
   // const [createOrder] = useMutation(CREATE_OREDER);
 
   const [createOrder, { orderedData }] = useMutation(CREATE_OREDER);
+  const [UpdateCustomer, { CustomerData }] = useMutation(UPDATE_CUSTOMER);
 
   /** Launches payment request flow when user taps on buy button. */
   const onBuyClicked = () => {
@@ -248,7 +281,6 @@ const changeGstcheck = (e) => {
         body: JSON.stringify({
           OrderDetail:productDetail,
           CustomerDetail:customerDetail
-
         }),
       }
     ).then((r) => r.json());
@@ -334,11 +366,11 @@ const changeGstcheck = (e) => {
             orderdetailid: 2,
             productsku: item.sku,
             producttitle: titleTrim(item.title),
-            quantity: 1,
-            totalprice: item.total,
+            quantity: item.qty,
+            totalprice: withDiscount(item.variants),
             customerid: customerId,
             customername: customerData.first_name,
-            paymentmethod: "Card - Razorpay - "+PaymentDetail.id,
+            paymentmethod: "Card - Razorpay - " + PaymentDetail.id,
             trackingnumber: "stw-tkno-0123",
             orderstatus: "Order - Placed",
             address1:customerData.address,
@@ -359,12 +391,30 @@ const changeGstcheck = (e) => {
             var orderData = createOrder({
               variables: { order: { ...OrderDetail } },
             });
+
+            
             //  history.push('/multikart-admin/menus/list-menu')
             //  toast.success("Successfully Added !")
       
           } catch (err) {
             console.log(err.message);
           }
+        });
+
+        var NewCustomerData = {
+          customerredid:customerId,
+          customername:customerData.first_name + " " + customerData.last_name,
+          phonenumber:customerData.phone,
+          address1:customerData.address,
+          address2:"",
+          city:customerData.city,
+          state:customerData.state,
+          country:customerData.country,
+          emailid:customerData.email
+      }
+  
+        var CustomerData = UpdateCustomer({
+          variables: { Customer: { ...NewCustomerData } },
         });
 
         if(cartItems.length==1)
@@ -426,8 +476,8 @@ const changeGstcheck = (e) => {
               orderdetailid: 2,
               productsku: item.sku,
               producttitle: titleTrim(item.title),
-              quantity: 1,
-              totalprice: item.total,
+              quantity: item.qty,
+              totalprice: withDiscount(item.variants),
               customerid: customerId,
               customername: customerData.first_name,
               paymentmethod: "Card - Stripe - "+PaymentDetail.id,
@@ -449,11 +499,28 @@ const changeGstcheck = (e) => {
               var orderData = createOrder({
                 variables: { order: { ...OrderDetail } },
               });
+
               //  history.push('/multikart-admin/menus/list-menu')
               //  toast.success("Successfully Added !")
             } catch (err) {
               console.log(err.message);
             }
+          });
+
+          var NewCustomerData = {
+            customerredid:customerId,
+            customername:customerData.first_name + " " + customerData.last_name,
+            phonenumber:customerData.phone,
+            address1:customerData.address,
+            address2:"",
+            city:customerData.city,
+            state:customerData.state,
+            country:customerData.country,
+            emailid:customerData.email
+        }
+    
+          var CustomerData = UpdateCustomer({
+            variables: { Customer: { ...NewCustomerData } },
           });
 
           if(cartItems.length==1)
@@ -476,12 +543,19 @@ const changeGstcheck = (e) => {
             symbol: symbol,
             OrderDetail:OrderDetail
         }
+
+
         setOrderObj(JSON.stringify(newObj));
         router.push({
           pathname: "/page/order-success",
         });
 
       }
+      
+
+     
+
+
   }
   // const loadScript=(src) =>
   const checkCanMakePayment = (request) => {
@@ -774,6 +848,7 @@ const rightAligh = {
                   <div className="checkout-title">
                     <h3>Billing Details</h3>
                   </div>
+                  {data != undefined ? 
                   <div className="row check-out">
                     <div className="form-group col-md-6 col-sm-6 col-xs-12">
                       <div className="field-label">First Name</div>
@@ -781,6 +856,7 @@ const rightAligh = {
                         type="text"
                         className={`${errors.first_name ? "error_border" : ""}`}
                         name="first_name"
+                        value={data.CustomerByUID.customername}
                         ref={register({ required: true })}
                       />
                       <span className="error-message">
@@ -804,6 +880,7 @@ const rightAligh = {
                       <input
                         type="text"
                         name="phone"
+                        value={data.CustomerByUID.phonenumber}
                         className={`${errors.phone ? "error_border" : ""}`}
                         ref={register({ pattern: /\d+/ })}
                       />
@@ -818,6 +895,7 @@ const rightAligh = {
                         className={`${errors.email ? "error_border" : ""}`}
                         type="text"
                         name="email"
+                        value={data.CustomerByUID.emailid}
                         ref={register({
                           required: true,
                           pattern: /^\S+@\S+$/i,
@@ -885,6 +963,7 @@ const rightAligh = {
                         className={`${errors.address ? "error_border" : ""}`}
                         type="text"
                         name="address"
+                        value={data.CustomerByUID.address1}
                         ref={register({ required: true, min: 20, max: 120 })}
                         placeholder="Street address"
                       />
@@ -913,6 +992,7 @@ const rightAligh = {
                         type="text"
                         className={`${errors.state ? "error_border" : ""}`}
                         name="state"
+                        value={data.CustomerByUID.state}
                         ref={register({ required: true })}
                         onChange={setStateFromInput}
                       />
@@ -926,6 +1006,7 @@ const rightAligh = {
                         className="form-control"
                         type="text"
                         name="pincode"
+                        
                         className={`${errors.pincode ? "error_border" : ""}`}
                         ref={register({ pattern: /\d+/ })}
                       />
@@ -943,6 +1024,7 @@ const rightAligh = {
                       <label htmlFor="account-option">Create An Account?</label>
                     </div>
                   </div>
+                  :""}
                 </Col>
                 <Col lg="6" sm="12" xs="12">
                   {cartItems && cartItems.length > 0 > 0 ? (

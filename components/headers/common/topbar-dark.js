@@ -39,16 +39,28 @@ const TopBarDark = ({ topClass, fluid }) => {
         setName(""); 
         setPhotoURL("");
         setCustomerId("");
+        var pathname = window.location.pathname;
+        console.log(pathname);
+        if(pathname != "/page/account/login-auth" && pathname != "/page/account/register")
+        setHistoryLogin(pathname);
+        
         router.push("/page/account/login-auth")
     }
     const Login = () => {
+
         var pathname = window.location.pathname;
-        setHistoryLogin(pathname); 
+        console.log(pathname);
+        if(pathname != "/page/account/login-auth")
+        setHistoryLogin(pathname);
+
         router.push("/page/account/login-auth")
     }
     const Register = () => {
         var pathname = window.location.pathname;
+        console.log(pathname);
+        if(pathname != "/page/account/register")
         setHistoryLogin(pathname); 
+        
         router.push("/page/account/register")
     }
     const imgStyle={

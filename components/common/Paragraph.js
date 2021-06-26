@@ -5,8 +5,8 @@ const Paragraph = ({title, inner, line ,hrClass}) => {
     return (
         <>
             <div className={title}>
-                <h4>special offer</h4>
-                <h2 className={inner}>Explore Our Top Collection</h2>
+                <h6>special offer</h6>
+                <h4 className={inner}>Explore Our Top Collection</h4>
                 {
                     line ?
                         <div className="line"></div> : 

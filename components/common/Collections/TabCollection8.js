@@ -8,39 +8,40 @@ import CartContext from '../../../helpers/cart/index'
 import { WishlistContext } from '../../../helpers/wishlist/WishlistContext';
 import PostLoader from '../PostLoader';
 import { CompareContext } from '../../../helpers/Compare/CompareContext';
+import { CurrencyContext } from "../../../helpers/Currency/CurrencyContext";
 
-const GET_PRODUCTS = gql`
-    query  products($type:_CategoryType!,$indexFrom:Int! ,$limit:Int!) {
-        products (type: $type,indexFrom:$indexFrom ,limit:$limit){
-            items {
-                id
-                title
-                description
-                type
-                brand
-                category 
-                price
-                new
-                sale
-                stock
-                discount
-                variants{
-                    id
-                    sku
-                    size
-                    color
-                    image_id
-                }
-                images{
-                    image_id
-                    id
-                    alt
-                    src
-                }
-            }
-        }
-    }
-`;
+// const GET_PRODUCTS = gql`
+//     query  products($type:_CategoryType!,$indexFrom:Int! ,$limit:Int!) {
+//         products (type: $type,indexFrom:$indexFrom ,limit:$limit){
+//             items {
+//                 id
+//                 title
+//                 description
+//                 type
+//                 brand
+//                 category 
+//                 price
+//                 new
+//                 sale
+//                 stock
+//                 discount
+//                 variants{
+//                     id
+//                     sku
+//                     size
+//                     color
+//                     image_id
+//                 }
+//                 images{
+//                     image_id
+//                     id
+//                     alt
+//                     src
+//                 }
+//             }
+//         }
+//     }
+// `;
 
 const TabCollection = ({ type, cartClass }) => {
 
@@ -50,13 +51,16 @@ const TabCollection = ({ type, cartClass }) => {
     const compareContext = useContext(CompareContext);
     const quantity = context.quantity;
 
-    var { loading, data } = useQuery(GET_PRODUCTS, {
-        variables: {
-            type: activeTab,
-            indexFrom: 0,
-            limit: 19
-        }
-    });
+    
+    
+
+    // var { loading, data } = useQuery(GET_PRODUCTS, {
+    //     variables: {
+    //         type: activeTab,
+    //         indexFrom: 0,
+    //         limit: 19
+    //     }
+    // });
 
     return (
         <>
@@ -109,12 +113,10 @@ const TabCollection = ({ type, cartClass }) => {
                                            </div>
                                                 :
                                                 <>
-                                                    {data && data.products.items.slice(0, 10).map((product, index) =>
-                                                        <ProductItem product={product}
-                                                            addToComapre={() => compareContext.addToCompare(product)}
-                                                            addCart={() => context.addToCart(product,quantity)} key={index}
-                                                            addWishlist={() => wishListContext.addToWish(product)}
-                                                            cartclassName={cartClass} />
+                                                    {topCollections && topCollections.slice(0, 10).map((collection, index) =>
+                                                        <div className="front">
+                                                            <Media src={collection.imguRL} key ={index} className="img-fluid bg-img blur-up lazyload" alt="" />
+                                                        </div>
                                                     )}
                                                 </>
                                             }

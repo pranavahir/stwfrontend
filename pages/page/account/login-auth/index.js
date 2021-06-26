@@ -5,13 +5,16 @@ import firebase ,{googleProvider,facebookProvider} from '../../../../config/base
 import { toast } from 'react-toastify';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
+import gql from "graphql-tag";
 
+ 
 const Login = ({isCheckOut}) => {
     // ({item,stickyClass,changeColorVar})
 
     const router = useRouter();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    
     const [name, setName] = useState(
         localStorage.getItem('Name')
     );
@@ -19,6 +22,7 @@ const Login = ({isCheckOut}) => {
         sessionStorage.getItem('photoURL')
     );
 
+    
     const [historyLogin, setHistoryLogin] = useState(
         localStorage.getItem('historyLogin')
     );
@@ -31,6 +35,7 @@ const Login = ({isCheckOut}) => {
         localStorage.setItem('Name', name);
         localStorage.setItem('CustomerId', customerId);
         sessionStorage.setItem('photoURL',photoURL)
+        
     }, [name,customerId,photoURL]);
 
     const loginAuth = async (email,password) => {
@@ -38,6 +43,7 @@ const Login = ({isCheckOut}) => {
             await firebase.auth().signInWithEmailAndPassword(email, password).then(function (result) {                
                 setName(email);
                 setCustomerId(result.user.uid);
+                
                 if(historyLogin==null)
                 {
                     setHistoryLogin('/');
@@ -48,12 +54,12 @@ const Login = ({isCheckOut}) => {
                 }
                  else{
                     setTimeout(() => {
+                        if(historyLogin != null && historyLogin != "null" && historyLogin != "" && historyLogin != undefined)
                         router.push(historyLogin);
+                        else
+                        router.push("/");
                     }, 200);
-    
                  }
-                 
-
                 })
         } catch (error) {
             console.log(error);
@@ -67,8 +73,10 @@ const Login = ({isCheckOut}) => {
         try {
             await firebase.auth().signInWithEmailAndPassword("coolmani0201@gmail.com", "Passwprd123*").then(function () {                
                 setName("");
+                
                 if(historyLogin==null)
                 setHistoryLogin('/');
+
                 setTimeout(() => {
                     router.push("/page/account/checkout");
                 }, 200);
@@ -87,21 +95,27 @@ const Login = ({isCheckOut}) => {
                 setName(result.user.displayName);
                 setPhotoURL(result.user.photoURL)
                 setCustomerId(result.user.uid);
+              
                 if(historyLogin==null)
                 setHistoryLogin('/');
-
+                
                 setTimeout(() => {
+                    if(historyLogin != null && historyLogin != "null" && historyLogin != "" && historyLogin != undefined)
                     router.push(historyLogin);
+                    else
+                    router.push("/");
                 }, 200);
             
             });
         } catch (error) {
             setTimeout(() => {
-                toast.error("Oppss.. The password is invalid or the user does not have a password.");
+                toast.error("Opps.. The password is invalid or the user does not have a password.");
             }, 200);
         }
     };
     
+ 
+
     const facebookAuth = async () => {
         try {
                 firebase.auth().signInWithPopup(facebookProvider).then(function (result) {
@@ -144,7 +158,7 @@ const Login = ({isCheckOut}) => {
                                     <div className="form-group">
                                     
                                     <Link href="/page/account/forget-pwd">
-                                        <Label for="review">forget password</Label>
+                                    <h6><a href="#">forget password ?</a></h6>
                                     </Link>
                                     </div>
                                     

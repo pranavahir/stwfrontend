@@ -10,6 +10,7 @@ import PostLoader from '../PostLoader';
 import { CompareContext } from '../../../helpers/Compare/CompareContext';
 import search from '../../../public/assets/images/empty-search.jpg'
 import { CurrencyContext } from '../../../helpers/Currency/CurrencyContext';
+import AutoFitImage from 'react-image-autofit-frame';
 
 const GET_PRODUCTS = gql`
     query  products($type:String!,$indexFrom:Int! ,$limit:Int!,$color:String!,$brand:[String!]! ,$priceMax:Int!,$priceMin:Int!,$keyword:String!,$country:String!,$panel:String!,$promoflag:String!) {
@@ -90,6 +91,24 @@ const TopCollection = ({ type, title, subtitle, designClass, noSlider, cartClass
     const IsRight = curContext.state.IsRight;
     const country = curContext.state.country;
     const panel = curContext.state.panel;
+    const topCollections = curContext.state.topCollections; 
+
+    const linkStyle ={
+        fontSize:12,
+        cursor: 'pointer',
+        objectFit: "cover",
+        width: "100%",
+        height: "100%",
+        borderWidth:  3,  
+        borderLeftColor:  'red'
+    }
+    const lableStyle={
+        backgroundColor:"red",
+        fontSize:"15px",
+        color:"white",
+        marginRight: "43px",
+        marginBottom: "29px"
+    }
 
     // var { loading, data } =  useQuery(GET_PRODUCTS, {
     //     variables: {
@@ -105,23 +124,23 @@ const TopCollection = ({ type, title, subtitle, designClass, noSlider, cartClass
         padding: "10px",
     }
     
-    var { loading, data } = useQuery(GET_PRODUCTS, {
-        variables: {
-            type: "",
-            priceMax: 10,
-            priceMin: 1,
-            color: "red",
-            brand: "max",
-            indexFrom: 0,
-            limit: 8,
-            keyword:"",
-            country:country,
-            panel:panel,
-            promoflag:"highlight1"
-        }
-    });
+    // var { loading, data } = useQuery(GET_PRODUCTS, {
+    //     variables: {
+    //         type: "",
+    //         priceMax: 10,
+    //         priceMin: 1,
+    //         color: "red",
+    //         brand: "max",
+    //         indexFrom: 0,
+    //         limit: 8,
+    //         keyword:"",
+    //         country:country,
+    //         panel:panel,
+    //         promoflag:"highlight1"
+    //     }
+    // });
     useEffect(() => {
-        if (data === undefined) {
+        if (topCollections === undefined) {
             noSlider === false;
         } else {
             noSlider === true;
@@ -134,7 +153,7 @@ const TopCollection = ({ type, title, subtitle, designClass, noSlider, cartClass
     }, [delayProduct])
     return (
         <>
-            <section className={designClass}>
+            <div className={designClass}>
                 {noSlider ?
                     <Container>
                         <Row>
@@ -144,8 +163,8 @@ const TopCollection = ({ type, title, subtitle, designClass, noSlider, cartClass
                                         ""
                                         :
                                         <div className={innerClass}>
-                                            {subtitle ? <h4>{subtitle}</h4> : ''}
-                                            <h2 className={inner}>{title}</h2>
+                                            {subtitle ? <h6>{subtitle}</h6> : ''}
+                                            <h4 className={inner}>{title}</h4>
                                             {titleClass ?
                                                 <hr role="tournament6" />
                                                 :
@@ -154,21 +173,15 @@ const TopCollection = ({ type, title, subtitle, designClass, noSlider, cartClass
                                         </div>
                                 }
 
-                                {data && data.products.total.total>0 ?
+                                {topCollections && topCollections.length>0 ?
                                                                 
                                 <Slider {...productSlider} className="product-m no-arrow">
-                                    
                                         
-                                        {data && data.products.items.map((product, i) =>
-                                            <div key={i}>
-                                                <ProductItems product={product}
-                                                    title={title}
-                                                    addWishlist={() => contextWishlist.addToWish(product)}
-                                                    addCart={() => context.addToCart(product, quantity)}
-                                                    addCompare={() => comapreList.addToCompare(product)}
-                                                    cartClass={cartClass} backImage={backImage} />
-                                            </div>
-                                            )}
+                                        {topCollections && topCollections.slice(0, 10).map((collection, index) =>
+                                            <div style={linkStyle} className="front" key={index} >
+                                                <AutoFitImage frameWidth="200px" imgSize="contain" frameHeight="160px" imgSrc={collection.imguRL}/>
+                                                <center style={lableStyle}><a style={{color:"white"}} href="#" > {collection.keyWorld} </a></center> 
+                                            </div>)}
                                 </Slider>
 
                                 :
@@ -246,8 +259,8 @@ const TopCollection = ({ type, title, subtitle, designClass, noSlider, cartClass
                     :
                     <>
                         {title ? <div className="title1 title-gradient  section-t-space">
-                            <h4>{subtitle}</h4>
-                            <h2 className="title-inner1">{title}</h2>
+                            <h6>{subtitle}</h6>
+                            <h4 className="title-inner1">{title}</h4>
                             <hr role="tournament6" />
                         </div> : ''}
                         <Container>
@@ -288,7 +301,7 @@ const TopCollection = ({ type, title, subtitle, designClass, noSlider, cartClass
                     </>
                 }
 
-            </section>
+            </div>
         </>
     )
 }

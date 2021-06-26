@@ -20,7 +20,7 @@ const LeftSidebar = () => {
   return (
     <CommonLayout parent="Home" title="Product">
         <LeftSidebarPage pathId={asin} type={"url"} />
-      <ProductSection />
+      {/* <ProductSection /> */}
     </CommonLayout>
   );
 }

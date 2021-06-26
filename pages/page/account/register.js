@@ -5,10 +5,21 @@ import { Input, Container, Row, Form, Label ,Col} from 'reactstrap';
 import firebase from '../../../config/base'
 import { useRouter } from 'next/router';
 import { toast } from 'react-toastify';
+import { useMutation } from "@apollo/react-hooks";
+import gql from "graphql-tag";
+
+const CREATE_CUSTOMER = gql`
+  mutation CreateCustomerDetail($Customer: Customerinfo!) {
+    CreateCustomerDetail(Customer: $Customer) {
+        customerredid
+    }
+  }
+`;
 
 const Register = () => {
     const router = useRouter();
     const { register, handleSubmit, errors } = useForm(); // initialise the hook
+    const [CreateCustomer, { CustomerData }] = useMutation(CREATE_CUSTOMER);
     //Create User with Email and Password
     const [name, setName] = useState(
         localStorage.getItem('Name')
@@ -18,6 +29,27 @@ const Register = () => {
             try {
                 await firebase.auth().createUserWithEmailAndPassword(data.email, data.password).then(function (result) {                
                     setName(data.email);
+
+
+
+                    var customerData = {
+                        customerredid:result.user.uid,
+                        customername:data.first_name + " " + data.last_name,
+                        phonenumber:"",
+                        address1:"",
+                        address2:"",
+                        city:"",
+                        state:"",
+                        country:"",
+                        emailid:result.user.email,
+                        googleid:"",
+                        facebookid:"",
+                        createdAt:""
+                    }
+
+                    var CustomerData = CreateCustomer({
+                        variables: { Customer: { ...customerData } },
+                      });
                     router.push(`/`);
                     })
             } catch (error) {

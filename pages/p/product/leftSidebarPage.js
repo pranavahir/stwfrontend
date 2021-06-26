@@ -214,7 +214,7 @@ const LeftSidebarPage = ({ pathId, type }) => {
     return (
         <section className="">
             <div className="collection-wrapper">
-            {(!data || !data.product || data.product.length === 0 || loading) ?'':
+            {(!data || !data.product || data.product.length === 0|| data.product==null || loading) ?'':
             <Helmet>
         <title data-react-helmet="true">{data.product.title} - Shop The World</title>
         <meta data-react-helmet="true" name="viewport" content="width=device-width, initial-scale=1"/>
@@ -263,8 +263,9 @@ const LeftSidebarPage = ({ pathId, type }) => {
                                         </div>
                                     </Col>
                                 </Row>
-                                {(!data || !data.product || data.product.length === 0 || loading) ?
-                                    <div className="top-banner-wrapper" style={loaderStyle}> 
+                                {(!data || loading) ?
+                                    <div className="top-banner-wrapper" style={loaderStyle}>
+                                     {loading}
                                     <div className="row mx-0 margin-default">
                                             <div className="col-xl-12 col-lg-12 col-12">
                                             <div className="typography_section"> 
@@ -277,6 +278,20 @@ const LeftSidebarPage = ({ pathId, type }) => {
                                             </div>
                                             </div>
                                             </div>
+                                    :[(!data || !data.product || data.product == null ? 
+                                        <section className="p-0">
+                                            <Container>
+                                                <Row>
+                                                    <Col sm="12">
+                                                        <div className="error-section">
+                                                            <h1>404</h1>
+                                                            <h2>page not found</h2>
+                                                            <a href="/" className="btn btn-solid">back to home</a>
+                                                        </div>
+                                                    </Col>
+                                                </Row>
+                                            </Container>
+                                        </section>
                                     :
                                     <Row>
                                         <Col lg="6" className="product-thumbnail">
@@ -389,10 +404,13 @@ const LeftSidebarPage = ({ pathId, type }) => {
                                             <DetailsWithPrice symbol={symbol} item={data.product} changeColorVar={changeColorVar} navOne={state.nav1}  />
                                         </Col>
                                     </Row>
+                                    )]
                                 }
 
                             </Container>
-                            <ProductTab selectedItem={data} />
+
+                            {(!data || !data.product || data.product.length === 0 || data.product==null) ? "" :  <ProductTab selectedItem={data} /> }
+                          
                         </Col>
                     </Row>
                 </Container>
