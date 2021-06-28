@@ -439,6 +439,160 @@ var ListConfig=[
   emailid: "care@shoptheworldonline.com",
   facebookacct: null,
   googleacct: null,
+  topCollections:[
+    {
+      imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
+      categoryUrl:"/c/Phone",
+      category:"Phone",
+      keyWorld:"More phone >>",
+      
+
+    },
+    {
+      imguRL:"https://m.media-amazon.com/images/I/413fkA2hhSS.jpg",
+      categoryUrl:"/c/Laptop",
+      category:"Laptop",
+      keyWorld:"More Laptops >>"
+    },
+    {
+      imguRL:"https://m.media-amazon.com/images/I/51XeMvBLlGL.jpg",
+      categoryUrl:"/c/Tablet",
+      category:"Tablet",
+      keyWorld:"More Tablet >>"
+    },
+    {
+      imguRL:"https://m.media-amazon.com/images/I/31rxH44lpoL.jpg",
+      categoryUrl:"/c/HeadPhone",
+      category:"HeadPhone",
+      keyWorld:"More HeadPhone >>"
+    },
+    {
+      imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
+      categoryUrl:"/c/Phone",
+      category:"Phone",
+      keyWorld:"More phone >>",
+      
+
+    },
+    {
+      imguRL:"https://m.media-amazon.com/images/I/413fkA2hhSS.jpg",
+      categoryUrl:"/c/Laptop",
+      category:"Laptop",
+      keyWorld:"More Laptops >>"
+    },
+    {
+      imguRL:"https://m.media-amazon.com/images/I/51XeMvBLlGL.jpg",
+      categoryUrl:"/c/Tablet",
+      category:"Tablet",
+      keyWorld:"More Tablet >>"
+    },
+    {
+      imguRL:"https://m.media-amazon.com/images/I/31rxH44lpoL.jpg",
+      categoryUrl:"/c/HeadPhone",
+      category:"HeadPhone",
+      keyWorld:"More HeadPhone >>"
+    },
+  ],
+  newProducts:[
+    {
+      imguRL:"https://m.media-amazon.com/images/I/51fl8l0G78L.jpg",
+      categoryUrl:"",
+      category:"",
+      keyWorld:""
+    },
+    {
+      imguRL:"https://m.media-amazon.com/images/I/51wZU-kW22L.jpg",
+      categoryUrl:"",
+      category:"",
+      keyWorld:""
+    },
+    {
+      imguRL:"https://m.media-amazon.com/images/I/41ghh3XjOLL.jpg",
+      categoryUrl:"",
+      category:"",
+      keyWorld:""
+    },
+    {
+      imguRL:"https://m.media-amazon.com/images/I/31Ide2xeMgL.jpg",
+      categoryUrl:"",
+      category:"",
+      keyWorld:""
+    },
+    {
+      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71hEefMZtcL._SL1500_.jpg",
+      categoryUrl:"",
+      category:"",
+      keyWorld:""
+    }  
+
+    // https://m.media-amazon.com/images/I/413fkA2hhSS.jpg
+  ],
+  featureProducts:[
+    {
+      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71ncBz8OFHS._SL1500_.jpg",
+      categoryUrl:"",
+      category:"",
+      keyWorld:""
+    },
+    {
+      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71p7xwt7bgL._SL1500_.jpg",
+      categoryUrl:"",
+      category:"",
+      keyWorld:""
+    },
+    {
+      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71JDCbasgaL._SL1500_.jpg",
+      categoryUrl:"",
+      category:"",
+      keyWorld:""
+    },
+    {
+      imguRL:"https://images-na.ssl-images-amazon.com/images/I/81H1Grsm4XL._SL1500_.jpg",
+      categoryUrl:"",
+      category:"",
+      keyWorld:""
+    },
+    {
+      imguRL:"https://images-na.ssl-images-amazon.com/images/I/915LKjLE%2BvL._SL1500_.jpg",
+      categoryUrl:"",
+      category:"",
+      keyWorld:""
+    },
+    // https://m.media-amazon.com/images/I/413fkA2hhSS.jpg
+  ],
+  specialproducts:[
+    {
+      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71-QiEqDpZL._SL1500_.jpg",
+      categoryUrl:"",
+      category:"",
+      keyWorld:""
+    },
+    {
+      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71gfnsDd3-L._SL1500_.jpg",
+      categoryUrl:"",
+      category:"",
+      keyWorld:""
+    },
+    {
+      imguRL:"https://images-na.ssl-images-amazon.com/images/I/810VOlH6cGL._SL1500_.jpg",
+      categoryUrl:"",
+      category:"",
+      keyWorld:""
+    },
+    {
+      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71sjjcwJ6cL._SL1500_.jpg",
+      categoryUrl:"",
+      category:"",
+      keyWorld:""
+    },
+    {
+      imguRL:"https://images-na.ssl-images-amazon.com/images/I/61KdzsxowuL._SL1500_.jpg",
+      categoryUrl:"",
+      category:"",
+      keyWorld:""
+    } 
+    // https://m.media-amazon.com/images/I/413fkA2hhSS.jpg
+  ],
   gstortax: "GST",
   instagramacct: null,
   paymentforbusiness: "razorpay",
