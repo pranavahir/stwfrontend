@@ -67,6 +67,17 @@ body {
   }
 }
 
+.load-container {
+  position:fixed;
+  width:100%;
+  padding-top:20%;
+  left:0;right:0;top:0;bottom:0;
+  background-color:rgb(255 255 255 / 70%);
+  z-index:9999;
+  display:block;
+}
+
+
 h1 {
   font-size: 60px;
   color: $dark-font;
@@ -14891,22 +14902,29 @@ table {
 }
 
 
+.warStyle {
+  color: red;
+  font-style:12px;
+}
+
+
+
 .StripeElement{
-    border: 1px solid red;
+    border: 1px solid #f9a61b;
     padding: 10px;
     color:black;  
     .InputElement{
       ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-        color: red;
+        color: #f9a61b;
         opacity: 1; /* Firefox */
       }
       
       :-ms-input-placeholder { /* Internet Explorer 10-11 */
-        color: red;
+        color: #f9a61b;
       }
       
       ::-ms-input-placeholder { /* Microsoft Edge */
-        color: red;
+        color: #f9a61b;
       }
     }
 }

@@ -87,6 +87,7 @@ const OrderPage = () => {
                                         <tr className="table-head">
                                             <th scope="col">image</th>
                                             <th scope="col">product name</th>
+                                            <th scope="col">Qty</th>
                                             <th scope="col">price</th>
                                             <th scope="col">Delivery Address</th>
                                             <th scope="col">Status</th>
@@ -99,15 +100,19 @@ const OrderPage = () => {
                                                 <td>
                                                     {/* <a href="#"><img src={item.images[0].src} alt="" /></a> */}
                                                 </td>
-                                                <td><a  href="#">{item.producttitle}</a>
+                                                <td align="left"><a  href="#">{item.producttitle}</a>
                                                     <Row className="mobile-cart-content">
                                                         {/* <div className="col-xs-3">
                                                             <p>out of stock</p>
                                                         </div> */}
+                                                      
+                                                        <div className="col-xs-3">
+                                                            <h2 className="td-color">{item.quantity}</h2>
+                                                        </div>
                                                         <div className="col-xs-3">
                                                             <h2 className="td-color">{leftSymbol}{item.totalprice}{rightSymbol}</h2>
                                                         </div>
-                                                        <div className="col-xs-6">
+                                                        <div className="col-xs-3">
                                                             {/* <h2 className="td-color"><a href="#" className="icon mr-1"><i className="fa fa-close"></i>
                                                             </a><a href="#" className="cart"><i className="fa fa-shopping-cart"></i></a></h2> */}
                                                             <h5><p>{item.orderstatus}</p></h5>
@@ -118,6 +123,10 @@ const OrderPage = () => {
                                                              <p>{item.address1}&nbsp; {item.address2}&nbsp;{item.city}&nbsp; {item.state}&nbsp; {item.country}&nbsp; {item.pin}</p>
                                                         </div>
                                                     </Row>
+                                                </td>
+
+                                                        <td>
+                                                        <h2>{item.quantity}</h2>
                                                 </td>
                                                 <td>
                                                     <h2>{leftSymbol}{item.totalprice}{rightSymbol}</h2>

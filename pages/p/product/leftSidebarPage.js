@@ -265,7 +265,7 @@ const LeftSidebarPage = ({ pathId, type }) => {
                                 </Row>
                                 {(!data || loading) ?
                                     <div className="top-banner-wrapper" style={loaderStyle}>
-                                     {loading}
+                                     
                                     <div className="row mx-0 margin-default">
                                             <div className="col-xl-12 col-lg-12 col-12">
                                             <div className="typography_section"> 

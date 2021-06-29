@@ -48,7 +48,7 @@ const Login = ({isCheckOut}) => {
                 {
                     setHistoryLogin('/');
                 }
-                else if(historyLogin == "/page/account/forget-pwd")
+                else if(historyLogin == "/page/account/forgot-pwd")
                 {
                     router.push("/");
                 }
@@ -157,8 +157,8 @@ const Login = ({isCheckOut}) => {
                                     </div>
                                     <div className="form-group">
                                     
-                                    <Link href="/page/account/forget-pwd">
-                                    <h6><a href="#">forget password ?</a></h6>
+                                    <Link href="/page/account/forgot-pwd">
+                                    <h6><a href="#">forgot password ?</a></h6>
                                     </Link>
                                     </div>
                                     

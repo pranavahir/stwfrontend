@@ -148,6 +148,22 @@ const withDiscount = (variantData) =>{
   return finalPrice;
 }
 
+const withDiscountWithQty = (variantData,qty) =>{
+
+try{
+  var totalPrice = withTax(variantData);
+  var discount =  discountCalculation(variantData);
+  var finalPrice =parseFloat(((totalPrice * (1-discount/100))*qty).toFixed(2));
+  }
+  catch(ex)
+  {
+    console.log(ex);
+  }
+  
+
+  return finalPrice;
+}
+
 const withTax = (variantData) =>{
 
  var sellprice = priceCollection(variantData);
@@ -212,7 +228,8 @@ const discountCalculation = (variantData) =>{
         gstCollection:gstCollection,
         discountCalculation:discountCalculation,
         priceCollection:priceCollection,
-        withDiscount:withDiscount
+        withDiscount:withDiscount,
+        withDiscountWithQty:withDiscountWithQty
       }}
     >
       {props.children}

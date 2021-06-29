@@ -11,10 +11,11 @@ import Card from "../../../../components/stripeCard/Card";
 import Axios from "axios";
 import { useMutation } from "@apollo/react-hooks";
 import gql from "graphql-tag";
+
 import { CurrencyContext } from "../../../../helpers/Currency/CurrencyContext";
 import GooglePayButton from "@google-pay/button-react";
 import { useQuery } from '@apollo/react-hooks';
- 
+
 const CREATE_OREDER = gql`
   mutation CreateOrderDetail($order: OrderDetail!) {
     CreateOrderDetail(order: $order) {
@@ -29,6 +30,7 @@ const UPDATE_CUSTOMER = gql`
     }
   }
 `;
+
 const GET_CUSTOMER_BY_UID = gql`
 query CustomerByUID ($uid:String!) {
     CustomerByUID (uid:$uid) {
@@ -55,14 +57,19 @@ const CheckoutPage = ({ isPublic = false }) => {
   const symbol = curContext.state.symbol;
   const CurrencyConvertionRate = curContext.state.CurrencyConvertionRate;
   const withDiscount = cartContext.withDiscount;
+  const withDiscountWithQty = cartContext.withDiscountWithQty;
   const priceCollection = cartContext.priceCollection;
   const discountCalculation  = cartContext.discountCalculation ;
+
   
  
   
   const GST = curContext.state.gstortax;
   const [obj, setObj] = useState({});
+  const [paymentErr, setPaymentErr] = useState("");
   const [IsValidGst, setIsValidGst] = useState(false);
+  const [PageLoad, setPageLoad] = useState(false);
+  
   const [customerId, setCustomerId] = useState(
     localStorage.getItem('CustomerId')
 );
@@ -72,6 +79,16 @@ var { loading, data } = useQuery(GET_CUSTOMER_BY_UID, {
       uid: customerId,
   }
 });
+
+const errStyle={
+    fontSize: "12px",
+    color: "red"
+}
+
+
+
+
+
 
 const IsRight = curContext.state.IsRight;
 const country = curContext.state.country;
@@ -366,8 +383,8 @@ const changeGstcheck = (e) => {
             orderdetailid: 2,
             productsku: item.sku,
             producttitle: titleTrim(item.title),
-            quantity: item.qty,
-            totalprice: withDiscount(item.variants),
+            quantity: (item.qty * 1),
+            totalprice: withDiscountWithQty(item.variants,item.qty),
             customerid: customerId,
             customername: customerData.first_name,
             paymentmethod: "Card - Razorpay - " + PaymentDetail.id,
@@ -476,8 +493,8 @@ const changeGstcheck = (e) => {
               orderdetailid: 2,
               productsku: item.sku,
               producttitle: titleTrim(item.title),
-              quantity: item.qty,
-              totalprice: withDiscount(item.variants),
+              quantity: (item.qty * 1),
+              totalprice: withDiscountWithQty(item.variants,item.qty),
               customerid: customerId,
               customername: customerData.first_name,
               paymentmethod: "Card - Stripe - "+PaymentDetail.id,
@@ -650,69 +667,75 @@ const changeGstcheck = (e) => {
   };
 
   const stripeSubmit = async (e, customerData) => {
-    // Orderconformation("Stripe","paymentIntent",customerData);
+    Orderconformation("Stripe","paymentIntent",customerData);
     // We don't want to let default form submission happen here,
     // which would refresh the page.
-    e.preventDefault();
+ 
+    // e.preventDefault();
 
-    if (!stripe || !elements) {
-      // Stripe.js has not yet loaded.
-      // Make sure to disable form submission until Stripe.js has loaded.
-      console.log("Stripe.js has not yet loaded.");
-      return;
-    }
+    // if (!stripe || !elements) {
+    //   // Stripe.js has not yet loaded.
+    //   // Make sure to disable form submission until Stripe.js has loaded.
+    //   console.log("Stripe.js has not yet loaded.");
+    //   return;
+    // }
 
-    var amount = fullPrice * 100;
-    const { error: backendError, clientSecret } = await fetch(
-      "https://stripeserver.digitechniq.in/create-payment-intent",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          paymentMethodType: "card",
-          amount: amount,
-          currency: currency,
-          customer: customerData.email,
-        }),
-      }
-    ).then((r) => r.json());
+    // var amount = fullPrice * 100;
+    // const { error: backendError, clientSecret } = await fetch(
+    //   "https://stripeserver.digitechniq.in/create-payment-intent",
+    //   {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //     body: JSON.stringify({
+    //       paymentMethodType: "card",
+    //       amount: amount,
+    //       currency: currency,
+    //       customer: customerData.email,
+    //     }),
+    //   }
+    // ).then((r) => r.json());
 
-    if (backendError) {
-      console.log(backendError.message);
-      return;
-    }
+    // if (backendError) {
+    //   console.log(backendError.message);
+    //   setPaymentErr(backendError.message);      
+    //   setPageLoad(false);
+    //   return;
+    // }
 
-    // console.log('Client secret returned');
-    var customerInfo =
-      customerData.first_name +
-      " - " +
-      customerData.last_name +
-      " - " +
-      customerData.phone +
-      " - " +
-      customerData.email;
-    const {
-      error: stripeError,
-      paymentIntent,
-    } = await stripe.confirmCardPayment(clientSecret, {
-      payment_method: {
-        card: elements.getElement(CardElement),
-        billing_details: {
-          name: customerInfo,
-        },
-      },
-    });
+    // // console.log('Client secret returned');
+    // var customerInfo =
+    //   customerData.first_name +
+    //   " - " +
+    //   customerData.last_name +
+    //   " - " +
+    //   customerData.phone +
+    //   " - " +
+    //   customerData.email;
+    // const {
+    //   error: stripeError,
+    //   paymentIntent,
+    // } = await stripe.confirmCardPayment(clientSecret, {
+    //   payment_method: {
+    //     card: elements.getElement(CardElement),
+    //     billing_details: {
+    //       name: customerInfo,
+    //     },
+    //   },
+    // });
 
-    if (stripeError) {
-      // Show error to your customer (e.g., insufficient funds)
-      console.log(stripeError.message);
-      return;
-    } else {
-      Orderconformation("Stripe",paymentIntent,customerData);
-    }
-    console.log(`Payment ${paymentIntent.status}: ${paymentIntent.id}`);
+    // if (stripeError) {
+    //   // Show error to your customer (e.g., insufficient funds)
+    //   console.log(stripeError.message);
+    //   setPaymentErr(stripeError.message);   
+    //   setPageLoad(false);
+    //   return;
+    // } else {
+    //   setPageLoad(false);
+    //   Orderconformation("Stripe",paymentIntent,customerData);
+    // }
+    // console.log(`Payment ${paymentIntent.status}: ${paymentIntent.id}`);
   };
 
   const razorPayPaymentHandler = async (filledData) => {
@@ -725,6 +748,7 @@ const changeGstcheck = (e) => {
 
     if (!res) {
       alert("Razorpay SDK failed to load. Are you online?");
+      setPageLoad(false);
       return;
     }
 
@@ -752,15 +776,19 @@ const changeGstcheck = (e) => {
           });
           const successObj = JSON.parse(captureResponse.data);
           const captured = successObj.captured;
-          console.log("App -> razorPayPaymentHandler -> captured", successObj);
+          // console.log("App -> razorPayPaymentHandler -> captured", successObj);
           if (captured) {
-            console.log("success");
-            // this.setState({ name: "", decription: "", amount: "" });
-            // id
+            setPageLoad(false);
             Orderconformation("Razorpay",successObj,filledData);
+          }
+          else
+          {
+            setPageLoad(false);
           }
         } catch (err) {
           console.log(err);
+          setPaymentErr(err)
+          setPageLoad(false);
         }
       },
       theme: {
@@ -769,6 +797,7 @@ const changeGstcheck = (e) => {
     };
     const rzp1 = new window.Razorpay(options);
     rzp1.open();
+    setPageLoad(false);
   };
 
   const onSuccess = (payment) => {
@@ -787,6 +816,9 @@ const changeGstcheck = (e) => {
 
   const onSubmit = (data, e) => {
     if (data !== "") {
+
+      setPageLoad(true);
+
       if (payment == "stripe") {
         stripeSubmit(e, data);
       } else if (payment == "Razorpay") {
@@ -839,6 +871,25 @@ const rightAligh = {
 
   return (
     <section className="section-b-space">
+
+    {PageLoad ? <div class="load-container load1">
+    <div className="top-banner-wrapper" >
+                                     
+                                     <div className="row mx-0 margin-default">
+                                             <div className="col-xl-12 col-lg-12 col-12">
+                                             <div className="typography_section"> 
+                                                 <div className="typography-box"> 
+                                                     <div  className="custom-load typo-content loader-typo" >
+                                                          <div className="pre-loader"></div>
+                                                     </div>
+                                                 </div>
+                                             </div>
+                                             </div>
+                                             </div>
+                                             </div>      
+    </div> : "" }
+
+    
       <Container>
         <div className="checkout-page">
           <div className="checkout-form">
@@ -1014,15 +1065,19 @@ const rightAligh = {
                         {errors.pincode && "Required integer"}
                       </span>
                     </div>
+                    { customerId == "" ?                     
                     <div className="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
                       <input
                         type="checkbox"
                         name="create_account"
                         id="account-option"
                       />
+                    
                       &ensp;{" "}
                       <label htmlFor="account-option">Create An Account?</label>
-                    </div>
+                    </div> : "" }
+                    
+
                   </div>
                   :<div className="row check-out">
                     <div className="form-group col-md-6 col-sm-6 col-xs-12">
@@ -1185,15 +1240,17 @@ const rightAligh = {
                         {errors.pincode && "Required integer"}
                       </span>
                     </div>
+                    { customerId == "" ?                     
                     <div className="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
                       <input
                         type="checkbox"
                         name="create_account"
                         id="account-option"
                       />
+                      {customerId}
                       &ensp;{" "}
                       <label htmlFor="account-option">Create An Account?</label>
-                    </div>
+                    </div> : "" }
                   </div>}
                 </Col>
                 <Col lg="6" sm="12" xs="12">
@@ -1317,7 +1374,10 @@ const rightAligh = {
                         {fullPrice !== 0 ? (
                           <div className="text-right">
                             {payment === "stripe" ? (
+                              <div>
                               <Card />
+                              {paymentErr =="" ? "" :<div> <label style= {errStyle} ><i className="fa fa-window-close " aria-hidden="true"></i><b> Translation failed </b>:  {paymentErr} </label> <label className = "warStyle" ><i className="fa fa-exclamation-triangle" aria-hidden="true"></i> To use this card, enable it for international transactions or choose another card. </label></div> } 
+                              </div>
                             ) : payment === "paypal" ? (
                               <PayPalButton
                                 paypalOptions={paypalOptions}

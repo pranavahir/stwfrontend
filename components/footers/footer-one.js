@@ -121,7 +121,7 @@ const allSmall = {
                                     <ul>
                                         <li><a href="#">shipping & return</a></li>
                                         <li><a href="#">secure shopping</a></li>
-                                        <li><a href="#">gallary</a></li>
+                                        {/* <li><a href="#">gallary</a></li> */}
                                         <li><a href="#">affiliates</a></li>
                                         <li>
                                         <Link href={`/page/account/contact`} >

@@ -94,7 +94,7 @@ const CartPage = () => {
                                             <tbody key={index}>
                                                 <tr>
                                                     <td>
-                                                        <Link href={`/p/${item.seqid}` + '-' + `${clickProductDetail(item.title)}`}>
+                                                        <Link href={`/p/${item.asin}` + '-' + `${clickProductDetail(item.title)}`}>
                                                             <a>
                                                                 <Media src={item.images ?
                                                                     item.images[0].mainimageurl
@@ -104,7 +104,7 @@ const CartPage = () => {
 
                                                     </td>
                                                     <td>
-                                                        <Link href={`/p/${item.seqid}` + '-' + `${clickProductDetail(item.title)}`}>
+                                                        <Link href={`/p/${item.asin}` + '-' + `${clickProductDetail(item.title)}`}>
                                                             <a>
                                                                 {item.title}
                                                             </a>
