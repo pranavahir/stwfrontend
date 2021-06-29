@@ -21,7 +21,7 @@ const client = new ApolloClient({
     // uri: "http://localhost:4000/graphql"  //local
     //  uri: "https://cryptic-mountain-48315.herokuapp.com/api/graphql"  //Test env
     // uri:'https://docker.digitechniq.in/api/graphql', //production env 001
-    uri:'https://support.shoptheworld.in/api/graphql', //production env 002
+    uri:'https://stwecommerceapi.digitechniq.in/api/graphql', //production env 002
     
 })
 
