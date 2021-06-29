@@ -32,7 +32,7 @@ const CartProvider = (props) => {
 
   // Add Product To Cart
   const addToCart = (item ,quantity) => {
-    toast.success("Product Added Successfully !");
+    // toast.success("Product Added Successfully !");
     const index = cartItems.findIndex(itm => itm.seqid === item.seqid)
     if (index !== -1) {
        const product = cartItems[index];
@@ -183,13 +183,12 @@ const discountCalculation = (variantData) =>{
       const index = cartItems.findIndex(itm => itm.id === item.id)
       if(index !== -1){
         const product = cartItems[index];
-        cartItems = { ...product, ...item, qty: quantity, total: (withDiscount(item.variants)) * quantity  };  
-        setCartItems([...cartItems])
-        toast.info("Product Quantity Updated !");
+        setCartItems([{ ...product, ...item, qty: quantity, total: (withDiscount(item.variants)) * quantity  }])
+        // toast.info("Product Quantity Updated !");
       }else{
         const product = {...item, qty: quantity, total: (withDiscount(item.variants)) * quantity }
         setCartItems([...cartItems, product])
-        toast.success("Product Added Updated !");
+        
       }
     }else{
       toast.error("Enter Valid Quantity !");

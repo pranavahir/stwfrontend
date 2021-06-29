@@ -1024,7 +1024,177 @@ const rightAligh = {
                       <label htmlFor="account-option">Create An Account?</label>
                     </div>
                   </div>
-                  :""}
+                  :<div className="row check-out">
+                    <div className="form-group col-md-6 col-sm-6 col-xs-12">
+                      <div className="field-label">First Name</div>
+                      <input
+                        type="text"
+                        className={`${errors.first_name ? "error_border" : ""}`}
+                        name="first_name"
+                        
+                        ref={register({ required: true })}
+                      />
+                      <span className="error-message">
+                        {errors.first_name && "First name is required"}
+                      </span>
+                    </div>
+                    <div className="form-group col-md-6 col-sm-6 col-xs-12">
+                      <div className="field-label">Last Name</div>
+                      <input
+                        type="text"
+                        className={`${errors.last_name ? "error_border" : ""}`}
+                        name="last_name"
+                        ref={register({ required: true })}
+                      />
+                      <span className="error-message">
+                        {errors.last_name && "Last name is required"}
+                      </span>
+                    </div>
+                    <div className="form-group col-md-6 col-sm-6 col-xs-12">
+                      <div className="field-label">Phone</div>
+                      <input
+                        type="text"
+                        name="phone"
+                        className={`${errors.phone ? "error_border" : ""}`}
+                        ref={register({ pattern: /\d+/ })}
+                      />
+                      <span className="error-message">
+                        {errors.phone && "Please enter number for phone."}
+                      </span>
+                    </div>
+                    <div className="form-group col-md-6 col-sm-6 col-xs-12">
+                      <div className="field-label">Email Address</div>
+                      <input
+                        className="form-control"
+                        className={`${errors.email ? "error_border" : ""}`}
+                        type="text"
+                        name="email"
+                        ref={register({
+                          required: true,
+                          pattern: /^\S+@\S+$/i,
+                        })}
+                      />
+                      <span className="error-message">
+                        {errors.email && "Please enter proper email address ."}
+                      </span>
+                    </div>
+                    <div className="form-group col-md-12 col-sm-12 col-xs-12">
+                    <div className="shopping-option">
+                                <input
+                                  type="checkbox"
+                                  name="free_shipping"
+                                  id="free-shipping"
+                                  onChange={changeGstcheck}
+                                />&nbsp;
+                                <label htmlFor="free-shipping" className="field-label">
+                                {GST} Invoice
+                                </label>
+                              </div>
+                       
+                    </div>
+                   {GstView==true?
+ 
+                   <div className="form-group col-md-6 col-sm-6 col-xs-12">
+                      <div className="field-label">{GST} Number</div>
+                      <input
+                        className="form-control"
+                        onChange={changeGst}
+                        type="text"
+                        name="GST"
+                        className={`${errors.gstnum ? "error_border" : ""}`}
+                        ref={register({ pattern: /^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$/ })}
+                      />
+                      <span className="error-message">
+                        {errors.GST && "Please enter number for " + {Gst} +"Number."}
+                      </span>
+                    </div>:""} 
+                    {GstView==true?
+                    <div className="form-group col-md-6 col-sm-6 col-xs-12">
+                      <div className="field-label">Company name as in {GST}</div>
+                      <input
+                        className="form-control"
+                        type="text"
+                        name="GSTName"
+                      /></div>  
+                      :""} 
+                 
+                   
+                    <div className="form-group col-md-12 col-sm-12 col-xs-12">
+                      <div className="field-label">Country</div>
+                      <select name="country" ref={register({ required: true })}>
+                        <option>{country}</option>
+                        {/* <option>South Africa</option>
+                        <option>United State</option>
+                        <option>Australia</option> */}
+                      </select>
+                    </div>
+
+                    <div className="form-group col-md-12 col-sm-12 col-xs-12">
+                      <div className="field-label">Address</div>
+                      <input
+                        className="form-control"
+                        className={`${errors.address ? "error_border" : ""}`}
+                        type="text"
+                        name="address"
+                        ref={register({ required: true, min: 20, max: 120 })}
+                        placeholder="Street address"
+                      />
+                      <span className="error-message">
+                        {errors.address && "Please right your address ."}
+                      </span>
+                    </div>
+                    <div className="form-group col-md-12 col-sm-12 col-xs-12">
+                      <div className="field-label">Town/City</div>
+                      <input
+                        className="form-control"
+                        type="text"
+                        className={`${errors.city ? "error_border" : ""}`}
+                        name="city"
+                        ref={register({ required: true })}
+                        onChange={setStateFromInput}
+                      />
+                      <span className="error-message">
+                        {errors.city && "select one city"}
+                      </span>
+                    </div>
+                    <div className="form-group col-md-12 col-sm-6 col-xs-12">
+                      <div className="field-label">State / County</div>
+                      <input
+                        className="form-control"
+                        type="text"
+                        className={`${errors.state ? "error_border" : ""}`}
+                        name="state"
+                        ref={register({ required: true })}
+                        onChange={setStateFromInput}
+                      />
+                      <span className="error-message">
+                        {errors.state && "select one state"}
+                      </span>
+                    </div>
+                    <div className="form-group col-md-12 col-sm-6 col-xs-12">
+                      <div className="field-label">Postal Code</div>
+                      <input
+                        className="form-control"
+                        type="text"
+                        name="pincode"
+                        
+                        className={`${errors.pincode ? "error_border" : ""}`}
+                        ref={register({ pattern: /\d+/ })}
+                      />
+                      <span className="error-message">
+                        {errors.pincode && "Required integer"}
+                      </span>
+                    </div>
+                    <div className="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <input
+                        type="checkbox"
+                        name="create_account"
+                        id="account-option"
+                      />
+                      &ensp;{" "}
+                      <label htmlFor="account-option">Create An Account?</label>
+                    </div>
+                  </div>}
                 </Col>
                 <Col lg="6" sm="12" xs="12">
                   {cartItems && cartItems.length > 0 > 0 ? (
@@ -1048,6 +1218,7 @@ const rightAligh = {
                           ))}
                         </ul>
                         <ul className="sub-total">
+                        
                           <li>
                           Delivery charges
                             {shippingCharges!=undefined && shippingCharges!="" && shippingCharges!=0 && shippingCharges > 0 ?
