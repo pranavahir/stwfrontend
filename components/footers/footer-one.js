@@ -5,6 +5,7 @@ import LogoImage from "../headers/common/logo"
 import { Container, Row, Col, Form, FormGroup, Input, Button } from 'reactstrap';
 import CopyRight from './common/copyright';
 import { CurrencyContext } from '../../helpers/Currency/CurrencyContext';
+import LogisticLogoBlock from '../../components/common/logistic-logo-block';
 
 const FooterOne = ({ fluid, logoName ,layoutClass ,footerClass }) => {
 
@@ -63,6 +64,7 @@ const allSmall = {
                     </section>
                 </Container>
             </div>
+            
             <section className="section-b-space light-layout">
                 <Container  fluid={fluid}>
                     <Row className="footer-theme partition-f">
@@ -119,13 +121,13 @@ const allSmall = {
                                 </div>
                                 <div className="footer-contant">
                                     <ul>
-                                        <li><a href="#">shipping & return</a></li>
-                                        <li><a href="#">secure shopping</a></li>
+                                        <li><a href="/page/returns-refund">Returns & Refunds</a></li>
+                                        <li><a href="#">Wholesale</a></li>
                                         {/* <li><a href="#">gallary</a></li> */}
-                                        <li><a href="#">affiliates</a></li>
+                                        {/* <li><a href="#">affiliates</a></li> */}
                                         <li>
                                         <Link href={`/page/account/contact`} >
-                                        <a>contacts</a>
+                                        <a>contact us </a>
                                         </Link>
                                         </li>
                                     </ul>
@@ -155,6 +157,10 @@ const allSmall = {
                 </Container>
             </section>
 
+            <div className="">
+                              <LogisticLogoBlock />
+                        </div>
+            
             <CopyRight layout={layoutClass} fluid={fluid}  />
         </footer>
     )

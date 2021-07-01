@@ -85,7 +85,17 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
 
     const changeQty = (e) => {
         if(e.target.value != "")
-            setproductQty(parseInt(e.target.value));
+        {
+            if(e.target.value <=product.variants[0].quantity )
+            {
+                setproductQty(parseInt(e.target.value));
+            }
+            else
+            {
+                e.preventDefault();
+                e.target.value = product.variants[0].quantity;
+            }
+        }
         else
         setproductQty("");
     }
@@ -123,11 +133,11 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
                 <h3> {product.title} </h3>
                 <h4 style={objbrand}> {product.brandname} </h4>
 
-                {/* <h4> {product.categoryvalue} </h4> */}
+                {/* <h4> {product.categoryvalue} </h4> parseFloat(Math.floor(withDiscount(product.variants)).toFixed(2)).toLocaleString('en') */}
                 {product.variants.length?<h6 style={smallobj} >Shipping in {product.variants[0].daystoship} days.</h6>:""} 
                 {discountCalculation(product.variants)?<h4><del>{leftSymbol}{((priceCollection(product.variants) * 1)+gstCollection(product.variants)).toFixed(2)}{rightSymbol}</del>
                     <span>{discountCalculation(product.variants)}% off</span></h4>:""}
-                <h3>{leftSymbol}{Math.floor(withDiscount(product.variants)).toFixed(2)}{rightSymbol} </h3>
+                <h3>{leftSymbol}{ Math.floor(withDiscount(product.variants)).toFixed(2)}{rightSymbol} </h3>
                 {product.variants.map(vari => {
                     var findItem = uniqueColor.find(x => x.color === vari.color);
                     if (!findItem)
@@ -160,7 +170,10 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
                         </>
                 }
 
-                <div className="product-description border-product">
+               
+                {(product.variants.length > 0 && product.variants[0].quantity > 0) && (withDiscount(product.variants) > 0) ?  
+                <div>
+                    <div className="product-description border-product">
                     {/* {product.variants ?
                         <div>
                             <h6 className="product-title size-text">select size
@@ -200,16 +213,15 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
                             </span>
                         </div>
                     </div> </div>
-                    : ""}
-                  
-                </div>
-                {product.variants.length > 0 && product.variants[0].quantity > 0 ?  
-                <div className="product-buttons" >
+                            : ""}
+                            </div>
+                   <div className="product-buttons" >
                     <a href={null} className="btn btn-solid" onClick={() => context.addToCart(product, productQty)}>add to cart</a>
                      <a className="btn btn-solid" onClick={() => buyNow(product, productQty)}  >buy now</a> 
                      
-                </div> :
-                <h5 style={smallredobj}> unavailable...! </h5>};
+                </div> </div> :
+                <h5 style={smallredobj}> unavailable...! </h5> }
+                
                 <h6><p style={smallh6obj} >Within 7 days of delivery, you may return new, unopened merchandise in its original condition. Exceptions and restrictions apply. See our <a href="#"><Link href={`/page/faq`} >Return Policy</Link></a></p></h6>
                 <div className="border-product">
                     <h6 className="product-title">product details</h6>

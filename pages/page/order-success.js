@@ -2,13 +2,9 @@ import React, { useContext,useState } from 'react';
 import CommonLayout from '../../components/shop/common-layout';
 import { Container, Row, Col, Media } from 'reactstrap';
 import one from '../../public/assets/images/pro3/1.jpg';
-import CartContext from '../../helpers/cart';
 import { CurrencyContext } from '../../helpers/Currency/CurrencyContext';
 
 const OrderSuccess = props => {
-    const cartContext = useContext(CartContext);
-    const cartItems = cartContext.state;
-    const cartTotal = cartContext.cartTotal;
     const curContext = useContext(CurrencyContext);
     const symbol = curContext.state.symbol;
     const IsRight = curContext.state.IsRight;
@@ -28,6 +24,7 @@ const OrderSuccess = props => {
     );
     const OrderMaster = JSON.parse(orderObj);
 
+    const Total = OrderMaster.items.reduce((a, b) => +a + +b.total, 0)
     
     const deliveryDate = (variantData) =>{
         var someFormattedDate =null;
@@ -75,7 +72,7 @@ const OrderSuccess = props => {
                                 <h2>thank you</h2>
                                 <p>Payment is successfully processsed and your order is on the way</p>
                                 <p>Order ID:267676GHERT105467</p>
-                                <p>Expected date of shipping: {deliveryDate(cartItems[0].variants)} </p>
+                                <p>Expected date of shipping: {deliveryDate(OrderMaster.items[0].variants)} </p>
                             </div>
                         </Col>
                     </Row>
@@ -89,7 +86,7 @@ const OrderSuccess = props => {
                             <div className="product-order">
                                 <h3>your order details</h3>
 
-                                {cartItems.map((item, i) =>
+                                {OrderMaster.items.map((item, i) =>
                                     <Row className="product-order-detail" key={i}>
                                         <Col xs="3" >
                                             <Media src={item.images[0].mainimageurl} alt=""
@@ -117,11 +114,11 @@ const OrderSuccess = props => {
                                 )}
                                 <div className="total-sec">
                                     <ul>
-                                        <li>subtotal <span>{leftSymbol}{cartTotal}{rightSymbol}</span></li>
+                                        <li>subtotal <span>{leftSymbol}{Total}{rightSymbol}</span></li>
                                     </ul>
                                 </div>
                                 <div className="final-total">
-                                    <h3>total <span>{leftSymbol}{cartTotal}{rightSymbol}</span></h3>
+                                    <h3>total <span>{leftSymbol}{Total}{rightSymbol}</span></h3>
                                 </div>
                             </div>
                         </Col>

@@ -115,6 +115,14 @@ const SpecialProducts = ({ type, fluid, designClass, cartClass,noSlider,innerCla
         
     }
 
+    const lableStyle={
+        backgroundColor:"red",
+        fontSize:"15px",
+        color:"white",
+        marginRight: "43px",
+        marginBottom: "29px"
+    }
+
     // var { loading, data } = useQuery(GET_PRODUCTS, {
     //     variables: {
     //         type: "",
@@ -205,6 +213,7 @@ const SpecialProducts = ({ type, fluid, designClass, cartClass,noSlider,innerCla
                                                 {newProducts && newProducts.slice(0, 10).map((collection, index) =>
                                                     <div style={linkStyle} className="front" key={index} >
                                                         <AutoFitImage frameWidth="200px" imgSize="contain" frameHeight="160px" imgSrc={collection.imguRL}/>
+                                                        <center style={lableStyle}><a style={{color:"white"}} href="#" > {collection.keyWorld} </a></center> 
                                                     </div>)}
                                         </Slider>
                                         :
@@ -372,6 +381,7 @@ const SpecialProducts = ({ type, fluid, designClass, cartClass,noSlider,innerCla
                                                 {featureProducts && featureProducts.slice(0, 10).map((collection, index) =>
                                                     <div style={linkStyle} className="front" key={index} >
                                                         <AutoFitImage frameWidth="200px" imgSize="contain" frameHeight="160px" imgSrc={collection.imguRL}/>
+                                                        <center style={lableStyle}><a style={{color:"white"}} href="#" > {collection.keyWorld} </a></center> 
                                                     </div>)}
                                         </Slider>
                                         :
@@ -539,6 +549,7 @@ const SpecialProducts = ({ type, fluid, designClass, cartClass,noSlider,innerCla
                                                 {specialproducts && specialproducts.slice(0, 10).map((collection, index) =>
                                                     <div style={linkStyle} className="front" key={index} >
                                                         <AutoFitImage frameWidth="200px" imgSize="contain" frameHeight="160px" imgSrc={collection.imguRL}/>
+                                                        <center style={lableStyle}><a style={{color:"white"}} href="#" > {collection.keyWorld} </a></center> 
                                                     </div>)}
                                         </Slider>
                                         :

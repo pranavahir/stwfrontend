@@ -41,6 +41,13 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
     const toggle = () => setModal(!modal);
     const uniqueTags = [];
 
+
+    const smallredobj={
+        fontSize: "15px",
+        fontWeight: "bold",
+        color: "red"
+    }
+
     const smallobj={
         fontSize: "12px",
     fontWeight: "bold",
@@ -163,7 +170,7 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
                 }
 
                 <div className={cartClass}>
-                {product.variants.length > 0 && product.variants[0].quantity > 0 ?
+                { (product.variants.length > 0 && product.variants[0].quantity > 0) && (withDiscount(product.variants) > 0)  ?
                     <button title="Add to cart" onClick={addCart}>
                         <i className="fa fa-shopping-cart" aria-hidden="true"></i>
                     </button> :""}
@@ -230,12 +237,19 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
                         <p>{product.description}</p>
                         : ''
                     }
+
+                    {withDiscount(product.variants) > 0 ?
+                        <div>
                     {product.variants.length && product.variants[0].daystoship > 0 ? <h6 style={smallobj} >Shipping in {product.variants[0].daystoship} days.</h6>:""} 
                     <h4>
                     {currency.symbol} {Math.floor(withDiscount(product.variants)).toFixed(2)}
                         <br/>
                         {discountCalculation(product.variants)? <del><span className="money">{currency.symbol}{(withDiscount(product.variants) * 1).toFixed(2) }</span></del>:""}
                     </h4>
+                    </div> : <h5 style={smallredobj}> Unavailable...! </h5>
+                     }
+                    
+
                     {/* {product.variants.map(vari => {
                         var findItem = uniqueTags.find(x => x.color === vari.color);
                         if (!findItem)
@@ -273,10 +287,14 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
                         <Col lg="6" className="rtl-text">
                             <div className="product-right">
                                 <h2> {product.title} </h2>
-                                
-                    {discountCalculation(product.variants)?<h4><del>{leftSymbol}{(withDiscount(product.variants) * 1).toFixed(2)}{rightSymbol}</del>
-                    <span>{discountCalculation(product.variants)}% off</span></h4>:""} 
-                <h3>{leftSymbol}{Math.floor(withDiscount(product.variants)).toFixed(2)}{rightSymbol} </h3>
+                                { (product.variants.length > 0 && product.variants[0].quantity > 0) && (withDiscount(product.variants) > 0)  ?
+                                <div>
+                                {discountCalculation(product.variants)?<h4><del>{leftSymbol}{(withDiscount(product.variants) * 1).toFixed(2)}{rightSymbol}</del>
+                                <span>{discountCalculation(product.variants)}% off</span></h4>:""} 
+                                <h3>{leftSymbol}{Math.floor(withDiscount(product.variants)).toFixed(2)}{rightSymbol} </h3>
+                                </div>:""}
+
+
                                 {product.variants ?
                                     <ul className="color-variant">
                                         {uniqueTags ?
@@ -310,6 +328,8 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
                                             </div> : ''}
                 </div>
                                 
+                { (product.variants.length > 0 && product.variants[0].quantity > 0) && (withDiscount(product.variants) > 0)  ?
+                                <div>
                                 <div className="product-description border-product">
                                     {/* {product.size ?
                                         <div className="size-box">
@@ -336,10 +356,16 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
                                         </div>
                                     </div>
                                 </div>
+
                                 <div className="product-buttons">
                                     <button className="btn btn-solid" onClick={() => addCart(product)} >add to cart</button>
                                     <button className="btn btn-solid" onClick={clickProductDetail} >View detail</button>
                                 </div>
+                                </div>: 
+                                <div className="product-buttons">
+                                    <button className="btn btn-solid" disabled="true" >Unavailable...!</button>
+                                    <button className="btn btn-solid" onClick={clickProductDetail} >View detail</button>
+                                </div>                                }
                             </div>
                         </Col>
                     </Row>

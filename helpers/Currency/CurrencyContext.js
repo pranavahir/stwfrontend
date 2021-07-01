@@ -140,31 +140,31 @@ var ListConfig=[
         imguRL:"https://m.media-amazon.com/images/I/51fl8l0G78L.jpg",
         categoryUrl:"",
         category:"",
-        keyWorld:""
+        keyWorld:"More >>"
       },
       {
         imguRL:"https://m.media-amazon.com/images/I/51wZU-kW22L.jpg",
         categoryUrl:"",
         category:"",
-        keyWorld:""
+        keyWorld:"More >>"
       },
       {
         imguRL:"https://m.media-amazon.com/images/I/41ghh3XjOLL.jpg",
         categoryUrl:"",
         category:"",
-        keyWorld:""
+        keyWorld:"More >>"
       },
       {
         imguRL:"https://m.media-amazon.com/images/I/31Ide2xeMgL.jpg",
         categoryUrl:"",
         category:"",
-        keyWorld:""
+        keyWorld:"More >>"
       },
       {
         imguRL:"https://images-na.ssl-images-amazon.com/images/I/71hEefMZtcL._SL1500_.jpg",
         categoryUrl:"",
         category:"",
-        keyWorld:""
+        keyWorld:"More >>"
       }  
 
       // https://m.media-amazon.com/images/I/413fkA2hhSS.jpg
@@ -174,31 +174,31 @@ var ListConfig=[
         imguRL:"https://images-na.ssl-images-amazon.com/images/I/71ncBz8OFHS._SL1500_.jpg",
         categoryUrl:"",
         category:"",
-        keyWorld:""
+        keyWorld:"More >>"
       },
       {
         imguRL:"https://images-na.ssl-images-amazon.com/images/I/71p7xwt7bgL._SL1500_.jpg",
         categoryUrl:"",
         category:"",
-        keyWorld:""
+        keyWorld:"More >>"
       },
       {
         imguRL:"https://images-na.ssl-images-amazon.com/images/I/71JDCbasgaL._SL1500_.jpg",
         categoryUrl:"",
         category:"",
-        keyWorld:""
+        keyWorld:"More >>"
       },
       {
         imguRL:"https://images-na.ssl-images-amazon.com/images/I/81H1Grsm4XL._SL1500_.jpg",
         categoryUrl:"",
         category:"",
-        keyWorld:""
+        keyWorld:"More >>"
       },
       {
         imguRL:"https://images-na.ssl-images-amazon.com/images/I/915LKjLE%2BvL._SL1500_.jpg",
         categoryUrl:"",
         category:"",
-        keyWorld:""
+        keyWorld:"More >>"
       },
       // https://m.media-amazon.com/images/I/413fkA2hhSS.jpg
     ],
@@ -207,31 +207,31 @@ var ListConfig=[
         imguRL:"https://images-na.ssl-images-amazon.com/images/I/71-QiEqDpZL._SL1500_.jpg",
         categoryUrl:"",
         category:"",
-        keyWorld:""
+        keyWorld:"More >>"
       },
       {
         imguRL:"https://images-na.ssl-images-amazon.com/images/I/71gfnsDd3-L._SL1500_.jpg",
         categoryUrl:"",
         category:"",
-        keyWorld:""
+        keyWorld:"More >>"
       },
       {
         imguRL:"https://images-na.ssl-images-amazon.com/images/I/810VOlH6cGL._SL1500_.jpg",
         categoryUrl:"",
         category:"",
-        keyWorld:""
+        keyWorld:"More >>"
       },
       {
         imguRL:"https://images-na.ssl-images-amazon.com/images/I/71sjjcwJ6cL._SL1500_.jpg",
         categoryUrl:"",
         category:"",
-        keyWorld:""
+        keyWorld:"More >>"
       },
       {
         imguRL:"https://images-na.ssl-images-amazon.com/images/I/61KdzsxowuL._SL1500_.jpg",
         categoryUrl:"",
         category:"",
-        keyWorld:""
+        keyWorld:"More >>"
       } 
       // https://m.media-amazon.com/images/I/413fkA2hhSS.jpg
     ],
@@ -443,7 +443,7 @@ var ListConfig=[
     {
       imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
       categoryUrl:"/c/Phone",
-      category:"Phone",
+      category:["iphone","oneplus","samsung"],
       keyWorld:"More phone >>",
       
 
@@ -451,13 +451,13 @@ var ListConfig=[
     {
       imguRL:"https://m.media-amazon.com/images/I/413fkA2hhSS.jpg",
       categoryUrl:"/c/Laptop",
-      category:"Laptop",
+      category:["hplaptop","laptop","microsoft","delllaptop","microsoftphone"],
       keyWorld:"More Laptops >>"
     },
     {
       imguRL:"https://m.media-amazon.com/images/I/51XeMvBLlGL.jpg",
       categoryUrl:"/c/Tablet",
-      category:"Tablet",
+      category:"apple",
       keyWorld:"More Tablet >>"
     },
     {
@@ -469,7 +469,7 @@ var ListConfig=[
     {
       imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
       categoryUrl:"/c/Phone",
-      category:"Phone",
+      category:["iphone","oneplus","samsung"],
       keyWorld:"More phone >>",
       
 
@@ -477,13 +477,13 @@ var ListConfig=[
     {
       imguRL:"https://m.media-amazon.com/images/I/413fkA2hhSS.jpg",
       categoryUrl:"/c/Laptop",
-      category:"Laptop",
+      category:["hplaptop","laptop","microsoft","delllaptop","microsoftphone"],
       keyWorld:"More Laptops >>"
     },
     {
       imguRL:"https://m.media-amazon.com/images/I/51XeMvBLlGL.jpg",
       categoryUrl:"/c/Tablet",
-      category:"Tablet",
+      category:"apple",
       keyWorld:"More Tablet >>"
     },
     {
@@ -498,31 +498,31 @@ var ListConfig=[
       imguRL:"https://m.media-amazon.com/images/I/51fl8l0G78L.jpg",
       categoryUrl:"",
       category:"",
-      keyWorld:""
+      keyWorld:"More Tablet >>"
     },
     {
       imguRL:"https://m.media-amazon.com/images/I/51wZU-kW22L.jpg",
       categoryUrl:"",
       category:"",
-      keyWorld:""
+      keyWorld:"More Tablet >>"
     },
     {
       imguRL:"https://m.media-amazon.com/images/I/41ghh3XjOLL.jpg",
       categoryUrl:"",
       category:"",
-      keyWorld:""
+      keyWorld:"More Tablet >>"
     },
     {
       imguRL:"https://m.media-amazon.com/images/I/31Ide2xeMgL.jpg",
       categoryUrl:"",
       category:"",
-      keyWorld:""
+      keyWorld:"More Tablet >>"
     },
     {
       imguRL:"https://images-na.ssl-images-amazon.com/images/I/71hEefMZtcL._SL1500_.jpg",
       categoryUrl:"",
       category:"",
-      keyWorld:""
+      keyWorld:"More Tablet >>"
     }  
 
     // https://m.media-amazon.com/images/I/413fkA2hhSS.jpg
@@ -532,31 +532,31 @@ var ListConfig=[
       imguRL:"https://images-na.ssl-images-amazon.com/images/I/71ncBz8OFHS._SL1500_.jpg",
       categoryUrl:"",
       category:"",
-      keyWorld:""
+      keyWorld:"More Tablet >>"
     },
     {
       imguRL:"https://images-na.ssl-images-amazon.com/images/I/71p7xwt7bgL._SL1500_.jpg",
       categoryUrl:"",
       category:"",
-      keyWorld:""
+      keyWorld:"More Tablet >>"
     },
     {
       imguRL:"https://images-na.ssl-images-amazon.com/images/I/71JDCbasgaL._SL1500_.jpg",
       categoryUrl:"",
       category:"",
-      keyWorld:""
+      keyWorld:"More Tablet >>"
     },
     {
       imguRL:"https://images-na.ssl-images-amazon.com/images/I/81H1Grsm4XL._SL1500_.jpg",
       categoryUrl:"",
       category:"",
-      keyWorld:""
+      keyWorld:"More Tablet >>"
     },
     {
       imguRL:"https://images-na.ssl-images-amazon.com/images/I/915LKjLE%2BvL._SL1500_.jpg",
       categoryUrl:"",
       category:"",
-      keyWorld:""
+      keyWorld:"More Tablet >>"
     },
     // https://m.media-amazon.com/images/I/413fkA2hhSS.jpg
   ],
@@ -565,31 +565,31 @@ var ListConfig=[
       imguRL:"https://images-na.ssl-images-amazon.com/images/I/71-QiEqDpZL._SL1500_.jpg",
       categoryUrl:"",
       category:"",
-      keyWorld:""
+      keyWorld:"More Tablet >>"
     },
     {
       imguRL:"https://images-na.ssl-images-amazon.com/images/I/71gfnsDd3-L._SL1500_.jpg",
       categoryUrl:"",
       category:"",
-      keyWorld:""
+      keyWorld:"More Tablet >>"
     },
     {
       imguRL:"https://images-na.ssl-images-amazon.com/images/I/810VOlH6cGL._SL1500_.jpg",
       categoryUrl:"",
       category:"",
-      keyWorld:""
+      keyWorld:"More Tablet >>"
     },
     {
       imguRL:"https://images-na.ssl-images-amazon.com/images/I/71sjjcwJ6cL._SL1500_.jpg",
       categoryUrl:"",
       category:"",
-      keyWorld:""
+      keyWorld:"More Tablet >>"
     },
     {
       imguRL:"https://images-na.ssl-images-amazon.com/images/I/61KdzsxowuL._SL1500_.jpg",
       categoryUrl:"",
       category:"",
-      keyWorld:""
+      keyWorld:"More Tablet >>"
     } 
     // https://m.media-amazon.com/images/I/413fkA2hhSS.jpg
   ],

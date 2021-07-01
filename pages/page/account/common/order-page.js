@@ -34,6 +34,7 @@ const GET_ORDER = gql`
             emailid 
             gst 
             gstname
+            productimage
         }
     }
 `;
@@ -98,7 +99,8 @@ const OrderPage = () => {
                                         <tbody key={i}>
                                             <tr>
                                                 <td>
-                                                    {/* <a href="#"><img src={item.images[0].src} alt="" /></a> */}
+                                                {item.productimage==null ? "" : <a href="#"><img src={item.productimage} alt="" /></a>}
+                                                    
                                                 </td>
                                                 <td align="left"><a  href="#">{item.producttitle}</a>
                                                     <Row className="mobile-cart-content">
@@ -154,7 +156,6 @@ const OrderPage = () => {
                         <Row className="wishlist-buttons">
                             <Col sm="12">
                                 <Link href={'/'}><a href={null} className="btn btn-solid" >continue shopping</a></Link>
-                                <a href={null} className="btn btn-solid" onClick={checkOut}>check out</a>
                             </Col>
                         </Row>
                     </Container>

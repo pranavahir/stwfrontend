@@ -33,7 +33,9 @@ const CartProvider = (props) => {
   // Add Product To Cart
   const addToCart = (item ,quantity) => {
     // toast.success("Product Added Successfully !");
-    const index = cartItems.findIndex(itm => itm.seqid === item.seqid)
+    if(withDiscount(item.variants) > 0)
+    {
+      const index = cartItems.findIndex(itm => itm.seqid === item.seqid)
     if (index !== -1) {
        const product = cartItems[index];
       cartItems.push({ ...item, qty: quantity,gst:gstCollection(item.variants), total: ((withDiscount(item.variants))) * quantity  });  
@@ -42,11 +44,20 @@ const CartProvider = (props) => {
       const product = { ...item, qty: quantity,gst:gstCollection(item.variants), total: ((withDiscount(item.variants))) * quantity  }
       setCartItems([...cartItems, product])
     }
+    }
+    else
+    {
+      toast.error("unable to add the Product, The Product is unavailable!");
+    }
   }
 
   const removeFromCart = (item) => {
-    toast.error("Product Removed Successfully !");
+    // toast.error("Product Removed Successfully !");
     setCartItems(cartItems.filter((e) => (e.seqid !== item.seqid)))
+  }
+
+  const removeAllItems = ()=>{
+    setCartItems([])
   }
 
   const minusQty = () => {
@@ -103,11 +114,12 @@ const CartProvider = (props) => {
     var sellPrice = null;
     if(variantData !=null && variantData !=undefined)
     {
-        if(variantData.length > 0)
+        if(variantData.length > 0 && variantData[0].price)
         {
             // sellPrice = Math.floor(((variantData[0].conversionrate *  ((variantData[0].price +2 ) * 1.0825 )  + (variantData[0].frieghtrate)) * (1 + variantData[0].duty)) * (1/(1-((variantData[0].fees / (1 + (variantData[0].fees)))+(variantData[0].margin / (1 + (variantData[0].margin)))))),-1);
             // sellPrice = Math.floor(((variantData[0].conversionrate * ((variantData[0].price +2 ) * 1.0825 )  + (variantData[0].frieghtrate)) * (1 + variantData[0].duty)) * (1/(1-((variantData[0].fees / (1 + (variantData[0].fees)))+(variantData[0].margin / (1 + (variantData[0].margin)))))),0);
-            sellPrice =  Math.floor(((variantData[0].conversionrate *  ((variantData[0].price +variantData[0].pwfee ) * (1+ (variantData[0].purchasetax/100)))    + (variantData[0].frieghtrate)) * (1 + variantData[0].duty)) * (1/(1-((variantData[0].fees / (1 + (variantData[0].fees)))+(variantData[0].margin / (1 + (variantData[0].margin)))))),0);
+            
+              sellPrice =  Math.floor(((variantData[0].conversionrate *  ((variantData[0].price +variantData[0].pwfee ) * (1+ (variantData[0].purchasetax/100)))    + (variantData[0].frieghtrate)) * (1 + variantData[0].duty)) * (1/(1-((variantData[0].fees / (1 + (variantData[0].fees)))+(variantData[0].margin / (1 + (variantData[0].margin)))))),0);
         }
         else
         {
@@ -142,8 +154,12 @@ const gstCollection = (variantData) =>{
 const withDiscount = (variantData) =>{
 
   var totalPrice = withTax(variantData);
-  var discount =  discountCalculation(variantData);
-  var finalPrice = (totalPrice * (1-discount/100)).toFixed(2);
+  var finalPrice = 0;
+  if(totalPrice > 0 )
+  {
+    var discount =  discountCalculation(variantData);
+    finalPrice = (totalPrice * (1-discount/100)).toFixed(2);
+  }
 
   return finalPrice;
 }
@@ -151,9 +167,13 @@ const withDiscount = (variantData) =>{
 const withDiscountWithQty = (variantData,qty) =>{
 
 try{
+  var finalPrice = 0;
   var totalPrice = withTax(variantData);
-  var discount =  discountCalculation(variantData);
-  var finalPrice =parseFloat(((totalPrice * (1-discount/100))*qty).toFixed(2));
+      if(totalPrice > 0 )
+      {
+        var discount =  discountCalculation(variantData);
+        finalPrice =parseFloat(((totalPrice * (1-discount/100))*qty).toFixed(2));
+      }
   }
   catch(ex)
   {
@@ -166,12 +186,16 @@ try{
 
 const withTax = (variantData) =>{
 
+  var totalPrice = 0; 
  var sellprice = priceCollection(variantData);
- console.log(sellprice);
+
  var tax = gstCollection(variantData);
- var totalPrice = (sellprice + tax).toFixed(2); 
- 
- return totalPrice;
+ if(sellprice)
+ {
+  totalPrice = (sellprice + tax).toFixed(2); 
+ }
+  
+  return totalPrice;
 }
 
 
@@ -194,21 +218,37 @@ const discountCalculation = (variantData) =>{
 
    // Update Product Quantity
    const updateQty = (item, quantity) => {
-     
-    if(quantity >= 1 ){
-      const index = cartItems.findIndex(itm => itm.id === item.id)
-      if(index !== -1){
-        const product = cartItems[index];
-        setCartItems([{ ...product, ...item, qty: quantity, total: (withDiscount(item.variants)) * quantity  }])
-        // toast.info("Product Quantity Updated !");
-      }else{
-        const product = {...item, qty: quantity, total: (withDiscount(item.variants)) * quantity }
-        setCartItems([...cartItems, product])
+    
+    if(withDiscount(item.variants) > 0)
+    {
+      if(quantity >= 1 ){
+        if(quantity <=item.variants[0].quantity)
+        {
+          const index = cartItems.findIndex(itm => itm.id === item.id)
+          if(index !== -1){
+            const product = cartItems[index];
+            setCartItems([{ ...product, ...item, qty: quantity, total: (withDiscount(item.variants)) * quantity  }])
+            // toast.info("Product Quantity Updated !");
+          }else{
+            const product = {...item, qty: quantity, total: (withDiscount(item.variants)) * quantity }
+            setCartItems([...cartItems, product])
+          }
+        }
+        else
+        {
+          toast.error("Out of Stock !");  
+        }
         
+      }else{
+        toast.error("Enter Valid Quantity !");
       }
-    }else{
-      toast.error("Enter Valid Quantity !");
     }
+    else
+    {
+      toast.error("unable to add the Product, The Product is unavailable!");
+    }
+
+    
   }
 
   const { value } = props;
@@ -229,7 +269,8 @@ const discountCalculation = (variantData) =>{
         discountCalculation:discountCalculation,
         priceCollection:priceCollection,
         withDiscount:withDiscount,
-        withDiscountWithQty:withDiscountWithQty
+        withDiscountWithQty:withDiscountWithQty,
+        removeAllItems:removeAllItems
       }}
     >
       {props.children}

@@ -42,6 +42,9 @@ const Fashion = () => {
       <div className="section-b-space">
       <LogoBlock />
       </div>
+
+   
+
       <FooterOne logoName={'logo.png'} />
     </>
   )

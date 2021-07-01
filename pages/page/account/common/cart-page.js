@@ -32,11 +32,19 @@ const CartPage = () => {
         leftSymbol = symbol;
     }
     const handleQtyUpdate = (item, quantity) => {
-        if (quantity >= 1) {
-            setQuantityError(false)
-            updateQty(item, quantity)
-        } else {
-            setQuantityError(true)
+        if(item.variants[0].quantity >= quantity.target.value)
+        {
+            if (quantity.target.value >= 1) {
+                setQuantityError(false)
+                updateQty(item, quantity.target.value)
+            } else {
+                setQuantityError(true)
+            }
+        }
+        else
+        {
+            quantity.preventDefault();
+            quantity.target.value = item.variants[0].quantity;
         }
     }
     const clickProductDetail = (title) => {
@@ -116,7 +124,7 @@ const CartPage = () => {
                                                                 <input
                                                                     type="number"
                                                                     name="quantity"
-                                                                    onChange={(e) => handleQtyUpdate(item, e.target.value)}
+                                                                    onChange={(e) => handleQtyUpdate(item, e)}
                                                                     className="form-control input-number"
                                                                     defaultValue={item.qty}
                                                                     style={{ borderColor: quantityError && 'red' }}
@@ -141,7 +149,7 @@ const CartPage = () => {
                                                                 <input
                                                                     type="number"
                                                                     name="quantity"
-                                                                    onChange={(e) => handleQtyUpdate(item, e.target.value)}
+                                                                    onChange={(e) => handleQtyUpdate(item, e)}
                                                                     className="form-control input-number"
                                                                     defaultValue={item.qty}
                                                                     style={{ borderColor: quantityError && 'red' }}

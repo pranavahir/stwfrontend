@@ -36,6 +36,7 @@ query CustomerByUID ($uid:String!) {
     CustomerByUID (uid:$uid) {
   customerredid
   customername
+  customerlastname
   phonenumber
   address1
   address2
@@ -45,10 +46,12 @@ query CustomerByUID ($uid:String!) {
   emailid
   googleid
   facebookid
+  pincode
     }
 }
 `;
 const CheckoutPage = ({ isPublic = false }) => {
+  
   const cartContext = useContext(CartContext);
   const cartItems = cartContext.state;
   const cartTotal = cartContext.cartTotal.toFixed(2);
@@ -252,10 +255,8 @@ useEffect(() => {
       var gstinformat = new RegExp('^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$');  
       if (gstinformat.test(inputvalues)) {  
         setIsValidGst(true);
-        console.log(IsValidGst);  
       } else {  
         setIsValidGst(false);
-        console.log("false"+IsValidGst);  
       } 
     }``
  
@@ -285,8 +286,6 @@ const changeGstcheck = (e) => {
   const canMakePaymentCache = "canMakePaymentCache";
 
   const OrderedMail = async (productDetail,customerDetail) =>{
-
-    console.log(productDetail);
 
     const { error: backendMailError, clientMail } = await fetch(
       "https://support.digitechniq.in/email/send",
@@ -374,7 +373,8 @@ const changeGstcheck = (e) => {
           phone:customerData.phone,
           emailid:customerData.email,
           gst:customerData.GST,
-          gstname:customerData.GSTName
+          gstname:customerData.GSTName,
+          productimage:""
         };
     
         var orderResult = 0;
@@ -399,7 +399,8 @@ const changeGstcheck = (e) => {
             phone:customerData.phone,
             emailid:customerData.email,
             gst:customerData.GST,
-            gstname:customerData.GSTName
+            gstname:customerData.GSTName,
+            productimage:item.images[0].mainimageurl
           };
     
           try {
@@ -420,14 +421,16 @@ const changeGstcheck = (e) => {
 
         var NewCustomerData = {
           customerredid:customerId,
-          customername:customerData.first_name + " " + customerData.last_name,
+          customername:customerData.first_name,
+          customerlastname:customerData.last_name,
           phonenumber:customerData.phone,
           address1:customerData.address,
           address2:"",
           city:customerData.city,
           state:customerData.state,
           country:customerData.country,
-          emailid:customerData.email
+          emailid:customerData.email,
+          pincode:customerData.pincode
       }
   
         var CustomerData = UpdateCustomer({
@@ -436,14 +439,12 @@ const changeGstcheck = (e) => {
 
         if(cartItems.length==1)
         {
-          // console.log("test");
           OrderedMail(cartItems[0],customerData);
         }
         else
         {
           for(var i=0;i>cartItems.length;i++)
           {
-            // console.log("test");
             OrderedMail(cartItems[i],customerData);
           }
         }
@@ -457,6 +458,9 @@ const changeGstcheck = (e) => {
             OrderDetail:OrderDetail
         }
         setOrderObj(JSON.stringify(newObj));
+        
+        cartContext.removeAllItems();
+        
         router.push({
           pathname: "/page/order-success",
         });
@@ -509,7 +513,8 @@ const changeGstcheck = (e) => {
               phone:customerData.phone,
               emailid:customerData.email,
               gst:customerData.GST,
-              gstname:customerData.GSTName
+              gstname:customerData.GSTName,
+              productimage:item.images[0].mainimageurl
             };
       
             try {
@@ -526,14 +531,16 @@ const changeGstcheck = (e) => {
 
           var NewCustomerData = {
             customerredid:customerId,
-            customername:customerData.first_name + " " + customerData.last_name,
+            customername:customerData.first_name,
+            customerlastname:customerData.last_name,
             phonenumber:customerData.phone,
             address1:customerData.address,
             address2:"",
             city:customerData.city,
             state:customerData.state,
             country:customerData.country,
-            emailid:customerData.email
+            emailid:customerData.email,
+            pincode:customerData.pincode
         }
     
           var CustomerData = UpdateCustomer({
@@ -546,7 +553,7 @@ const changeGstcheck = (e) => {
           }
           else
           {
-            for(var i=0;i>cartItems.length;i++)
+            for(var i=0;i<cartItems.length;i++)
             {
               OrderedMail(cartItems[i],customerData);
             }
@@ -563,6 +570,8 @@ const changeGstcheck = (e) => {
 
 
         setOrderObj(JSON.stringify(newObj));
+        cartContext.removeAllItems();
+ 
         router.push({
           pathname: "/page/order-success",
         });
@@ -638,7 +647,7 @@ const changeGstcheck = (e) => {
 
   const processResponse = (paymentResponse) => {
     var paymentResponseString = paymentResponseToJsonString(paymentResponse);
-    console.log(paymentResponseString);
+    // console.log(paymentResponseString);
     /* fetch('/buy',{
         method: 'POST',
         headers: new Headers({'Content-Type':'application/json'}),
@@ -667,75 +676,75 @@ const changeGstcheck = (e) => {
   };
 
   const stripeSubmit = async (e, customerData) => {
-    // Orderconformation("Stripe","paymentIntent",customerData);
+    Orderconformation("Stripe","paymentIntent",customerData);
     // We don't want to let default form submission happen here,
     // which would refresh the page.
  
-    e.preventDefault();
+    // e.preventDefault();
 
-    if (!stripe || !elements) {
-      // Stripe.js has not yet loaded.
-      // Make sure to disable form submission until Stripe.js has loaded.
-      console.log("Stripe.js has not yet loaded.");
-      return;
-    }
+    // if (!stripe || !elements) {
+    //   // Stripe.js has not yet loaded.
+    //   // Make sure to disable form submission until Stripe.js has loaded.
+    //   console.log("Stripe.js has not yet loaded.");
+    //   return;
+    // }
 
-    var amount = fullPrice * 100;
-    const { error: backendError, clientSecret } = await fetch(
-      "https://stripeserver.digitechniq.in/create-payment-intent",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          paymentMethodType: "card",
-          amount: amount,
-          currency: currency,
-          customer: customerData.email,
-        }),
-      }
-    ).then((r) => r.json());
+    // var amount = fullPrice * 100;
+    // const { error: backendError, clientSecret } = await fetch(
+    //   "https://stripeserver.digitechniq.in/create-payment-intent",
+    //   {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //     body: JSON.stringify({
+    //       paymentMethodType: "card",
+    //       amount: amount,
+    //       currency: currency,
+    //       customer: customerData.email,
+    //     }),
+    //   }
+    // ).then((r) => r.json());
 
-    if (backendError) {
-      console.log(backendError.message);
-      setPaymentErr(backendError.message);      
-      setPageLoad(false);
-      return;
-    }
+    // if (backendError) {
+    //   console.log(backendError.message);
+    //   setPaymentErr(backendError.message);      
+    //   setPageLoad(false);
+    //   return;
+    // }
 
-    // console.log('Client secret returned');
-    var customerInfo =
-      customerData.first_name +
-      " - " +
-      customerData.last_name +
-      " - " +
-      customerData.phone +
-      " - " +
-      customerData.email;
-    const {
-      error: stripeError,
-      paymentIntent,
-    } = await stripe.confirmCardPayment(clientSecret, {
-      payment_method: {
-        card: elements.getElement(CardElement),
-        billing_details: {
-          name: customerInfo,
-        },
-      },
-    });
+    // // console.log('Client secret returned');
+    // var customerInfo =
+    //   customerData.first_name +
+    //   " - " +
+    //   customerData.last_name +
+    //   " - " +
+    //   customerData.phone +
+    //   " - " +
+    //   customerData.email;
+    // const {
+    //   error: stripeError,
+    //   paymentIntent,
+    // } = await stripe.confirmCardPayment(clientSecret, {
+    //   payment_method: {
+    //     card: elements.getElement(CardElement),
+    //     billing_details: {
+    //       name: customerInfo,
+    //     },
+    //   },
+    // });
 
-    if (stripeError) {
-      // Show error to your customer (e.g., insufficient funds)
-      console.log(stripeError.message);
-      setPaymentErr(stripeError.message);   
-      setPageLoad(false);
-      return;
-    } else {
-      setPageLoad(false);
-      Orderconformation("Stripe",paymentIntent,customerData);
-    }
-    console.log(`Payment ${paymentIntent.status}: ${paymentIntent.id}`);
+    // if (stripeError) {
+    //   // Show error to your customer (e.g., insufficient funds)
+    //   console.log(stripeError.message);
+    //   setPaymentErr(stripeError.message);   
+    //   setPageLoad(false);
+    //   return;
+    // } else {
+    //   setPageLoad(false);
+    //   Orderconformation("Stripe",paymentIntent,customerData);
+    // }
+    // console.log(`Payment ${paymentIntent.status}: ${paymentIntent.id}`);
   };
 
   const razorPayPaymentHandler = async (filledData) => {
@@ -758,7 +767,7 @@ const changeGstcheck = (e) => {
     const orderUrl = `${API_URL}order`;
     const response = await Axios.post(orderUrl, { amount: fullPrice });
     const { data } = response;
-    console.log("App -> razorPayPaymentHandler -> data", data);
+    // console.log("App -> razorPayPaymentHandler -> data", data);
 
     const options = {
       key: "", //replace razorpay API key
@@ -768,7 +777,7 @@ const changeGstcheck = (e) => {
       handler: async (response) => {
         try {
           const paymentId = response.razorpay_payment_id;
-          console.log(paymentId);
+          // console.log(paymentId);
           // const url = `https://razorpaypayment.digitechniq.in/razorpay/capture/${paymentId}`;
           const url = `https://razorpaypayment.digitechniq.in/razorpay/capture/${paymentId}`;
           const captureResponse = await Axios.post(url, {
@@ -801,7 +810,6 @@ const changeGstcheck = (e) => {
   };
 
   const onSuccess = (payment) => {
-    console.log(payment);
     router.push({
       pathname: "/page/order-success",
       state: {
@@ -835,7 +843,6 @@ const changeGstcheck = (e) => {
   const setStateFromInput = (event) => {
     obj[event.target.name] = event.target.value;
     setObj(obj);
-    console.log(obj);
   };
 
   const onCancel = (data) => {
@@ -919,6 +926,7 @@ const rightAligh = {
                       <input
                         type="text"
                         className={`${errors.last_name ? "error_border" : ""}`}
+                        value={data.CustomerByUID.customerlastname}
                         name="last_name"
                         ref={register({ required: true })}
                       />
@@ -1028,6 +1036,7 @@ const rightAligh = {
                         className="form-control"
                         type="text"
                         className={`${errors.city ? "error_border" : ""}`}
+                        value={data.CustomerByUID.city}
                         name="city"
                         ref={register({ required: true })}
                         onChange={setStateFromInput}
@@ -1057,7 +1066,7 @@ const rightAligh = {
                         className="form-control"
                         type="text"
                         name="pincode"
-                        
+                        value={data.CustomerByUID.pincode}
                         className={`${errors.pincode ? "error_border" : ""}`}
                         ref={register({ pattern: /\d+/ })}
                       />
@@ -1288,8 +1297,6 @@ const rightAligh = {
                                0.00
                             </span>
                              }
-                            
-                          
                           </li>
                           </ul>
                           <ul className="sub-total">
