@@ -81,7 +81,10 @@ var ListConfig=[
     addressOne: "19640 griffin road southwest ranches florida 33332 USA",
     addressTwo: "103 Office no 21 Opal Towers Business Bay Dubai UAE",
     emailid: "care@shoptheworldonline.com",
+    
+    
     topCollections:[
+      
       {
         imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
         categoryUrl:"/c/Phone",
@@ -617,6 +620,8 @@ var ListConfig=[
   emailid: "care@shoptheworldonline.com",
   facebookacct: null,
   googleacct: null,
+  gakey:"UA-185043489-1",
+  gtmkey:"GTM-5SJS8JL",
   topCollections:[
     {
       imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
