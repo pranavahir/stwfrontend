@@ -46,13 +46,14 @@ const onSubmit = (data, e) => {
   const subscribeMail = async (mail) =>{
 
     const { error: backendMailError, clientMail } = await fetch(
-      "https://support.digitechniq.in/submail/send",
+      "https://mailservice.digitechniq.in/",
       {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
+            CRUD:"promo",
             email:mail,
         }),
       }
