@@ -1,14 +1,16 @@
 import React, { useContext, useEffect, useState } from 'react';
 import Slider from 'react-slick';
-import { useQuery } from '@apollo/react-hooks';
+// import { useQuery } from '@apollo/react-hooks';
 import gql from 'graphql-tag';
 import ProductItems from '../product-box/ProductBox1';
 import { Row, Col, Container, Media } from 'reactstrap';
 import CartContext from '../../../helpers/cart';
 import { WishlistContext } from '../../../helpers/wishlist/WishlistContext';
-import PostLoader from '../PostLoader';
+// import PostLoader from '../PostLoader';
 import { CompareContext } from '../../../helpers/Compare/CompareContext';
-import search from '../../../public/assets/images/empty-search.jpg'
+// import search from '../../../public/assets/images/empty-search.jpg'
+import FilterContext from '../../../helpers/filter/FilterContext';
+import { useRouter } from 'next/router';
 import { CurrencyContext } from '../../../helpers/Currency/CurrencyContext';
 import AutoFitImage from 'react-image-autofit-frame';
 
@@ -85,13 +87,12 @@ const TopCollection = ({ type, title, subtitle, designClass, noSlider, cartClass
     const comapreList = useContext(CompareContext);
     const quantity = context.quantity;
     const [delayProduct,setDelayProduct] = useState(true)
-
+    const router = useRouter();
     const curContext = useContext(CurrencyContext);
-    const symbol = curContext.state.symbol;
-    const IsRight = curContext.state.IsRight;
-    const country = curContext.state.country;
-    const panel = curContext.state.panel;
     const topCollections = curContext.state.topCollections; 
+    const filterContext = useContext(FilterContext);
+    
+
 
     const linkStyle ={
         fontSize:12,
@@ -124,6 +125,13 @@ const TopCollection = ({ type, title, subtitle, designClass, noSlider, cartClass
         padding: "10px",
     }
     
+    const getURL = (data) => {
+        filterContext.setselectedKeyword("");
+        filterContext.setSelectedCategory("");
+        filterContext.setSelectedPromaflag(data.category);
+        router.push(`/shop/six_grid?&brand=&color=&size=&minPrice=&maxPrice=&promoflag=${data.category}`)
+    }
+
     // var { loading, data } = useQuery(GET_PRODUCTS, {
     //     variables: {
     //         type: "",
@@ -180,7 +188,7 @@ const TopCollection = ({ type, title, subtitle, designClass, noSlider, cartClass
                                         {topCollections && topCollections.slice(0, 10).map((collection, index) =>
                                             <div style={linkStyle} className="front" key={index} >
                                                 <AutoFitImage frameWidth="200px" imgSize="contain" frameHeight="160px" imgSrc={collection.imguRL}/>
-                                                <center style={lableStyle}> <a style={{color:"white"}}  href="&brand=&color=&size=&minPrice=&maxPrice=">{collection.keyWorld} </a></center> 
+                                                <center style={lableStyle}> <a style={{color:"white"}}  href="#" onClick={() => getURL(collection)} >{collection.keyWorld} </a></center> 
                                             </div>)}
                                 </Slider>
 

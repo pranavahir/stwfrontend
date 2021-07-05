@@ -12,7 +12,8 @@ import { CompareContext } from '../../../helpers/Compare/CompareContext';
 import { CurrencyContext } from '../../../helpers/Currency/CurrencyContext';
 import emptySearch from '../../../public/assets/images/empty-search.jpg';
 import AutoFitImage from 'react-image-autofit-frame';
-
+import FilterContext from '../../../helpers/filter/FilterContext';
+import { useRouter } from 'next/router';
 
 // const GET_PRODUCTS = gql`
 //     query  products($type:String!,$indexFrom:Int! ,$limit:Int!,$color:String!,$brand:[String!]! ,$priceMax:Int!,$priceMin:Int!,$keyword:String!,$country:String!,$panel:String!,$promoflag:String!) {
@@ -97,6 +98,8 @@ const SpecialProducts = ({ type, fluid, designClass, cartClass,noSlider,innerCla
     const featureProducts = curContext.state.featureProducts;
     const newProducts = curContext.state.newProducts;
     const specialproducts = curContext.state.specialproducts;
+    const filterContext = useContext(FilterContext);
+    const router = useRouter();
     
 
     const loaderStyle={
@@ -123,6 +126,12 @@ const SpecialProducts = ({ type, fluid, designClass, cartClass,noSlider,innerCla
         marginBottom: "29px"
     }
 
+    const getURL = (data) => {
+        filterContext.setselectedKeyword("");
+        filterContext.setSelectedCategory("");
+        filterContext.setSelectedPromaflag(data.category);
+        router.push(`/shop/six_grid?&brand=&color=&size=&minPrice=&maxPrice=&promoflag=${data.category}`)
+    }
     // var { loading, data } = useQuery(GET_PRODUCTS, {
     //     variables: {
     //         type: "",
@@ -213,7 +222,7 @@ const SpecialProducts = ({ type, fluid, designClass, cartClass,noSlider,innerCla
                                                 {newProducts && newProducts.slice(0, 10).map((collection, index) =>
                                                     <div style={linkStyle} className="front" key={index} >
                                                         <AutoFitImage frameWidth="200px" imgSize="contain" frameHeight="160px" imgSrc={collection.imguRL}/>
-                                                        <center style={lableStyle}><a style={{color:"white"}} href="#" > {collection.keyWorld} </a></center> 
+                                                        <center style={lableStyle}><a style={{color:"white"}} href="#" onClick={() => getURL(collection)} > {collection.keyWorld} </a></center> 
                                                     </div>)}
                                         </Slider>
                                         :
@@ -381,7 +390,7 @@ const SpecialProducts = ({ type, fluid, designClass, cartClass,noSlider,innerCla
                                                 {featureProducts && featureProducts.slice(0, 10).map((collection, index) =>
                                                     <div style={linkStyle} className="front" key={index} >
                                                         <AutoFitImage frameWidth="200px" imgSize="contain" frameHeight="160px" imgSrc={collection.imguRL}/>
-                                                        <center style={lableStyle}><a style={{color:"white"}} href="#" > {collection.keyWorld} </a></center> 
+                                                        <center style={lableStyle}><a style={{color:"white"}} href="#" onClick={() => getURL(collection)} > {collection.keyWorld} </a></center> 
                                                     </div>)}
                                         </Slider>
                                         :
@@ -549,7 +558,7 @@ const SpecialProducts = ({ type, fluid, designClass, cartClass,noSlider,innerCla
                                                 {specialproducts && specialproducts.slice(0, 10).map((collection, index) =>
                                                     <div style={linkStyle} className="front" key={index} >
                                                         <AutoFitImage frameWidth="200px" imgSize="contain" frameHeight="160px" imgSrc={collection.imguRL}/>
-                                                        <center style={lableStyle}><a style={{color:"white"}} href="#" > {collection.keyWorld} </a></center> 
+                                                        <center style={lableStyle}><a style={{color:"white"}} href="#" onClick={() => getURL(collection)} > {collection.keyWorld} </a></center> 
                                                     </div>)}
                                         </Slider>
                                         :

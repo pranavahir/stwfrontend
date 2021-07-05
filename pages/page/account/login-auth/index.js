@@ -172,7 +172,7 @@ const Login = ({isCheckOut}) => {
                                     <div className="footer-social">
                                     <ul>
                                         {/* <li onClick={facebookAuth}><i className="fa fa-facebook" aria-hidden="true"></i></li> */}
-                                        <li onClick={googleAuth}><a><i className="fa fa-google-plus" aria-hidden="true"></i> <span>Log in with Gmail </span></a></li>
+                                        <li onClick={googleAuth}><a href="#"><i className="fa fa-google-plus" aria-hidden="true"></i> <span>Log in with Gmail </span></a></li>
                                     </ul>
                                 </div>
                                 </Form>

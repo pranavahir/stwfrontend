@@ -45,6 +45,7 @@ const SideBar = () => {
 			}
             filterContext.setSelectedCategory(category)
             filterContext.setselectedKeyword("")
+            filterContext.setSelectedPromaflag([])
         	router.push(`${URL}?${selectedCategory}&brand=${selectedBrands}&color=${selectedColor}&size=${selectedSize}&minPrice=${selectedPrice.min}&maxPrice=${selectedPrice.max}&keyword=`)
     }
 

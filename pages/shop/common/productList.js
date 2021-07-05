@@ -13,7 +13,7 @@ import {WishlistContext} from '../../../helpers/wishlist/WishlistContext';
 import {CompareContext} from '../../../helpers/Compare/CompareContext';
 
 const GET_PRODUCTS = gql`
-    query  products($type:String!,$indexFrom:Int! ,$limit:Int!,$color:String!,$brand:[String!]! ,$priceMax:Int!,$priceMin:Int!,$keyword:String!,$country:String!,$panel:String!,$promoflag:String!) {
+    query  products($type:String!,$indexFrom:Int! ,$limit:Int!,$color:String!,$brand:[String!]! ,$priceMax:Int!,$priceMin:Int!,$keyword:String!,$country:String!,$panel:String!,$promoflag:[String!]) {
         products (type: $type ,indexFrom:$indexFrom ,limit:$limit ,color:$color ,brand:$brand  ,priceMax:$priceMax,priceMin:$priceMin,keyword:$keyword,country:$country,panel:$panel,promoflag:$promoflag){
   total(keyword:$keyword,type:$type,promoflag:$promoflag){
             total
@@ -99,6 +99,7 @@ const ProductList = ({ colClass, layoutList,openSidebar,noSidebar,pathId }) => {
     const selectedBrands = filterContext.selectedBrands;
     const selectedColor = filterContext.selectedColor;
     const selectedPrice = filterContext.selectedPrice;
+    const selectedPromaflag = filterContext.selectedPromaflag;
     var category = "";
     if(pathId!=null & pathId != undefined && pathId!="")
     category = pathId;
@@ -130,9 +131,9 @@ const ProductList = ({ colClass, layoutList,openSidebar,noSidebar,pathId }) => {
         
     }, [selectedBrands, selectedColor, selectedSize, selectedPrice]);
 
-    var limitSet = 10;
+    var limitSet = 12;
     if(selectedKeyword)
-        limitSet = 15;
+        limitSet = 16;
  
     var { loading, data, fetchMore } = useQuery(GET_PRODUCTS, {
         variables: {
@@ -146,7 +147,7 @@ const ProductList = ({ colClass, layoutList,openSidebar,noSidebar,pathId }) => {
             keyword:selectedKeyword,
             country:country,
             panel:panel,
-            promoflag:""
+            promoflag:selectedPromaflag
             
         }
     });

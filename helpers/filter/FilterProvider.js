@@ -12,6 +12,8 @@ const FilterProvider = (props) => {
     const keyword = router.query.keyword;
     const min = router.query.min;
     const max = router.query.max;
+    const Promaflag = router.query.promoflag;
+
     let sizeParam = size ? size.split(","):null;
     let param = brand ? brand.split(","):[] 
     const [selectedKeyword, setselectedKeyword] = useState(keyword?keyword:"");
@@ -19,6 +21,7 @@ const FilterProvider = (props) => {
     const [selectedBrands, setSelectedBrands] = useState(param?param:[]);
     const [selectedColor, setSelectedColor] = useState(color?color:"");
     const [selectedSize, setSelectedSize] = useState(sizeParam?sizeParam:[]);
+    const [selectedPromaflag, setSelectedPromaflag] = useState(Promaflag?Promaflag:[]);
     const [selectedPrice, setSelectedPrice] = useState({ min:min?min:0, max: max?max:500 });
     const [isChecked, setIsChecked] = useState(true);
     const [filterChecked, setFilterChecked] = useState([{}]);
@@ -57,7 +60,7 @@ const FilterProvider = (props) => {
         <FilterContext.Provider
             value={{
                 ...props,
-                state: selectedCategory, setFilterChecked, setSelectedColor, setSelectedCategory,setSelectedBrands , selectedBrands, selectedColor, selectedPrice, isChecked, filterChecked, selectedSize, setSelectedSize,setSelectedPrice,selectedKeyword, setselectedKeyword,
+                state: selectedCategory, setFilterChecked, setSelectedColor, setSelectedCategory,setSelectedBrands , selectedBrands, selectedColor, selectedPrice, isChecked, filterChecked, selectedSize, setSelectedSize,setSelectedPrice,selectedKeyword,setselectedKeyword,selectedPromaflag,setSelectedPromaflag,
                 handleBrands: handleBrands,
                 handleSizes: handleSizes
             }}>

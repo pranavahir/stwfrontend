@@ -305,11 +305,6 @@ const changeGstcheck = (e) => {
       console.log(backendError.message);
       return;
     }
-    // else
-    // {
-    //   console.log(clientMail);
-    // }
-
   }
 
   const deliveryDate = (variantData) =>{

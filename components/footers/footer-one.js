@@ -6,6 +6,7 @@ import { Container, Row, Col, Form, FormGroup, Input, Button } from 'reactstrap'
 import CopyRight from './common/copyright';
 import { CurrencyContext } from '../../helpers/Currency/CurrencyContext';
 import LogisticLogoBlock from '../../components/common/logistic-logo-block';
+import { useForm } from "react-hook-form";
 
 const FooterOne = ({ fluid, logoName ,layoutClass ,footerClass }) => {
 
@@ -15,7 +16,7 @@ const FooterOne = ({ fluid, logoName ,layoutClass ,footerClass }) => {
     const address = curContext.state.address;
     const addressOne = curContext.state.addressOne;
     const addressTwo = curContext.state.addressTwo;
-
+    const { register, handleSubmit, errors } = useForm(); // initialise the hook
     useEffect(() => {
         var contentwidth = window.innerWidth;
         if ((contentwidth) < 750) {
@@ -33,6 +34,35 @@ const styleObject = {
     fontSize: 12,
     lineHeight: 1.7,
 }
+
+const onSubmit = (data, e) => {
+    if (data !== "") {
+       subscribeMail(data.email);
+    } else {
+      errors.showMessages();
+    }
+  };
+
+  const subscribeMail = async (mail) =>{
+
+    const { error: backendMailError, clientMail } = await fetch(
+      "https://support.digitechniq.in/submail/send",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            email:mail,
+        }),
+      }
+    ).then((r) => r.json());
+
+    if (backendMailError) {
+      console.log(backendError.message);
+      return;
+    }
+  }
     
 const allSmall = {
     textTransform: 'lowercase' 
@@ -52,12 +82,24 @@ const allSmall = {
                                 </div>
                             </Col>
                             <Col lg="6">
-                                <Form className="form-inline subscribe-form">
+                                <Form className="form-inline subscribe-form" onSubmit={handleSubmit(onSubmit)} >
                                     <FormGroup className="mx-sm-3">
-                                        <Input type="text" className="form-control" id="exampleFormControlInput1"
-                                            placeholder="Enter your email" />
+                                        
+                                               <input
+                        className={`${errors.email ? "error_border form-control" : "form-control"}`}
+                        type="text"
+                        name="email"
+                        ref={register({
+                          required: true,
+                          pattern: /^\S+@\S+$/i,
+                        })}
+                      />
+                    
                                     </FormGroup>
                                     <Button type="submit" className="btn btn-solid">subscribe</Button>
+                                    <span className="error-message">
+                        {errors.email && "Please enter proper email address ."}
+                      </span>
                                 </Form>
                             </Col>
                         </Row>

@@ -88,21 +88,21 @@ var ListConfig=[
       {
         imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
         categoryUrl:"/c/Phone",
-        category:"Phone",
+        category:["iphone","oneplus","samsung"],
         keyWorld:"More phone >>",
         
-
+  
       },
       {
         imguRL:"https://m.media-amazon.com/images/I/413fkA2hhSS.jpg",
         categoryUrl:"/c/Laptop",
-        category:"Laptop",
+        category:["hplaptop","laptop","microsoft","delllaptop","microsoftphone"],
         keyWorld:"More Laptops >>"
       },
       {
         imguRL:"https://m.media-amazon.com/images/I/51XeMvBLlGL.jpg",
         categoryUrl:"/c/Tablet",
-        category:"Tablet",
+        category:"apple",
         keyWorld:"More Tablet >>"
       },
       {
@@ -114,21 +114,21 @@ var ListConfig=[
       {
         imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
         categoryUrl:"/c/Phone",
-        category:"Phone",
+        category:["iphone","oneplus","samsung"],
         keyWorld:"More phone >>",
         
-
+  
       },
       {
         imguRL:"https://m.media-amazon.com/images/I/413fkA2hhSS.jpg",
         categoryUrl:"/c/Laptop",
-        category:"Laptop",
+        category:["hplaptop","laptop","microsoft","delllaptop","microsoftphone"],
         keyWorld:"More Laptops >>"
       },
       {
         imguRL:"https://m.media-amazon.com/images/I/51XeMvBLlGL.jpg",
         categoryUrl:"/c/Tablet",
-        category:"Tablet",
+        category:"apple",
         keyWorld:"More Tablet >>"
       },
       {
@@ -137,6 +137,8 @@ var ListConfig=[
         category:"HeadPhone",
         keyWorld:"More HeadPhone >>"
       },
+
+      // https://m.media-amazon.com/images/I/413fkA2hhSS.jpg
     ],
     newProducts:[
       {
@@ -269,21 +271,21 @@ var ListConfig=[
       {
         imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
         categoryUrl:"/c/Phone",
-        category:"Phone",
+        category:["iphone","oneplus","samsung"],
         keyWorld:"More phone >>",
         
-
+  
       },
       {
         imguRL:"https://m.media-amazon.com/images/I/413fkA2hhSS.jpg",
         categoryUrl:"/c/Laptop",
-        category:"Laptop",
+        category:["hplaptop","laptop","microsoft","delllaptop","microsoftphone"],
         keyWorld:"More Laptops >>"
       },
       {
         imguRL:"https://m.media-amazon.com/images/I/51XeMvBLlGL.jpg",
         categoryUrl:"/c/Tablet",
-        category:"Tablet",
+        category:"apple",
         keyWorld:"More Tablet >>"
       },
       {
@@ -295,21 +297,21 @@ var ListConfig=[
       {
         imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
         categoryUrl:"/c/Phone",
-        category:"Phone",
+        category:["iphone","oneplus","samsung"],
         keyWorld:"More phone >>",
         
-
+  
       },
       {
         imguRL:"https://m.media-amazon.com/images/I/413fkA2hhSS.jpg",
         categoryUrl:"/c/Laptop",
-        category:"Laptop",
+        category:["hplaptop","laptop","microsoft","delllaptop","microsoftphone"],
         keyWorld:"More Laptops >>"
       },
       {
         imguRL:"https://m.media-amazon.com/images/I/51XeMvBLlGL.jpg",
         categoryUrl:"/c/Tablet",
-        category:"Tablet",
+        category:"apple",
         keyWorld:"More Tablet >>"
       },
       {
