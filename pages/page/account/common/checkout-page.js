@@ -288,13 +288,14 @@ const changeGstcheck = (e) => {
   const OrderedMail = async (productDetail,customerDetail) =>{
 
     const { error: backendMailError, clientMail } = await fetch(
-      "https://support.digitechniq.in/email/send",
+      "https://mailservice.digitechniq.in/",
       {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
+          CRUD:"Order",
           OrderDetail:productDetail,
           CustomerDetail:customerDetail
         }),
