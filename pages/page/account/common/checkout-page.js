@@ -287,6 +287,7 @@ const changeGstcheck = (e) => {
 
   const OrderedMail = async (productDetail,customerDetail) =>{
 
+    
     const { error: backendMailError, clientMail } = await fetch(
       "https://mailservice.digitechniq.in/",
       {
@@ -435,7 +436,7 @@ const changeGstcheck = (e) => {
 
         if(cartItems.length==1)
         {
-          OrderedMail(cartItems[0],customerData);
+        OrderedMail(cartItems[0],customerData);
         }
         else
         {
@@ -906,46 +907,62 @@ const rightAligh = {
                   <div className="row check-out">
                     <div className="form-group col-md-6 col-sm-6 col-xs-12">
                       <div className="field-label">First Name</div>
-                      <input
+                      {(data.CustomerByUID.customername!="" && data.CustomerByUID.customername!=null) ? <input
                         type="text"
                         className={`${errors.first_name ? "error_border" : ""}`}
                         name="first_name"
                         value={data.CustomerByUID.customername}
                         ref={register({ required: true })}
-                      />
+                      /> : <input
+                        type="text"
+                        className={`${errors.first_name ? "error_border" : ""}`}
+                        name="first_name"
+                        ref={register({ required: true })}
+                      />}
                       <span className="error-message">
                         {errors.first_name && "First name is required"}
                       </span>
                     </div>
                     <div className="form-group col-md-6 col-sm-6 col-xs-12">
                       <div className="field-label">Last Name</div>
-                      <input
+                      {(data.CustomerByUID.customerlastname!="" && data.CustomerByUID.customerlastname!=null) ?  <input
                         type="text"
                         className={`${errors.last_name ? "error_border" : ""}`}
                         value={data.CustomerByUID.customerlastname}
                         name="last_name"
                         ref={register({ required: true })}
-                      />
+                      />:<input
+                        type="text"
+                        className={`${errors.last_name ? "error_border" : ""}`}
+                        name="last_name"
+                        ref={register({ required: true })}
+                      />}
                       <span className="error-message">
                         {errors.last_name && "Last name is required"}
                       </span>
                     </div>
                     <div className="form-group col-md-6 col-sm-6 col-xs-12">
                       <div className="field-label">Phone</div>
-                      <input
+                      {(data.CustomerByUID.phonenumber!="" && data.CustomerByUID.customerlastname!=null) ?  <input
                         type="text"
                         name="phone"
                         value={data.CustomerByUID.phonenumber}
                         className={`${errors.phone ? "error_border" : ""}`}
                         ref={register({ pattern: /\d+/ })}
-                      />
+                      />:<input
+                        type="text"
+                        name="phone"
+                        className={`${errors.phone ? "error_border" : ""}`}
+                        ref={register({ pattern: /\d+/ })}
+                      />}
+                      
                       <span className="error-message">
                         {errors.phone && "Please enter number for phone."}
                       </span>
                     </div>
                     <div className="form-group col-md-6 col-sm-6 col-xs-12">
                       <div className="field-label">Email Address</div>
-                      <input
+                      {(data.CustomerByUID.emailid!="" && data.CustomerByUID.emailid!=null) ? <input
                         className="form-control"
                         className={`${errors.email ? "error_border" : ""}`}
                         type="text"
@@ -955,7 +972,16 @@ const rightAligh = {
                           required: true,
                           pattern: /^\S+@\S+$/i,
                         })}
-                      />
+                      />:<input
+                        className="form-control"
+                        className={`${errors.email ? "error_border" : ""}`}
+                        type="text"
+                        name="email"
+                        ref={register({
+                          required: true,
+                          pattern: /^\S+@\S+$/i,
+                        })}
+                      />}
                       <span className="error-message">
                         {errors.email && "Please enter proper email address ."}
                       </span>
@@ -1013,7 +1039,7 @@ const rightAligh = {
 
                     <div className="form-group col-md-12 col-sm-12 col-xs-12">
                       <div className="field-label">Address</div>
-                      <input
+                      {(data.CustomerByUID.address1!="" && data.CustomerByUID.address1!=null) ?  <input
                         className="form-control"
                         className={`${errors.address ? "error_border" : ""}`}
                         type="text"
@@ -1021,14 +1047,21 @@ const rightAligh = {
                         value={data.CustomerByUID.address1}
                         ref={register({ required: true, min: 20, max: 120 })}
                         placeholder="Street address"
-                      />
+                      />:<input
+                        className="form-control"
+                        className={`${errors.address ? "error_border" : ""}`}
+                        type="text"
+                        name="address"
+                        ref={register({ required: true, min: 20, max: 120 })}
+                        placeholder="Street address"
+                      />}
                       <span className="error-message">
                         {errors.address && "Please right your address ."}
                       </span>
                     </div>
                     <div className="form-group col-md-12 col-sm-12 col-xs-12">
                       <div className="field-label">Town/City</div>
-                      <input
+                      {(data.CustomerByUID.city!="" && data.CustomerByUID.city!=null) ?  <input
                         className="form-control"
                         type="text"
                         className={`${errors.city ? "error_border" : ""}`}
@@ -1036,14 +1069,21 @@ const rightAligh = {
                         name="city"
                         ref={register({ required: true })}
                         onChange={setStateFromInput}
-                      />
+                      />:<input
+                        className="form-control"
+                        type="text"
+                        className={`${errors.city ? "error_border" : ""}`}
+                        name="city"
+                        ref={register({ required: true })}
+                        onChange={setStateFromInput}
+                      />}
                       <span className="error-message">
                         {errors.city && "select one city"}
                       </span>
                     </div>
                     <div className="form-group col-md-12 col-sm-6 col-xs-12">
                       <div className="field-label">State / County</div>
-                      <input
+                      {(data.CustomerByUID.state!="" && data.CustomerByUID.state!=null) ?  <input
                         className="form-control"
                         type="text"
                         className={`${errors.state ? "error_border" : ""}`}
@@ -1051,21 +1091,34 @@ const rightAligh = {
                         value={data.CustomerByUID.state}
                         ref={register({ required: true })}
                         onChange={setStateFromInput}
-                      />
+                      />:<input
+                        className="form-control"
+                        type="text"
+                        className={`${errors.state ? "error_border" : ""}`}
+                        name="state"
+                        ref={register({ required: true })}
+                        onChange={setStateFromInput}
+                      />}
                       <span className="error-message">
                         {errors.state && "select one state"}
                       </span>
                     </div>
                     <div className="form-group col-md-12 col-sm-6 col-xs-12">
                       <div className="field-label">Postal Code</div>
-                      <input
+                      {(data.CustomerByUID.pincode!="" && data.CustomerByUID.pincode!=null) ?  <input
                         className="form-control"
                         type="text"
                         name="pincode"
                         value={data.CustomerByUID.pincode}
                         className={`${errors.pincode ? "error_border" : ""}`}
                         ref={register({ pattern: /\d+/ })}
-                      />
+                      />:<input
+                        className="form-control"
+                        type="text"
+                        name="pincode"
+                        className={`${errors.pincode ? "error_border" : ""}`}
+                        ref={register({ pattern: /\d+/ })}
+                      />}
                       <span className="error-message">
                         {errors.pincode && "Required integer"}
                       </span>

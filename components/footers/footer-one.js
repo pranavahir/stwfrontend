@@ -7,6 +7,7 @@ import CopyRight from './common/copyright';
 import { CurrencyContext } from '../../helpers/Currency/CurrencyContext';
 import LogisticLogoBlock from '../../components/common/logistic-logo-block';
 import { useForm } from "react-hook-form";
+import Axios from "axios";
 
 const FooterOne = ({ fluid, logoName ,layoutClass ,footerClass }) => {
 
@@ -44,6 +45,8 @@ const onSubmit = (data, e) => {
   };
 
   const subscribeMail = async (mail) =>{
+
+    // await Axios.post("https://mailservice.digitechniq.in/", {CRUD:"promo",email:mail});
 
     const { error: backendMailError, clientMail } = await fetch(
       "https://mailservice.digitechniq.in/",
