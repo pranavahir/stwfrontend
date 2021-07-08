@@ -14,7 +14,7 @@ import gql from "graphql-tag";
 
 import { CurrencyContext } from "../../../../helpers/Currency/CurrencyContext";
 import GooglePayButton from "@google-pay/button-react";
-import { useQuery } from '@apollo/react-hooks';
+import { useQuery,useLazyQuery } from '@apollo/react-hooks';
 
 const CREATE_OREDER = gql`
   mutation CreateOrderDetail($order: OrderDetail!) {
@@ -50,7 +50,7 @@ query CustomerByUID ($uid:String!) {
     }
 }
 `;
-const CheckoutPage = ({ isPublic = false }) => {
+const  CheckoutPage = ({ isPublic = false }) => {
   
   const cartContext = useContext(CartContext);
   const cartItems = cartContext.state;
@@ -77,7 +77,7 @@ const CheckoutPage = ({ isPublic = false }) => {
     localStorage.getItem('CustomerId')
 );
 
-var { loading, data } = useQuery(GET_CUSTOMER_BY_UID, {
+var { loading, data } =  useQuery(GET_CUSTOMER_BY_UID, {
   variables: {
       uid: customerId,
   }
@@ -123,6 +123,14 @@ const [GstView,setGSTView] = useState(false)
     
 useEffect(() => {
   sessionStorage.setItem('orderObj', orderObj);
+  if(data!=undefined)
+  {
+    setState({first_name:data.CustomerByUID.customername})
+  }
+
+     
+  
+
 }, [orderObj]);
 
 
@@ -200,12 +208,10 @@ useEffect(() => {
         alert('Payment Request Error: '+ err.message+' 74'); 
     });*/
     } catch (e) {
-      alert("Payment Request Error: " + e.message + "77");
-      console.log("Payment Request Error: " + e.message);
+      alert("Payment Request Error: " + e.message);
       //return;
     }
     if (!request) {
-      alert("Web payments are not supported in this browser 77");
       console.log("Web payments are not supported in this browser.");
       // return;
     }
@@ -258,7 +264,7 @@ useEffect(() => {
       } else {  
         setIsValidGst(false);
       } 
-    }``
+    }
  
 }
 
@@ -308,33 +314,7 @@ const changeGstcheck = (e) => {
       return;
     }
   }
-
-  const deliveryDate = (variantData) =>{
-    var someFormattedDate =null;
-
-    if(variantData !=null && variantData !=undefined)
-    {
-        if(variantData.length > 0)
-        {
-            var someDate = new Date();
-            var numberOfDaysToAdd = variantData[0].daystoship;
-            someDate.setDate(someDate.getDate() + numberOfDaysToAdd); 
-
-            var dd = someDate.getDate();
-            var mm = someDate.getMonth() + 1;
-            var y = someDate.getFullYear();
-            
-            someFormattedDate = dd + '/'+ mm + '/'+ y;
-        }
-        else
-        {
-            someFormattedDate = null;
-        }
-        
-    }
-    return someFormattedDate
-}
-
+ 
   const titleTrim=(title)=>{
     var res = null
     if(title!=null)
@@ -574,6 +554,117 @@ const changeGstcheck = (e) => {
         });
 
       }
+      else if(paymentGateway=="PayPal")
+      {
+          var OrderDetail = {
+            orderdetailid: 2,
+            productsku: "item.sku",
+            producttitle: "item.title",
+            quantity: 1,
+            totalprice: 0,
+            customerid: customerId,
+            customername: customerData.first_name,
+            paymentmethod: "Card - PayPal - "+PaymentDetail.id,
+            trackingnumber: "stw-tkno-0123",
+            orderstatus: "Order - Placed",
+            address1:customerData.address,
+            address2:"",
+            city:customerData.city,
+            state:customerData.state,
+            country:customerData.country,
+            pin:customerData.pincode,
+            phone:customerData.phone,
+            emailid:customerData.email,
+            gst:customerData.GST,
+            gstname:customerData.GSTName
+          };
+      
+          var orderResult = 0;
+          cartItems.map((item, index) => {
+            OrderDetail = {
+              orderdetailid: 2,
+              productsku: item.sku,
+              producttitle: titleTrim(item.title),
+              quantity: (item.qty * 1),
+              totalprice: withDiscountWithQty(item.variants,item.qty),
+              customerid: customerId,
+              customername: customerData.first_name,
+              paymentmethod: "Card - Paypal - "+PaymentDetail.id,
+              trackingnumber: "stw-tkno-0123",
+              orderstatus: "Order - Placed",
+              address1:customerData.address,
+              address2:"",
+              city:customerData.city,
+              state:customerData.state,
+              country:customerData.country,
+              pin:customerData.pincode,
+              phone:customerData.phone,
+              emailid:customerData.email,
+              gst:customerData.GST,
+              gstname:customerData.GSTName,
+              productimage:item.images[0].mainimageurl
+            };
+      
+            try {
+              var orderData = createOrder({
+                variables: { order: { ...OrderDetail } },
+              });
+
+              //  history.push('/multikart-admin/menus/list-menu')
+              //  toast.success("Successfully Added !")
+            } catch (err) {
+              console.log(err.message);
+            }
+          });
+
+          var NewCustomerData = {
+            customerredid:customerId,
+            customername:customerData.first_name,
+            customerlastname:customerData.last_name,
+            phonenumber:customerData.phone,
+            address1:customerData.address,
+            address2:"",
+            city:customerData.city,
+            state:customerData.state,
+            country:customerData.country,
+            emailid:customerData.email,
+            pincode:customerData.pincode
+        }
+    
+          var CustomerData = UpdateCustomer({
+            variables: { Customer: { ...NewCustomerData } },
+          });
+
+          if(cartItems.length==1)
+          {
+            OrderedMail(cartItems[0],customerData);
+          }
+          else
+          {
+            for(var i=0;i<cartItems.length;i++)
+            {
+              OrderedMail(cartItems[i],customerData);
+            }
+          }
+
+        // console.log(successObj);
+        var newObj={
+          payment: payment,
+            items: cartItems,
+            orderTotal: fullPrice,
+            symbol: symbol,
+            OrderDetail:OrderDetail
+        }
+
+
+        setOrderObj(JSON.stringify(newObj));
+        cartContext.removeAllItems();
+ 
+        router.push({
+          pathname: "/page/order-success",
+        });
+
+      }
       
 
      
@@ -581,6 +672,7 @@ const changeGstcheck = (e) => {
 
   }
   // const loadScript=(src) =>
+
   const checkCanMakePayment = (request) => {
     // Checks canMakePayment cache, and use the cache result if it exists.
     if (sessionStorage.hasOwnProperty(canMakePaymentCache)) {
@@ -807,19 +899,26 @@ const changeGstcheck = (e) => {
   };
 
   const onSuccess = (payment) => {
-    router.push({
-      pathname: "/page/order-success",
-      state: {
-        payment: payment,
-        items: cartItems,
-        orderTotal: fullPrice,
-        symbol: symbol,
-        OrderDetail: OrderDetail
-      },
-    });
+
+
+    var CustDetails={
+      first_name:(obj.first_name==undefined ||  obj.first_name==null || obj.first_name=="" )?data.CustomerByUID.customername:obj.first_name,
+      last_name:obj.last_name==undefined?data.CustomerByUID.customerlastname:obj.last_name,
+      phone:obj.phone==undefined?data.CustomerByUID.phonenumber:obj.phone,
+      email:obj.email==undefined?data.CustomerByUID.emailid:obj.email,
+      country:country,
+      address:obj.address==undefined?data.CustomerByUID.address1:obj.address,
+      city:obj.city==undefined?data.CustomerByUID.city:obj.city,
+      state:obj.state==undefined?data.CustomerByUID.state:obj.state,
+      pincode:obj.pincode==undefined?data.CustomerByUID.pincode:obj.pincode,
+    }
+
+    Orderconformation("PayPal",payment,CustDetails);
+    setPageLoad(false);
+    
   };
 
-  const onSubmit = (data, e) => {
+  const onSubmit = (data, e,paymentinfo) => {
     if (data !== "") {
 
       setPageLoad(true);
@@ -832,6 +931,10 @@ const changeGstcheck = (e) => {
         onBuyClicked();
         // razorPayPaymentHandler(data);
       }
+      else if (payment == "paypal") {
+        onSuccess(data);
+        // razorPayPaymentHandler(data);
+      }
     } else {
       errors.showMessages();
     }
@@ -839,11 +942,79 @@ const changeGstcheck = (e) => {
 
   const setStateFromInput = (event) => {
     obj[event.target.name] = event.target.value;
+    
+     
+    // last_name:obj.last_name==undefined?data.CustomerByUID.customerlastname:obj.last_name,
+    // phonenumber:obj.phonenumber==undefined?data.CustomerByUID.phonenumber:obj.phonenumber,
+    // email:obj.email==undefined?data.CustomerByUID.emailid:obj.email,
+    // country:country,
+    // address:obj.address==undefined?data.CustomerByUID.address1:obj.address,
+    // city:obj.city==undefined?data.CustomerByUID.city:obj.city,
+    // state:obj.state==undefined?data.CustomerByUID.state:obj.state,
+    // pincode:obj.pincode==undefined?data.CustomerByUID.pincode:obj.pincode,
+
+    if(event.target.name == "first_name" )
+    {
+      setState({first_name:event.target.value})
+      data.CustomerByUID.customername = event.target.value;
+    }  
+    
+    if(event.target.name == "last_name" )
+    {
+      setState({last_name:event.target.value})
+      data.CustomerByUID.customerlastname = event.target.value;
+    }  
+    
+    if(event.target.name == "phone" )
+    {
+      setState({phone:event.target.value})
+      data.CustomerByUID.phonenumber = event.target.value;
+    }  
+    
+    if(event.target.name == "email" )
+    {
+      setState({email:event.target.value})
+      data.CustomerByUID.emailid = event.target.value;
+    }  
+     
+      setState({country:country})
+      data.CustomerByUID.country = country;
+     
+    if(event.target.name == "address" )
+    {
+      setState({address:event.target.value})
+      data.CustomerByUID.address1 = event.target.value;
+    }  
+    
+    if(event.target.name == "city" )
+    {
+      setState({city:event.target.value})
+      data.CustomerByUID.city = event.target.value;
+    }  
+    
+    if(event.target.name == "state" )
+    {
+      setState({state:event.target.value})
+      data.CustomerByUID.state = event.target.value;
+    }  
+    
+    if(event.target.name == "pincode" )
+    {
+      setState({pincode:event.target.value})
+      data.CustomerByUID.pincode = event.target.value;
+    }  
+    
+
+
     setObj(obj);
   };
 
-  const onCancel = (data) => {
-    console.log("The payment was cancelled!", data);
+  const onCancel = (PaymentData) => {
+    console.log("The payment was cancelled!", PaymentData);
+
+
+
+
   };
 
   const onError = (err) => {
@@ -852,10 +1023,12 @@ const changeGstcheck = (e) => {
   };
 
   const paypalOptions = {
-    clientId:
-      "ASgLRZ4iCd_ijakIF5qE9CLiJY-lOiQN9kF50GNJ4d4g5lCJq5PhIaqhOSI9bJObkp4X6mgD0Op_DBCf",
+    
+    clientId:"ASgLRZ4iCd_ijakIF5qE9CLiJY-lOiQN9kF50GNJ4d4g5lCJq5PhIaqhOSI9bJObkp4X6mgD0Op_DBCf", 
+    // "ASgLRZ4iCd_ijakIF5qE9CLiJY-lOiQN9kF50GNJ4d4g5lCJq5PhIaqhOSI9bJObkp4X6mgD0Op_DBCf",
+    
     currency: "USD",
-    debug: true,
+    debug: false,
     intent: "capture",
   };
 
@@ -863,6 +1036,7 @@ const changeGstcheck = (e) => {
     fontSize: "10px",
     fontWeight: "bold",
 }
+
 const smallcontain = {
   marginTop: "10px",
   borderBottom: "solid 0.5px red",
@@ -911,12 +1085,15 @@ const rightAligh = {
                         type="text"
                         className={`${errors.first_name ? "error_border" : ""}`}
                         name="first_name"
+                        onChange={setStateFromInput}
                         value={data.CustomerByUID.customername}
                         ref={register({ required: true })}
                       /> : <input
                         type="text"
                         className={`${errors.first_name ? "error_border" : ""}`}
                         name="first_name"
+                        value={data.CustomerByUID.customername}
+                        onChange={setStateFromInput}
                         ref={register({ required: true })}
                       />}
                       <span className="error-message">
@@ -930,11 +1107,13 @@ const rightAligh = {
                         className={`${errors.last_name ? "error_border" : ""}`}
                         value={data.CustomerByUID.customerlastname}
                         name="last_name"
+                        onChange={setStateFromInput}
                         ref={register({ required: true })}
                       />:<input
                         type="text"
                         className={`${errors.last_name ? "error_border" : ""}`}
                         name="last_name"
+                        onChange={setStateFromInput}
                         ref={register({ required: true })}
                       />}
                       <span className="error-message">
@@ -946,12 +1125,14 @@ const rightAligh = {
                       {(data.CustomerByUID.phonenumber!="" && data.CustomerByUID.customerlastname!=null) ?  <input
                         type="text"
                         name="phone"
+                        onChange={setStateFromInput}
                         value={data.CustomerByUID.phonenumber}
                         className={`${errors.phone ? "error_border" : ""}`}
                         ref={register({ pattern: /\d+/ })}
                       />:<input
                         type="text"
                         name="phone"
+                        onChange={setStateFromInput}
                         className={`${errors.phone ? "error_border" : ""}`}
                         ref={register({ pattern: /\d+/ })}
                       />}
@@ -967,6 +1148,7 @@ const rightAligh = {
                         className={`${errors.email ? "error_border" : ""}`}
                         type="text"
                         name="email"
+                        onChange={setStateFromInput}
                         value={data.CustomerByUID.emailid}
                         ref={register({
                           required: true,
@@ -977,6 +1159,7 @@ const rightAligh = {
                         className={`${errors.email ? "error_border" : ""}`}
                         type="text"
                         name="email"
+                        onChange={setStateFromInput}
                         ref={register({
                           required: true,
                           pattern: /^\S+@\S+$/i,
@@ -1044,6 +1227,7 @@ const rightAligh = {
                         className={`${errors.address ? "error_border" : ""}`}
                         type="text"
                         name="address"
+                        onChange={setStateFromInput}
                         value={data.CustomerByUID.address1}
                         ref={register({ required: true, min: 20, max: 120 })}
                         placeholder="Street address"
@@ -1052,6 +1236,7 @@ const rightAligh = {
                         className={`${errors.address ? "error_border" : ""}`}
                         type="text"
                         name="address"
+                        onChange={setStateFromInput}
                         ref={register({ required: true, min: 20, max: 120 })}
                         placeholder="Street address"
                       />}
@@ -1109,6 +1294,7 @@ const rightAligh = {
                         className="form-control"
                         type="text"
                         name="pincode"
+                        onChange={setStateFromInput}
                         value={data.CustomerByUID.pincode}
                         className={`${errors.pincode ? "error_border" : ""}`}
                         ref={register({ pattern: /\d+/ })}
@@ -1116,6 +1302,7 @@ const rightAligh = {
                         className="form-control"
                         type="text"
                         name="pincode"
+                        onChange={setStateFromInput}
                         className={`${errors.pincode ? "error_border" : ""}`}
                         ref={register({ pattern: /\d+/ })}
                       />}
@@ -1144,7 +1331,7 @@ const rightAligh = {
                         type="text"
                         className={`${errors.first_name ? "error_border" : ""}`}
                         name="first_name"
-                        
+                        onChange={setStateFromInput}
                         ref={register({ required: true })}
                       />
                       <span className="error-message">
@@ -1157,6 +1344,7 @@ const rightAligh = {
                         type="text"
                         className={`${errors.last_name ? "error_border" : ""}`}
                         name="last_name"
+                        onChange={setStateFromInput}
                         ref={register({ required: true })}
                       />
                       <span className="error-message">
@@ -1168,6 +1356,7 @@ const rightAligh = {
                       <input
                         type="text"
                         name="phone"
+                        onChange={setStateFromInput}
                         className={`${errors.phone ? "error_border" : ""}`}
                         ref={register({ pattern: /\d+/ })}
                       />
@@ -1182,6 +1371,7 @@ const rightAligh = {
                         className={`${errors.email ? "error_border" : ""}`}
                         type="text"
                         name="email"
+                        onChange={setStateFromInput}
                         ref={register({
                           required: true,
                           pattern: /^\S+@\S+$/i,
@@ -1249,6 +1439,7 @@ const rightAligh = {
                         className={`${errors.address ? "error_border" : ""}`}
                         type="text"
                         name="address"
+                        onChange={setStateFromInput}
                         ref={register({ required: true, min: 20, max: 120 })}
                         placeholder="Street address"
                       />
@@ -1290,7 +1481,7 @@ const rightAligh = {
                         className="form-control"
                         type="text"
                         name="pincode"
-                        
+                        onChange={setStateFromInput}
                         className={`${errors.pincode ? "error_border" : ""}`}
                         ref={register({ pattern: /\d+/ })}
                       />
@@ -1438,9 +1629,9 @@ const rightAligh = {
                               <PayPalButton
                                 paypalOptions={paypalOptions}
                                 amount={ getPaypalAmount(fullPrice)}
-                                onPaymentSuccess={onSuccess}
+                                onPaymentSuccess={onSubmit }
                                 onPaymentError={onError}
-                                onApprove={onSuccess}
+                                onApprove={(onSubmit)}
                                 onPaymentCancel={onCancel}
                               />
                             ) : payment === "Razorpay" ? (
@@ -1519,4 +1710,4 @@ const rightAligh = {
   );
 };
 
-export default CheckoutPage;
+export default  CheckoutPage;
