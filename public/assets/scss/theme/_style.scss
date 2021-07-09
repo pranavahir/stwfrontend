@@ -116,7 +116,7 @@ h4 {
 }
 
 h5 {
-  font-size: 16px;
+  font-size: 12px;
   font-weight: 400;
   color: $dark-font;
   line-height: 24px;
@@ -729,7 +729,7 @@ button {
   }
 
   &.btn-sm {
-    padding: 9px 16px;
+    padding: 9px 12px;
   }
 
   &.btn-xs {
@@ -1189,7 +1189,7 @@ header {
       .header-contact {
         li {
           color: #fff;
-          font-size: 16px;
+          font-size: 12px;
 
           i {
             color: #fff;
@@ -1755,7 +1755,7 @@ header {
 
                     span {
                       color: $grey;
-                      font-size: 16px;
+                      font-size: 12px;
                     }
                   }
                 }
@@ -1796,7 +1796,7 @@ header {
 
               .buttons {
                 a {
-                  font-size: 16px;
+                  font-size: 12px;
                   color: $font-color;
                   text-transform: capitalize;
                   font-weight: 700;
@@ -1820,7 +1820,7 @@ header {
             left: unset;
 
             h6 {
-              font-size: 16px;
+              font-size: 12px;
               text-transform: capitalize;
               color: $font-color;
               font-weight: 700;
@@ -1844,7 +1844,7 @@ header {
                 a {
                   color: $font-color;
                   font-weight: 400;
-                  font-size: 16px;
+                  font-size: 12px;
                   text-transform: capitalize;
                 }
               }
@@ -1915,7 +1915,7 @@ header {
 
     a {
       color: $dark-font;
-      font-size: 16px;
+      font-size: 12px;
       text-transform: uppercase;
     }
   }
@@ -3146,8 +3146,8 @@ header {
         padding-top: 5px;
 
         li {
-          height: 16px;
-          width: 16px;
+          height: 12px;
+          width: 12px;
         }
       }
 
@@ -3820,7 +3820,7 @@ header {
       padding-top: 2px;
       padding-bottom: 5px;
       transition: all 0.5s ease;
-      font-size: 16px;
+      font-size: 12px;
     }
 
     h4 {
@@ -4048,7 +4048,7 @@ header {
           border-radius: 100%;
           margin: 10px 0;
           padding: 8px;
-          font-size: 16px;
+          font-size: 12px;
           color: #313131;
         }
       }
@@ -4167,7 +4167,7 @@ header {
           border-radius: 100%;
           margin: 10px 0;
           padding: 8px;
-          font-size: 16px;
+          font-size: 12px;
         }
       }
     }
@@ -4926,7 +4926,7 @@ header {
       padding-right: calc(30px + (60 - 30) * ((100vw - 320px) / (1920 - 320)));
 
       h4 {
-        font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320)));
+        font-size: calc(12px + (18 - 16) * ((100vw - 320px) / (1920 - 320)));
         color: $white;
         font-weight: 700;
         text-transform: uppercase;
@@ -5626,7 +5626,7 @@ header {
 
                   a {
                     h6 {
-                      font-size: 16px;
+                      font-size: 12px;
 
                       i {
                         margin-right: 8px;
@@ -5644,7 +5644,7 @@ header {
                   .buttons {
                     a {
                       display: inline-block;
-                      font-size: 16px;
+                      font-size: 12px;
                       padding: 6px 10px;
                       margin: 0 6px;
                     }
@@ -5729,7 +5729,7 @@ header {
 
               a {
                 h6 {
-                  font-size: 16px;
+                  font-size: 12px;
 
                   i {
                     margin-right: 8px;
@@ -5747,7 +5747,7 @@ header {
               .buttons {
                 a {
                   display: inline-block;
-                  font-size: 16px;
+                  font-size: 12px;
                   padding: 6px 10px;
                   margin: 0 6px;
                 }
@@ -6329,7 +6329,7 @@ header {
       max-width: 75%;
       margin: 0 auto;
       line-height: 22px;
-      font-size: 16px;
+      font-size: 12px;
       letter-spacing: 0.04em;
     }
 
@@ -6543,7 +6543,7 @@ footer {
   input {
     width: 100%;
     height: 45px;
-    font-size: 16px;
+    font-size: 12px;
     color: darkgrey;
     border: none;
     outline: none;
@@ -7282,7 +7282,7 @@ footer {
           padding: 8px 15px 8px 0;
 
           a {
-            font-size: 16px;
+            font-size: 12px;
             text-transform: capitalize;
             color: $dark-font;
 
@@ -7453,7 +7453,7 @@ footer {
   input {
     width: 100%;
     height: 45px;
-    font-size: 16px;
+    font-size: 12px;
     color: darkgrey;
     border: none;
     outline: none;
@@ -9212,7 +9212,7 @@ footer {
     overflow: auto;
 
     i {
-      font-size: 16px;
+      font-size: 12px;
       margin-right: 10px;
     }
   }
@@ -9555,7 +9555,7 @@ footer {
 
       .demo-text {
         h4 {
-          font-size: 16px;
+          font-size: 12px;
           margin-top: 10px;
           margin-bottom: 0;
           color: #000000;
@@ -9666,7 +9666,7 @@ footer {
     overflow: auto;
 
     i {
-      font-size: 16px;
+      font-size: 12px;
       margin-right: 10px;
     }
   }
@@ -9778,7 +9778,7 @@ footer {
     align-items: center;
 
     h2 {
-      font-size: 16px;
+      font-size: 12px;
       margin-bottom: 0;
     }
   }
@@ -10008,7 +10008,7 @@ footer {
     position: relative;
     cursor: pointer;
     text-transform: uppercase;
-    font-size: 16px;
+    font-size: 12px;
     color: lighten($black, 26.5%);
     font-weight: 600;
     margin: 30px 0 30px 0;
@@ -10059,7 +10059,7 @@ footer {
       .category-list {
         li {
           display: flex;
-          font-size: 16px;
+          font-size: 12px;
           text-transform: uppercase;
           line-height: 18px;
 
@@ -10203,7 +10203,7 @@ footer {
     }
 
     h5 {
-      font-size: 16px;
+      font-size: 12px;
       font-weight: 600;
       color: lighten($black, 26.5%);
       letter-spacing: 1px;
@@ -10392,7 +10392,7 @@ footer {
         background: url("#{$assetspath}/dropdown.png") no-repeat 95%;
 
         a {
-          font-size: 16px;
+          font-size: 12px;
           color: $dark-font;
         }
 
@@ -10443,7 +10443,7 @@ footer {
 
         select {
           padding-right: 45px;
-          font-size: 16px;
+          font-size: 12px;
         }
 
         &:before {
@@ -10629,7 +10629,7 @@ footer {
       h4 {
         color: $dark-font;
         margin-bottom: 10px;
-        font-size: 16px;
+        font-size: 12px;
       }
 
       p {
@@ -11272,7 +11272,7 @@ footer {
       label {
         text-transform: capitalize;
         color: $font-color;
-        font-size: 16px;
+        font-size: 12px;
         font-weight: 700;
       }
 
@@ -11439,7 +11439,7 @@ footer {
 .seen-it-cls {
   margin-top: 50px;
   color: red;
-  font-size: 16px;
+  font-size: 12px;
 
   b {
     border: 1px solid #ddd;
@@ -11655,7 +11655,7 @@ footer {
   }
 
   h4 {
-    font-size: 16px;
+    font-size: 12px;
     margin-bottom: 7px;
 
     del {
@@ -12200,7 +12200,7 @@ footer {
 
       .price {
         padding-bottom: 10px;
-        font-size: 16px;
+        font-size: 12px;
         color: var(--theme-deafult);
       }
     }
@@ -12300,7 +12300,7 @@ footer {
         font-weight: 700;
 
         span {
-          font-size: 16px;
+          font-size: 12px;
           color: $dark-font;
           font-weight: 600;
         }
@@ -12355,7 +12355,7 @@ footer {
       top: -1px;
       font-weight: normal;
       padding: 0;
-      font-size: 16px;
+      font-size: 12px;
       cursor: pointer;
       color: $font-color;
     }
@@ -12423,7 +12423,7 @@ footer {
     li {
       position: relative;
       display: inline-block;
-      font-size: 16px;
+      font-size: 12px;
       font-weight: 600;
       color: $font-color;
       line-height: 20px;
@@ -12444,7 +12444,7 @@ footer {
     .shopping-option {
       label {
         position: relative;
-        font-size: 16px;
+        font-size: 12px;
         line-height: 32px;
         padding-left: 10px;
         color: $grey6;
@@ -12517,7 +12517,7 @@ footer {
           color: $grey6;
           cursor: pointer;
           font-weight: 600;
-          font-size: 16px;
+          font-size: 12px;
           line-height: 20px;
           margin-bottom: 0;
         }
@@ -12726,7 +12726,7 @@ footer {
       width: 100%;
 
       h3 {
-        font-size: 16px;
+        font-size: 12px;
         margin: 0;
         text-transform: capitalize;
         color: #333;
@@ -12764,7 +12764,7 @@ footer {
   background-color: var(--theme-deafult);
   color: $white;
   width: 30%;
-  font-size: 16px;
+  font-size: 12px;
   text-transform: uppercase;
   text-align: center;
   font-weight: 700;
@@ -12807,13 +12807,13 @@ footer {
       display: flex;
       text-transform: capitalize;
       line-height: 24px;
-      font-size: 16px;
+      font-size: 12px;
     }
   }
 
   .payment-mode {
     p {
-      font-size: 16px;
+      font-size: 12px;
       line-height: 20px;
       margin-bottom: 0;
     }
@@ -12915,7 +12915,7 @@ footer {
   -webkit-transform: rotate(-180deg);
   transform: rotate(-180deg);
   top: 20px;
-  left: 16px;
+  left: 12px;
   letter-spacing: 0.1em;
   z-index: 1;
 }
@@ -13679,7 +13679,7 @@ footer {
 
         li {
           color: rgba(white, 0.7);
-          font-size: 16px;
+          font-size: 12px;
           padding-right: 0;
 
           &:first-child {
@@ -13777,7 +13777,7 @@ footer {
 
             i {
               color: $font-grey;
-              font-size: 16px;
+              font-size: 12px;
               padding-right: 7px;
               transition: all 0.5s ease;
 
@@ -13989,7 +13989,7 @@ header {
           line-height: 1.5;
           margin-top: 15px;
           margin-bottom: 10px;
-          font-size: 16px;
+          font-size: 12px;
         }
       }
     }
@@ -14240,7 +14240,7 @@ table {
     background-color: $top-header;
 
     .profile-top {
-      padding: 0 16px;
+      padding: 0 12px;
       margin-bottom: calc(10px + (20 - 10) * ((100vw - 320px) / (1920 - 320)));
 
       .profile-image {
@@ -14328,7 +14328,7 @@ table {
   .dashboard-table {
     h3 {
       text-transform: capitalize;
-      font-size: 16px;
+      font-size: 12px;
       color: black;
       margin-bottom: 15px;
     }
@@ -14384,7 +14384,7 @@ table {
 
       span {
         margin-left: 30px;
-        padding: 2px 16px;
+        padding: 2px 12px;
         border-radius: 2px;
         text-transform: capitalize;
         color: var(--theme-deafult);
@@ -14850,7 +14850,7 @@ table {
         }
 
         label {
-          font-size: 16px;
+          font-size: 12px;
           text-transform: capitalize;
           padding-left: 5px;
         }
@@ -15053,7 +15053,7 @@ table {
       label {
         text-transform: capitalize;
         color: $font-color;
-        font-size: 16px;
+        font-size: 12px;
         font-weight: 700;
       }
 
@@ -15095,7 +15095,7 @@ table {
 
       a {
         color: #777777;
-        font-size: 16px;
+        font-size: 12px;
 
         i {
           margin-right: 5px;
@@ -15368,7 +15368,7 @@ table {
 
               span {
                 color: $grey;
-                font-size: 16px;
+                font-size: 12px;
               }
             }
           }
@@ -15393,7 +15393,7 @@ table {
 
         .buttons {
           a {
-            font-size: 16px;
+            font-size: 12px;
             color: $white;
             text-transform: capitalize;
             font-weight: 700;
@@ -15418,7 +15418,7 @@ table {
 
         i {
           color: $grey-light;
-          font-size: 16px;
+          font-size: 12px;
           transition: all 0.5s ease;
 
           &:hover {
@@ -15808,7 +15808,7 @@ table {
 
                   a {
                     h6 {
-                      font-size: 16px;
+                      font-size: 12px;
 
                       i {
                         margin-right: 8px;
@@ -15826,7 +15826,7 @@ table {
                   .buttons {
                     a {
                       display: inline-block;
-                      font-size: 16px;
+                      font-size: 12px;
                       padding: 6px 10px;
                       margin: 0 6px;
                     }
@@ -15987,7 +15987,7 @@ table {
         padding-top: 7px;
         padding-bottom: 5px;
         transition: all 0.5s ease;
-        font-size: 16px;
+        font-size: 12px;
         color: $grey4;
         font-weight: 700;
       }
@@ -16140,7 +16140,7 @@ table {
     .santa-img {
       position: absolute;
       top: 0;
-      right: -116px;
+      right: -112px;
     }
 
     .slick-prev {
@@ -16217,7 +16217,7 @@ table {
         margin-top: 10px;
         text-transform: capitalize;
         color: $grey2;
-        font-size: 16px;
+        font-size: 12px;
       }
 
       p {

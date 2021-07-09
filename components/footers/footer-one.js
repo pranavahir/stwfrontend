@@ -8,6 +8,7 @@ import { CurrencyContext } from '../../helpers/Currency/CurrencyContext';
 import LogisticLogoBlock from '../../components/common/logistic-logo-block';
 import { useForm } from "react-hook-form";
 import Axios from "axios";
+import { toast } from 'react-toastify';
 
 const FooterOne = ({ fluid, logoName ,layoutClass ,footerClass }) => {
 
@@ -39,6 +40,7 @@ const styleObject = {
 const onSubmit = (data, e) => {
     if (data !== "") {
        subscribeMail(data.email);
+       toast.success("Successfully Subscribe !");
     } else {
       errors.showMessages();
     }
@@ -66,6 +68,9 @@ const onSubmit = (data, e) => {
       console.log(backendError.message);
       return;
     }
+ 
+    
+   
   }
     
 const allSmall = {
@@ -169,8 +174,8 @@ const allSmall = {
                                     <ul>
                                         <li><a href="/page/returns-refund">Returns & Refunds</a></li>
                                         <li><a href="#">Wholesale</a></li>
-                                        {/* <li><a href="#">gallary</a></li> */}
-                                        {/* <li><a href="#">affiliates</a></li> */}
+                                        <li><a href="/page/terms_conditions"> Terms & Conditions</a></li>
+                                        <li><a href="/page/privacy_policy">Privacy Policy</a></li>
                                         <li>
                                         <Link href={`/page/account/contact`} >
                                         <a>contact us </a>

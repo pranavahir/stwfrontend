@@ -95,18 +95,20 @@ const TopBarDark = ({ topClass, fluid }) => {
                     </Col>
                     <Col lg="6" className="text-right">
                         <ul className="header-dropdown">
-                        {customerId !="" ?  
+                        {(customerId !="" && customerId !=null && customerId !="null"  && customerId !=undefined) ?  
                             <li className="mobile-wishlist">
                                 <Link href="/page/account/my-order">
-                                    <a><i className="fa fa-heart" aria-hidden="true"></i>My Orders</a>
+                                    <a><i className="fa fa-heart" aria-hidden="true"></i>My Orders </a>
                                 </Link>
                             </li> : ""
                         }
+
+                        {(customerId !="" && customerId !=null && customerId !="null" && customerId !=undefined) ?  
                             <li className="mobile-wishlist">
                                 <Link href="/page/account/wishlist">
                                     <a><i className="fa fa-heart" aria-hidden="true"></i> wishlist</a>
                                 </Link>
-                            </li>
+                            </li>:""}
                             {name!="" && name!=null && name!="null" && name ?<li className="onhover-dropdown mobile-account">
                                 {photoURL==null ? <i className="fa fa-user" aria-hidden="true"></i> :
                                 <img style={imgStyle} src={photoURL} alt="" width="15%" className="img-fluid" />}

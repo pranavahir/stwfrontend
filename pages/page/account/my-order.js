@@ -5,7 +5,7 @@ import MyOrderPage from './common/order-page';
  
 const MyOrder = () => {
     return (
-            <CommonLayout parent="home" title="wishlist">
+            <CommonLayout parent="home" title="My Order">
             <MyOrderPage/>
         </CommonLayout>
         

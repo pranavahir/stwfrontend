@@ -214,16 +214,16 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
                         </ModalBody>
                     </Modal>
                 </div>
-                {product.images ?
+                {/* {product.images ?
                     <ul className="product-thumb-list">
-                        {/* {product.images.map((img, i) => */}
+                         {product.images.map((img, i) =>  // already Commanded 
                             <li className={`grid_thumb_img ${product.images.length > 0?product.images[0].mainimageurl:"" === image ? 'active' : ''}`}>
                                 <a href={null} title="Add to Wishlist">
                                     <Media src={`${product.images.length > 0?product.images[0].mainimageurl:""}`} alt="wishlist" onClick={() => onClickHandle((product.images.length?product.images[0].mainimageurl:""))} />
                                 </a>
                             </li>
-                        {/* )} */}
-                    </ul> : ''}
+                        )}  
+                    </ul> : ''} */}
 
             </div>
             <div className={`product-detail ${productDetail}`} >

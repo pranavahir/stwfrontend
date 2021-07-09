@@ -23,8 +23,8 @@ const client = new ApolloClient({
     // http://162.0.210.5:4458/
     // uri: "http://162.0.210.5:4457/api/graphql"  //local stwapi
     //  uri: "https://cryptic-mountain-48315.herokuapp.com/api/graphql"  //Test env
-    uri:'https://docker.digitechniq.in/api/graphql', //production env 001
-    // uri:'https://stwecommerceapi.digitechniq.in/api/graphql', //production env 002
+    //uri:'https://docker.digitechniq.in/api/graphql', //production env 001
+    uri:'https://stwecommerceapi.digitechniq.in/api/graphql', //production env 002
     
 })
 

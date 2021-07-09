@@ -166,7 +166,7 @@ const Login = ({isCheckOut}) => {
 
                                     <ul>
                                         <li><a href="#" className="btn btn-solid" onClick={() => loginAuth(email,password)}>Login</a></li>
-                                        {isCheckOut?<li><a href="#" className="btn btn-solid" onClick={() => loginGuest(email,password)}>Guest</a></li>:""}
+                                        {isCheckOut?<li> &nbsp; <a href="#" className="btn btn-solid" onClick={() => loginGuest(email,password)}>Guest</a></li>:""}
                                     </ul>
 
                                     <div className="footer-social">

@@ -96,7 +96,8 @@ const SpecialProducts = ({ type, designClass, cartClass, noTitle }) => {
             limit: 8,
             keyword:"Electronics",
             country:country,
-            panel:panel
+            panel:panel,
+            relevantProduct:""
         }
     });
 

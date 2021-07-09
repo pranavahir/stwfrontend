@@ -7,85 +7,91 @@ import CartContext from '../../../helpers/cart';
 import {WishlistContext} from '../../../helpers/wishlist/WishlistContext';
 import { CompareContext } from '../../../helpers/Compare/CompareContext';
 import { useRouter } from 'next/router'
+import AutoFitImage from 'react-image-autofit-frame';
 
 const GET_PRODUCTS = gql`
-    query  product($id:Int!) {
-        product (id: $id){
-            items {
-                seqid
-                sku
-                title
-                description
-                bullepoints
-                brandid
-                categoryid
-                isvisible
-                isactive
-                warehouseid
-                metatagdescription
-                seokeywords
-                weight
-                height
-                width
-                length
-                fromcurrency
-                asin
-          images{
-                productid
-                mainimageurl
-                additionalimage1
-                additionalimage2
-                additionalimage3
-                additionalimage4
-                additionalimage5
-          }
-          variants
-          {
-                variantid
-                sku
-                productid
-                color
-                size
-                processor
-                graphics
-                discount
-                price 
-                conversionrate
-                frieghtrate
-                duty
-                taxes
-                fees
-                margin
-          }
-          specifications
-          {
+    query  products($type:String!,$indexFrom:Int! ,$limit:Int!,$color:String!,$brand:[String!]! ,$priceMax:Int!,$priceMin:Int!,$keyword:String!,$country:String!,$panel:String!,$promoflag:[String!],$relevantProduct:String) {
+        products (type: $type ,indexFrom:$indexFrom ,limit:$limit ,color:$color ,brand:$brand  ,priceMax:$priceMax,priceMin:$priceMin,keyword:$keyword,country:$country,panel:$panel,promoflag:$promoflag,relevantProduct:$relevantProduct){
+  total(keyword:$keyword,type:$type,promoflag:$promoflag,relevantProduct:$relevantProduct){
+            total
+        }
+        hasMore(limit:$limit,indexFrom:$indexFrom,keyword:$keyword,type:$type,promoflag:$promoflag,relevantProduct:$relevantProduct){
             seqid
+        }
+        items(limit:$limit,indexFrom:$indexFrom,keyword:$keyword,type:$type,promoflag:$promoflag,relevantProduct:$relevantProduct){
+            seqid
+            sku
+            title
+            description
+            bullepoints
+            brandid
+            categoryid
+            isvisible
+            isactive
+            warehouseid
+            metatagdescription
+            seokeywords
+            weight
+            height
+            width
+            length
+      
+            fromcurrency
+            asin
+      images{
             productid
-            upc
-            mpn
-            partnumber
-            isbn
-            screendisplaysize
-            maxscreenresolution
-            processor
-            ram
-            memoryspeed
-            harddrive
-            operatingsystem
-            processorbrand
-            hardriveinterface
-            itemdimension
-            productdimension
+            mainimageurl
+            additionalimage1
+            additionalimage2
+            additionalimage3
+            additionalimage4
+            additionalimage5
+      }
+      variants(country:$country,panel:$panel)
+      {
+            variantid
+            sku
+            productid
+            color
             size
-           }
-          }
+            processor
+            graphics
+            discount
+            price 
+            daystoship
+            pwfee
+            purchasetax
+            conversionrate
+            frieghtrate
+            duty
+            taxes
+            fees
+            margin
+            quantity
+            domesticfreight
+      }
+        }
+
         }
     }
 `;
 
 
-const ProductSection = () => {
-    
+const ProductSection = ({ pathId, type }) => {
+    var asinData = "";
+    if(type == "url")
+    {
+        asinData = pathId;
+    }
+    else
+    {
+        
+        if(pathId.search("-")==0)
+        asinData =  pathId
+        else
+        asinData =  pathId.slice(0,pathId.search("-"));
+
+    }
     const router = useRouter();
     const curContext = useContext(CurrencyContext);
     const wishlistContext = useContext(WishlistContext);
@@ -98,6 +104,9 @@ const ProductSection = () => {
     const plusQty = cartCtx.plusQty;
     const minusQty = cartCtx.minusQty;
     const setQuantity = cartCtx.setQuantity;
+    const withDiscount = cartCtx.withDiscount;
+    const country = curContext.state.country;
+    const panel = curContext.state.panel;
     const [selectedProduct,setSelectedProduct] = useState()
     const [image, setImage] = useState('');
     const [modal, setModal] = useState(false);
@@ -129,11 +138,20 @@ const ProductSection = () => {
         toggle()
     } 
 
-    var { loading, data } = useQuery(GET_PRODUCTS, {
+    var { loading, data, fetchMore } = useQuery(GET_PRODUCTS, {
         variables: {
-            type: "fashion",
-            indexFrom:0,
-            limit:8
+            type: "",
+            priceMax: 10,
+            priceMin: 1,
+            color: "red",
+            brand: "max",
+            indexFrom: 0,
+            limit: 15,
+            keyword:"",
+            country:country,
+            panel:panel,
+            promoflag:"",
+            relevantProduct:"" 
         }
     });
 
@@ -142,7 +160,7 @@ const ProductSection = () => {
             <Container>
                 <Row>
                     <Col className="product-related">
-                        <h2>related products</h2>
+                        <h3>Related products</h3>
                     </Col>
                 </Row>
                 <Row className="search-product">
@@ -156,12 +174,22 @@ const ProductSection = () => {
                                         <div className="img-wrapper">
                                             <div className="front">
                                                 <a href={null}>
-                                                    <Media onClick={() => clickProductDetail(product)} src={product.images[0].mainimageurl}
-                                                        className="img-fluid blur-up lazyload bg-img" alt="" /></a>
+                                                <AutoFitImage frameWidth="200px" imgSize="contain" className="img-fluid blur-up lazyload bg-img" frameHeight="160px" imgSrc={`${image ?
+                        image : product.images.length>0 ? product.images[0].mainimageurl :""
+                        }`}/>
+                                                    {/* <Media onClick={() => clickProductDetail(product)} src={product.images[0].mainimageurl}
+                                                        className="img-fluid blur-up lazyload bg-img" alt="" />
+                                                         */}
+                                                        </a>
                                             </div>
                                             <div className="back">
-                                                <a href={null}><Media src={product.images[1].src}
-                                                    className="img-fluid blur-up lazyload bg-img" alt="" /></a>
+                                                <a href={null}>
+                                                {/* <Media src={product.images[0].mainimageurl}
+                                                    className="img-fluid blur-up lazyload bg-img" alt="" /> */}
+                                                                       <AutoFitImage frameWidth="200px" className="img-fluid blur-up lazyload bg-img" imgSize="contain" frameHeight="160px" imgSrc={`${image ?
+                        image : product.images.length>0 ? product.images[0].mainimageurl :""
+                        }`}/>
+                                                    </a>
                                             </div>
                                             <div className="cart-info cart-wrap">
                                                 <button data-toggle="modal" data-target="#addtocart" title="Add to cart" onClick={() => addToCart(product,quantity)}>
@@ -185,7 +213,7 @@ const ProductSection = () => {
                                             <a href={null}>
                                                 <h6>{product.title}</h6>
                                             </a>
-                                            <h4>{leftSymbol}{product.variants.price}{rightSymbol}</h4>
+                                            <h4>{leftSymbol}{Math.floor(withDiscount(product.variants)).toFixed(2)}{rightSymbol}</h4>
                                             <ul className="color-variant">
                                                 <li className="bg-light0"></li>
                                                 <li className="bg-light1"></li>
