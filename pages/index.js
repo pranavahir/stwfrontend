@@ -16,10 +16,43 @@ import Paragraph from '../components/common/Paragraph';
 import ModalComponent from '../components/common/Modal';
 import Helmet from 'react-helmet';
 import favicon from '../public/assets/images/favicon/1.png'
-
+import { useRouter } from 'next/router'
+import { useEffect } from 'react'
 
 
 const Fashion = () => {
+const router = useRouter();
+
+
+  useEffect(()=>{
+    // setTimeout(()=>{
+    //   router.push("/page/privacy_policy")
+    // },30)
+    var domain = window.location.hostname;
+    if(domain == "shoptheworlds.com" || domain == "shoptheworldonline.com"){
+          fetch('https://extreme-ip-lookup.com/json/')
+        .then( res => res.json())
+        .then(response => {
+        //  console.log("Country is : ", response);
+
+        if(response.countryCode == "IN")
+        {
+          router.push("/IN")
+        }
+        else
+        if(response.countryCode == "AE")
+        {
+          router.push("/AE")
+        }
+
+      })
+      .catch((data, status) => {
+        console.log('Request failed:', data);
+      });
+    }
+
+  },[])
+
   return (
     <>
       <Helmet>
