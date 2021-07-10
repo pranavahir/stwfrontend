@@ -37,12 +37,12 @@ const router = useRouter();
 
         if(response.countryCode == "IN")
         {
-          router.push("/IN")
+          router.push("/in")
         }
         else
         if(response.countryCode == "AE")
         {
-          router.push("/AE")
+          router.push("/ae")
         }
 
       })
