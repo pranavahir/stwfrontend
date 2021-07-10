@@ -29,6 +29,7 @@ const router = useRouter();
     //   router.push("/page/privacy_policy")
     // },30)
     var domain = window.location.hostname;
+    console.log(domain);
     if(domain == "shoptheworlds.com" || domain == "shoptheworldonline.com" || domain == "test.digitechniq.in"){
           fetch('https://extreme-ip-lookup.com/json/')
         .then( res => res.json())
@@ -37,12 +38,15 @@ const router = useRouter();
 
         if(response.countryCode == "IN")
         {
-          router.push("/in")
+          router.push("/in/")
         }
-        else
-        if(response.countryCode == "AE")
+        else if(response.countryCode == "AE")
         {
-          router.push("/ae")
+          router.push("/ae/")
+        }
+        else if(response.countryCode == "US")
+        {
+          router.push("/us/")
         }
 
       })
