@@ -129,9 +129,15 @@ const ProductSection = ({ pathId, type }) => {
     }
 
     const clickProductDetail = (product) => {
-        const titleProps = product.title.split(' ').join('');
+
+        var titleProps = product.title.split(' ').join('-');
+        titleProps = titleProps.replace(/[^\w\s]/gi, '-');
+        titleProps = titleProps.replace(/---/gi, '-');
+        titleProps = titleProps.replace(/--/gi, '-');
+        // var url = "/p/"+product.asin + "-" + titleProps;
+        // return url;
         router.push(`/p/${product.asin}` + '-' + `${titleProps}`);
-    }
+    }   
    
     const getSelectedProduct = (item) => {
         setSelectedProduct(item)
@@ -151,7 +157,7 @@ const ProductSection = ({ pathId, type }) => {
             country:country,
             panel:panel,
             promoflag:"",
-            relevantProduct:"" 
+            relevantProduct:asinData 
         }
     });
 
@@ -173,7 +179,7 @@ const ProductSection = ({ pathId, type }) => {
                                     <div className="product-box">
                                         <div className="img-wrapper">
                                             <div className="front">
-                                                <a href={null}>
+                                                <a href="#" onClick={() => clickProductDetail(product)} >
                                                 <AutoFitImage frameWidth="200px" imgSize="contain" className="img-fluid blur-up lazyload bg-img" frameHeight="160px" imgSrc={`${image ?
                         image : product.images.length>0 ? product.images[0].mainimageurl :""
                         }`}/>
@@ -183,7 +189,7 @@ const ProductSection = ({ pathId, type }) => {
                                                         </a>
                                             </div>
                                             <div className="back">
-                                                <a href={null}>
+                                            <a href="#" onClick={() => clickProductDetail(product)} >
                                                 {/* <Media src={product.images[0].mainimageurl}
                                                     className="img-fluid blur-up lazyload bg-img" alt="" /> */}
                                                                        <AutoFitImage frameWidth="200px" className="img-fluid blur-up lazyload bg-img" imgSize="contain" frameHeight="160px" imgSrc={`${image ?
@@ -210,15 +216,15 @@ const ProductSection = ({ pathId, type }) => {
                                         <div className="product-detail">
                                             <div className="rating"><i className="fa fa-star"></i> <i className="fa fa-star"></i> <i
                                                 className="fa fa-star"></i> <i className="fa fa-star"></i> <i className="fa fa-star"></i></div>
-                                            <a href={null}>
+                                            <a href="#" onClick={() => clickProductDetail(product)} >
                                                 <h6>{product.title}</h6>
                                             </a>
                                             <h4>{leftSymbol}{Math.floor(withDiscount(product.variants)).toFixed(2)}{rightSymbol}</h4>
-                                            <ul className="color-variant">
+                                            {/* <ul className="color-variant">
                                                 <li className="bg-light0"></li>
                                                 <li className="bg-light1"></li>
                                                 <li className="bg-light2"></li>
-                                            </ul>
+                                            </ul> */}
                                         </div>
                                     </div>
                                 </Col>
@@ -243,7 +249,7 @@ const ProductSection = ({ pathId, type }) => {
                             <Col lg="6" className="rtl-text">
                                 <div className="product-right">
                                     <h2> {selectedProduct.title} </h2>
-                                    <h3>"$" {(selectedProduct.variants.price * 1).toFixed(2)}</h3>
+                                    <h3>{leftSymbol}{Math.floor(withDiscount(selectedProduct.variants)).toFixed(2)}{rightSymbol}</h3>
                                     {selectedProduct.variants ?
                                         <ul className="color-variant">
                                             {uniqueTags ?
@@ -297,6 +303,7 @@ const ProductSection = ({ pathId, type }) => {
                                     <div className="product-buttons">
                                         <button className="btn btn-solid" onClick={() => addToCart(selectedProduct,quantity)} >add to cart</button>
                                         <button className="btn btn-solid" onClick={() => clickProductDetail(selectedProduct)} >View detail</button>
+                                        {/*  */}
                                     </div>
                                     
                                 </div>

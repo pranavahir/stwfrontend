@@ -29,7 +29,8 @@ const CollectionBanner = () => {
 				var URL = "/shop/six_grid";
 			}
             filterContext.setSelectedCategory(category)
-        	router.push(`${URL}?${selectedCategory}&brand=${selectedBrands}&color=${selectedColor}&size=${selectedSize}&minPrice=${selectedPrice.min}&maxPrice=${selectedPrice.max}&keyword=${selectedKeyword}`)
+        	router.push(`${URL}?${selectedCategory}`)
+            // &brand=${selectedBrands}&color=${selectedColor}&size=${selectedSize}&minPrice=${selectedPrice.min}&maxPrice=${selectedPrice.max}&keyword=${selectedKeyword}
     }
 
     return (

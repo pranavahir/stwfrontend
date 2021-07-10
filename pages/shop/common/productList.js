@@ -106,7 +106,7 @@ const ProductList = ({ colClass, layoutList,openSidebar,noSidebar,pathId }) => {
     else
     category = filterContext.state;
     
-    const selectedCategory = filterContext.state;
+    const selectedCategory = category;
     const selectedSize = filterContext.selectedSize
     const [sortBy, setSortBy] = useState('AscOrder');
     const [isLoading, setIsLoading] = useState(false);
@@ -127,7 +127,7 @@ const ProductList = ({ colClass, layoutList,openSidebar,noSidebar,pathId }) => {
     useEffect(() => {
         const pathname = window.location.pathname;
         setUrl(pathname);
-        router.push(`${pathname}?${filterContext.state}&brand=${selectedBrands}&color=${selectedColor}&size=${selectedSize}&minPrice=${selectedPrice.min}&maxPrice=${selectedPrice.max}`)
+        router.push(`${pathname}`)
         
     }, [selectedBrands, selectedColor, selectedSize, selectedPrice]);
 
