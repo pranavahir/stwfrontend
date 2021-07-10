@@ -29,7 +29,7 @@ const router = useRouter();
     //   router.push("/page/privacy_policy")
     // },30)
     var domain = window.location.hostname;
-    if(domain == "shoptheworlds.com" || domain == "shoptheworldonline.com"){
+    if(domain == "shoptheworlds.com" || domain == "shoptheworldonline.com" || domain == "test.digitechniq.in"){
           fetch('https://extreme-ip-lookup.com/json/')
         .then( res => res.json())
         .then(response => {
