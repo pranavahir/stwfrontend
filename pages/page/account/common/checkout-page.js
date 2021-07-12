@@ -294,6 +294,7 @@ const changeGstcheck = (e) => {
   const OrderedMail = async (productDetail,customerDetail) =>{
 
     
+    // https://mailservice.digitechniq.in/  http://localhost/mailService/
     const { error: backendMailError, clientMail } = await fetch(
       "https://mailservice.digitechniq.in/",
       {
@@ -304,7 +305,10 @@ const changeGstcheck = (e) => {
         body: JSON.stringify({
           CRUD:"Order",
           OrderDetail:productDetail,
-          CustomerDetail:customerDetail
+          CustomerDetail:customerDetail,
+          leftSymbol:leftSymbol,
+          rightSymbol:rightSymbol,
+          fullPrice:fullPrice
         }),
       }
     ).then((r) => r.json());
@@ -327,6 +331,8 @@ const changeGstcheck = (e) => {
   }
 
   const Orderconformation = (paymentGateway,PaymentDetail,customerData)=>{
+
+    var ListOrder = [];
 
       if(paymentGateway == "Razorpay")
       {
@@ -380,6 +386,9 @@ const changeGstcheck = (e) => {
             productimage:item.images[0].mainimageurl
           };
     
+
+          ListOrder.push(OrderDetail);
+
           try {
 
             // console.log(OrderDetail);
@@ -395,6 +404,8 @@ const changeGstcheck = (e) => {
             console.log(err.message);
           }
         });
+
+        
 
         var NewCustomerData = {
           customerredid:customerId,
@@ -414,18 +425,10 @@ const changeGstcheck = (e) => {
           variables: { Customer: { ...NewCustomerData } },
         });
 
-        if(cartItems.length==1)
-        {
-        OrderedMail(cartItems[0],customerData);
-        }
-        else
-        {
-          for(var i=0;i>cartItems.length;i++)
-          {
-            OrderedMail(cartItems[i],customerData);
-          }
-        }
-
+      
+        //Order mail 
+        OrderedMail(ListOrder,customerData);
+       
         // console.log(successObj);
          var newObj={
           payment: payment,
@@ -494,6 +497,9 @@ const changeGstcheck = (e) => {
               productimage:item.images[0].mainimageurl
             };
       
+
+            ListOrder.push(OrderDetail);
+
             try {
               var orderData = createOrder({
                 variables: { order: { ...OrderDetail } },
@@ -524,17 +530,8 @@ const changeGstcheck = (e) => {
             variables: { Customer: { ...NewCustomerData } },
           });
 
-          if(cartItems.length==1)
-          {
-            OrderedMail(cartItems[0],customerData);
-          }
-          else
-          {
-            for(var i=0;i<cartItems.length;i++)
-            {
-              OrderedMail(cartItems[i],customerData);
-            }
-          }
+             //Order mail 
+             OrderedMail(ListOrder,customerData);
 
         // console.log(successObj);
         var newObj={
@@ -604,7 +601,9 @@ const changeGstcheck = (e) => {
               gstname:customerData.GSTName,
               productimage:item.images[0].mainimageurl
             };
-      
+
+            ListOrder.push(OrderDetail);
+            
             try {
               var orderData = createOrder({
                 variables: { order: { ...OrderDetail } },
@@ -635,17 +634,8 @@ const changeGstcheck = (e) => {
             variables: { Customer: { ...NewCustomerData } },
           });
 
-          if(cartItems.length==1)
-          {
-            OrderedMail(cartItems[0],customerData);
-          }
-          else
-          {
-            for(var i=0;i<cartItems.length;i++)
-            {
-              OrderedMail(cartItems[i],customerData);
-            }
-          }
+              //Order mail 
+              OrderedMail(ListOrder,customerData);
 
         // console.log(successObj);
         var newObj={
@@ -765,7 +755,7 @@ const changeGstcheck = (e) => {
   };
 
   const stripeSubmit = async (e, customerData) => {
-    //Orderconformation("Stripe","paymentIntent",customerData);
+    // Orderconformation("Stripe","paymentIntent",customerData);
     // We don't want to let default form submission happen here,
     // which would refresh the page.
  
