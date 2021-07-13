@@ -857,33 +857,33 @@ var ListConfig=[
   newProducts:[
     {
       imguRL:"https://m.media-amazon.com/images/I/51fl8l0G78L.jpg",
-      categoryUrl:"",
-      category:"",
-      keyWorld:"More Tablet >>"
+      categoryUrl:"projector",
+      category:"projector",
+      keyWorld:"More Projectors >>"
     },
     {
       imguRL:"https://m.media-amazon.com/images/I/51wZU-kW22L.jpg",
-      categoryUrl:"",
-      category:"",
-      keyWorld:"More Tablet >>"
+      categoryUrl:"smartwatch",
+      category:"smartwatch",
+      keyWorld:"More Smartwatches >>"
     },
     {
       imguRL:"https://m.media-amazon.com/images/I/41ghh3XjOLL.jpg",
-      categoryUrl:"",
-      category:"",
-      keyWorld:"More Tablet >>"
+      categoryUrl:"camera",
+      category:"camera",
+      keyWorld:"More Camera's >>"
     },
     {
       imguRL:"https://m.media-amazon.com/images/I/31Ide2xeMgL.jpg",
-      categoryUrl:"",
-      category:"",
-      keyWorld:"More Tablet >>"
+      categoryUrl:"homenkitchen",
+      category:"homenkitchen",
+      keyWorld:"More Home & kitchen >>"
     },
     {
       imguRL:"https://images-na.ssl-images-amazon.com/images/I/71hEefMZtcL._SL1500_.jpg",
-      categoryUrl:"",
-      category:"",
-      keyWorld:"More Tablet >>"
+      categoryUrl:"homenkitchen",
+      category:"homenkitchen",
+      keyWorld:"More Home & kitchen >>"
     }  
 
     // https://m.media-amazon.com/images/I/413fkA2hhSS.jpg
@@ -891,66 +891,66 @@ var ListConfig=[
   featureProducts:[
     {
       imguRL:"https://images-na.ssl-images-amazon.com/images/I/71ncBz8OFHS._SL1500_.jpg",
-      categoryUrl:"",
-      category:"",
-      keyWorld:"More Tablet >>"
+      categoryUrl:"speaker",
+      category:"speaker",
+      keyWorld:"More Speakers >>"
     },
     {
       imguRL:"https://images-na.ssl-images-amazon.com/images/I/71p7xwt7bgL._SL1500_.jpg",
-      categoryUrl:"",
-      category:"",
-      keyWorld:"More Tablet >>"
+      categoryUrl:"gagdet",
+      category:"gagdet",
+      keyWorld:"More Gagdets >>"
     },
     {
       imguRL:"https://images-na.ssl-images-amazon.com/images/I/71JDCbasgaL._SL1500_.jpg",
-      categoryUrl:"",
-      category:"",
-      keyWorld:"More Tablet >>"
+      categoryUrl:"printer",
+      category:"printer",
+      keyWorld:"More Printers >>"
     },
     {
       imguRL:"https://images-na.ssl-images-amazon.com/images/I/81H1Grsm4XL._SL1500_.jpg",
-      categoryUrl:"",
-      category:"",
-      keyWorld:"More Tablet >>"
+      categoryUrl:"monitor",
+      category:"monitor",
+      keyWorld:"More Monitors >>"
     },
     {
       imguRL:"https://images-na.ssl-images-amazon.com/images/I/915LKjLE%2BvL._SL1500_.jpg",
-      categoryUrl:"",
-      category:"",
-      keyWorld:"More Tablet >>"
+      categoryUrl:"networking",
+      category:"networking",
+      keyWorld:"More Networking >>"
     },
     // https://m.media-amazon.com/images/I/413fkA2hhSS.jpg
   ],
   specialproducts:[
     {
       imguRL:"https://images-na.ssl-images-amazon.com/images/I/71-QiEqDpZL._SL1500_.jpg",
-      categoryUrl:"",
-      category:"",
-      keyWorld:"More Tablet >>"
+      categoryUrl:"amazonbasics",
+      category:"amazonbasics",
+      keyWorld:"More Amazon Basics >>"
     },
     {
       imguRL:"https://images-na.ssl-images-amazon.com/images/I/71gfnsDd3-L._SL1500_.jpg",
-      categoryUrl:"",
-      category:"",
-      keyWorld:"More Tablet >>"
+      categoryUrl:"amazonbasics",
+      category:"amazonbasics",
+      keyWorld:"More Amazon Basics >>"
     },
     {
       imguRL:"https://images-na.ssl-images-amazon.com/images/I/810VOlH6cGL._SL1500_.jpg",
-      categoryUrl:"",
-      category:"",
-      keyWorld:"More Tablet >>"
+      categoryUrl:"amazonbasics",
+      category:"amazonbasics",
+      keyWorld:"More Amazon Basics>>"
     },
     {
       imguRL:"https://images-na.ssl-images-amazon.com/images/I/71sjjcwJ6cL._SL1500_.jpg",
-      categoryUrl:"",
-      category:"",
-      keyWorld:"More Tablet >>"
+      categoryUrl:"amazonbasics",
+      category:"amazonbasics",
+      keyWorld:"More Amazonzon Basics >>"
     },
     {
       imguRL:"https://images-na.ssl-images-amazon.com/images/I/61KdzsxowuL._SL1500_.jpg",
-      categoryUrl:"",
-      category:"",
-      keyWorld:"More Tablet >>"
+      categoryUrl:"amazonbasics",
+      category:"amazonbasics",
+      keyWorld:"More Amazonzon Basics >>"
     } 
     // https://m.media-amazon.com/images/I/413fkA2hhSS.jpg
   ],
