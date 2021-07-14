@@ -818,13 +818,13 @@ var ListConfig=[
     {
       imguRL:"https://m.media-amazon.com/images/I/51XeMvBLlGL.jpg",
       categoryUrl:"/c/Tablet",
-      category:"apple",
+      category:"tablet",
       keyWorld:"More Tablet >>"
     },
     {
       imguRL:"https://m.media-amazon.com/images/I/31rxH44lpoL.jpg",
       categoryUrl:"/c/HeadPhone",
-      category:"HeadPhone",
+      category:"headphone",
       keyWorld:"More HeadPhone >>"
     },
     {
@@ -844,7 +844,7 @@ var ListConfig=[
     {
       imguRL:"https://m.media-amazon.com/images/I/51XeMvBLlGL.jpg",
       categoryUrl:"/c/Tablet",
-      category:"apple",
+      category:"tablet",
       keyWorld:"More Tablet >>"
     },
     {
@@ -898,8 +898,8 @@ var ListConfig=[
     {
       imguRL:"https://images-na.ssl-images-amazon.com/images/I/71p7xwt7bgL._SL1500_.jpg",
       categoryUrl:"gagdet",
-      category:"gagdet",
-      keyWorld:"More Gagdets >>"
+      category:"gadget",
+      keyWorld:"More Gadgets >>"
     },
     {
       imguRL:"https://images-na.ssl-images-amazon.com/images/I/71JDCbasgaL._SL1500_.jpg",
