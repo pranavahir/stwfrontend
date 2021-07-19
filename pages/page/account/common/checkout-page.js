@@ -1,7 +1,7 @@
 import React, { useContext, useState,useEffect } from "react";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import Link from 'next/link'
-import { Media, Container, Form, Row, Input, Col } from "reactstrap";
+import { Media, Container, Form, Row, Input, Col,Button  } from "reactstrap";
 import { PayPalButton } from "react-paypal-button";
 import CartContext from "../../../../helpers/cart";
 import paypal from "../../../../public/assets/images/paypal.png";
@@ -23,6 +23,15 @@ const CREATE_OREDER = gql`
     }
   }
 `;
+
+const CREATE_ABANDONED_CART = gql`
+  mutation Createabandonedcart($abandonedcart: abandonedcart!) {
+    Createabandonedcart(abandonedcart: $abandonedcart) {
+      orderdetailid
+    }
+  }
+`;
+
 const UPDATE_CUSTOMER = gql`
   mutation UpdateCustomerDetail($Customer: Customerinfo!) {
     UpdateCustomerDetail(Customer: $Customer) {
@@ -72,10 +81,12 @@ const  CheckoutPage = ({ isPublic = false }) => {
   const [paymentErr, setPaymentErr] = useState("");
   const [IsValidGst, setIsValidGst] = useState(false);
   const [PageLoad, setPageLoad] = useState(false);
-  
+  const [IsCustomerPay, setIsCustomerPay] = useState(false);
+
   const [customerId, setCustomerId] = useState(
     localStorage.getItem('CustomerId')
 );
+
 
 var { loading, data } =  useQuery(GET_CUSTOMER_BY_UID, {
   variables: {
@@ -93,10 +104,14 @@ const errStyle={
 
 
 
+
 const IsRight = curContext.state.IsRight;
 const country = curContext.state.country;
 let leftSymbol=null;
 let rightSymbol = null;
+ 
+
+
 if(IsRight ==true)
 {
     rightSymbol = symbol;
@@ -148,8 +163,92 @@ useEffect(() => {
 
   // const [createOrder] = useMutation(CREATE_OREDER);
 
+
   const [createOrder, { orderedData }] = useMutation(CREATE_OREDER);
+  const [createAbandonedCart, { abandonedCartData }] = useMutation(CREATE_ABANDONED_CART);
   const [UpdateCustomer, { CustomerData }] = useMutation(UPDATE_CUSTOMER);
+
+
+  const makePayment = (customerData) =>{
+    // setIsCustomerPay(true);
+  
+    // console.log(data);
+    var ListOrder = [];
+    var OrderDetail = {
+      productsku: "item.sku",
+      producttitle: "item.title",
+      quantity: 1,
+      totalprice: 0,
+      customerid: customerId,
+      customername: customerData.first_name,
+      paymentmethod: "",
+      trackingnumber: "",
+      orderstatus: "",
+      address1:customerData.address,
+      address2:"",
+      city:customerData.city,
+      state:customerData.state,
+      country:customerData.country,
+      pin:customerData.pincode,
+      phone:customerData.phone,
+      emailid:customerData.email,
+      gst:customerData.GST,
+      gstname:customerData.GSTName,
+      productimage:""
+    };
+  
+    var orderResult = 0;
+    cartItems.map((item, index) => {
+      OrderDetail = {
+        productsku: item.sku,
+        producttitle: titleTrim(item.title),
+        quantity: (item.qty * 1),
+        totalprice: withDiscountWithQty(item.variants,item.qty),
+        customerid: customerId,
+        customername: customerData.first_name,
+        paymentmethod: "",
+        trackingnumber: "",
+        orderstatus: "",
+        address1:customerData.address,
+        address2:"",
+        city:customerData.city,
+        state:customerData.state,
+        country:customerData.country,
+        pin:customerData.pincode,
+        phone:customerData.phone,
+        emailid:customerData.email,
+        gst:customerData.GST,
+        gstname:customerData.GSTName,
+        productimage:item.images[0].mainimageurl
+      };
+  
+  
+      ListOrder.push(OrderDetail);
+  
+      try {
+  
+        // console.log(OrderDetail);
+        var AbandonedCartData = createAbandonedCart({
+          variables: { abandonedcart: { ...OrderDetail } },
+        });
+
+
+        //Order mail 
+        AbandonedCartMail(ListOrder,customerData);
+       
+        //  history.push('/multikart-admin/menus/list-menu')
+        //  toast.success("Successfully Added !")
+  
+      } catch (err) {
+        console.log(err.message);
+      }
+    });
+  
+    console.log(ListOrder);
+   
+  
+  };
+  
 
   /** Launches payment request flow when user taps on buy button. */
   const onBuyClicked = () => {
@@ -304,6 +403,39 @@ const changeGstcheck = (e) => {
         },
         body: JSON.stringify({
           CRUD:"Order",
+          OrderDetail:productDetail,
+          CustomerDetail:customerDetail,
+          leftSymbol:leftSymbol,
+          rightSymbol:rightSymbol,
+          fullPrice:fullPrice
+        }),
+      }
+    ).then((r) => r.json());
+
+    if (backendMailError) {
+      console.log(backendError.message);
+      return;
+    }
+  }
+
+  const AbandonedCartMail = async (productDetail,customerDetail) =>{
+
+    var domain = window.location.hostname;
+
+    var checkoutURL = "https://"+domain+"/page/account/checkout";
+    
+    
+    // https://mailservice.digitechniq.in/  http://localhost/mailService/
+    const { error: backendMailError, clientMail } = await fetch(
+      "https://mailservice.digitechniq.in/",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          CRUD:"AbandonedCart",
+          URLData:checkoutURL,
           OrderDetail:productDetail,
           CustomerDetail:customerDetail,
           leftSymbol:leftSymbol,
@@ -816,7 +948,13 @@ const changeGstcheck = (e) => {
     if (stripeError) {
       // Show error to your customer (e.g., insufficient funds)
       console.log(stripeError.message);
-      setPaymentErr(stripeError.message);   
+      setPaymentErr(stripeError.message);
+      if(customerData.country=="India")
+      {
+      checkhandle("Razorpay");
+      razorPayPaymentHandler(customerData);   
+      }
+      
       setPageLoad(false);
       return;
     } else {
@@ -909,8 +1047,10 @@ const changeGstcheck = (e) => {
   };
 
   const onSubmit = (data, e,paymentinfo) => {
+
     if (data !== "") {
 
+      makePayment(data);
       setPageLoad(true);
 
       if (payment == "stripe") {
@@ -1544,6 +1684,7 @@ const rightAligh = {
                           </li>
                         </ul>
                       </div>
+                      {/* {IsCustomerPay==false?<Button type="submit" onClick={() => makePayment()} className="btn btn-solid">Make Payment</Button>: */}
                       <div className="payment-box">
                         <div className="upper-box">
                           <div className="payment-options">
@@ -1679,6 +1820,7 @@ const rightAligh = {
                           ""
                         )}
                       </div>
+                      {/* } */}
                     </div>
                   ) : (
                     ""
