@@ -18,11 +18,17 @@ import Helmet from 'react-helmet';
 import favicon from '../public/assets/images/favicon/1.png'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
-
+import Head from 'next/head'
+import { connectToDatabase } from '../util/mongodb'
 
 const Fashion = () => {
 const router = useRouter();
 
+const { client } = await connectToDatabase()
+  
+const isConnected = await client.isConnected()
+
+console.log(isConnected);
 
   useEffect(()=>{
         // // setTimeout(()=>{
@@ -86,4 +92,5 @@ const router = useRouter();
   )
 }
 
+ 
 export default withApollo(Fashion);
