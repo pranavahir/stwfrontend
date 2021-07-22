@@ -82,6 +82,7 @@ const  CheckoutPage = ({ isPublic = false }) => {
   const [IsValidGst, setIsValidGst] = useState(false);
   const [PageLoad, setPageLoad] = useState(false);
   const [IsCustomerPay, setIsCustomerPay] = useState(false);
+  const [IsOTPVerfied, setIsOTPVerfied] = useState(false);
 
   const [customerId, setCustomerId] = useState(
     localStorage.getItem('CustomerId')
@@ -155,6 +156,8 @@ useEffect(() => {
   const router = useRouter();
   const stripe = useStripe();
   const elements = useElements();
+  let OTP ="";
+  const [emailState, setemailState] = useState("");
   const checkhandle = (value) => {
     setPayment(value);
   };
@@ -163,15 +166,47 @@ useEffect(() => {
 
   // const [createOrder] = useMutation(CREATE_OREDER);
 
-
+  
   const [createOrder, { orderedData }] = useMutation(CREATE_OREDER);
   const [createAbandonedCart, { abandonedCartData }] = useMutation(CREATE_ABANDONED_CART);
   const [UpdateCustomer, { CustomerData }] = useMutation(UPDATE_CUSTOMER);
 
   window.addEventListener('beforeunload', function (e) {
     // Cancel the event
+
     e.preventDefault(); // If you prevent default behavior in Mozilla Firefox prompt will always be shown
     // Chrome requires returnValue to be set
+
+    var CustDetails={
+      first_name:(obj.first_name==undefined ||  obj.first_name==null || obj.first_name=="" )?"":obj.first_name,
+      last_name:obj.last_name==undefined?"":obj.last_name,
+      phone:obj.phone==undefined?"":obj.phone,
+      email:obj.email==undefined?"":obj.email,
+      country:country,
+      address:obj.address==undefined?"":obj.address,
+      city:obj.city==undefined?"":obj.city,
+      state:obj.state==undefined?"":obj.state,
+      pincode:obj.pincode==undefined?"":obj.pincode,
+    }
+
+  if(data !=undefined)
+  {
+    CustDetails={
+      first_name:(obj.first_name==undefined ||  obj.first_name==null || obj.first_name=="" )?data.CustomerByUID.customername:obj.first_name,
+      last_name:obj.last_name==undefined?data.CustomerByUID.customerlastname:obj.last_name,
+      phone:obj.phone==undefined?data.CustomerByUID.phonenumber:obj.phone,
+      email:obj.email==undefined?data.CustomerByUID.emailid:obj.email,
+      country:country,
+      address:obj.address==undefined?data.CustomerByUID.address1:obj.address,
+      city:obj.city==undefined?data.CustomerByUID.city:obj.city,
+      state:obj.state==undefined?data.CustomerByUID.state:obj.state,
+      pincode:obj.pincode==undefined?data.CustomerByUID.pincode:obj.pincode,
+    }
+  }   
+    
+ 
+    makePayment(CustDetails);
+
     e.returnValue = '';
 
     
@@ -1059,7 +1094,7 @@ const changeGstcheck = (e) => {
 
     if (data !== "") {
 
-      makePayment(data);
+     
       setPageLoad(true);
 
       if (payment == "stripe") {
@@ -1079,6 +1114,76 @@ const changeGstcheck = (e) => {
     }
   };
 
+
+  //otp Verification
+
+    const OTPVerification  = (event)=>{
+      if(event.target.value !="" && event.target.value !=null)
+      {
+        if(event.target.value == OTP && event.target.value.length == 4 ) 
+        {
+          setIsOTPVerfied(true);
+        }
+        else
+        {
+          setIsOTPVerfied(false);
+        }
+      }
+    }
+
+
+
+  // email verfication and sending the otp message top customer.
+  const emailVarification = async (event) => {
+
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    var result =  re.test(String(event.target.value).toLowerCase());
+
+    if(result)
+    {
+      setemailState("")
+
+      var digits = '0123456789';
+      OTP = '';
+     for (let i = 0; i < 6; i++ ) {
+         OTP += digits[Math.floor(Math.random() * 10)];
+     }
+     
+     console.log(OTP);
+
+            // https://mailservice.digitechniq.in/  http://localhost/mailService/
+        await fetch(
+       "https://mailservice.digitechniq.in/",
+       {
+         method: "POST",
+         headers: {
+           "Content-Type": "application/json",
+         },
+         body: JSON.stringify({
+           CRUD:"OTP",
+           OTP:OTP,
+           email:event.target.value
+         }),
+       }
+     ).then((r) => console.log(r));
+ 
+    //  if (backendMailError) {
+    //    console.log(backendError.message);
+    //    return;
+    //  }
+     
+    }  
+    else
+    {
+      setemailState("error_border")
+    }
+
+
+    
+        
+  }
+
+
   const setStateFromInput = (event) => {
     obj[event.target.name] = event.target.value;
     
@@ -1095,51 +1200,61 @@ const changeGstcheck = (e) => {
     if(event.target.name == "first_name" )
     {
       setState({first_name:event.target.value})
+      if(data!=undefined)
       data.CustomerByUID.customername = event.target.value;
     }  
     
     if(event.target.name == "last_name" )
     {
       setState({last_name:event.target.value})
+      if(data!=undefined)
       data.CustomerByUID.customerlastname = event.target.value;
     }  
     
     if(event.target.name == "phone" )
     {
       setState({phone:event.target.value})
+      if(data!=undefined)
       data.CustomerByUID.phonenumber = event.target.value;
     }  
     
     if(event.target.name == "email" )
     {
       setState({email:event.target.value})
-      data.CustomerByUID.emailid = event.target.value;
+      if(data!=undefined)
+        data.CustomerByUID.emailid = event.target.value;
+      
     }  
      
       setState({country:country})
-      data.CustomerByUID.country = country;
+      if(data!=undefined)
+        data.CustomerByUID.country = country;
      
     if(event.target.name == "address" )
     {
       setState({address:event.target.value})
+      if(data!=undefined)
       data.CustomerByUID.address1 = event.target.value;
     }  
     
     if(event.target.name == "city" )
     {
       setState({city:event.target.value})
+      if(data!=undefined)
       data.CustomerByUID.city = event.target.value;
     }  
     
     if(event.target.name == "state" )
     {
       setState({state:event.target.value})
+      if(data!=undefined)
       data.CustomerByUID.state = event.target.value;
     }  
     
     if(event.target.name == "pincode" )
     {
       setState({pincode:event.target.value})
+      if(data!=undefined)
       data.CustomerByUID.pincode = event.target.value;
     }  
     
@@ -1277,12 +1392,13 @@ const rightAligh = {
                       </span>
                     </div>
                     <div className="form-group col-md-6 col-sm-6 col-xs-12">
-                      <div className="field-label">Email Address</div>
+                      <div className="field-label">Email Address</div> 
                       {(data.CustomerByUID.emailid!="" && data.CustomerByUID.emailid!=null) ? <input
                         className="form-control"
                         className={`${errors.email ? "error_border" : ""}`}
                         type="text"
                         name="email"
+                        onBlur={emailVarification}
                         onChange={setStateFromInput}
                         value={data.CustomerByUID.emailid}
                         ref={register({
@@ -1294,6 +1410,7 @@ const rightAligh = {
                         className={`${errors.email ? "error_border" : ""}`}
                         type="text"
                         name="email"
+                        onBlur={emailVarification}
                         onChange={setStateFromInput}
                         ref={register({
                           required: true,
@@ -1503,9 +1620,10 @@ const rightAligh = {
                       <div className="field-label">Email Address</div>
                       <input
                         className="form-control"
-                        className={`${errors.email ? "error_border" : ""}`}
+                        className={`${errors.email ? "error_border" : emailState}`}
                         type="text"
                         name="email"
+                        onBlur={emailVarification}
                         onChange={setStateFromInput}
                         ref={register({
                           required: true,
@@ -1513,8 +1631,62 @@ const rightAligh = {
                         })}
                       />
                       <span className="error-message">
-                        {errors.email && "Please enter proper email address ."}
+                        {(errors.email || emailState) && "Please enter proper email address ."}
                       </span>
+                      
+                    </div>
+                    <div className="form-group col-md-6 col-sm-6 col-xs-12">
+                      {false ? <div> <div className="field-label">Mobile OTP</div>
+                      <input
+                        className="form-control"
+                        className={`${errors.email ? "error_border" : emailState}`}
+                        type="text"
+                        name="email"
+                        onBlur={emailVarification}
+                        onChange={setStateFromInput}
+                        ref={register({
+                          required: true,
+                          pattern: /^\S+@\S+$/i,
+                        })}
+                      />
+                      <span className="error-message">
+                        {(errors.email || emailState) && "Please enter proper email address ."}
+                      </span> </div> :""}
+                      
+                      
+                    </div>
+                    <div className="form-group col-md-6 col-sm-6 col-xs-12">
+                    
+                    <div className="row form-group col-md-6 col-sm-6 col-xs-12">
+                      <input
+                        className="form-control"
+                        type="text"
+                        name="otp"
+                        onBlur={OTPVerification}
+                        onChange={OTPVerification}
+                      />
+                    </div>
+
+                    <span className="error-message">
+                        {"OTP has been sent on your mobile."}
+                      </span>
+
+                    {/* <div className="row form-group col-md-6 col-sm-6 col-xs-12">
+                      <div className="field-label">Email OTP</div>
+                      <input
+                        className="form-control"
+                        type="text"
+                        name="email"
+                        onBlur={OTPVerification}
+                        onChange={OTPVerification}
+                      />
+                      <span className="error-message">
+                        {(IsOTPVerfied) && "Please enter proper email address ."}
+                      </span>
+                      
+                    </div> */}
+                      
+                      
                     </div>
                     <div className="form-group col-md-12 col-sm-12 col-xs-12">
                     <div className="shopping-option">
