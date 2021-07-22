@@ -36,6 +36,7 @@ const router = useRouter();
         .then(response => {
         //  console.log("Country is : ", response);
 
+        console.log(response.countryCode);
         if(response.countryCode == "IN")
         {
           router.push("/in/")
