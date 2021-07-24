@@ -88,7 +88,7 @@ var ListConfig=[
       {
         imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
         categoryUrl:"/c/Phone",
-        category:["iphone","oneplus","samsung"],
+        category:["phone"],
         keyWorld:"More phone >>",
       
   
@@ -114,7 +114,7 @@ var ListConfig=[
       {
         imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
         categoryUrl:"/c/Phone",
-        category:["iphone","oneplus","samsung"],
+        category:["phone"],
         keyWorld:"More phone >>",
         
   
@@ -271,7 +271,7 @@ var ListConfig=[
       {
         imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
         categoryUrl:"/c/Phone",
-        category:["iphone","oneplus","samsung"],
+        category:["phone"],
         keyWorld:"More phone >>",
         
   
@@ -297,7 +297,7 @@ var ListConfig=[
       {
         imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
         categoryUrl:"/c/Phone",
-        category:["iphone","oneplus","samsung"],
+        category:["phone"],
         keyWorld:"More phone >>",
         
   
@@ -449,7 +449,7 @@ var ListConfig=[
       {
         imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
         categoryUrl:"/c/Phone",
-        category:["iphone","oneplus","samsung"],
+        category:["phone"],
         keyWorld:"More phone >>",
         
   
@@ -475,7 +475,7 @@ var ListConfig=[
       {
         imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
         categoryUrl:"/c/Phone",
-        category:["iphone","oneplus","samsung"],
+        category:["phone"],
         keyWorld:"More phone >>",
         
   
@@ -805,7 +805,7 @@ var ListConfig=[
       {
         imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
         categoryUrl:"/c/Phone",
-        category:["iphone","oneplus","samsung"],
+        category:["phone"],
         keyWorld:"More phone >>",
         
   
@@ -831,7 +831,7 @@ var ListConfig=[
       {
         imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
         categoryUrl:"/c/Phone",
-        category:["iphone","oneplus","samsung"],
+        category:["phone"],
         keyWorld:"More phone >>",
         
   
@@ -982,7 +982,7 @@ var ListConfig=[
     {
       imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
       categoryUrl:"/c/Phone",
-      category:["iphone","oneplus","samsung"],
+      category:["phone"],
       keyWorld:"More phone >>",
       
 
@@ -1008,7 +1008,7 @@ var ListConfig=[
     {
       imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
       categoryUrl:"/c/Phone",
-      category:["iphone","oneplus","samsung"],
+      category:["phone"],
       keyWorld:"More phone >>",
       
 
@@ -1162,7 +1162,7 @@ var ListConfig=[
     {
       imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
       categoryUrl:"/c/Phone",
-      category:["iphone","oneplus","samsung"],
+      category:["phone"],
       keyWorld:"More phone >>",
       
 
@@ -1188,7 +1188,7 @@ var ListConfig=[
     {
       imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
       categoryUrl:"/c/Phone",
-      category:["iphone","oneplus","samsung"],
+      category:["phone"],
       keyWorld:"More phone >>",
       
 
@@ -1342,7 +1342,7 @@ var ListConfig=[
     {
       imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
       categoryUrl:"/c/Phone",
-      category:["iphone","oneplus","samsung"],
+      category:["phone"],
       keyWorld:"More phone >>",
       
 
@@ -1368,7 +1368,7 @@ var ListConfig=[
     {
       imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
       categoryUrl:"/c/Phone",
-      category:["iphone","oneplus","samsung"],
+      category:["phone"],
       keyWorld:"More phone >>",
       
 
@@ -1520,7 +1520,7 @@ var ListConfig=[
     {
       imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
       categoryUrl:"/c/Phone",
-      category:["iphone","oneplus","samsung"],
+      category:["phone"],
       keyWorld:"More phone >>",
       
 
@@ -1546,7 +1546,7 @@ var ListConfig=[
     {
       imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
       categoryUrl:"/c/Phone",
-      category:["iphone","oneplus","samsung"],
+      category:["phone"],
       keyWorld:"More phone >>",
       
 
@@ -1698,7 +1698,7 @@ var ListConfig=[
     {
       imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
       categoryUrl:"/c/Phone",
-      category:["iphone","oneplus","samsung"],
+      category:["phone"],
       keyWorld:"More phone >>",
       
 
@@ -1724,7 +1724,7 @@ var ListConfig=[
     {
       imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
       categoryUrl:"/c/Phone",
-      category:["iphone","oneplus","samsung"],
+      category:["phone"],
       keyWorld:"More phone >>",
       
 
@@ -1876,7 +1876,7 @@ var ListConfig=[
     {
       imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
       categoryUrl:"/c/Phone",
-      category:["iphone","oneplus","samsung"],
+      category:["phone"],
       keyWorld:"More phone >>",
       
 
@@ -1902,7 +1902,7 @@ var ListConfig=[
     {
       imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
       categoryUrl:"/c/Phone",
-      category:["iphone","oneplus","samsung"],
+      category:["phone"],
       keyWorld:"More phone >>",
       
 
@@ -2054,7 +2054,7 @@ var ListConfig=[
     {
       imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
       categoryUrl:"/c/Phone",
-      category:["iphone","oneplus","samsung"],
+      category:["phone"],
       keyWorld:"More phone >>",
       
 
@@ -2080,7 +2080,7 @@ var ListConfig=[
     {
       imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
       categoryUrl:"/c/Phone",
-      category:["iphone","oneplus","samsung"],
+      category:["phone"],
       keyWorld:"More phone >>",
       
 
@@ -2232,7 +2232,7 @@ var ListConfig=[
     {
       imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
       categoryUrl:"/c/Phone",
-      category:["iphone","oneplus","samsung"],
+      category:["phone"],
       keyWorld:"More phone >>",
       
 
@@ -2258,7 +2258,7 @@ var ListConfig=[
     {
       imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
       categoryUrl:"/c/Phone",
-      category:["iphone","oneplus","samsung"],
+      category:["phone"],
       keyWorld:"More phone >>",
       
 
@@ -2434,7 +2434,7 @@ var ListConfig=[
     {
       imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
       categoryUrl:"/c/Phone",
-      category:["iphone","oneplus","samsung"],
+      category:["phone"],
       keyWorld:"More phone >>",
       
 
@@ -2460,7 +2460,7 @@ var ListConfig=[
     {
       imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
       categoryUrl:"/c/Phone",
-      category:["iphone","oneplus","samsung"],
+      category:["phone"],
       keyWorld:"More phone >>",
       
 
@@ -2612,7 +2612,7 @@ var ListConfig=[
     {
       imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
       categoryUrl:"/c/Phone",
-      category:["iphone","oneplus","samsung"],
+      category:["phone"],
       keyWorld:"More phone >>",
       
 
@@ -2638,7 +2638,7 @@ var ListConfig=[
     {
       imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
       categoryUrl:"/c/Phone",
-      category:["iphone","oneplus","samsung"],
+      category:["phone"],
       keyWorld:"More phone >>",
       
 
@@ -2790,7 +2790,7 @@ var ListConfig=[
     {
       imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
       categoryUrl:"/c/Phone",
-      category:["iphone","oneplus","samsung"],
+      category:["phone"],
       keyWorld:"More phone >>",
       
 
@@ -2816,7 +2816,7 @@ var ListConfig=[
     {
       imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
       categoryUrl:"/c/Phone",
-      category:["iphone","oneplus","samsung"],
+      category:["phone"],
       keyWorld:"More phone >>",
       
 
