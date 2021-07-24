@@ -13,12 +13,11 @@ import HeaderOne from '../components/headers/header-one';
 import { withApollo } from '../helpers/apollo/apollo';
 import { Product4 } from '../services/script';
 import Paragraph from '../components/common/Paragraph';
-import ModalComponent from '../components/common/Modal';
 import Helmet from 'react-helmet';
 import favicon from '../public/assets/images/favicon/1.png'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
-import FreshChat from 'react-freshchat'
+ 
 
 const Fashion = () => {
 const router = useRouter();
@@ -76,21 +75,7 @@ const router = useRouter();
       <Parallax />
       <SpecialProducts type="fashion" backImage={true} productSlider={Product4} line={true} title="title1" inner="title-inner1"  designClass="ratio_asos" noSlider="false" cartClass="cart-info cart-wrap" /> 
       <ServiceLayout sectionClass="border-section small-section" />
-      <FreshChat
-        token="025be075-50c9-4913-aab8-63f98c40c0cd"
-        email='user@email.com'
-        first_name= 'ManiKandan'
-        onInit={widget => {
-          /* Use `widget` instead of `window.fcWidget`
-            widget.user.setProperties({
-              email: user.email,
-              first_name: user.firstName,
-              last_name: user.lastName,
-              phone: user.phoneNumber,
-            })
-          */
-        }}
-      />
+    
       <Blog type="Electronics" title="title1" inner="title-inner1" />
       {/* <Instagram type="fashion"/> */}
       <div className="section-b-space">
