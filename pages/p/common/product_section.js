@@ -85,12 +85,13 @@ const ProductSection = ({ pathId, type }) => {
     }
     else
     {
-        
-        if(pathId.search("-")==0)
-        asinData =  pathId
-        else
-        asinData =  pathId.slice(0,pathId.search("-"));
-
+        if(pathId!=undefined && pathId!="" && pathId!=null)
+        {
+            if(pathId.search("-")==0)
+            asinData =  pathId
+            else
+            asinData =  pathId.slice(0,pathId.search("-"));
+        }
     }
     const router = useRouter();
     const curContext = useContext(CurrencyContext);
