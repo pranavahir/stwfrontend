@@ -53,6 +53,9 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
         fontWeight: "bold",
         color: "red"
     }
+    const titleSize={
+        fontSize: "14px"
+    }
 
     const smallredobj={
         fontSize: "15px",
@@ -130,14 +133,14 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
             <div className={`product-right ${stickyClass}`}>
                 
                 
-                <h3> {product.title} </h3>
+                <h3 style={titleSize}> {product.title} </h3>
                 <h4 style={objbrand}> {product.brandname} </h4>
 
                 {/* <h4> {product.categoryvalue} </h4> parseFloat(Math.floor(withDiscount(product.variants)).toFixed(2)).toLocaleString('en') */}
                 {product.variants.length?<h6 style={smallobj} >Shipping in {product.variants[0].daystoship} days.</h6>:""} 
                 {discountCalculation(product.variants)?<h4><del>{leftSymbol}{((priceCollection(product.variants) * 1)+gstCollection(product.variants)).toFixed(2)}{rightSymbol}</del>
                     <span>{discountCalculation(product.variants)}% off</span></h4>:""}
-                <h3>{leftSymbol}{ Math.floor(withDiscount(product.variants)).toFixed(2)}{rightSymbol} </h3>
+                <h3 style={titleSize}>{leftSymbol}{ Math.floor(withDiscount(product.variants)).toFixed(2)}{rightSymbol} </h3>
                 {product.variants.map(vari => {
                     var findItem = uniqueColor.find(x => x.color === vari.color);
                     if (!findItem)

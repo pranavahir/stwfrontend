@@ -13,6 +13,7 @@ import cart from '../../public/assets/images/icon/cart.png';
 import FilterContext from '../../helpers/filter/FilterContext';
 import Currency from './common/currency';
 import { useRouter } from 'next/router';
+import classes from './Header-one.module.css';
 
 const HeaderOne = ({ logoName, headerClass, topClass, noTopBar ,direction }) => {
 	const [isLoading, setIsLoading] = useState(false);
@@ -105,38 +106,32 @@ const HeaderOne = ({ logoName, headerClass, topClass, noTopBar ,direction }) => 
 
 	return (
 		<div>
-			<header id="sticky" className={`sticky ${headerClass}`}>
-				<div className="mobile-fix-option"></div>
-				{/*Top Header Component*/}
+			<header id="sticky" className={`sticky ${classes.desktopHeader} ${headerClass}`}>
 				{noTopBar ?
 					'' :
 					<TopBarDark topClass={topClass} />
 				}
 
 				<Container>
-					<Row>
-						<Col>
-							<div className="main-menu">
-								<div className="menu-left">
-									<div className="navbar">
+							<div className="row">
+								<div className="col-6 d-flex align-items-center justify-content-start">
+									<div className={classes.burgerMenuParent}>
 										<a href={null} onClick={openNav}>
-											<div className="bar-style"> <i className="fa fa-bars sidebar-bar" aria-hidden="true"></i></div>
+											<div className="bar-style"> <i className={"fa fa-bars sidebar-bar " + classes.burgerMenu} aria-hidden="true"></i></div>
 										</a>
 										{/*SideBar Navigation Component*/}
 										<SideBar />
 									</div>
-									<div className="brand-logo">
+									<div className={classes.logoParent}>
 										<LogoImage logo={logoName} />
-									</div>
-								
+										</div>
 								</div>
-								<div className="menu-right pull-right">
+								<div className="col-6">
 									{/*Top Navigation Bar Component*/}
 									{/* <NavBar /> */}
 									
-									<div>
-										<div className="icon-nav">
-											<ul>
+						
+											<ul class="d-flex align-items-center justify-content-end">
 												<li className="onhover-div mobile-search">
 													{/* <div><Media src={search} onClick={openSearch} className="img-fluid" alt="" />
 														<i className="fa fa-search" onClick={openSearch}></i></div> */}
@@ -146,10 +141,15 @@ const HeaderOne = ({ logoName, headerClass, topClass, noTopBar ,direction }) => 
 																		<Col lg="12">
 																			<form className="form-header" onSubmit={handleSubmit(onSubmit)}>
 																				<div className="input-group">
-																					<Input type="text" className="form-control" aria-label="Amount (to the nearest dollar)"
+																					<Input type="text" className={"form-control " + classes.inputContainer} aria-label="Amount (to the nearest dollar)"
 																						placeholder="Search Products......" name="keyword"  />
 																					<div className="input-group-append">
-																						<button className="btn btn-solid"><i className="fa fa-search"></i>Search</button>
+																						<div className={classes.searchMobile}>
+																						<button className={classes.mobileButton}><i className={"fa fa-search " + classes.searchIcon}></i></button>
+																						</div>
+																						<div className={classes.searchDesktop}>
+																						<button className={classes.desktopButton}><i className={"fa fa-search "}></i>Search</button>
+																						</div>
 																					</div>
 																				</div>
 																			</form>
@@ -169,15 +169,47 @@ const HeaderOne = ({ logoName, headerClass, topClass, noTopBar ,direction }) => 
 													<Cart layout={direction} icon={cart} />	
 												}
 											</ul>
-										</div>
-									</div>
+							
 								</div>
 							</div>
-						</Col>
-					</Row>
 				</Container>
 			</header>
-
+			<header id="sticky" className={`sticky ${classes.mobileHeader} ${headerClass}`}>
+				<Container>
+							<div className="row">
+								<div className="col-6 d-flex align-items-center justify-content-start">
+									<div className={classes.burgerMenuParent}>
+										<a href={null} onClick={openNav}>
+											<div className="bar-style"> <i className={"fa fa-bars sidebar-bar " + classes.burgerMenu} aria-hidden="true"></i></div>
+										</a>
+										{/*SideBar Navigation Component*/}
+										<SideBar />
+									</div>
+									<div className={classes.logoParent}>
+										<LogoImage logo={logoName} />
+										</div>
+								</div>
+								<div className="col-6">
+									{/*Top Navigation Bar Component*/}
+									{/* <NavBar /> */}
+											<ul class="d-flex align-items-center justify-content-end">
+												<li className="onhover-div mobile-search">
+												<TopBarDark topClass={topClass} />
+												</li>
+												{/* <Currency icon={settings} /> */}
+												{/*Header Cart Component */}
+												{
+													direction === undefined ?
+													<CartContainer layout={direction} icon={cart} />
+													:
+													<Cart layout={direction} icon={cart} />	
+												}
+											</ul>
+							
+								</div>
+							</div>
+				</Container>
+			</header>
 			<div id="search-overlay" className="search-overlay">
 				<div>
 					<span className="closebtn" onClick={closeSearch} title="Close Overlay">×</span>

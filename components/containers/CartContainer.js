@@ -4,6 +4,7 @@ import CartHeader from '../headers/common/cart-header';
 import CartContext from '../../helpers/cart';
 import { Media } from 'reactstrap';
 import { CurrencyContext } from '../../helpers/Currency/CurrencyContext';
+import classes from './CartContainer.module.css';
 
 const CartContainer = ({icon}) => {
     const context = useContext(CartContext);
@@ -29,8 +30,10 @@ const CartContainer = ({icon}) => {
                 <div className="cart-qty-cls">{cartList.length}</div>
                 <Link href={`/page/account/cart`}>
                     <div>
+                        <div className={classes.imageContainer}>
                         <Media src={icon} className="img-fluid" alt="" />
-                        <i className="fa fa-shopping-cart"></i>
+                        </div>
+                        <i className={"fa fa-shopping-cart "+classes.shoppingCart}></i>
                     </div>
                 </Link>
                 <ul className="show-div shopping-cart">
