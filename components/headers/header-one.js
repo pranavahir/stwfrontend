@@ -90,9 +90,16 @@ const HeaderOne = ({
   };
 
   const openNav = () => {
-    var openmyslide = document.getElementById("mySidenav");
+    var openmyslide = document.getElementsByClassName("openHandlerSidenav");
     if (openmyslide) {
       openmyslide.classList.add("open-side");
+    }
+  };
+  const openNavMobile = () => {
+    var openmyslide = document.getElementsByClassName("openHandlerSidenav");
+    var openmyslidebyid = document.getElementById("mySidenav");
+    if (openmyslide) {
+      openmyslide[1].classList.add("open-side");
     }
   };
   const openSearch = () => {
@@ -207,9 +214,9 @@ const HeaderOne = ({
       >
         <Container>
           <div className="row">
-            <div className="col-4 d-flex align-items-center justify-content-start">
+            <div className="col-6 d-flex align-items-center justify-content-start">
               <div className={classes.burgerMenuParent}>
-                <a href={null} onClick={openNav}>
+                <a href={null} onClick={openNavMobile}>
                   <div className="bar-style">
                     {" "}
                     <i
@@ -225,7 +232,7 @@ const HeaderOne = ({
                 <LogoImage logo={logoName} />
               </div>
             </div>
-            <div className="col-8">
+            <div className="col-6">
               <ul class="d-flex align-items-center justify-content-end">
                 <li
                   className={
