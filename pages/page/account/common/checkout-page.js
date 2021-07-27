@@ -82,7 +82,10 @@ const  CheckoutPage = ({ isPublic = false }) => {
   const [IsValidGst, setIsValidGst] = useState(false);
   const [PageLoad, setPageLoad] = useState(false);
   const [IsCustomerPay, setIsCustomerPay] = useState(false);
-  const [IsOTPVerfied, setIsOTPVerfied] = useState(false);
+  const [IsOTPVerfied, setIsOTPVerfied] = useState("notGenerated");
+  const [OldMail, setOldMail] = useState(false);
+  const [OTP, setOTP] = useState(null);
+  
 
   const [customerId, setCustomerId] = useState(
     localStorage.getItem('CustomerId')
@@ -156,7 +159,7 @@ useEffect(() => {
   const router = useRouter();
   const stripe = useStripe();
   const elements = useElements();
-  let OTP ="";
+   
   const [emailState, setemailState] = useState("");
   const checkhandle = (value) => {
     setPayment(value);
@@ -278,7 +281,7 @@ useEffect(() => {
 
 
         //Order mail 
-        AbandonedCartMail(ListOrder,customerData);
+       
        
         //  history.push('/multikart-admin/menus/list-menu')
         //  toast.success("Successfully Added !")
@@ -287,9 +290,7 @@ useEffect(() => {
         console.log(err.message);
       }
     });
-  
-    console.log(ListOrder);
-   
+    AbandonedCartMail(ListOrder,customerData);
   
   };
   
@@ -1120,13 +1121,13 @@ const changeGstcheck = (e) => {
     const OTPVerification  = (event)=>{
       if(event.target.value !="" && event.target.value !=null)
       {
-        if(event.target.value == OTP && event.target.value.length == 4 ) 
+        if(event.target.value == OTP && event.target.value.length == 6 ) 
         {
-          setIsOTPVerfied(true);
+          setIsOTPVerfied("Verified");
         }
-        else
+        else if(event.target.value != OTP && event.target.value.length >= 6 ) 
         {
-          setIsOTPVerfied(false);
+          setIsOTPVerfied("NotVerfied");
         }
       }
     }
@@ -1136,51 +1137,50 @@ const changeGstcheck = (e) => {
   // email verfication and sending the otp message top customer.
   const emailVarification = async (event) => {
 
-    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    var result =  re.test(String(event.target.value).toLowerCase());
-
-    if(result)
+    if(event.target != null)
     {
-      setemailState("")
+      const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      var result =  re.test(String(event.target.value).toLowerCase());
+  
+      if(result)
+      {
+        setemailState("")
+        if(OldMail != event.target.value)
+        {
+          var digits = '0123456789';
+          var G_OTP="";
+          setOTP(null);
+          for (let i = 0; i < 6; i++ ) {
+            G_OTP += digits[Math.floor(Math.random() * 10)];
+          }
+          setOTP(G_OTP);
+          setIsOTPVerfied("Generated");
+          
+          //  console.log(OTP);
+          // https://mailservice.digitechniq.in/  http://localhost/mailService/
+          alert(event.target.value);
+          setOldMail(event.target.value);
+          await fetch("https://mailservice.digitechniq.in/",
+         {
+           method: "POST",
+           headers: {
+             "Content-Type": "application/json",
+           },
+           body: JSON.stringify({
+             CRUD:"OTP",
+             OTP:G_OTP,
+             email:event.target.value
+           }),
+         }
+       ).then((r) => console.log(r));
 
-      var digits = '0123456789';
-      OTP = '';
-     for (let i = 0; i < 6; i++ ) {
-         OTP += digits[Math.floor(Math.random() * 10)];
-     }
-     
-     console.log(OTP);
-
-            // https://mailservice.digitechniq.in/  http://localhost/mailService/
-        await fetch(
-       "https://mailservice.digitechniq.in/",
-       {
-         method: "POST",
-         headers: {
-           "Content-Type": "application/json",
-         },
-         body: JSON.stringify({
-           CRUD:"OTP",
-           OTP:OTP,
-           email:event.target.value
-         }),
-       }
-     ).then((r) => console.log(r));
- 
-    //  if (backendMailError) {
-    //    console.log(backendError.message);
-    //    return;
-    //  }
-     
-    }  
-    else
-    {
-      setemailState("error_border")
+        }
+       }  
+      else
+      {
+        setemailState("error_border")
+      }
     }
-
-
-    
-        
   }
 
 
@@ -1399,6 +1399,7 @@ const rightAligh = {
                         type="text"
                         name="email"
                         onBlur={emailVarification}
+                        autocomplete="off"
                         onChange={setStateFromInput}
                         value={data.CustomerByUID.emailid}
                         ref={register({
@@ -1411,6 +1412,7 @@ const rightAligh = {
                         type="text"
                         name="email"
                         onBlur={emailVarification}
+                        autocomplete="off"
                         onChange={setStateFromInput}
                         ref={register({
                           required: true,
@@ -1616,7 +1618,7 @@ const rightAligh = {
                         {errors.phone && "Please enter number for phone."}
                       </span>
                     </div>
-                    <div className="form-group col-md-6 col-sm-6 col-xs-12">
+                   {IsOTPVerfied!="Verified" ? <div className="form-group col-md-6 col-sm-6 col-xs-12">
                       <div className="field-label">Email Address</div>
                       <input
                         className="form-control"
@@ -1624,6 +1626,7 @@ const rightAligh = {
                         type="text"
                         name="email"
                         onBlur={emailVarification}
+                        autocomplete="off"
                         onChange={setStateFromInput}
                         ref={register({
                           required: true,
@@ -1634,7 +1637,10 @@ const rightAligh = {
                         {(errors.email || emailState) && "Please enter proper email address ."}
                       </span>
                       
-                    </div>
+                    </div>: <div className="form-group col-md-6 col-sm-6 col-xs-12">
+                      <div className="field-label">Email Address</div>
+                      <div className="field-label">{OldMail}</div>
+                    </div> } 
                     <div className="form-group col-md-6 col-sm-6 col-xs-12">
                       {false ? <div> <div className="field-label">Mobile OTP</div>
                       <input
@@ -1643,6 +1649,7 @@ const rightAligh = {
                         type="text"
                         name="email"
                         onBlur={emailVarification}
+                        autocomplete="off"
                         onChange={setStateFromInput}
                         ref={register({
                           required: true,
@@ -1656,7 +1663,7 @@ const rightAligh = {
                       
                     </div>
                     <div className="form-group col-md-6 col-sm-6 col-xs-12">
-                    
+                   {(OTP!=null && OTP!="") ? (IsOTPVerfied!="Verified" ? <div>
                     <div className="row form-group col-md-6 col-sm-6 col-xs-12">
                       <input
                         className="form-control"
@@ -1666,10 +1673,19 @@ const rightAligh = {
                         onChange={OTPVerification}
                       />
                     </div>
-
-                    <span className="error-message">
-                        {"OTP has been sent on your mobile."}
-                      </span>
+                    {IsOTPVerfied=="NotVerfied" ? <span className="error-message">
+                        Invalid OTP, Please enter valid OTP.
+                      </span>:<span className="error-message">
+                         OTP has been sent on your Email. 
+                      </span>}
+                    </div> : (IsOTPVerfied=="Verified" ? <span className="error-message">
+                        OTP has been Verified.
+                      </span>:(IsOTPVerfied=="NotVerfied" ? <span className="error-message">
+                        Invalid OTP, Please enter valid OTP.
+                      </span>:""))
+                    ):""}
+                    
+                    
 
                     {/* <div className="row form-group col-md-6 col-sm-6 col-xs-12">
                       <div className="field-label">Email OTP</div>

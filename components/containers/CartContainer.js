@@ -12,6 +12,8 @@ const CartContainer = ({icon}) => {
     const cartList = context.state;
     const total = context.cartTotal;
     const IsRight = currContext.state.IsRight;
+    var geoLocation =  sessionStorage.getItem('geoLocation');
+
     let leftSymbol=null;
     let rightSymbol = null;
     if(IsRight ==true)
@@ -27,7 +29,7 @@ const CartContainer = ({icon}) => {
         <Fragment>
             <li className="onhover-div mobile-cart" >
                 <div className="cart-qty-cls">{cartList.length}</div>
-                <Link href={`/page/account/cart`}>
+                <Link href={`${geoLocation}/page/account/cart`}>
                     <div>
                         <Media src={icon} className="img-fluid" alt="" />
                         <i className="fa fa-shopping-cart"></i>
@@ -46,10 +48,10 @@ const CartContainer = ({icon}) => {
                             </li>
                             <li>
                                 <div className="buttons view-cart">
-                                    <Link href={`/page/account/cart`} >
+                                    <Link href={`${geoLocation}/page/account/cart`} >
                                         <a>view cart</a>
                                     </Link>
-                                    <Link href={`/page/account/checkout`} >
+                                    <Link href={`${geoLocation}/page/account/checkout`} >
                                         <a className="checkout">checkout</a>
                                     </Link>
                                 </div>

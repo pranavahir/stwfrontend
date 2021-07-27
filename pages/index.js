@@ -28,8 +28,8 @@ const router = useRouter();
     //   router.push("/page/privacy_policy")
     // },30)
     var domain = window.location.hostname;
-    console.log(domain);
-    if(domain == "shoptheworlds.com" || domain == "shoptheworldonline.com" || domain == "test.digitechniq.in"){
+    
+    if(domain == "localhost" || domain == "shoptheworlds.com" || domain == "shoptheworldonline.com" || domain == "test.digitechniq.in"){
           fetch('https://extreme-ip-lookup.com/json/')
         .then( res => res.json())
         .then(response => {
@@ -38,17 +38,23 @@ const router = useRouter();
         console.log(response.countryCode);
         if(response.countryCode == "IN")
         {
+          sessionStorage.setItem('geoLocation', "/in");
           router.push("/in/")
         }
         else if(response.countryCode == "AE")
         {
+          sessionStorage.setItem('geoLocation', "/ae");
           router.push("/ae/")
         }
         else if(response.countryCode == "US")
         {
+          sessionStorage.setItem('geoLocation', "/us");
           router.push("/us/")
         }
-
+        else
+        {
+          sessionStorage.setItem('geoLocation', "");
+        }
       })
       .catch((data, status) => {
         console.log('Request failed:', data);

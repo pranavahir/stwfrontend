@@ -18,7 +18,7 @@ const SideBar = () => {
     const selectedSize = filterContext.selectedSize;
     const [url, setUrl] = useState();
     const router = useRouter();
-    
+    var geoLocation =  sessionStorage.getItem('geoLocation');
     const closeNav = () => {
         var closemyslide = document.getElementById("mySidenav");
         if (closemyslide)
@@ -35,13 +35,19 @@ const SideBar = () => {
         // router.push(`/p/${product.id}` + '-' + `${titleProps}`);
 			const pathname = window.location.pathname;
 			setUrl(pathname);
+            var URL = ""
 			if(pathname=="/shop/six_grid")
 			{
-				var URL = pathname;	
+				 URL = pathname;	
 			}
+            else if(pathname== (geoLocation+"/shop/six_grid"))
+            {
+                URL = pathname;	
+            }
 			else 
 			{
-				var URL = "/shop/six_grid";
+
+				URL = geoLocation+"/shop/six_grid";
 			}
             filterContext.setSelectedCategory(category)
             filterContext.setselectedKeyword("")

@@ -18,6 +18,11 @@ const CREATE_CUSTOMER = gql`
 
 const Register = () => {
   const router = useRouter();
+  const [IsOTPVerfied, setIsOTPVerfied] = useState(false);
+  const [OldMail, setOldMail] = useState(false);
+  const [OTP, setOTP] = useState(null);
+  
+  
   const { register, handleSubmit, errors } = useForm(); // initialise the hook
   const [CreateCustomer, { CustomerData }] = useMutation(CREATE_CUSTOMER);
   //Create User with Email and Password
@@ -42,6 +47,74 @@ const Register = () => {
       });
     // [END auth_email_link_send]
   }
+
+
+  
+  //otp Verification
+
+  const OTPVerification  = (event)=>{
+    if(event.target.value !="" && event.target.value !=null)
+    {
+      if(event.target.value == OTP && event.target.value.length == 6 ) 
+      {
+        setIsOTPVerfied(true);
+      }
+      else
+      {
+        setIsOTPVerfied(false);
+      }
+    }
+  }
+
+
+
+// email verfication and sending the otp message top customer.
+const emailVarification = async (event) => {
+
+  if(event.target != null)
+  {
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    var result =  re.test(String(event.target.value).toLowerCase());
+
+    if(result)
+    {
+      setemailState("")
+      if(OldMail != event.target.value)
+      {
+        var digits = '0123456789';
+        var G_OTP="";
+        setOTP(null);
+        for (let i = 0; i < 6; i++ ) {
+          G_OTP += digits[Math.floor(Math.random() * 10)];
+        }
+        setOTP(G_OTP);
+        setIsOTPVerfied(false);
+        
+        //  console.log(OTP);
+        // https://mailservice.digitechniq.in/  http://localhost/mailService/
+        setOldMail(event.target.value);
+        await fetch("https://mailservice.digitechniq.in/",
+       {
+         method: "POST",
+         headers: {
+           "Content-Type": "application/json",
+         },
+         body: JSON.stringify({
+           CRUD:"OTP",
+           OTP:G_OTP,
+           email:event.target.value
+         }),
+       }
+     ).then((r) => console.log(r));
+
+      }
+     }  
+    else
+    {
+      setemailState("error_border")
+    }
+  }
+}
 
   const onSubmit = async (data, e) => {
     if (data !== "") {
