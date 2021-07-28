@@ -22,7 +22,6 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
     const discountCalculation = context.discountCalculation;
     const priceCollection = context.priceCollection
     const withDiscount = context.withDiscount
-    const geoLocation = sessionStorage.getItem('geoLocation')
     // const stock = context.stock;
     // const plusQty = context.plusQty;
     // const minusQty = context.minusQty;
@@ -126,6 +125,7 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
         }
         return res;
     }
+    const geoLocation = sessionStorage.getItem('geoLocation')
     return (
         <>
             <div className={`product-right ${stickyClass}`}>

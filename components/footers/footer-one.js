@@ -18,6 +18,7 @@ const FooterOne = ({ fluid, logoName ,layoutClass ,footerClass }) => {
     const address = curContext.state.address;
     const addressOne = curContext.state.addressOne;
     const addressTwo = curContext.state.addressTwo;
+    const geoLocation = sessionStorage.getItem('geoLocation')
     const { register, handleSubmit, errors } = useForm(); // initialise the hook
     useEffect(() => {
         var contentwidth = window.innerWidth;
@@ -157,7 +158,7 @@ const allSmall = {
                                 <div className="footer-contant">
                                     <ul>
                                         <li>
-                                            <Link href={`/page/about-us`} >
+                                            <Link href={geoLocation+"/page/about-us"} >
                                                 <a>about us</a>
                                             </Link>
                                         </li>
@@ -177,7 +178,7 @@ const allSmall = {
                                         <li><a href="/page/terms_conditions"> Terms & Conditions</a></li>
                                         <li><a href="/page/privacy_policy">Privacy Policy</a></li>
                                         <li>
-                                        <Link href={`/page/account/contact`} >
+                                        <Link href={`${geoLocation}/page/account/contact`} >
                                         <a>contact us </a>
                                         </Link>
                                         </li>

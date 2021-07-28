@@ -3,16 +3,16 @@ import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import Link from 'next/link'
 import { Media, Container, Form, Row, Input, Col,Button  } from "reactstrap";
 import { PayPalButton } from "react-paypal-button";
-import CartContext from "../../../../helpers/cart";
-import paypal from "../../../../public/assets/images/paypal.png";
+import CartContext from "../../../../../helpers/cart";
+import paypal from "../../../../../public/assets/images/paypal.png";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/router";
-import Card from "../../../../components/stripeCard/Card";
+import Card from "../../../../../components/stripeCard/Card";
 import Axios from "axios";
 import { useMutation } from "@apollo/react-hooks";
 import gql from "graphql-tag";
 
-import { CurrencyContext } from "../../../../helpers/Currency/CurrencyContext";
+import { CurrencyContext } from "../../../../../helpers/Currency/CurrencyContext";
 import GooglePayButton from "@google-pay/button-react";
 import { useQuery,useLazyQuery } from '@apollo/react-hooks';
 
@@ -82,7 +82,7 @@ const  CheckoutPage = ({ isPublic = false }) => {
   const [IsValidGst, setIsValidGst] = useState(false);
   const [PageLoad, setPageLoad] = useState(false);
   const [IsCustomerPay, setIsCustomerPay] = useState(false);
-  const [IsOTPVerfied, setIsOTPVerfied] = useState("notGenerated");
+  const [IsOTPVerfied, setIsOTPVerfied] = useState(false);
   const [OldMail, setOldMail] = useState(false);
   const [OTP, setOTP] = useState(null);
   
@@ -281,7 +281,7 @@ useEffect(() => {
 
 
         //Order mail 
-       
+        AbandonedCartMail(ListOrder,customerData);
        
         //  history.push('/multikart-admin/menus/list-menu')
         //  toast.success("Successfully Added !")
@@ -290,7 +290,9 @@ useEffect(() => {
         console.log(err.message);
       }
     });
-    AbandonedCartMail(ListOrder,customerData);
+  
+    console.log(ListOrder);
+   
   
   };
   
@@ -1123,11 +1125,11 @@ const changeGstcheck = (e) => {
       {
         if(event.target.value == OTP && event.target.value.length == 6 ) 
         {
-          setIsOTPVerfied("Verified");
+          setIsOTPVerfied(true);
         }
-        else if(event.target.value != OTP && event.target.value.length >= 6 ) 
+        else
         {
-          setIsOTPVerfied("NotVerfied");
+          setIsOTPVerfied(false);
         }
       }
     }
@@ -1154,11 +1156,10 @@ const changeGstcheck = (e) => {
             G_OTP += digits[Math.floor(Math.random() * 10)];
           }
           setOTP(G_OTP);
-          setIsOTPVerfied("Generated");
+          setIsOTPVerfied(false);
           
           //  console.log(OTP);
           // https://mailservice.digitechniq.in/  http://localhost/mailService/
-          alert(event.target.value);
           setOldMail(event.target.value);
           await fetch("https://mailservice.digitechniq.in/",
          {
@@ -1296,8 +1297,7 @@ const smallcontain = {
 const rightAligh = {
   textAlign:"Right"
 }
-const geoLocation = sessionStorage.getItem('getLocation')
-
+const geoLocation = sessionStorage.getItem('geoLocation')
   return (
     <section className="section-b-space">
 
@@ -1619,7 +1619,7 @@ const geoLocation = sessionStorage.getItem('getLocation')
                         {errors.phone && "Please enter number for phone."}
                       </span>
                     </div>
-                   {IsOTPVerfied!="Verified" ? <div className="form-group col-md-6 col-sm-6 col-xs-12">
+                   {!IsOTPVerfied ? <div className="form-group col-md-6 col-sm-6 col-xs-12">
                       <div className="field-label">Email Address</div>
                       <input
                         className="form-control"
@@ -1664,7 +1664,7 @@ const geoLocation = sessionStorage.getItem('getLocation')
                       
                     </div>
                     <div className="form-group col-md-6 col-sm-6 col-xs-12">
-                   {(OTP!=null && OTP!="") ? (IsOTPVerfied!="Verified" ? <div>
+                   {(OTP!=null && OTP!="") ? (!IsOTPVerfied ? <div>
                     <div className="row form-group col-md-6 col-sm-6 col-xs-12">
                       <input
                         className="form-control"
@@ -1674,18 +1674,13 @@ const geoLocation = sessionStorage.getItem('getLocation')
                         onChange={OTPVerification}
                       />
                     </div>
-                    {IsOTPVerfied=="NotVerfied" ? <span className="error-message">
-                        Invalid OTP, Please enter valid OTP.
-                      </span>:<span className="error-message">
-                         OTP has been sent on your Email. 
-                      </span>}
-                    </div> : (IsOTPVerfied=="Verified" ? <span className="error-message">
-                        OTP has been Verified.
-                      </span>:(IsOTPVerfied=="NotVerfied" ? <span className="error-message">
-                        Invalid OTP, Please enter valid OTP.
-                      </span>:""))
+                    <span className="error-message">
+                         OTP has been sent on your mobile. 
+                      </span>
+                    </div> : <span className="error-message">
+                        OTP has been Verfied.
+                      </span>
                     ):""}
-                    
                     
 
                     {/* <div className="row form-group col-md-6 col-sm-6 col-xs-12">
