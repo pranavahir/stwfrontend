@@ -29,7 +29,7 @@ const router = useRouter();
     // },30)
     var domain = window.location.hostname;
     
-    if(domain == "localhost" || domain == "shoptheworlds.com" || domain == "shoptheworldonline.com" || domain == "test.digitechniq.in"){
+    if(domain == "shoptheworlds.com" || domain == "shoptheworldonline.com" || domain == "test.digitechniq.in"){
           fetch('https://extreme-ip-lookup.com/json/')
         .then( res => res.json())
         .then(response => {
@@ -60,6 +60,12 @@ const router = useRouter();
         console.log('Request failed:', data);
       });
     }
+    else
+    {
+      sessionStorage.setItem('geoLocation', "");
+    }
+
+
 
   },[])
 

@@ -26,6 +26,11 @@ const TopBarDark = ({ topClass, fluid }) => {
     const [historyLogin, setHistoryLogin] = useState(
         localStorage.getItem('historyLogin')
     );
+    
+    const [geoLocation, setgeoLocation] = useState(
+        sessionStorage.getItem('geoLocation')
+    );
+
     useEffect(() => {
         localStorage.setItem('Name', name);
         localStorage.setItem('historyLogin', historyLogin);
@@ -41,27 +46,27 @@ const TopBarDark = ({ topClass, fluid }) => {
         setCustomerId("");
         var pathname = window.location.pathname;
         console.log(pathname);
-        if(pathname != "/page/account/login-auth" && pathname != "/page/account/register")
+        if(pathname != geoLocation+"/page/account/login-auth" && pathname != geoLocation+"/page/account/register")
         setHistoryLogin(pathname);
         
-        router.push("/page/account/login-auth")
+        router.push(geoLocation+"/page/account/login-auth")
     }
     const Login = () => {
 
         var pathname = window.location.pathname;
         console.log(pathname);
-        if(pathname != "/page/account/login-auth")
+        if(pathname != geoLocation+"/page/account/login-auth")
         setHistoryLogin(pathname);
 
-        router.push("/page/account/login-auth")
+        router.push(geoLocation+"/page/account/login-auth")
     }
     const Register = () => {
         var pathname = window.location.pathname;
         console.log(pathname);
-        if(pathname != "/page/account/register")
+        if(pathname != geoLocation+"/page/account/register")
         setHistoryLogin(pathname); 
         
-        router.push("/page/account/register")
+        router.push(geoLocation+"/page/account/register")
     }
     const imgStyle={
         borderRadius: "30px",
@@ -97,7 +102,7 @@ const TopBarDark = ({ topClass, fluid }) => {
                         <ul className="header-dropdown">
                         {(customerId !="" && customerId !=null && customerId !="null"  && customerId !=undefined) ?  
                             <li className="mobile-wishlist">
-                                <Link href="/page/account/my-order">
+                                <Link href={geoLocation+"/page/account/my-order"}>
                                     <a><i className="fa fa-heart" aria-hidden="true"></i>My Orders </a>
                                 </Link>
                             </li> : ""
@@ -105,7 +110,7 @@ const TopBarDark = ({ topClass, fluid }) => {
 
                         {(customerId !="" && customerId !=null && customerId !="null" && customerId !=undefined) ?  
                             <li className="mobile-wishlist">
-                                <Link href="/page/account/wishlist">
+                                <Link href={geoLocation+"/page/account/wishlist"}>
                                     <a><i className="fa fa-heart" aria-hidden="true"></i> wishlist</a>
                                 </Link>
                             </li>:""}

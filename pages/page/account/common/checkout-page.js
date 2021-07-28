@@ -161,6 +161,7 @@ useEffect(() => {
   const elements = useElements();
    
   const [emailState, setemailState] = useState("");
+  const [Abandonedcart, setAbandonedcart] = useState("");
   const checkhandle = (value) => {
     setPayment(value);
   };
@@ -177,10 +178,19 @@ useEffect(() => {
   window.addEventListener('beforeunload', function (e) {
     // Cancel the event
 
+    makePayment();
     e.preventDefault(); // If you prevent default behavior in Mozilla Firefox prompt will always be shown
     // Chrome requires returnValue to be set
+    e.returnValue = '';
 
-    var CustDetails={
+    
+  });
+  
+
+  const makePayment = () =>{
+    // setIsCustomerPay(true);
+  
+    var customerData={
       first_name:(obj.first_name==undefined ||  obj.first_name==null || obj.first_name=="" )?"":obj.first_name,
       last_name:obj.last_name==undefined?"":obj.last_name,
       phone:obj.phone==undefined?"":obj.phone,
@@ -190,11 +200,12 @@ useEffect(() => {
       city:obj.city==undefined?"":obj.city,
       state:obj.state==undefined?"":obj.state,
       pincode:obj.pincode==undefined?"":obj.pincode,
+      
     }
 
   if(data !=undefined)
   {
-    CustDetails={
+    customerData={
       first_name:(obj.first_name==undefined ||  obj.first_name==null || obj.first_name=="" )?data.CustomerByUID.customername:obj.first_name,
       last_name:obj.last_name==undefined?data.CustomerByUID.customerlastname:obj.last_name,
       phone:obj.phone==undefined?data.CustomerByUID.phonenumber:obj.phone,
@@ -206,19 +217,7 @@ useEffect(() => {
       pincode:obj.pincode==undefined?data.CustomerByUID.pincode:obj.pincode,
     }
   }   
-    
- 
-    makePayment(CustDetails);
 
-    e.returnValue = '';
-
-    
-  });
-  
-
-  const makePayment = (customerData) =>{
-    // setIsCustomerPay(true);
-  
     // console.log(data);
     var ListOrder = [];
     var OrderDetail = {
@@ -246,13 +245,16 @@ useEffect(() => {
   
     var orderResult = 0;
     cartItems.map((item, index) => {
+
+      console.log(index);
+
       OrderDetail = {
         productsku: item.sku,
         producttitle: titleTrim(item.title),
         quantity: (item.qty * 1),
         totalprice: withDiscountWithQty(item.variants,item.qty),
         customerid: customerId,
-        customername: customerData.first_name,
+        customername: "Karupu",
         paymentmethod: "",
         trackingnumber: "",
         orderstatus: "",
@@ -290,6 +292,8 @@ useEffect(() => {
         console.log(err.message);
       }
     });
+
+
     AbandonedCartMail(ListOrder,customerData);
   
   };
@@ -1124,6 +1128,7 @@ const changeGstcheck = (e) => {
         if(event.target.value == OTP && event.target.value.length == 6 ) 
         {
           setIsOTPVerfied("Verified");
+          makePayment();
         }
         else if(event.target.value != OTP && event.target.value.length >= 6 ) 
         {

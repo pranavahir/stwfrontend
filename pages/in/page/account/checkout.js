@@ -1,7 +1,7 @@
 import React, { useEffect,useState } from 'react';
 import CommonLayout from '../../../../components/shop/common-layout';
 import firebase from '../../../../config/base'
-import CheckoutPage from './common/checkout-page';
+import CheckoutPage from '../../../page/account/common/checkout-page';
 import Login from '../../../page/account/login-auth'
 import {Elements} from '@stripe/react-stripe-js';
 import {loadStripe} from '@stripe/stripe-js';

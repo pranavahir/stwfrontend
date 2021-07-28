@@ -281,7 +281,7 @@ useEffect(() => {
 
 
         //Order mail 
-        AbandonedCartMail(ListOrder,customerData);
+        
        
         //  history.push('/multikart-admin/menus/list-menu')
         //  toast.success("Successfully Added !")
@@ -290,9 +290,7 @@ useEffect(() => {
         console.log(err.message);
       }
     });
-  
-    console.log(ListOrder);
-   
+    AbandonedCartMail(ListOrder,customerData);
   
   };
   
