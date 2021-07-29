@@ -65,7 +65,7 @@ const router = useRouter();
       sessionStorage.setItem('geoLocation', "");
     }
 
-
+    console.log(geoLocation);
 
   },[])
 

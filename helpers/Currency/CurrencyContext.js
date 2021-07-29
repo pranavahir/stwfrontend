@@ -2970,7 +2970,7 @@ else
 {
  
   var subDir = null;
-
+  console.log(geoLocation);
   if(geoLocation == "/in")
   {
     subDir="shoptheworld.in";
