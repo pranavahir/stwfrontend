@@ -27,7 +27,9 @@ export const Context = createContext({});
 
 export const Provider = props => {
   
-  
+  const [geoLocation, setgeoLocation] = useState(
+    sessionStorage.getItem('geoLocation')
+);
  
   // const getData = () => {
   //   var { loading, data } = useQuery(GET_MiscinfoByDomain, {
@@ -2954,14 +2956,48 @@ var ListConfig=[
 var selectedConfig=null;
 var domain = window.location.hostname;
 
-for(var i=0;i<ListConfig.length;i++)
+if(geoLocation == "")
+{
+  for(var i=0;i<ListConfig.length;i++)
 {
   if(ListConfig[i].domain == domain || ListConfig[i].fullDomain == domain)
   {
-    selectedConfig =  ListConfig[i];
+      selectedConfig =  ListConfig[i];
   }
 }
-console.log(selectedConfig);
+}
+else
+{
+ 
+  var subDir = null;
+
+  if(geoLocation == "/in")
+  {
+    subDir="shoptheworld.in";
+  }
+  else if(geoLocation == "/ae")
+  {
+    subDir="shoptheworld.ae";
+  }
+  else if(geoLocation == "/us")
+  {
+    subDir="";
+  }
+
+  console.log(subDir);
+  for(var i=0;i<ListConfig.length;i++)
+  {
+    if(ListConfig[i].domain == subDir || ListConfig[i].fullDomain == subDir)
+    {
+        selectedConfig =  ListConfig[i];
+    }
+  }
+  
+}
+
+
+
+// console.log(selectedConfig);
 const [selectedCurr, selectedCurrency] = useState(selectedConfig);
  
   const currencyContext = {

@@ -120,7 +120,7 @@ const TopBarDark = ({ topClass, fluid }) => {
                                  {userTrim(name)}
                                     <ul className="onhover-show-div">
                                     <li>
-                                    <Link href="/page/account/profile">
+                                    <Link href={geoLocation+"/page/account/profile"}>
                                         <a>Profile</a>
                                         </Link>
                                     </li>

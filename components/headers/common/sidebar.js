@@ -19,6 +19,7 @@ const SideBar = () => {
     const [url, setUrl] = useState();
     const router = useRouter();
     var geoLocation =  sessionStorage.getItem('geoLocation');
+    
     const closeNav = () => {
         var closemyslide = document.getElementById("mySidenav");
         if (closemyslide)

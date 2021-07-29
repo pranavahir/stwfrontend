@@ -1,4 +1,5 @@
-import React, {useContext, useEffect } from 'react';
+import React, {useContext, useState, useEffect } from 'react';
+ 
 import Link from 'next/link'
 import { SlideUpDown } from "../../services/script"
 import LogoImage from "../headers/common/logo"
@@ -176,10 +177,10 @@ const allSmall = {
                                 </div>
                                 <div className="footer-contant">
                                     <ul>
-                                        <li><a href="/page/returns-refund">Returns & Refunds</a></li>
+                                        <li><a href={`${geoLocation}/page/returns-refund`}>Returns & Refunds</a></li>
                                         <li><a href="#">Wholesale</a></li>
-                                        <li><a href="/page/terms_conditions"> Terms & Conditions</a></li>
-                                        <li><a href="/page/privacy_policy">Privacy Policy</a></li>
+                                        <li><a href={`${geoLocation}/page/terms_conditions`}> Terms & Conditions</a></li>
+                                        <li><a href={`${geoLocation}/page/privacy_policy`}>Privacy Policy</a></li>
                                         <li>
                                         <Link href={`${geoLocation}/page/account/contact`} >
                                         <a>contact us </a>

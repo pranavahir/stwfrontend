@@ -178,10 +178,14 @@ useEffect(() => {
   window.addEventListener('beforeunload', function (e) {
     // Cancel the event
 
-    makePayment();
-    e.preventDefault(); // If you prevent default behavior in Mozilla Firefox prompt will always be shown
+    // makePayment();.
+    alert(e);
+    console.log(e);
+    // e.preventDefault(); 
+    // If you prevent default behavior in Mozilla Firefox prompt will always be shown
     // Chrome requires returnValue to be set
-    e.returnValue = '';
+
+    e.returnValue = 'test';
 
     
   });
@@ -1163,7 +1167,7 @@ const changeGstcheck = (e) => {
           
           //  console.log(OTP);
           // https://mailservice.digitechniq.in/  http://localhost/mailService/
-          alert(event.target.value);
+          // alert(event.target.value);
           setOldMail(event.target.value);
           await fetch("https://mailservice.digitechniq.in/",
          {

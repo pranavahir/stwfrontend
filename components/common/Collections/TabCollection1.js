@@ -100,7 +100,9 @@ const SpecialProducts = ({ type, fluid, designClass, cartClass,noSlider,innerCla
     const specialproducts = curContext.state.specialproducts;
     const filterContext = useContext(FilterContext);
     const router = useRouter();
-    
+    const [geoLocation, setgeoLocation] = useState(
+        sessionStorage.getItem('geoLocation')
+    );
 
     const loaderStyle={
         margin: "auto",
@@ -130,7 +132,7 @@ const SpecialProducts = ({ type, fluid, designClass, cartClass,noSlider,innerCla
         filterContext.setselectedKeyword("");
         filterContext.setSelectedCategory("");
         filterContext.setSelectedPromaflag(data.category);
-        router.push(`/shop/six_grid?&brand=&color=&size=&minPrice=&maxPrice=&promoflag=${data.category}`)
+        router.push(`${geoLocation}/shop/six_grid?&brand=&color=&size=&minPrice=&maxPrice=&promoflag=${data.category}`)
     }
     // var { loading, data } = useQuery(GET_PRODUCTS, {
     //     variables: {

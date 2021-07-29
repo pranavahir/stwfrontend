@@ -91,7 +91,9 @@ const TopCollection = ({ type, title, subtitle, designClass, noSlider, cartClass
     const curContext = useContext(CurrencyContext);
     const topCollections = curContext.state.topCollections; 
     const filterContext = useContext(FilterContext);
-    
+    const [geoLocation, setgeoLocation] = useState(
+        sessionStorage.getItem('geoLocation')
+    );
 
 
     const linkStyle ={
@@ -129,7 +131,7 @@ const TopCollection = ({ type, title, subtitle, designClass, noSlider, cartClass
         filterContext.setselectedKeyword("");
         filterContext.setSelectedCategory("");
         filterContext.setSelectedPromaflag(data.category);
-        router.push(`/shop/six_grid?&brand=&color=&size=&minPrice=&maxPrice=&promoflag=${data.category}`)
+        router.push(`${geoLocation}/shop/six_grid?&brand=&color=&size=&minPrice=&maxPrice=&promoflag=${data.category}`)
     }
 
     // var { loading, data } = useQuery(GET_PRODUCTS, {

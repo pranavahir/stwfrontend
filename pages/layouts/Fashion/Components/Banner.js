@@ -16,18 +16,20 @@ const Banner = () => {
     const selectedSize = filterContext.selectedSize;
     const [url, setUrl] = useState();
     const router = useRouter();
-
+    const [geoLocation, setgeoLocation] = useState(
+      sessionStorage.getItem('geoLocation')
+  );
   const CategoryFilter = (category) => {
     // router.push(`/p/${product.id}` + '-' + `${titleProps}`);
   const pathname = window.location.pathname;
   setUrl(pathname);
-  if(pathname=="/shop/six_grid")
+  if(pathname==geoLocation+"/shop/six_grid")
   {
     var URL = pathname;	
   }
   else 
   {
-    var URL = "/shop/six_grid";
+    var URL = geoLocation+"/shop/six_grid";
   }
         filterContext.setSelectedCategory(category)
         console.log(selectedCategory);

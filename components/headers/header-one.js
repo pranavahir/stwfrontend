@@ -28,6 +28,9 @@ const HeaderOne = ({ logoName, headerClass, topClass, noTopBar ,direction }) => 
     const selectedCategory = filterContext.state;
     const selectedSize = filterContext.selectedSize
 	const [url, setUrl] = useState();
+	const [geoLocation, setgeoLocation] = useState(
+        sessionStorage.getItem('geoLocation')
+    );
 	/*=====================
 		 Pre loader
 		 ==========================*/
@@ -52,13 +55,13 @@ const HeaderOne = ({ logoName, headerClass, topClass, noTopBar ,direction }) => 
 		{
 			const pathname = window.location.pathname;
 			setUrl(pathname);
-			if(pathname=="/shop/six_grid")
+			if(pathname== geoLocation+"/shop/six_grid")
 			{
 				var URL = pathname;	
 			}
 			else 
 			{
-				var URL = "/shop/six_grid";
+				var URL = geoLocation+"/shop/six_grid";
 			}
 			
 			filterContext.setselectedKeyword(e.target[0].value)
