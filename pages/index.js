@@ -24,18 +24,20 @@ const router = useRouter();
 
 
   useEffect(()=>{
-    // setTimeout(()=>{
-    //   router.push("/page/privacy_policy")
-    // },30)
+ 
+  
+    },[])
+   
     var domain = window.location.hostname;
-    
+ 
     if(domain == "localhost" || domain == "shoptheworlds.com" || domain == "shoptheworldonline.com" || domain == "test.digitechniq.in"){
           fetch('https://extreme-ip-lookup.com/json/')
         .then( res => res.json())
         .then(response => {
-        //  console.log("Country is : ", response);
+         console.log("Country is : ", response);
 
         console.log(response.countryCode);
+
         if(response.countryCode == "IN")
         {
           sessionStorage.setItem('geoLocation', "/in");
@@ -64,10 +66,6 @@ const router = useRouter();
     {
       sessionStorage.setItem('geoLocation', "");
     }
-
-    console.log(geoLocation);
-
-  },[])
 
 
   return (

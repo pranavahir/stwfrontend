@@ -27,6 +27,52 @@ export const Context = createContext({});
 
 export const Provider = props => {
   
+  // useEffect(()=>{
+  //   // setTimeout(()=>{
+  //   //   router.push("/page/privacy_policy")
+  //   // },30)
+  //   var domain = window.location.hostname;
+  //   console.log(domain);
+  //   if(domain == "localhost" || domain == "shoptheworlds.com" || domain == "shoptheworldonline.com" || domain == "test.digitechniq.in"){
+  //         fetch('https://extreme-ip-lookup.com/json/')
+  //       .then( res => res.json())
+  //       .then(response => {
+  //       //  console.log("Country is : ", response);
+
+  //       alert(response.countryCode);
+  //       if(response.countryCode == "IN")
+  //       {
+  //         sessionStorage.setItem('geoLocation', "/in");
+         
+  //       }
+  //       else if(response.countryCode == "AE")
+  //       {
+  //         sessionStorage.setItem('geoLocation', "/ae");
+          
+  //       }
+  //       else if(response.countryCode == "US")
+  //       {
+  //         sessionStorage.setItem('geoLocation', "/us");
+         
+  //       }
+  //       else
+  //       {
+  //         sessionStorage.setItem('geoLocation', "");
+  //       }
+  //     })
+  //     .catch((data, status) => {
+  //       console.log('Request failed:', data);
+  //     });
+  //   }
+  //   else
+  //   {
+  //     sessionStorage.setItem('geoLocation', "");
+  //   }
+
+    
+
+  // },[])
+
   const [geoLocation, setgeoLocation] = useState(
     sessionStorage.getItem('geoLocation')
 );
@@ -2955,7 +3001,7 @@ var ListConfig=[
 
 var selectedConfig=null;
 var domain = window.location.hostname;
-
+ 
 if(geoLocation == "")
 {
   for(var i=0;i<ListConfig.length;i++)
@@ -2970,7 +3016,6 @@ else
 {
  
   var subDir = null;
-  console.log(geoLocation);
   if(geoLocation == "/in")
   {
     subDir="shoptheworld.in";
