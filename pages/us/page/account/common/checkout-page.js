@@ -72,7 +72,7 @@ const  CheckoutPage = ({ isPublic = false }) => {
   const withDiscountWithQty = cartContext.withDiscountWithQty;
   const priceCollection = cartContext.priceCollection;
   const discountCalculation  = cartContext.discountCalculation ;
-  const geoLocation = sessionStorage.getItem('geoLocation')
+
   
  
   
@@ -281,7 +281,7 @@ useEffect(() => {
 
 
         //Order mail 
-        
+        AbandonedCartMail(ListOrder,customerData);
        
         //  history.push('/multikart-admin/menus/list-menu')
         //  toast.success("Successfully Added !")
@@ -290,7 +290,9 @@ useEffect(() => {
         console.log(err.message);
       }
     });
-    AbandonedCartMail(ListOrder,customerData);
+  
+    console.log(ListOrder);
+   
   
   };
   
@@ -1295,7 +1297,7 @@ const smallcontain = {
 const rightAligh = {
   textAlign:"Right"
 }
-
+const geoLocation = sessionStorage.getItem('geoLocation')
   return (
     <section className="section-b-space">
 
