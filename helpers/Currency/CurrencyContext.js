@@ -73,9 +73,6 @@ export const Provider = props => {
 
   // },[])
 
-  const [geoLocation, setgeoLocation] = useState(
-    sessionStorage.getItem('geoLocation')
-);
  
   // const getData = () => {
   //   var { loading, data } = useQuery(GET_MiscinfoByDomain, {
@@ -3006,17 +3003,20 @@ console.log(url);
 if(url.search("/ae/") > 0)
 {
   sessionStorage.setItem('geoLocation',"/ae")
-  setgeoLocation("/ae");
+ 
 }
 else if(url.search("/in/") > 0)
 {
   sessionStorage.setItem('geoLocation',"/in")
-  setgeoLocation("/in");
+ 
 }
 // console.log(url.search("/ae/"));
 // console.log(url.search("/in/"));
 
 
+const [geoLocation, setgeoLocation] = useState(
+  sessionStorage.getItem('geoLocation')
+);
  
 
 if(geoLocation == "")
