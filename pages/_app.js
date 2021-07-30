@@ -38,7 +38,7 @@ export default function MyApp({ Component, pageProps }) {
     const path = window.location.pathname.split('/');
     const url = path[path.length - 1];
     setUrl(url);
-    document.body.classList.add('dark');
+    // document.body.classList.add('dark');
     setTimeout(function () {
       setIsLoading(false)
     }, 1000);

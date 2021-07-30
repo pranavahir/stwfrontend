@@ -1,4 +1,5 @@
 import React, { createContext, useState,useEffect } from "react";
+import { useRouter } from 'next/router';
 import gql from 'graphql-tag';
 // import { useQuery } from '@apollo/react-hooks';
 // const GET_MiscinfoByDomain = gql`
@@ -83,7 +84,7 @@ export const Provider = props => {
 
   //   return data;
   // }
-
+  const router = useRouter();
  
 
 var ListConfig=[
@@ -3018,6 +3019,48 @@ const [geoLocation, setgeoLocation] = useState(
   sessionStorage.getItem('geoLocation')
 );
  
+    if(domain == "localhost" ||  domain == "shoptheworlds.com" || domain == "shoptheworldonline.com" || domain == "test.digitechniq.in"){
+      
+      if(url.search("/ae/") < 0 && url.search("/in/") < 0 && url.search("/us/") < 0 )
+      {
+
+        fetch('https://extreme-ip-lookup.com/json/')
+        .then( res => res.json())
+        .then(response => {
+          
+        var path = window.location.pathname;
+
+        if(response.countryCode == "IN")
+        {
+          sessionStorage.setItem('geoLocation', "/in");
+            router.push(`/in${path}`)
+        }
+        else if(response.countryCode == "AE")
+        {
+          sessionStorage.setItem('geoLocation', "/ae");
+          router.push(`/ae${path}`) 
+        }
+        else if(response.countryCode == "US")
+        {
+          sessionStorage.setItem('geoLocation', "/us");
+          router.push(`/us${path}`) 
+        }
+        else
+        {
+          sessionStorage.setItem('geoLocation', "");
+   
+        }
+      })
+
+        
+      }
+    }
+
+
+
+
+
+
 
 if(geoLocation == "")
 {
@@ -3043,6 +3086,10 @@ else
   else if(geoLocation == "/us")
   {
     subDir="";
+  }
+  else
+  {
+    subDir="shoptheworld.in";
   }
 
   console.log(subDir);
