@@ -3021,7 +3021,7 @@ const [geoLocation, setgeoLocation] = useState(
  
     if(domain == "localhost" ||  domain == "shoptheworlds.com" || domain == "shoptheworldonline.com" || domain == "test.digitechniq.in"){
       
-      if(url.search("/ae/") < 0 && url.search("/in/") < 0 && url.search("/us/") < 0 )
+      if(url.search("/ae") < 0 && url.search("/in") < 0 && url.search("/us") < 0 )
       {
 
         fetch('https://extreme-ip-lookup.com/json/')
