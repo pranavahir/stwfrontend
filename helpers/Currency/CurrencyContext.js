@@ -3002,19 +3002,23 @@ var ListConfig=[
 var selectedConfig=null;
 var domain = window.location.hostname;
 var  url  = window.location.href
-
+console.log(url);
 if(url.search("/ae/") > 0)
 {
   sessionStorage.setItem('geoLocation',"/ae")
+  setgeoLocation("/ae");
 }
 else if(url.search("/in/") > 0)
 {
   sessionStorage.setItem('geoLocation',"/in")
+  setgeoLocation("/in");
 }
 // console.log(url.search("/ae/"));
 // console.log(url.search("/in/"));
 
+
  
+
 if(geoLocation == "")
 {
   for(var i=0;i<ListConfig.length;i++)
