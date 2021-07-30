@@ -28,6 +28,7 @@ const router = useRouter();
     // },30)
     var domain = window.location.hostname;
     console.log(domain);
+    sessionStorage.setItem('geoLocation', "/in");
     // if(domain == "localhost" ||  domain == "shoptheworlds.com" || domain == "shoptheworldonline.com" || domain == "test.digitechniq.in"){
     //       fetch('https://extreme-ip-lookup.com/json/')
     //     .then( res => res.json())

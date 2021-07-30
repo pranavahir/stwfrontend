@@ -3001,6 +3001,19 @@ var ListConfig=[
 
 var selectedConfig=null;
 var domain = window.location.hostname;
+var  url  = window.location.href
+
+if(url.search("/ae/") > 0)
+{
+  sessionStorage.setItem('geoLocation',"/ae")
+}
+else if(url.search("/in/") > 0)
+{
+  sessionStorage.setItem('geoLocation',"/in")
+}
+// console.log(url.search("/ae/"));
+// console.log(url.search("/in/"));
+
  
 if(geoLocation == "")
 {
@@ -3014,7 +3027,6 @@ if(geoLocation == "")
 }
 else
 {
- 
   var subDir = null;
   if(geoLocation == "/in")
   {
