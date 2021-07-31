@@ -89,15 +89,19 @@ const HeaderOne = ({
     }
   };
 
+  const openAllNavs = () => {
+    openNav();
+    openNavMobile();
+  };
+
   const openNav = () => {
-    var openmyslide = document.getElementsByClassName("openHandlerSidenav");
-    if (openmyslide) {
-      openmyslide.classList.add("open-side");
+    var openmyslidebyid = document.getElementById("mySidenav");
+    if (openmyslidebyid) {
+      openmyslidebyid.classList.add("open-side");
     }
   };
   const openNavMobile = () => {
     var openmyslide = document.getElementsByClassName("openHandlerSidenav");
-    var openmyslidebyid = document.getElementById("mySidenav");
     if (openmyslide) {
       openmyslide[1].classList.add("open-side");
     }
@@ -131,7 +135,7 @@ const HeaderOne = ({
           <div className="row">
             <div className="col-6 d-flex align-items-center justify-content-start">
               <div className={classes.burgerMenuParent}>
-                <a href={null} onClick={openNav}>
+                <a href={null} onClick={openAllNavs}>
                   <div className="bar-style">
                     {" "}
                     <i
