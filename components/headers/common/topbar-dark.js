@@ -4,6 +4,7 @@ import Link from "next/link";
 import firebase from "../../../config/base";
 import { useRouter } from "next/router";
 import { CurrencyContext } from "../../../helpers/Currency/CurrencyContext";
+import classes from "./topbar-dark.module.css";
 
 const TopBarDark = ({ topClass, fluid }) => {
   const router = useRouter();
@@ -98,7 +99,7 @@ const TopBarDark = ({ topClass, fluid }) => {
             </div>
           </Col>
           <Col lg="6" className="text-right">
-            <ul className="header-dropdown">
+            <ul className={"header-dropdown " + classes.alignMobile}>
               {customerId != "" &&
               customerId != null &&
               customerId != "null" &&
@@ -106,8 +107,11 @@ const TopBarDark = ({ topClass, fluid }) => {
                 <li className="mobile-wishlist">
                   <Link href={geoLocation + "/page/account/my-order"}>
                     <a>
-                      <i className="fa fa-heart" aria-hidden="true"></i>My
-                      Orders{" "}
+                      <i
+                        className={"fa fa-heart " + classes.hideOnMobile}
+                        aria-hidden="true"
+                      ></i>
+                      My Orders{" "}
                     </a>
                   </Link>
                 </li>
@@ -122,7 +126,10 @@ const TopBarDark = ({ topClass, fluid }) => {
                 <li className="mobile-wishlist">
                   <Link href={geoLocation + "/page/account/wishlist"}>
                     <a>
-                      <i className="fa fa-heart" aria-hidden="true"></i>{" "}
+                      <i
+                        className={"fa fa-heart " + classes.hideOnMobile}
+                        aria-hidden="true"
+                      ></i>{" "}
                       wishlist
                     </a>
                   </Link>
@@ -140,7 +147,7 @@ const TopBarDark = ({ topClass, fluid }) => {
                       src={photoURL}
                       alt=""
                       width="15%"
-                      className="img-fluid"
+                      className={"img-fluid " + classes.hideOnMobile}
                     />
                   )}
                   {userTrim(name)}

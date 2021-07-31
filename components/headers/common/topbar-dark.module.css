@@ -1,0 +1,13 @@
+@media (max-width: 768px) {
+  .hideOnMobile {
+    display: none;
+  }
+  .alignMobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .text-right .col-lg-6 {
+    padding: 0;
+  }
+}

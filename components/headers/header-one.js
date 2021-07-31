@@ -15,24 +15,30 @@ import Currency from "./common/currency";
 import { useRouter } from "next/router";
 import classes from "./Header-one.module.css";
 
-const HeaderOne = ({ logoName, headerClass, topClass, noTopBar ,direction }) => {
-	const [isLoading, setIsLoading] = useState(false);
-	// eslint-disable-next-line
-	const [open, setOpen] = useState(false);
-	const router = useRouter();
-	const { register, handleSubmit, errors } = useForm(); // initialise the hook
-	const filterContext = useContext(FilterContext);
-	const selectedKeyword = filterContext.selectedKeyword;
-    const selectedBrands = filterContext.selectedBrands;
-    const selectedColor = filterContext.selectedColor;
-    const selectedPrice = filterContext.selectedPrice;
-    const selectedCategory = filterContext.state;
-    const selectedSize = filterContext.selectedSize
-	const [url, setUrl] = useState();
-	const [geoLocation, setgeoLocation] = useState(
-        sessionStorage.getItem('geoLocation')
-    );
-	/*=====================
+const HeaderOne = ({
+  logoName,
+  headerClass,
+  topClass,
+  noTopBar,
+  direction,
+}) => {
+  const [isLoading, setIsLoading] = useState(false);
+  // eslint-disable-next-line
+  const [open, setOpen] = useState(false);
+  const router = useRouter();
+  const { register, handleSubmit, errors } = useForm(); // initialise the hook
+  const filterContext = useContext(FilterContext);
+  const selectedKeyword = filterContext.selectedKeyword;
+  const selectedBrands = filterContext.selectedBrands;
+  const selectedColor = filterContext.selectedColor;
+  const selectedPrice = filterContext.selectedPrice;
+  const selectedCategory = filterContext.state;
+  const selectedSize = filterContext.selectedSize;
+  const [url, setUrl] = useState();
+  const [geoLocation, setgeoLocation] = useState(
+    sessionStorage.getItem("geoLocation")
+  );
+  /*=====================
 		 Pre loader
 		 ==========================*/
   useEffect(() => {
@@ -50,24 +56,26 @@ const HeaderOne = ({ logoName, headerClass, topClass, noTopBar ,direction }) => 
   }, []);
 
   const onSubmit = (data, e) => {
-    if(e.target[0].value!=null && e.target[0].value!=undefined && e.target[0].value!="")
-		{
-			const pathname = window.location.pathname;
-			setUrl(pathname);
-			if(pathname== geoLocation+"/shop/six_grid")
-			{
-				var URL = pathname;	
-			}
-			else 
-			{
-				var URL = geoLocation+"/shop/six_grid";
-			}
-			
-			filterContext.setselectedKeyword(e.target[0].value)
-			var category = ""
-        	router.push(`${URL}?${category}&brand=${selectedBrands}&color=${selectedColor}&size=${selectedSize}&minPrice=${selectedPrice.min}&maxPrice=${selectedPrice.max}&keyword=${selectedKeyword}`)
-			closeSearch();
-		}
+    if (
+      e.target[0].value != null &&
+      e.target[0].value != undefined &&
+      e.target[0].value != ""
+    ) {
+      const pathname = window.location.pathname;
+      setUrl(pathname);
+      if (pathname == geoLocation + "/shop/six_grid") {
+        var URL = pathname;
+      } else {
+        var URL = geoLocation + "/shop/six_grid";
+      }
+
+      filterContext.setselectedKeyword(e.target[0].value);
+      var category = "";
+      router.push(
+        `${URL}?${category}&brand=${selectedBrands}&color=${selectedColor}&size=${selectedSize}&minPrice=${selectedPrice.min}&maxPrice=${selectedPrice.max}&keyword=${selectedKeyword}`
+      );
+      closeSearch();
+    }
   };
   const handleScroll = () => {
     let number =
@@ -104,7 +112,6 @@ const HeaderOne = ({ logoName, headerClass, topClass, noTopBar ,direction }) => 
   const openSearch = () => {
     document.getElementById("search-overlay").style.display = "block";
   };
-
 
   const closeSearch = () => {
     document.getElementById("search-overlay").style.display = "none";
@@ -212,6 +219,9 @@ const HeaderOne = ({ logoName, headerClass, topClass, noTopBar ,direction }) => 
         id="sticky"
         className={`sticky ${classes.mobileHeader} ${headerClass}`}
       >
+        <div className="mobile-fix-option">
+          <TopBarDark topClass={topClass} />
+        </div>
         <Container>
           <div className="row">
             <div className="col-6 d-flex align-items-center justify-content-start">
@@ -238,9 +248,7 @@ const HeaderOne = ({ logoName, headerClass, topClass, noTopBar ,direction }) => 
                   className={
                     "onhover-div mobile-search " + classes.customSizingAcc
                   }
-                >
-                  <TopBarDark topClass={topClass} />
-                </li>
+                ></li>
                 {direction === undefined ? (
                   <CartContainer layout={direction} icon={cart} />
                 ) : (

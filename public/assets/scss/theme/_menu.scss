@@ -2089,6 +2089,9 @@ header {
   }
 }
 @media (max-width: 577px) {
+  .top-header {
+    height: 0;
+  }
   .main-nav-center {
     .toggle-nav {
       right: 15px;
@@ -2126,7 +2129,8 @@ header {
   }
   .top-header {
     .header-dropdown {
-      .mobile-account, .mobile-wishlist{
+      .mobile-account,
+      .mobile-wishlist {
         // position: fixed;
         // bottom: 20px;
         // right: 30%;

@@ -1310,6 +1310,13 @@ header {
   position: relative;
   font-size: 14px;
 
+  &:before {
+    content: "\f107";
+    font-family: $font-awesome;
+    position: absolute;
+    right: 3px;
+  }
+
   .onhover-show-div {
     top: 50px;
     position: absolute;
@@ -1462,6 +1469,8 @@ header {
 }
 
 .top-header {
+  background-color: $top-header;
+
   .header-contact {
     padding: 15px 0;
 
