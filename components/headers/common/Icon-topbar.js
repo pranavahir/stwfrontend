@@ -26,6 +26,9 @@ const IconTopbar = () => {
     const closeSearch = () => {
         document.getElementById("search-overlay").style.display = "none";
     }
+    const [geoLocation, setgeoLocation] = useState(
+        sessionStorage.getItem('geoLocation')
+    );
 
     const cartList = context.state;
     const total = context.cartTotal;
@@ -60,7 +63,7 @@ const IconTopbar = () => {
                             <div className="menu-right pull-right">
                                 <ul className="header-dropdown">
                                     <li className="mobile-wishlist">
-                                        <Link href='/page/account/wishlist'>
+                                        <Link href={geoLocation+'/page/account/wishlist'}>
                                             <a>
                                                 <i className="fa fa-heart" aria-hidden="true"></i><Media src={like} alt="" />
                                             </a>

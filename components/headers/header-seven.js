@@ -39,6 +39,9 @@ const HeaderSeven = ({ logoName }) => {
     const closeSearch = () => {
         document.getElementById("search-overlay").style.display = "none";
     }
+    const [geoLocation, setgeoLocation] = useState(
+        sessionStorage.getItem('geoLocation')
+    );
 
     // eslint-disable-next-line
     const load = () => {
@@ -70,7 +73,7 @@ const HeaderSeven = ({ logoName }) => {
                                     <div className="top-header">
                                         <ul className="header-dropdown">
                                             <li className="mobile-wishlist">
-                                                <Link href="/page/account/wishlist">
+                                                <Link href={geoLocation+"/page/account/wishlist"}>
                                                     <a>
                                                         <Media src={heart} alt="" />
                                                     </a>

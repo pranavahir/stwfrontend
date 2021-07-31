@@ -24,6 +24,7 @@ const client = new ApolloClient({
     // uri: "http://162.0.210.5:4457/api/graphql"  //local stwapi
     // uri: "https://cryptic-mountain-48315.herokuapp.com/api/graphql"  //Test env
     //uri:'https://docker.digitechniq.in/api/graphql', //production env 001
+    
     uri:'https://stwecommerceapi.digitechniq.in/api/graphql', //production env 002
     
 })
@@ -37,7 +38,7 @@ export default function MyApp({ Component, pageProps }) {
     const path = window.location.pathname.split('/');
     const url = path[path.length - 1];
     setUrl(url);
-    document.body.classList.add('dark');
+    // document.body.classList.add('dark');
     setTimeout(function () {
       setIsLoading(false)
     }, 1000);

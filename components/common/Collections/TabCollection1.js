@@ -10,6 +10,9 @@ import PostLoader from '../PostLoader';
 import { CompareContext } from '../../../helpers/Compare/CompareContext';
 import { CurrencyContext } from '../../../helpers/Currency/CurrencyContext';
 import emptySearch from '../../../public/assets/images/empty-search.jpg';
+import FilterContext from "../../../helpers/filter/FilterContext";
+import { useRouter } from "next/router";
+
 
 
 const GET_PRODUCTS = gql`
@@ -53,6 +56,17 @@ const SpecialProducts = ({ type, fluid, designClass, cartClass, heading, noTitle
     const curContext = useContext(CurrencyContext);
     const currency = curContext.state;
     const quantity = context.quantity;
+    const IsRight = curContext.state.IsRight;
+    const country = curContext.state.country;
+    const panel = curContext.state.panel;
+    const featureProducts = curContext.state.featureProducts;
+    const newProducts = curContext.state.newProducts;
+    const specialproducts = curContext.state.specialproducts;
+    const filterContext = useContext(FilterContext);
+    const router = useRouter();
+    const [geoLocation, setgeoLocation] = useState(
+        sessionStorage.getItem('geoLocation')
+    );
 
     var { loading, data } = useQuery(GET_PRODUCTS, {
         variables: {
@@ -62,6 +76,40 @@ const SpecialProducts = ({ type, fluid, designClass, cartClass, heading, noTitle
         }
     });
 
+    const lableStyle={
+        backgroundColor:"red",
+        fontSize:"15px",
+        color:"white",
+        marginRight: "43px",
+        marginBottom: "29px"
+    }
+
+    const getURL = (data) => {
+        filterContext.setselectedKeyword("");
+        filterContext.setSelectedCategory("");
+        filterContext.setSelectedPromaflag(data.category);
+        router.push(`${geoLocation}/shop/six_grid?&brand=&color=&size=&minPrice=&maxPrice=&promoflag=${data.category}`)
+    }
+    // var { loading, data } = useQuery(GET_PRODUCTS, {
+    //     variables: {
+    //         type: "",
+    //         priceMax: 10,
+    //         priceMin: 1,
+    //         color: "red",
+    //         brand: "max",
+    //         indexFrom: 0,
+    //         limit: 8,
+    //         keyword:"",
+    //         country:country,
+    //         panel:panel,
+    //         promoflag:"highlight2"
+
+    //     }
+    // });
+ 
+
+    
+    
     return (
         <div>
             <section className={designClass}>
