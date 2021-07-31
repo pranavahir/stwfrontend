@@ -156,13 +156,8 @@ const TopBarDark = ({ topClass, fluid }) => {
                   </ul>
                 </li>
               ) : (
-                <li className="mobile-account">
-                  <i
-                    className="fa fa-user"
-                    aria-hidden="true"
-                    onClick={() => Login()}
-                  ></i>{" "}
-                  My Account
+                <li className="mobile-account" onClick={() => Login()}>
+                  <i className="fa fa-user" aria-hidden="true"></i> My Account
                 </li>
               )}
             </ul>
