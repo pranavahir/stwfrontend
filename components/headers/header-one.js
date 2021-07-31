@@ -132,87 +132,84 @@ const HeaderOne = ({
         id="sticky"
         className={`sticky ${classes.desktopHeader} ${headerClass}`}
       >
+        <div className="mobile-fix-option"></div>
+        {/*Top Header Component*/}
         {noTopBar ? "" : <TopBarDark topClass={topClass} />}
 
         <Container>
-          <div className="row">
-            <div className="col-6 d-flex align-items-center justify-content-start">
-              <div className={classes.burgerMenuParent}>
-                <a href={null} onClick={openAllNavs}>
-                  <div className="bar-style">
-                    {" "}
-                    <i
-                      className={"fa fa-bars sidebar-bar " + classes.burgerMenu}
-                      aria-hidden="true"
-                    ></i>
+          <Row>
+            <Col>
+              <div className="main-menu">
+                <div className="menu-left">
+                  <div className="navbar">
+                    <a href={null} onClick={openNav}>
+                      <div className="bar-style">
+                        {" "}
+                        <i
+                          className="fa fa-bars sidebar-bar"
+                          aria-hidden="true"
+                        ></i>
+                      </div>
+                    </a>
+                    {/*SideBar Navigation Component*/}
+                    <SideBar />
                   </div>
-                </a>
-                {/*SideBar Navigation Component*/}
-                <SideBar />
-              </div>
-              <div className={classes.logoParent}>
-                <LogoImage logo={logoName} />
-              </div>
-            </div>
-            <div className="col-6">
-              {/*Top Navigation Bar Component*/}
-              {/* <NavBar /> */}
+                  <div className="brand-logo">
+                    <LogoImage logo={logoName} />
+                  </div>
+                </div>
+                <div className="menu-right pull-right">
+                  {/*Top Navigation Bar Component*/}
+                  {/* <NavBar /> */}
 
-              <ul class="d-flex align-items-center justify-content-end">
-                <li className="onhover-div mobile-search">
-                  {/* <div><Media src={search} onClick={openSearch} className="img-fluid" alt="" />
+                  <div>
+                    <div className="icon-nav">
+                      <ul className="d-flex justify-center align-items-center">
+                        <li className="onhover-div mobile-search">
+                          {/* <div><Media src={search} onClick={openSearch} className="img-fluid" alt="" />
 														<i className="fa fa-search" onClick={openSearch}></i></div> */}
-                  <section className="search-block">
-                    <Container>
-                      <Row>
-                        <Col lg="12">
-                          <form
-                            className="form-header"
-                            onSubmit={handleSubmit(onSubmit)}
-                          >
-                            <div className="input-group">
-                              <Input
-                                type="text"
-                                className={
-                                  "form-control " + classes.inputContainer
-                                }
-                                aria-label="Amount (to the nearest dollar)"
-                                placeholder="Search Products......"
-                                name="keyword"
-                              />
-                              <div className="input-group-append">
-                                <div className={classes.searchMobile}>
-                                  <button className={classes.mobileButton}>
-                                    <i
-                                      className={
-                                        "fa fa-search " + classes.searchIcon
-                                      }
-                                    ></i>
-                                  </button>
-                                </div>
-                                <div className={classes.searchDesktop}>
-                                  <button className={classes.desktopButton}>
-                                    <i className={"fa fa-search "}></i>Search
-                                  </button>
-                                </div>
-                              </div>
-                            </div>
-                          </form>
-                        </Col>
-                      </Row>
-                    </Container>
-                  </section>
-                </li>
-                {/* <Currency icon={settings} /> */}
-                {/*Header Cart Component */}
-                {direction === undefined ? (
-                  <CartContainer layout={direction} icon={cart} />
-                ) : (
-                  <Cart layout={direction} icon={cart} />
-                )}
-              </ul>
-            </div>
-          </div>
+                          <section className="search-block">
+                            <Container>
+                              <Row>
+                                <Col lg="12">
+                                  <form
+                                    className="form-header"
+                                    onSubmit={handleSubmit(onSubmit)}
+                                  >
+                                    <div className="input-group">
+                                      <Input
+                                        type="text"
+                                        className="form-control"
+                                        aria-label="Amount (to the nearest dollar)"
+                                        placeholder="Search Products......"
+                                        name="keyword"
+                                      />
+                                      <div className="input-group-append">
+                                        <button className="btn btn-solid">
+                                          <i className="fa fa-search"></i>Search
+                                        </button>
+                                      </div>
+                                    </div>
+                                  </form>
+                                </Col>
+                              </Row>
+                            </Container>
+                          </section>
+                        </li>
+                        {/* <Currency icon={settings} /> */}
+                        {/*Header Cart Component */}
+                        {direction === undefined ? (
+                          <CartContainer layout={direction} icon={cart} />
+                        ) : (
+                          <Cart layout={direction} icon={cart} />
+                        )}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Col>
+          </Row>
         </Container>
       </header>
       <header
@@ -223,7 +220,7 @@ const HeaderOne = ({
           <TopBarDark topClass={topClass} />
         </div>
         <Container>
-          <div className="row">
+          <div className="row main-menu">
             <div className="col-6 d-flex align-items-center justify-content-start">
               <div className={classes.burgerMenuParent}>
                 <a href={null} onClick={openNavMobile}>
@@ -242,13 +239,9 @@ const HeaderOne = ({
                 <LogoImage logo={logoName} />
               </div>
             </div>
-            <div className="col-6">
+            <div className="col-6 menu-right justify-content-end">
               <ul class="d-flex align-items-center justify-content-end">
-                <li
-                  className={
-                    "onhover-div mobile-search " + classes.customSizingAcc
-                  }
-                ></li>
+                <li className={"mobile-search " + classes.customSizingAcc}></li>
                 {direction === undefined ? (
                   <CartContainer layout={direction} icon={cart} />
                 ) : (
