@@ -1,0 +1,15 @@
+@media (min-width: 768px) {
+  .shoppingCart {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .imageContainer,
+  .mobilePopUpBlock {
+    display: none;
+  }
+  .shoppingCart {
+    margin-top: 20px;
+    font-size: 20px;
+  }
+}
