@@ -1,7 +1,7 @@
 import React, { useContext, useState,useEffect } from "react";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import Link from 'next/link'
-import { Media, Container, Form, Row, Input, Col } from "reactstrap";
+import { Media, Container, Form, Row, Input, Col,Button  } from "reactstrap";
 import { PayPalButton } from "react-paypal-button";
 import CartContext from "../../../../helpers/cart";
 import paypal from "../../../../public/assets/images/paypal.png";
@@ -23,6 +23,15 @@ const CREATE_OREDER = gql`
     }
   }
 `;
+
+const CREATE_ABANDONED_CART = gql`
+  mutation Createabandonedcart($abandonedcart: abandonedcart!) {
+    Createabandonedcart(abandonedcart: $abandonedcart) {
+      orderdetailid
+    }
+  }
+`;
+
 const UPDATE_CUSTOMER = gql`
   mutation UpdateCustomerDetail($Customer: Customerinfo!) {
     UpdateCustomerDetail(Customer: $Customer) {
@@ -72,10 +81,16 @@ const  CheckoutPage = ({ isPublic = false }) => {
   const [paymentErr, setPaymentErr] = useState("");
   const [IsValidGst, setIsValidGst] = useState(false);
   const [PageLoad, setPageLoad] = useState(false);
+  const [IsCustomerPay, setIsCustomerPay] = useState(false);
+  const [IsOTPVerfied, setIsOTPVerfied] = useState("notGenerated");
+  const [OldMail, setOldMail] = useState(false);
+  const [OTP, setOTP] = useState(null);
   
+
   const [customerId, setCustomerId] = useState(
     localStorage.getItem('CustomerId')
 );
+
 
 var { loading, data } =  useQuery(GET_CUSTOMER_BY_UID, {
   variables: {
@@ -93,10 +108,14 @@ const errStyle={
 
 
 
+
 const IsRight = curContext.state.IsRight;
 const country = curContext.state.country;
 let leftSymbol=null;
 let rightSymbol = null;
+ 
+
+
 if(IsRight ==true)
 {
     rightSymbol = symbol;
@@ -140,6 +159,9 @@ useEffect(() => {
   const router = useRouter();
   const stripe = useStripe();
   const elements = useElements();
+   
+  const [emailState, setemailState] = useState("");
+  const [Abandonedcart, setAbandonedcart] = useState("");
   const checkhandle = (value) => {
     setPayment(value);
   };
@@ -148,8 +170,138 @@ useEffect(() => {
 
   // const [createOrder] = useMutation(CREATE_OREDER);
 
+  
   const [createOrder, { orderedData }] = useMutation(CREATE_OREDER);
+  const [createAbandonedCart, { abandonedCartData }] = useMutation(CREATE_ABANDONED_CART);
   const [UpdateCustomer, { CustomerData }] = useMutation(UPDATE_CUSTOMER);
+
+  window.addEventListener('beforeunload', function (e) {
+    // Cancel the event
+
+    // makePayment();.
+    alert(e);
+    console.log(e);
+    // e.preventDefault(); 
+    // If you prevent default behavior in Mozilla Firefox prompt will always be shown
+    // Chrome requires returnValue to be set
+
+    e.returnValue = 'test';
+
+    
+  });
+  
+
+  const makePayment = () =>{
+    // setIsCustomerPay(true);
+  
+    var customerData={
+      first_name:(obj.first_name==undefined ||  obj.first_name==null || obj.first_name=="" )?"":obj.first_name,
+      last_name:obj.last_name==undefined?"":obj.last_name,
+      phone:obj.phone==undefined?"":obj.phone,
+      email:obj.email==undefined?"":obj.email,
+      country:country,
+      address:obj.address==undefined?"":obj.address,
+      city:obj.city==undefined?"":obj.city,
+      state:obj.state==undefined?"":obj.state,
+      pincode:obj.pincode==undefined?"":obj.pincode,
+      
+    }
+
+  if(data !=undefined)
+  {
+    customerData={
+      first_name:(obj.first_name==undefined ||  obj.first_name==null || obj.first_name=="" )?data.CustomerByUID.customername:obj.first_name,
+      last_name:obj.last_name==undefined?data.CustomerByUID.customerlastname:obj.last_name,
+      phone:obj.phone==undefined?data.CustomerByUID.phonenumber:obj.phone,
+      email:obj.email==undefined?data.CustomerByUID.emailid:obj.email,
+      country:country,
+      address:obj.address==undefined?data.CustomerByUID.address1:obj.address,
+      city:obj.city==undefined?data.CustomerByUID.city:obj.city,
+      state:obj.state==undefined?data.CustomerByUID.state:obj.state,
+      pincode:obj.pincode==undefined?data.CustomerByUID.pincode:obj.pincode,
+    }
+  }   
+
+    // console.log(data);
+    var ListOrder = [];
+    var OrderDetail = {
+      productsku: "item.sku",
+      producttitle: "item.title",
+      quantity: 1,
+      totalprice: 0,
+      customerid: customerId,
+      customername: customerData.first_name,
+      paymentmethod: "",
+      trackingnumber: "",
+      orderstatus: "",
+      address1:customerData.address,
+      address2:"",
+      city:customerData.city,
+      state:customerData.state,
+      country:customerData.country,
+      pin:customerData.pincode,
+      phone:customerData.phone,
+      emailid:customerData.email,
+      gst:customerData.GST,
+      gstname:customerData.GSTName,
+      productimage:""
+    };
+  
+    var orderResult = 0;
+    cartItems.map((item, index) => {
+
+      console.log(index);
+
+      OrderDetail = {
+        productsku: item.sku,
+        producttitle: titleTrim(item.title),
+        quantity: (item.qty * 1),
+        totalprice: withDiscountWithQty(item.variants,item.qty),
+        customerid: customerId,
+        customername: "Karupu",
+        paymentmethod: "",
+        trackingnumber: "",
+        orderstatus: "",
+        address1:customerData.address,
+        address2:"",
+        city:customerData.city,
+        state:customerData.state,
+        country:customerData.country,
+        pin:customerData.pincode,
+        phone:customerData.phone,
+        emailid:customerData.email,
+        gst:customerData.GST,
+        gstname:customerData.GSTName,
+        productimage:item.images[0].mainimageurl
+      };
+  
+  
+      ListOrder.push(OrderDetail);
+  
+      try {
+  
+        // console.log(OrderDetail);
+        var AbandonedCartData = createAbandonedCart({
+          variables: { abandonedcart: { ...OrderDetail } },
+        });
+
+
+        //Order mail 
+       
+       
+        //  history.push('/multikart-admin/menus/list-menu')
+        //  toast.success("Successfully Added !")
+  
+      } catch (err) {
+        console.log(err.message);
+      }
+    });
+
+
+    AbandonedCartMail(ListOrder,customerData);
+  
+  };
+  
 
   /** Launches payment request flow when user taps on buy button. */
   const onBuyClicked = () => {
@@ -304,6 +456,39 @@ const changeGstcheck = (e) => {
         },
         body: JSON.stringify({
           CRUD:"Order",
+          OrderDetail:productDetail,
+          CustomerDetail:customerDetail,
+          leftSymbol:leftSymbol,
+          rightSymbol:rightSymbol,
+          fullPrice:fullPrice
+        }),
+      }
+    ).then((r) => r.json());
+
+    if (backendMailError) {
+      console.log(backendError.message);
+      return;
+    }
+  }
+
+  const AbandonedCartMail = async (productDetail,customerDetail) =>{
+
+    var domain = window.location.hostname;
+
+    var checkoutURL = "https://"+domain+"/page/account/checkout";
+    
+    
+    // https://mailservice.digitechniq.in/  http://localhost/mailService/
+    const { error: backendMailError, clientMail } = await fetch(
+      "https://mailservice.digitechniq.in/",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          CRUD:"AbandonedCart",
+          URLData:checkoutURL,
           OrderDetail:productDetail,
           CustomerDetail:customerDetail,
           leftSymbol:leftSymbol,
@@ -816,7 +1001,13 @@ const changeGstcheck = (e) => {
     if (stripeError) {
       // Show error to your customer (e.g., insufficient funds)
       console.log(stripeError.message);
-      setPaymentErr(stripeError.message);   
+      setPaymentErr(stripeError.message);
+      if(customerData.country=="India")
+      {
+      checkhandle("Razorpay");
+      razorPayPaymentHandler(customerData);   
+      }
+      
       setPageLoad(false);
       return;
     } else {
@@ -909,8 +1100,10 @@ const changeGstcheck = (e) => {
   };
 
   const onSubmit = (data, e,paymentinfo) => {
+
     if (data !== "") {
 
+     
       setPageLoad(true);
 
       if (payment == "stripe") {
@@ -930,6 +1123,76 @@ const changeGstcheck = (e) => {
     }
   };
 
+
+  //otp Verification
+
+    const OTPVerification  = (event)=>{
+      if(event.target.value !="" && event.target.value !=null)
+      {
+        if(event.target.value == OTP && event.target.value.length == 6 ) 
+        {
+          setIsOTPVerfied("Verified");
+          makePayment();
+        }
+        else if(event.target.value != OTP && event.target.value.length >= 6 ) 
+        {
+          setIsOTPVerfied("NotVerfied");
+        }
+      }
+    }
+
+
+
+  // email verfication and sending the otp message top customer.
+  const emailVarification = async (event) => {
+
+    if(event.target != null)
+    {
+      const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      var result =  re.test(String(event.target.value).toLowerCase());
+  
+      if(result)
+      {
+        setemailState("")
+        if(OldMail != event.target.value)
+        {
+          var digits = '0123456789';
+          var G_OTP="";
+          setOTP(null);
+          for (let i = 0; i < 6; i++ ) {
+            G_OTP += digits[Math.floor(Math.random() * 10)];
+          }
+          setOTP(G_OTP);
+          setIsOTPVerfied("Generated");
+          
+          //  console.log(OTP);
+          // https://mailservice.digitechniq.in/  http://localhost/mailService/
+          // alert(event.target.value);
+          setOldMail(event.target.value);
+          await fetch("https://mailservice.digitechniq.in/",
+         {
+           method: "POST",
+           headers: {
+             "Content-Type": "application/json",
+           },
+           body: JSON.stringify({
+             CRUD:"OTP",
+             OTP:G_OTP,
+             email:event.target.value
+           }),
+         }
+       ).then((r) => console.log(r));
+
+        }
+       }  
+      else
+      {
+        setemailState("error_border")
+      }
+    }
+  }
+
+
   const setStateFromInput = (event) => {
     obj[event.target.name] = event.target.value;
     
@@ -946,51 +1209,61 @@ const changeGstcheck = (e) => {
     if(event.target.name == "first_name" )
     {
       setState({first_name:event.target.value})
+      if(data!=undefined)
       data.CustomerByUID.customername = event.target.value;
     }  
     
     if(event.target.name == "last_name" )
     {
       setState({last_name:event.target.value})
+      if(data!=undefined)
       data.CustomerByUID.customerlastname = event.target.value;
     }  
     
     if(event.target.name == "phone" )
     {
       setState({phone:event.target.value})
+      if(data!=undefined)
       data.CustomerByUID.phonenumber = event.target.value;
     }  
     
     if(event.target.name == "email" )
     {
       setState({email:event.target.value})
-      data.CustomerByUID.emailid = event.target.value;
+      if(data!=undefined)
+        data.CustomerByUID.emailid = event.target.value;
+      
     }  
      
       setState({country:country})
-      data.CustomerByUID.country = country;
+      if(data!=undefined)
+        data.CustomerByUID.country = country;
      
     if(event.target.name == "address" )
     {
       setState({address:event.target.value})
+      if(data!=undefined)
       data.CustomerByUID.address1 = event.target.value;
     }  
     
     if(event.target.name == "city" )
     {
       setState({city:event.target.value})
+      if(data!=undefined)
       data.CustomerByUID.city = event.target.value;
     }  
     
     if(event.target.name == "state" )
     {
       setState({state:event.target.value})
+      if(data!=undefined)
       data.CustomerByUID.state = event.target.value;
     }  
     
     if(event.target.name == "pincode" )
     {
       setState({pincode:event.target.value})
+      if(data!=undefined)
       data.CustomerByUID.pincode = event.target.value;
     }  
     
@@ -1032,6 +1305,7 @@ const smallcontain = {
 const rightAligh = {
   textAlign:"Right"
 }
+const geoLocation = sessionStorage.getItem('getLocation')
 
   return (
     <section className="section-b-space">
@@ -1128,12 +1402,14 @@ const rightAligh = {
                       </span>
                     </div>
                     <div className="form-group col-md-6 col-sm-6 col-xs-12">
-                      <div className="field-label">Email Address</div>
+                      <div className="field-label">Email Address</div> 
                       {(data.CustomerByUID.emailid!="" && data.CustomerByUID.emailid!=null) ? <input
                         className="form-control"
                         className={`${errors.email ? "error_border" : ""}`}
                         type="text"
                         name="email"
+                        onBlur={emailVarification}
+                        autocomplete="off"
                         onChange={setStateFromInput}
                         value={data.CustomerByUID.emailid}
                         ref={register({
@@ -1145,6 +1421,8 @@ const rightAligh = {
                         className={`${errors.email ? "error_border" : ""}`}
                         type="text"
                         name="email"
+                        onBlur={emailVarification}
+                        autocomplete="off"
                         onChange={setStateFromInput}
                         ref={register({
                           required: true,
@@ -1350,13 +1628,15 @@ const rightAligh = {
                         {errors.phone && "Please enter number for phone."}
                       </span>
                     </div>
-                    <div className="form-group col-md-6 col-sm-6 col-xs-12">
+                   {IsOTPVerfied!="Verified" ? <div className="form-group col-md-6 col-sm-6 col-xs-12">
                       <div className="field-label">Email Address</div>
                       <input
                         className="form-control"
-                        className={`${errors.email ? "error_border" : ""}`}
+                        className={`${errors.email ? "error_border" : emailState}`}
                         type="text"
                         name="email"
+                        onBlur={emailVarification}
+                        autocomplete="off"
                         onChange={setStateFromInput}
                         ref={register({
                           required: true,
@@ -1364,8 +1644,75 @@ const rightAligh = {
                         })}
                       />
                       <span className="error-message">
-                        {errors.email && "Please enter proper email address ."}
+                        {(errors.email || emailState) && "Please enter proper email address ."}
                       </span>
+                      
+                    </div>: <div className="form-group col-md-6 col-sm-6 col-xs-12">
+                      <div className="field-label">Email Address</div>
+                      <div className="field-label">{OldMail}</div>
+                    </div> } 
+                    <div className="form-group col-md-6 col-sm-6 col-xs-12">
+                      {false ? <div> <div className="field-label">Mobile OTP</div>
+                      <input
+                        className="form-control"
+                        className={`${errors.email ? "error_border" : emailState}`}
+                        type="text"
+                        name="email"
+                        onBlur={emailVarification}
+                        autocomplete="off"
+                        onChange={setStateFromInput}
+                        ref={register({
+                          required: true,
+                          pattern: /^\S+@\S+$/i,
+                        })}
+                      />
+                      <span className="error-message">
+                        {(errors.email || emailState) && "Please enter proper email address ."}
+                      </span> </div> :""}
+                      
+                      
+                    </div>
+                    <div className="form-group col-md-6 col-sm-6 col-xs-12">
+                   {(OTP!=null && OTP!="") ? (IsOTPVerfied!="Verified" ? <div>
+                    <div className="row form-group col-md-6 col-sm-6 col-xs-12">
+                      <input
+                        className="form-control"
+                        type="text"
+                        name="otp"
+                        onBlur={OTPVerification}
+                        onChange={OTPVerification}
+                      />
+                    </div>
+                    {IsOTPVerfied=="NotVerfied" ? <span className="error-message">
+                        Invalid OTP, Please enter valid OTP.
+                      </span>:<span className="error-message">
+                         OTP has been sent on your Email. 
+                      </span>}
+                    </div> : (IsOTPVerfied=="Verified" ? <span className="error-message">
+                        OTP has been Verified.
+                      </span>:(IsOTPVerfied=="NotVerfied" ? <span className="error-message">
+                        Invalid OTP, Please enter valid OTP.
+                      </span>:""))
+                    ):""}
+                    
+                    
+
+                    {/* <div className="row form-group col-md-6 col-sm-6 col-xs-12">
+                      <div className="field-label">Email OTP</div>
+                      <input
+                        className="form-control"
+                        type="text"
+                        name="email"
+                        onBlur={OTPVerification}
+                        onChange={OTPVerification}
+                      />
+                      <span className="error-message">
+                        {(IsOTPVerfied) && "Please enter proper email address ."}
+                      </span>
+                      
+                    </div> */}
+                      
+                      
                     </div>
                     <div className="form-group col-md-12 col-sm-12 col-xs-12">
                     <div className="shopping-option">
@@ -1544,6 +1891,7 @@ const rightAligh = {
                           </li>
                         </ul>
                       </div>
+                      {/* {IsCustomerPay==false?<Button type="submit" onClick={() => makePayment()} className="btn btn-solid">Make Payment</Button>: */}
                       <div className="payment-box">
                         <div className="upper-box">
                           <div className="payment-options">
@@ -1679,11 +2027,12 @@ const rightAligh = {
                           ""
                         )}
                       </div>
+                      {/* } */}
                     </div>
                   ) : (
                     ""
                   )}
-                  <h6 style={smallcontain}><p style={smallh6obj} >* * Within 7 days of delivery, you may return new, unopened merchandise in its original condition. Exceptions and restrictions apply. See our <a href="#"><Link href={`/page/returns-refund`} >Returns & Refunds</Link></a></p>
+                  <h6 style={smallcontain}><p style={smallh6obj} >* * Within 7 days of delivery, you may return new, unopened merchandise in its original condition. Exceptions and restrictions apply. See our <a href="#"><Link href={geoLocation+`/page/returns-refund`} >Returns & Refunds</Link></a></p>
                   <p style={smallh6obj} >* *  100% safe and secure</p></h6>
                 </Col>
               </Row>

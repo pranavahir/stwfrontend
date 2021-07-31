@@ -15,27 +15,24 @@ import Currency from "./common/currency";
 import { useRouter } from "next/router";
 import classes from "./Header-one.module.css";
 
-const HeaderOne = ({
-  logoName,
-  headerClass,
-  topClass,
-  noTopBar,
-  direction,
-}) => {
-  const [isLoading, setIsLoading] = useState(false);
-  // eslint-disable-next-line
-  const [open, setOpen] = useState(false);
-  const router = useRouter();
-  const { register, handleSubmit, errors } = useForm(); // initialise the hook
-  const filterContext = useContext(FilterContext);
-  const selectedKeyword = filterContext.selectedKeyword;
-  const selectedBrands = filterContext.selectedBrands;
-  const selectedColor = filterContext.selectedColor;
-  const selectedPrice = filterContext.selectedPrice;
-  const selectedCategory = filterContext.state;
-  const selectedSize = filterContext.selectedSize;
-  const [url, setUrl] = useState();
-  /*=====================
+const HeaderOne = ({ logoName, headerClass, topClass, noTopBar ,direction }) => {
+	const [isLoading, setIsLoading] = useState(false);
+	// eslint-disable-next-line
+	const [open, setOpen] = useState(false);
+	const router = useRouter();
+	const { register, handleSubmit, errors } = useForm(); // initialise the hook
+	const filterContext = useContext(FilterContext);
+	const selectedKeyword = filterContext.selectedKeyword;
+    const selectedBrands = filterContext.selectedBrands;
+    const selectedColor = filterContext.selectedColor;
+    const selectedPrice = filterContext.selectedPrice;
+    const selectedCategory = filterContext.state;
+    const selectedSize = filterContext.selectedSize
+	const [url, setUrl] = useState();
+	const [geoLocation, setgeoLocation] = useState(
+        sessionStorage.getItem('geoLocation')
+    );
+	/*=====================
 		 Pre loader
 		 ==========================*/
   useEffect(() => {
@@ -105,6 +102,24 @@ const HeaderOne = ({
   const openSearch = () => {
     document.getElementById("search-overlay").style.display = "block";
   };
+		if(e.target[0].value!=null && e.target[0].value!=undefined && e.target[0].value!="")
+		{
+			const pathname = window.location.pathname;
+			setUrl(pathname);
+			if(pathname== geoLocation+"/shop/six_grid")
+			{
+				var URL = pathname;	
+			}
+			else 
+			{
+				var URL = geoLocation+"/shop/six_grid";
+			}
+			
+			filterContext.setselectedKeyword(e.target[0].value)
+			var category = ""
+        	router.push(`${URL}?${category}&brand=${selectedBrands}&color=${selectedColor}&size=${selectedSize}&minPrice=${selectedPrice.min}&maxPrice=${selectedPrice.max}&keyword=${selectedKeyword}`)
+			closeSearch();
+		}
 
   const closeSearch = () => {
     document.getElementById("search-overlay").style.display = "none";

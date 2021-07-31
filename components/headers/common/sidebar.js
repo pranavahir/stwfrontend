@@ -33,6 +33,14 @@ const SideBar = () => {
     fontSize: 12,
     cursor: "pointer",
   };
+    
+  var geoLocation =  sessionStorage.getItem('geoLocation');
+    
+    const closeNav = () => {
+        var closemyslide = document.getElementById("mySidenav");
+        if (closemyslide)
+            closemyslide.classList.remove('open-side');
+    }
 
   const CategoryFilter = (category) => {
     // router.push(`/p/${product.id}` + '-' + `${titleProps}`);
@@ -61,6 +69,30 @@ const SideBar = () => {
         value.classList.remove("opensub1");
       });
       event.target.nextElementSibling.classList.add("opensub1");
+    }
+  }
+    const CategoryFilter = (category) => {
+        // router.push(`/p/${product.id}` + '-' + `${titleProps}`);
+			const pathname = window.location.pathname;
+			setUrl(pathname);
+            var URL = ""
+			if(pathname=="/shop/six_grid")
+			{
+				 URL = pathname;	
+			}
+            else if(pathname== (geoLocation+"/shop/six_grid"))
+            {
+                URL = pathname;	
+            }
+			else 
+			{
+
+				URL = geoLocation+"/shop/six_grid";
+			}
+            filterContext.setSelectedCategory(category)
+            filterContext.setselectedKeyword("")
+            filterContext.setSelectedPromaflag([])
+        	router.push(`${URL}?${selectedCategory}&brand=${selectedBrands}&color=${selectedColor}&size=${selectedSize}&minPrice=${selectedPrice.min}&maxPrice=${selectedPrice.max}&keyword=`)
     }
   };
 

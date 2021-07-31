@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, {useState, Fragment } from 'react';
 import Link from 'next/link'
 import { Container ,Row ,Col ,Media} from 'reactstrap';
 import visa from '../../../public/assets/images/icon/visa.png';
@@ -29,6 +29,10 @@ const CopyRight = ({layout, fluid}) => {
         color: "#4a54f1",
         textAlign: "center"
         }
+        const [geoLocation, setgeoLocation] = useState(
+            sessionStorage.getItem('geoLocation')
+        );
+
 
     return (
         <Fragment>
@@ -66,17 +70,17 @@ const CopyRight = ({layout, fluid}) => {
                                     <p> <h6><i className="fa fa-copyright" aria-hidden="true"></i> 2020-21 Shop The World | All Rights Reserved.</h6></p>
                                     </li>   
                                     <li>
-                                    <Link href={`/page/privacy-policy`} >
+                                    <Link href={`${geoLocation}/page/privacy-policy`} >
                                     <p style={styleObj} ><a href="#"> &nbsp; Privacy Policy </a> | </p>
                                     </Link>
                                     </li>
                                     <li>
-                                    <Link href={`/page/terms`} >
+                                    <Link href={`${geoLocation}/page/terms`} >
                                     <p style={styleObj}><a href="#"> &nbsp; Terms & Conditions </a> | </p>
                                     </Link>
                                     </li>
                                     <li>
-                                    <Link href={`/page/faq`} >
+                                    <Link href={`${geoLocation}/page/faq`} >
                                     <p style={styleObj}><a href="#"> &nbsp; FAQ</a></p>
                                     </Link>
                                     </li>

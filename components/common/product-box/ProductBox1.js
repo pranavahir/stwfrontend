@@ -40,7 +40,7 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
     const toggleCompare = () => setModalCompare(!modalCompare);
     const toggle = () => setModal(!modal);
     const uniqueTags = [];
-
+    var geoLocation =  sessionStorage.getItem('geoLocation');
 
     const smallredobj={
         fontSize: "15px",
@@ -84,7 +84,7 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
         titleProps = titleProps.replace(/[^\w\s]/gi, '-');
         titleProps = titleProps.replace(/---/gi, '-');
         titleProps = titleProps.replace(/--/gi, '-');
-        router.push(`/p/${product.asin}` + '-' + `${titleProps}`);
+        router.push(`${geoLocation}/p/${product.asin}` + '-' + `${titleProps}`);
     }
 
     const makeURL = () => {
@@ -93,7 +93,8 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
         titleProps = titleProps.replace(/[^\w\s]/gi, '-');
         titleProps = titleProps.replace(/---/gi, '-');
         titleProps = titleProps.replace(/--/gi, '-');
-        var url = `/p/${product.asin}` + '-' + `${titleProps}`;
+        
+        var url = `${geoLocation}/p/${product.asin}` + '-' + `${titleProps}`;
         return url;
     }
 

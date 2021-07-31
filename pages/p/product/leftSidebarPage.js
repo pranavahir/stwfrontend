@@ -117,12 +117,12 @@ const LeftSidebarPage = ({ pathId, type }) => {
     }
     else
     {
-        
-        if(pathId.search("-")==0)
-        asinData =  pathId
+        if(pathId.search("-")==-1){
+            asinData =  pathId
+            console.log(pathId);
+        }
         else
         asinData =  pathId.slice(0,pathId.search("-"));
-
     }
 
     const asin = asinData;
