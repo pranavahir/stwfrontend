@@ -8965,7 +8965,11 @@ footer {
     }
   }
 }
-
+@media (min-width: 768px) {
+  .cart-qty-cls {
+    display: none;
+  }
+}
 .cart-qty-cls {
   position: absolute;
   background: var(--theme-deafult);
@@ -8978,7 +8982,7 @@ footer {
   line-height: 14px;
   font-weight: 600;
   top: 20%;
-  right: -8px;
+  right: -14px;
   padding: 3px;
 }
 
