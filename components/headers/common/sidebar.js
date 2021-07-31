@@ -36,28 +36,28 @@ const SideBar = () => {
     
   var geoLocation =  sessionStorage.getItem('geoLocation');
     
-    const closeNav = () => {
-        var closemyslide = document.getElementById("mySidenav");
-        if (closemyslide)
-            closemyslide.classList.remove('open-side');
-    }
+    // const closeNav = () => {
+    //     var closemyslide = document.getElementById("mySidenav");
+    //     if (closemyslide)
+    //         closemyslide.classList.remove('open-side');
+    // }
 
-  const CategoryFilter = (category) => {
-    // router.push(`/p/${product.id}` + '-' + `${titleProps}`);
-    const pathname = window.location.pathname;
-    setUrl(pathname);
-    if (pathname == "/shop/six_grid") {
-      var URL = pathname;
-    } else {
-      var URL = "/shop/six_grid";
-    }
-    filterContext.setSelectedCategory(category);
-    filterContext.setselectedKeyword("");
-    filterContext.setSelectedPromaflag([]);
-    router.push(
-      `${URL}?${selectedCategory}&brand=${selectedBrands}&color=${selectedColor}&size=${selectedSize}&minPrice=${selectedPrice.min}&maxPrice=${selectedPrice.max}&keyword=`
-    );
-  };
+  // const CategoryFilter = (category) => {
+  //   // router.push(`/p/${product.id}` + '-' + `${titleProps}`);
+  //   const pathname = window.location.pathname;
+  //   setUrl(pathname);
+  //   if (pathname == "/shop/six_grid") {
+  //     var URL = pathname;
+  //   } else {
+  //     var URL = "/shop/six_grid";
+  //   }
+  //   filterContext.setSelectedCategory(category);
+  //   filterContext.setselectedKeyword("");
+  //   filterContext.setSelectedPromaflag([]);
+  //   router.push(
+  //     `${URL}?${selectedCategory}&brand=${selectedBrands}&color=${selectedColor}&size=${selectedSize}&minPrice=${selectedPrice.min}&maxPrice=${selectedPrice.max}&keyword=`
+  //   );
+  // };
 
   const handleSubmenu = (event) => {
     if (event.target.classList.contains("sub-arrow")) return;
@@ -94,7 +94,7 @@ const SideBar = () => {
             filterContext.setSelectedPromaflag([])
         	router.push(`${URL}?${selectedCategory}&brand=${selectedBrands}&color=${selectedColor}&size=${selectedSize}&minPrice=${selectedPrice.min}&maxPrice=${selectedPrice.max}&keyword=`)
     }
-  };
+
 
   const handleSubTwoMenu = (event) => {
     if (event.target.classList.contains("sub-arrow")) return;
@@ -145,7 +145,6 @@ const SideBar = () => {
 
     CategoryFilter(menu);
   };
-
   return (
     <Fragment>
       <div id="mySidenav" className="sidenav openHandlerSidenav">

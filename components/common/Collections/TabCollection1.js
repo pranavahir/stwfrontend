@@ -10,6 +10,9 @@ import PostLoader from '../PostLoader';
 import { CompareContext } from '../../../helpers/Compare/CompareContext';
 import { CurrencyContext } from '../../../helpers/Currency/CurrencyContext';
 import emptySearch from '../../../public/assets/images/empty-search.jpg';
+import FilterContext from "../../../helpers/filter/FilterContext";
+import { useRouter } from "next/router";
+
 
 
 const GET_PRODUCTS = gql`
@@ -66,6 +69,7 @@ const SpecialProducts = ({ type, fluid, designClass, cartClass, heading, noTitle
     );
 
     var { loading, data } = useQuery(GET_PRODUCTS, {
+        variables: {
             type: activeTab,
             indexFrom: 0,
             limit: 8

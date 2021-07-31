@@ -50,26 +50,24 @@ const HeaderOne = ({ logoName, headerClass, topClass, noTopBar ,direction }) => 
   }, []);
 
   const onSubmit = (data, e) => {
-    if (
-      e.target[0].value != null &&
-      e.target[0].value != undefined &&
-      e.target[0].value != ""
-    ) {
-      const pathname = window.location.pathname;
-      setUrl(pathname);
-      if (pathname == "/shop/six_grid") {
-        var URL = pathname;
-      } else {
-        var URL = "/shop/six_grid";
-      }
-
-      filterContext.setselectedKeyword(e.target[0].value);
-      var category = "";
-      router.push(
-        `${URL}?${category}&brand=${selectedBrands}&color=${selectedColor}&size=${selectedSize}&minPrice=${selectedPrice.min}&maxPrice=${selectedPrice.max}&keyword=${selectedKeyword}`
-      );
-      closeSearch();
-    }
+    if(e.target[0].value!=null && e.target[0].value!=undefined && e.target[0].value!="")
+		{
+			const pathname = window.location.pathname;
+			setUrl(pathname);
+			if(pathname== geoLocation+"/shop/six_grid")
+			{
+				var URL = pathname;	
+			}
+			else 
+			{
+				var URL = geoLocation+"/shop/six_grid";
+			}
+			
+			filterContext.setselectedKeyword(e.target[0].value)
+			var category = ""
+        	router.push(`${URL}?${category}&brand=${selectedBrands}&color=${selectedColor}&size=${selectedSize}&minPrice=${selectedPrice.min}&maxPrice=${selectedPrice.max}&keyword=${selectedKeyword}`)
+			closeSearch();
+		}
   };
   const handleScroll = () => {
     let number =
@@ -102,24 +100,7 @@ const HeaderOne = ({ logoName, headerClass, topClass, noTopBar ,direction }) => 
   const openSearch = () => {
     document.getElementById("search-overlay").style.display = "block";
   };
-		if(e.target[0].value!=null && e.target[0].value!=undefined && e.target[0].value!="")
-		{
-			const pathname = window.location.pathname;
-			setUrl(pathname);
-			if(pathname== geoLocation+"/shop/six_grid")
-			{
-				var URL = pathname;	
-			}
-			else 
-			{
-				var URL = geoLocation+"/shop/six_grid";
-			}
-			
-			filterContext.setselectedKeyword(e.target[0].value)
-			var category = ""
-        	router.push(`${URL}?${category}&brand=${selectedBrands}&color=${selectedColor}&size=${selectedSize}&minPrice=${selectedPrice.min}&maxPrice=${selectedPrice.max}&keyword=${selectedKeyword}`)
-			closeSearch();
-		}
+
 
   const closeSearch = () => {
     document.getElementById("search-overlay").style.display = "none";
