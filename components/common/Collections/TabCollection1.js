@@ -15,6 +15,7 @@ import AutoFitImage from 'react-image-autofit-frame';
 import FilterContext from '../../../helpers/filter/FilterContext';
 import { useRouter } from 'next/router';
 
+
 // const GET_PRODUCTS = gql`
 //     query  products($type:String!,$indexFrom:Int! ,$limit:Int!,$color:String!,$brand:[String!]! ,$priceMax:Int!,$priceMin:Int!,$keyword:String!,$country:String!,$panel:String!,$promoflag:String!) {
 //         products (type: $type ,indexFrom:$indexFrom ,limit:$limit ,color:$color ,brand:$brand  ,priceMax:$priceMax,priceMin:$priceMin,keyword:$keyword,country:$country,panel:$panel,promoflag:$promoflag){
