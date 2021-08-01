@@ -30,7 +30,7 @@ const router = useRouter();
    
     var domain = window.location.hostname;
  
-    if(domain == "localhost" || domain == "shoptheworlds.com" || domain == "shoptheworldonline.com" || domain == "test.digitechniq.in"){
+    if(domain == "localhost" || domain == "shoptheworlds.com" || domain == "www.shoptheworlds.com" || domain == "wwww.shoptheworlds.com" || domain == "shoptheworldonline.com" || domain == "www.shoptheworldonline.com" || domain == "test.digitechniq.in"){
           fetch('https://extreme-ip-lookup.com/json/')
         .then( res => res.json())
         .then(response => {

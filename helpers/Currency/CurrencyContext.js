@@ -3019,7 +3019,7 @@ const [geoLocation, setgeoLocation] = useState(
   sessionStorage.getItem('geoLocation')
 );
  
-    if(domain == "localhost" ||  domain == "shoptheworlds.com" || domain == "shoptheworldonline.com" || domain == "test.digitechniq.in"){
+    if(domain == "localhost" ||  domain == "shoptheworlds.com" ||  domain == "www.shoptheworlds.com" || domain == "shoptheworldonline.com"  || domain == "www.shoptheworldonline.com" || domain == "test.digitechniq.in" || domain == "www.test.digitechniq.in" ){
       
       if(url.search("/ae") < 0 && url.search("/in") < 0 && url.search("/us") < 0 )
       {
