@@ -15,72 +15,72 @@ import FilterContext from '../../../helpers/filter/FilterContext';
 import { useRouter } from 'next/router';
 
 
-// const GET_PRODUCTS = gql`
-//     query  products($type:String!,$indexFrom:Int! ,$limit:Int!,$color:String!,$brand:[String!]! ,$priceMax:Int!,$priceMin:Int!,$keyword:String!,$country:String!,$panel:String!,$promoflag:String!) {
-//         products (type: $type ,indexFrom:$indexFrom ,limit:$limit ,color:$color ,brand:$brand  ,priceMax:$priceMax,priceMin:$priceMin,keyword:$keyword,country:$country,panel:$panel,promoflag:$promoflag){
-//         total(keyword:$keyword,type:$type,promoflag:$promoflag){
-//             total
-//         }
-//         hasMore(limit:$limit,indexFrom:$indexFrom,keyword:$keyword,type:$type,promoflag:$promoflag){
-//             seqid
-//         }
-//         items(limit:$limit,indexFrom:$indexFrom,keyword:$keyword,type:$type,promoflag:$promoflag){
-//             seqid
-//             sku
-//             title
-//             description
-//             bullepoints
-//             brandid
-//             categoryid
-//             isvisible
-//             isactive
-//             warehouseid
-//             metatagdescription
-//             seokeywords
-//             weight
-//             height
-//             width
-//             length
-//             fromcurrency
-//             asin
-//       images
-//       {
-//             productid
-//             mainimageurl
-//             additionalimage1
-//             additionalimage2
-//             additionalimage3
-//             additionalimage4
-//             additionalimage5
-//       }
-//       variants(country:$country,panel:$panel)
-//       {
-//             variantid
-//             sku
-//             productid
-//             color
-//             size
-//             processor
-//             graphics
-//             discount
-//             price 
-//             daystoship
-//             pwfee
-//             purchasetax
-//             conversionrate
-//             frieghtrate
-//             duty
-//             taxes
-//             fees
-//             margin
-//             quantity
-//             domesticfreight
-//       }
-//         }
+const GET_PRODUCTS = gql`
+    query  products($type:String!,$indexFrom:Int! ,$limit:Int!,$color:String!,$brand:[String!]! ,$priceMax:Int!,$priceMin:Int!,$keyword:String!,$country:String!,$panel:String!,$promoflag:String!) {
+        products (type: $type ,indexFrom:$indexFrom ,limit:$limit ,color:$color ,brand:$brand  ,priceMax:$priceMax,priceMin:$priceMin,keyword:$keyword,country:$country,panel:$panel,promoflag:$promoflag){
+        total(keyword:$keyword,type:$type,promoflag:$promoflag){
+            total
+        }
+        hasMore(limit:$limit,indexFrom:$indexFrom,keyword:$keyword,type:$type,promoflag:$promoflag){
+            seqid
+        }
+        items(limit:$limit,indexFrom:$indexFrom,keyword:$keyword,type:$type,promoflag:$promoflag){
+            seqid
+            sku
+            title
+            description
+            bullepoints
+            brandid
+            categoryid
+            isvisible
+            isactive
+            warehouseid
+            metatagdescription
+            seokeywords
+            weight
+            height
+            width
+            length
+            fromcurrency
+            asin
+      images
+      {
+            productid
+            mainimageurl
+            additionalimage1
+            additionalimage2
+            additionalimage3
+            additionalimage4
+            additionalimage5
+      }
+      variants(country:$country,panel:$panel)
+      {
+            variantid
+            sku
+            productid
+            color
+            size
+            processor
+            graphics
+            discount
+            price 
+            daystoship
+            pwfee
+            purchasetax
+            conversionrate
+            frieghtrate
+            duty
+            taxes
+            fees
+            margin
+            quantity
+            domesticfreight
+      }
+        }
 
-//         }
-//     }
-// `;
+        }
+    }
+`;
 
 const SpecialProducts = ({ type, fluid, designClass, cartClass, heading, noTitle, title, inner, line, hrClass, backImage }) => {
     const [activeTab, setActiveTab] = useState(type);
