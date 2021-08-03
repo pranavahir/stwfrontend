@@ -34,7 +34,7 @@ export const Provider = props => {
   //   // },30)
   //   var domain = window.location.hostname;
   //   console.log(domain);
-  //   if(domain == "localhost" || domain == "shoptheworlds.com" || domain == "shoptheworldonline.com" || domain == "test.digitechniq.in"){
+  //   if(domain == "localhost" || domain == "shoptheworld.store" || domain == "shoptheworldonline.com" || domain == "test.digitechniq.in"){
   //         fetch('https://extreme-ip-lookup.com/json/')
   //       .then( res => res.json())
   //       .then(response => {
@@ -841,8 +841,8 @@ var ListConfig=[
     address: "B207, Synthophine Ind estate , Near WEH, Goregoan East, Mumbai 400063 INDIA",
     addressOne: "19640 griffin road southwest ranches florida 33332 USA",
     addressTwo: "103 Office no 21 Opal Towers Business Bay Dubai UAE",
-    domain: "shoptheworlds.com",
-    fullDomain: "www.shoptheworlds.com",
+    domain: "shoptheworld.store",
+    fullDomain: "www.shoptheworld.store",
     emailid: "care@shoptheworldonline.com",
     facebookacct: null,
     googleacct: null,
@@ -3020,7 +3020,7 @@ const [geoLocation, setgeoLocation] = useState(
   sessionStorage.getItem('geoLocation')
 );
  
-    if(domain == "localhost" ||  domain == "shoptheworlds.com" ||  domain == "www.shoptheworlds.com" || domain == "shoptheworldonline.com"  || domain == "www.shoptheworldonline.com" || domain == "test.digitechniq.in" || domain == "www.test.digitechniq.in" ){
+    if(domain == "localhost" ||  domain == "shoptheworld.store" ||  domain == "www.shoptheworld.store" || domain == "shoptheworldonline.com"  || domain == "www.shoptheworldonline.com" || domain == "test.digitechniq.in" || domain == "www.test.digitechniq.in" ){
       
       if(url.search("/ae") < 0 && url.search("/in") < 0 && url.search("/us") < 0 )
       {

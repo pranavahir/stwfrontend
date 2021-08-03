@@ -1,4 +1,4 @@
 nextamplified:
   component: "@sls-next/serverless-component@1.18.0"
   inputs:
-    domain: "shoptheworlds.com"
+    domain: "shoptheworld.store"

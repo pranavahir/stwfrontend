@@ -29,7 +29,7 @@ const router = useRouter();
     var domain = window.location.hostname;
     console.log(domain);
     sessionStorage.setItem('geoLocation', "/ae");
-    // if(domain == "localhost" ||  domain == "shoptheworlds.com" || domain == "shoptheworldonline.com" || domain == "test.digitechniq.in"){
+    // if(domain == "localhost" ||  domain == "shoptheworld.store" || domain == "shoptheworldonline.com" || domain == "test.digitechniq.in"){
     //       fetch('https://extreme-ip-lookup.com/json/')
     //     .then( res => res.json())
     //     .then(response => {
