@@ -107,9 +107,8 @@ const TopCollection = ({ type, title, subtitle, designClass, noSlider, cartClass
     }
     const lableStyle={
         backgroundColor:"red",
-        fontSize:"15px",
+        fontSize:"12px",
         color:"white",
-        marginRight: "43px",
         marginBottom: "29px"
     }
 
@@ -189,7 +188,7 @@ const TopCollection = ({ type, title, subtitle, designClass, noSlider, cartClass
                                         
                                         {topCollections && topCollections.slice(0, 10).map((collection, index) =>
                                             <div style={linkStyle} className="front" key={index} >
-                                                <AutoFitImage frameWidth="200px" imgSize="contain" frameHeight="160px" imgSrc={collection.imguRL}/>
+                                                <center> <AutoFitImage frameWidth="150px" imgSize="contain" frameHeight="160px" imgSrc={collection.imguRL}/> </center> 
                                                 <center style={lableStyle}> <a style={{color:"white"}}  href="#" onClick={() => getURL(collection)} >{collection.keyWorld} </a></center> 
                                             </div>)}
                                 </Slider>

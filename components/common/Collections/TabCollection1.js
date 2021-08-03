@@ -90,11 +90,13 @@ const SpecialProducts = ({ type, fluid, designClass, cartClass, heading, noTitle
     const curContext = useContext(CurrencyContext);
     const currency = curContext.state;
     const quantity = context.quantity;
+     
+    const newProducts = curContext.state.newProducts; 
     const IsRight = curContext.state.IsRight;
     const country = curContext.state.country;
     const panel = curContext.state.panel;
     const featureProducts = curContext.state.featureProducts;
-    const newProducts = curContext.state.newProducts;
+ 
     const specialproducts = curContext.state.specialproducts;
     const filterContext = useContext(FilterContext);
     const router = useRouter();
@@ -110,13 +112,7 @@ const SpecialProducts = ({ type, fluid, designClass, cartClass, heading, noTitle
         }
     });
 
-    const lableStyle={
-        backgroundColor:"red",
-        fontSize:"15px",
-        color:"white",
-        marginRight: "43px",
-        marginBottom: "29px"
-    }
+ 
 
     const getURL = (data) => {
         filterContext.setselectedKeyword("");
@@ -142,7 +138,36 @@ const SpecialProducts = ({ type, fluid, designClass, cartClass, heading, noTitle
     // });
  
 
-    
+    const linkStyle ={
+        fontSize:12,
+        cursor: 'pointer',
+        objectFit: "cover",
+        width: "100%",
+        height: "100%",
+        borderWidth:  3,  
+        borderLeftColor:  'red'
+    }
+    const lableStyle={
+        backgroundColor:"red",
+        fontSize:"15px",
+        color:"white",
+        marginRight: "43px",
+        marginBottom: "29px"
+    }
+
+    // var { loading, data } =  useQuery(GET_PRODUCTS, {
+    //     variables: {
+    //         type: type,
+    //         indexFrom: 0,
+    //         limit: 8
+    //     }
+    // });
+        const loaderStyle={
+        margin: "auto",
+        width: "60%",
+ 
+        padding: "10px",
+    }
     
     return (
         <div>
@@ -155,7 +180,7 @@ const SpecialProducts = ({ type, fluid, designClass, cartClass, heading, noTitle
                             <div className={title}>
                                 <h4>{heading}</h4>
                                 {/* exclusive products */}
-                                <h2 className={inner}>special products</h2>
+                                <h2 className={inner}>special products </h2>
                                 {
                                     line ?
                                         <div className="line"></div>
@@ -176,8 +201,8 @@ const SpecialProducts = ({ type, fluid, designClass, cartClass, heading, noTitle
 
                         <TabPanel>
                             <Row className="no-slider">
-                                {(!data || !data.products || !data.products.items || data.products.items.length === 0 || loading) ?
-                                    (data && data.products && data.products.items && data.products.items.length === 0) ?
+                                {(!newProducts ||  newProducts.length === 0) ?
+                                    (newProducts &&  newProducts.length === 0) ?
                                         <Col xs="12">
                                             <div>
                                                 <div className="col-sm-12 empty-cart-cls text-center">
@@ -204,20 +229,19 @@ const SpecialProducts = ({ type, fluid, designClass, cartClass, heading, noTitle
                                         </div>
                                     :
 
-                                    data && data.products.items.slice(0, 8).map((product, i) =>
-                                        <ProductItem key={i} product={product} symbol={currency.symbol}
-                                            addCompare={() => compareContext.addToCompare(product)}
-                                            addCart={() => context.addToCart(product, quantity)}
-                                            addWishlist={() => wishListContext.addToWish(product)}
-                                            cartClass={cartClass} backImage={backImage} />
-                                    )}
+                                    newProducts && newProducts.slice(0, 4).map((collection, index) =>
+                                            <div style={linkStyle} className="front col-xl-3 col-lg-4 col-12" key={index} >
+                                                <AutoFitImage frameWidth="200px" imgSize="contain" frameHeight="160px" imgSrc={collection.imguRL}/>
+                                                <center style={lableStyle}> <a style={{color:"white"}}  href="#" onClick={() => getURL(collection)} >{collection.keyWorld} </a></center> 
+                                            </div>)
+                                    }
                             </Row>
 
                         </TabPanel>
                         <TabPanel>
                             <Row className="no-slider">
-                                {(!data || !data.products || !data.products.items || data.products.items.length === 0 || loading) ?
-                                    (data && data.products && data.products.items && data.products.items.length === 0) ?
+                                {(!featureProducts ||  featureProducts.length === 0 ) ?
+                                    (featureProducts &&  featureProducts.length === 0) ?
                                         <Col xs="12">
                                             <div>
                                                 <div className="col-sm-12 empty-cart-cls text-center">
@@ -235,19 +259,19 @@ const SpecialProducts = ({ type, fluid, designClass, cartClass, heading, noTitle
                                         </>
                                     :
 
-                                    data && data.products.items.slice(0, 8).map((product, i) =>
-                                        <ProductItem product={product} symbol={currency.symbol} key={i}
-                                            addCompare={() => compareContext.addToCompare(product)}
-                                            addCart={() => context.addToCart(product, quantity)}
-                                            addWishlist={() => wishListContext.addToWish(product)}
-                                            cartClass={cartClass} />
-                                    )}
+                               
+                                    featureProducts && featureProducts.slice(0, 4).map((collection, index) =>
+                                            <div style={linkStyle} className="front col-xl-3 col-lg-4 col-12" key={index} >
+                                                <AutoFitImage frameWidth="200px" imgSize="contain" frameHeight="160px" imgSrc={collection.imguRL}/>
+                                                <center style={lableStyle}> <a style={{color:"white"}}  href="#" onClick={() => getURL(collection)} >{collection.keyWorld} </a></center> 
+                                            </div>)
+                                    }
                             </Row>
                         </TabPanel>
                         <TabPanel>
                             <Row className="no-slider">
-                                {(!data || !data.products || !data.products.items || data.products.items.length === 0 || loading) ?
-                                    (data && data.products && data.products.items && data.products.items.length === 0) ?
+                                {(!specialproducts ||  specialproducts.length === 0 || loading) ?
+                                    (specialproducts &&  specialproducts.length === 0) ?
                                         <Col xs="12">
                                             <div>
                                                 <div className="col-sm-12 empty-cart-cls text-center">
@@ -265,13 +289,13 @@ const SpecialProducts = ({ type, fluid, designClass, cartClass, heading, noTitle
                                         </>
                                     :
 
-                                    data && data.products.items.slice(0, 8).map((product, i) =>
-                                        <ProductItem product={product} symbol={currency.symbol} key={i}
-                                            addCompare={() => compareContext.addToCompare(product)}
-                                            addCart={() => context.addToCart(product, quantity)}
-                                            addWishlist={() => wishListContext.addToWish(product)}
-                                            cartClass={cartClass} />
-                                    )}
+                             
+                                    specialproducts && specialproducts.slice(0, 4).map((collection, index) =>
+                                            <div style={linkStyle} className="front col-xl-3 col-lg-4 col-12" key={index} >
+                                                <AutoFitImage frameWidth="200px" imgSize="contain" frameHeight="160px" imgSrc={collection.imguRL}/>
+                                                <center style={lableStyle}> <a style={{color:"white"}}  href="#" onClick={() => getURL(collection)} >{collection.keyWorld} </a></center> 
+                                            </div>)
+                                    }
                             </Row>
                         </TabPanel>
                     </Tabs>
