@@ -159,7 +159,7 @@ const emailVarification = async (event) => {
               createdAt: "",
             };
 
-            emailLinkSend(result.user.email);
+            // emailLinkSend(result.user.email);
 
             var CustomerData = CreateCustomer({
               variables: { Customer: { ...customerData } },
