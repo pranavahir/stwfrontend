@@ -216,32 +216,31 @@ const LeftSidebarPage = ({ pathId, type }) => {
             <div className="collection-wrapper">
             {(!data || !data.product || data.product.length === 0|| data.product==null || loading) ?'':
             <Helmet>
-        <title data-react-helmet="true">{data.product.title} - Shop The World</title>
-        <meta data-react-helmet="true" name="viewport" content="width=device-width, initial-scale=1"/>
-        <meta data-react-helmet="true" name="copyright" content="Shop The World"/>
-        <meta data-react-helmet="true" name="author" content="Shop The World"/>
-        <meta data-react-helmet="true" name="country" content={country}/>
-        <meta data-react-helmet="true" name="language" content="en-US"/>
-        <meta data-react-helmet="true" name="currency" content={currency}/>
-        <meta data-react-helmet="true" name="robots" content="index, follow"/>
-        <meta data-react-helmet="true" name="description" content={data.product.title}/>
-        <meta data-react-helmet="true" property="og:type" content="product"/>
-        <meta data-react-helmet="true" property="og:title" content={data.product.title}/>
-        <meta data-react-helmet="true" property="og:url" content={getUrl(data.product)}/>
-        <meta data-react-helmet="true" property="og:description" content={data.product.title}/>
-        <meta data-react-helmet="true" property="product:sku" content={data.product.sku}/>
-        <meta data-react-helmet="true" property="product:condition" content="new"/>
-        <meta data-react-helmet="true" property="product:brand" content={data.product.brandname}/>
-        <meta data-react-helmet="true" property="product:retailer_item_id" content={data.product.asin}/>
-        <meta data-react-helmet="true" property="product:price:currency" content={currency}/>
-         <meta data-react-helmet="true" property="og:image" content={`${data.product.images[0].mainimageurl}`}/>
-        <meta data-react-helmet="true" property="og:image" content={`${data.product.images[0].additionalimage1}`}/>
-       <meta data-react-helmet="true" property="og:image" content={`${data.product.images[0].additionalimage2}`}/>
-        <meta data-react-helmet="true" property="product:availability" content="instock"/>
-        <meta data-react-helmet="true" property="product:price:amount" content="228"/>
-
-        <link data-react-helmet="true" rel="canonical" href={`${getUrl(data.product)}`}/>
-        <link data-react-helmet="true" rel="preload" as="image" href={`${data.product.images[0].additionalimage4}`} crossOrigin="anonymous"/>
+        <title  >{data.product.title} - Shop The World</title>
+        <meta   name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta   name="copyright" content="Shop The World"/>
+        <meta   name="author" content="Shop The World"/>
+        <meta   name="country" content={country}/>
+        <meta   name="language" content="en-US"/>
+        <meta   name="currency" content={currency}/>
+        <meta   name="robots" content="index, follow"/>
+        <meta   name="description" content={data.product.title}/>
+        <meta   property="og:type" content="product"/>
+        <meta   property="og:title" content={data.product.title}/>
+        <meta   property="og:url" content={getUrl(data.product)}/>
+        <meta   property="og:description" content={data.product.title}/>
+        <meta   property="product:sku" content={data.product.sku}/>
+        <meta   property="product:condition" content="new"/>
+        <meta   property="product:brand" content={data.product.brandname}/>
+        <meta   property="product:retailer_item_id" content={data.product.asin}/>
+        <meta   property="product:price:currency" content={currency}/>
+         <meta   property="og:image" content={`${data.product.images[0].mainimageurl}`}/>
+        <meta   property="og:image" content={`${data.product.images[0].additionalimage1}`}/>
+       <meta   property="og:image" content={`${data.product.images[0].additionalimage2}`}/>
+        <meta   property="product:availability" content="instock"/>
+        <meta   property="product:price:amount" content="228"/>
+        <link   rel="canonical" href={`${getUrl(data.product)}`}/>
+        <link   rel="preload" as="image" href={`${data.product.images[0].additionalimage4}`} crossOrigin="anonymous"/>
              </Helmet> }
 
                 <Container>
