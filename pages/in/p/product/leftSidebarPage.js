@@ -163,7 +163,7 @@ const LeftSidebarPage = ({ pathId, type }) => {
         titleProps = titleProps.replace(/[^\w\s]/gi, '-');
         titleProps = titleProps.replace(/---/gi, '-');
         titleProps = titleProps.replace(/--/gi, '-');
-        var url = domain + '/p/'+ product.asin  + '-' + 'titleProps';
+        var url = domain + '/p/'+ product.asin  + '-' + titleProps;
         return url;
     }
 
@@ -197,7 +197,7 @@ const LeftSidebarPage = ({ pathId, type }) => {
     const { nav1, nav2 } = state;
 
     const filterClick = () => {
-        document.getElementById("filter").style.left = "-15px";
+        document.getElementById("filter").style.left = "-15px";            
     }
 
     const changeColorVar = (img_id) => {
@@ -234,13 +234,13 @@ const LeftSidebarPage = ({ pathId, type }) => {
         <meta data-react-helmet="true" property="product:brand" content={data.product.brandname}/>
         <meta data-react-helmet="true" property="product:retailer_item_id" content={data.product.asin}/>
         <meta data-react-helmet="true" property="product:price:currency" content={currency}/>
-        {/* <meta data-react-helmet="true" property="og:image" content="https://shoptheworld.vtexassets.com/arquivos/ids/156142/image_1.jpg?v=637397231439730000"/>
-        <meta data-react-helmet="true" property="og:image" content="https://shoptheworld.vtexassets.com/arquivos/ids/160165/image_2.jpg?v=637397237219400000"/>
-        <meta data-react-helmet="true" property="og:image" content="https://shoptheworld.vtexassets.com/arquivos/ids/162518/image_3.jpg?v=637397240736970000"/> */}
+         <meta data-react-helmet="true" property="og:image" content={`${data.product.images[0].mainimageurl}`}/>
+        <meta data-react-helmet="true" property="og:image" content={`${data.product.images[0].additionalimage1}`}/>
+       <meta data-react-helmet="true" property="og:image" content={`${data.product.images[0].additionalimage2}`}/>
         <meta data-react-helmet="true" property="product:availability" content="instock"/>
         <meta data-react-helmet="true" property="product:price:amount" content="228"/>
 
-        <link data-react-helmet="true" rel="canonical" href="https://www.shoptheworldonline.com/in/x2-nivea-men-face-wash-oil-control-10x-vitamin-c-150ml/p"/>
+        <link data-react-helmet="true" rel="canonical" href={`${getUrl(data.product)}`}/>
         <link data-react-helmet="true" rel="preload" as="image" href={`${data.product.images[0].additionalimage4}`} crossOrigin="anonymous"/>
              </Helmet> }
 
