@@ -3063,15 +3063,15 @@ const [geoLocation, setgeoLocation] = useState(
 
 
 
-if(geoLocation == "")
+if(geoLocation == "" || geoLocation == null || geoLocation == undefined)
 {
   for(var i=0;i<ListConfig.length;i++)
-{
-  if(ListConfig[i].domain == domain || ListConfig[i].fullDomain == domain)
   {
-      selectedConfig =  ListConfig[i];
+    if(ListConfig[i].domain == domain || ListConfig[i].fullDomain == domain)
+    {
+        selectedConfig =  ListConfig[i];
+    }
   }
-}
 }
 else
 {
