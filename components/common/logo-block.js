@@ -79,5 +79,5 @@ const LogoBlock = ({designClass}) => {
         </section>
     )
 }
-
+//comment
 export default LogoBlock;
