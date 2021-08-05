@@ -3011,6 +3011,10 @@ else if(url.search("/in/") > 0)
   sessionStorage.setItem('geoLocation',"/in")
  
 }
+else
+{
+  sessionStorage.setItem('geoLocation',"")
+}
 
 // console.log(url.search("/ae/"));
 // console.log(url.search("/in/"));
@@ -3055,6 +3059,10 @@ const [geoLocation, setgeoLocation] = useState(
 
         
       }
+    }
+    else
+    {
+      sessionStorage.setItem('geoLocation', "");
     }
 
 
