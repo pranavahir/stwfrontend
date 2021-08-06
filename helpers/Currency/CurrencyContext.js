@@ -1187,6 +1187,184 @@ var ListConfig=[
   CurrencyConvertionRate:73.23
 },
 {
+  currency: 'USD',
+  currencyCode:'USD',
+  symbol: '$', 
+  value:1, 
+  IsRight : false,
+  country:"USA",
+  panel:"STW USA",
+  address: "B207, Synthophine Ind estate , Near WEH, Goregoan East, Mumbai 400063 INDIA",
+  addressOne: "19640 griffin road southwest ranches florida 33332 USA",
+  addressTwo: "103 Office no 21 Opal Towers Business Bay Dubai UAE",
+  domain: "shoptheworldonline.com",
+  fullDomain:"www.shoptheworldonline.com",
+  emailid: "care@shoptheworldonline.com",
+  facebookacct: null,
+  googleacct: null,
+  topCollections:[
+    {
+      imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
+      categoryUrl:"/c/Phone",
+      category:["phone"],
+      keyWorld:"More phone >>",
+      
+
+    },
+    {
+      imguRL:"https://m.media-amazon.com/images/I/413fkA2hhSS.jpg",
+      categoryUrl:"/c/Laptop",
+      category:["hplaptop","laptop","microsoft","delllaptop","microsoftphone"],
+      keyWorld:"More Laptops >>"
+    },
+    {
+      imguRL:"https://m.media-amazon.com/images/I/51XeMvBLlGL.jpg",
+      categoryUrl:"/c/Tablet",
+      category:"tablet",
+      keyWorld:"More Tablet >>"
+    },
+    {
+      imguRL:"https://m.media-amazon.com/images/I/31rxH44lpoL.jpg",
+      categoryUrl:"/c/HeadPhone",
+      category:"headphone",
+      keyWorld:"More HeadPhone >>"
+    },
+    {
+      imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
+      categoryUrl:"/c/Phone",
+      category:["phone"],
+      keyWorld:"More phone >>",
+      
+
+    },
+    {
+      imguRL:"https://m.media-amazon.com/images/I/413fkA2hhSS.jpg",
+      categoryUrl:"/c/Laptop",
+      category:["hplaptop","laptop","microsoft","delllaptop","microsoftphone"],
+      keyWorld:"More Laptops >>"
+    },
+    {
+      imguRL:"https://m.media-amazon.com/images/I/51XeMvBLlGL.jpg",
+      categoryUrl:"/c/Tablet",
+      category:"tablet",
+      keyWorld:"More Tablet >>"
+    },
+    {
+      imguRL:"https://m.media-amazon.com/images/I/31rxH44lpoL.jpg",
+      categoryUrl:"/c/HeadPhone",
+      category:"HeadPhone",
+      keyWorld:"More HeadPhone >>"
+    },
+  ],
+  newProducts:[
+    {
+      imguRL:"https://m.media-amazon.com/images/I/51fl8l0G78L.jpg",
+      categoryUrl:"projector",
+      category:"projector",
+      keyWorld:"More Projectors >>"
+    },
+    {
+      imguRL:"https://m.media-amazon.com/images/I/51wZU-kW22L.jpg",
+      categoryUrl:"smartwatch",
+      category:"smartwatch",
+      keyWorld:"More Smartwatches >>"
+    },
+    {
+      imguRL:"https://m.media-amazon.com/images/I/41ghh3XjOLL.jpg",
+      categoryUrl:"camera",
+      category:"camera",
+      keyWorld:"More Camera's >>"
+    },
+    {
+      imguRL:"https://m.media-amazon.com/images/I/31Ide2xeMgL.jpg",
+      categoryUrl:"homenkitchen",
+      category:"homenkitchen",
+      keyWorld:"More Home & kitchen >>"
+    },
+    {
+      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71hEefMZtcL._SL1500_.jpg",
+      categoryUrl:"homenkitchen",
+      category:"homenkitchen",
+      keyWorld:"More Home & kitchen >>"
+    }  
+
+    // https://m.media-amazon.com/images/I/413fkA2hhSS.jpg
+  ],
+  featureProducts:[
+    {
+      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71ncBz8OFHS._SL1500_.jpg",
+      categoryUrl:"speaker",
+      category:"speaker",
+      keyWorld:"More Speakers >>"
+    },
+    {
+      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71p7xwt7bgL._SL1500_.jpg",
+      categoryUrl:"gagdet",
+      category:"gadget",
+      keyWorld:"More Gadgets >>"
+    },
+    {
+      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71JDCbasgaL._SL1500_.jpg",
+      categoryUrl:"printer",
+      category:"printer",
+      keyWorld:"More Printers >>"
+    },
+    {
+      imguRL:"https://images-na.ssl-images-amazon.com/images/I/81H1Grsm4XL._SL1500_.jpg",
+      categoryUrl:"monitor",
+      category:"monitor",
+      keyWorld:"More Monitors >>"
+    },
+    {
+      imguRL:"https://images-na.ssl-images-amazon.com/images/I/915LKjLE%2BvL._SL1500_.jpg",
+      categoryUrl:"networking",
+      category:"networking",
+      keyWorld:"More Networking >>"
+    },
+    // https://m.media-amazon.com/images/I/413fkA2hhSS.jpg
+  ],
+  specialproducts:[
+    {
+      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71-QiEqDpZL._SL1500_.jpg",
+      categoryUrl:"amazonbasics",
+      category:"amazonbasics",
+      keyWorld:"More Amazon Basics >>"
+    },
+    {
+      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71gfnsDd3-L._SL1500_.jpg",
+      categoryUrl:"amazonbasics",
+      category:"amazonbasics",
+      keyWorld:"More Amazon Basics >>"
+    },
+    {
+      imguRL:"https://images-na.ssl-images-amazon.com/images/I/810VOlH6cGL._SL1500_.jpg",
+      categoryUrl:"amazonbasics",
+      category:"amazonbasics",
+      keyWorld:"More Amazon Basics>>"
+    },
+    {
+      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71sjjcwJ6cL._SL1500_.jpg",
+      categoryUrl:"amazonbasics",
+      category:"amazonbasics",
+      keyWorld:"More Amazonzon Basics >>"
+    },
+    {
+      imguRL:"https://images-na.ssl-images-amazon.com/images/I/61KdzsxowuL._SL1500_.jpg",
+      categoryUrl:"amazonbasics",
+      category:"amazonbasics",
+      keyWorld:"More Amazonzon Basics >>"
+    } 
+    // https://m.media-amazon.com/images/I/413fkA2hhSS.jpg
+  ],
+  gstortax: "Tax",
+  instagramacct: null,
+  //paymentforbusiness: "razorpay",
+  paymentnonbusiness: "stripe",
+  phone: "+91 9820168421",
+  twitteracct: null,
+  CurrencyConvertionRate:0.013
+},
+{
   currency: 'AED',
   currencyCode:'aed',
   symbol: 'د.إ', 
@@ -3094,7 +3272,7 @@ else
   }
   else if(geoLocation == "/us")
   {
-    subDir="";
+    subDir="shoptheworldonline.com";
   }
   else
   {
