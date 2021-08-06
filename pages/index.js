@@ -50,7 +50,7 @@ const router = useRouter();
         }
         else if(response.countryCode == "US")
         {
-          sessionStorage.setItem('geoLocation', "/us");
+          sessionStorage.setItem('geoLocation', "");
         }
         else
         {

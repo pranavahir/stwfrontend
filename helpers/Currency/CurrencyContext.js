@@ -3191,7 +3191,7 @@ else if(url.search("/in/") > 0)
 }
 else if(url.search("/us/") > 0)
 {
-  sessionStorage.setItem('geoLocation',"/us")
+  sessionStorage.setItem('geoLocation',"")
  
 }
 else
@@ -3230,7 +3230,7 @@ const [geoLocation, setgeoLocation] = useState(
         }
         else if(response.countryCode == "US")
         {
-          sessionStorage.setItem('geoLocation', "/us");
+          sessionStorage.setItem('geoLocation', "");
         }
         else
         {
