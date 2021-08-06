@@ -3189,6 +3189,11 @@ else if(url.search("/in/") > 0)
   sessionStorage.setItem('geoLocation',"/in")
  
 }
+else if(url.search("/us/") > 0)
+{
+  sessionStorage.setItem('geoLocation',"/us")
+ 
+}
 else
 {
   sessionStorage.setItem('geoLocation',"")
@@ -3226,7 +3231,6 @@ const [geoLocation, setgeoLocation] = useState(
         else if(response.countryCode == "US")
         {
           sessionStorage.setItem('geoLocation', "/us");
-          router.push(`/us${path}`) 
         }
         else
         {
@@ -3276,7 +3280,7 @@ else
   }
   else
   {
-    subDir="shoptheworld.in";
+    subDir="shoptheworldonline.com";
   }
 
   console.log(subDir);
