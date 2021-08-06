@@ -3209,6 +3209,8 @@ const [geoLocation, setgeoLocation] = useState(
  
     if(domain == "localhost" ||  domain == "shoptheworld.store" ||  domain == "www.shoptheworld.store" || domain == "shoptheworldonline.com"  || domain == "www.shoptheworldonline.com" || domain == "test.digitechniq.in" || domain == "www.test.digitechniq.in" ){
       
+      
+
       if(url.search("/ae") < 0 && url.search("/in") < 0 && url.search("/us") < 0 )
       {
 
@@ -3241,6 +3243,10 @@ const [geoLocation, setgeoLocation] = useState(
 
         
       }
+      else
+      {
+        sessionStorage.setItem('geoLocation', "");
+      }
     }
     else
     {
@@ -3255,13 +3261,31 @@ const [geoLocation, setgeoLocation] = useState(
 
 if(geoLocation == "" || geoLocation == null || geoLocation == undefined)
 {
-  for(var i=0;i<ListConfig.length;i++)
+  if(domain == "shoptheworld.store" ||  domain == "www.shoptheworld.store" || domain == "localhost" )
   {
-    if(ListConfig[i].domain == domain || ListConfig[i].fullDomain == domain)
+    var subDomain = "shoptheworldonline.com";
+
+    console.log(subDomain);
+
+    for(var i=0;i<ListConfig.length;i++)
     {
-        selectedConfig =  ListConfig[i];
+      if(ListConfig[i].domain == subDomain || ListConfig[i].fullDomain == subDomain)
+      {
+          selectedConfig =  ListConfig[i];
+      }
     }
   }
+  else
+  {
+    for(var i=0;i<ListConfig.length;i++)
+    {
+      if(ListConfig[i].domain == domain || ListConfig[i].fullDomain == domain)
+      {
+          selectedConfig =  ListConfig[i];
+      }
+    }
+  }
+
 }
 else
 {
