@@ -105,7 +105,7 @@ const TopBarDark = ({ topClass, fluid }) => {
               customerId != "null" &&
               customerId != undefined ? (
                 <li className="mobile-wishlist">
-                  <Link href={geoLocation + "/page/account/my-order"}>
+                  <Link href={(geoLocation==null?"":geoLocation) + "/page/account/my-order"}>
                     <a>
                       <i
                         className={"fa fa-heart " + classes.hideOnMobile}
@@ -124,7 +124,7 @@ const TopBarDark = ({ topClass, fluid }) => {
               customerId != "null" &&
               customerId != undefined ? (
                 <li className="mobile-wishlist">
-                  <Link href={geoLocation + "/page/account/wishlist"}>
+                  <Link href={(geoLocation==null?"":geoLocation) + "/page/account/wishlist"}>
                     <a>
                       <i
                         className={"fa fa-heart " + classes.hideOnMobile}
