@@ -29,7 +29,8 @@ const router = useRouter();
     },[])
    
     var domain = window.location.hostname;
- 
+    var path = window.location.pathname
+    console.log(window.location);
     if(domain == "localhost" || domain == "shoptheworld.store" || domain == "www.shoptheworld.store" || domain == "wwww.shoptheworld.store" || domain == "shoptheworldonline.com" || domain == "www.shoptheworldonline.com" || domain == "test.digitechniq.in"){
           fetch('https://extreme-ip-lookup.com/json/')
         .then( res => res.json())
@@ -41,11 +42,13 @@ const router = useRouter();
         if(response.countryCode == "IN")
         {
           sessionStorage.setItem('geoLocation', "/in");
-          router.push("/in/")
+          if(path != "/in")
+            router.push("/in/")
         }
         else if(response.countryCode == "AE")
         {
           sessionStorage.setItem('geoLocation', "/ae");
+          if(path != "/ae")
           router.push("/ae/")
         }
         else if(response.countryCode == "US")

@@ -83,10 +83,12 @@ const SideBar = () => {
             else if(pathname== (geoLocation+"/shop/six_grid"))
             {
                 URL = pathname;	
+                console.log("geolocation"+pathname);
             }
 			else 
 			{
 
+        console.log("else"+pathname);
 				URL = geoLocation+"/shop/six_grid";
 			}
             filterContext.setSelectedCategory(category)

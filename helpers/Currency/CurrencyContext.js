@@ -3182,9 +3182,9 @@ console.log(url);
 if(url.search("/ae/") > 0)
 {
   sessionStorage.setItem('geoLocation',"/ae")
- 
+
 }
-else if(url.search("/in/") > 0)
+else if(url.search("/in/") > 0 || url.search("/in") > 0 )
 {
   sessionStorage.setItem('geoLocation',"/in")
  
@@ -3206,11 +3206,11 @@ else
 const [geoLocation, setgeoLocation] = useState(
   sessionStorage.getItem('geoLocation')
 );
- 
+
+const [selectedCurr, selectedCurrency] = useState("");
     if(domain == "localhost" ||  domain == "shoptheworld.store" ||  domain == "www.shoptheworld.store" || domain == "shoptheworldonline.com"  || domain == "www.shoptheworldonline.com" || domain == "test.digitechniq.in" || domain == "www.test.digitechniq.in" ){
       
       
-
       if(url.search("/ae") < 0 && url.search("/in") < 0 && url.search("/us") < 0 )
       {
 
@@ -3223,11 +3223,13 @@ const [geoLocation, setgeoLocation] = useState(
         if(response.countryCode == "IN")
         {
           sessionStorage.setItem('geoLocation', "/in");
+          setgeoLocation("/in")
             router.push(`/in${path}`)
         }
         else if(response.countryCode == "AE")
-        {
+        { 
           sessionStorage.setItem('geoLocation', "/ae");
+          setgeoLocation("/ae")
           router.push(`/ae${path}`) 
         }
         else if(response.countryCode == "US")
@@ -3240,22 +3242,38 @@ const [geoLocation, setgeoLocation] = useState(
    
         }
       })
-
-        
       }
       else
       {
-        sessionStorage.setItem('geoLocation', "");
+        if(url.search("/in"))
+        {
+          // setgeoLocation("/in");
+          sessionStorage.setItem('geoLocation', "/in");
+        }
+        else if(url.search("/ae"))
+        {
+          // setgeoLocation("/ae");
+          sessionStorage.setItem('geoLocation', "/ae");
+        }
+        else
+        {
+          // setgeoLocation("")
+          console.log("test"+geoLocation);
+          sessionStorage.setItem('geoLocation', "");
+        }
       }
     }
     else
     {
+      console.log("test"+geoLocation);
       sessionStorage.setItem('geoLocation', "");
     }
 
 
 
-
+    // const [geoLocation, setgeoLocation] = useState(
+    //   sessionStorage.getItem('geoLocation')
+    // );
 
 
 
@@ -3265,13 +3283,12 @@ if(geoLocation == "" || geoLocation == null || geoLocation == undefined)
   {
     var subDomain = "shoptheworldonline.com";
 
-    console.log(subDomain);
-
     for(var i=0;i<ListConfig.length;i++)
     {
       if(ListConfig[i].domain == subDomain || ListConfig[i].fullDomain == subDomain)
       {
           selectedConfig =  ListConfig[i];
+          console.log(selectedConfig);
       }
     }
   }
@@ -3282,6 +3299,7 @@ if(geoLocation == "" || geoLocation == null || geoLocation == undefined)
       if(ListConfig[i].domain == domain || ListConfig[i].fullDomain == domain)
       {
           selectedConfig =  ListConfig[i];
+          console.log(selectedConfig);
       }
     }
   }
@@ -3307,24 +3325,25 @@ else
     subDir="shoptheworldonline.com";
   }
 
-  console.log(subDir);
+  
   for(var i=0;i<ListConfig.length;i++)
   {
     if(ListConfig[i].domain == subDir || ListConfig[i].fullDomain == subDir)
     {
         selectedConfig =  ListConfig[i];
-    }
+        console.log(selectedConfig);
+      }
   }
   
 }
 
-
+// selectedCurrency(selectedConfig);
 
 // console.log(selectedConfig);
-const [selectedCurr, selectedCurrency] = useState(selectedConfig);
+
  
   const currencyContext = {
-    selectedCurr,
+    selectedConfig,
     selectedCurrency
   };
 
