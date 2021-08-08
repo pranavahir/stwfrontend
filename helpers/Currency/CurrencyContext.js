@@ -1,6 +1,7 @@
 import React, { createContext, useState,useEffect } from "react";
 import { useRouter } from 'next/router';
 import gql from 'graphql-tag';
+import { AlertTriangle } from "react-feather";
 // import { useQuery } from '@apollo/react-hooks';
 // const GET_MiscinfoByDomain = gql`
 // query  MiscinfoByDomain($domain:String!){
@@ -13,7 +14,7 @@ import gql from 'graphql-tag';
 //    currencyinletter
 //    facebookacct
 //    instagramacct
-//    twitteracct
+//    twitteracct     
 //    googleacct
 //    panel
 //    isright
@@ -3177,27 +3178,31 @@ var ListConfig=[
 
 var selectedConfig=null;
 var domain = window.location.hostname;
-var  url  = window.location.href
+var  url  = window.location.href;
+var tempGeoLocation = "";
 console.log(url);
-if(url.search("/ae/") > 0)
-{
-  sessionStorage.setItem('geoLocation',"/ae")
+ 
+// if(url.search("/ae/") > 0)
+// {
+//   sessionStorage.setItem('geoLocation',"/ae")
+//   tempGeoLocation="/ae";
+// }
+// else if(url.search("/in/") > 0 || url.search("/in") > 0 )
+// {
+//   sessionStorage.setItem('geoLocation',"/in")
+//   tempGeoLocation="/in";
 
-}
-else if(url.search("/in/") > 0 || url.search("/in") > 0 )
-{
-  sessionStorage.setItem('geoLocation',"/in")
- 
-}
-else if(url.search("/us/") > 0)
-{
-  sessionStorage.setItem('geoLocation',"")
- 
-}
-else
-{
-  sessionStorage.setItem('geoLocation',"")
-}
+// }
+// else if(url.search("/us/") > 0)
+// {
+//   sessionStorage.setItem('geoLocation',"")
+//   tempGeoLocation="";
+// }
+// else
+// {
+//   sessionStorage.setItem('geoLocation',"")
+//   tempGeoLocation="";
+// }
 
 // console.log(url.search("/ae/"));
 // console.log(url.search("/in/"));
@@ -3207,7 +3212,7 @@ const [geoLocation, setgeoLocation] = useState(
   sessionStorage.getItem('geoLocation')
 );
 
-const [selectedCurr, selectedCurrency] = useState("");
+// const [selectedCurr, selectedCurrency] = useState("");
     if(domain == "localhost" ||  domain == "shoptheworld.store" ||  domain == "www.shoptheworld.store" || domain == "shoptheworldonline.com"  || domain == "www.shoptheworldonline.com" || domain == "test.digitechniq.in" || domain == "www.test.digitechniq.in" ){
       
       
@@ -3220,27 +3225,37 @@ const [selectedCurr, selectedCurrency] = useState("");
           
         var path = window.location.pathname;
 
+ 
         if(response.countryCode == "IN")
         {
+          
           sessionStorage.setItem('geoLocation', "/in");
           setgeoLocation("/in")
+          tempGeoLocation= "/in";
             router.push(`/in${path}`)
         }
         else if(response.countryCode == "AE")
         { 
           sessionStorage.setItem('geoLocation', "/ae");
           setgeoLocation("/ae")
+          tempGeoLocation= "/ae";
           router.push(`/ae${path}`) 
         }
         else if(response.countryCode == "US")
         {
           sessionStorage.setItem('geoLocation', "");
+          tempGeoLocation= "";
         }
         else
         {
           sessionStorage.setItem('geoLocation', "");
-   
+          tempGeoLocation= "";
         }
+
+
+
+
+
       })
       }
       else
@@ -3249,17 +3264,20 @@ const [selectedCurr, selectedCurrency] = useState("");
         {
           // setgeoLocation("/in");
           sessionStorage.setItem('geoLocation', "/in");
+          tempGeoLocation="/in";
         }
         else if(url.search("/ae"))
         {
           // setgeoLocation("/ae");
           sessionStorage.setItem('geoLocation', "/ae");
+          tempGeoLocation="/ae";
         }
         else
         {
           // setgeoLocation("")
           console.log("test"+geoLocation);
           sessionStorage.setItem('geoLocation', "");
+          tempGeoLocation="";
         }
       }
     }
@@ -3267,6 +3285,7 @@ const [selectedCurr, selectedCurrency] = useState("");
     {
       console.log("test"+geoLocation);
       sessionStorage.setItem('geoLocation', "");
+      tempGeoLocation="";
     }
 
 
@@ -3277,7 +3296,7 @@ const [selectedCurr, selectedCurrency] = useState("");
 
 
 
-if(geoLocation == "" || geoLocation == null || geoLocation == undefined)
+if(tempGeoLocation == "" || tempGeoLocation == null || tempGeoLocation == undefined)
 {
   if(domain == "shoptheworld.store" ||  domain == "www.shoptheworld.store" || domain == "localhost" )
   {
@@ -3300,6 +3319,7 @@ if(geoLocation == "" || geoLocation == null || geoLocation == undefined)
       {
           selectedConfig =  ListConfig[i];
           console.log(selectedConfig);
+ 
       }
     }
   }
@@ -3308,15 +3328,15 @@ if(geoLocation == "" || geoLocation == null || geoLocation == undefined)
 else
 {
   var subDir = null;
-  if(geoLocation == "/in")
+  if(tempGeoLocation == "/in")
   {
     subDir="shoptheworld.in";
   }
-  else if(geoLocation == "/ae")
+  else if(tempGeoLocation == "/ae")
   {
     subDir="shoptheworld.ae";
   }
-  else if(geoLocation == "/us")
+  else if(tempGeoLocation == "/us")
   {
     subDir="shoptheworldonline.com";
   }
@@ -3341,17 +3361,19 @@ else
 
 // console.log(selectedConfig);
 
+const [selectedCurr, selectedCurrency] = useState(selectedConfig);
  
   const currencyContext = {
-    selectedConfig,
-    selectedCurrency
+    selectedCurr,
+    selectedCurrency,
+    selectedConfig
   };
 
   const {value} = props
 
   return (
       <Context.Provider value={{
-          state:selectedCurr,
+          state:selectedConfig,
           currencyContext:currencyContext
         }}>
         {props.children}

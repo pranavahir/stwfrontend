@@ -23,36 +23,10 @@ const router = useRouter();
 
 
   useEffect(()=>{
-    // setTimeout(()=>{
-    //   router.push("/page/privacy_policy")
-    // },30)
+
     var domain = window.location.hostname;
-    console.log(domain);
     sessionStorage.setItem('geoLocation', "/in");
-    // if(domain == "localhost" ||  domain == "shoptheworld.store" || domain == "shoptheworldonline.com" || domain == "test.digitechniq.in"){
-    //       fetch('https://extreme-ip-lookup.com/json/')
-    //     .then( res => res.json())
-    //     .then(response => {
-    //     //  console.log("Country is : ", response);
-
-    //     if(response.countryCode == "IN")
-    //     {
-    //       router.push("/in/")
-    //     }
-    //     else if(response.countryCode == "AE")
-    //     {
-    //       router.push("/ae/")
-    //     }
-    //     else if(response.countryCode == "US")
-    //     {
-    //       router.push("/us/")
-    //     }
-
-    //   })
-    //   .catch((data, status) => {
-    //     console.log('Request failed:', data);
-    //   });
-    // }
+   
 
   },[])
 

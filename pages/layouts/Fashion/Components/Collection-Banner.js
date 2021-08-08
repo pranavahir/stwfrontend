@@ -32,7 +32,10 @@ const CollectionBanner = () => {
 			}
 			else 
 			{
+                if(geoLocation==null)
 				var URL = geoLocation+"/shop/six_grid";
+                else
+                var URL = "/shop/six_grid";
 			}
             filterContext.setSelectedCategory(category)
         	router.push(`${URL}?${selectedCategory}`)

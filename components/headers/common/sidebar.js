@@ -89,6 +89,9 @@ const SideBar = () => {
 			{
 
         console.log("else"+pathname);
+        if(geoLocation==null)
+        URL = "/shop/six_grid";
+        else  
 				URL = geoLocation+"/shop/six_grid";
 			}
             filterContext.setSelectedCategory(category)

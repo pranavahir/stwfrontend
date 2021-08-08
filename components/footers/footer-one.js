@@ -162,7 +162,7 @@ const allSmall = {
                                 <div className="footer-contant">
                                     <ul>
                                         <li>
-                                            <Link href={geoLocation+"/page/about-us"} >
+                                            <Link href={(geoLocation==null?"":geoLocation)+"/page/about-us"} >
                                                 <a>about us</a>
                                             </Link>
                                         </li>

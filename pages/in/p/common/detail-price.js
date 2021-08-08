@@ -223,7 +223,7 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
                 </div> </div> :
                 <h5 style={smallredobj}> unavailable...! </h5> }
                 
-                <h6><p style={smallh6obj} >Within 7 days of delivery, you may return new, unopened merchandise in its original condition. Exceptions and restrictions apply. See our <a href="#"><Link href={geoLocation+`/page/returns-refund`} >Returns & Refunds</Link></a></p></h6>
+                <h6><p style={smallh6obj} >Within 7 days of delivery, you may return new, unopened merchandise in its original condition. Exceptions and restrictions apply. See our <a href="#"><Link href={(geoLocation==null?"":geoLocation)+`/page/returns-refund`} >Returns & Refunds</Link></a></p></h6>
                 <div className="border-product">
                     <h6 className="product-title">product details</h6>
                     

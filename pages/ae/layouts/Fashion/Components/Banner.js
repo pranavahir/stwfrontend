@@ -30,6 +30,9 @@ const Banner = () => {
   }
   else 
   {
+    if(geoLocation==null)
+    var URL = "/shop/six_grid";
+    else
     var URL = geoLocation+"/shop/six_grid";
   }
         filterContext.setSelectedCategory(category)

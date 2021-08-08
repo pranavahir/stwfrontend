@@ -73,7 +73,7 @@ const HeaderSeven = ({ logoName }) => {
                                     <div className="top-header">
                                         <ul className="header-dropdown">
                                             <li className="mobile-wishlist">
-                                                <Link href={geoLocation+"/page/account/wishlist"}>
+                                                <Link href={(geoLocation==null?"":geoLocation)+"/page/account/wishlist"}>
                                                     <a>
                                                         <Media src={heart} alt="" />
                                                     </a>

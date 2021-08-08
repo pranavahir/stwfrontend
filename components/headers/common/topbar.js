@@ -27,7 +27,7 @@ const TopBar = ({topClass}) => {
                                 </Link>
                             </li>
                             <li className="mobile-wishlist">
-                                <Link href={geoLocation+"/page/account/wishlist"}>
+                                <Link href=(geoLocation==null?"":geoLocation)+"/page/account/wishlist"}>
                                     <a><i className="fa fa-heart" aria-hidden="true"></i>{('wishlist')}</a>
                                 </Link>
                             </li>
@@ -35,12 +35,12 @@ const TopBar = ({topClass}) => {
                                 <i className="fa fa-user" aria-hidden="true"></i> {('my_account')}
                                 <ul className="onhover-show-div">
                                     <li>
-                                        <Link href={geoLocation+"/page/account/login"} >
+                                        <Link href=(geoLocation==null?"":geoLocation)+"/page/account/login"} >
                                             <a>Login</a>
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link href={geoLocation+"/page/account/register"} >
+                                        <Link href=(geoLocation==null?"":geoLocation)+"/page/account/register"} >
                                             <a>Register</a>
                                         </Link>
                                     </li>

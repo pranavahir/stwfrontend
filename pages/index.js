@@ -30,7 +30,7 @@ const router = useRouter();
    
     var domain = window.location.hostname;
     var path = window.location.pathname
-    console.log(window.location);
+
     if(domain == "localhost" || domain == "shoptheworld.store" || domain == "www.shoptheworld.store" || domain == "wwww.shoptheworld.store" || domain == "shoptheworldonline.com" || domain == "www.shoptheworldonline.com" || domain == "test.digitechniq.in"){
           fetch('https://extreme-ip-lookup.com/json/')
         .then( res => res.json())
