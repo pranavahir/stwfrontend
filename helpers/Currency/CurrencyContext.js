@@ -3298,7 +3298,7 @@ const [geoLocation, setgeoLocation] = useState(
 
 if(tempGeoLocation == "" || tempGeoLocation == null || tempGeoLocation == undefined)
 {
-  if(domain == "shoptheworld.store" ||  domain == "www.shoptheworld.store" || domain == "localhost" )
+  if(domain == "shoptheworld.store" ||  domain == "www.shoptheworld.store" || domain == "shoptheworldonline.com" ||  domain == "www.shoptheworldonline.com" ||  domain == "localhost" )
   {
     var subDomain = "shoptheworldonline.com";
 
