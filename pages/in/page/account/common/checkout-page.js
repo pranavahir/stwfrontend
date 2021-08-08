@@ -2016,7 +2016,7 @@ const rightAligh = {
                   ) : (
                     ""
                   )}
-                  <h6 style={smallcontain}><p style={smallh6obj} >* * Within 7 days of delivery, you may return new, unopened merchandise in its original condition. Exceptions and restrictions apply. See our <a href="#"><Link href=(geoLocation==null?"":geoLocation)+`/page/returns-refund`} >Returns & Refunds</Link></a></p>
+                  <h6 style={smallcontain}><p style={smallh6obj} >* * Within 7 days of delivery, you may return new, unopened merchandise in its original condition. Exceptions and restrictions apply. See our <a href="#"><Link  href={(geoLocation==null?"":geoLocation)+`/page/returns-refund`} >Returns & Refunds</Link></a></p>
                   <p style={smallh6obj} >* *  100% safe and secure</p></h6>
                 </Col>
               </Row>
