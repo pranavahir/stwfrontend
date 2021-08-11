@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import React from 'react';
 import Banner from './layouts/Fashion/Components/Banner'
 import CollectionBanner from './layouts/Fashion/Components/Collection-Banner';

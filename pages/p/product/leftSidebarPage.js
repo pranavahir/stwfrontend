@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import React, { useState, useEffect, useRef, useContext } from 'react';
 import ProductTab from '../common/product-tab';
 import Service from '../common/service'
@@ -215,7 +216,7 @@ const LeftSidebarPage = ({ pathId, type }) => {
         <section className="">
             <div className="collection-wrapper">
             {(!data || !data.product || data.product.length === 0|| data.product==null || loading) ?'':
-            <Helmet>
+            <Head>
         <title data-react-helmet="true">{data.product.title} - Shop The World</title>
         <meta data-react-helmet="true" name="viewport" content="width=device-width, initial-scale=1"/>
         <meta data-react-helmet="true" name="copyright" content="Shop The World"/>
@@ -225,10 +226,10 @@ const LeftSidebarPage = ({ pathId, type }) => {
         <meta data-react-helmet="true" name="currency" content={currency}/>
         <meta data-react-helmet="true" name="robots" content="index, follow"/>
         <meta data-react-helmet="true" name="description" content={data.product.title}/>
-        <meta data-react-helmet="true" property="og:type" content="product"/>
-        <meta data-react-helmet="true" property="og:title" content={data.product.title}/>
-        <meta data-react-helmet="true" property="og:url" content={getUrl(data.product)}/>
-        <meta data-react-helmet="true" property="og:description" content={data.product.title}/>
+        <meta property="og:type" content="product"/>
+        <meta property="og:title" content={data.product.title}/>
+        <meta property="og:url" content={getUrl(data.product)}/>
+        <meta property="og:description" content={data.product.title}/>
         <meta data-react-helmet="true" property="product:sku" content={data.product.sku}/>
         <meta data-react-helmet="true" property="product:condition" content="new"/>
         <meta data-react-helmet="true" property="product:brand" content={data.product.brandname}/>
@@ -242,7 +243,7 @@ const LeftSidebarPage = ({ pathId, type }) => {
 
         <link data-react-helmet="true" rel="canonical" href="https://www.shoptheworldonline.com/in/x2-nivea-men-face-wash-oil-control-10x-vitamin-c-150ml/p"/>
         <link data-react-helmet="true" rel="preload" as="image" href={`${data.product.images[0].additionalimage4}`} crossOrigin="anonymous"/>
-             </Helmet> }
+             </Head> }
 
                 <Container>
                     <Row>
