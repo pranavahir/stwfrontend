@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import React from 'react';
 import Banner from './../layouts/Fashion/Components/Banner'
 import CollectionBanner from './../layouts/Fashion/Components/Collection-Banner';
@@ -32,12 +33,16 @@ const router = useRouter();
 
   return (
     <>
-      <Helmet>
+      <Head>
         
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" type="image/x-icon" href={favicon?favicon:''} />
         <link data-react-helmet="true" href={favicon?favicon:''} sizes="32x32" type="png" rel="icon"/>
-             </Helmet>
+        <meta property="og:title" content="Online Shopping site in India: Shop Online for Mobiles, Books, Watches, Shoes and More - shoptheworld.store"/>
+        <meta property="og:url" content="https://www/shoptheworld.store"/>
+        <meta property="og:description" content="shoptheworld.store: Online Shopping India - Buy mobiles, laptops, cameras, books, watches, apparel, shoes and e-Gift Cards. Always cheaper than Amazon Price"/>
+             
+        </Head>
       {/* <ModalComponent /> */}
       <HeaderOne logoName={'logo.png'} topClass="top-header" />
       <Banner /> 
