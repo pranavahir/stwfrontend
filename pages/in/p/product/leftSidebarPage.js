@@ -229,7 +229,7 @@ const LeftSidebarPage = ({ pathId, type }) => {
         <meta   property="og:type" content="product"/>
         <meta   property="og:title" content="Shop The World"/>
         <meta   property="og:url" content={getUrl(data.product)}/>
-        <meta   property="og:description" content="Preview is Working"/>
+        <meta   property="og:description" content={data.product.title}/>
         <meta   property="product:sku" content={data.product.sku}/>
         <meta   property="product:condition" content="new"/>
         <meta   property="product:brand" content={data.product.brandname}/>
