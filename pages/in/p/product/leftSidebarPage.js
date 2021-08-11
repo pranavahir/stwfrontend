@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import React, { useState, useEffect, useRef, useContext } from 'react';
 import ProductTab from '../common/product-tab';
 import Service from '../common/service'
@@ -215,7 +216,7 @@ const LeftSidebarPage = ({ pathId, type }) => {
         <section className="">
             <div className="collection-wrapper">
             {(!data || !data.product || data.product.length === 0|| data.product==null || loading) ?'':
-            <Helmet>
+            <Head>
         <title  >{data.product.title} - Shop The World</title>
         <meta   name="viewport" content="width=device-width, initial-scale=1"/>
         <meta   name="copyright" content="Shop The World"/>
@@ -241,7 +242,7 @@ const LeftSidebarPage = ({ pathId, type }) => {
         <meta   property="product:price:amount" content="228"/>
         <link   rel="canonical" href={`${getUrl(data.product)}`}/>
         <link   rel="preload" as="image" href={`${data.product.images[0].additionalimage4}`} crossOrigin="anonymous"/>
-             </Helmet> }
+             </Head> }
 
                 <Container>
                     <Row>
