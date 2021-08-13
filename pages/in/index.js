@@ -38,9 +38,9 @@ const router = useRouter();
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" type="image/x-icon" href={favicon?favicon:''} />
         <link data-react-helmet="true" href={favicon?favicon:''} sizes="32x32" type="png" rel="icon"/>
-        <meta property="og:title" content="Online Shopping site in India: Shop Online for Mobiles, Books, Watches, Shoes and More - shoptheworld.store"/>
-        <meta property="og:url" content="https://www/shoptheworld.store"/>
-        <meta property="og:description" content="shoptheworld.store: Online Shopping India - Buy mobiles, laptops, cameras, books, watches, apparel, shoes and e-Gift Cards. Always cheaper than Amazon Price"/>
+        <meta property="og:title" content="Online Shopping site in India: Shop Online for Mobiles, Books, Watches, Shoes and More - shoptheworld.in"/>
+        <meta property="og:url" content="https://www.shoptheworld.in"/>
+        <meta property="og:description" content="shoptheworld.in: Online Shopping India - Buy mobiles, laptops, cameras, books, watches, apparel, shoes and e-Gift Cards. Always cheaper than Amazon Price"/>
              
         </Head>
       {/* <ModalComponent /> */}

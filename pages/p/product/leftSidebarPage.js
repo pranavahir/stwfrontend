@@ -241,7 +241,7 @@ const LeftSidebarPage = ({ pathId, type }) => {
         <meta data-react-helmet="true" property="product:availability" content="instock"/>
         <meta data-react-helmet="true" property="product:price:amount" content="228"/>
 
-        <link data-react-helmet="true" rel="canonical" href="https://www.shoptheworldonline.com/in/x2-nivea-men-face-wash-oil-control-10x-vitamin-c-150ml/p"/>
+        <link data-react-helmet="true" rel="canonical" href={`${getUrl(data.product)}`}/>
         <link data-react-helmet="true" rel="preload" as="image" href={`${data.product.images[0].additionalimage4}`} crossOrigin="anonymous"/>
              </Head> }
 

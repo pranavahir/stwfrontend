@@ -235,9 +235,9 @@ const LeftSidebarPage = ({ pathId, type }) => {
         <meta   property="product:brand" content={data.product.brandname}/>
         <meta   property="product:retailer_item_id" content={data.product.asin}/>
         <meta   property="product:price:currency" content={currency}/>
-         <meta   property="og:image" content={`${data.product.images[0].mainimageurl}`}/>
+        <meta   property="og:image" content={`${data.product.images[0].mainimageurl}`}/>
         <meta   property="og:image" content={`${data.product.images[0].additionalimage1}`}/>
-       <meta   property="og:image" content={`${data.product.images[0].additionalimage2}`}/>
+        <meta   property="og:image" content={`${data.product.images[0].additionalimage2}`}/>
         <meta   property="product:availability" content="instock"/>
         <meta   property="product:price:amount" content="228"/>
         <link   rel="canonical" href={`${getUrl(data.product)}`}/>
