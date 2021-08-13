@@ -30,7 +30,9 @@ const router = useRouter();
    
 
   },[])
-
+    const url = window.location;
+    const metadesc =  url.origin +' : Online Shopping India - Buy mobiles, laptops, cameras, books, watches, apparel, shoes and e-Gift Cards. Always cheaper than Amazon Price';
+    const metatitle = 'Online Shopping site in India: Shop Online for Mobiles, Books, Watches, Shoes and More - ' + url.origin;
   return (
     <>
       <Head>
@@ -38,10 +40,10 @@ const router = useRouter();
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" type="image/x-icon" href={favicon?favicon:''} />
         <link data-react-helmet="true" href={favicon?favicon:''} sizes="32x32" type="png" rel="icon"/>
-        <meta property="og:title" content="Online Shopping site in India: Shop Online for Mobiles, Books, Watches, Shoes and More - shoptheworld.in"/>
-        <meta property="og:url" content="https://www.shoptheworld.in"/>
-        <meta property="og:description" content="shoptheworld.in: Online Shopping India - Buy mobiles, laptops, cameras, books, watches, apparel, shoes and e-Gift Cards. Always cheaper than Amazon Price"/>
-             
+        <meta property="og:title" content={metatitle}/>
+        <meta property="og:url" content={url.href}/>
+        <meta property="og:description" content={metadesc}/>
+        <meta property="og:image" content="https://shoptheworld.store/assets/images/icon/logo.png"/>        
         </Head>
       {/* <ModalComponent /> */}
       <HeaderOne logoName={'logo.png'} topClass="top-header" />
