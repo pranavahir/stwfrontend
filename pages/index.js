@@ -31,8 +31,8 @@ const router = useRouter();
     const url = window.location;
     var domain = window.location.hostname;
     var path = window.location.pathname
-    const metadesc =  url.origin +' : Online Shopping India - Buy mobiles, laptops, cameras, books, watches, apparel, shoes and e-Gift Cards. Always cheaper than Amazon Price';
-    const metatitle = 'Online Shopping site in India: Shop Online for Mobiles, Books, Watches, Shoes and More - ' + url.origin;
+    const metadesc =  url.hostname +' : Online Shopping India - Buy mobiles, laptops, cameras, books, watches, apparel, shoes and e-Gift Cards. Always cheaper than Amazon Price';
+    const metatitle = 'Online Shopping site in India: Shop Online for Mobiles, Books, Watches, Shoes and More - ' + url.hostname;
     if(domain == "localhost" || domain == "shoptheworld.store" || domain == "www.shoptheworld.store" || domain == "wwww.shoptheworld.store" || domain == "shoptheworldonline.com" || domain == "www.shoptheworldonline.com" || domain == "test.digitechniq.in"){
           fetch('https://extreme-ip-lookup.com/json/')
         .then( res => res.json())
