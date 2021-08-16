@@ -31,7 +31,7 @@ const router = useRouter();
 
   },[])
     const url = window.location;
-    const metadesc = 'World&#39;s best online store for Mobiles, Fashion, Electronics, Home, Kitchen, Grocery, Sporting goods, Health, Wellness Care and more only at ' + url.hostname +' ! Find the largest collection of products at lowest prices &amp; fast shipping worldwide';
+    const metadesc = "World's best online store for Mobiles, Fashion, Electronics, Home, Kitchen, Grocery, Sporting goods, Health, Wellness Care and more only at " + url.hostname +" ! Find the largest collection of products at lowest prices &amp; fast shipping worldwide";
     const metatitle = 'Online Shopping Site for Mobiles, Electronics, Fashion, Home, Kitchen, Health, Wellness, Beauty &amp; More'; 
   return (
     <>

@@ -31,7 +31,7 @@ const router = useRouter();
     const url = window.location;
     var domain = window.location.hostname;
     var path = window.location.pathname
-    const metadesc = 'World&#39;s best online store for Mobiles, Fashion, Electronics, Home, Kitchen, Grocery, Sporting goods, Health, Wellness Care and more only at ' + url.hostname +' ! Find the largest collection of products at lowest prices &amp; fast shipping worldwide';
+    const metadesc = "World's best online store for Mobiles, Fashion, Electronics, Home, Kitchen, Grocery, Sporting goods, Health, Wellness Care and more only at " + url.hostname +" ! Find the largest collection of products at lowest prices &amp; fast shipping worldwide";
     const metatitle = 'Online Shopping Site for Mobiles, Electronics, Fashion, Home, Kitchen, Health, Wellness, Beauty &amp; More'; 
     if(domain == "localhost" || domain == "shoptheworld.store" || domain == "www.shoptheworld.store" || domain == "wwww.shoptheworld.store" || domain == "shoptheworldonline.com" || domain == "www.shoptheworldonline.com" || domain == "test.digitechniq.in"){
           fetch('https://extreme-ip-lookup.com/json/')
