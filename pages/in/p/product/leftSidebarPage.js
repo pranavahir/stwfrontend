@@ -217,7 +217,7 @@ const LeftSidebarPage = ({ pathId, type }) => {
             <div className="collection-wrapper">
             {(!data || !data.product || data.product.length === 0|| data.product==null || loading) ?'':
             <Head>
-        <title  >{data.product.title} - Shop The World</title>
+        <title> Buy {data.product.title} Online at Lowest Price Ever | + {data.product.title} = Reviews &amp; Ratings - Shop The World</title>
         <meta   name="viewport" content="width=device-width, initial-scale=1"/>
         <meta   name="copyright" content="Shop The World"/>
         <meta   name="author" content="Shop The World"/>
