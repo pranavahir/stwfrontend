@@ -31,8 +31,8 @@ const router = useRouter();
 
   },[])
     const url = window.location;
-    const metadesc =  url.hostname +' : Online Shopping India - Buy mobiles, laptops, cameras, books, watches, apparel, shoes and e-Gift Cards. Always cheaper than Amazon Price';
-    const metatitle = 'Online Shopping site in India: Shop Online for Mobiles, Books, Watches, Shoes and More - ' + url.hostname;
+    const metadesc = 'World&#39;s best online store for Mobiles, Fashion, Electronics, Home, Kitchen, Grocery, Sporting goods, Health, Wellness Care and more only at ' + url.hostname +' ! Find the largest collection of products at lowest prices &amp; fast shipping worldwide';
+    const metatitle = 'Online Shopping Site for Mobiles, Electronics, Fashion, Home, Kitchen, Health, Wellness, Beauty &amp; More'; 
   return (
     <>
       <Head>
