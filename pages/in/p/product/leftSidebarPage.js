@@ -217,7 +217,7 @@ const LeftSidebarPage = ({ pathId, type }) => {
             <div className="collection-wrapper">
             {(!data || !data.product || data.product.length === 0|| data.product==null || loading) ?'':
             <Head>
-        <title  >{data.product.title} - Shop The World</title>
+        <title> Buy {data.product.title} Online at Lowest Price Ever | + {data.product.title} = Reviews &amp; Ratings - Shop The World</title>
         <meta   name="viewport" content="width=device-width, initial-scale=1"/>
         <meta   name="copyright" content="Shop The World"/>
         <meta   name="author" content="Shop The World"/>
@@ -227,7 +227,7 @@ const LeftSidebarPage = ({ pathId, type }) => {
         <meta   name="robots" content="index, follow"/>
         <meta   name="description" content={data.product.title}/>
         <meta   property="og:type" content="product"/>
-        <meta   property="og:title" content="{data.product.title}"/>
+        <meta   property="og:title" content={data.product.title}/>
         <meta   property="og:url" content={getUrl(data.product)}/>
         <meta   property="og:description" content={data.product.title}/>
         <meta   property="product:sku" content={data.product.sku}/>
@@ -235,9 +235,9 @@ const LeftSidebarPage = ({ pathId, type }) => {
         <meta   property="product:brand" content={data.product.brandname}/>
         <meta   property="product:retailer_item_id" content={data.product.asin}/>
         <meta   property="product:price:currency" content={currency}/>
-         <meta   property="og:image" content={`${data.product.images[0].mainimageurl}`}/>
+        <meta   property="og:image" content={`${data.product.images[0].mainimageurl}`}/>
         <meta   property="og:image" content={`${data.product.images[0].additionalimage1}`}/>
-       <meta   property="og:image" content={`${data.product.images[0].additionalimage2}`}/>
+        <meta   property="og:image" content={`${data.product.images[0].additionalimage2}`}/>
         <meta   property="product:availability" content="instock"/>
         <meta   property="product:price:amount" content="228"/>
         <link   rel="canonical" href={`${getUrl(data.product)}`}/>

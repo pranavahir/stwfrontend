@@ -83,8 +83,8 @@ export default function MyApp({ Component, pageProps }) {
               htmlRef="https://connect.facebook.net/en_US/sdk.js"
             />
           <Helmet>
-            <meta name="viewport" content="width=device-width, initial-scale=1" />
-            <title>Shop The World - Always cheaper than amazon price</title>
+            
+           
           </Helmet>
             <div>
             <ApolloProvider client={client}>
