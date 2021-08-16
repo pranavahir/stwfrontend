@@ -107,6 +107,9 @@ const ProductList = ({ colClass, layoutList,openSidebar,noSidebar,pathId }) => {
     category = filterContext.state;
     
     const selectedCategory = category;
+
+    console.log("cate",selectedCategory);
+
     const selectedSize = filterContext.selectedSize
     const [sortBy, setSortBy] = useState('AscOrder');
     const [isLoading, setIsLoading] = useState(false);
@@ -165,7 +168,7 @@ const ProductList = ({ colClass, layoutList,openSidebar,noSidebar,pathId }) => {
 
 
     const handlePagination = () => {
-        setIsLoading(true);
+        // setIsLoading(true);
         setTimeout(() =>
             fetchMore({
                 variables: {
@@ -173,7 +176,7 @@ const ProductList = ({ colClass, layoutList,openSidebar,noSidebar,pathId }) => {
                 },
                 updateQuery: (prev, { fetchMoreResult }) => {
                     if (!fetchMoreResult) return prev;
-                    setIsLoading(false)
+                    // setIsLoading(false)
                     return {
                         products: {
                             __typename: prev.products.__typename,

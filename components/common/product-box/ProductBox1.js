@@ -41,6 +41,10 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
     const toggle = () => setModal(!modal);
     const uniqueTags = [];
     var geoLocation =  sessionStorage.getItem('geoLocation');
+    if(geoLocation==null)
+    {
+        geoLocation="";
+    }
 
     const smallredobj={
         fontSize: "15px",

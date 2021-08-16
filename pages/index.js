@@ -18,7 +18,7 @@ import Helmet from 'react-helmet';
 import favicon from '../public/assets/images/favicon/1.png'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
- 
+import ModalComponent from '../components/common/Modal';
 
 const Fashion = () => {
 const router = useRouter();
@@ -42,15 +42,14 @@ const router = useRouter();
 
         if(response.countryCode == "IN")
         {
-          sessionStorage.setItem('geoLocation', "/in");
-          if(path != "/in")
-            router.push("/in/")
+          // sessionStorage.setItem('geoLocation', "/in");
+          // window.location.replace("https://www.shoptheworld.in"); 
+          
         }
         else if(response.countryCode == "AE")
         {
-          sessionStorage.setItem('geoLocation', "/ae");
-          if(path != "/ae")
-          router.push("/ae/")
+          // sessionStorage.setItem('geoLocation', "/ae");
+          // window.location.replace("https://www.shoptheworld.ae");
         }
         else if(response.countryCode == "US")
         {
@@ -70,7 +69,6 @@ const router = useRouter();
       sessionStorage.setItem('geoLocation', "");
     }
 
-
   return (
     <>
       <Head>
@@ -82,8 +80,9 @@ const router = useRouter();
         <meta property="og:url" content="https://www/shoptheworld.store"/>
         <meta property="og:description" content="shoptheworld.store: Online Shopping India - Buy mobiles, laptops, cameras, books, watches, apparel, shoes and e-Gift Cards. Always cheaper than Amazon Price"/>
              
-        </Head>
-      {/* <ModalComponent /> */}
+      </Head>
+
+      <ModalComponent />
       <HeaderOne logoName={'logo.png'} topClass="top-header" />
       <Banner /> 
       <CollectionBanner />

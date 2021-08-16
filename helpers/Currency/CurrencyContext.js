@@ -2,6 +2,8 @@ import React, { createContext, useState,useEffect } from "react";
 import { useRouter } from 'next/router';
 import gql from 'graphql-tag';
 import { AlertTriangle } from "react-feather";
+import { confirmAlert } from 'react-confirm-alert'; // Import
+import 'react-confirm-alert/src/react-confirm-alert.css' // Import css
 // import { useQuery } from '@apollo/react-hooks';
 // const GET_MiscinfoByDomain = gql`
 // query  MiscinfoByDomain($domain:String!){
@@ -3222,38 +3224,45 @@ const [geoLocation, setgeoLocation] = useState(
         fetch('https://extreme-ip-lookup.com/json/')
         .then( res => res.json())
         .then(response => {
+         
           
         var path = window.location.pathname;
 
- 
-        if(response.countryCode == "IN")
-        {
-          
-          sessionStorage.setItem('geoLocation', "/in");
-          setgeoLocation("/in")
-          tempGeoLocation= "/in";
-            router.push(`/in${path}`)
-        }
-        else if(response.countryCode == "AE")
-        { 
-          sessionStorage.setItem('geoLocation', "/ae");
-          setgeoLocation("/ae")
-          tempGeoLocation= "/ae";
-          router.push(`/ae${path}`) 
-        }
-        else if(response.countryCode == "US")
-        {
-          sessionStorage.setItem('geoLocation', "");
-          tempGeoLocation= "";
-        }
-        else
-        {
-          sessionStorage.setItem('geoLocation', "");
-          tempGeoLocation= "";
-        }
+        var IGF =  sessionStorage.getItem('isGeoLocationFixed');
 
+        if(IGF!=true && IGF!="true")
+        {
 
+          if(response.countryCode == "IN")
+          {
+            
+             // sessionStorage.setItem('geoLocation', "/in");
+             // router.push(`/in${path}`)
+              domainChange("https://www.shoptheworld.in",response.countryCode);
+              // window.location.replace("https://www.shoptheworld.in");
+          }
+          else if(response.countryCode == "AE")
+          { 
+            sessionStorage.setItem('geoLocation', "/ae");
+            setgeoLocation("/ae")
+            tempGeoLocation= "/ae";
+            // router.push(`/ae${path}`) 
+            domainChange("https://www.shoptheworld.ae","UAE");
+            // window.location.replace("https://www.shoptheworld.ae");
+          }
+          else if(response.countryCode == "US")
+          {
+            sessionStorage.setItem('geoLocation', "");
+            tempGeoLocation= "";
+          }
+          else
+          {
+            sessionStorage.setItem('geoLocation', "");
+            tempGeoLocation= "";
+          }
+  
 
+        }
 
 
       })
@@ -3356,6 +3365,114 @@ else
   }
   
 }
+
+
+
+const continueTo=()=>{
+  sessionStorage.setItem('isGeoLocationFixed', true);
+  setgeoLocation("")
+  tempGeoLocation= "";
+}
+
+const moveTo=(country)=>{
+
+
+  sessionStorage.setItem('isGeoLocationFixed', true);
+  if(country == "IN")
+  {
+    setgeoLocation("/in")
+    tempGeoLocation= "/in";
+    window.location.replace("https://www.shoptheworld.in");
+  }
+  else if(country == "AE")
+  {
+    setgeoLocation("/ae")
+    tempGeoLocation= "/ae";
+    window.location.replace("https://www.shoptheworld.ae");
+  }
+
+
+}
+
+const domainChange =(domain,country)=>{
+
+var IGF =  sessionStorage.getItem('isGeoLocationFixed');
+
+if(IGF!=true && IGF!="true")
+{
+
+  confirmAlert({
+    customUI: ({ onClose }) => {
+      return (
+        <div className='custom-ui'>
+          <h3>Shop in Indian Rupees (INR)?</h3>
+          <h5>You're shopping for items shipping to India. Currencies are available.</h5>
+          <h5>switch to INR ?</h5>
+          <button  onClick={() => {
+              continueTo();
+              onClose();
+            }}>
+          No, Thanks</button>
+          <button
+            onClick={() => {
+              moveTo(country);
+              onClose();
+            }}
+          >
+            Change Currency!
+          </button>
+        </div>
+      );
+    }
+  });
+
+
+//   Shop in Indian Rupees (INR)?
+
+// You're shopping for items shipping to India. Additional languages and currencies are available.
+
+// Translations and currency conversions are provided for your
+
+// convenience only. Learn more
+
+  // confirmAlert({
+  //   title: 'Shop the world',
+  //   message: 'Hi, are you continue with shoptheworldonline.com',
+  //   buttons: [
+  //     {
+  //       label: 'Yes',
+  //       onClick: () => {
+  //         sessionStorage.setItem('isGeoLocationFixed', true);
+  //         setgeoLocation("")
+  //         tempGeoLocation= "";
+  //       }
+  //     },
+  //     {
+  //       label: 'No',
+  //       onClick: () => {
+  //         sessionStorage.setItem('isGeoLocationFixed', true);
+  //         if(country == "IN")
+  //         {
+  //           setgeoLocation("/in")
+  //           tempGeoLocation= "/in";
+  //           window.location.replace("https://www.shoptheworld.in");
+  //         }
+  //         else if(country == "AE")
+  //         {
+  //           setgeoLocation("/ae")
+  //           tempGeoLocation= "/ae";
+            
+  //           window.location.replace("https://www.shoptheworld.ae");
+  //         }
+
+  //       }
+  //     }
+  //   ]
+  // });
+}
+}
+
+
 
 // selectedCurrency(selectedConfig);
 

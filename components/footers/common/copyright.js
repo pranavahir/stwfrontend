@@ -43,7 +43,7 @@ const CopyRight = ({layout, fluid}) => {
                             <div className="footer-end">
                             <ul style={styleHeaderObj}>
                                     <li>
-                                    <h6>  &nbsp; 5+ Years <span style={styebar}>|</span> 500k Orders Delivered <span style={styebar}>|</span> 9+ Countries Presence <span style={styebar}>|</span> 3M+ Products <span style={styebar}>|</span> Delivering 184+ Countries  </h6>
+                                    <h6>  &nbsp; 5+ Years <span style={styebar}>|</span> 500k Orders Delivered <span style={styebar}>|</span> 9+ Countries Presence <span style={styebar}>|</span> 10M+ Products <span style={styebar}>|</span> Delivering 184+ Countries </h6>
                                     </li>
                                 </ul>
                             </div>
