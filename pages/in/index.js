@@ -40,6 +40,8 @@ const router = useRouter();
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" type="image/x-icon" href={favicon?favicon:''} />
         <link data-react-helmet="true" href={favicon?favicon:''} sizes="32x32" type="png" rel="icon"/>
+        <title>Online Shopping site in India: Shop Online for Mobiles, Books, Watches, Shoes and More</title>
+        <meta name="description" content={metadesc}/>
         <meta property="og:title" content={metatitle}/>
         <meta property="og:url" content={url.href}/>
         <meta property="og:description" content={metadesc}/>
