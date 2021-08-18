@@ -28,6 +28,7 @@ const router = useRouter();
  
   
     },[])
+    var ipinfo ={};
     const url = window.location;
     var domain = window.location.hostname;
     var path = window.location.pathname
@@ -69,7 +70,7 @@ const router = useRouter();
     {
       sessionStorage.setItem('geoLocation', "");
     }
-
+    const IpInfo = ipinfo;
   return (
     <>
       <Head>
@@ -77,7 +78,7 @@ const router = useRouter();
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" type="image/x-icon" href={favicon?favicon:''} />
         <link data-react-helmet="true" href={favicon?favicon:''} sizes="32x32" type="png" rel="icon"/>
-        <title>Online Shopping Site for Mobiles, Electronics, Fashion, Home, Kitchen, Health, Wellness, Beauty &amp; More</title>
+        <title> The Best Online Shopping Site in + {IpInfo.country} + for Mobiles, Electronics, Fashion, Home, Kitchen, Health, Wellness, Beauty &amp; More</title>
         <meta name="description" content={metadesc}/>
         <meta property="og:title" content={metatitle}/>
         <meta property="og:url" content={url.href}/>

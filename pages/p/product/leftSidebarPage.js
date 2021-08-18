@@ -313,7 +313,7 @@ const LeftSidebarPage = ({ pathId, type }) => {
                                                 } */}
                                                 {data.product.images[0].mainimageurl?
                                                     <div>
-                                                          <Media src={`${data.product.images[0].mainimageurl}`}   className="img-fluid" />
+                                                          <Media src={`${data.product.images[0].mainimageurl}`}  className="img-fluid" />
                                                   </div>
                                                     :
                                                     ''}

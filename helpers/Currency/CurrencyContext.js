@@ -95,7 +95,7 @@ var ListConfig=[
 
     domain: "localhost",
     fullDomain: "localhost",
-   
+    IpInfo = null,
   //   currency: 'AED',
   // currencyCode:'aed',
   // symbol: 'د.إ', 
@@ -131,7 +131,7 @@ var ListConfig=[
     addressTwo: "103 Office no 21 Opal Towers Business Bay Dubai UAE",
     emailid: "care@shoptheworldonline.com",
     
-    
+    IpInfo = null,
     topCollections:[
       
       {
@@ -316,6 +316,7 @@ var ListConfig=[
     facebookacct: null,
     googleacct: null,
     gstortax: "GST",
+    IpInfo = null,
     topCollections:[
       {
         imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
@@ -494,6 +495,7 @@ var ListConfig=[
     facebookacct: null,
     googleacct: null,
     gstortax: "GST",
+    IpInfo = null,
     topCollections:[
       {
         imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
@@ -672,6 +674,7 @@ var ListConfig=[
     facebookacct: null,
     googleacct: null,
     gstortax: "GST",
+    IpInfo = null,
     topCollections:[
       {
         imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
@@ -850,6 +853,7 @@ var ListConfig=[
     facebookacct: null,
     googleacct: null,
     gstortax: "GST",
+    IpInfo = null,
     topCollections:[
       {
         imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
@@ -1027,6 +1031,7 @@ var ListConfig=[
   emailid: "care@shoptheworldonline.com",
   facebookacct: null,
   googleacct: null,
+  IpInfo = null,
   topCollections:[
     {
       imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
@@ -1205,6 +1210,7 @@ var ListConfig=[
   emailid: "care@shoptheworldonline.com",
   facebookacct: null,
   googleacct: null,
+  IpInfo = null,
   topCollections:[
     {
       imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
@@ -1385,6 +1391,7 @@ var ListConfig=[
   googleacct: null,
   gakey:"UA-185043489-1",
   gtmkey:"GTM-5SJS8JL",
+  IpInfo = null,
   topCollections:[
     {
       imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
@@ -1565,6 +1572,7 @@ var ListConfig=[
   googleacct: null,
   gakey:"UA-185043489-1",
   gtmkey:"GTM-5SJS8JL",
+  IpInfo = null,
   topCollections:[
     {
       imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
@@ -1743,6 +1751,7 @@ var ListConfig=[
   emailid: "care@shoptheworldonline.com",
   facebookacct: null,
   googleacct: null,
+  IpInfo = null,
   topCollections:[
     {
       imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
@@ -1921,6 +1930,7 @@ var ListConfig=[
   emailid: "care@shoptheworldonline.com",
   facebookacct: null,
   googleacct: null,
+  IpInfo = null,
   topCollections:[
     {
       imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
@@ -2099,6 +2109,7 @@ var ListConfig=[
   emailid: "care@shoptheworldonline.com",
   facebookacct: null,
   googleacct: null,
+  IpInfo = null,
   topCollections:[
     {
       imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
@@ -2277,6 +2288,7 @@ var ListConfig=[
   emailid: "care@shoptheworldonline.com",
   facebookacct: null,
   googleacct: null,
+  IpInfo = null,
   topCollections:[
     {
       imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
@@ -2455,6 +2467,7 @@ var ListConfig=[
   emailid: "care@shoptheworldonline.com",
   facebookacct: null,
   googleacct: null,
+  IpInfo = null,
   topCollections:[
     {
       imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
@@ -2657,6 +2670,7 @@ var ListConfig=[
   emailid: "care@shoptheworldonline.com",
   facebookacct: null,
   googleacct: null,
+  IpInfo = null,
   topCollections:[
     {
       imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
@@ -2835,6 +2849,7 @@ var ListConfig=[
   emailid: "care@shoptheworldonline.com",
   facebookacct: null,
   googleacct: null,
+  IpInfo = null,
   topCollections:[
     {
       imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
@@ -3013,6 +3028,7 @@ var ListConfig=[
   emailid: "care@shoptheworldonline.com",
   facebookacct: null,
   googleacct: null,
+  IpInfo = null,
   topCollections:[
     {
       imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
@@ -3213,7 +3229,7 @@ console.log(url);
 const [geoLocation, setgeoLocation] = useState(
   sessionStorage.getItem('geoLocation')
 );
-
+var ipinfo ={};
 // const [selectedCurr, selectedCurrency] = useState("");
     if(domain == "localhost" ||  domain == "shoptheworld.store" ||  domain == "www.shoptheworld.store" || domain == "shoptheworldonline.com"  || domain == "www.shoptheworldonline.com" || domain == "test.digitechniq.in" || domain == "www.test.digitechniq.in" ){
       
@@ -3225,6 +3241,7 @@ const [geoLocation, setgeoLocation] = useState(
         .then( res => res.json())
         .then(response => {
          
+          ipinfo = response;
           
         var path = window.location.pathname;
 
@@ -3297,6 +3314,7 @@ const [geoLocation, setgeoLocation] = useState(
       tempGeoLocation="";
     }
 
+    const IpInfo = ipinfo;
 
 
     // const [geoLocation, setgeoLocation] = useState(
@@ -3316,7 +3334,7 @@ if(tempGeoLocation == "" || tempGeoLocation == null || tempGeoLocation == undefi
       if(ListConfig[i].domain == subDomain || ListConfig[i].fullDomain == subDomain)
       {
           selectedConfig =  ListConfig[i];
-          console.log(selectedConfig);
+          selectedConfig.ipinfo = IpInfo;
       }
     }
   }
@@ -3327,7 +3345,7 @@ if(tempGeoLocation == "" || tempGeoLocation == null || tempGeoLocation == undefi
       if(ListConfig[i].domain == domain || ListConfig[i].fullDomain == domain)
       {
           selectedConfig =  ListConfig[i];
-          console.log(selectedConfig);
+          selectedConfig.ipinfo = IpInfo;
  
       }
     }
@@ -3360,7 +3378,7 @@ else
     if(ListConfig[i].domain == subDir || ListConfig[i].fullDomain == subDir)
     {
         selectedConfig =  ListConfig[i];
-        console.log(selectedConfig);
+        selectedConfig.ipinfo = IpInfo;
       }
   }
   
