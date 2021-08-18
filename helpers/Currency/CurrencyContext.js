@@ -95,7 +95,7 @@ var ListConfig=[
 
     domain: "localhost",
     fullDomain: "localhost",
-    IpInfo = null,
+    IpInfo: null,
   //   currency: 'AED',
   // currencyCode:'aed',
   // symbol: 'د.إ', 
@@ -131,7 +131,7 @@ var ListConfig=[
     addressTwo: "103 Office no 21 Opal Towers Business Bay Dubai UAE",
     emailid: "care@shoptheworldonline.com",
     
-    IpInfo = null,
+    IpInfo: null,
     topCollections:[
       
       {
@@ -316,7 +316,7 @@ var ListConfig=[
     facebookacct: null,
     googleacct: null,
     gstortax: "GST",
-    IpInfo = null,
+    IpInfo: null,
     topCollections:[
       {
         imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
@@ -495,7 +495,7 @@ var ListConfig=[
     facebookacct: null,
     googleacct: null,
     gstortax: "GST",
-    IpInfo = null,
+    IpInfo: null,
     topCollections:[
       {
         imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
@@ -674,7 +674,7 @@ var ListConfig=[
     facebookacct: null,
     googleacct: null,
     gstortax: "GST",
-    IpInfo = null,
+    IpInfo: null,
     topCollections:[
       {
         imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
@@ -853,7 +853,7 @@ var ListConfig=[
     facebookacct: null,
     googleacct: null,
     gstortax: "GST",
-    IpInfo = null,
+    IpInfo: null,
     topCollections:[
       {
         imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
@@ -1031,7 +1031,7 @@ var ListConfig=[
   emailid: "care@shoptheworldonline.com",
   facebookacct: null,
   googleacct: null,
-  IpInfo = null,
+  IpInfo: null,
   topCollections:[
     {
       imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
@@ -1210,7 +1210,7 @@ var ListConfig=[
   emailid: "care@shoptheworldonline.com",
   facebookacct: null,
   googleacct: null,
-  IpInfo = null,
+  IpInfo: null,
   topCollections:[
     {
       imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
@@ -1391,7 +1391,7 @@ var ListConfig=[
   googleacct: null,
   gakey:"UA-185043489-1",
   gtmkey:"GTM-5SJS8JL",
-  IpInfo = null,
+  IpInfo: null,
   topCollections:[
     {
       imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
@@ -1572,7 +1572,7 @@ var ListConfig=[
   googleacct: null,
   gakey:"UA-185043489-1",
   gtmkey:"GTM-5SJS8JL",
-  IpInfo = null,
+  IpInfo: null,
   topCollections:[
     {
       imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
@@ -1751,7 +1751,7 @@ var ListConfig=[
   emailid: "care@shoptheworldonline.com",
   facebookacct: null,
   googleacct: null,
-  IpInfo = null,
+  IpInfo: null,
   topCollections:[
     {
       imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
@@ -1930,7 +1930,7 @@ var ListConfig=[
   emailid: "care@shoptheworldonline.com",
   facebookacct: null,
   googleacct: null,
-  IpInfo = null,
+  IpInfo: null,
   topCollections:[
     {
       imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
@@ -2109,7 +2109,7 @@ var ListConfig=[
   emailid: "care@shoptheworldonline.com",
   facebookacct: null,
   googleacct: null,
-  IpInfo = null,
+  IpInfo: null,
   topCollections:[
     {
       imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
@@ -2288,7 +2288,7 @@ var ListConfig=[
   emailid: "care@shoptheworldonline.com",
   facebookacct: null,
   googleacct: null,
-  IpInfo = null,
+  IpInfo: null,
   topCollections:[
     {
       imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
@@ -2467,7 +2467,7 @@ var ListConfig=[
   emailid: "care@shoptheworldonline.com",
   facebookacct: null,
   googleacct: null,
-  IpInfo = null,
+  IpInfo: null,
   topCollections:[
     {
       imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
@@ -2670,7 +2670,7 @@ var ListConfig=[
   emailid: "care@shoptheworldonline.com",
   facebookacct: null,
   googleacct: null,
-  IpInfo = null,
+  IpInfo: null,
   topCollections:[
     {
       imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
@@ -2849,7 +2849,7 @@ var ListConfig=[
   emailid: "care@shoptheworldonline.com",
   facebookacct: null,
   googleacct: null,
-  IpInfo = null,
+  IpInfo: null,
   topCollections:[
     {
       imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
@@ -3028,7 +3028,7 @@ var ListConfig=[
   emailid: "care@shoptheworldonline.com",
   facebookacct: null,
   googleacct: null,
-  IpInfo = null,
+  IpInfo: null,
   topCollections:[
     {
       imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
