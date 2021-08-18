@@ -18,7 +18,9 @@ import Helmet from 'react-helmet';
 import favicon from '../public/assets/images/favicon/1.png'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
+import {useContext} from 'react';
 import ModalComponent from '../components/common/Modal';
+import { CurrencyContext } from '../helpers/Currency/CurrencyContext';
 
 const Fashion = () => {
 const router = useRouter();
@@ -28,19 +30,19 @@ const router = useRouter();
  
   
     },[])
-    var ipinfo ={};
     const url = window.location;
     var domain = window.location.hostname;
     var path = window.location.pathname
-    const metadesc = "World's best online store for Mobiles, Fashion, Electronics, Home, Kitchen, Grocery, Sporting goods, Health, Wellness Care and more only at " + url.hostname +" ! Find the largest collection of products at lowest prices &amp; fast shipping worldwide";
-    const metatitle = 'Online Shopping Site for Mobiles, Electronics, Fashion, Home, Kitchen, Health, Wellness, Beauty &amp; More'; 
+    const curContext = useContext(CurrencyContext);
+    const country = curContext.state.country;
+    const metadesc = country +"'s best online store for Mobiles, Fashion, Electronics, Home, Kitchen, Grocery, Sporting goods, Health, Wellness Care and more only at Shop The World! Find the largest collection of products at the lowest prices &amp; fast shipping worldwide.";
+    const metatitle =  'The Best Online Shopping Site in ' + country + ' for Mobiles, Electronics, Fashion, Home, Kitchen, Health, Wellness, Beauty &amp; More'; 
     if(domain == "localhost" || domain == "shoptheworld.store" || domain == "www.shoptheworld.store" || domain == "wwww.shoptheworld.store" || domain == "shoptheworldonline.com" || domain == "www.shoptheworldonline.com" || domain == "test.digitechniq.in"){
           fetch('https://extreme-ip-lookup.com/json/')
         .then( res => res.json())
         .then(response => {
          console.log("Country is : ", response);
-
-        console.log(response.countryCode);
+         console.log(response.countryCode);
 
         if(response.countryCode == "IN")
         {
@@ -70,7 +72,7 @@ const router = useRouter();
     {
       sessionStorage.setItem('geoLocation', "");
     }
-    const IpInfo = ipinfo;
+   
   return (
     <>
       <Head>
@@ -78,7 +80,7 @@ const router = useRouter();
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" type="image/x-icon" href={favicon?favicon:''} />
         <link data-react-helmet="true" href={favicon?favicon:''} sizes="32x32" type="png" rel="icon"/>
-        <title> The Best Online Shopping Site in + {IpInfo.country} + for Mobiles, Electronics, Fashion, Home, Kitchen, Health, Wellness, Beauty &amp; More</title>
+        <title> {metatitle}</title>
         <meta name="description" content={metadesc}/>
         <meta property="og:title" content={metatitle}/>
         <meta property="og:url" content={url.href}/>
