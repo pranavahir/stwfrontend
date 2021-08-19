@@ -1125,14 +1125,9 @@ const SideBar = () => {
                             </Link>
                           </li>
                           <li>
-                            <a
-                              style={linkStyle}
-                              onClick={() =>
-                                CategoryFilter("Styling Tools & Appliances")
-                              }
-                            >
-                              Styling Tools & Appliances
-                            </a>
+                          <Link href={`/c/Beauty & Personal Care/Hair Care & Styling/Styling Tools & Appliances`}>
+                            <div style={linkStyle} >Styling Tools & Appliances</div>
+                            </Link>
                           </li>
                         </ul>
                       </div>
@@ -1140,142 +1135,90 @@ const SideBar = () => {
                     <Col xl="3">
                       <div className="link-section">
                         <h5>
-                          <div
-                            style={linkStyle}
-                            onClick={() => CategoryFilter("Makeup")}
-                          >
-                            Makeup
-                          </div>
+                        <Link href={`/c/Beauty & Personal Care/Makeup`}>
+                            <div style={linkStyle} >Makeup</div>
+                            </Link>
                         </h5>
                         <ul>
                           <li>
-                            <a
-                              style={linkStyle}
-                              onClick={() => CategoryFilter("Eyebrow Color")}
-                            >
-                              Eyebrow Color
-                            </a>
+                          <Link href={`/c/Beauty & Personal Care/Makeup/Eyebrow Color`}>
+                            <div style={linkStyle} >Eyebrow Color</div>
+                            </Link>
                           </li>
                           <li>
-                            <a
-                              style={linkStyle}
-                              onClick={() => CategoryFilter("Eyeliners")}
-                            >
-                              Eyeliners
-                            </a>
+                          <Link href={`/c/Beauty & Personal Care/Makeup/Eyeliners`}>
+                            <div style={linkStyle} >Eyeliners</div>
+                            </Link>
                           </li>
                           <li>
-                            <a
-                              style={linkStyle}
-                              onClick={() => CategoryFilter("Eyeshadow")}
-                            >
-                              Eyeshadow
-                            </a>
+                          <Link href={`/c/Beauty & Personal Care/Makeup/Eyeshadow`}>
+                            <div style={linkStyle} >Makeup</div>
+                            </Link>
                           </li>
                           <li>
-                            <a
-                              style={linkStyle}
-                              onClick={() =>
-                                CategoryFilter("Eyeshadow Bases & Primers")
-                              }
-                            >
-                              Eyeshadow Bases & Primers
-                            </a>
+                          <Link href={`/c/Beauty & Personal Care/Makeup/Eyeshadow Bases & Primers`}>
+                            <div style={linkStyle} >Makeup</div>
+                            </Link>
                           </li>
                           <li>
-                            <a
-                              style={linkStyle}
-                              onClick={() => CategoryFilter("Lipstick")}
-                            >
-                              Lipstick
-                            </a>
+                          <Link href={`/c/Beauty & Personal Care/Makeup/Lipstick`}>
+                            <div style={linkStyle} >Makeup</div>
+                            </Link>
                           </li>
                         </ul>
                         <h5>
-                          <div
-                            style={linkStyle}
-                            onClick={() => CategoryFilter("Fragrance")}
-                          >
-                            Fragrance
-                          </div>
+                        <Link href={`/c/Beauty & Personal Care/Fragrance`}>
+                            <div style={linkStyle} >Fragrance</div>
+                            </Link>
                         </h5>
                         <h5>
-                          <div
-                            style={linkStyle}
-                            onClick={() => CategoryFilter("Grooming")}
-                          >
-                            Grooming
-                          </div>
+                        <Link href={`/c/Beauty & Personal Care/Grooming`}>
+                            <div style={linkStyle} >Grooming</div>
+                            </Link>
                         </h5>
                         <h5>
-                          <div
-                            style={linkStyle}
-                            onClick={() => CategoryFilter("Bleaches")}
-                          >
-                            Bleaches
-                          </div>
+                        <Link href={`/c/Beauty & Personal Care/Bleaches`}>
+                            <div style={linkStyle} >Bleaches</div>
+                            </Link>
                         </h5>
                       </div>
                     </Col>
                     <Col xl="3">
                       <div className="link-section">
                         <h5>
-                          <div
-                            style={linkStyle}
-                            onClick={() => CategoryFilter("Hair Oils")}
-                          >
-                            Hair Oils
-                          </div>
+                        <Link href={`/c/Beauty & Personal Care/Hair Oils`}>
+                            <div style={linkStyle} >Hair Oils</div>
+                            </Link>
                         </h5>
                         <h5>
-                          <div
-                            style={linkStyle}
-                            onClick={() =>
-                              CategoryFilter("Cleansing Creams & Milks")
-                            }
-                          >
-                            Cleansing Creams & Milks
-                          </div>
+                        <Link href={`/c/Beauty & Personal Care/Cleansing Creams & Milks`}>
+                            <div style={linkStyle} >Cleansing Creams & Milks</div>
+                            </Link>
                         </h5>
                         <h5>
-                          <div
-                            style={linkStyle}
-                            onClick={() => CategoryFilter("Skin Care")}
-                          >
-                            Skin Care
-                          </div>
+                        <Link href={`/c/Beauty & Personal Care/Skin Care`}>
+                            <div style={linkStyle} >Skin Care</div>
+                            </Link>
                         </h5>
                         <h5>
-                          <div
-                            style={linkStyle}
-                            onClick={() => CategoryFilter("Toners")}
-                          >
-                            Toners
-                          </div>
+                        <Link href={`/c/Beauty & Personal Care/Toners`}>
+                            <div style={linkStyle} >Toners</div>
+                            </Link>
                         </h5>
                         <h5>
-                          <div
-                            style={linkStyle}
-                            onClick={() => CategoryFilter("Conditioners")}
-                          >
-                            Conditioners
-                          </div>
+                        <Link href={`/c/Beauty & Personal Care/Conditioners`}>
+                            <div style={linkStyle} >Conditioners</div>
+                            </Link>
                         </h5>
                         <h5>
-                          <div
-                            style={linkStyle}
-                            onClick={() => CategoryFilter("Face Wash")}
-                          >
-                            Face Wash
-                          </div>
+                        <Link href={`/c/Beauty & Personal Care/Face Wash`}>
+                            <div style={linkStyle} >Face Wash</div>
+                            </Link>
                         </h5>
                         <h5>
-                          <div
-                            style={linkStyle}
-                            onClick={() => CategoryFilter("Bath Oils")}
-                          >
-                            Bath Oils
-                          </div>
+                        <Link href={`/c/Beauty & Personal Care/Bath Oils`}>
+                            <div style={linkStyle} >Bath Oils</div>
+                            </Link>
                         </h5>
                       </div>
                     </Col>
@@ -1297,6 +1240,9 @@ const SideBar = () => {
                     <Col xl="4">
                       <div className="link-section">
                         <h5>
+                        <Link href={`/c/Health & Wellness/Sports Nutrition`}>
+                            <div style={linkStyle} >Sports Nutrition</div>
+                            </Link>
                           <div
                             style={linkStyle}
                             onClick={() => CategoryFilter("Sports Nutrition")}
@@ -1306,122 +1252,71 @@ const SideBar = () => {
                         </h5>
                         <ul>
                           <li>
-                            <a
-                              style={linkStyle}
-                              onClick={() => CategoryFilter("Amino Acids")}
-                            >
-                              Amino Acids
-                            </a>
+                          <Link href={`/c/Health & Wellness/Sports Nutrition/Amino Acids`}>
+                            <div style={linkStyle} >Amino Acids</div>
+                            </Link>
                           </li>
                           <li>
-                            <a
-                              style={linkStyle}
-                              onClick={() =>
-                                CategoryFilter("Endurance & Energy")
-                              }
-                            >
-                              Endurance & Energy
-                            </a>
+                          <Link href={`/c/Health & Wellness/Sports Nutrition/Endurance & Energy`}>
+                            <div style={linkStyle} >Endurance & Energy</div>
+                            </Link>
                           </li>
                           <li>
-                            <a
-                              style={linkStyle}
-                              onClick={() =>
-                                CategoryFilter("Healthy Snacks & Beverages")
-                              }
-                            >
-                              Healthy Snacks & Beverages
-                            </a>
+                          <Link href={`/c/Health & Wellness/Sports Nutrition/Healthy Snacks & Beverages`}>
+                            <div style={linkStyle} >Healthy Snacks & Beverages</div>
+                            </Link>
                           </li>
                           <li>
-                            <a
-                              style={linkStyle}
-                              onClick={() => CategoryFilter("Hydration")}
-                            >
-                              Hydration
-                            </a>
+                          <Link href={`/c/Health & Wellness/Sports Nutrition/Hydration`}>
+                            <div style={linkStyle} >Hydration</div>
+                            </Link>
                           </li>
                           <li>
-                            <a
-                              style={linkStyle}
-                              onClick={() => CategoryFilter("Nutrition Bars")}
-                            >
-                              Nutrition Bars
-                            </a>
+                          <Link href={`/c/Health & Wellness/Sports Nutrition/Nutrition Bars`}>
+                            <div style={linkStyle} >Sports Nutrition</div>
+                            </Link>
                           </li>
                           <li>
-                            <a
-                              style={linkStyle}
-                              onClick={() => CategoryFilter("Protein")}
-                            >
-                              Protein
-                            </a>
+                          <Link href={`/c/Health & Wellness/Sports Nutrition/Protein`}>
+                            <div style={linkStyle} >Protein</div>
+                            </Link>
                           </li>
                         </ul>
                         <h5>
-                          <div
-                            style={linkStyle}
-                            onClick={() =>
-                              CategoryFilter("Vitamins & Dietary Supplements")
-                            }
-                          >
-                            Vitamins & Dietary Supplements
-                          </div>
+                        <Link href={`/c/Health & Wellness/Vitamins & Dietary Supplements`}>
+                            <div style={linkStyle} >Vitamins & Dietary Supplements</div>
+                            </Link>
                         </h5>
                         <ul>
                           <li>
-                            <a
-                              style={linkStyle}
-                              onClick={() =>
-                                CategoryFilter(
-                                  "Blended Vitamin & Mineral Supplements"
-                                )
-                              }
-                            >
-                              Blended Vitamin & Mineral Supplements
-                            </a>
+                          <Link href={`/c/Health & Wellness/Vitamins & Dietary Supplements/Blended Vitamin & Mineral Supplements`}>
+                            <div style={linkStyle} >Blended Vitamin & Mineral Supplements</div>
+                            </Link>
                           </li>
                           <li>
-                            <a
-                              style={linkStyle}
-                              onClick={() =>
-                                CategoryFilter("Herbal Supplements")
-                              }
-                            >
-                              Herbal Supplements
-                            </a>
+                          <Link href={`/c/Health & Wellness/Vitamins & Dietary Supplements/Herbal Supplements`}>
+                            <div style={linkStyle} >Herbal Supplements</div>
+                            </Link>
                           </li>
                           <li>
-                            <a
-                              style={linkStyle}
-                              onClick={() => CategoryFilter("Minerals")}
-                            >
-                              Minerals
-                            </a>
+                          <Link href={`/c/Health & Wellness/Vitamins & Dietary Supplements/Minerals`}>
+                            <div style={linkStyle} >Minerals</div>
+                            </Link>
                           </li>
                           <li>
-                            <a
-                              style={linkStyle}
-                              onClick={() => CategoryFilter("Supplements")}
-                            >
-                              Supplements
-                            </a>
+                          <Link href={`/c/Health & Wellness/Vitamins & Dietary Supplements/Supplements`}>
+                            <div style={linkStyle} >Supplements</div>
+                            </Link>
                           </li>
                           <li>
-                            <a
-                              style={linkStyle}
-                              onClick={() => CategoryFilter("Vitamins")}
-                            >
-                              Vitamins
-                            </a>
+                          <Link href={`/c/Health & Wellness/Vitamins & Dietary Supplements/Vitamins`}>
+                            <div style={linkStyle} >Vitamins</div>
+                            </Link>
                           </li>
                           <li>
-                            <a
-                              style={linkStyle}
-                              onClick={() => CategoryFilter("Weight Loss")}
-                            >
-                              Weight Loss
-                            </a>
+                          <Link href={`/c/Health & Wellness/Vitamins & Dietary Supplements/Weight Loss`}>
+                            <div style={linkStyle} >Weight Loss</div>
+                            </Link>
                           </li>
                         </ul>
                       </div>
@@ -1429,21 +1324,15 @@ const SideBar = () => {
                     <Col xl="4">
                       <div className="link-section">
                         <h5>
-                          <div
-                            style={linkStyle}
-                            onClick={() => CategoryFilter("Baby & Child Care")}
-                          >
-                            Baby & Child Care
-                          </div>
+                        <Link href={`/c/Health & Wellness/Baby & Child Care`}>
+                            <div style={linkStyle} >Baby & Child Care</div>
+                            </Link>
                         </h5>
                         <ul>
                           <li>
-                            <a
-                              style={linkStyle}
-                              onClick={() => CategoryFilter("Diaper Care")}
-                            >
-                              Diaper Care
-                            </a>
+                          <Link href={`/c/Health & Wellness/Baby & Child Care/Diaper Care`}>
+                            <div style={linkStyle} >Diaper Care</div>
+                            </Link>
                           </li>
                         </ul>
                         <h5>
