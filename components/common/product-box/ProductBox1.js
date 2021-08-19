@@ -153,8 +153,8 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
                         }`}
                         className="img-fluid"
                         alt="" /> */}
-                           <AutoFitImage frameWidth="200px" imgSize="contain" frameHeight="160px" imgSrc={`${image ?
-                        image : product.images.length>0 ? product.images[0].mainimageurl :""
+                           <AutoFitImage frameWidth="200px" imgSize="contain" frameHeight="160px" alt={"Buy "+`${product.title}`+" Online"} title={product.title} imgSrc={`${image ?
+                        image : product.images.length>0 ? product.images[0].mainimageurl :"" 
                         }`}/>
                 </div>
                 
@@ -168,7 +168,7 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
                                 image :  product.images.length>0 ? product.images[0].mainimageurl :""
                                 }`}
                                 className="img-fluid m-auto"
-                                alt="" />
+                                alt={"Buy "+`${product.title}`+" Online"} title={product.title} />
                         </div>
                         
                     : ''
@@ -200,7 +200,7 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
                                         <Media src={`${product.variants ?
                                             image ? image : (product.images.length > 0 ?product.images[0].mainimageurl:"")
                                             : (product.images.length >0 ?product.images[0].mainimageurl:"")
-                                            }`} alt="" className="img-fluid" />
+                                            }`} alt={"Buy "+`${product.title}`+" Online"} title={product.title} className="img-fluid" />
                                         <div className="media-body align-self-center text-center">
                                             <h5><i className="fa fa-check"></i>Item <span>{product.title}</span>
                                                 <span>successfully added to your Compare list</span>
@@ -286,7 +286,7 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
                                 <Media src={`${product.variants ?
                                     image ? image : (product.images.length>0 ?product.images[0].mainimageurl:"")
                                     : (product.images.length>0 ?product.images[0].mainimageurl:"")
-                                    }`} alt="" className="img-fluid" />
+                                    }`} alt={"Buy "+`${product.title}`+" Online"} title={product.title} className="img-fluid" />
                             </div>
                         </Col>
                         <Col lg="6" className="rtl-text">

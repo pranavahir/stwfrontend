@@ -165,8 +165,18 @@ const LeftSidebarPage = ({ pathId, type }) => {
         titleProps = titleProps.replace(/---/gi, '-');
         titleProps = titleProps.replace(/--/gi, '-');
         var url = domain + '/p/'+ product.asin  + '-' + titleProps;
+        
         return url;
     }
+    const getMetaInfo = (product) => {
+        var metaInfo={
+            metatitle:"Buy "+product.title+" Online at Lowest Price Ever in "+ country +" | Check Reviews & Ratings - Shop The World",
+            metadesc:" Shop The World: Buy " + product.title + " online at the lowest price in " + country +" on Shop The World. Check out " + product.title + " reviews, ratings, features, specifications online at the best prices on Shop The World",
+        }
+         
+        return metaInfo;
+    }
+
 
 
     const [state, setState] = useState({ nav1: null, nav2: null });
@@ -217,7 +227,8 @@ const LeftSidebarPage = ({ pathId, type }) => {
             <div className="collection-wrapper">
             {(!data || !data.product || data.product.length === 0|| data.product==null || loading) ?'':
             <Head>
-        <title> Buy {data.product.title} Online at Lowest Price Ever | + {data.product.title} = Reviews &amp; Ratings - Shop The World</title>
+        <title>{getMetaInfo(data.product).metatitle}</title>
+        <meta property="description" content={getMetaInfo(data.product).metadesc}/>
         <meta data-react-helmet="true" name="viewport" content="width=device-width, initial-scale=1"/>
         <meta data-react-helmet="true" name="copyright" content="Shop The World"/>
         <meta data-react-helmet="true" name="author" content="Shop The World"/>
@@ -225,11 +236,11 @@ const LeftSidebarPage = ({ pathId, type }) => {
         <meta data-react-helmet="true" name="language" content="en-US"/>
         <meta data-react-helmet="true" name="currency" content={currency}/>
         <meta data-react-helmet="true" name="robots" content="index, follow"/>
-        <meta data-react-helmet="true" name="description" content={data.product.title}/>
+        <meta data-react-helmet="true" name="description" content={getMetaInfo(data.product).metadesc}/>
         <meta property="og:type" content="product"/>
-        <meta property="og:title" content={data.product.title}/>
+        <meta property="og:title" content={getMetaInfo(data.product).metatitle}/>
         <meta property="og:url" content={getUrl(data.product)}/>
-        <meta property="og:description" content={data.product.title}/>
+        <meta property="og:description" content={getMetaInfo(data.product).metadesc}/>
         <meta data-react-helmet="true" property="product:sku" content={data.product.sku}/>
         <meta data-react-helmet="true" property="product:condition" content="new"/>
         <meta data-react-helmet="true" property="product:brand" content={data.product.brandname}/>
@@ -313,37 +324,37 @@ const LeftSidebarPage = ({ pathId, type }) => {
                                                 } */}
                                                 {data.product.images[0].mainimageurl?
                                                     <div>
-                                                          <Media src={`${data.product.images[0].mainimageurl}`}   className="img-fluid" />
+                                                          <Media src={`${data.product.images[0].mainimageurl}`} alt={"Buy "+`${data.product.title}`+" Online"} title={data.product.title} className="img-fluid" />
                                                   </div>
                                                     :
                                                     ''}
                                                     {data.product.images[0].additionalimage1?
                                                     <div>
-                                                          <Media src={`${data.product.images[0].additionalimage1}`}   className="img-fluid" />
+                                                          <Media src={`${data.product.images[0].additionalimage1}`} alt={"Buy "+`${data.product.title}`+" Online"} title={data.product.title}   className="img-fluid" />
                                                   </div>
                                                     :
                                                     ''}
                                                     {data.product.images[0].additionalimage2?
                                                     <div>
-                                                          <Media src={`${data.product.images[0].additionalimage2}`}   className="img-fluid" />
+                                                          <Media src={`${data.product.images[0].additionalimage2}`} alt={"Buy "+`${data.product.title}`+" Online"} title={data.product.title}   className="img-fluid" />
                                                   </div>
                                                     :
                                                     ''}
                                                     {data.product.images[0].additionalimage3?
                                                     <div>
-                                                          <Media src={`${data.product.images[0].additionalimage3}`}   className="img-fluid" />
+                                                          <Media src={`${data.product.images[0].additionalimage3}`} alt={"Buy "+`${data.product.title}`+" Online"} title={data.product.title}   className="img-fluid" />
                                                   </div>
                                                     :
                                                     ''}
                                                     {data.product.images[0].additionalimage4?
                                                     <div>
-                                                          <Media src={`${data.product.images[0].additionalimage4}`}   className="img-fluid" />
+                                                          <Media src={`${data.product.images[0].additionalimage4}`} alt={"Buy "+`${data.product.title}`+" Online"} title={data.product.title}   className="img-fluid" />
                                                   </div>
                                                     :
                                                     ''}
                                                     {data.product.images[0].additionalimage5?
                                                     <div>
-                                                          <Media src={`${data.product.images[0].additionalimage5}`}   className="img-fluid" />
+                                                          <Media src={`${data.product.images[0].additionalimage5}`} alt={"Buy "+`${data.product.title}`+" Online"} title={data.product.title}   className="img-fluid" />
                                                   </div>
                                                     :
                                                     ''}
@@ -353,37 +364,37 @@ const LeftSidebarPage = ({ pathId, type }) => {
 
                                                 {data.product.images[0].mainimageurl?
                                                     <div>
-                                                          <Media src={`${data.product.images[0].mainimageurl}`}   className="img-fluid" />
+                                                          <Media src={`${data.product.images[0].mainimageurl}`} alt={"Buy "+`${data.product.title}`+" Online"} title={data.product.title}  className="img-fluid" />
                                                   </div>
                                                     :
                                                     ''}
                                                     {data.product.images[0].additionalimage1?
                                                     <div>
-                                                          <Media src={`${data.product.images[0].additionalimage1}`}   className="img-fluid" />
+                                                          <Media src={`${data.product.images[0].additionalimage1}`} alt={"Buy "+`${data.product.title}`+" Online"} title={data.product.title}   className="img-fluid" />
                                                   </div>
                                                     :
                                                     ''}
                                                     {data.product.images[0].additionalimage2?
                                                     <div>
-                                                          <Media src={`${data.product.images[0].additionalimage2}`}   className="img-fluid" />
+                                                          <Media src={`${data.product.images[0].additionalimage2}`} alt={"Buy "+`${data.product.title}`+" Online"} title={data.product.title}   className="img-fluid" />
                                                   </div>
                                                     :
                                                     ''}
                                                     {data.product.images[0].additionalimage3?
                                                     <div>
-                                                          <Media src={`${data.product.images[0].additionalimage3}`}   className="img-fluid" />
+                                                          <Media src={`${data.product.images[0].additionalimage3}`} alt={"Buy "+`${data.product.title}`+" Online"} title={data.product.title}   className="img-fluid" />
                                                   </div>
                                                     :
                                                     ''}
                                                     {data.product.images[0].additionalimage4?
                                                     <div>
-                                                          <Media src={`${data.product.images[0].additionalimage4}`}   className="img-fluid" />
+                                                          <Media src={`${data.product.images[0].additionalimage4}`} alt={"Buy "+`${data.product.title}`+" Online"} title={data.product.title}   className="img-fluid" />
                                                   </div>
                                                     :
                                                     ''}
                                                     {data.product.images[0].additionalimage5?
                                                     <div>
-                                                          <Media src={`${data.product.images[0].additionalimage5}`}   className="img-fluid" />
+                                                          <Media src={`${data.product.images[0].additionalimage5}`} alt={"Buy "+`${data.product.title}`+" Online"} title={data.product.title}   className="img-fluid" />
                                                   </div>
                                                     :
                                                     ''}
