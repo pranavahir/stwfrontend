@@ -15,9 +15,10 @@ const CollectionBanner = () => {
     const selectedCategory = filterContext.state;
     const selectedSize = filterContext.selectedSize;
     const [url, setUrl] = useState();
-    const [geoLocation, setgeoLocation] = useState(
-        sessionStorage.getItem('geoLocation')
-    );
+    var gLocation = sessionStorage.getItem('geoLocation')
+    if(gLocation==null){gLocation=""}
+    const [geoLocation, setgeoLocation] = useState(gLocation);
+    
     const router = useRouter();
     const CategoryFilter = (category) => {
         // router.push(`/p/${product.id}` + '-' + `${titleProps}`);

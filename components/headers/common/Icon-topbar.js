@@ -26,9 +26,9 @@ const IconTopbar = () => {
     const closeSearch = () => {
         document.getElementById("search-overlay").style.display = "none";
     }
-    const [geoLocation, setgeoLocation] = useState(
-        sessionStorage.getItem('geoLocation')
-    );
+    var gLocation = sessionStorage.getItem('geoLocation')
+    if(gLocation==null){gLocation=""}
+    const [geoLocation, setgeoLocation] = useState(gLocation);
 
     const cartList = context.state;
     const total = context.cartTotal;

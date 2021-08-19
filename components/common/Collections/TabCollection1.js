@@ -118,7 +118,12 @@ const SpecialProducts = ({ type, fluid, designClass, cartClass, heading, noTitle
         filterContext.setselectedKeyword("");
         filterContext.setSelectedCategory("");
         filterContext.setSelectedPromaflag(data.category);
+        if(geoLocation==null)
+        router.push(`/shop/six_grid?&brand=&color=&size=&minPrice=&maxPrice=&promoflag=${data.category}`)
+        else
         router.push(`${geoLocation}/shop/six_grid?&brand=&color=&size=&minPrice=&maxPrice=&promoflag=${data.category}`)
+
+        
     }
     // var { loading, data } = useQuery(GET_PRODUCTS, {
     //     variables: {

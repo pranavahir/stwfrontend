@@ -29,9 +29,9 @@ const CopyRight = ({layout, fluid}) => {
         color: "#4a54f1",
         textAlign: "center"
         }
-        const [geoLocation, setgeoLocation] = useState(
-            sessionStorage.getItem('geoLocation')
-        );
+        var gLocation = sessionStorage.getItem('geoLocation')
+    if(gLocation==null){gLocation=""}
+    const [geoLocation, setgeoLocation] = useState(gLocation);
 
 
     return (

@@ -72,7 +72,9 @@ const  CheckoutPage = ({ isPublic = false }) => {
   const withDiscountWithQty = cartContext.withDiscountWithQty;
   const priceCollection = cartContext.priceCollection;
   const discountCalculation  = cartContext.discountCalculation ;
-  const geoLocation = sessionStorage.getItem('geoLocation')
+  var gLocation = sessionStorage.getItem('geoLocation')
+  if(gLocation==null){gLocation=""}
+  const [geoLocation, setgeoLocation] = useState(gLocation);
   
  
   

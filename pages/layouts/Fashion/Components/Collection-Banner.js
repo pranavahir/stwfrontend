@@ -17,9 +17,9 @@ const CollectionBanner = () => {
     const [url, setUrl] = useState();
     const router = useRouter();
 
-    const [geoLocation, setgeoLocation] = useState(
-        sessionStorage.getItem('geoLocation')
-    );
+    var gLocation = sessionStorage.getItem('geoLocation')
+    if(gLocation==null){gLocation=""}
+    const [geoLocation, setgeoLocation] = useState(gLocation);
 
 
     const CategoryFilter = (category) => {

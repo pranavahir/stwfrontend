@@ -57,12 +57,12 @@ const CategoryCollection = ({ type, categoryData, title, subtitle, designClass, 
         padding: "10px",
     }
     
-    const getURL = (data) => {
-        filterContext.setselectedKeyword("");
-        filterContext.setSelectedCategory("");
-        filterContext.setSelectedPromaflag(data.category);
-        router.push(`${geoLocation}/shop/six_grid?&brand=&color=&size=&minPrice=&maxPrice=&promoflag=${data.category}`)
-    }
+    // const getURL = (data) => {
+    //     filterContext.setselectedKeyword("");
+    //     filterContext.setSelectedCategory("");
+    //     filterContext.setSelectedPromaflag(data.category);
+    //     router.push(`${geoLocation}/shop/six_grid?&brand=&color=&size=&minPrice=&maxPrice=&promoflag=${data.category}`)
+    // }
 
 
     const getImage=(data)=>{

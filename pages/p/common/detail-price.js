@@ -129,7 +129,9 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
         }
         return res;
     }
-    const geoLocation = sessionStorage.getItem('geoLocation')
+    var gLocation = sessionStorage.getItem('geoLocation')
+    if(gLocation==null){gLocation=""}
+    const [geoLocation, setgeoLocation] = useState(gLocation);
     return (
         <>
             <div className={`product-right ${stickyClass}`}>
@@ -252,42 +254,24 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
                             */}
                             {
                                 <>
-                                <FacebookShareButton
-                                name={"Product Name"}
-                                url={"http://www.shoptheworldonline.in"}
-                                hashtag="#shoptheworld"
-                                target="_blank"
-                                >
-                                {/* <FacebookIcon logoFillColor="white" round={true}></FacebookIcon> */}
-                                <i style={{fontSize:"22px"}} className="fa fa-facebook"></i>
+                                <FacebookShareButton name={product.title} url={window.location.href} hashtag="#shoptheworld" target="_blank">
+                                <i style={{fontSize:"22px", margin:"10px"}} className="fa fa-facebook"></i>
                                 </FacebookShareButton>
-                                <TwitterShareButton
-                                title={"Shop The World"}
-                                url={"http://www.shoptheworldonline.in"}
-                                target="_blank"
-                                 >
-                                   <i style={{fontSize:"22px"}} className="fa fa-twitter"></i>                                
+
+                                <TwitterShareButton title={product.title} url={window.location.href} target="_blank">
+                                   <i style={{fontSize:"22px" , margin:"10px"}} className="fa fa-twitter"></i>                                
                                 </TwitterShareButton>
-                                <WhatsappShareButton
-                                title={"Shop The World"}
-                                url={"http://www.shoptheworldonline.in"}
-                                target="_blank"
-                                >
-                               <i style = {{fontSize:"22px"}}class="fa fa-whatsapp"></i>    
+
+                                <WhatsappShareButton title={product.title} url={window.location.href} target="_blank">
+                               <i style = {{fontSize:"22px" , margin:"10px"}}class="fa fa-whatsapp"></i>    
                                 </WhatsappShareButton>
-                                <TelegramShareButton
-                                title={"Shop The World"}
-                                url={"http://www.shoptheworldonline.in"}
-                                target="_blank"
-                                >
-                                   <i style = {{fontSize:"22px"}}class="fa fa-telegram"></i>
+
+                                <TelegramShareButton title={product.title} url={window.location.href} target="_blank">
+                                   <i style = {{fontSize:"22px" , margin:"10px"}}class="fa fa-telegram"></i>
                                 </TelegramShareButton>
-                                <EmailShareButton
-                                subject="Shop The World"
-                                body="Shop Everything"
-                                url="http://www.shoptheworldonline.in"
-                                >
-                                   <i style = {{fontSize:"22px"}}class="fa fa-envelope"></i>
+
+                                <EmailShareButton subject="Shop The World" body={product.title} url={window.location.href}>
+                                   <i style = {{fontSize:"22px" , margin:"10px"}}class="fa fa-envelope"></i>
                                 </EmailShareButton>
                                 </>
                             }

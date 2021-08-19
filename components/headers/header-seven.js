@@ -39,9 +39,9 @@ const HeaderSeven = ({ logoName }) => {
     const closeSearch = () => {
         document.getElementById("search-overlay").style.display = "none";
     }
-    const [geoLocation, setgeoLocation] = useState(
-        sessionStorage.getItem('geoLocation')
-    );
+    var gLocation = sessionStorage.getItem('geoLocation')
+    if(gLocation==null){gLocation=""}
+    const [geoLocation, setgeoLocation] = useState(gLocation);
 
     // eslint-disable-next-line
     const load = () => {

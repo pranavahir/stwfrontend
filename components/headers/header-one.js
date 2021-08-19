@@ -35,9 +35,9 @@ const HeaderOne = ({
   const selectedCategory = filterContext.state;
   const selectedSize = filterContext.selectedSize;
   const [url, setUrl] = useState();
-  const [geoLocation, setgeoLocation] = useState(
-    sessionStorage.getItem("geoLocation")
-  );
+  var gLocation = sessionStorage.getItem('geoLocation')
+    if(gLocation==null){gLocation=""}
+    const [geoLocation, setgeoLocation] = useState(gLocation);
   /*=====================
 		 Pre loader
 		 ==========================*/
@@ -67,13 +67,16 @@ const HeaderOne = ({
         var URL = pathname;
       } else {
         var URL = geoLocation + "/shop/six_grid";
+        if(geoLocation==null)
+        {
+          URL = "/shop/six_grid";
+        }
+
       }
 
       filterContext.setselectedKeyword(e.target[0].value);
       var category = "";
-      router.push(
-        `${URL}?${category}&brand=${selectedBrands}&color=${selectedColor}&size=${selectedSize}&minPrice=${selectedPrice.min}&maxPrice=${selectedPrice.max}&keyword=${selectedKeyword}`
-      );
+      router.push(`${URL}?${category}&brand=${selectedBrands}&color=${selectedColor}&size=${selectedSize}&minPrice=${selectedPrice.min}&maxPrice=${selectedPrice.max}&keyword=${selectedKeyword}`);
       closeSearch();
     }
   };

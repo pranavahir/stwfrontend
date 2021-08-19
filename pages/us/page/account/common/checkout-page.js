@@ -1297,7 +1297,10 @@ const smallcontain = {
 const rightAligh = {
   textAlign:"Right"
 }
-const geoLocation = sessionStorage.getItem('geoLocation')
+    var gLocation = sessionStorage.getItem('geoLocation')
+    if(gLocation==null){gLocation=""}
+    const [geoLocation, setgeoLocation] = useState(gLocation);
+    
   return (
     <section className="section-b-space">
 

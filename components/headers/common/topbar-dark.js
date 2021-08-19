@@ -23,9 +23,9 @@ const TopBarDark = ({ topClass, fluid }) => {
     localStorage.getItem("historyLogin")
   );
 
-  const [geoLocation, setgeoLocation] = useState(
-    sessionStorage.getItem("geoLocation")
-  );
+  var gLocation = sessionStorage.getItem('geoLocation')
+  if(gLocation==null){gLocation=""}
+  const [geoLocation, setgeoLocation] = useState(gLocation);
 
   useEffect(() => {
     localStorage.setItem("Name", name);

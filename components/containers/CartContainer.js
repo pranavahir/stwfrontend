@@ -15,6 +15,10 @@ const CartContainer = ({ icon }) => {
   const IsRight = currContext.state.IsRight;
   var geoLocation = sessionStorage.getItem("geoLocation");
 
+  if(geoLocation==null)
+  geoLocation="";
+
+
   let leftSymbol = null;
   let rightSymbol = null;
   if (IsRight == true) {

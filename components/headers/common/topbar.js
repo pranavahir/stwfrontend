@@ -5,9 +5,10 @@ import Link from 'next/link';
 
 const TopBar = ({topClass}) => {
 
-    const [geoLocation, setgeoLocation] = useState(
-        sessionStorage.getItem('geoLocation')
-    );
+    var gLocation = sessionStorage.getItem('geoLocation')
+    if(gLocation==null){gLocation=""}
+    const [geoLocation, setgeoLocation] = useState(gLocation);
+    
     return (
         <div  id="topHeader" className={`top-header ${topClass? topClass: ''}`}>
             <Container>

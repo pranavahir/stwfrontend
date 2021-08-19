@@ -22,7 +22,9 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
     const discountCalculation = context.discountCalculation;
     const priceCollection = context.priceCollection
     const withDiscount = context.withDiscount
-    const geoLocation = sessionStorage.getItem('geoLocation')
+    var gLocation = sessionStorage.getItem('geoLocation')
+    if(gLocation==null){gLocation=""}
+    const [geoLocation, setgeoLocation] = useState(gLocation);
     // const stock = context.stock;
     // const plusQty = context.plusQty;
     // const minusQty = context.minusQty;

@@ -19,10 +19,10 @@ const FooterOne = ({ fluid, logoName ,layoutClass ,footerClass }) => {
     const address = curContext.state.address;
     const addressOne = curContext.state.addressOne;
     const addressTwo = curContext.state.addressTwo;
-    // const geoLocation = sessionStorage.getItem('geoLocation')
-    const [geoLocation, setgeoLocation] = useState(
-        sessionStorage.getItem('geoLocation')
-    );
+    var gLocation = sessionStorage.getItem('geoLocation')
+    if(gLocation==null){gLocation=""}
+    const [geoLocation, setgeoLocation] = useState(gLocation);
+
     const { register, handleSubmit, errors } = useForm(); // initialise the hook
     useEffect(() => {
         var contentwidth = window.innerWidth;

@@ -3226,9 +3226,10 @@ console.log(url);
 // console.log(url.search("/in/"));
 
 
-const [geoLocation, setgeoLocation] = useState(
-  sessionStorage.getItem('geoLocation')
-);
+var gLocation = sessionStorage.getItem('geoLocation')
+if(gLocation==null){gLocation=""}
+const [geoLocation, setgeoLocation] = useState(gLocation);
+
 var ipinfo ={};
 // const [selectedCurr, selectedCurrency] = useState("");
     if(domain == "localhost" ||  domain == "shoptheworld.store" ||  domain == "www.shoptheworld.store" || domain == "shoptheworldonline.com"  || domain == "www.shoptheworldonline.com" || domain == "test.digitechniq.in" || domain == "www.test.digitechniq.in" ){
@@ -3388,7 +3389,8 @@ else
 
 const continueTo=()=>{
   sessionStorage.setItem('isGeoLocationFixed', true);
-  setgeoLocation("")
+  setgeoLocation("");
+  sessionStorage.setItem('geoLocation',"");
   tempGeoLocation= "";
 }
 
@@ -3399,6 +3401,7 @@ const moveTo=(country)=>{
   if(country == "IN")
   {
     setgeoLocation("/in")
+    sessionStorage.setItem('geoLocation',"");
     tempGeoLocation= "/in";
     window.location.replace("https://www.shoptheworld.in");
   }
@@ -3406,6 +3409,7 @@ const moveTo=(country)=>{
   {
     setgeoLocation("/ae")
     tempGeoLocation= "/ae";
+    sessionStorage.setItem('geoLocation',"");
     window.location.replace("https://www.shoptheworld.ae");
   }
 

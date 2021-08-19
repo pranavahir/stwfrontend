@@ -125,7 +125,10 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
         }
         return res;
     }
-    const geoLocation = sessionStorage.getItem('geoLocation')
+    var gLocation = sessionStorage.getItem('geoLocation')
+    if(gLocation==null){gLocation=""}
+    const [geoLocation, setgeoLocation] = useState(gLocation);
+    
     return (
         <>
             <div className={`product-right ${stickyClass}`}>
