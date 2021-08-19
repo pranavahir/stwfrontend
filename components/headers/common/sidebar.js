@@ -848,7 +848,7 @@ const SideBar = () => {
                           </li>
                           <li>
                           <Link href={`/c/Home & Kitchen/Vacuum & Floor care/Vacuum Parts & Accessories`}>
-                            <div style={linkStyle} >Floor Buffers & Parts</div>
+                            <div style={linkStyle} >Vacuum Parts & Accessories</div>
                             </Link>
                           </li>
                           <li>
@@ -959,8 +959,8 @@ const SideBar = () => {
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/c/Beauty & Personal Care/Hair Care & Styling/Hair & Scalp Treatments`}>
-                            <div style={linkStyle} >Hair & Scalp Treatments</div>
+                          <Link href={`/c/Beauty & Personal Care/Hair Care & Styling/Hair Coloring Products`}>
+                            <div style={linkStyle} >Hair Coloring Products</div>
                             </Link>
                           </li>
                           <li>
@@ -1097,12 +1097,6 @@ const SideBar = () => {
                         <Link href={`/c/Health & Wellness/Sports Nutrition`}>
                             <div style={linkStyle} >Sports Nutrition</div>
                             </Link>
-                          <div
-                            style={linkStyle}
-                            onClick={() => CategoryFilter("Sports Nutrition")}
-                          >
-                            Sports Nutrition
-                          </div>
                         </h5>
                         <ul>
                           <li>
