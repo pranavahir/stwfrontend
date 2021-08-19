@@ -648,7 +648,7 @@ export const CategoryList = [
                       {
                         CategoryName: "Fashion",
                         SubCategoryName:"Clothing, Shoes & Jewelry",
-                          leafCategory  :"Kid's Fashion"
+                          LeafCategory:"Kid's Fashion"
                       },
                       {
                         CategoryName: "Fashion",
@@ -1475,7 +1475,7 @@ export const CategoryList = [
                                 CategoryName:"Grocery",
                                 SubCategoryName:"Snack Food",
                                 LeafCategory:"Dried Food & Raisins"
-                            }
+                            },
                         ]
                   },
                   {
@@ -1517,10 +1517,13 @@ export const CategoryList = [
                             CategoryName:"Grocery",
                             SubCategoryName:"Breakfast Food",
                             LeafCategory:"Pet Supplies" 
-                        },
+                        }
                     ]
-
+                  }
+                ]    
+              
                   },
+                
                   {
                       
                       CategoryName:"Sports & Outdoors",
@@ -1576,8 +1579,13 @@ export const CategoryList = [
 
 
                       ]
-                  },
-                  {
+                 
+                    
+                
+                      
+                 
+                },
+                {
                       CategoryName:"Baby & Toys",
                       subCategoryList:[
                           {
@@ -1617,9 +1625,9 @@ export const CategoryList = [
                   {
                       CategoryName:"NEXT DAY DELIVERY"
                   }
-              ]  
-            }
-
+                
+            
+            
 ]
 
 
