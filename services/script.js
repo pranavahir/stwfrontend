@@ -648,7 +648,7 @@ export const CategoryList = [
                       {
                         CategoryName: "Fashion",
                         SubCategoryName:"Clothing, Shoes & Jewelry",
-                          leafCategoryList:"Kid's Fashion"
+                          leafCategory:"Kid's Fashion"
                       },
                       {
                         CategoryName: "Fashion",
