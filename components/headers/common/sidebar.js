@@ -1445,99 +1445,59 @@ const SideBar = () => {
                     <Col xl="4">
                       <div className="link-section">
                         <h5>
-                          <div
-                            style={linkStyle}
-                            onClick={() => CategoryFilter("Baby Food")}
-                          >
-                            Baby Food
-                          </div>
+                        <Link href={`/c/Grocery/Baby Food`}>
+                            <div style={linkStyle} >Baby Food</div>
+                            </Link>
                         </h5>
                         <ul>
                           <li>
-                            <a
-                              style={linkStyle}
-                              onClick={() => CategoryFilter("Cereal")}
-                            >
-                              Cereal
-                            </a>
+                          <Link href={`/c/Grocery/Baby Food/Cereal`}>
+                            <div style={linkStyle} >Cereal</div>
+                            </Link>
                           </li>
                           <li>
-                            <a
-                              style={linkStyle}
-                              onClick={() => CategoryFilter("Formula")}
-                            >
-                              Formula
-                            </a>
+                          <Link href={`/c/Grocery/Baby Food/Formula`}>
+                            <div style={linkStyle} >Formula</div>
+                            </Link>
                           </li>
                           <li>
-                            <a
-                              style={linkStyle}
-                              onClick={() => CategoryFilter("Meals")}
-                            >
-                              Meals
-                            </a>
+                          <Link href={`/c/Grocery/Baby Food/Meals`}>
+                            <div style={linkStyle} >Meals</div>
+                            </Link>
                           </li>
                         </ul>
                         <h5>
-                          <div
-                            style={linkStyle}
-                            onClick={() => CategoryFilter("Beverages")}
-                          >
-                            Beverages
-                          </div>
+                        <Link href={`/c/Grocery/Beverages`}>
+                            <div style={linkStyle} >Beverages</div>
+                            </Link>
                         </h5>
                         <ul>
                           <li>
-                            <a
-                              style={linkStyle}
-                              onClick={() =>
-                                CategoryFilter(
-                                  "Bottled Beverages, Water & Drink Mixes"
-                                )
-                              }
-                            >
-                              Bottled Beverages, Water & Drink Mixes
-                            </a>
+                          <Link href={`/c/Grocery/Beverages/Bottled Beverages, Water & Drink Mixes`}>
+                            <div style={linkStyle} >Bottled Beverages, Water & Drink Mixes</div>
+                            </Link>
                           </li>
                           <li>
-                            <a
-                              style={linkStyle}
-                              onClick={() =>
-                                CategoryFilter("Coffee, Tea & Cocoa")
-                              }
-                            >
-                              Coffee, Tea & Cocoa
-                            </a>
+                          <Link href={`/c/Grocery/Beverages/Coffee, Tea & Cocoa`}>
+                            <div style={linkStyle} >Coffee, Tea & Cocoa</div>
+                            </Link>
                           </li>
                         </ul>
                         <h5>
-                          <div
-                            style={linkStyle}
-                            onClick={() => CategoryFilter("Breakfast Food")}
-                          >
-                            Breakfast Food
-                          </div>
+                        <Link href={`/c/Grocery/Breakfast Food`}>
+                            <div style={linkStyle} >Breakfast Food</div>
+                            </Link>
                         </h5>
                         <ul>
                           <li>
-                            <a
-                              style={linkStyle}
-                              onClick={() =>
-                                CategoryFilter("Breakfast & Cereal Bars")
-                              }
-                            >
-                              Breakfast & Cereal Bars
-                            </a>
+                          <Link href={`/c/Grocery/Breakfast Food/Breakfast & Cereal Bars`}>
+                            <div style={linkStyle} >Breakfast & Cereal Bars</div>
+                            </Link>
                           </li>
                           <li>
-                            <a
-                              style={linkStyle}
-                              onClick={() =>
-                                CategoryFilter("Breakfast Cereals")
-                              }
-                            >
-                              Breakfast Cereals
-                            </a>
+                          <Link href={`/c/Grocery/Breakfast Food/Breakfast Cereals`}>
+                            <div style={linkStyle} >Breakfast Cereals</div>
+                            </Link>
                           </li>
                         </ul>
                       </div>
@@ -1545,171 +1505,101 @@ const SideBar = () => {
                     <Col xl="4">
                       <div className="link-section">
                         <h5>
-                          <div
-                            style={linkStyle}
-                            onClick={() => CategoryFilter("Candy & Chocolate")}
-                          >
-                            Candy & Chocolate
-                          </div>
+                        <Link href={`/c/Grocery/Candy & Chocolate`}>
+                            <div style={linkStyle} >Candy & Chocolate</div>
+                            </Link>
                         </h5>
                         <ul>
                           <li>
-                            <a
-                              style={linkStyle}
-                              onClick={() =>
-                                CategoryFilter("Brittle, Caramel & Toffee")
-                              }
-                            >
-                              Brittle, Caramel & Toffee
-                            </a>
+                          <Link href={`/c/Grocery/Candy & Chocolate/Brittle, Caramel & Toffee`}>
+                            <div style={linkStyle} >Brittle, Caramel & Toffee</div>
+                            </Link>
                           </li>
                           <li>
-                            <a
-                              style={linkStyle}
-                              onClick={() =>
-                                CategoryFilter(
-                                  "Candied & Chocolate-Covered Snacks"
-                                )
-                              }
-                            >
-                              Candied & Chocolate-Covered Snacks
-                            </a>
+                          <Link href={`/c/Grocery/Candy & Chocolate/Candied & Chocolate-Covered Snacks`}>
+                            <div style={linkStyle} >Candied & Chocolate-Covered Snacks</div>
+                            </Link>
                           </li>
                           <li>
-                            <a
-                              style={linkStyle}
-                              onClick={() =>
-                                CategoryFilter("Candy & Chocolate Assortments")
-                              }
-                            >
-                              Candy & Chocolate Assortments
-                            </a>
+                          <Link href={`/c/Grocery/Candy & Chocolate/Candy & Chocolate Assortments`}>
+                            <div style={linkStyle} >Candy & Chocolate Assortments</div>
+                            </Link>
                           </li>
                           <li>
-                            <a
-                              style={linkStyle}
-                              onClick={() =>
-                                CategoryFilter("Candy & Chocolate Bars")
-                              }
-                            >
-                              Candy & Chocolate Bars
-                            </a>
+                          <Link href={`/c/Grocery/Candy & Chocolate/Candy & Chocolate Bars`}>
+                            <div style={linkStyle} >Candy & Chocolate Bars</div>
+                            </Link>
                           </li>
                           <li>
-                            <a
-                              style={linkStyle}
-                              onClick={() =>
-                                CategoryFilter("Candy & Chocolate Gifts")
-                              }
-                            >
-                              Candy & Chocolate Gifts
-                            </a>
+                          <Link href={`/c/Grocery/Candy & Chocolate/Candy & Chocolate Gifts`}>
+                            <div style={linkStyle} >Candy & Chocolate Gifts</div>
+                            </Link>
                           </li>
                           <li>
-                            <a
-                              style={linkStyle}
-                              onClick={() => CategoryFilter("Marshmallows")}
-                            >
-                              Marshmallows
-                            </a>
+                          <Link href={`/c/Grocery/Candy & Chocolate/Marshmallows`}>
+                            <div style={linkStyle} >Marshmallows</div>
+                            </Link>
                           </li>
                           <li>
-                            <a
-                              style={linkStyle}
-                              onClick={() => CategoryFilter("Mints")}
-                            >
-                              Mints
-                            </a>
+                          <Link href={`/c/Grocery/Candy & Chocolate/Mints`}>
+                            <div style={linkStyle} >Mints</div>
+                            </Link>
                           </li>
                         </ul>
                         <h5>
-                          <div
-                            style={linkStyle}
-                            onClick={() =>
-                              CategoryFilter("Canned, Dry & Packaged Food")
-                            }
-                          >
-                            Canned, Dry & Packaged Food
-                          </div>
+                        <Link href={`/c/Grocery/Canned, Dry & Packaged Food`}>
+                            <div style={linkStyle} >Canned, Dry & Packaged Food</div>
+                            </Link>
                         </h5>
                         <h5>
-                          <div
-                            style={linkStyle}
-                            onClick={() => CategoryFilter("Cooking Essentials")}
-                          >
-                            Cooking Essentials
-                          </div>
+                        <Link href={`/c/Grocery/Cooking Essentials`}>
+                            <div style={linkStyle} >Cooking Essentials</div>
+                            </Link>
                         </h5>
                       </div>
                     </Col>
                     <Col xl="4">
                       <div className="link-section">
                         <h5>
-                          <div
-                            style={linkStyle}
-                            onClick={() => CategoryFilter("Household Supplies")}
-                          >
-                            Household Supplies
-                          </div>
+                        <Link href={`/c/Grocery/Household Supplies`}>
+                            <div style={linkStyle} >Household Supplies</div>
+                            </Link>
                         </h5>
                         <h5>
-                          <div
-                            style={linkStyle}
-                            onClick={() => CategoryFilter("Pet Supplies")}
-                          >
-                            Pet Supplies
-                          </div>
+                        <Link href={`/c/Grocery/Pet Supplies`}>
+                            <div style={linkStyle} >Pet Supplies</div>
+                            </Link>
                         </h5>
                         <h5>
-                          <div
-                            style={linkStyle}
-                            onClick={() => CategoryFilter("Snack Food")}
-                          >
-                            Snack Food
-                          </div>
+                        <Link href={`/c/Grocery/Snack Food`}>
+                            <div style={linkStyle} >Snack Food</div>
+                            </Link>
                         </h5>
                         <ul>
                           <li>
-                            <a
-                              style={linkStyle}
-                              onClick={() => CategoryFilter("Bars")}
-                            >
-                              Bars
-                            </a>
+                          <Link href={`/c/Grocery/Snack Food/Bars`}>
+                            <div style={linkStyle} >Bars</div>
+                            </Link>
                           </li>
                           <li>
-                            <a
-                              style={linkStyle}
-                              onClick={() => CategoryFilter("Chips & Crisps")}
-                            >
-                              Chips & Crisps
-                            </a>
+                          <Link href={`/c/Grocery/Snack Food/Chips & Crisps`}>
+                            <div style={linkStyle} >Chips & Crisps</div>
+                            </Link>
                           </li>
                           <li>
-                            <a
-                              style={linkStyle}
-                              onClick={() => CategoryFilter("Cookies")}
-                            >
-                              Cookies
-                            </a>
+                          <Link href={`/c/Grocery/Snack Food/Cookies`}>
+                            <div style={linkStyle} >Cookies</div>
+                            </Link>
                           </li>
                           <li>
-                            <a
-                              style={linkStyle}
-                              onClick={() => CategoryFilter("Crackers")}
-                            >
-                              Crackers
-                            </a>
+                          <Link href={`/c/Grocery/Snack Food/Crackers`}>
+                            <div style={linkStyle} >Crackers</div>
+                            </Link>
                           </li>
                           <li>
-                            <a
-                              style={linkStyle}
-                              onClick={() =>
-                                CategoryFilter("Dried Food & Raisins")
-                              }
-                            >
-                              Dried Food & Raisins
-                            </a>
+                          <Link href={`/c/Grocery/Snack Food/Dried Food & Raisins`}>
+                            <div style={linkStyle} >Dried Food & Raisins</div>
+                            </Link>
                           </li>
                         </ul>
                       </div>
@@ -1732,112 +1622,72 @@ const SideBar = () => {
                     <Col xl="4">
                       <div className="link-section">
                         <h5>
-                          <div
-                            style={linkStyle}
-                            onClick={() => CategoryFilter("Camping & Hiking")}
-                          >
-                            Camping & Hiking
-                          </div>
+                        <Link href={`/c/Sports & Outdoors/Camping & Hiking`}>
+                            <div style={linkStyle} >Camping & Hiking</div>
+                            </Link>
                         </h5>
                         <h5>
-                          <div
-                            style={linkStyle}
-                            onClick={() => CategoryFilter("Cycling")}
-                          >
-                            Cycling
-                          </div>
+                        <Link href={`/c/Sports & Outdoors/Cycling`}>
+                            <div style={linkStyle} >Cycling</div>
+                            </Link>
                         </h5>
                         <h5>
-                          <div
-                            style={linkStyle}
-                            onClick={() =>
-                              CategoryFilter("Scooters & Accessories")
-                            }
-                          >
-                            Scooters & Accessories
-                          </div>
+                        <Link href={`/c/Sports & Outdoors/Scooters & Accessories`}>
+                            <div style={linkStyle} >Scooters & Accessories</div>
+                            </Link>
                         </h5>
                         <h5>
-                          <div
-                            style={linkStyle}
-                            onClick={() => CategoryFilter("Strength Training")}
-                          >
-                            Strength Training
-                          </div>
+                        <Link href={`/c/Sports & Outdoors/Strength Training`}>
+                            <div style={linkStyle} >Strength Training</div>
+                            </Link>
                         </h5>
                       </div>
                     </Col>
                     <Col xl="4">
                       <div className="link-section">
                         <h5>
-                          <div
-                            style={linkStyle}
-                            onClick={() => CategoryFilter("Cardio Training")}
-                          >
-                            Cardio Training
-                          </div>
+                        <Link href={`/c/Sports & Outdoors/Cardio Training`}>
+                            <div style={linkStyle} >Cardio Training</div>
+                            </Link>
                         </h5>
                         <h5>
-                          <div
-                            style={linkStyle}
-                            onClick={() => CategoryFilter("Yoga")}
-                          >
-                            Yoga
-                          </div>
+                        <Link href={`/c/Sports & Outdoors/Yoga`}>
+                            <div style={linkStyle} >Yoga</div>
+                            </Link>
                         </h5>
                         <h5>
-                          <div
-                            style={linkStyle}
-                            onClick={() =>
-                              CategoryFilter("Exercise Accessories")
-                            }
-                          >
-                            Exercise Accessories
-                          </div>
+                        <Link href={`/c/Sports & Outdoors/Exercise Accessories`}>
+                            <div style={linkStyle} >Exercise Accessories</div>
+                            </Link>
                         </h5>
                         <h5>
-                          <div
-                            style={linkStyle}
-                            onClick={() => CategoryFilter("Combat Sports")}
-                          >
-                            Combat Sports
-                          </div>
+                        <Link href={`/c/Sports & Outdoors/Combat Sports`}>
+                            <div style={linkStyle} >Combat Sports</div>
+                            </Link>
                         </h5>
                       </div>
                     </Col>
                     <Col xl="4">
                       <div className="link-section">
                         <h5>
-                          <div
-                            style={linkStyle}
-                            onClick={() => CategoryFilter("Team Sports")}
-                          >
-                            Team Sports
-                          </div>
+                        <Link href={`/c/Sports & Outdoors/Team Sports`}>
+                            <div style={linkStyle} >Team Sports</div>
+                            </Link>
                         </h5>
                         <h5>
-                          <div
-                            style={linkStyle}
-                            onClick={() => CategoryFilter("Racquet Sports")}
-                          >
-                            Racquet Sports
-                          </div>
+                        <Link href={`/c/Sports & Outdoors/Racquet Sports`}>
+                            <div style={linkStyle} >Racquet Sports</div>
+                            </Link>
                         </h5>
                         <h5>
-                          <div
-                            style={linkStyle}
-                            onClick={() => CategoryFilter("Water Sports")}
-                          >
-                            Water Sports
-                          </div>
+                        <Link href={`/c/Sports & Outdoors/Water Sports`}>
+                            <div style={linkStyle} >Water Sports</div>
+                            </Link>
                         </h5>
                         <h5>
-                          <div
-                            style={linkStyle}
-                            onClick={() => CategoryFilter("Sports Nutrition")}
-                          >
-                            Sports Nutrition
-                          </div>
+                        <Link href={`/c/Sports & Outdoors/Sports Nutrition`}>
+                            <div style={linkStyle} >Sports Nutrition</div>
+                            </Link>
                         </h5>
                       </div>
                     </Col>
@@ -1866,68 +1716,47 @@ const SideBar = () => {
                            
                         </h5>
                         <h5>
-                          <div
-                            style={linkStyle}
-                            onClick={() => CategoryFilter("Car Seats")}
-                          >
-                            Car Seats
-                          </div>
+                        <Link href={`/c/Baby & Toys/Car Seats`}>
+                            <div style={linkStyle} >Car Seats</div>
+                            </Link>
                         </h5>
                         <h5>
-                          <div
-                            style={linkStyle}
-                            onClick={() => CategoryFilter("Diapering")}
-                          >
-                            Diapering
-                          </div>
+                        <Link href={`/c/Baby & Toys/Diapering`}>
+                            <div style={linkStyle} >Diapering</div>
+                            </Link>
                         </h5>
                       </div>
                     </Col>
                     <Col xl="4">
                       <div className="link-section">
                         <h5>
-                          <div
-                            style={linkStyle}
-                            onClick={() => CategoryFilter("Feeding")}
-                          >
-                            Feeding
-                          </div>
+                        <Link href={`/c/Baby & Toys/Feeding`}>
+                            <div style={linkStyle} >Feeding</div>
+                            </Link>
                         </h5>
                         <h5>
-                          <div
-                            style={linkStyle}
-                            onClick={() => CategoryFilter("Gifts")}
-                          >
-                            Gifts
-                          </div>
+                        <Link href={`/c/Baby & Toys/Gifts`}>
+                            <div style={linkStyle} >Gifts</div>
+                            </Link>
                         </h5>
                         <h5>
-                          <div
-                            style={linkStyle}
-                            onClick={() => CategoryFilter("Nursery")}
-                          >
-                            Nursery
-                          </div>
+                        <Link href={`/c/Baby & Toys/Nursery`}>
+                            <div style={linkStyle} >Sports Nutrition</div>
+                            </Link>
                         </h5>
                       </div>
                     </Col>
                     <Col xl="4">
                       <div className="link-section">
                         <h5>
-                          <div
-                            style={linkStyle}
-                            onClick={() => CategoryFilter("Toys & Games")}
-                          >
-                            Toys & Games
-                          </div>
+                        <Link href={`/c/Baby & Toys/Toys & Games`}>
+                            <div style={linkStyle} >Toys & Games</div>
+                            </Link>
                         </h5>
                         <h5>
-                          <div
-                            style={linkStyle}
-                            onClick={() => CategoryFilter("Travel Gear")}
-                          >
-                            Travel Gear
-                          </div>
+                        <Link href={`/c/Baby & Toys/Travel Gear`}>
+                            <div style={linkStyle} >Travel Gear</div>
+                            </Link>
                         </h5>
                       </div>
                     </Col>
