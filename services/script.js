@@ -1522,7 +1522,7 @@ export const CategoryList = [
 
                   },
                   {
-                      CategoryName:"Grocery",
+                      
                       CategoryName:"SPORTS & OUTDOORS",
                       subCategoryList:[
                           {

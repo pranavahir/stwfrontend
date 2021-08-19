@@ -145,13 +145,13 @@ var ListConfig=[
       {
         imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
         categoryUrl:"/c/Laptop",
-        category:["hplaptop","laptop","microsoft","delllaptop","microsoftphone"],
+        category:"laptop",
         keyWorld:"More Laptops >>"
       },
       {
         imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
         categoryUrl:"/c/Tablet",
-        category:"apple",
+        category:"tablet",
         keyWorld:"More Tablet >>"
       },
       {
@@ -171,13 +171,13 @@ var ListConfig=[
       {
         imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
         categoryUrl:"/c/Laptop",
-        category:["hplaptop","laptop","microsoft","delllaptop","microsoftphone"],
+        category:"laptop",
         keyWorld:"More Laptops >>"
       },
       {
         imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
         categoryUrl:"/c/Tablet",
-        category:"apple",
+        category:"tablet",
         keyWorld:"More Tablet >>"
       },
       {
@@ -329,13 +329,13 @@ var ListConfig=[
       {
         imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
         categoryUrl:"/c/Laptop",
-        category:["hplaptop","laptop","microsoft","delllaptop","microsoftphone"],
+        category:"laptop",
         keyWorld:"More Laptops >>"
       },
       {
         imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
         categoryUrl:"/c/Tablet",
-        category:"apple",
+        category:"tablet",
         keyWorld:"More Tablet >>"
       },
       {
@@ -355,13 +355,13 @@ var ListConfig=[
       {
         imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
         categoryUrl:"/c/Laptop",
-        category:["hplaptop","laptop","microsoft","delllaptop","microsoftphone"],
+        category:"laptop",
         keyWorld:"More Laptops >>"
       },
       {
         imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
         categoryUrl:"/c/Tablet",
-        category:"apple",
+        category:"tablet",
         keyWorld:"More Tablet >>"
       },
       {
@@ -508,13 +508,13 @@ var ListConfig=[
       {
         imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
         categoryUrl:"/c/Laptop",
-        category:["hplaptop","laptop","microsoft","delllaptop","microsoftphone"],
+        category:"laptop",
         keyWorld:"More Laptops >>"
       },
       {
         imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
         categoryUrl:"/c/Tablet",
-        category:"apple",
+        category:"tablet",
         keyWorld:"More Tablet >>"
       },
       {
@@ -534,13 +534,13 @@ var ListConfig=[
       {
         imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
         categoryUrl:"/c/Laptop",
-        category:["hplaptop","laptop","microsoft","delllaptop","microsoftphone"],
+        category:"laptop",
         keyWorld:"More Laptops >>"
       },
       {
         imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
         categoryUrl:"/c/Tablet",
-        category:"apple",
+        category:"tablet",
         keyWorld:"More Tablet >>"
       },
       {
@@ -687,13 +687,13 @@ var ListConfig=[
       {
         imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
         categoryUrl:"/c/Laptop",
-        category:["hplaptop","laptop","microsoft","delllaptop","microsoftphone"],
+        category:"laptop",
         keyWorld:"More Laptops >>"
       },
       {
         imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
         categoryUrl:"/c/Tablet",
-        category:"apple",
+        category:"tablet",
         keyWorld:"More Tablet >>"
       },
       {
@@ -713,13 +713,13 @@ var ListConfig=[
       {
         imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
         categoryUrl:"/c/Laptop",
-        category:["hplaptop","laptop","microsoft","delllaptop","microsoftphone"],
+        category:"laptop",
         keyWorld:"More Laptops >>"
       },
       {
         imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
         categoryUrl:"/c/Tablet",
-        category:"apple",
+        category:"tablet",
         keyWorld:"More Tablet >>"
       },
       {
@@ -866,13 +866,13 @@ var ListConfig=[
       {
         imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
         categoryUrl:"/c/Laptop",
-        category:["hplaptop","laptop","microsoft","delllaptop","microsoftphone"],
+        category:"laptop",
         keyWorld:"More Laptops >>"
       },
       {
         imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
         categoryUrl:"/c/Tablet",
-        category:"apple",
+        category:"tablet",
         keyWorld:"More Tablet >>"
       },
       {
@@ -892,13 +892,13 @@ var ListConfig=[
       {
         imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
         categoryUrl:"/c/Laptop",
-        category:["hplaptop","laptop","microsoft","delllaptop","microsoftphone"],
+        category:"laptop",
         keyWorld:"More Laptops >>"
       },
       {
         imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
         categoryUrl:"/c/Tablet",
-        category:"apple",
+        category:"tablet",
         keyWorld:"More Tablet >>"
       },
       {
@@ -1044,7 +1044,7 @@ var ListConfig=[
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
       categoryUrl:"/c/Laptop",
-      category:["hplaptop","laptop","microsoft","delllaptop","microsoftphone"],
+      category:"laptop",
       keyWorld:"More Laptops >>"
     },
     {
@@ -1070,7 +1070,7 @@ var ListConfig=[
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
       categoryUrl:"/c/Laptop",
-      category:["hplaptop","laptop","microsoft","delllaptop","microsoftphone"],
+      category:"laptop",
       keyWorld:"More Laptops >>"
     },
     {
@@ -1223,7 +1223,7 @@ var ListConfig=[
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
       categoryUrl:"/c/Laptop",
-      category:["hplaptop","laptop","microsoft","delllaptop","microsoftphone"],
+      category:"laptop",
       keyWorld:"More Laptops >>"
     },
     {
@@ -1249,7 +1249,7 @@ var ListConfig=[
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
       categoryUrl:"/c/Laptop",
-      category:["hplaptop","laptop","microsoft","delllaptop","microsoftphone"],
+      category:"laptop",
       keyWorld:"More Laptops >>"
     },
     {
@@ -1404,7 +1404,7 @@ var ListConfig=[
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
       categoryUrl:"/c/Laptop",
-      category:["hplaptop","laptop","microsoft","delllaptop","microsoftphone"],
+      category:"laptop",
       keyWorld:"More Laptops >>"
     },
     {
@@ -1430,7 +1430,7 @@ var ListConfig=[
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
       categoryUrl:"/c/Laptop",
-      category:["hplaptop","laptop","microsoft","delllaptop","microsoftphone"],
+      category:"laptop",
       keyWorld:"More Laptops >>"
     },
     {
@@ -1585,7 +1585,7 @@ var ListConfig=[
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
       categoryUrl:"/c/Laptop",
-      category:["hplaptop","laptop","microsoft","delllaptop","microsoftphone"],
+      category:"laptop",
       keyWorld:"More Laptops >>"
     },
     {
@@ -1611,7 +1611,7 @@ var ListConfig=[
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
       categoryUrl:"/c/Laptop",
-      category:["hplaptop","laptop","microsoft","delllaptop","microsoftphone"],
+      category:"laptop",
       keyWorld:"More Laptops >>"
     },
     {
@@ -1764,7 +1764,7 @@ var ListConfig=[
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
       categoryUrl:"/c/Laptop",
-      category:["hplaptop","laptop","microsoft","delllaptop","microsoftphone"],
+      category:"laptop",
       keyWorld:"More Laptops >>"
     },
     {
@@ -1790,7 +1790,7 @@ var ListConfig=[
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
       categoryUrl:"/c/Laptop",
-      category:["hplaptop","laptop","microsoft","delllaptop","microsoftphone"],
+      category:"laptop",
       keyWorld:"More Laptops >>"
     },
     {
@@ -1943,7 +1943,7 @@ var ListConfig=[
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
       categoryUrl:"/c/Laptop",
-      category:["hplaptop","laptop","microsoft","delllaptop","microsoftphone"],
+      category:"laptop",
       keyWorld:"More Laptops >>"
     },
     {
@@ -1969,7 +1969,7 @@ var ListConfig=[
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
       categoryUrl:"/c/Laptop",
-      category:["hplaptop","laptop","microsoft","delllaptop","microsoftphone"],
+      category:"laptop",
       keyWorld:"More Laptops >>"
     },
     {
@@ -2122,7 +2122,7 @@ var ListConfig=[
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
       categoryUrl:"/c/Laptop",
-      category:["hplaptop","laptop","microsoft","delllaptop","microsoftphone"],
+      category:"laptop",
       keyWorld:"More Laptops >>"
     },
     {
@@ -2148,7 +2148,7 @@ var ListConfig=[
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
       categoryUrl:"/c/Laptop",
-      category:["hplaptop","laptop","microsoft","delllaptop","microsoftphone"],
+      category:"laptop",
       keyWorld:"More Laptops >>"
     },
     {
@@ -2301,7 +2301,7 @@ var ListConfig=[
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
       categoryUrl:"/c/Laptop",
-      category:["hplaptop","laptop","microsoft","delllaptop","microsoftphone"],
+      category:"laptop",
       keyWorld:"More Laptops >>"
     },
     {
@@ -2327,7 +2327,7 @@ var ListConfig=[
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
       categoryUrl:"/c/Laptop",
-      category:["hplaptop","laptop","microsoft","delllaptop","microsoftphone"],
+      category:"laptop",
       keyWorld:"More Laptops >>"
     },
     {
@@ -2480,7 +2480,7 @@ var ListConfig=[
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
       categoryUrl:"/c/Laptop",
-      category:["hplaptop","laptop","microsoft","delllaptop","microsoftphone"],
+      category:"laptop",
       keyWorld:"More Laptops >>"
     },
     {
@@ -2506,7 +2506,7 @@ var ListConfig=[
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
       categoryUrl:"/c/Laptop",
-      category:["hplaptop","laptop","microsoft","delllaptop","microsoftphone"],
+      category:"laptop",
       keyWorld:"More Laptops >>"
     },
     {
@@ -2683,7 +2683,7 @@ var ListConfig=[
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
       categoryUrl:"/c/Laptop",
-      category:["hplaptop","laptop","microsoft","delllaptop","microsoftphone"],
+      category:"laptop",
       keyWorld:"More Laptops >>"
     },
     {
@@ -2709,7 +2709,7 @@ var ListConfig=[
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
       categoryUrl:"/c/Laptop",
-      category:["hplaptop","laptop","microsoft","delllaptop","microsoftphone"],
+      category:"laptop",
       keyWorld:"More Laptops >>"
     },
     {
@@ -2862,7 +2862,7 @@ var ListConfig=[
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
       categoryUrl:"/c/Laptop",
-      category:["hplaptop","laptop","microsoft","delllaptop","microsoftphone"],
+      category:"laptop",
       keyWorld:"More Laptops >>"
     },
     {
@@ -2888,7 +2888,7 @@ var ListConfig=[
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
       categoryUrl:"/c/Laptop",
-      category:["hplaptop","laptop","microsoft","delllaptop","microsoftphone"],
+      category:"laptop",
       keyWorld:"More Laptops >>"
     },
     {
@@ -3041,7 +3041,7 @@ var ListConfig=[
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
       categoryUrl:"/c/Laptop",
-      category:["hplaptop","laptop","microsoft","delllaptop","microsoftphone"],
+      category:"laptop",
       keyWorld:"More Laptops >>"
     },
     {
@@ -3067,7 +3067,7 @@ var ListConfig=[
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
       categoryUrl:"/c/Laptop",
-      category:["hplaptop","laptop","microsoft","delllaptop","microsoftphone"],
+      category:"laptop",
       keyWorld:"More Laptops >>"
     },
     {
