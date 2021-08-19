@@ -230,7 +230,7 @@ const SpecialProducts = ({ type, fluid, designClass, cartClass, heading, noTitle
                                     :
 
                                     newProducts && newProducts.slice(0, 4).map((collection, index) =>
-                                            <div style={linkStyle} className="front col-xl-3 col-lg-4 col-12 ClickableContainer" key={index}  >
+                                            <div style={linkStyle} className="front col-xl-3 col-lg-4 col-12 ClickableContainer" key={index} onClick={() => getURL(collection)} >
                                                 <AutoFitImage  frameWidth="212px" imgSize="contain" positionX="center" positionY="center" frameHeight="205px" className="ClickableContainer" onClick={() => getURL(collection)}  imgSrc={collection.imguRL}/>
                                                 {/* <center style={lableStyle}> <a style={{color:"white"}}  href="#" onClick={() => getURL(collection)} >{collection.keyWorld} </a></center>  */}
                                             </div>)

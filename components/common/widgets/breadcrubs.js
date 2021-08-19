@@ -1,5 +1,7 @@
 import React from 'react';
 import { Container, Row ,Col } from 'reactstrap';
+import Link from "next/link";
+
 
 const Breadcrubs = ({title ,parent ,subTitle,leafTitle}) => {
 
@@ -13,21 +15,30 @@ const Breadcrubs = ({title ,parent ,subTitle,leafTitle}) => {
                         </div> */}
                         <nav aria-label="breadcrumb" className="page-title">
                             <ol className="breadcrumb">
-                                <li className="breadcrumb-item"><a href="#">{parent}</a></li>
-                                <li className="breadcrumb-item" aria-current="page"><b>{title}</b></li>
-                                {
-                                    subTitle === undefined ?
-                                    ''
-                                    :
-                                    <li className="breadcrumb-item active" aria-current="page"><b>{subTitle}</b></li>
-                                }
+                                <li className="breadcrumb-item"><a href="/">{parent}</a></li>
+                                
+                                   {
+                                    
+                                    subTitle === undefined ?  
+                                   <li className="breadcrumb-item" aria-current="page"><b>{title}</b></li> : 
+                                   <li className="breadcrumb-item" aria-current="page"><b><Link href={`/c/${title}`}>{title}</Link></b></li> 
+                                   
+                                   }
+                                   
+
+                                {subTitle === undefined ? '' : 
+                                   (leafTitle == undefined ? 
+                                       <li className="breadcrumb-item active" aria-current="page"><b>{subTitle}</b></li> :
+                                       <li className="breadcrumb-item active" aria-current="page"><b><Link href={`/c/${title}/${subTitle}`}>{subTitle}</Link></b></li>
+                                       )
+                                    }
                                 {
                                     leafTitle === undefined ?
                                     ''
                                     :
                                     <li className="breadcrumb-item active" aria-current="page"><b>{leafTitle}</b></li>
                                 }
-                                
+
                             </ol>
                         </nav>
                     </Col>
