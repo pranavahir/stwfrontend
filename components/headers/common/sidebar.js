@@ -202,96 +202,56 @@ const SideBar = () => {
                             {/* </a> */}
                           </li>
                           <li>
-                            <a
-                              style={linkStyle}
-                              onClick={() =>
-                                CategoryFilter("Mirrorless Camera")
-                              }
-                            >
-                              Mirrorless Camera
-                            </a>
+                          <Link href={`/c/Electronics/Camera, Photo & Videos/Mirrorless Camera`}>
+                            <div style={linkStyle} >Mirrorless Camera</div>
+                            </Link>
                           </li>
                           <li>
-                            <a
-                              style={linkStyle}
-                              onClick={() =>
-                                CategoryFilter("Tripods & Monopods")
-                              }
-                            >
-                              Tripods & Monopods
-                            </a>
+                          <Link href={`/c/Electronics/Camera, Photo & Videos/Tripods & Monopods`}>
+                            <div style={linkStyle} >Tripods & Monopods</div>
+                            </Link>
                           </li>
                           <li>
-                            <a
-                              style={linkStyle}
-                              onClick={() => CategoryFilter("Video Cameras")}
-                            >
-                              Video Cameras
-                            </a>
+                          <Link href={`/c/Electronics/Camera, Photo & Videos/Video Cameras`}>
+                            <div style={linkStyle} >Video Cameras</div>
+                            </Link>
                           </li>
                         </ul>
                         <h5>
-                          <div
-                            style={linkStyle}
-                            onClick={() => CategoryFilter("Speakers")}
-                          >
-                            Speakers
-                          </div>
+                        <Link href={`/c/Electronics/Speakers`}>
+                            <div style={linkStyle} >Speakers</div>
+                            </Link>
                         </h5>
                         <ul>
                           <li>
-                            <a
-                              style={linkStyle}
-                              onClick={() => CategoryFilter("Ceiling Speakers")}
-                            >
-                              Ceiling Speakers
-                            </a>
+                          <Link href={`/c/Electronics/Speakers/Ceiling Speakers`}>
+                            <div style={linkStyle} >Ceiling Speakers</div>
+                            </Link>
                           </li>
                           <li>
-                            <a
-                              style={linkStyle}
-                              onClick={() =>
-                                CategoryFilter("Center Channel Speakers")
-                              }
-                            >
-                              Center Channel Speakers
-                            </a>
+                          <Link href={`/c/Electronics/Speakers/Center Channel Speakers`}>
+                            <div style={linkStyle} >Center Channel Speakers</div>
+                            </Link>
                           </li>
                           <li>
-                            <a
-                              style={linkStyle}
-                              onClick={() =>
-                                CategoryFilter("Portable Speakers")
-                              }
-                            >
-                              Portable Speakers
-                            </a>
+                          <Link href={`/c/Electronics/Speakers/Portable Speakers`}>
+                            <div style={linkStyle} >Portable Speakers</div>
+                            </Link>
                           </li>
                           <li>
-                            <a
-                              style={linkStyle}
-                              onClick={() => CategoryFilter("Soundbars")}
-                            >
-                              Soundbars
-                            </a>
+                          <Link href={`/c/Electronics/Speakers/Soundbars`}>
+                            <div style={linkStyle} >Soundbars</div>
+                            </Link>
                           </li>
                           <li>
-                            <a
-                              style={linkStyle}
-                              onClick={() => CategoryFilter("Subwoofers")}
-                            >
-                              Subwoofers
-                            </a>
+                          <Link href={`/c/Electronics/Speakers/Subwoofers`}>
+                            <div style={linkStyle} >Subwoofers</div>
+                            </Link>
                           </li>
                           <li>
-                            <a
-                              style={linkStyle}
-                              onClick={() =>
-                                CategoryFilter("Wireless & Bluetooth Speakers")
-                              }
-                            >
-                              Wireless & Bluetooth Speakers
-                            </a>
+                          <Link href={`/c/Electronics/Speakers/Wireless & Bluetooth Speakers`}>
+                            <div style={linkStyle} >Wireless & Bluetooth Speakers</div>
+                            </Link>
                           </li>
                         </ul>
                       </div>
@@ -299,54 +259,36 @@ const SideBar = () => {
                     <Col xl="4">
                       <div className="link-section">
                         <h5>
-                          <div
-                            style={linkStyle}
-                            onClick={() => CategoryFilter("Desktops")}
-                          >
-                            Desktops
-                          </div>
+                        <Link href={`/c/Electronics/Desktops`}>
+                            <div style={linkStyle} >Desktops</div>
+                            </Link>
                         </h5>
                         <ul>
                           <li>
-                            <a
-                              style={linkStyle}
-                              onClick={() => CategoryFilter("All in Ones")}
-                            >
-                              All in Ones
-                            </a>
+                          <Link href={`/c/Electronics/Desktops/All in Ones`}>
+                            <div style={linkStyle} >All in Ones</div>
+                            </Link>
                           </li>
                           <li>
-                            <a
-                              style={linkStyle}
-                              onClick={() => CategoryFilter("Minis")}
-                            >
-                              Minis
-                            </a>
+                          <Link href={`/c/Electronics/Desktops/Minis`}>
+                            <div style={linkStyle} >Minis</div>
+                            </Link>
                           </li>
                           <li>
-                            <a
-                              style={linkStyle}
-                              onClick={() => CategoryFilter("Towers")}
-                            >
-                              Towers
-                            </a>
+                          <Link href={`/c/Electronics/Desktops/Towers`}>
+                            <div style={linkStyle} >Towers</div>
+                            </Link>
                           </li>
                         </ul>
                         <h5>
-                          <div
-                            style={linkStyle}
-                            onClick={() => CategoryFilter("Laptops")}
-                          >
-                            Laptops
-                          </div>
+                        <Link href={`/c/Electronics/Laptops`}>
+                            <div style={linkStyle} >Laptops</div>
+                            </Link>
                         </h5>
                         <h5>
-                          <div
-                            style={linkStyle}
-                            onClick={() => CategoryFilter("Phones")}
-                          >
-                            Phones
-                          </div>
+                        <Link href={`/c/Electronics/Phones`}>
+                            <div style={linkStyle} >Phones</div>
+                            </Link>
                         </h5>
                         {/* <ul>
                                                     <li>
@@ -360,79 +302,52 @@ const SideBar = () => {
                                                     </li>
                                                 </ul> */}
                         <h5>
-                          <div
-                            style={linkStyle}
-                            onClick={() => CategoryFilter("Film Cameras")}
-                          >
-                            Film Cameras
-                          </div>
+                        <Link href={`/c/Electronics/Film Cameras`}>
+                            <div style={linkStyle} >Film Cameras</div>
+                            </Link>
                         </h5>
                         <ul>
                           <li>
-                            <a
-                              style={linkStyle}
-                              onClick={() => CategoryFilter("Instant Cameras")}
-                            >
-                              Instant Cameras
-                            </a>
+                          <Link href={`/c/Electronics/Film Cameras/Instant Cameras`}>
+                            <div style={linkStyle} >Instant Cameras</div>
+                            </Link>
                           </li>
                         </ul>
                         <h5>
-                          <div
-                            style={linkStyle}
-                            onClick={() => CategoryFilter("Monitors")}
-                          >
-                            Monitors{" "}
-                          </div>
+                         <Link href={`/c/Electronics/Monitors`}>
+                            <div style={linkStyle} >Monitors</div>
+                            </Link>
                         </h5>
                         <h5>
-                          <div
-                            style={linkStyle}
-                            onClick={() => CategoryFilter("Tablets")}
-                          >
-                            Tablets
-                          </div>
+                        <Link href={`/c/Electronics/Tablets`}>
+                            <div style={linkStyle} >Tablets</div>
+                            </Link>
                         </h5>
                         <h5>
-                          <div
-                            style={linkStyle}
-                            onClick={() => CategoryFilter("Video Games")}
-                          >
-                            Video Games
-                          </div>
+                        <Link href={`/c/Electronics/Video Games`}>
+                            <div style={linkStyle} >Video Games</div>
+                            </Link>
                         </h5>
                         <ul>
                           <li>
-                            <a
-                              style={linkStyle}
-                              onClick={() => CategoryFilter("Accessories")}
-                            >
-                              Accessories
-                            </a>
+                          <Link href={`/c/Electronics/Video Games/Accessories`}>
+                            <div style={linkStyle} >Accessories</div>
+                            </Link>
                           </li>
                           <li>
-                            <a
-                              style={linkStyle}
-                              onClick={() => CategoryFilter("Consoles")}
-                            >
-                              Consoles
-                            </a>
+                          <Link href={`/c/Electronics/Video Games/Consoles`}>
+                            <div style={linkStyle} >Video Games</div>
+                            </Link>
                           </li>
                           <li>
-                            <a
-                              style={linkStyle}
-                              onClick={() => CategoryFilter("Games")}
-                            >
-                              Games
-                            </a>
+                          <Link href={`/c/Electronics/Video Games/Games`}>
+                            <div style={linkStyle} >Video Games</div>
+                            </Link>
                           </li>
                           <li>
-                            <a
-                              style={linkStyle}
-                              onClick={() => CategoryFilter("Nintendo")}
-                            >
-                              Nintendo
-                            </a>
+                          <Link href={`/c/Electronics/Video Games/Nintendo`}>
+                            <div style={linkStyle} >Video Games</div>
+                            </Link>
                           </li>
                         </ul>
                       </div>
@@ -440,133 +355,72 @@ const SideBar = () => {
                     <Col xl="4">
                       <div className="link-section">
                         <h5>
-                          <div
-                            style={linkStyle}
-                            onClick={() =>
-                              CategoryFilter("Headphones & Earphones")
-                            }
-                          >
-                            Headphones & Earphones
-                          </div>
+                        <Link href={`/c/Electronics/Headphones & Earphones`}>
+                            <div style={linkStyle} >Headphones & Earphones</div>
+                            </Link>
                         </h5>
                         <ul>
                           <li>
-                            <a
-                              style={linkStyle}
-                              onClick={() =>
-                                CategoryFilter("Bluetooth Headphones")
-                              }
-                            >
-                              Bluetooth Headphones
-                            </a>
+                          <Link href={`/c/Electronics/Headphones & Earphones/Bluetooth Headphones`}>
+                            <div style={linkStyle} >Bluetooth Headphones</div>
+                            </Link>
                           </li>
                           <li>
-                            <a
-                              style={linkStyle}
-                              onClick={() =>
-                                CategoryFilter("DJ/Professional Headphones")
-                              }
-                            >
-                              DJ/Professional Headphones
-                            </a>
+                          <Link href={`/c/Electronics/Headphones & Earphones/DJ & Professional Headphones`}>
+                            <div style={linkStyle} >DJ & Professional Headphones</div>
+                            </Link>
                           </li>
                           <li>
-                            <a
-                              style={linkStyle}
-                              onClick={() =>
-                                CategoryFilter("In Ear Earbud Headphones")
-                              }
-                            >
-                              In Ear Earbud Headphones
-                            </a>
+                          <Link href={`/c/Electronics/Headphones & Earphones/In Ear Earbud Headphones`}>
+                            <div style={linkStyle} >In Ear Earbud Headphones</div>
+                            </Link>
                           </li>
                           <li>
-                            <a
-                              style={linkStyle}
-                              onClick={() =>
-                                CategoryFilter("Noise-Cancelling Headphones")
-                              }
-                            >
-                              Noise-Cancelling Headphones
-                            </a>
+                          <Link href={`/c/Electronics/Headphones & Earphones/Noise-Cancelling Headphones`}>
+                            <div style={linkStyle} >Noise-Cancelling Headphones</div>
+                            </Link>
                           </li>
                           <li>
-                            <a
-                              style={linkStyle}
-                              onClick={() =>
-                                CategoryFilter("On-Ear Headphones")
-                              }
-                            >
-                              On-Ear Headphones
-                            </a>
+                          <Link href={`/c/Electronics/Headphones & Earphones/On-Ear Headphones`}>
+                            <div style={linkStyle} >On-Ear Headphones</div>
+                            </Link>
                           </li>
                           <li>
-                            <a
-                              style={linkStyle}
-                              onClick={() =>
-                                CategoryFilter("Over-Ear Headphones")
-                              }
-                            >
-                              Over-Ear Headphones
-                            </a>
+                          <Link href={`/c/Electronics/Headphones & Earphones/Over-Ear Headphones`}>
+                            <div style={linkStyle} >Over-Ear Headphones</div>
+                            </Link>
                           </li>
                           <li>
-                            <a
-                              style={linkStyle}
-                              onClick={() =>
-                                CategoryFilter("Premium Audio Headphones")
-                              }
-                            >
-                              Premium Audio Headphones
-                            </a>
+                          <Link href={`/c/Electronics/Headphones & Earphones/Premium Audio Headphones`}>
+                            <div style={linkStyle} >Premium Audio Headphones</div>
+                            </Link>
                           </li>
                           <li>
-                            <a
-                              style={linkStyle}
-                              onClick={() =>
-                                CategoryFilter("Sports & Fitness Headphones")
-                              }
-                            >
-                              Sports & Fitness Headphones
-                            </a>
+                          <Link href={`/c/Electronics/Headphones & Earphones/Sports & Fitness Headphones`}>
+                            <div style={linkStyle} >Sports & Fitness Headphones</div>
+                            </Link>
                           </li>
                         </ul>
                         <h5>
-                          <div
-                            style={linkStyle}
-                            onClick={() =>
-                              CategoryFilter("Computer & Accessories")
-                            }
-                          >
-                            Computer & Accessories
-                          </div>
+                        <Link href={`/c/Electronics/Computer & Accessories`}>
+                            <div style={linkStyle} >Computer & Accessories</div>
+                            </Link>
                         </h5>
                         <ul>
                           <li>
-                            <a
-                              style={linkStyle}
-                              onClick={() =>
-                                CategoryFilter("Chargers & Adapters")
-                              }
-                            >
-                              Chargers & Adapters
-                            </a>
+                          <Link href={`/c/Electronics/Computer & Accessories/Chargers & Adapters`}>
+                            <div style={linkStyle} >Chargers & Adapters</div>
+                            </Link>
                           </li>
                           <li>
-                            <a
-                              style={linkStyle}
-                              onClick={() => CategoryFilter("Data Storage")}
-                            >
-                              Data Storage
-                            </a>
+                          <Link href={`/c/Electronics/Computer & Accessories/Data Storage`}>
+                            <div style={linkStyle} >Data Storage</div>
+                            </Link>
                           </li>
                           <li>
-                            <a
-                              style={linkStyle}
-                              onClick={() => CategoryFilter("Keyboards")}
-                            >
-                              Keyboards
-                            </a>
+                          <Link href={`/c/Electronics/Computer & Accessories/Keyboards`}>
+                            <div style={linkStyle} >Keyboards</div>
+                            </Link>
                           </li>
                         </ul>
                       </div>
