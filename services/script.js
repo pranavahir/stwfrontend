@@ -859,36 +859,36 @@ export const CategoryList = [
                 },
                 {                    
                     CategoryName:"Home & Kitchen",
-                    SubCategoryName:"Kitchen & Dinning",
+                    SubCategoryName:"Kitchen & Dining",
                     leafCategoryList:[
                         {
                             CategoryName:"Home & Kitchen",
-                    SubCategoryName:"Kitchen & Dinning",
+                    SubCategoryName:"Kitchen & Dining",
                             LeafCategory:"Bakeware"
                         },
                         {
                             CategoryName:"Home & Kitchen",
-                    SubCategoryName:"Kitchen & Dinning",
+                    SubCategoryName:"Kitchen & Dining",
                             LeafCategory:"Coffee, Tea & Espresso"
                         },
                         {
                             CategoryName:"Home & Kitchen",
-                    SubCategoryName:"Kitchen & Dinning",
+                    SubCategoryName:"Kitchen & Dining",
                             LeafCategory:"Cookware"
                         },
                         {
                             CategoryName:"Home & Kitchen",
-                    SubCategoryName:"Kitchen & Dinning",
+                    SubCategoryName:"Kitchen & Dining",
                             LeafCategory:"Cutlery & Knife Accessories"
                         },
                         {
                             CategoryName:"Home & Kitchen",
-                    SubCategoryName:"Kitchen & Dinning",
+                    SubCategoryName:"Kitchen & Dining",
                             LeafCategory:"Dining & Entertaining"
                         },
                         {
                             CategoryName:"Home & Kitchen",
-                    SubCategoryName:"Kitchen & Dinning",
+                    SubCategoryName:"Kitchen & Dining",
                             LeafCategory:"Small Appliances"
                         }
                     ]
@@ -985,26 +985,26 @@ export const CategoryList = [
                 
                 {
                     CategoryName:"Home & Kitchen",
-                    SubCategoryName:"Vacuum & Floor Care",
+                    SubCategoryName:"Vacuum & Floor care",
                             leafCategoryList:[
                             {
                                 CategoryName:"Home & Kitchen",
-                                SubCategoryName:"Vacuum & Floor Care",
+                                SubCategoryName:"Vacuum & Floor care",
                                 LeafCategory:"Carpet & Upholstery Cleaners & Accessories"
                             },
                             {
                                 CategoryName:"Home & Kitchen",
-                                SubCategoryName:"Vacuum & Floor Care",
+                                SubCategoryName:"Vacuum & Floor care",
                                 LeafCategory:"Floor Buffers & Parts"
                             },
                             {
                                 CategoryName:"Home & Kitchen",
-                                SubCategoryName:"Vacuum & Floor Care",
+                                SubCategoryName:"Vacuum & Floor care",
                                 LeafCategory:"Vacuum Parts & Accessories"
                             },
                             {
                                 CategoryName:"Home & Kitchen",
-                                SubCategoryName:"Vacuum & Floor Care",
+                                SubCategoryName:"Vacuum & Floor care",
                                 LeafCategory:"Vacuum"
                             }
                     ]
@@ -1404,6 +1404,28 @@ export const CategoryList = [
                         
                     ]
                   },
+                  {
+                    CategoryName:"Grocery",
+                    SubCategoryName:"Beverages",
+                    leafCategoryList:[
+                        {
+                            CategoryName:"Grocery",
+                            SubCategoryName:"Beverages",
+                            LeafCategory:"Bottled Beverages, Water & Drink"
+                        },
+                        {
+                            CategoryName:"Grocery",
+                            SubCategoryName:"Beverages",
+                            LeafCategory:"Mixes"
+                        },
+                        {
+                            CategoryName:"Grocery",
+                            SubCategoryName:"Beverages",
+                            LeafCategory:"Coffee, Tea & Cocoa"
+                        },
+                    ]
+                  },
+                  
                   {
                     CategoryName:"Grocery",  
                     SubCategoryName:"Candy & Chocolate",
