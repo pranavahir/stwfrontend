@@ -419,7 +419,7 @@ export const CategoryList = [
                     {
                         CategoryName:"Electronics",
                         SubCategoryName:"Desktops",
-                        LeafCategory:"All In Ones"
+                        LeafCategory:"All in Ones"
                     },
                     {
                         CategoryName:"Electronics",
@@ -648,7 +648,7 @@ export const CategoryList = [
                       {
                         CategoryName: "Fashion",
                         SubCategoryName:"Clothing, Shoes & Jewelry",
-                          leafCategory:"Kid's Fashion"
+                          leafCategory  :"Kid's Fashion"
                       },
                       {
                         CategoryName: "Fashion",
@@ -800,110 +800,110 @@ export const CategoryList = [
             
         },
         {
-            CategoryName:"HOME & KITCHEN",
+            CategoryName:"Home & Kitchen",
             subCategoryList:[
                 {
-                    CategoryName:"HOME & KITCHEN",
+                    CategoryName:"Home & Kitchen",
                     SubCategoryName:"Bedding",
                     leafCategoryList:[
                         {
-                            CategoryName:"HOME & KITCHEN",
+                            CategoryName:"Home & Kitchen",
                     SubCategoryName:"Bedding",
                             LeafCategory:"Bedding & Accessories"
                         },
                         {
-                            CategoryName:"HOME & KITCHEN",
+                            CategoryName:"Home & Kitchen",
                     SubCategoryName:"Bedding",
                             LeafCategory:"Bedding Sets & Collections"
                         },
                         {
-                            CategoryName:"HOME & KITCHEN",
+                            CategoryName:"Home & Kitchen",
                     SubCategoryName:"Bedding",
                             LeafCategory:"Bedspreads, Coverlets & Sets"
                         },
                         {
-                            CategoryName:"HOME & KITCHEN",
+                            CategoryName:"Home & Kitchen",
                     SubCategoryName:"Bedding",
                             LeafCategory:"Kid's Bedding"
                         },
                         {
-                            CategoryName:"HOME & KITCHEN",
+                            CategoryName:"Home & Kitchen",
                     SubCategoryName:"Bedding",
                             LeafCategory:"Kid's Bedding"
                         }
                     ]
                 },
                 {
-                    CategoryName:"HOME & KITCHEN",
+                    CategoryName:"Home & Kitchen",
                     SubCategoryName:"Towel Rings"
                 },
                 {
-                    CategoryName:"HOME & KITCHEN",
+                    CategoryName:"Home & Kitchen",
                     SubCategoryName:"Wall Art"
                 },
                 {
-                    CategoryName:"HOME & KITCHEN",
+                    CategoryName:"Home & Kitchen",
                     SubCategoryName:"Wall Clocks"
                 },
                 {
-                    CategoryName:"HOME & KITCHEN",
+                    CategoryName:"Home & Kitchen",
                     SubCategoryName:"Cleaning Supplies"
                 },
                 {
-                    CategoryName:"HOME & KITCHEN",
+                    CategoryName:"Home & Kitchen",
                     SubCategoryName:"Bath"
                 },
                 {
-                    CategoryName:"HOME & KITCHEN",
+                    CategoryName:"Home & Kitchen",
                     SubCategoryName:"Bathroom Accessories"
                 },
                 {                    
-                    CategoryName:"HOME & KITCHEN",
+                    CategoryName:"Home & Kitchen",
                     SubCategoryName:"Kitchen & Dinning",
                     leafCategoryList:[
                         {
-                            CategoryName:"HOME & KITCHEN",
+                            CategoryName:"Home & Kitchen",
                     SubCategoryName:"Kitchen & Dinning",
                             LeafCategory:"Bakeware"
                         },
                         {
-                            CategoryName:"HOME & KITCHEN",
+                            CategoryName:"Home & Kitchen",
                     SubCategoryName:"Kitchen & Dinning",
                             LeafCategory:"Coffee, Tea & Espresso"
                         },
                         {
-                            CategoryName:"HOME & KITCHEN",
+                            CategoryName:"Home & Kitchen",
                     SubCategoryName:"Kitchen & Dinning",
                             LeafCategory:"Cookware"
                         },
                         {
-                            CategoryName:"HOME & KITCHEN",
+                            CategoryName:"Home & Kitchen",
                     SubCategoryName:"Kitchen & Dinning",
                             LeafCategory:"Cutlery & Knife Accessories"
                         },
                         {
-                            CategoryName:"HOME & KITCHEN",
+                            CategoryName:"Home & Kitchen",
                     SubCategoryName:"Kitchen & Dinning",
                             LeafCategory:"Dining & Entertaining"
                         },
                         {
-                            CategoryName:"HOME & KITCHEN",
+                            CategoryName:"Home & Kitchen",
                     SubCategoryName:"Kitchen & Dinning",
                             LeafCategory:"Small Appliances"
                         }
                     ]
                 },
                 {
-                    CategoryName:"HOME & KITCHEN",
+                    CategoryName:"Home & Kitchen",
                     SubCategoryName:"Tools & Home Improvement",
                     leafCategoryList:[
                         {
-                            CategoryName:"HOME & KITCHEN",
+                            CategoryName:"Home & Kitchen",
                     SubCategoryName:"Tools & Home Improvement",
                             LeafCategory:"Ceramic Tiles"
                         },
                         {
-                            CategoryName:"HOME & KITCHEN",
+                            CategoryName:"Home & Kitchen",
                     SubCategoryName:"Tools & Home Improvement",
                             LeafCategory:"Wall Plates"
                         }
@@ -911,208 +911,208 @@ export const CategoryList = [
                     ]
                 },
                 {
-                    CategoryName:"HOME & KITCHEN",
+                    CategoryName:"Home & Kitchen",
                     SubCategoryName:"Home Appliances"
                 },
                 {
-                    CategoryName:"HOME & KITCHEN",
+                    CategoryName:"Home & Kitchen",
                     SubCategoryName:"Bar Tools & Drinkware"
                 },
                 {
-                    CategoryName:"HOME & KITCHEN",
+                    CategoryName:"Home & Kitchen",
                     SubCategoryName:"Home Decor",
                     leafCategoryList:[
                         {
-                            CategoryName:"HOME & KITCHEN",
+                            CategoryName:"Home & Kitchen",
                             SubCategoryName:"Home Decor",
                             LeafCategory:"Artificial Plants & Flowers"
                         },
                         {
-                            CategoryName:"HOME & KITCHEN",
+                            CategoryName:"Home & Kitchen",
                             SubCategoryName:"Home Decor",
                             LeafCategory:"Candles & Holders"
                         },
                         {
-                            CategoryName:"HOME & KITCHEN",
+                            CategoryName:"Home & Kitchen",
                             SubCategoryName:"Home Decor",
                             LeafCategory:"Clocks"
                         },
                         {
-                            CategoryName:"HOME & KITCHEN",
+                            CategoryName:"Home & Kitchen",
                             SubCategoryName:"Home Decor",
                             LeafCategory:"Decorative Pillows"
                         },
                         {
-                            CategoryName:"HOME & KITCHEN",
+                            CategoryName:"Home & Kitchen",
                             SubCategoryName:"Home Decor",
                             LeafCategory:"Home Decor Accents"
                         },
                         {
-                            CategoryName:"HOME & KITCHEN",
+                            CategoryName:"Home & Kitchen",
                             SubCategoryName:"Home Decor",
                             LeafCategory:"Home Fragrance"
                         },
                         {
-                            CategoryName:"HOME & KITCHEN",
+                            CategoryName:"Home & Kitchen",
                             SubCategoryName:"Home Decor",
                             LeafCategory:"Mirrors"
                         },
                         {
-                            CategoryName:"HOME & KITCHEN",
+                            CategoryName:"Home & Kitchen",
                             SubCategoryName:"Home Decor",
                             LeafCategory:"Nursery Decor"
                         }
                     ]
                 },
                 {
-                    CategoryName:"HOME & KITCHEN",
+                    CategoryName:"Home & Kitchen",
                     SubCategoryName:"Kids' Home Store"
                 },
                 {
-                    CategoryName:"HOME & KITCHEN",
+                    CategoryName:"Home & Kitchen",
                     SubCategoryName:"Seasonal Decor"
                 },
                 {
-                    CategoryName:"HOME & KITCHEN",
+                    CategoryName:"Home & Kitchen",
                     SubCategoryName:"Storage & Organization"
                 },
                 {
-                    CategoryName:"HOME & KITCHEN",
+                    CategoryName:"Home & Kitchen",
                     SubCategoryName:"Towel Bars"
                 },
             
             
                 
                 {
-                    CategoryName:"HOME & KITCHEN",
+                    CategoryName:"Home & Kitchen",
                     SubCategoryName:"Vacuum & Floor Care",
                             leafCategoryList:[
                             {
-                                CategoryName:"HOME & KITCHEN",
+                                CategoryName:"Home & Kitchen",
                                 SubCategoryName:"Vacuum & Floor Care",
                                 LeafCategory:"Carpet & Upholstery Cleaners & Accessories"
                             },
                             {
-                                CategoryName:"HOME & KITCHEN",
+                                CategoryName:"Home & Kitchen",
                                 SubCategoryName:"Vacuum & Floor Care",
                                 LeafCategory:"Floor Buffers & Parts"
                             },
                             {
-                                CategoryName:"HOME & KITCHEN",
+                                CategoryName:"Home & Kitchen",
                                 SubCategoryName:"Vacuum & Floor Care",
                                 LeafCategory:"Vacuum Parts & Accessories"
                             },
                             {
-                                CategoryName:"HOME & KITCHEN",
+                                CategoryName:"Home & Kitchen",
                                 SubCategoryName:"Vacuum & Floor Care",
                                 LeafCategory:"Vacuum"
                             }
                     ]
                 },
                 {
-                    CategoryName:"HOME & KITCHEN",
+                    CategoryName:"Home & Kitchen",
                      SubCategoryName:"Coasters"
                 },
                 {
-                    CategoryName:"HOME & KITCHEN",
+                    CategoryName:"Home & Kitchen",
                     SubCategoryName:"Event & Party Supplies"
                 },
                 {
-                    CategoryName:"HOME & KITCHEN",
+                    CategoryName:"Home & Kitchen",
                     SubCategoryName:"Furniture"
                 },
                 {
-                    CategoryName:"HOME & KITCHEN",
+                    CategoryName:"Home & Kitchen",
                     SubCategoryName:"Glassware & Drinkware"
                 },
                 {
-                    CategoryName:"HOME & KITCHEN",
+                    CategoryName:"Home & Kitchen",
                     SubCategoryName:"Furniture"
                 },
                 {
-                    CategoryName:"HOME & KITCHEN",
+                    CategoryName:"Home & Kitchen",
                     SubCategoryName:"Heating, Cooling & Air Quality"
                 }
             
             ]
             },
         {
-            CategoryName:"BEAUTY & PERSONAL CARE",
+            CategoryName:"Beauty & Personal Care",
             subCategoryList:[
                 {
-                    CategoryName:"BEAUTY & PERSONAL CARE",
+                    CategoryName:"Beauty & Personal Care",
                     SubCategoryName:"Foot, Hand & Nail Care",
                     leafCategoryList:[
                         {
-                            CategoryName:"BEAUTY & PERSONAL CARE",
+                            CategoryName:"Beauty & Personal Care",
                             SubCategoryName:"Foot, Hand & Nail Care",
                             LeafCategory: "Foot & Hand Care"
                         },
                         {
-                            CategoryName:"BEAUTY & PERSONAL CARE",
+                            CategoryName:"Beauty & Personal Care",
                             SubCategoryName:"Foot, Hand & Nail Care",
                             LeafCategory: "Nail Art & Polish"
                         },
                         {
-                            CategoryName:"BEAUTY & PERSONAL CARE",
+                            CategoryName:"Beauty & Personal Care",
                             SubCategoryName:"Foot, Hand & Nail Care",
                             LeafCategory: "Nail Care"
                         },
                         {
-                            CategoryName:"BEAUTY & PERSONAL CARE",
+                            CategoryName:"Beauty & Personal Care",
                             SubCategoryName:"Foot, Hand & Nail Care",
                             LeafCategory: "Tools & Accessories"
                         },
                         {
-                            CategoryName:"BEAUTY & PERSONAL CARE",
+                            CategoryName:"Beauty & Personal Care",
                             SubCategoryName:"Foot, Hand & Nail Care",
                             LeafCategory: "Concealer"
                         }
                     ]   
                 },
                 {
-                    CategoryName:"BEAUTY & PERSONAL CARE",
+                    CategoryName:"Beauty & Personal Care",
                     SubCategoryName:"Concealer"
                 },
                 {
-                    CategoryName:"BEAUTY & PERSONAL CARE",
+                    CategoryName:"Beauty & Personal Care",
                     SubCategoryName:"Foundation"
                 },
                 {
-                    CategoryName:"BEAUTY & PERSONAL CARE",
+                    CategoryName:"Beauty & Personal Care",
                     SubCategoryName:"Compact Powder"
                 },
                 {
-                    CategoryName:"BEAUTY & PERSONAL CARE",
+                    CategoryName:"Beauty & Personal Care",
                     SubCategoryName:"Hair Care & Styling",
                     leafCategoryList:[
                         {
-                            CategoryName:"BEAUTY & PERSONAL CARE",
+                            CategoryName:"Beauty & Personal Care",
                             SubCategoryName:"Hair Care & Styling",
                             LeafCategory:"Hair & Scalp Treatments"
                         },
                         {
-                            CategoryName:"BEAUTY & PERSONAL CARE",
+                            CategoryName:"Beauty & Personal Care",
                             SubCategoryName:"Hair Care & Styling",
                             LeafCategory:"Hair Coloring Products"
                         },
                         {
-                            CategoryName:"BEAUTY & PERSONAL CARE",
+                            CategoryName:"Beauty & Personal Care",
                             SubCategoryName:"Hair Care & Styling",
                             LeafCategory:"Hair Dryers"
                         },
                         {
-                            CategoryName:"BEAUTY & PERSONAL CARE",
+                            CategoryName:"Beauty & Personal Care",
                             SubCategoryName:"Hair Care & Styling",
                             LeafCategory:"Shampoos"
                         },
                         {
-                            CategoryName:"BEAUTY & PERSONAL CARE",
+                            CategoryName:"Beauty & Personal Care",
                             SubCategoryName:"Hair Care & Styling",
                             LeafCategory:"Styling Products"
                         },
                         {
-                            CategoryName:"BEAUTY & PERSONAL CARE",
+                            CategoryName:"Beauty & Personal Care",
                             SubCategoryName:"Hair Care & Styling",
                             LeafCategory:"Styling Tools & Appliances"
                         },
@@ -1120,31 +1120,31 @@ export const CategoryList = [
                     ]
                 },
                 {
-                    CategoryName:"BEAUTY & PERSONAL CARE",
+                    CategoryName:"Beauty & Personal Care",
                     SubCategoryName:"Makeup",
                     leafCategoryList:[
                         {
-                            CategoryName:"BEAUTY & PERSONAL CARE",
+                            CategoryName:"Beauty & Personal Care",
                             SubCategoryName:"Makeup",
                             LeafCategory:"Eyebrow Color"
                         },
                         {
-                            CategoryName:"BEAUTY & PERSONAL CARE",
+                            CategoryName:"Beauty & Personal Care",
                             SubCategoryName:"Makeup",
                             LeafCategory:"Eyeliners"
                         },
                         {
-                            CategoryName:"BEAUTY & PERSONAL CARE",
+                            CategoryName:"Beauty & Personal Care",
                             SubCategoryName:"Makeup",
                             LeafCategory:"Eyeshadow"
                         },
                         {
-                            CategoryName:"BEAUTY & PERSONAL CARE",
+                            CategoryName:"Beauty & Personal Care",
                             SubCategoryName:"Makeup",
                             LeafCategory:"Eyeshadow Bases & Primers"
                         },
                         {
-                            CategoryName:"BEAUTY & PERSONAL CARE",
+                            CategoryName:"Beauty & Personal Care",
                             SubCategoryName:"Makeup",
                             LeafCategory:"Lipstick"
                         },
@@ -1152,44 +1152,44 @@ export const CategoryList = [
                     ]
                 },
                 {
-                    CategoryName:"BEAUTY & PERSONAL CARE",
+                    CategoryName:"Beauty & Personal Care",
                     SubCategoryName:"Fragrance"
                 
                 },
                 {
-                    CategoryName:"BEAUTY & PERSONAL CARE",
+                    CategoryName:"Beauty & Personal Care",
                     SubCategoryName:"Grooming"
                 },
                 {
-                    CategoryName:"BEAUTY & PERSONAL CARE",
+                    CategoryName:"Beauty & Personal Care",
                     SubCategoryName:"Bleaches"
                 },
                 {
-                    CategoryName:"BEAUTY & PERSONAL CARE",
+                    CategoryName:"Beauty & Personal Care",
                     SubCategoryName:"Hair Oils"
                 },
                 {
-                    CategoryName:"BEAUTY & PERSONAL CARE",
+                    CategoryName:"Beauty & Personal Care",
                     SubCategoryName:"Cleansing Creams & Milks"
                 },
                 {
-                    CategoryName:"BEAUTY & PERSONAL CARE",
+                    CategoryName:"Beauty & Personal Care",
                     SubCategoryName:"Skin Care"
                 },
                 {
-                    CategoryName:"BEAUTY & PERSONAL CARE",
+                    CategoryName:"Beauty & Personal Care",
                     SubCategoryName:"Toners"
                 },
                 {
-                    CategoryName:"BEAUTY & PERSONAL CARE",
+                    CategoryName:"Beauty & Personal Care",
                     SubCategoryName:"Conditioners"
                 },
                 {
-                    CategoryName:"BEAUTY & PERSONAL CARE",
+                    CategoryName:"Beauty & Personal Care",
                     SubCategoryName:"Face Wash"
                 },
                 {
-                    CategoryName:"BEAUTY & PERSONAL CARE",
+                    CategoryName:"Beauty & Personal Care",
                     SubCategoryName:"Bath Oils"
                 },
                        
@@ -1199,75 +1199,75 @@ export const CategoryList = [
                     
             },
             {
-                CategoryName:"HEALTH & WELLNESS",
+                CategoryName:"Health & Wellness",
                 subCategoryList:[
                     {
-                        CategoryName:"HEALTH & WELLNESS",
+                        CategoryName:"Health & Wellness",
                         SubCategoryName:"Sports Nutrition",
                         leafCategoryList:[
                             {
-                                CategoryName:"HEALTH & WELLNESS",
+                                CategoryName:"Health & Wellness",
                                 SubCategoryName:"Sports Nutrition",
                                 LeafCategory:"Amino Acids"
                             },
                             {
-                                CategoryName:"HEALTH & WELLNESS",
+                                CategoryName:"Health & Wellness",
                                 SubCategoryName:"Sports Nutrition",
                                 LeafCategory:"Endurance & Energy"
                             },
                             {
-                                CategoryName:"HEALTH & WELLNESS",
+                                CategoryName:"Health & Wellness",
                                 SubCategoryName:"Sports Nutrition",
                                 LeafCategory:"Healthy Snacks & Beverages"
                             },
                             {
-                                CategoryName:"HEALTH & WELLNESS",
+                                CategoryName:"Health & Wellness",
                                 SubCategoryName:"Sports Nutrition",
                                 LeafCategory:"Hydration"
                             },
                             {
-                                CategoryName:"HEALTH & WELLNESS",
+                                CategoryName:"Health & Wellness",
                                 SubCategoryName:"Sports Nutrition",
                                 LeafCategory:"Nutrition Bars"
                             },
                             {
-                                CategoryName:"HEALTH & WELLNESS",
+                                CategoryName:"Health & Wellness",
                                 SubCategoryName:"Sports Nutrition",
                                 LeafCategory:"Protein"
                             }
                         ]
                     },
                     {
-                        CategoryName:"HEALTH & WELLNESS",
+                        CategoryName:"Health & Wellness",
                         SubCategoryName:"Vitamins & Dietary Supplements",
                         leafCategoryList:[
                             {
-                                CategoryName:"HEALTH & WELLNESS",
+                                CategoryName:"Health & Wellness",
                                 SubCategoryName:"Vitamins & Dietary Supplements",
                                 LeafCategory:"Blended Vitamin & Mineral Supplements"
                             },
                             {
-                                CategoryName:"HEALTH & WELLNESS",
+                                CategoryName:"Health & Wellness",
                                 SubCategoryName:"Vitamins & Dietary Supplements",
                                 LeafCategory:"Herbal Supplements"
                             },
                             {
-                                CategoryName:"HEALTH & WELLNESS",
+                                CategoryName:"Health & Wellness",
                                 SubCategoryName:"Vitamins & Dietary Supplements",
                                 LeafCategory:"Minerals"
                             },
                             {
-                                CategoryName:"HEALTH & WELLNESS",
+                                CategoryName:"Health & Wellness",
                                 SubCategoryName:"Vitamins & Dietary Supplements",
                                 LeafCategory:"Supplements"
                             },
                             {
-                                CategoryName:"HEALTH & WELLNESS",
+                                CategoryName:"Health & Wellness",
                                 SubCategoryName:"Vitamins & Dietary Supplements",
                                 LeafCategory:"Vitamins"
                             },
                             {
-                                CategoryName:"HEALTH & WELLNESS",
+                                CategoryName:"Health & Wellness",
                                 SubCategoryName:"Vitamins & Dietary Supplements",
                                 LeafCategory:"Weight Loss"
                             }
@@ -1276,11 +1276,11 @@ export const CategoryList = [
                         ]
                     },
                     {
-                        CategoryName:"HEALTH & WELLNESS",
+                        CategoryName:"Health & Wellness",
                         SubCategoryName:"Baby & Child Care",
                         leafCategoryList:[
                             {
-                                CategoryName:"HEALTH & WELLNESS",
+                                CategoryName:"Health & Wellness",
                                 SubCategoryName:"Baby & Child Care",
                                 LeafCategory:"Diaper Care"
                             }
@@ -1288,36 +1288,36 @@ export const CategoryList = [
                         ]
                     },
                     {
-                        CategoryName:"HEALTH & WELLNESS",
+                        CategoryName:"Health & Wellness",
                         SubCategoryName:"Health Care",
                         leafCategoryList:[
                             {
-                                CategoryName:"HEALTH & WELLNESS",
+                                CategoryName:"Health & Wellness",
                                 SubCategoryName:"Health Care",
                                 LeafCategory:"Alternative Medicine"
                             },
                             {
-                                CategoryName:"HEALTH & WELLNESS",
+                                CategoryName:"Health & Wellness",
                                 SubCategoryName:"Health Care",
                                 LeafCategory:"Diabetes Care"
                             },
                             {
-                                CategoryName:"HEALTH & WELLNESS",
+                                CategoryName:"Health & Wellness",
                                 SubCategoryName:"Health Care",
                                 LeafCategory:"Ear Care"
                             },
                             {
-                                CategoryName:"HEALTH & WELLNESS",
+                                CategoryName:"Health & Wellness",
                                 SubCategoryName:"Health Care",
                                 LeafCategory:"Eye Health"
                             },
                             {
-                                CategoryName:"HEALTH & WELLNESS",
+                                CategoryName:"Health & Wellness",
                                 SubCategoryName:"Health Care",
                                 LeafCategory:"Feminine Care"
                             },
                             {
-                                CategoryName:"HEALTH & WELLNESS",
+                                CategoryName:"Health & Wellness",
                                 SubCategoryName:"Health Care",
                                 LeafCategory:"First Aid"
                             }
@@ -1327,31 +1327,31 @@ export const CategoryList = [
                         ]
                     },
                     {
-                        CategoryName:"HEALTH & WELLNESS",
+                        CategoryName:"Health & Wellness",
                         SubCategoryName:"Personal Care",
                         leafCategoryList:[
                             {
-                                CategoryName:"HEALTH & WELLNESS",
+                                CategoryName:"Health & Wellness",
                                 SubCategoryName:"Personal Care",
                                 LeafCategory:"Bath & Bathing Accessories"
                             },
                             {
-                                CategoryName:"HEALTH & WELLNESS",
+                                CategoryName:"Health & Wellness",
                                 SubCategoryName:"Personal Care",
                                 LeafCategory:"Deodorants & Antiperspirants"
                             },
                             {
-                                CategoryName:"HEALTH & WELLNESS",
+                                CategoryName:"Health & Wellness",
                                 SubCategoryName:"Personal Care",
                                 LeafCategory:"Hair Care"
                             },
                             {
-                                CategoryName:"HEALTH & WELLNESS",
+                                CategoryName:"Health & Wellness",
                                 SubCategoryName:"Personal Care",
                                 LeafCategory:"Lip Care"
                             },
                             {
-                                CategoryName:"HEALTH & WELLNESS",
+                                CategoryName:"Health & Wellness",
                                 SubCategoryName:"Personal Care",
                                 LeafCategory:"Skin Care"
                             }
@@ -1361,19 +1361,19 @@ export const CategoryList = [
                         ]
                     },
                     {
-                        CategoryName:"HEALTH & WELLNESS",
+                        CategoryName:"Health & Wellness",
                         SubCategoryName:"Aromatherapy"
                     },
                     {
-                        CategoryName:"HEALTH & WELLNESS",
+                        CategoryName:"Health & Wellness",
                         SubCategoryName:"Oral Care"
                     },
                     {
-                        CategoryName:"HEALTH & WELLNESS",
+                        CategoryName:"Health & Wellness",
                         SubCategoryName:"Cloth Face Mask"
                     },
                     {
-                        CategoryName:"HEALTH & WELLNESS",
+                        CategoryName:"Health & Wellness",
                         SubCategoryName:"Vision Care"
                     }
                     
@@ -1523,54 +1523,54 @@ export const CategoryList = [
                   },
                   {
                       
-                      CategoryName:"SPORTS & OUTDOORS",
+                      CategoryName:"Sports & Outdoors",
                       subCategoryList:[
                           {
-                            CategoryName:"SPORTS & OUTDOORS",
+                            CategoryName:"Sports & Outdoors",
                             SubCategoryName:"Camping & Hiking"
                           },
                           {
-                            CategoryName:"SPORTS & OUTDOORS",
+                            CategoryName:"Sports & Outdoors",
                             SubCategoryName:"Cycling"
                           },
                           {
-                            CategoryName:"SPORTS & OUTDOORS",
+                            CategoryName:"Sports & Outdoors",
                             SubCategoryName:"Scooters & Accessories"
                           },
                           {
-                            CategoryName:"SPORTS & OUTDOORS",
+                            CategoryName:"Sports & Outdoors",
                             SubCategoryName:"Strength Training"
                           },
                           {
-                            CategoryName:"SPORTS & OUTDOORS",
+                            CategoryName:"Sports & Outdoors",
                             SubCategoryName:"Cardio Training"
                           },
                           {
-                            CategoryName:"SPORTS & OUTDOORS",
+                            CategoryName:"Sports & Outdoors",
                             SubCategoryName:"Yoga"
                           },
                           {
-                            CategoryName:"SPORTS & OUTDOORS",
+                            CategoryName:"Sports & Outdoors",
                             SubCategoryName:"Exercise Accessories"
                           },
                           {
-                            CategoryName:"SPORTS & OUTDOORS",
+                            CategoryName:"Sports & Outdoors",
                             SubCategoryName:"Combat Sports"
                           },
                           {
-                            CategoryName:"SPORTS & OUTDOORS",
+                            CategoryName:"Sports & Outdoors",
                             SubCategoryName:"Team Sports"
                           },
                           {
-                            CategoryName:"SPORTS & OUTDOORS",
+                            CategoryName:"Sports & Outdoors",
                             SubCategoryName:"Racquet Sports"
                           },
                           {
-                            CategoryName:"SPORTS & OUTDOORS",
+                            CategoryName:"Sports & Outdoors",
                             SubCategoryName:"Water Sports"
                           },
                           {
-                            CategoryName:"SPORTS & OUTDOORS",
+                            CategoryName:"Sports & Outdoors",
                             SubCategoryName:"Sports Nutrition"
                           }
 
@@ -1578,38 +1578,38 @@ export const CategoryList = [
                       ]
                   },
                   {
-                      CategoryName:"BABY & TOYS",
+                      CategoryName:"Baby & Toys",
                       subCategoryList:[
                           {
-                            CategoryName:"BABY & TOYS",  
+                            CategoryName:"Baby & Toys",  
                             SubCategoryName:"Baby & Clothing Accessories"
                           },
                           {
-                            CategoryName:"BABY & TOYS",  
+                            CategoryName:"Baby & Toys",  
                             SubCategoryName:"Car Seats"
                           },
                           {
-                            CategoryName:"BABY & TOYS",  
+                            CategoryName:"Baby & Toys",  
                             SubCategoryName:"Diapering"
                           },
                           {
-                            CategoryName:"BABY & TOYS",  
+                            CategoryName:"Baby & Toys",  
                             SubCategoryName:"Feeding"
                           },
                           {
-                            CategoryName:"BABY & TOYS",  
+                            CategoryName:"Baby & Toys",  
                             SubCategoryName:"Gifts"
                           },
                           {
-                            CategoryName:"BABY & TOYS",  
+                            CategoryName:"Baby & Toys",  
                             SubCategoryName:"Nursery"
                           },
                           {
-                            CategoryName:"BABY & TOYS",  
+                            CategoryName:"Baby & Toys",  
                             SubCategoryName:"Toys & Games"
                           },
                           {
-                            CategoryName:"BABY & TOYS",  
+                            CategoryName:"Baby & Toys",  
                             SubCategoryName:"Travel Gear"
                           }
                       ]

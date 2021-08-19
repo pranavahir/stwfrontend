@@ -187,7 +187,7 @@ const SideBar = () => {
                         <ul>
                           <li>
                             <Link href={`/c/Electronics/Camera, Photo & Videos/DSLR`}>
-                            <div style={linkStyle} > DSLR</div>
+                            <div style={linkStyle} >DSLR</div>
                             </Link>
                           </li>
                           <li>
@@ -195,8 +195,8 @@ const SideBar = () => {
                               style={linkStyle}
                               onClick={() => CategoryFilter("Lenses")}
                             > */}
-                            <Link href={`/c/Electronics/Camera, Photo & Videos/DSLR`}>
-                            Lenses
+                            <Link href={`/c/Electronics/Camera, Photo & Videos/Lenses`}>
+                            <div style={linkStyle} >Lenses</div>
                             </Link>
                               
                             {/* </a> */}
@@ -336,17 +336,17 @@ const SideBar = () => {
                           </li>
                           <li>
                           <Link href={`/c/Electronics/Video Games/Consoles`}>
-                            <div style={linkStyle} >Video Games</div>
+                            <div style={linkStyle} >Consoles</div>
                             </Link>
                           </li>
                           <li>
                           <Link href={`/c/Electronics/Video Games/Games`}>
-                            <div style={linkStyle} >Video Games</div>
+                            <div style={linkStyle} >Games</div>
                             </Link>
                           </li>
                           <li>
                           <Link href={`/c/Electronics/Video Games/Nintendo`}>
-                            <div style={linkStyle} >Video Games</div>
+                            <div style={linkStyle} >Nintendo</div>
                             </Link>
                           </li>
                         </ul>
@@ -535,7 +535,7 @@ const SideBar = () => {
                           </li>
                           <li>
                           <Link href={`/c/Fashion/Handbags/Satchels`}>
-                            <div style={linkStyle} >Hobo Bags</div>
+                            <div style={linkStyle} >Satchels</div>
                             </Link>
                           </li>
                           <li>
@@ -692,38 +692,38 @@ const SideBar = () => {
                     <Col xl="3">
                       <div className="link-section">
                         <h5>
-                        <Link href={`/c/Home & Kitchen/Kitchen & Dinning`}>
-                            <div style={linkStyle} >Kitchen & Dinning</div>
+                        <Link href={`/c/Home & Kitchen/Kitchen & Dining`}>
+                            <div style={linkStyle} >Kitchen & Dining</div>
                             </Link> 
                         </h5>
                         <ul>
                           <li>
-                          <Link href={`/c/Home & Kitchen/Kitchen & Dinning/Bakeware`}>
+                          <Link href={`/c/Home & Kitchen/Kitchen & Dining/Bakeware`}>
                             <div style={linkStyle} >Bakeware</div>
                             </Link> 
                           </li>
                           <li>
-                          <Link href={`/c/Home & Kitchen/Kitchen & Dinning/Coffee, Tea & Espresso`}>
+                          <Link href={`/c/Home & Kitchen/Kitchen & Dining/Coffee, Tea & Espresso`}>
                             <div style={linkStyle} >Coffee, Tea & Espresso</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/c/Home & Kitchen/Kitchen & Dinning/Cookware`}>
+                          <Link href={`/c/Home & Kitchen/Kitchen & Dining/Cookware`}>
                             <div style={linkStyle} >Cookware</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/c/Home & Kitchen/Kitchen & Dinning/Cutlery & Knife Accessories`}>
+                          <Link href={`/c/Home & Kitchen/Kitchen & Dining/Cutlery & Knife Accessories`}>
                             <div style={linkStyle} >Cutlery & Knife Accessories</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/c/Home & Kitchen/Kitchen & Dinning/Dining & Entertaining`}>
+                          <Link href={`/c/Home & Kitchen/Kitchen & Dining/Dining & Entertaining`}>
                             <div style={linkStyle} >Dining & Entertaining</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/c/Home & Kitchen/Kitchen & Dinning/Small Appliances`}>
+                          <Link href={`/c/Home & Kitchen/Kitchen & Dining/Small Appliances`}>
                             <div style={linkStyle} >Small Appliances</div>
                             </Link>
                           </li>
@@ -889,13 +889,18 @@ const SideBar = () => {
               </ul>
             </li>
             <li>
-              <a
+            <Link href={`/c/Beauty & Personal Care`}>
+                        <a>Beauty & Personal Care
+                        <span className="sub-arrow"></span>
+                        </a>
+              </Link>
+              {/* <a
                 href="#"
                 onClick={(e) => handleMegaSubmenu(e, "Beauty & Personal Care")}
               >
                 Beauty & Personal Care
                 <span className="sub-arrow"></span>
-              </a>
+              </a> */}
               <ul className="mega-menu beauty-and-personal-care-menu">
                 <li>
                   <Row m="0">
@@ -1006,17 +1011,17 @@ const SideBar = () => {
                           </li>
                           <li>
                           <Link href={`/c/Beauty & Personal Care/Makeup/Eyeshadow`}>
-                            <div style={linkStyle} >Makeup</div>
+                            <div style={linkStyle} >Eyeshadow</div>
                             </Link>
                           </li>
                           <li>
                           <Link href={`/c/Beauty & Personal Care/Makeup/Eyeshadow Bases & Primers`}>
-                            <div style={linkStyle} >Makeup</div>
+                            <div style={linkStyle} >Eyeshadow Bases & Primers</div>
                             </Link>
                           </li>
                           <li>
                           <Link href={`/c/Beauty & Personal Care/Makeup/Lipstick`}>
-                            <div style={linkStyle} >Makeup</div>
+                            <div style={linkStyle} >Lipstick</div>
                             </Link>
                           </li>
                         </ul>
@@ -1081,13 +1086,18 @@ const SideBar = () => {
               </ul>
             </li>
             <li>
-              <a
+            <Link href={`/c/Health & Wellness`}>
+                        <a>Health & Wellness
+                        <span className="sub-arrow"></span>
+                        </a>
+              </Link>
+              {/* <a
                 href="#"
                 onClick={(e) => handleMegaSubmenu(e, "Health & Wellness")}
               >
                 Health & Wellness
                 <span className="sub-arrow"></span>
-              </a>
+              </a> */}
               <ul className="mega-menu beauty-and-personal-care-menu">
                 <li>
                   <Row m="0">
@@ -1283,10 +1293,15 @@ const SideBar = () => {
               </ul>
             </li>
             <li>
-              <a href="#" onClick={(e) => handleMegaSubmenu(e, "Grocery")}>
+            <Link href={`/c/Grocery`}>
+                        <a>Grocery
+                        <span className="sub-arrow"></span>
+                        </a>
+              </Link>
+              {/* <a href="#" onClick={(e) => handleMegaSubmenu(e, "Grocery")}>
                 Grocery
                 <span className="sub-arrow"></span>
-              </a>
+              </a> */}
               <ul className="mega-menu beauty-and-personal-care-menu">
                 <li>
                   <Row m="0">
@@ -1457,13 +1472,18 @@ const SideBar = () => {
               </ul>
             </li>
             <li>
-              <a
+            <Link href={`/c/Sports & Outdoors`}>
+                        <a>Sports & Outdoors
+                        <span className="sub-arrow"></span>
+                        </a>
+              </Link>
+              {/* <a
                 href="#"
                 onClick={(e) => handleMegaSubmenu(e, "Sports & Outdoors")}
               >
                 Sports & Outdoors
                 <span className="sub-arrow"></span>
-              </a>
+              </a> */}
               <ul className="mega-menu beauty-and-personal-care-menu">
                 <li>
                   <Row m="0">
