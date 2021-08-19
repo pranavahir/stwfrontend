@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Row ,Col } from 'reactstrap';
 
-const Breadcrubs = ({title ,parent ,subTitle}) => {
+const Breadcrubs = ({title ,parent ,subTitle,leafTitle}) => {
 
     return (
         <div className="breadcrumb-section">
@@ -20,6 +20,12 @@ const Breadcrubs = ({title ,parent ,subTitle}) => {
                                     ''
                                     :
                                     <li className="breadcrumb-item active" aria-current="page"><b>{subTitle}</b></li>
+                                }
+                                {
+                                    leafTitle === undefined ?
+                                    ''
+                                    :
+                                    <li className="breadcrumb-item active" aria-current="page"><b>{leafTitle}</b></li>
                                 }
                                 
                             </ol>

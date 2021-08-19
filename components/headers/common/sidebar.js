@@ -76,28 +76,31 @@ const SideBar = () => {
 			const pathname = window.location.pathname;
 			setUrl(pathname);
             var URL = ""
-			if(pathname=="/shop/six_grid")
+          
+			if(pathname=="/c/")
 			{
 				 URL = pathname;	
 			}
-            else if(pathname== (geoLocation+"/shop/six_grid"))
+            else if(pathname== (geoLocation+"/c/"))
             {
                 URL = pathname;	
-                console.log("geolocation"+pathname);
+                console.log("geolocation"+pathname+"/"+selectedCategory);
             }
 			else 
 			{
 
         console.log("else"+pathname);
         if(geoLocation==null)
-        URL = "/shop/six_grid";
+        URL = "/c";
         else  
-				URL = geoLocation+"/shop/six_grid";
+				URL = geoLocation+"/c";
 			}
             filterContext.setSelectedCategory(category)
             filterContext.setselectedKeyword("")
             filterContext.setSelectedPromaflag([])
-        	  router.push(`${URL}?${selectedCategory}&brand=${selectedBrands}&color=${selectedColor}&size=${selectedSize}&minPrice=${selectedPrice.min}&maxPrice=${selectedPrice.max}&keyword=`)
+        	  // router.push(`${URL}`)
+            router.push(`${URL}/${selectedCategory}`);
+            // ?&brand=${selectedBrands}&color=${selectedColor}&size=${selectedSize}&minPrice=${selectedPrice.min}&maxPrice=${selectedPrice.max}&keyword=`)
 
 
     }
@@ -164,44 +167,39 @@ const SideBar = () => {
           </a>
           <ul id="sub-menu" className="sidebar-menu">
             <li>
-              <a href="#" onClick={(e) => handleMegaSubmenu(e, "Electronics")}>
-                Electronics
-                <span className="sub-arrow"></span>
-              </a>
+              <Link href={`/c/Electronics`}>
+                        <a>Electronics
+                        <span className="sub-arrow"></span>
+                        </a>
+              </Link>
               <ul className="mega-menu electronics-menu">
                 <li>
                   <Row m="0">
                     <Col xl="4">
                       <div className="link-section">
                         <h5>
-                          <div
-                            style={linkStyle}
-                            onClick={() =>
-                              CategoryFilter("Camera, Photo & Videos")
-                            }
-                          >
+                          <Link  style={linkStyle} href={`/c/Electronics/Camera, Photo & Videos`}>
+                          <div style={linkStyle} >
                             Camera, Photo & Videos
                           </div>
+                          </Link>
                         </h5>
                         <ul>
                           <li>
-                            <a
-                              style={linkStyle}
-                              onClick={() => CategoryFilter("DSLR")}
-                            >
-                              DSLR
-                            </a>
-                            {/* <Link href={`/shop/six_grid`} >
-                                                            <a>DSLR</a>
-                                                        </Link> */}
+                            <Link href={`/c/Electronics/Camera, Photo & Videos/DSLR`}>
+                            <div style={linkStyle} > DSLR</div>
+                            </Link>
                           </li>
                           <li>
-                            <a
+                            {/* <a
                               style={linkStyle}
                               onClick={() => CategoryFilter("Lenses")}
-                            >
-                              Lenses
-                            </a>
+                            > */}
+                            <Link href={`/c/Electronics/Camera, Photo & Videos/DSLR`}>
+                            Lenses
+                            </Link>
+                              
+                            {/* </a> */}
                           </li>
                           <li>
                             <a
@@ -578,10 +576,11 @@ const SideBar = () => {
               </ul>
             </li>
             <li>
-              <a href="#" onClick={(e) => handleMegaSubmenu(e, "Fashion")}>
-                Fashion
-                <span className="sub-arrow"></span>
-              </a>
+            <Link href={`/c/Fashion`}>
+                        <a>Fashion
+                        <span className="sub-arrow"></span>
+                        </a>
+              </Link>
               <ul className="mega-menu fashion-menu">
                 <li>
                   <Row m="0">
@@ -850,13 +849,12 @@ const SideBar = () => {
               </ul>
             </li>
             <li>
-              <a
-                href="#"
-                onClick={(e) => handleMegaSubmenu(e, "Home & Kitchen")}
-              >
-                Home & Kitchen
-                <span className="sub-arrow"></span>
-              </a>
+
+            <Link href={`/c/Home & Kitchen`}>
+                        <a>Home & Kitchen
+                        <span className="sub-arrow"></span>
+                        </a>
+              </Link>
               <ul className="mega-menu home-and-kitchen-menu">
                 <li>
                   <Row m="0">

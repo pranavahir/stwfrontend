@@ -4,6 +4,9 @@ import Slider from 'react-slick';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { Container, Row, Col } from 'reactstrap';
+import { homeSlider,CategorySlider } from '../../../../services/script';
+import MainCategoryCollection from '../../../../components/common/Collections/MainCategoryCollection'
+
 
 const Banner = () => {
 
@@ -19,6 +22,20 @@ const Banner = () => {
     const [geoLocation, setgeoLocation] = useState(
       sessionStorage.getItem('geoLocation')
   );
+
+
+  const CategoryList=[
+    { CategoryName:"Electronics"},
+    { CategoryName:"Fashion"},
+    { CategoryName:"Home & Kitchen"},
+    { CategoryName:"Beauty & Personal Care"},
+    { CategoryName:"Health & Wellness"},
+    { CategoryName:"Grocery"},
+    { CategoryName:"Sports & Outdoors"},
+    { CategoryName:"Baby & Toys"},
+    { CategoryName:"Next Day Delivery"},
+]
+
   const CategoryFilter = (category) => {
     // router.push(`/p/${product.id}` + '-' + `${titleProps}`);
   const pathname = window.location.pathname;
@@ -39,45 +56,71 @@ const Banner = () => {
       router.push(`${URL}?${selectedCategory}&brand=${selectedBrands}&color=${selectedColor}&size=${selectedSize}&minPrice=${selectedPrice.min}&maxPrice=${selectedPrice.max}&keyword=${selectedKeyword}`)
 }
 
+
+
   return (
     <Fragment>
       <section className="p-0">
-        <Slider className="slide-1 home-slider">
+        <Slider {...homeSlider} className="slide-1 home-slider">
           <div>
-            <div className="home home1 text-center">
+          <Link href={`/c/Electronics`}>
+          <div className="home home1 text-center">
               <Container>
                 <Row>
                   <Col>
                     <div className="slider-contain">
                       <div>
-                        <h4>welcome to Shop The World</h4>
-                        <h1>Fashion</h1>
-                          <a onClick={() => CategoryFilter("Fashion")} className="btn btn-solid">shop now </a>
+                        {/* <h4>welcome to Shop The World</h4>
+                        <h1>Fashion</h1> */}
+                          {/* <a onClick={() => CategoryFilter("Fashion")} className="btn btn-solid">shop now </a> */}
                       </div>
                     </div>
                   </Col>
                 </Row>
               </Container>
             </div>
+          </Link> 
           </div>
           <div>
-            <div className="home home1 text-center">
+          <Link href={`/c/Makeup`}>
+          <div className="home home2 text-center">
               <Container>
                 <Row>
                   <Col>
                     <div className="slider-contain">
                       <div>
-                        <h4>welcome to Shop The World</h4>
-                        <h1>women's <br/> fashion</h1>
-                        <a onClick={() => CategoryFilter("women's fashion")} className="btn btn-solid">shop now </a>
+                        {/* <h4>welcome to Shop The World</h4>
+                        <h1>women's <br/> fashion</h1> */}
+                        {/* <a onClick={() => CategoryFilter("women's fashion")} className="btn btn-solid">shop now </a> */}
                       </div>
                     </div>
                   </Col>
                 </Row>
               </Container>
             </div>
+          </Link>
+          </div>
+          <div>
+          <Link href={`/c/Home & Kitchen`}>
+          <div className="home home3 text-center">
+              <Container>
+                <Row>
+                  <Col>
+                    <div className="slider-contain">
+                      <div>
+                        {/* <h4>welcome to Shop The World</h4>
+                        <h1>women's <br/> fashion</h1> */}
+                        {/* <a onClick={() => CategoryFilter("women's fashion")} className="btn btn-solid">shop now </a> */}
+                      </div>
+                    </div>
+                  </Col>
+                </Row>
+              </Container>
+            </div>
+          </Link>
           </div>
         </Slider>
+        <MainCategoryCollection noTitle="null" backImage={true} type="fashion"  categoryData={CategoryList} productSlider={CategorySlider} designClass="ratio_asos" noSlider="false" cartClass="cart-info cart-wrap" />
       </section>
     </Fragment>
   )

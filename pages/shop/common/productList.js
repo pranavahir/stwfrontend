@@ -1,5 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react';
-import { Col, Row, Media, Button, Spinner } from 'reactstrap';
+import { Col, Row, Media, Button, Spinner,Container } from 'reactstrap';
+import { CategorySlider,CategoryList } from '../../../services/script';
 import Menu2 from '../../../public/assets/images/mega-menu/2.jpg';
 import { useQuery } from '@apollo/react-hooks';
 import gql from 'graphql-tag';
@@ -11,6 +12,8 @@ import PostLoader from '../../../components/common/PostLoader';
 import CartContext from '../../../helpers/cart';
 import {WishlistContext} from '../../../helpers/wishlist/WishlistContext';
 import {CompareContext} from '../../../helpers/Compare/CompareContext';
+import CategoryCollection from '../../../components/common/Collections/CategoryCollection';
+
 
 const GET_PRODUCTS = gql`
     query  products($type:String!,$indexFrom:Int! ,$limit:Int!,$color:String!,$brand:[String!]! ,$priceMax:Int!,$priceMin:Int!,$keyword:String!,$country:String!,$panel:String!,$promoflag:[String!],$relevantProduct:String) {
@@ -80,7 +83,7 @@ const GET_PRODUCTS = gql`
 `;
 
 
-const ProductList = ({ colClass, layoutList,openSidebar,noSidebar,pathId }) => {
+const ProductList = ({ colClass, type,parentCategory, layoutList,openSidebar,noSidebar,pathId }) => {
      
     const cartContext = useContext(CartContext);
     const quantity = cartContext.quantity;
@@ -107,9 +110,12 @@ const ProductList = ({ colClass, layoutList,openSidebar,noSidebar,pathId }) => {
     category = filterContext.state;
     
     const selectedCategory = category;
+
+    
     const selectedSize = filterContext.selectedSize
     const [sortBy, setSortBy] = useState('AscOrder');
     const [isLoading, setIsLoading] = useState(false);
+    
     const [layout, setLayout] = useState(layoutList);
     const [url, setUrl] = useState();
     let leftSymbol=null;
@@ -123,6 +129,52 @@ const ProductList = ({ colClass, layoutList,openSidebar,noSidebar,pathId }) => {
         leftSymbol = symbol;
     }
 
+    var setSelectedSubCategoryList = "";
+
+    if(type=="Category")
+    {
+        if(selectedCategory!=null &&  selectedCategory!=""  &&  selectedCategory!=undefined)
+        {
+                
+                for(var i =0;i<CategoryList.length;i++)
+                {
+                    if(CategoryList[i].CategoryName == selectedCategory)
+                    {
+                        setSelectedSubCategoryList = CategoryList[i];
+                    }
+                }
+        }
+    }
+    else if(type=="SubCategory")
+    {
+        if(selectedCategory!=null &&  selectedCategory!=""  &&  selectedCategory!=undefined)
+        {
+                
+                for(var i =0;i<CategoryList.length;i++)
+                {
+                    if(CategoryList[i].CategoryName == parentCategory)
+                    {
+                        for(var j=0;j<CategoryList[i].subCategoryList.length;j++)
+                        {
+                            if(CategoryList[i].subCategoryList[j].SubCategoryName==selectedCategory)
+                            {
+                                if(CategoryList[i].subCategoryList[j].leafCategoryList!=undefined)
+                                setSelectedSubCategoryList = CategoryList[i].subCategoryList[j].leafCategoryList;
+                                else
+                                setSelectedSubCategoryList = [];
+                            }
+                        
+                        
+                        }
+                        
+                    }
+                }
+        }
+    }
+
+    const SelectedSubCategoryList= setSelectedSubCategoryList;
+    
+    console.log(SelectedSubCategoryList);
 
     useEffect(() => {
         const pathname = window.location.pathname;
@@ -215,7 +267,9 @@ const ProductList = ({ colClass, layoutList,openSidebar,noSidebar,pathId }) => {
                 <Row>
                     <Col sm="12">
                         <div className="top-banner-wrapper">
-                            
+                        
+                        <CategoryCollection noTitle="null" backImage={true} type="fashion"  categoryData={SelectedSubCategoryList} productSlider={CategorySlider} designClass="ratio_asos" noSlider="false" cartClass="cart-info cart-wrap" />
+
                             {data && data.products.total.total>0? 
                              
                             <div className="top-banner-content small-section">

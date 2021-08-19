@@ -213,12 +213,14 @@ const ProductList = ({ colClass, layoutList,openSidebar,noSidebar,pathId }) => {
     }
    
     return (
+
         <Col className="collection-content">
             <div className="page-main-content">
                 <Row>
                     <Col sm="12">
                         <div className="top-banner-wrapper">
                             
+
                             {data && data.products.total.total>0? 
                              
                             <div className="top-banner-content small-section">
@@ -416,6 +418,7 @@ const ProductList = ({ colClass, layoutList,openSidebar,noSidebar,pathId }) => {
                             </div>
                             <div className={`product-wrapper-grid ${layout}`}>
                                 <Row>
+                                
                                     {/* Product Box */}
                                     {(!data || !data.products || !data.products || data.products.length === 0 || loading) ?
                                         (data && data.products && data.products && data.products.length === 0) ?

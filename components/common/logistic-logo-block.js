@@ -1,6 +1,6 @@
 import React from 'react';
 import Slider from 'react-slick';
-import { Slider6 } from "../../services/script";
+import { Slider5 } from "../../services/script";
 import { Container, Row, Media ,Col } from 'reactstrap';
 
 const LogisticLogoBlock = ({designClass}) => {
@@ -9,7 +9,7 @@ const LogisticLogoBlock = ({designClass}) => {
             <Container>
                 <Row>
                     <Col md="12">
-                        <Slider {...Slider6} className="slide-5">
+                        <Slider {...Slider5} className="slide-5">
                         <div>
                                 <div className="">
                                 <center>

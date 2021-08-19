@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ThemeSettings from '../components/customizer/theme-settings';
 import '../public/assets/scss/app.scss';
 import '../public/assets/css/react-confirm-alert.css';
+import '../public/assets/css/MasterControl.css';
 import { ToastContainer } from 'react-toastify';
 import TapTop from '../components/common/widgets/Tap-Top';
 import MessengerCustomerChat from 'react-messenger-customer-chat';

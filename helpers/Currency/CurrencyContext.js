@@ -135,7 +135,7 @@ var ListConfig=[
     topCollections:[
       
       {
-        imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
         categoryUrl:"/c/Phone",
         category:["phone"],
         keyWorld:"More phone >>",
@@ -143,25 +143,25 @@ var ListConfig=[
   
       },
       {
-        imguRL:"https://m.media-amazon.com/images/I/413fkA2hhSS.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
         categoryUrl:"/c/Laptop",
         category:["hplaptop","laptop","microsoft","delllaptop","microsoftphone"],
         keyWorld:"More Laptops >>"
       },
       {
-        imguRL:"https://m.media-amazon.com/images/I/51XeMvBLlGL.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
         categoryUrl:"/c/Tablet",
         category:"apple",
         keyWorld:"More Tablet >>"
       },
       {
-        imguRL:"https://m.media-amazon.com/images/I/31rxH44lpoL.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
         categoryUrl:"/c/HeadPhone",
         category:"HeadPhone",
         keyWorld:"More HeadPhone >>"
       },
       {
-        imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
         categoryUrl:"/c/Phone",
         category:["phone"],
         keyWorld:"More phone >>",
@@ -169,125 +169,125 @@ var ListConfig=[
   
       },
       {
-        imguRL:"https://m.media-amazon.com/images/I/413fkA2hhSS.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
         categoryUrl:"/c/Laptop",
         category:["hplaptop","laptop","microsoft","delllaptop","microsoftphone"],
         keyWorld:"More Laptops >>"
       },
       {
-        imguRL:"https://m.media-amazon.com/images/I/51XeMvBLlGL.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
         categoryUrl:"/c/Tablet",
         category:"apple",
         keyWorld:"More Tablet >>"
       },
       {
-        imguRL:"https://m.media-amazon.com/images/I/31rxH44lpoL.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
         categoryUrl:"/c/HeadPhone",
         category:"HeadPhone",
         keyWorld:"More HeadPhone >>"
       },
 
-      // https://m.media-amazon.com/images/I/413fkA2hhSS.jpg
+      // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
     ],
     newProducts:[
       {
-        imguRL:"https://m.media-amazon.com/images/I/51fl8l0G78L.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/projectors.jpg",
         categoryUrl:"projector",
         category:"projector",
         keyWorld:"More Projectors >>"
       },
       {
-        imguRL:"https://m.media-amazon.com/images/I/51wZU-kW22L.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/smartwatches.jpg",
         categoryUrl:"smartwatch",
         category:"smartwatch",
         keyWorld:"More Smartwatches >>"
       },
       {
-        imguRL:"https://m.media-amazon.com/images/I/41ghh3XjOLL.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/cameras.jpg",
         categoryUrl:"camera",
         category:"camera",
         keyWorld:"More Camera's >>"
       },
       {
-        imguRL:"https://m.media-amazon.com/images/I/31Ide2xeMgL.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.jpg",
         categoryUrl:"homenkitchen",
         category:"homenkitchen",
         keyWorld:"More Home & kitchen >>"
       },
       {
-        imguRL:"https://images-na.ssl-images-amazon.com/images/I/71hEefMZtcL._SL1500_.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.jpg",
         categoryUrl:"homenkitchen",
         category:"homenkitchen",
         keyWorld:"More Home & kitchen >>"
       }  
 
-      // https://m.media-amazon.com/images/I/413fkA2hhSS.jpg
+      // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
     ],
     featureProducts:[
       {
-        imguRL:"https://images-na.ssl-images-amazon.com/images/I/71ncBz8OFHS._SL1500_.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/speakers.jpg",
         categoryUrl:"speaker",
         category:"speaker",
         keyWorld:"More Speakers >>"
       },
       {
-        imguRL:"https://images-na.ssl-images-amazon.com/images/I/71p7xwt7bgL._SL1500_.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/gadgets.jpg",
         categoryUrl:"gagdet",
         category:"gagdet",
         keyWorld:"More Gagdets >>"
       },
       {
-        imguRL:"https://images-na.ssl-images-amazon.com/images/I/71JDCbasgaL._SL1500_.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/printers.jpg",
         categoryUrl:"printer",
         category:"printer",
         keyWorld:"More Printers >>"
       },
       {
-        imguRL:"https://images-na.ssl-images-amazon.com/images/I/81H1Grsm4XL._SL1500_.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/monitors.jpg",
         categoryUrl:"monitor",
         category:"monitor",
         keyWorld:"More Monitors >>"
       },
       {
-        imguRL:"https://images-na.ssl-images-amazon.com/images/I/915LKjLE%2BvL._SL1500_.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/speakers.jpg",
         categoryUrl:"networking",
         category:"networking",
         keyWorld:"More Networking >>"
       },
-      // https://m.media-amazon.com/images/I/413fkA2hhSS.jpg
+      // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
     ],
     specialproducts:[
       {
-        imguRL:"https://images-na.ssl-images-amazon.com/images/I/71-QiEqDpZL._SL1500_.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/STWbasic2.jpg",
         categoryUrl:"amazonbasics",
         category:"amazonbasics",
         keyWorld:"More Amazon Basics >>"
       },
       {
-        imguRL:"https://images-na.ssl-images-amazon.com/images/I/71gfnsDd3-L._SL1500_.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/STWbasic4.jpg",
         categoryUrl:"amazonbasics",
         category:"amazonbasics",
         keyWorld:"More Amazon Basics >>"
       },
       {
-        imguRL:"https://images-na.ssl-images-amazon.com/images/I/810VOlH6cGL._SL1500_.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/SWTbasic.jpg",
         categoryUrl:"amazonbasics",
         category:"amazonbasics",
         keyWorld:"More Amazon Basics>>"
       },
       {
-        imguRL:"https://images-na.ssl-images-amazon.com/images/I/71sjjcwJ6cL._SL1500_.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/SWTbasic3.jpg",
         categoryUrl:"amazonbasics",
         category:"amazonbasics",
         keyWorld:"More Amazonzon Basics >>"
       },
       {
-        imguRL:"https://images-na.ssl-images-amazon.com/images/I/61KdzsxowuL._SL1500_.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/STWbasic2.jpg",
         categoryUrl:"amazonbasics",
         category:"amazonbasics",
         keyWorld:"More Amazonzon Basics >>"
       } 
-      // https://m.media-amazon.com/images/I/413fkA2hhSS.jpg
+      // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
     ],
     facebookacct: null,
     googleacct: null,
@@ -318,7 +318,7 @@ var ListConfig=[
     gstortax: "GST",
     topCollections:[
       {
-        imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
         categoryUrl:"/c/Phone",
         category:["phone"],
         keyWorld:"More phone >>",
@@ -326,25 +326,25 @@ var ListConfig=[
   
       },
       {
-        imguRL:"https://m.media-amazon.com/images/I/413fkA2hhSS.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
         categoryUrl:"/c/Laptop",
         category:["hplaptop","laptop","microsoft","delllaptop","microsoftphone"],
         keyWorld:"More Laptops >>"
       },
       {
-        imguRL:"https://m.media-amazon.com/images/I/51XeMvBLlGL.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
         categoryUrl:"/c/Tablet",
         category:"apple",
         keyWorld:"More Tablet >>"
       },
       {
-        imguRL:"https://m.media-amazon.com/images/I/31rxH44lpoL.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
         categoryUrl:"/c/HeadPhone",
         category:"HeadPhone",
         keyWorld:"More HeadPhone >>"
       },
       {
-        imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
         categoryUrl:"/c/Phone",
         category:["phone"],
         keyWorld:"More phone >>",
@@ -352,19 +352,19 @@ var ListConfig=[
   
       },
       {
-        imguRL:"https://m.media-amazon.com/images/I/413fkA2hhSS.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
         categoryUrl:"/c/Laptop",
         category:["hplaptop","laptop","microsoft","delllaptop","microsoftphone"],
         keyWorld:"More Laptops >>"
       },
       {
-        imguRL:"https://m.media-amazon.com/images/I/51XeMvBLlGL.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
         categoryUrl:"/c/Tablet",
         category:"apple",
         keyWorld:"More Tablet >>"
       },
       {
-        imguRL:"https://m.media-amazon.com/images/I/31rxH44lpoL.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
         categoryUrl:"/c/HeadPhone",
         category:"HeadPhone",
         keyWorld:"More HeadPhone >>"
@@ -372,59 +372,59 @@ var ListConfig=[
     ],
     newProducts:[
       {
-        imguRL:"https://m.media-amazon.com/images/I/51fl8l0G78L.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/projectors.jpg",
         categoryUrl:"projector",
         category:"projector",
         keyWorld:"More Projectors >>"
       },
       {
-        imguRL:"https://m.media-amazon.com/images/I/51wZU-kW22L.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/smartwatches.jpg",
         categoryUrl:"smartwatch",
         category:"smartwatch",
         keyWorld:"More Smartwatches >>"
       },
       {
-        imguRL:"https://m.media-amazon.com/images/I/41ghh3XjOLL.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/cameras.jpg",
         categoryUrl:"camera",
         category:"camera",
         keyWorld:"More Camera's >>"
       },
       {
-        imguRL:"https://m.media-amazon.com/images/I/31Ide2xeMgL.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.jpg",
         categoryUrl:"homenkitchen",
         category:"homenkitchen",
         keyWorld:"More Home & kitchen >>"
       },
       {
-        imguRL:"https://images-na.ssl-images-amazon.com/images/I/71hEefMZtcL._SL1500_.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.jpg",
         categoryUrl:"homenkitchen",
         category:"homenkitchen",
         keyWorld:"More Home & kitchen >>"
       }  
 
-      // https://m.media-amazon.com/images/I/413fkA2hhSS.jpg
+      // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
     ],
     featureProducts:[
       {
-        imguRL:"https://images-na.ssl-images-amazon.com/images/I/71ncBz8OFHS._SL1500_.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/speakers.jpg",
         categoryUrl:"speaker",
         category:"speaker",
         keyWorld:"More Speakers >>"
       },
       {
-        imguRL:"https://images-na.ssl-images-amazon.com/images/I/71p7xwt7bgL._SL1500_.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/gadgets.jpg",
         categoryUrl:"gagdet",
         category:"gagdet",
         keyWorld:"More Gagdets >>"
       },
       {
-        imguRL:"https://images-na.ssl-images-amazon.com/images/I/71JDCbasgaL._SL1500_.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/printers.jpg",
         categoryUrl:"printer",
         category:"printer",
         keyWorld:"More Printers >>"
       },
       {
-        imguRL:"https://images-na.ssl-images-amazon.com/images/I/81H1Grsm4XL._SL1500_.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/monitors.jpg",
         categoryUrl:"monitor",
         category:"monitor",
         keyWorld:"More Monitors >>"
@@ -435,40 +435,40 @@ var ListConfig=[
         category:"networking",
         keyWorld:"More Networking >>"
       },
-      // https://m.media-amazon.com/images/I/413fkA2hhSS.jpg
+      // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
     ],
     specialproducts:[
       {
-        imguRL:"https://images-na.ssl-images-amazon.com/images/I/71-QiEqDpZL._SL1500_.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/STWbasic2.jpg",
         categoryUrl:"amazonbasics",
         category:"amazonbasics",
         keyWorld:"More Amazon Basics >>"
       },
       {
-        imguRL:"https://images-na.ssl-images-amazon.com/images/I/71gfnsDd3-L._SL1500_.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/STWbasic4.jpg",
         categoryUrl:"amazonbasics",
         category:"amazonbasics",
         keyWorld:"More Amazon Basics >>"
       },
       {
-        imguRL:"https://images-na.ssl-images-amazon.com/images/I/810VOlH6cGL._SL1500_.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/SWTbasic.jpg",
         categoryUrl:"amazonbasics",
         category:"amazonbasics",
         keyWorld:"More Amazon Basics>>"
       },
       {
-        imguRL:"https://images-na.ssl-images-amazon.com/images/I/71sjjcwJ6cL._SL1500_.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/SWTbasic3.jpg",
         categoryUrl:"amazonbasics",
         category:"amazonbasics",
         keyWorld:"More Amazonzon Basics >>"
       },
       {
-        imguRL:"https://images-na.ssl-images-amazon.com/images/I/61KdzsxowuL._SL1500_.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/STWbasic2.jpg",
         categoryUrl:"amazonbasics",
         category:"amazonbasics",
         keyWorld:"More Amazonzon Basics >>"
       } 
-      // https://m.media-amazon.com/images/I/413fkA2hhSS.jpg
+      // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
     ],
     instagramacct: null,
     paymentforbusiness: "stripe",
@@ -496,7 +496,7 @@ var ListConfig=[
     gstortax: "GST",
     topCollections:[
       {
-        imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
         categoryUrl:"/c/Phone",
         category:["phone"],
         keyWorld:"More phone >>",
@@ -504,25 +504,25 @@ var ListConfig=[
   
       },
       {
-        imguRL:"https://m.media-amazon.com/images/I/413fkA2hhSS.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
         categoryUrl:"/c/Laptop",
         category:["hplaptop","laptop","microsoft","delllaptop","microsoftphone"],
         keyWorld:"More Laptops >>"
       },
       {
-        imguRL:"https://m.media-amazon.com/images/I/51XeMvBLlGL.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
         categoryUrl:"/c/Tablet",
         category:"apple",
         keyWorld:"More Tablet >>"
       },
       {
-        imguRL:"https://m.media-amazon.com/images/I/31rxH44lpoL.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
         categoryUrl:"/c/HeadPhone",
         category:"HeadPhone",
         keyWorld:"More HeadPhone >>"
       },
       {
-        imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
         categoryUrl:"/c/Phone",
         category:["phone"],
         keyWorld:"More phone >>",
@@ -530,19 +530,19 @@ var ListConfig=[
   
       },
       {
-        imguRL:"https://m.media-amazon.com/images/I/413fkA2hhSS.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
         categoryUrl:"/c/Laptop",
         category:["hplaptop","laptop","microsoft","delllaptop","microsoftphone"],
         keyWorld:"More Laptops >>"
       },
       {
-        imguRL:"https://m.media-amazon.com/images/I/51XeMvBLlGL.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
         categoryUrl:"/c/Tablet",
         category:"apple",
         keyWorld:"More Tablet >>"
       },
       {
-        imguRL:"https://m.media-amazon.com/images/I/31rxH44lpoL.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
         categoryUrl:"/c/HeadPhone",
         category:"HeadPhone",
         keyWorld:"More HeadPhone >>"
@@ -550,59 +550,59 @@ var ListConfig=[
     ],
     newProducts:[
       {
-        imguRL:"https://m.media-amazon.com/images/I/51fl8l0G78L.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/projectors.jpg",
         categoryUrl:"projector",
         category:"projector",
         keyWorld:"More Projectors >>"
       },
       {
-        imguRL:"https://m.media-amazon.com/images/I/51wZU-kW22L.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/smartwatches.jpg",
         categoryUrl:"smartwatch",
         category:"smartwatch",
         keyWorld:"More Smartwatches >>"
       },
       {
-        imguRL:"https://m.media-amazon.com/images/I/41ghh3XjOLL.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/cameras.jpg",
         categoryUrl:"camera",
         category:"camera",
         keyWorld:"More Camera's >>"
       },
       {
-        imguRL:"https://m.media-amazon.com/images/I/31Ide2xeMgL.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.jpg",
         categoryUrl:"homenkitchen",
         category:"homenkitchen",
         keyWorld:"More Home & kitchen >>"
       },
       {
-        imguRL:"https://images-na.ssl-images-amazon.com/images/I/71hEefMZtcL._SL1500_.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.jpg",
         categoryUrl:"homenkitchen",
         category:"homenkitchen",
         keyWorld:"More Home & kitchen >>"
       }  
 
-      // https://m.media-amazon.com/images/I/413fkA2hhSS.jpg
+      // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
     ],
     featureProducts:[
       {
-        imguRL:"https://images-na.ssl-images-amazon.com/images/I/71ncBz8OFHS._SL1500_.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/speakers.jpg",
         categoryUrl:"speaker",
         category:"speaker",
         keyWorld:"More Speakers >>"
       },
       {
-        imguRL:"https://images-na.ssl-images-amazon.com/images/I/71p7xwt7bgL._SL1500_.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/gadgets.jpg",
         categoryUrl:"gagdet",
         category:"gagdet",
         keyWorld:"More Gagdets >>"
       },
       {
-        imguRL:"https://images-na.ssl-images-amazon.com/images/I/71JDCbasgaL._SL1500_.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/printers.jpg",
         categoryUrl:"printer",
         category:"printer",
         keyWorld:"More Printers >>"
       },
       {
-        imguRL:"https://images-na.ssl-images-amazon.com/images/I/81H1Grsm4XL._SL1500_.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/monitors.jpg",
         categoryUrl:"monitor",
         category:"monitor",
         keyWorld:"More Monitors >>"
@@ -613,40 +613,40 @@ var ListConfig=[
         category:"networking",
         keyWorld:"More Networking >>"
       },
-      // https://m.media-amazon.com/images/I/413fkA2hhSS.jpg
+      // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
     ],
     specialproducts:[
       {
-        imguRL:"https://images-na.ssl-images-amazon.com/images/I/71-QiEqDpZL._SL1500_.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/STWbasic2.jpg",
         categoryUrl:"amazonbasics",
         category:"amazonbasics",
         keyWorld:"More Amazon Basics >>"
       },
       {
-        imguRL:"https://images-na.ssl-images-amazon.com/images/I/71gfnsDd3-L._SL1500_.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/STWbasic4.jpg",
         categoryUrl:"amazonbasics",
         category:"amazonbasics",
         keyWorld:"More Amazon Basics >>"
       },
       {
-        imguRL:"https://images-na.ssl-images-amazon.com/images/I/810VOlH6cGL._SL1500_.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/SWTbasic.jpg",
         categoryUrl:"amazonbasics",
         category:"amazonbasics",
         keyWorld:"More Amazon Basics>>"
       },
       {
-        imguRL:"https://images-na.ssl-images-amazon.com/images/I/71sjjcwJ6cL._SL1500_.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/SWTbasic3.jpg",
         categoryUrl:"amazonbasics",
         category:"amazonbasics",
         keyWorld:"More Amazonzon Basics >>"
       },
       {
-        imguRL:"https://images-na.ssl-images-amazon.com/images/I/61KdzsxowuL._SL1500_.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/STWbasic2.jpg",
         categoryUrl:"amazonbasics",
         category:"amazonbasics",
         keyWorld:"More Amazonzon Basics >>"
       } 
-      // https://m.media-amazon.com/images/I/413fkA2hhSS.jpg
+      // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
     ],
     instagramacct: null,
     paymentforbusiness: "stripe",
@@ -674,7 +674,7 @@ var ListConfig=[
     gstortax: "GST",
     topCollections:[
       {
-        imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
         categoryUrl:"/c/Phone",
         category:["iphone","oneplus","samsung"],
         keyWorld:"More phone >>",
@@ -682,25 +682,25 @@ var ListConfig=[
   
       },
       {
-        imguRL:"https://m.media-amazon.com/images/I/413fkA2hhSS.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
         categoryUrl:"/c/Laptop",
         category:["hplaptop","laptop","microsoft","delllaptop","microsoftphone"],
         keyWorld:"More Laptops >>"
       },
       {
-        imguRL:"https://m.media-amazon.com/images/I/51XeMvBLlGL.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
         categoryUrl:"/c/Tablet",
         category:"apple",
         keyWorld:"More Tablet >>"
       },
       {
-        imguRL:"https://m.media-amazon.com/images/I/31rxH44lpoL.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
         categoryUrl:"/c/HeadPhone",
         category:"HeadPhone",
         keyWorld:"More HeadPhone >>"
       },
       {
-        imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
         categoryUrl:"/c/Phone",
         category:["iphone","oneplus","samsung"],
         keyWorld:"More phone >>",
@@ -708,19 +708,19 @@ var ListConfig=[
   
       },
       {
-        imguRL:"https://m.media-amazon.com/images/I/413fkA2hhSS.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
         categoryUrl:"/c/Laptop",
         category:["hplaptop","laptop","microsoft","delllaptop","microsoftphone"],
         keyWorld:"More Laptops >>"
       },
       {
-        imguRL:"https://m.media-amazon.com/images/I/51XeMvBLlGL.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
         categoryUrl:"/c/Tablet",
         category:"apple",
         keyWorld:"More Tablet >>"
       },
       {
-        imguRL:"https://m.media-amazon.com/images/I/31rxH44lpoL.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
         categoryUrl:"/c/HeadPhone",
         category:"HeadPhone",
         keyWorld:"More HeadPhone >>"
@@ -728,59 +728,59 @@ var ListConfig=[
     ],
     newProducts:[
       {
-        imguRL:"https://m.media-amazon.com/images/I/51fl8l0G78L.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/projectors.jpg",
         categoryUrl:"projector",
         category:"projector",
         keyWorld:"More Projectors >>"
       },
       {
-        imguRL:"https://m.media-amazon.com/images/I/51wZU-kW22L.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/smartwatches.jpg",
         categoryUrl:"smartwatch",
         category:"smartwatch",
         keyWorld:"More Smartwatches >>"
       },
       {
-        imguRL:"https://m.media-amazon.com/images/I/41ghh3XjOLL.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/cameras.jpg",
         categoryUrl:"camera",
         category:"camera",
         keyWorld:"More Camera's >>"
       },
       {
-        imguRL:"https://m.media-amazon.com/images/I/31Ide2xeMgL.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.jpg",
         categoryUrl:"homenkitchen",
         category:"homenkitchen",
         keyWorld:"More Home & kitchen >>"
       },
       {
-        imguRL:"https://images-na.ssl-images-amazon.com/images/I/71hEefMZtcL._SL1500_.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.jpg",
         categoryUrl:"homenkitchen",
         category:"homenkitchen",
         keyWorld:"More Home & kitchen >>"
       }  
 
-      // https://m.media-amazon.com/images/I/413fkA2hhSS.jpg
+      // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
     ],
     featureProducts:[
       {
-        imguRL:"https://images-na.ssl-images-amazon.com/images/I/71ncBz8OFHS._SL1500_.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/speakers.jpg",
         categoryUrl:"speaker",
         category:"speaker",
         keyWorld:"More Speakers >>"
       },
       {
-        imguRL:"https://images-na.ssl-images-amazon.com/images/I/71p7xwt7bgL._SL1500_.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/gadgets.jpg",
         categoryUrl:"gagdet",
         category:"gagdet",
         keyWorld:"More Gagdets >>"
       },
       {
-        imguRL:"https://images-na.ssl-images-amazon.com/images/I/71JDCbasgaL._SL1500_.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/printers.jpg",
         categoryUrl:"printer",
         category:"printer",
         keyWorld:"More Printers >>"
       },
       {
-        imguRL:"https://images-na.ssl-images-amazon.com/images/I/81H1Grsm4XL._SL1500_.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/monitors.jpg",
         categoryUrl:"monitor",
         category:"monitor",
         keyWorld:"More Monitors >>"
@@ -791,40 +791,40 @@ var ListConfig=[
         category:"networking",
         keyWorld:"More Networking >>"
       },
-      // https://m.media-amazon.com/images/I/413fkA2hhSS.jpg
+      // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
     ],
     specialproducts:[
       {
-        imguRL:"https://images-na.ssl-images-amazon.com/images/I/71-QiEqDpZL._SL1500_.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/STWbasic2.jpg",
         categoryUrl:"amazonbasics",
         category:"amazonbasics",
         keyWorld:"More Amazon Basics >>"
       },
       {
-        imguRL:"https://images-na.ssl-images-amazon.com/images/I/71gfnsDd3-L._SL1500_.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/STWbasic4.jpg",
         categoryUrl:"amazonbasics",
         category:"amazonbasics",
         keyWorld:"More Amazon Basics >>"
       },
       {
-        imguRL:"https://images-na.ssl-images-amazon.com/images/I/810VOlH6cGL._SL1500_.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/SWTbasic.jpg",
         categoryUrl:"amazonbasics",
         category:"amazonbasics",
         keyWorld:"More Amazon Basics>>"
       },
       {
-        imguRL:"https://images-na.ssl-images-amazon.com/images/I/71sjjcwJ6cL._SL1500_.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/SWTbasic3.jpg",
         categoryUrl:"amazonbasics",
         category:"amazonbasics",
         keyWorld:"More Amazonzon Basics >>"
       },
       {
-        imguRL:"https://images-na.ssl-images-amazon.com/images/I/61KdzsxowuL._SL1500_.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/STWbasic2.jpg",
         categoryUrl:"amazonbasics",
         category:"amazonbasics",
         keyWorld:"More Amazonzon Basics >>"
       } 
-      // https://m.media-amazon.com/images/I/413fkA2hhSS.jpg
+      // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
     ],
     instagramacct: null,
     paymentforbusiness: "stripe",
@@ -852,7 +852,7 @@ var ListConfig=[
     gstortax: "GST",
     topCollections:[
       {
-        imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
         categoryUrl:"/c/Phone",
         category:["phone"],
         keyWorld:"More phone >>",
@@ -860,25 +860,25 @@ var ListConfig=[
   
       },
       {
-        imguRL:"https://m.media-amazon.com/images/I/413fkA2hhSS.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
         categoryUrl:"/c/Laptop",
         category:["hplaptop","laptop","microsoft","delllaptop","microsoftphone"],
         keyWorld:"More Laptops >>"
       },
       {
-        imguRL:"https://m.media-amazon.com/images/I/51XeMvBLlGL.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
         categoryUrl:"/c/Tablet",
         category:"apple",
         keyWorld:"More Tablet >>"
       },
       {
-        imguRL:"https://m.media-amazon.com/images/I/31rxH44lpoL.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
         categoryUrl:"/c/HeadPhone",
         category:"HeadPhone",
         keyWorld:"More HeadPhone >>"
       },
       {
-        imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
         categoryUrl:"/c/Phone",
         category:["phone"],
         keyWorld:"More phone >>",
@@ -886,19 +886,19 @@ var ListConfig=[
   
       },
       {
-        imguRL:"https://m.media-amazon.com/images/I/413fkA2hhSS.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
         categoryUrl:"/c/Laptop",
         category:["hplaptop","laptop","microsoft","delllaptop","microsoftphone"],
         keyWorld:"More Laptops >>"
       },
       {
-        imguRL:"https://m.media-amazon.com/images/I/51XeMvBLlGL.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
         categoryUrl:"/c/Tablet",
         category:"apple",
         keyWorld:"More Tablet >>"
       },
       {
-        imguRL:"https://m.media-amazon.com/images/I/31rxH44lpoL.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
         categoryUrl:"/c/HeadPhone",
         category:"HeadPhone",
         keyWorld:"More HeadPhone >>"
@@ -906,59 +906,59 @@ var ListConfig=[
     ],
     newProducts:[
       {
-        imguRL:"https://m.media-amazon.com/images/I/51fl8l0G78L.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/projectors.jpg",
         categoryUrl:"projector",
         category:"projector",
         keyWorld:"More Projectors >>"
       },
       {
-        imguRL:"https://m.media-amazon.com/images/I/51wZU-kW22L.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/smartwatches.jpg",
         categoryUrl:"smartwatch",
         category:"smartwatch",
         keyWorld:"More Smartwatches >>"
       },
       {
-        imguRL:"https://m.media-amazon.com/images/I/41ghh3XjOLL.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/cameras.jpg",
         categoryUrl:"camera",
         category:"camera",
         keyWorld:"More Camera's >>"
       },
       {
-        imguRL:"https://m.media-amazon.com/images/I/31Ide2xeMgL.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.jpg",
         categoryUrl:"homenkitchen",
         category:"homenkitchen",
         keyWorld:"More Home & kitchen >>"
       },
       {
-        imguRL:"https://images-na.ssl-images-amazon.com/images/I/71hEefMZtcL._SL1500_.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.jpg",
         categoryUrl:"homenkitchen",
         category:"homenkitchen",
         keyWorld:"More Home & kitchen >>"
       }  
 
-      // https://m.media-amazon.com/images/I/413fkA2hhSS.jpg
+      // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
     ],
     featureProducts:[
       {
-        imguRL:"https://images-na.ssl-images-amazon.com/images/I/71ncBz8OFHS._SL1500_.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/speakers.jpg",
         categoryUrl:"speaker",
         category:"speaker",
         keyWorld:"More Speakers >>"
       },
       {
-        imguRL:"https://images-na.ssl-images-amazon.com/images/I/71p7xwt7bgL._SL1500_.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/gadgets.jpg",
         categoryUrl:"gagdet",
         category:"gagdet",
         keyWorld:"More Gagdets >>"
       },
       {
-        imguRL:"https://images-na.ssl-images-amazon.com/images/I/71JDCbasgaL._SL1500_.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/printers.jpg",
         categoryUrl:"printer",
         category:"printer",
         keyWorld:"More Printers >>"
       },
       {
-        imguRL:"https://images-na.ssl-images-amazon.com/images/I/81H1Grsm4XL._SL1500_.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/monitors.jpg",
         categoryUrl:"monitor",
         category:"monitor",
         keyWorld:"More Monitors >>"
@@ -969,40 +969,40 @@ var ListConfig=[
         category:"networking",
         keyWorld:"More Networking >>"
       },
-      // https://m.media-amazon.com/images/I/413fkA2hhSS.jpg
+      // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
     ],
     specialproducts:[
       {
-        imguRL:"https://images-na.ssl-images-amazon.com/images/I/71-QiEqDpZL._SL1500_.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/STWbasic2.jpg",
         categoryUrl:"amazonbasics",
         category:"amazonbasics",
         keyWorld:"More Amazon Basics >>"
       },
       {
-        imguRL:"https://images-na.ssl-images-amazon.com/images/I/71gfnsDd3-L._SL1500_.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/STWbasic4.jpg",
         categoryUrl:"amazonbasics",
         category:"amazonbasics",
         keyWorld:"More Amazon Basics >>"
       },
       {
-        imguRL:"https://images-na.ssl-images-amazon.com/images/I/810VOlH6cGL._SL1500_.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/SWTbasic.jpg",
         categoryUrl:"amazonbasics",
         category:"amazonbasics",
         keyWorld:"More Amazon Basics>>"
       },
       {
-        imguRL:"https://images-na.ssl-images-amazon.com/images/I/71sjjcwJ6cL._SL1500_.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/SWTbasic3.jpg",
         categoryUrl:"amazonbasics",
         category:"amazonbasics",
         keyWorld:"More Amazonzon Basics >>"
       },
       {
-        imguRL:"https://images-na.ssl-images-amazon.com/images/I/61KdzsxowuL._SL1500_.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/STWbasic2.jpg",
         categoryUrl:"amazonbasics",
         category:"amazonbasics",
         keyWorld:"More Amazonzon Basics >>"
       } 
-      // https://m.media-amazon.com/images/I/413fkA2hhSS.jpg
+      // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
     ],
     instagramacct: null,
     paymentforbusiness: "stripe",
@@ -1029,7 +1029,7 @@ var ListConfig=[
   googleacct: null,
   topCollections:[
     {
-      imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
       categoryUrl:"/c/Phone",
       category:["phone"],
       keyWorld:"More phone >>",
@@ -1037,25 +1037,25 @@ var ListConfig=[
 
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/413fkA2hhSS.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
       categoryUrl:"/c/Laptop",
       category:["hplaptop","laptop","microsoft","delllaptop","microsoftphone"],
       keyWorld:"More Laptops >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/51XeMvBLlGL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
       categoryUrl:"/c/Tablet",
       category:"tablet",
       keyWorld:"More Tablet >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/31rxH44lpoL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
       categoryUrl:"/c/HeadPhone",
       category:"headphone",
       keyWorld:"More HeadPhone >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
       categoryUrl:"/c/Phone",
       category:["phone"],
       keyWorld:"More phone >>",
@@ -1063,19 +1063,19 @@ var ListConfig=[
 
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/413fkA2hhSS.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
       categoryUrl:"/c/Laptop",
       category:["hplaptop","laptop","microsoft","delllaptop","microsoftphone"],
       keyWorld:"More Laptops >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/51XeMvBLlGL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
       categoryUrl:"/c/Tablet",
       category:"tablet",
       keyWorld:"More Tablet >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/31rxH44lpoL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
       categoryUrl:"/c/HeadPhone",
       category:"HeadPhone",
       keyWorld:"More HeadPhone >>"
@@ -1083,59 +1083,59 @@ var ListConfig=[
   ],
   newProducts:[
     {
-      imguRL:"https://m.media-amazon.com/images/I/51fl8l0G78L.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/projectors.jpg",
       categoryUrl:"projector",
       category:"projector",
       keyWorld:"More Projectors >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/51wZU-kW22L.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/smartwatches.jpg",
       categoryUrl:"smartwatch",
       category:"smartwatch",
       keyWorld:"More Smartwatches >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/41ghh3XjOLL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/cameras.jpg",
       categoryUrl:"camera",
       category:"camera",
       keyWorld:"More Camera's >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/31Ide2xeMgL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.jpg",
       categoryUrl:"homenkitchen",
       category:"homenkitchen",
       keyWorld:"More Home & kitchen >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71hEefMZtcL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.jpg",
       categoryUrl:"homenkitchen",
       category:"homenkitchen",
       keyWorld:"More Home & kitchen >>"
     }  
 
-    // https://m.media-amazon.com/images/I/413fkA2hhSS.jpg
+    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
   ],
   featureProducts:[
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71ncBz8OFHS._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/speakers.jpg",
       categoryUrl:"speaker",
       category:"speaker",
       keyWorld:"More Speakers >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71p7xwt7bgL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/gadgets.jpg",
       categoryUrl:"gagdet",
       category:"gadget",
       keyWorld:"More Gadgets >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71JDCbasgaL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/printers.jpg",
       categoryUrl:"printer",
       category:"printer",
       keyWorld:"More Printers >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/81H1Grsm4XL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/monitors.jpg",
       categoryUrl:"monitor",
       category:"monitor",
       keyWorld:"More Monitors >>"
@@ -1146,40 +1146,40 @@ var ListConfig=[
       category:"networking",
       keyWorld:"More Networking >>"
     },
-    // https://m.media-amazon.com/images/I/413fkA2hhSS.jpg
+    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
   ],
   specialproducts:[
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71-QiEqDpZL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/STWbasic2.jpg",
       categoryUrl:"amazonbasics",
       category:"amazonbasics",
       keyWorld:"More Amazon Basics >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71gfnsDd3-L._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/STWbasic4.jpg",
       categoryUrl:"amazonbasics",
       category:"amazonbasics",
       keyWorld:"More Amazon Basics >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/810VOlH6cGL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/SWTbasic.jpg",
       categoryUrl:"amazonbasics",
       category:"amazonbasics",
       keyWorld:"More Amazon Basics>>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71sjjcwJ6cL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/SWTbasic3.jpg",
       categoryUrl:"amazonbasics",
       category:"amazonbasics",
       keyWorld:"More Amazonzon Basics >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/61KdzsxowuL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/STWbasic2.jpg",
       categoryUrl:"amazonbasics",
       category:"amazonbasics",
       keyWorld:"More Amazonzon Basics >>"
     } 
-    // https://m.media-amazon.com/images/I/413fkA2hhSS.jpg
+    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
   ],
   gstortax: "GST",
   instagramacct: null,
@@ -1207,7 +1207,7 @@ var ListConfig=[
   googleacct: null,
   topCollections:[
     {
-      imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
       categoryUrl:"/c/Phone",
       category:["phone"],
       keyWorld:"More phone >>",
@@ -1215,25 +1215,25 @@ var ListConfig=[
 
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/413fkA2hhSS.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
       categoryUrl:"/c/Laptop",
       category:["hplaptop","laptop","microsoft","delllaptop","microsoftphone"],
       keyWorld:"More Laptops >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/51XeMvBLlGL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
       categoryUrl:"/c/Tablet",
       category:"tablet",
       keyWorld:"More Tablet >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/31rxH44lpoL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
       categoryUrl:"/c/HeadPhone",
       category:"headphone",
       keyWorld:"More HeadPhone >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
       categoryUrl:"/c/Phone",
       category:["phone"],
       keyWorld:"More phone >>",
@@ -1241,19 +1241,19 @@ var ListConfig=[
 
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/413fkA2hhSS.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
       categoryUrl:"/c/Laptop",
       category:["hplaptop","laptop","microsoft","delllaptop","microsoftphone"],
       keyWorld:"More Laptops >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/51XeMvBLlGL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
       categoryUrl:"/c/Tablet",
       category:"tablet",
       keyWorld:"More Tablet >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/31rxH44lpoL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
       categoryUrl:"/c/HeadPhone",
       category:"HeadPhone",
       keyWorld:"More HeadPhone >>"
@@ -1261,59 +1261,59 @@ var ListConfig=[
   ],
   newProducts:[
     {
-      imguRL:"https://m.media-amazon.com/images/I/51fl8l0G78L.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/projectors.jpg",
       categoryUrl:"projector",
       category:"projector",
       keyWorld:"More Projectors >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/51wZU-kW22L.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/smartwatches.jpg",
       categoryUrl:"smartwatch",
       category:"smartwatch",
       keyWorld:"More Smartwatches >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/41ghh3XjOLL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/cameras.jpg",
       categoryUrl:"camera",
       category:"camera",
       keyWorld:"More Camera's >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/31Ide2xeMgL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.jpg",
       categoryUrl:"homenkitchen",
       category:"homenkitchen",
       keyWorld:"More Home & kitchen >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71hEefMZtcL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.jpg",
       categoryUrl:"homenkitchen",
       category:"homenkitchen",
       keyWorld:"More Home & kitchen >>"
     }  
 
-    // https://m.media-amazon.com/images/I/413fkA2hhSS.jpg
+    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
   ],
   featureProducts:[
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71ncBz8OFHS._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/speakers.jpg",
       categoryUrl:"speaker",
       category:"speaker",
       keyWorld:"More Speakers >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71p7xwt7bgL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/gadgets.jpg",
       categoryUrl:"gagdet",
       category:"gadget",
       keyWorld:"More Gadgets >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71JDCbasgaL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/printers.jpg",
       categoryUrl:"printer",
       category:"printer",
       keyWorld:"More Printers >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/81H1Grsm4XL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/monitors.jpg",
       categoryUrl:"monitor",
       category:"monitor",
       keyWorld:"More Monitors >>"
@@ -1324,40 +1324,40 @@ var ListConfig=[
       category:"networking",
       keyWorld:"More Networking >>"
     },
-    // https://m.media-amazon.com/images/I/413fkA2hhSS.jpg
+    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
   ],
   specialproducts:[
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71-QiEqDpZL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/STWbasic2.jpg",
       categoryUrl:"amazonbasics",
       category:"amazonbasics",
       keyWorld:"More Amazon Basics >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71gfnsDd3-L._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/STWbasic4.jpg",
       categoryUrl:"amazonbasics",
       category:"amazonbasics",
       keyWorld:"More Amazon Basics >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/810VOlH6cGL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/SWTbasic.jpg",
       categoryUrl:"amazonbasics",
       category:"amazonbasics",
       keyWorld:"More Amazon Basics>>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71sjjcwJ6cL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/SWTbasic3.jpg",
       categoryUrl:"amazonbasics",
       category:"amazonbasics",
       keyWorld:"More Amazonzon Basics >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/61KdzsxowuL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/STWbasic2.jpg",
       categoryUrl:"amazonbasics",
       category:"amazonbasics",
       keyWorld:"More Amazonzon Basics >>"
     } 
-    // https://m.media-amazon.com/images/I/413fkA2hhSS.jpg
+    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
   ],
   gstortax: "Tax",
   instagramacct: null,
@@ -1387,7 +1387,7 @@ var ListConfig=[
   gtmkey:"GTM-5SJS8JL",
   topCollections:[
     {
-      imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
       categoryUrl:"/c/Phone",
       category:["phone"],
       keyWorld:"More phone >>",
@@ -1395,25 +1395,25 @@ var ListConfig=[
 
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/413fkA2hhSS.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
       categoryUrl:"/c/Laptop",
       category:["hplaptop","laptop","microsoft","delllaptop","microsoftphone"],
       keyWorld:"More Laptops >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/51XeMvBLlGL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
       categoryUrl:"/c/Tablet",
       category:"tablet",
       keyWorld:"More Tablet >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/31rxH44lpoL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
       categoryUrl:"/c/HeadPhone",
       category:"headphone",
       keyWorld:"More HeadPhone >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
       categoryUrl:"/c/Phone",
       category:["phone"],
       keyWorld:"More phone >>",
@@ -1421,19 +1421,19 @@ var ListConfig=[
 
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/413fkA2hhSS.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
       categoryUrl:"/c/Laptop",
       category:["hplaptop","laptop","microsoft","delllaptop","microsoftphone"],
       keyWorld:"More Laptops >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/51XeMvBLlGL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
       categoryUrl:"/c/Tablet",
       category:"tablet",
       keyWorld:"More Tablet >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/31rxH44lpoL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
       categoryUrl:"/c/HeadPhone",
       category:"HeadPhone",
       keyWorld:"More HeadPhone >>"
@@ -1441,59 +1441,59 @@ var ListConfig=[
   ],
   newProducts:[
     {
-      imguRL:"https://m.media-amazon.com/images/I/51fl8l0G78L.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/projectors.jpg",
       categoryUrl:"projector",
       category:"projector",
       keyWorld:"More Projectors >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/51wZU-kW22L.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/smartwatches.jpg",
       categoryUrl:"smartwatch",
       category:"smartwatch",
       keyWorld:"More Smartwatches >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/41ghh3XjOLL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/cameras.jpg",
       categoryUrl:"camera",
       category:"camera",
       keyWorld:"More Camera's >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/31Ide2xeMgL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.jpg",
       categoryUrl:"homenkitchen",
       category:"homenkitchen",
       keyWorld:"More Home & kitchen >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71hEefMZtcL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.jpg",
       categoryUrl:"homenkitchen",
       category:"homenkitchen",
       keyWorld:"More Home & kitchen >>"
     }  
 
-    // https://m.media-amazon.com/images/I/413fkA2hhSS.jpg
+    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
   ],
   featureProducts:[
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71ncBz8OFHS._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/speakers.jpg",
       categoryUrl:"speaker",
       category:"speaker",
       keyWorld:"More Speakers >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71p7xwt7bgL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/gadgets.jpg",
       categoryUrl:"gagdet",
       category:"gadget",
       keyWorld:"More Gadgets >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71JDCbasgaL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/printers.jpg",
       categoryUrl:"printer",
       category:"printer",
       keyWorld:"More Printers >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/81H1Grsm4XL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/monitors.jpg",
       categoryUrl:"monitor",
       category:"monitor",
       keyWorld:"More Monitors >>"
@@ -1504,40 +1504,40 @@ var ListConfig=[
       category:"networking",
       keyWorld:"More Networking >>"
     },
-    // https://m.media-amazon.com/images/I/413fkA2hhSS.jpg
+    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
   ],
   specialproducts:[
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71-QiEqDpZL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/STWbasic2.jpg",
       categoryUrl:"amazonbasics",
       category:"amazonbasics",
       keyWorld:"More Amazon Basics >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71gfnsDd3-L._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/STWbasic4.jpg",
       categoryUrl:"amazonbasics",
       category:"amazonbasics",
       keyWorld:"More Amazon Basics >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/810VOlH6cGL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/SWTbasic.jpg",
       categoryUrl:"amazonbasics",
       category:"amazonbasics",
       keyWorld:"More Amazon Basics>>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71sjjcwJ6cL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/SWTbasic3.jpg",
       categoryUrl:"amazonbasics",
       category:"amazonbasics",
       keyWorld:"More Amazonzon Basics >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/61KdzsxowuL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/STWbasic2.jpg",
       categoryUrl:"amazonbasics",
       category:"amazonbasics",
       keyWorld:"More Amazonzon Basics >>"
     } 
-    // https://m.media-amazon.com/images/I/413fkA2hhSS.jpg
+    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
   ],
   gstortax: "VAT",
   instagramacct: null,
@@ -1567,7 +1567,7 @@ var ListConfig=[
   gtmkey:"GTM-5SJS8JL",
   topCollections:[
     {
-      imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
       categoryUrl:"/c/Phone",
       category:["phone"],
       keyWorld:"More phone >>",
@@ -1575,25 +1575,25 @@ var ListConfig=[
 
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/413fkA2hhSS.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
       categoryUrl:"/c/Laptop",
       category:["hplaptop","laptop","microsoft","delllaptop","microsoftphone"],
       keyWorld:"More Laptops >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/51XeMvBLlGL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
       categoryUrl:"/c/Tablet",
       category:"tablet",
       keyWorld:"More Tablet >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/31rxH44lpoL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
       categoryUrl:"/c/HeadPhone",
       category:"headphone",
       keyWorld:"More HeadPhone >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
       categoryUrl:"/c/Phone",
       category:["phone"],
       keyWorld:"More phone >>",
@@ -1601,19 +1601,19 @@ var ListConfig=[
 
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/413fkA2hhSS.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
       categoryUrl:"/c/Laptop",
       category:["hplaptop","laptop","microsoft","delllaptop","microsoftphone"],
       keyWorld:"More Laptops >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/51XeMvBLlGL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
       categoryUrl:"/c/Tablet",
       category:"tablet",
       keyWorld:"More Tablet >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/31rxH44lpoL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
       categoryUrl:"/c/HeadPhone",
       category:"HeadPhone",
       keyWorld:"More HeadPhone >>"
@@ -1621,59 +1621,59 @@ var ListConfig=[
   ],
   newProducts:[
     {
-      imguRL:"https://m.media-amazon.com/images/I/51fl8l0G78L.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/projectors.jpg",
       categoryUrl:"projector",
       category:"projector",
       keyWorld:"More Projectors >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/51wZU-kW22L.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/smartwatches.jpg",
       categoryUrl:"smartwatch",
       category:"smartwatch",
       keyWorld:"More Smartwatches >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/41ghh3XjOLL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/cameras.jpg",
       categoryUrl:"camera",
       category:"camera",
       keyWorld:"More Camera's >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/31Ide2xeMgL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.jpg",
       categoryUrl:"homenkitchen",
       category:"homenkitchen",
       keyWorld:"More Home & kitchen >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71hEefMZtcL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.jpg",
       categoryUrl:"homenkitchen",
       category:"homenkitchen",
       keyWorld:"More Home & kitchen >>"
     }  
 
-    // https://m.media-amazon.com/images/I/413fkA2hhSS.jpg
+    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
   ],
   featureProducts:[
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71ncBz8OFHS._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/speakers.jpg",
       categoryUrl:"speaker",
       category:"speaker",
       keyWorld:"More Speakers >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71p7xwt7bgL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/gadgets.jpg",
       categoryUrl:"gagdet",
       category:"gadget",
       keyWorld:"More Gadgets >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71JDCbasgaL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/printers.jpg",
       categoryUrl:"printer",
       category:"printer",
       keyWorld:"More Printers >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/81H1Grsm4XL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/monitors.jpg",
       categoryUrl:"monitor",
       category:"monitor",
       keyWorld:"More Monitors >>"
@@ -1684,40 +1684,40 @@ var ListConfig=[
       category:"networking",
       keyWorld:"More Networking >>"
     },
-    // https://m.media-amazon.com/images/I/413fkA2hhSS.jpg
+    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
   ],
   specialproducts:[
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71-QiEqDpZL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/STWbasic2.jpg",
       categoryUrl:"amazonbasics",
       category:"amazonbasics",
       keyWorld:"More Amazon Basics >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71gfnsDd3-L._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/STWbasic4.jpg",
       categoryUrl:"amazonbasics",
       category:"amazonbasics",
       keyWorld:"More Amazon Basics >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/810VOlH6cGL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/SWTbasic.jpg",
       categoryUrl:"amazonbasics",
       category:"amazonbasics",
       keyWorld:"More Amazon Basics>>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71sjjcwJ6cL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/SWTbasic3.jpg",
       categoryUrl:"amazonbasics",
       category:"amazonbasics",
       keyWorld:"More Amazonzon Basics >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/61KdzsxowuL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/STWbasic2.jpg",
       categoryUrl:"amazonbasics",
       category:"amazonbasics",
       keyWorld:"More Amazonzon Basics >>"
     } 
-    // https://m.media-amazon.com/images/I/413fkA2hhSS.jpg
+    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
   ],
   gstortax: "VAT",
   instagramacct: null,
@@ -1745,7 +1745,7 @@ var ListConfig=[
   googleacct: null,
   topCollections:[
     {
-      imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
       categoryUrl:"/c/Phone",
       category:["phone"],
       keyWorld:"More phone >>",
@@ -1753,25 +1753,25 @@ var ListConfig=[
 
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/413fkA2hhSS.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
       categoryUrl:"/c/Laptop",
       category:["hplaptop","laptop","microsoft","delllaptop","microsoftphone"],
       keyWorld:"More Laptops >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/51XeMvBLlGL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
       categoryUrl:"/c/Tablet",
       category:"tablet",
       keyWorld:"More Tablet >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/31rxH44lpoL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
       categoryUrl:"/c/HeadPhone",
       category:"headphone",
       keyWorld:"More HeadPhone >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
       categoryUrl:"/c/Phone",
       category:["phone"],
       keyWorld:"More phone >>",
@@ -1779,19 +1779,19 @@ var ListConfig=[
 
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/413fkA2hhSS.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
       categoryUrl:"/c/Laptop",
       category:["hplaptop","laptop","microsoft","delllaptop","microsoftphone"],
       keyWorld:"More Laptops >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/51XeMvBLlGL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
       categoryUrl:"/c/Tablet",
       category:"tablet",
       keyWorld:"More Tablet >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/31rxH44lpoL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
       categoryUrl:"/c/HeadPhone",
       category:"HeadPhone",
       keyWorld:"More HeadPhone >>"
@@ -1799,59 +1799,59 @@ var ListConfig=[
   ],
   newProducts:[
     {
-      imguRL:"https://m.media-amazon.com/images/I/51fl8l0G78L.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/projectors.jpg",
       categoryUrl:"projector",
       category:"projector",
       keyWorld:"More Projectors >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/51wZU-kW22L.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/smartwatches.jpg",
       categoryUrl:"smartwatch",
       category:"smartwatch",
       keyWorld:"More Smartwatches >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/41ghh3XjOLL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/cameras.jpg",
       categoryUrl:"camera",
       category:"camera",
       keyWorld:"More Camera's >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/31Ide2xeMgL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.jpg",
       categoryUrl:"homenkitchen",
       category:"homenkitchen",
       keyWorld:"More Home & kitchen >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71hEefMZtcL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.jpg",
       categoryUrl:"homenkitchen",
       category:"homenkitchen",
       keyWorld:"More Home & kitchen >>"
     }  
 
-    // https://m.media-amazon.com/images/I/413fkA2hhSS.jpg
+    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
   ],
   featureProducts:[
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71ncBz8OFHS._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/speakers.jpg",
       categoryUrl:"speaker",
       category:"speaker",
       keyWorld:"More Speakers >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71p7xwt7bgL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/gadgets.jpg",
       categoryUrl:"gagdet",
       category:"gadget",
       keyWorld:"More Gadgets >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71JDCbasgaL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/printers.jpg",
       categoryUrl:"printer",
       category:"printer",
       keyWorld:"More Printers >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/81H1Grsm4XL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/monitors.jpg",
       categoryUrl:"monitor",
       category:"monitor",
       keyWorld:"More Monitors >>"
@@ -1862,40 +1862,40 @@ var ListConfig=[
       category:"networking",
       keyWorld:"More Networking >>"
     },
-    // https://m.media-amazon.com/images/I/413fkA2hhSS.jpg
+    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
   ],
   specialproducts:[
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71-QiEqDpZL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/STWbasic2.jpg",
       categoryUrl:"amazonbasics",
       category:"amazonbasics",
       keyWorld:"More Amazon Basics >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71gfnsDd3-L._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/STWbasic4.jpg",
       categoryUrl:"amazonbasics",
       category:"amazonbasics",
       keyWorld:"More Amazon Basics >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/810VOlH6cGL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/SWTbasic.jpg",
       categoryUrl:"amazonbasics",
       category:"amazonbasics",
       keyWorld:"More Amazon Basics>>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71sjjcwJ6cL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/SWTbasic3.jpg",
       categoryUrl:"amazonbasics",
       category:"amazonbasics",
       keyWorld:"More Amazonzon Basics >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/61KdzsxowuL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/STWbasic2.jpg",
       categoryUrl:"amazonbasics",
       category:"amazonbasics",
       keyWorld:"More Amazonzon Basics >>"
     } 
-    // https://m.media-amazon.com/images/I/413fkA2hhSS.jpg
+    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
   ],
   gstortax: "VAT",
   instagramacct: null,
@@ -1923,7 +1923,7 @@ var ListConfig=[
   googleacct: null,
   topCollections:[
     {
-      imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
       categoryUrl:"/c/Phone",
       category:["phone"],
       keyWorld:"More phone >>",
@@ -1931,25 +1931,25 @@ var ListConfig=[
 
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/413fkA2hhSS.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
       categoryUrl:"/c/Laptop",
       category:["hplaptop","laptop","microsoft","delllaptop","microsoftphone"],
       keyWorld:"More Laptops >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/51XeMvBLlGL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
       categoryUrl:"/c/Tablet",
       category:"tablet",
       keyWorld:"More Tablet >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/31rxH44lpoL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
       categoryUrl:"/c/HeadPhone",
       category:"headphone",
       keyWorld:"More HeadPhone >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
       categoryUrl:"/c/Phone",
       category:["phone"],
       keyWorld:"More phone >>",
@@ -1957,19 +1957,19 @@ var ListConfig=[
 
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/413fkA2hhSS.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
       categoryUrl:"/c/Laptop",
       category:["hplaptop","laptop","microsoft","delllaptop","microsoftphone"],
       keyWorld:"More Laptops >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/51XeMvBLlGL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
       categoryUrl:"/c/Tablet",
       category:"tablet",
       keyWorld:"More Tablet >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/31rxH44lpoL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
       categoryUrl:"/c/HeadPhone",
       category:"HeadPhone",
       keyWorld:"More HeadPhone >>"
@@ -1977,59 +1977,59 @@ var ListConfig=[
   ],
   newProducts:[
     {
-      imguRL:"https://m.media-amazon.com/images/I/51fl8l0G78L.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/projectors.jpg",
       categoryUrl:"projector",
       category:"projector",
       keyWorld:"More Projectors >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/51wZU-kW22L.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/smartwatches.jpg",
       categoryUrl:"smartwatch",
       category:"smartwatch",
       keyWorld:"More Smartwatches >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/41ghh3XjOLL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/cameras.jpg",
       categoryUrl:"camera",
       category:"camera",
       keyWorld:"More Camera's >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/31Ide2xeMgL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.jpg",
       categoryUrl:"homenkitchen",
       category:"homenkitchen",
       keyWorld:"More Home & kitchen >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71hEefMZtcL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.jpg",
       categoryUrl:"homenkitchen",
       category:"homenkitchen",
       keyWorld:"More Home & kitchen >>"
     }  
 
-    // https://m.media-amazon.com/images/I/413fkA2hhSS.jpg
+    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
   ],
   featureProducts:[
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71ncBz8OFHS._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/speakers.jpg",
       categoryUrl:"speaker",
       category:"speaker",
       keyWorld:"More Speakers >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71p7xwt7bgL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/gadgets.jpg",
       categoryUrl:"gagdet",
       category:"gadget",
       keyWorld:"More Gadgets >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71JDCbasgaL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/printers.jpg",
       categoryUrl:"printer",
       category:"printer",
       keyWorld:"More Printers >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/81H1Grsm4XL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/monitors.jpg",
       categoryUrl:"monitor",
       category:"monitor",
       keyWorld:"More Monitors >>"
@@ -2040,40 +2040,40 @@ var ListConfig=[
       category:"networking",
       keyWorld:"More Networking >>"
     },
-    // https://m.media-amazon.com/images/I/413fkA2hhSS.jpg
+    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
   ],
   specialproducts:[
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71-QiEqDpZL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/STWbasic2.jpg",
       categoryUrl:"amazonbasics",
       category:"amazonbasics",
       keyWorld:"More Amazon Basics >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71gfnsDd3-L._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/STWbasic4.jpg",
       categoryUrl:"amazonbasics",
       category:"amazonbasics",
       keyWorld:"More Amazon Basics >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/810VOlH6cGL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/SWTbasic.jpg",
       categoryUrl:"amazonbasics",
       category:"amazonbasics",
       keyWorld:"More Amazon Basics>>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71sjjcwJ6cL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/SWTbasic3.jpg",
       categoryUrl:"amazonbasics",
       category:"amazonbasics",
       keyWorld:"More Amazonzon Basics >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/61KdzsxowuL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/STWbasic2.jpg",
       categoryUrl:"amazonbasics",
       category:"amazonbasics",
       keyWorld:"More Amazonzon Basics >>"
     } 
-    // https://m.media-amazon.com/images/I/413fkA2hhSS.jpg
+    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
   ],
   gstortax: "VAT",
   instagramacct: null,
@@ -2101,7 +2101,7 @@ var ListConfig=[
   googleacct: null,
   topCollections:[
     {
-      imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
       categoryUrl:"/c/Phone",
       category:["phone"],
       keyWorld:"More phone >>",
@@ -2109,25 +2109,25 @@ var ListConfig=[
 
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/413fkA2hhSS.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
       categoryUrl:"/c/Laptop",
       category:["hplaptop","laptop","microsoft","delllaptop","microsoftphone"],
       keyWorld:"More Laptops >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/51XeMvBLlGL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
       categoryUrl:"/c/Tablet",
       category:"tablet",
       keyWorld:"More Tablet >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/31rxH44lpoL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
       categoryUrl:"/c/HeadPhone",
       category:"headphone",
       keyWorld:"More HeadPhone >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
       categoryUrl:"/c/Phone",
       category:["phone"],
       keyWorld:"More phone >>",
@@ -2135,19 +2135,19 @@ var ListConfig=[
 
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/413fkA2hhSS.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
       categoryUrl:"/c/Laptop",
       category:["hplaptop","laptop","microsoft","delllaptop","microsoftphone"],
       keyWorld:"More Laptops >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/51XeMvBLlGL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
       categoryUrl:"/c/Tablet",
       category:"tablet",
       keyWorld:"More Tablet >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/31rxH44lpoL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
       categoryUrl:"/c/HeadPhone",
       category:"HeadPhone",
       keyWorld:"More HeadPhone >>"
@@ -2155,59 +2155,59 @@ var ListConfig=[
   ],
   newProducts:[
     {
-      imguRL:"https://m.media-amazon.com/images/I/51fl8l0G78L.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/projectors.jpg",
       categoryUrl:"projector",
       category:"projector",
       keyWorld:"More Projectors >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/51wZU-kW22L.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/smartwatches.jpg",
       categoryUrl:"smartwatch",
       category:"smartwatch",
       keyWorld:"More Smartwatches >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/41ghh3XjOLL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/cameras.jpg",
       categoryUrl:"camera",
       category:"camera",
       keyWorld:"More Camera's >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/31Ide2xeMgL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.jpg",
       categoryUrl:"homenkitchen",
       category:"homenkitchen",
       keyWorld:"More Home & kitchen >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71hEefMZtcL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.jpg",
       categoryUrl:"homenkitchen",
       category:"homenkitchen",
       keyWorld:"More Home & kitchen >>"
     }  
 
-    // https://m.media-amazon.com/images/I/413fkA2hhSS.jpg
+    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
   ],
   featureProducts:[
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71ncBz8OFHS._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/speakers.jpg",
       categoryUrl:"speaker",
       category:"speaker",
       keyWorld:"More Speakers >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71p7xwt7bgL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/gadgets.jpg",
       categoryUrl:"gagdet",
       category:"gadget",
       keyWorld:"More Gadgets >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71JDCbasgaL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/printers.jpg",
       categoryUrl:"printer",
       category:"printer",
       keyWorld:"More Printers >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/81H1Grsm4XL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/monitors.jpg",
       categoryUrl:"monitor",
       category:"monitor",
       keyWorld:"More Monitors >>"
@@ -2218,40 +2218,40 @@ var ListConfig=[
       category:"networking",
       keyWorld:"More Networking >>"
     },
-    // https://m.media-amazon.com/images/I/413fkA2hhSS.jpg
+    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
   ],
   specialproducts:[
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71-QiEqDpZL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/STWbasic2.jpg",
       categoryUrl:"amazonbasics",
       category:"amazonbasics",
       keyWorld:"More Amazon Basics >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71gfnsDd3-L._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/STWbasic4.jpg",
       categoryUrl:"amazonbasics",
       category:"amazonbasics",
       keyWorld:"More Amazon Basics >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/810VOlH6cGL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/SWTbasic.jpg",
       categoryUrl:"amazonbasics",
       category:"amazonbasics",
       keyWorld:"More Amazon Basics>>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71sjjcwJ6cL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/SWTbasic3.jpg",
       categoryUrl:"amazonbasics",
       category:"amazonbasics",
       keyWorld:"More Amazonzon Basics >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/61KdzsxowuL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/STWbasic2.jpg",
       categoryUrl:"amazonbasics",
       category:"amazonbasics",
       keyWorld:"More Amazonzon Basics >>"
     } 
-    // https://m.media-amazon.com/images/I/413fkA2hhSS.jpg
+    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
   ],
   gstortax: "VAT",
   instagramacct: null,
@@ -2279,7 +2279,7 @@ var ListConfig=[
   googleacct: null,
   topCollections:[
     {
-      imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
       categoryUrl:"/c/Phone",
       category:["phone"],
       keyWorld:"More phone >>",
@@ -2287,25 +2287,25 @@ var ListConfig=[
 
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/413fkA2hhSS.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
       categoryUrl:"/c/Laptop",
       category:["hplaptop","laptop","microsoft","delllaptop","microsoftphone"],
       keyWorld:"More Laptops >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/51XeMvBLlGL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
       categoryUrl:"/c/Tablet",
       category:"tablet",
       keyWorld:"More Tablet >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/31rxH44lpoL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
       categoryUrl:"/c/HeadPhone",
       category:"headphone",
       keyWorld:"More HeadPhone >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
       categoryUrl:"/c/Phone",
       category:["phone"],
       keyWorld:"More phone >>",
@@ -2313,19 +2313,19 @@ var ListConfig=[
 
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/413fkA2hhSS.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
       categoryUrl:"/c/Laptop",
       category:["hplaptop","laptop","microsoft","delllaptop","microsoftphone"],
       keyWorld:"More Laptops >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/51XeMvBLlGL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
       categoryUrl:"/c/Tablet",
       category:"tablet",
       keyWorld:"More Tablet >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/31rxH44lpoL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
       categoryUrl:"/c/HeadPhone",
       category:"HeadPhone",
       keyWorld:"More HeadPhone >>"
@@ -2333,59 +2333,59 @@ var ListConfig=[
   ],
   newProducts:[
     {
-      imguRL:"https://m.media-amazon.com/images/I/51fl8l0G78L.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/projectors.jpg",
       categoryUrl:"projector",
       category:"projector",
       keyWorld:"More Projectors >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/51wZU-kW22L.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/smartwatches.jpg",
       categoryUrl:"smartwatch",
       category:"smartwatch",
       keyWorld:"More Smartwatches >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/41ghh3XjOLL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/cameras.jpg",
       categoryUrl:"camera",
       category:"camera",
       keyWorld:"More Camera's >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/31Ide2xeMgL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.jpg",
       categoryUrl:"homenkitchen",
       category:"homenkitchen",
       keyWorld:"More Home & kitchen >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71hEefMZtcL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.jpg",
       categoryUrl:"homenkitchen",
       category:"homenkitchen",
       keyWorld:"More Home & kitchen >>"
     }  
 
-    // https://m.media-amazon.com/images/I/413fkA2hhSS.jpg
+    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
   ],
   featureProducts:[
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71ncBz8OFHS._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/speakers.jpg",
       categoryUrl:"speaker",
       category:"speaker",
       keyWorld:"More Speakers >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71p7xwt7bgL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/gadgets.jpg",
       categoryUrl:"gagdet",
       category:"gadget",
       keyWorld:"More Gadgets >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71JDCbasgaL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/printers.jpg",
       categoryUrl:"printer",
       category:"printer",
       keyWorld:"More Printers >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/81H1Grsm4XL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/monitors.jpg",
       categoryUrl:"monitor",
       category:"monitor",
       keyWorld:"More Monitors >>"
@@ -2396,40 +2396,40 @@ var ListConfig=[
       category:"networking",
       keyWorld:"More Networking >>"
     },
-    // https://m.media-amazon.com/images/I/413fkA2hhSS.jpg
+    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
   ],
   specialproducts:[
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71-QiEqDpZL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/STWbasic2.jpg",
       categoryUrl:"amazonbasics",
       category:"amazonbasics",
       keyWorld:"More Amazon Basics >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71gfnsDd3-L._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/STWbasic4.jpg",
       categoryUrl:"amazonbasics",
       category:"amazonbasics",
       keyWorld:"More Amazon Basics >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/810VOlH6cGL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/SWTbasic.jpg",
       categoryUrl:"amazonbasics",
       category:"amazonbasics",
       keyWorld:"More Amazon Basics>>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71sjjcwJ6cL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/SWTbasic3.jpg",
       categoryUrl:"amazonbasics",
       category:"amazonbasics",
       keyWorld:"More Amazonzon Basics >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/61KdzsxowuL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/STWbasic2.jpg",
       categoryUrl:"amazonbasics",
       category:"amazonbasics",
       keyWorld:"More Amazonzon Basics >>"
     } 
-    // https://m.media-amazon.com/images/I/413fkA2hhSS.jpg
+    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
   ],
   gstortax: "VAT",
   instagramacct: null,
@@ -2457,7 +2457,7 @@ var ListConfig=[
   googleacct: null,
   topCollections:[
     {
-      imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
       categoryUrl:"/c/Phone",
       category:["phone"],
       keyWorld:"More phone >>",
@@ -2465,25 +2465,25 @@ var ListConfig=[
 
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/413fkA2hhSS.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
       categoryUrl:"/c/Laptop",
       category:["hplaptop","laptop","microsoft","delllaptop","microsoftphone"],
       keyWorld:"More Laptops >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/51XeMvBLlGL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
       categoryUrl:"/c/Tablet",
       category:"tablet",
       keyWorld:"More Tablet >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/31rxH44lpoL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
       categoryUrl:"/c/HeadPhone",
       category:"headphone",
       keyWorld:"More HeadPhone >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
       categoryUrl:"/c/Phone",
       category:["phone"],
       keyWorld:"More phone >>",
@@ -2491,19 +2491,19 @@ var ListConfig=[
 
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/413fkA2hhSS.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
       categoryUrl:"/c/Laptop",
       category:["hplaptop","laptop","microsoft","delllaptop","microsoftphone"],
       keyWorld:"More Laptops >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/51XeMvBLlGL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
       categoryUrl:"/c/Tablet",
       category:"tablet",
       keyWorld:"More Tablet >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/31rxH44lpoL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
       categoryUrl:"/c/HeadPhone",
       category:"HeadPhone",
       keyWorld:"More HeadPhone >>"
@@ -2511,59 +2511,59 @@ var ListConfig=[
   ],
   newProducts:[
     {
-      imguRL:"https://m.media-amazon.com/images/I/51fl8l0G78L.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/projectors.jpg",
       categoryUrl:"projector",
       category:"projector",
       keyWorld:"More Projectors >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/51wZU-kW22L.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/smartwatches.jpg",
       categoryUrl:"smartwatch",
       category:"smartwatch",
       keyWorld:"More Smartwatches >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/41ghh3XjOLL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/cameras.jpg",
       categoryUrl:"camera",
       category:"camera",
       keyWorld:"More Camera's >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/31Ide2xeMgL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.jpg",
       categoryUrl:"homenkitchen",
       category:"homenkitchen",
       keyWorld:"More Home & kitchen >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71hEefMZtcL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.jpg",
       categoryUrl:"homenkitchen",
       category:"homenkitchen",
       keyWorld:"More Home & kitchen >>"
     }  
 
-    // https://m.media-amazon.com/images/I/413fkA2hhSS.jpg
+    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
   ],
   featureProducts:[
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71ncBz8OFHS._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/speakers.jpg",
       categoryUrl:"speaker",
       category:"speaker",
       keyWorld:"More Speakers >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71p7xwt7bgL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/gadgets.jpg",
       categoryUrl:"gagdet",
       category:"gadget",
       keyWorld:"More Gadgets >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71JDCbasgaL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/printers.jpg",
       categoryUrl:"printer",
       category:"printer",
       keyWorld:"More Printers >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/81H1Grsm4XL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/monitors.jpg",
       categoryUrl:"monitor",
       category:"monitor",
       keyWorld:"More Monitors >>"
@@ -2574,40 +2574,40 @@ var ListConfig=[
       category:"networking",
       keyWorld:"More Networking >>"
     },
-    // https://m.media-amazon.com/images/I/413fkA2hhSS.jpg
+    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
   ],
   specialproducts:[
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71-QiEqDpZL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/STWbasic2.jpg",
       categoryUrl:"amazonbasics",
       category:"amazonbasics",
       keyWorld:"More Amazon Basics >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71gfnsDd3-L._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/STWbasic4.jpg",
       categoryUrl:"amazonbasics",
       category:"amazonbasics",
       keyWorld:"More Amazon Basics >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/810VOlH6cGL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/SWTbasic.jpg",
       categoryUrl:"amazonbasics",
       category:"amazonbasics",
       keyWorld:"More Amazon Basics>>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71sjjcwJ6cL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/SWTbasic3.jpg",
       categoryUrl:"amazonbasics",
       category:"amazonbasics",
       keyWorld:"More Amazonzon Basics >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/61KdzsxowuL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/STWbasic2.jpg",
       categoryUrl:"amazonbasics",
       category:"amazonbasics",
       keyWorld:"More Amazonzon Basics >>"
     } 
-    // https://m.media-amazon.com/images/I/413fkA2hhSS.jpg
+    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
   ],
   gstortax: "VAT",
   instagramacct: null,
@@ -2659,7 +2659,7 @@ var ListConfig=[
   googleacct: null,
   topCollections:[
     {
-      imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
       categoryUrl:"/c/Phone",
       category:["phone"],
       keyWorld:"More phone >>",
@@ -2667,25 +2667,25 @@ var ListConfig=[
 
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/413fkA2hhSS.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
       categoryUrl:"/c/Laptop",
       category:["hplaptop","laptop","microsoft","delllaptop","microsoftphone"],
       keyWorld:"More Laptops >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/51XeMvBLlGL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
       categoryUrl:"/c/Tablet",
       category:"tablet",
       keyWorld:"More Tablet >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/31rxH44lpoL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
       categoryUrl:"/c/HeadPhone",
       category:"headphone",
       keyWorld:"More HeadPhone >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
       categoryUrl:"/c/Phone",
       category:["phone"],
       keyWorld:"More phone >>",
@@ -2693,19 +2693,19 @@ var ListConfig=[
 
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/413fkA2hhSS.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
       categoryUrl:"/c/Laptop",
       category:["hplaptop","laptop","microsoft","delllaptop","microsoftphone"],
       keyWorld:"More Laptops >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/51XeMvBLlGL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
       categoryUrl:"/c/Tablet",
       category:"tablet",
       keyWorld:"More Tablet >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/31rxH44lpoL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
       categoryUrl:"/c/HeadPhone",
       category:"HeadPhone",
       keyWorld:"More HeadPhone >>"
@@ -2713,59 +2713,59 @@ var ListConfig=[
   ],
   newProducts:[
     {
-      imguRL:"https://m.media-amazon.com/images/I/51fl8l0G78L.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/projectors.jpg",
       categoryUrl:"projector",
       category:"projector",
       keyWorld:"More Projectors >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/51wZU-kW22L.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/smartwatches.jpg",
       categoryUrl:"smartwatch",
       category:"smartwatch",
       keyWorld:"More Smartwatches >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/41ghh3XjOLL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/cameras.jpg",
       categoryUrl:"camera",
       category:"camera",
       keyWorld:"More Camera's >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/31Ide2xeMgL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.jpg",
       categoryUrl:"homenkitchen",
       category:"homenkitchen",
       keyWorld:"More Home & kitchen >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71hEefMZtcL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.jpg",
       categoryUrl:"homenkitchen",
       category:"homenkitchen",
       keyWorld:"More Home & kitchen >>"
     }  
 
-    // https://m.media-amazon.com/images/I/413fkA2hhSS.jpg
+    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
   ],
   featureProducts:[
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71ncBz8OFHS._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/speakers.jpg",
       categoryUrl:"speaker",
       category:"speaker",
       keyWorld:"More Speakers >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71p7xwt7bgL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/gadgets.jpg",
       categoryUrl:"gagdet",
       category:"gadget",
       keyWorld:"More Gadgets >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71JDCbasgaL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/printers.jpg",
       categoryUrl:"printer",
       category:"printer",
       keyWorld:"More Printers >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/81H1Grsm4XL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/monitors.jpg",
       categoryUrl:"monitor",
       category:"monitor",
       keyWorld:"More Monitors >>"
@@ -2776,40 +2776,40 @@ var ListConfig=[
       category:"networking",
       keyWorld:"More Networking >>"
     },
-    // https://m.media-amazon.com/images/I/413fkA2hhSS.jpg
+    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
   ],
   specialproducts:[
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71-QiEqDpZL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/STWbasic2.jpg",
       categoryUrl:"amazonbasics",
       category:"amazonbasics",
       keyWorld:"More Amazon Basics >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71gfnsDd3-L._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/STWbasic4.jpg",
       categoryUrl:"amazonbasics",
       category:"amazonbasics",
       keyWorld:"More Amazon Basics >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/810VOlH6cGL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/SWTbasic.jpg",
       categoryUrl:"amazonbasics",
       category:"amazonbasics",
       keyWorld:"More Amazon Basics>>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71sjjcwJ6cL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/SWTbasic3.jpg",
       categoryUrl:"amazonbasics",
       category:"amazonbasics",
       keyWorld:"More Amazonzon Basics >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/61KdzsxowuL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/STWbasic2.jpg",
       categoryUrl:"amazonbasics",
       category:"amazonbasics",
       keyWorld:"More Amazonzon Basics >>"
     } 
-    // https://m.media-amazon.com/images/I/413fkA2hhSS.jpg
+    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
   ],
   gstortax: "VAT",
   instagramacct: null,
@@ -2837,7 +2837,7 @@ var ListConfig=[
   googleacct: null,
   topCollections:[
     {
-      imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
       categoryUrl:"/c/Phone",
       category:["phone"],
       keyWorld:"More phone >>",
@@ -2845,25 +2845,25 @@ var ListConfig=[
 
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/413fkA2hhSS.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
       categoryUrl:"/c/Laptop",
       category:["hplaptop","laptop","microsoft","delllaptop","microsoftphone"],
       keyWorld:"More Laptops >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/51XeMvBLlGL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
       categoryUrl:"/c/Tablet",
       category:"tablet",
       keyWorld:"More Tablet >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/31rxH44lpoL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
       categoryUrl:"/c/HeadPhone",
       category:"headphone",
       keyWorld:"More HeadPhone >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
       categoryUrl:"/c/Phone",
       category:["phone"],
       keyWorld:"More phone >>",
@@ -2871,19 +2871,19 @@ var ListConfig=[
 
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/413fkA2hhSS.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
       categoryUrl:"/c/Laptop",
       category:["hplaptop","laptop","microsoft","delllaptop","microsoftphone"],
       keyWorld:"More Laptops >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/51XeMvBLlGL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
       categoryUrl:"/c/Tablet",
       category:"tablet",
       keyWorld:"More Tablet >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/31rxH44lpoL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
       categoryUrl:"/c/HeadPhone",
       category:"HeadPhone",
       keyWorld:"More HeadPhone >>"
@@ -2891,59 +2891,59 @@ var ListConfig=[
   ],
   newProducts:[
     {
-      imguRL:"https://m.media-amazon.com/images/I/51fl8l0G78L.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/projectors.jpg",
       categoryUrl:"projector",
       category:"projector",
       keyWorld:"More Projectors >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/51wZU-kW22L.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/smartwatches.jpg",
       categoryUrl:"smartwatch",
       category:"smartwatch",
       keyWorld:"More Smartwatches >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/41ghh3XjOLL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/cameras.jpg",
       categoryUrl:"camera",
       category:"camera",
       keyWorld:"More Camera's >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/31Ide2xeMgL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.jpg",
       categoryUrl:"homenkitchen",
       category:"homenkitchen",
       keyWorld:"More Home & kitchen >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71hEefMZtcL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.jpg",
       categoryUrl:"homenkitchen",
       category:"homenkitchen",
       keyWorld:"More Home & kitchen >>"
     }  
 
-    // https://m.media-amazon.com/images/I/413fkA2hhSS.jpg
+    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
   ],
   featureProducts:[
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71ncBz8OFHS._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/speakers.jpg",
       categoryUrl:"speaker",
       category:"speaker",
       keyWorld:"More Speakers >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71p7xwt7bgL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/gadgets.jpg",
       categoryUrl:"gagdet",
       category:"gadget",
       keyWorld:"More Gadgets >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71JDCbasgaL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/printers.jpg",
       categoryUrl:"printer",
       category:"printer",
       keyWorld:"More Printers >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/81H1Grsm4XL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/monitors.jpg",
       categoryUrl:"monitor",
       category:"monitor",
       keyWorld:"More Monitors >>"
@@ -2954,40 +2954,40 @@ var ListConfig=[
       category:"networking",
       keyWorld:"More Networking >>"
     },
-    // https://m.media-amazon.com/images/I/413fkA2hhSS.jpg
+    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
   ],
   specialproducts:[
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71-QiEqDpZL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/STWbasic2.jpg",
       categoryUrl:"amazonbasics",
       category:"amazonbasics",
       keyWorld:"More Amazon Basics >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71gfnsDd3-L._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/STWbasic4.jpg",
       categoryUrl:"amazonbasics",
       category:"amazonbasics",
       keyWorld:"More Amazon Basics >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/810VOlH6cGL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/SWTbasic.jpg",
       categoryUrl:"amazonbasics",
       category:"amazonbasics",
       keyWorld:"More Amazon Basics>>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71sjjcwJ6cL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/SWTbasic3.jpg",
       categoryUrl:"amazonbasics",
       category:"amazonbasics",
       keyWorld:"More Amazonzon Basics >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/61KdzsxowuL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/STWbasic2.jpg",
       categoryUrl:"amazonbasics",
       category:"amazonbasics",
       keyWorld:"More Amazonzon Basics >>"
     } 
-    // https://m.media-amazon.com/images/I/413fkA2hhSS.jpg
+    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
   ],
   gstortax: "VAT",
   instagramacct: null,
@@ -3015,7 +3015,7 @@ var ListConfig=[
   googleacct: null,
   topCollections:[
     {
-      imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
       categoryUrl:"/c/Phone",
       category:["phone"],
       keyWorld:"More phone >>",
@@ -3023,25 +3023,25 @@ var ListConfig=[
 
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/413fkA2hhSS.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
       categoryUrl:"/c/Laptop",
       category:["hplaptop","laptop","microsoft","delllaptop","microsoftphone"],
       keyWorld:"More Laptops >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/51XeMvBLlGL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
       categoryUrl:"/c/Tablet",
       category:"tablet",
       keyWorld:"More Tablet >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/31rxH44lpoL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
       categoryUrl:"/c/HeadPhone",
       category:"headphone",
       keyWorld:"More HeadPhone >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/417PwBC+iEL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
       categoryUrl:"/c/Phone",
       category:["phone"],
       keyWorld:"More phone >>",
@@ -3049,19 +3049,19 @@ var ListConfig=[
 
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/413fkA2hhSS.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
       categoryUrl:"/c/Laptop",
       category:["hplaptop","laptop","microsoft","delllaptop","microsoftphone"],
       keyWorld:"More Laptops >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/51XeMvBLlGL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
       categoryUrl:"/c/Tablet",
       category:"tablet",
       keyWorld:"More Tablet >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/31rxH44lpoL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
       categoryUrl:"/c/HeadPhone",
       category:"HeadPhone",
       keyWorld:"More HeadPhone >>"
@@ -3069,59 +3069,59 @@ var ListConfig=[
   ],
   newProducts:[
     {
-      imguRL:"https://m.media-amazon.com/images/I/51fl8l0G78L.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/projectors.jpg",
       categoryUrl:"projector",
       category:"projector",
       keyWorld:"More Projectors >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/51wZU-kW22L.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/smartwatches.jpg",
       categoryUrl:"smartwatch",
       category:"smartwatch",
       keyWorld:"More Smartwatches >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/41ghh3XjOLL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/cameras.jpg",
       categoryUrl:"camera",
       category:"camera",
       keyWorld:"More Camera's >>"
     },
     {
-      imguRL:"https://m.media-amazon.com/images/I/31Ide2xeMgL.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.jpg",
       categoryUrl:"homenkitchen",
       category:"homenkitchen",
       keyWorld:"More Home & kitchen >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71hEefMZtcL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.jpg",
       categoryUrl:"homenkitchen",
       category:"homenkitchen",
       keyWorld:"More Home & kitchen >>"
     }  
 
-    // https://m.media-amazon.com/images/I/413fkA2hhSS.jpg
+    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
   ],
   featureProducts:[
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71ncBz8OFHS._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/speakers.jpg",
       categoryUrl:"speaker",
       category:"speaker",
       keyWorld:"More Speakers >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71p7xwt7bgL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/gadgets.jpg",
       categoryUrl:"gagdet",
       category:"gadget",
       keyWorld:"More Gadgets >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71JDCbasgaL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/printers.jpg",
       categoryUrl:"printer",
       category:"printer",
       keyWorld:"More Printers >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/81H1Grsm4XL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/monitors.jpg",
       categoryUrl:"monitor",
       category:"monitor",
       keyWorld:"More Monitors >>"
@@ -3132,40 +3132,40 @@ var ListConfig=[
       category:"networking",
       keyWorld:"More Networking >>"
     },
-    // https://m.media-amazon.com/images/I/413fkA2hhSS.jpg
+    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
   ],
   specialproducts:[
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71-QiEqDpZL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/STWbasic2.jpg",
       categoryUrl:"amazonbasics",
       category:"amazonbasics",
       keyWorld:"More Amazon Basics >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71gfnsDd3-L._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/STWbasic4.jpg",
       categoryUrl:"amazonbasics",
       category:"amazonbasics",
       keyWorld:"More Amazon Basics >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/810VOlH6cGL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/SWTbasic.jpg",
       categoryUrl:"amazonbasics",
       category:"amazonbasics",
       keyWorld:"More Amazon Basics>>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/71sjjcwJ6cL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/SWTbasic3.jpg",
       categoryUrl:"amazonbasics",
       category:"amazonbasics",
       keyWorld:"More Amazonzon Basics >>"
     },
     {
-      imguRL:"https://images-na.ssl-images-amazon.com/images/I/61KdzsxowuL._SL1500_.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/STWbasic2.jpg",
       categoryUrl:"amazonbasics",
       category:"amazonbasics",
       keyWorld:"More Amazonzon Basics >>"
     } 
-    // https://m.media-amazon.com/images/I/413fkA2hhSS.jpg
+    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
   ],
   gstortax: "VAT",
   instagramacct: null,

@@ -130,7 +130,14 @@ const TopCollection = ({ type, title, subtitle, designClass, noSlider, cartClass
         filterContext.setselectedKeyword("");
         filterContext.setSelectedCategory("");
         filterContext.setSelectedPromaflag(data.category);
-        router.push(`${geoLocation}/shop/six_grid?&brand=&color=&size=&minPrice=&maxPrice=&promoflag=${data.category}`)
+
+        var gLocation = "";
+        if(geoLocation==null)
+        gLocation="";
+        else
+        gLocation = geoLocation;
+
+        router.push(`${gLocation}/shop/six_grid?&brand=&color=&size=&minPrice=&maxPrice=&promoflag=${data.category}`)
     }
 
     // var { loading, data } = useQuery(GET_PRODUCTS, {
@@ -187,9 +194,9 @@ const TopCollection = ({ type, title, subtitle, designClass, noSlider, cartClass
                                 <Slider {...productSlider} className="product-m no-arrow">
                                         
                                         {topCollections && topCollections.slice(0, 10).map((collection, index) =>
-                                            <div style={linkStyle} className="front" key={index} >
-                                                <center> <AutoFitImage frameWidth="150px" imgSize="contain" frameHeight="160px" imgSrc={collection.imguRL}/> </center> 
-                                                <center style={lableStyle}> <a style={{color:"white"}}  href="#" onClick={() => getURL(collection)} >{collection.keyWorld} </a></center> 
+                                            <div style={linkStyle} className="front" key={index} onClick={() => getURL(collection)}  >
+                                                <center> <AutoFitImage frameWidth="260px" imgSize="contain" frameHeight="200px" imgSrc={collection.imguRL}/> </center> 
+                                                {/* <center style={lableStyle}> <a style={{color:"white"}}  href="#" onClick={() => getURL(collection)} >{collection.keyWorld} </a></center>  */}
                                             </div>)}
                                 </Slider>
 

@@ -5,7 +5,7 @@ import Breadcrubs from '../common/widgets/breadcrubs';
 import Helmet from 'react-helmet';
 import favicon from '../../public/assets/images/favicon/1.png'
 
-const CommonLayout = ({ children, title, parent ,subTitle }) => {
+const CommonLayout = ({ children, title, parent ,subTitle,leafTitle }) => {
     return (
         <>
         <Helmet>
@@ -13,7 +13,7 @@ const CommonLayout = ({ children, title, parent ,subTitle }) => {
             <link rel="icon" type="image/x-icon" href={favicon?favicon:''} />
         </Helmet>
             <HeaderOne topClass="top-header" logoName="logo.png" />
-                <Breadcrubs title={title} parent={parent} subTitle={subTitle}  />
+                <Breadcrubs title={title} parent={parent} subTitle={subTitle} leafTitle={leafTitle} />
                 <>{children}</>
             <FooterOne />
         </>
