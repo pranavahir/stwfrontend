@@ -1027,10 +1027,6 @@ export const CategoryList = [
                 },
                 {
                     CategoryName:"Home & Kitchen",
-                    SubCategoryName:"Furniture"
-                },
-                {
-                    CategoryName:"Home & Kitchen",
                     SubCategoryName:"Heating, Cooling & Air Quality"
                 }
             
