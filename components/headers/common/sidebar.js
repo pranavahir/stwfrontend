@@ -109,6 +109,7 @@ const SideBar = () => {
   const handleSubTwoMenu = (event) => {
     if (event.target.classList.contains("sub-arrow")) return;
 
+    if(event.target.nextElementSibling !=null){
     if (event.target.nextElementSibling.classList.contains("opensub2"))
       event.target.nextElementSibling.classList.remove("opensub2");
     else {
@@ -117,10 +118,12 @@ const SideBar = () => {
       });
       event.target.nextElementSibling.classList.add("opensub2");
     }
+  }
   };
   const handleSubThreeMenu = (event) => {
     if (event.target.classList.contains("sub-arrow")) return;
 
+    if(event.target.nextElementSibling !=null){
     if (event.target.nextElementSibling.classList.contains("opensub3"))
       event.target.nextElementSibling.classList.remove("opensub3");
     else {
@@ -129,11 +132,13 @@ const SideBar = () => {
       });
       event.target.nextElementSibling.classList.add("opensub3");
     }
+  }
   };
 
   const handleSubFourMenu = (event) => {
     if (event.target.classList.contains("sub-arrow")) return;
 
+    if(event.target.nextElementSibling !=null){
     if (event.target.nextElementSibling.classList.contains("opensub4"))
       event.target.nextElementSibling.classList.remove("opensub4");
     else {
@@ -142,16 +147,20 @@ const SideBar = () => {
       });
       event.target.nextElementSibling.classList.add("opensub4");
     }
+  }
   };
 
   const handleMegaSubmenu = (event) => {
     if (event.target.classList.contains("sub-arrow")) return;
 
-    if (event.target.nextElementSibling.classList.contains("opensidesubmenu"))
+    if(event.target.nextElementSibling !=null){
+      if (event.target.nextElementSibling.classList.contains("opensidesubmenu"))
       event.target.nextElementSibling.classList.remove("opensidesubmenu");
     else {
       event.target.nextElementSibling.classList.add("opensidesubmenu");
     }
+    }
+   
 
 
   };

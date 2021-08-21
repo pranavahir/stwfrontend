@@ -174,8 +174,6 @@ const ProductList = ({ colClass, type,parentCategory, layoutList,openSidebar,noS
 
     const SelectedSubCategoryList= setSelectedSubCategoryList;
     
-    console.log(SelectedSubCategoryList);
-
     useEffect(() => {
         const pathname = window.location.pathname;
         setUrl(pathname);

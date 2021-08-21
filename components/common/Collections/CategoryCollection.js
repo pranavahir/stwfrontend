@@ -64,11 +64,39 @@ const CategoryCollection = ({ type, categoryData, title, subtitle, designClass, 
     //     filterContext.setSelectedPromaflag(data.category);
     //     router.push(`${geoLocation}/shop/six_grid?&brand=&color=&size=&minPrice=&maxPrice=&promoflag=${data.category}`)
     // }
-    const getProps=(pros,category)=>{
 
-        // if(category)
+ 
+
+    const getProps=(category)=>{
+
+        var pros = JSON.parse(JSON.stringify(productSlider)); 
+        if(category.subCategoryList == undefined && category.length > 0)
+        {
+            
+            
+            if(pros.slidesToShow > category.length)
+                pros.slidesToShow = category.length;
+
+            for(var i=0; i < pros.responsive.length; i++){
+                if(pros.responsive[i].settings.slidesToShow > category.length)
+                    pros.responsive[i].settings.slidesToShow = category.length; 
+            }
+
+        }
+        else if(category.length == undefined && category.subCategoryList.length > 0)
+        {
+
+            if(pros.slidesToShow > category.subCategoryList.length)
+                pros.slidesToShow = category.subCategoryList.length;
 
 
+            for(var i=0; i < pros.responsive.length; i++){
+                
+                if(pros.responsive[i].settings.slidesToShow > category.subCategoryList.length)
+                pros.responsive[i].settings.slidesToShow = category.subCategoryList.length;
+            }
+            
+        }
         return pros;
     }
 
@@ -77,7 +105,6 @@ const CategoryCollection = ({ type, categoryData, title, subtitle, designClass, 
         var templateStringForImage = `../../../public/assets/images/Category/${data}.jpg`
         return require(templateStringForImage);
     }
-    console.log(categoryData);
     useEffect(() => {
         if (topCollections === undefined) {
             noSlider === false;
@@ -115,7 +142,7 @@ const CategoryCollection = ({ type, categoryData, title, subtitle, designClass, 
                                 {(categoryData.subCategoryList && categoryData.subCategoryList!=undefined && categoryData.subCategoryList.length>0) || 
                                     (categoryData  && categoryData.length>0) ?
                                                                 
-                                <Slider {...getProps(productSlider,categoryData)} className="product-m no-arrow">
+                                <Slider {...getProps(categoryData)} className="product-m no-arrow">
                                         
                                         {categoryData.subCategoryList && categoryData.subCategoryList.map((collection, index) =>
                                             <div style={linkStyle} className="front" key={index}  >
