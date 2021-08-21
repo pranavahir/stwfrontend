@@ -144,7 +144,7 @@ const SideBar = () => {
     }
   };
 
-  const handleMegaSubmenu = (event, menu) => {
+  const handleMegaSubmenu = (event) => {
     if (event.target.classList.contains("sub-arrow")) return;
 
     if (event.target.nextElementSibling.classList.contains("opensidesubmenu"))
@@ -153,7 +153,7 @@ const SideBar = () => {
       event.target.nextElementSibling.classList.add("opensidesubmenu");
     }
 
-    CategoryFilter(menu);
+
   };
   return (
     <Fragment>
@@ -166,8 +166,8 @@ const SideBar = () => {
             </div>
           </a>
           <ul id="sub-menu" className="sidebar-menu">
-            <li>
-              <Link href={`/c/Electronics`}>
+            <li  onClick={(e) => handleMegaSubmenu(e)}>
+              <Link href={`/c/Electronics`}  >
                         <a>Electronics
                         <span className="sub-arrow"></span>
                         </a>
@@ -429,7 +429,7 @@ const SideBar = () => {
                 </li>
               </ul>
             </li>
-            <li>
+            <li onClick={(e) => handleMegaSubmenu(e)}>
             <Link href={`/c/Fashion`}>
                         <a>Fashion
                         <span className="sub-arrow"></span>
@@ -613,7 +613,7 @@ const SideBar = () => {
                 </li>
               </ul>
             </li>
-            <li>
+            <li onClick={(e) => handleMegaSubmenu(e)}>
 
             <Link href={`/c/Home & Kitchen`}>
                         <a>Home & Kitchen
@@ -888,7 +888,7 @@ const SideBar = () => {
                 </li>
               </ul>
             </li>
-            <li>
+            <li onClick={(e) => handleMegaSubmenu(e)}>
             <Link href={`/c/Beauty & Personal Care`}>
                         <a>Beauty & Personal Care
                         <span className="sub-arrow"></span>
@@ -1085,7 +1085,7 @@ const SideBar = () => {
                 </li>
               </ul>
             </li>
-            <li>
+            <li onClick={(e) => handleMegaSubmenu(e)}>
             <Link href={`/c/Health & Wellness`}>
                         <a>Health & Wellness
                         <span className="sub-arrow"></span>
@@ -1292,7 +1292,7 @@ const SideBar = () => {
                 </li>
               </ul>
             </li>
-            <li>
+            <li onClick={(e) => handleMegaSubmenu(e)}>
             <Link href={`/c/Grocery`}>
                         <a>Grocery
                         <span className="sub-arrow"></span>
@@ -1471,7 +1471,7 @@ const SideBar = () => {
                 </li>
               </ul>
             </li>
-            <li>
+            <li onClick={(e) => handleMegaSubmenu(e)}>
             <Link href={`/c/Sports & Outdoors`}>
                         <a>Sports & Outdoors
                         <span className="sub-arrow"></span>
@@ -1563,7 +1563,7 @@ const SideBar = () => {
                 </li>
               </ul>
             </li>
-            <li>
+            <li onClick={(e) => handleMegaSubmenu(e)}>
             <Link href={`/c/Baby & Toys`}>
                         <a>Baby & Toys
                         <span className="sub-arrow"></span>
@@ -1632,7 +1632,7 @@ const SideBar = () => {
                 </li>
               </ul>
             </li>
-            <li>
+            <li onClick={(e) => handleMegaSubmenu(e)}>
               <a href="#">Next Day Delivery</a>
             </li>
           </ul>

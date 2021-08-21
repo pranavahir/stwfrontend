@@ -15,6 +15,7 @@ import { CurrencyContext } from '../../../helpers/Currency/CurrencyContext';
 import AutoFitImage from 'react-image-autofit-frame';
 import cImg from '../../../public/assets/images/Category/Desktops.jpg';
 import Link from "next/link";
+import { getInitialProps } from 'react-i18next';
 
 
 const CategoryCollection = ({ type, categoryData, title, subtitle, designClass, noSlider, cartClass, productSlider, titleClass, noTitle, innerClass, inner, backImage }) => {
@@ -63,6 +64,13 @@ const CategoryCollection = ({ type, categoryData, title, subtitle, designClass, 
     //     filterContext.setSelectedPromaflag(data.category);
     //     router.push(`${geoLocation}/shop/six_grid?&brand=&color=&size=&minPrice=&maxPrice=&promoflag=${data.category}`)
     // }
+    const getProps=(pros,category)=>{
+
+        // if(category)
+
+
+        return pros;
+    }
 
 
     const getImage=(data)=>{
@@ -107,7 +115,7 @@ const CategoryCollection = ({ type, categoryData, title, subtitle, designClass, 
                                 {(categoryData.subCategoryList && categoryData.subCategoryList!=undefined && categoryData.subCategoryList.length>0) || 
                                     (categoryData  && categoryData.length>0) ?
                                                                 
-                                <Slider {...productSlider} className="product-m no-arrow">
+                                <Slider {...getProps(productSlider,categoryData)} className="product-m no-arrow">
                                         
                                         {categoryData.subCategoryList && categoryData.subCategoryList.map((collection, index) =>
                                             <div style={linkStyle} className="front" key={index}  >
