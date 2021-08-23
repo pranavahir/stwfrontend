@@ -206,13 +206,13 @@ const ProductList = ({ colClass, type,parentCategory, layoutList,openSidebar,noS
         }
     });
     
-    if(data!=undefined)
-    {
-        if(data.lookup.total.total==0)
-        {
-            // router.push("/page/coming-soon")
-        }
-    }
+    // if(data!=undefined)
+    // {
+    //     if(data.lookup.total.total==0)
+    //     {
+    //         // router.push("/page/coming-soon")
+    //     }
+    // }
 
 
 
@@ -296,14 +296,14 @@ const ProductList = ({ colClass, type,parentCategory, layoutList,openSidebar,noS
                         
                         <CategoryCollection noTitle="null" backImage={true} type="fashion"  categoryData={SelectedSubCategoryList} productSlider={CategorySlider} designClass="ratio_asos" noSlider="false" cartClass="cart-info cart-wrap" />
 
-                            {data && data.lookup.total.total>0? 
+                            {data &&  (data.lookup!=null && data.lookup!=undefined && data.lookup!="") &&  data.lookup.total.total>0? 
                              
                             <div className="top-banner-content small-section">
                                 {/* <h4>{selectedCategory}</h4> */}
                                 <h5>{data ? `${selectedCategory}  1-${data.lookup.items.length} of ${data.lookup.total.total}` : 'loading'}</h5>
                             </div>
                             
-                            :  [((data && (data.lookup.total.total==0 || data.lookup.total.total==null ))  ? 
+                            :  [((data &&  (data.lookup!=null && data.lookup!=undefined && data.lookup!="") &&  (data.lookup.total.total==0 || data.lookup.total.total==null ))  ? 
                             <div>
                 <div className="container">
                     <div id="container" className="text-center">
@@ -365,7 +365,7 @@ const ProductList = ({ colClass, type,parentCategory, layoutList,openSidebar,noS
                                 )]
                             }
                         </div>
-                       {data && data.lookup.total.total>0? 
+                       {data &&  (data.lookup!=null && data.lookup!=undefined && data.lookup!="") &&  data.lookup.total.total>0? 
                        <Row>
                                     <Col xs="12">
                                         <ul className="product-filter-tags">
@@ -411,7 +411,7 @@ const ProductList = ({ colClass, type,parentCategory, layoutList,openSidebar,noS
                                 </Row>
                                 : data ? "":""
                                 }
-                                {data && data.lookup.total.total>0? 
+                                {data &&  (data.lookup!=null && data.lookup!=undefined && data.lookup!="") &&  data.lookup.total.total>0? 
                                  <div className="collection-product-wrapper">
                             <div>
                                 {!noSidebar?
@@ -495,7 +495,7 @@ const ProductList = ({ colClass, type,parentCategory, layoutList,openSidebar,noS
                                 <Row>
                                     {/* Product Box */}
                                     {(!data || !data.lookup || !data.lookup || data.lookup.length === 0 || loading) ?
-                                        (data && data.lookup && data.lookup && data.lookup.length === 0) ?
+                                        (data &&  (data.lookup!=null && data.lookup!=undefined && data.lookup!="") &&  data.lookup.length === 0) ?
                                             <Col xs="12">
                                                 <div>
                                                     <div className="col-sm-12 empty-cart-cls text-center">
@@ -520,7 +520,7 @@ const ProductList = ({ colClass, type,parentCategory, layoutList,openSidebar,noS
                                              <PostLoader />
                                          </div>
                                      </div>
-                                        : data && data.lookup.items.map((product, i) =>
+                                        : data &&  (data.lookup!=null && data.lookup!=undefined && data.lookup!="") &&  data.lookup.items.map((product, i) =>
                                             <div className={grid} key={i}>
                                             <div className="product-top-filter"></div>
                                                 <div className="product">
@@ -540,7 +540,7 @@ const ProductList = ({ colClass, type,parentCategory, layoutList,openSidebar,noS
                                 <div className="text-center">
                                     <Row>
                                         <Col xl="12" md="12" sm="12">
-                                            {data && data.lookup && data.lookup.hasMore!=null &&
+                                            {data &&  (data.lookup!=null && data.lookup!=undefined && data.lookup!="") &&    data.lookup.hasMore!=null &&
                                                 <Button onClick={() => handlePagination()}>
                                                     {isLoading &&
                                                         <Spinner animation="border" variant="light" />}
