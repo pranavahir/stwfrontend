@@ -410,8 +410,8 @@ export const homeSlider = {
 
 export const CategoryList = [
     {
-        CategoryName: "Electronics",
-        MenuKey: "electronics",
+        CategoryName:"Electronics",
+        MenuKey:"electronics",
         subCategoryList: [
             {
                 CategoryName: "Electronics",
@@ -480,13 +480,13 @@ export const CategoryList = [
             {
                 CategoryName: "Electronics",
                 SubCategoryName: "Headphones & Earphones",
-                MenuKey: "headphone-earphones",
+                MenuKey: "headphone-and-earphones",
                 leafCategoryList: [
                     {
                         CategoryName: "Electronics",
                         SubCategoryName: "Headphones & Earphones",
                         LeafCategory: "Bluetooth Headphones",
-                        MenuKey: "bluetooth-headphones"
+                        MenuKey: "bluetooth-and-headphones"
                     },
                     {
                         CategoryName: "Electronics",
@@ -528,7 +528,7 @@ export const CategoryList = [
                         CategoryName: "Electronics",
                         SubCategoryName: "Headphones & Earphones",
                         LeafCategory: "Sports & Fitness Headphones",
-                        MenuKey: "sports-and-Fitness-headphones"
+                        MenuKey: "sports-and-fitness-headphones"
                     }
                 ]
             },
@@ -683,13 +683,13 @@ export const CategoryList = [
                         CategoryName: "Fashion",
                         SubCategoryName: "Clothing, Shoes & Jewelry",
                         LeafCategory: "Kid's Fashion",
-                        MenuKey: "kid's-fashion"
+                        MenuKey: "kids-fashion"
                     },
                     {
                         CategoryName: "Fashion",
                         SubCategoryName: "Clothing, Shoes & Jewelry",
                         LeafCategory: "Men's Fashion",
-                        MenuKey: "men's-fashion",
+                        MenuKey: "mens-fashion",
                     },
                     {
                         CategoryName: "Fashion",
@@ -701,7 +701,7 @@ export const CategoryList = [
                         CategoryName: "Fashion",
                         SubCategoryName: "Clothing, Shoes & Jewelry",
                         LeafCategory: "Women's Fashion",
-                        MenuKey: "women's-fashion"
+                        MenuKey: "womens-fashion"
                     }
                 ]
 
@@ -891,13 +891,13 @@ export const CategoryList = [
                         CategoryName: "Home & Kitchen",
                         SubCategoryName: "Bedding",
                         LeafCategory: "Kid's Bedding",
-                        MenuKey: "kid's-bedding"
+                        MenuKey: "kids-bedding"
                     },
                     {
                         CategoryName: "Home & Kitchen",
                         SubCategoryName: "Bedding",
                         LeafCategory: "Kid's Bedding",
-                        MenuKey: "kid's bedding"
+                        MenuKey: "kids-bedding"
                     }
                 ]
             },
@@ -964,7 +964,7 @@ export const CategoryList = [
                         CategoryName: "Home & Kitchen",
                         SubCategoryName: "Kitchen & Dining",
                         LeafCategory: "Dining & Entertaining",
-                        MenuKey: "tining-and-entertaining"
+                        MenuKey: "dining-and-entertaining"
                     },
                     {
                         CategoryName: "Home & Kitchen",
@@ -1062,7 +1062,7 @@ export const CategoryList = [
             {
                 CategoryName: "Home & Kitchen",
                 SubCategoryName: "Kids' Home Store",
-                MenuKey: "kids'-home-store"
+                MenuKey: "kids-home-store"
             },
             {
                 CategoryName: "Home & Kitchen",
@@ -1091,7 +1091,7 @@ export const CategoryList = [
                         CategoryName: "Home & Kitchen",
                         SubCategoryName: "Vacuum & Floor care",
                         LeafCategory: "Carpet & Upholstery Cleaners & Accessories",
-                        MenuKey: "carpet-and-pholstery-cleaners-and-accessories"
+                        MenuKey: "carpet-and-upholstery-cleaners-and-accessories"
                     },
                     {
                         CategoryName: "Home & Kitchen",
@@ -1199,6 +1199,7 @@ export const CategoryList = [
             {
                 CategoryName: "Beauty & Personal Care",
                 SubCategoryName: "Hair Care & Styling",
+                MenuKey:"hair-care-and-styling",
                 leafCategoryList: [
                     {
                         CategoryName: "Beauty & Personal Care",
@@ -1384,7 +1385,7 @@ export const CategoryList = [
             {
                 CategoryName: "Health & Wellness",
                 SubCategoryName: "Vitamins & Dietary Supplements",
-                MenuKey:"vitamins-and-Dietary-supplements",
+                MenuKey:"vitamins-and-dietary-supplements",
                 leafCategoryList: [
                     {
                         CategoryName: "Health & Wellness",
@@ -1539,7 +1540,7 @@ export const CategoryList = [
             {
                 CategoryName: "Health & Wellness",
                 SubCategoryName: "Cloth Face Mask",
-                MenuKey:"cloth-dace-mask"
+                MenuKey:"cloth-face-mask"
             },
             {
                 CategoryName: "Health & Wellness",
@@ -1699,39 +1700,47 @@ export const CategoryList = [
             },
             {
                 CategoryName: "Grocery",
-                SubCategoryName: "Cooking Essentials"
+                SubCategoryName: "Cooking Essentials",
+                MenuKey:"cooking-essentials"
             },
             {
                 CategoryName: "Grocery",
-                SubCategoryName: "Household Supplies"
+                SubCategoryName: "Household Supplies",
+                MenuKey:"household-supplies"
             },
             {
                 CategoryName: "Grocery",
-                SubCategoryName: "Pet Supplies"
+                SubCategoryName: "Pet Supplies",
+                MenuKey:"pet-supplies"
             },
             {
                 CategoryName: "Grocery",
                 SubCategoryName: "Breakfast Food",
+                MenuKey:"breakfast-food",
                 leafCategoryList: [
                     {
                         CategoryName: "Grocery",
                         SubCategoryName: "Breakfast Food",
-                        LeafCategory: "Canned, Dry & Packaged Food"
+                        LeafCategory: "Canned, Dry & Packaged Food",
+                        MenuKey:"canned-dry-and-packaged-food"
                     },
                     {
                         CategoryName: "Grocery",
                         SubCategoryName: "Breakfast Food",
-                        LeafCategory: "Cooking Essentials"
+                        LeafCategory: "Cooking Essentials",
+                        MenuKey:"cooking-essentials"
                     },
                     {
                         CategoryName: "Grocery",
                         SubCategoryName: "Breakfast Food",
-                        LeafCategory: "Household Supplies"
+                        LeafCategory: "Household Supplies",
+                        MenuKey:"household-supplies"
                     },
                     {
                         CategoryName: "Grocery",
                         SubCategoryName: "Breakfast Food",
-                        LeafCategory: "Pet Supplies"
+                        LeafCategory: "Pet Supplies",
+                        MenuKey:"pet-supplies"
                     }
                 ]
             }
@@ -1742,54 +1751,67 @@ export const CategoryList = [
     {
 
         CategoryName: "Sports & Outdoors",
+        MenuKey:"sports-and-outdoors",
         subCategoryList: [
             {
                 CategoryName: "Sports & Outdoors",
-                SubCategoryName: "Camping & Hiking"
+                SubCategoryName: "Camping & Hiking",
+                MenuKey:"camping-and-hiking"
             },
             {
                 CategoryName: "Sports & Outdoors",
-                SubCategoryName: "Cycling"
+                SubCategoryName: "Cycling",
+                MenuKey:"cycling"
             },
             {
                 CategoryName: "Sports & Outdoors",
-                SubCategoryName: "Scooters & Accessories"
+                SubCategoryName: "Scooters & Accessories",
+                MenuKey:"scooters-and-accessories"
             },
             {
                 CategoryName: "Sports & Outdoors",
-                SubCategoryName: "Strength Training"
+                SubCategoryName: "Strength Training",
+                MenuKey:"strength-training"
             },
             {
                 CategoryName: "Sports & Outdoors",
-                SubCategoryName: "Cardio Training"
+                SubCategoryName: "Cardio Training",
+                MenuKey:"cardio-training"
             },
             {
                 CategoryName: "Sports & Outdoors",
-                SubCategoryName: "Yoga"
+                SubCategoryName: "Yoga",
+                MenuKey:"yoga"
             },
             {
                 CategoryName: "Sports & Outdoors",
-                SubCategoryName: "Exercise Accessories"
+                SubCategoryName: "Exercise Accessories",
+                MenuKey:"exercise-accessories"
             },
             {
                 CategoryName: "Sports & Outdoors",
-                SubCategoryName: "Combat Sports"
+                SubCategoryName: "Combat Sports",
+                MenuKey:"combat-sports"
             },
             {
                 CategoryName: "Sports & Outdoors",
-                SubCategoryName: "Team Sports"
+                SubCategoryName: "Team Sports",
+                MenuKey:"team-sports"
             },
             {
                 CategoryName: "Sports & Outdoors",
-                SubCategoryName: "Racquet Sports"
+                SubCategoryName: "Racquet Sports",
+                MenuKey:"racquet-sports"
             },
             {
                 CategoryName: "Sports & Outdoors",
-                SubCategoryName: "Water Sports"
+                SubCategoryName: "Water Sports",
+                MenuKey:"water-sports"
             },
             {
                 CategoryName: "Sports & Outdoors",
-                SubCategoryName: "Sports Nutrition"
+                SubCategoryName: "Sports Nutrition",
+                MenuKey:"sports-nutrition"
             }
 
 
@@ -1802,43 +1824,53 @@ export const CategoryList = [
     },
     {
         CategoryName: "Baby & Toys",
+        MenuKey:"baby-and-toys",
         subCategoryList: [
             {
                 CategoryName: "Baby & Toys",
-                SubCategoryName: "Baby & Clothing Accessories"
+                SubCategoryName: "Baby & Clothing Accessories",
+                MenuKey:"baby-and-clothing-accessories"
             },
             {
                 CategoryName: "Baby & Toys",
-                SubCategoryName: "Car Seats"
+                SubCategoryName: "Car Seats",
+                MenuKey:"car-seats"
             },
             {
                 CategoryName: "Baby & Toys",
-                SubCategoryName: "Diapering"
+                SubCategoryName: "Diapering",
+                MenuKey:"diapering"
             },
             {
                 CategoryName: "Baby & Toys",
-                SubCategoryName: "Feeding"
+                SubCategoryName: "Feeding",
+                MenuKey:"feeding"
             },
             {
                 CategoryName: "Baby & Toys",
-                SubCategoryName: "Gifts"
+                SubCategoryName: "Gifts",
+                MenuKey:"gifts"
             },
             {
                 CategoryName: "Baby & Toys",
-                SubCategoryName: "Nursery"
+                SubCategoryName: "Nursery",
+                MenuKey:"nursery"
             },
             {
                 CategoryName: "Baby & Toys",
-                SubCategoryName: "Toys & Games"
+                SubCategoryName: "Toys & Games",
+                MenuKey:"toys-and-games"
             },
             {
                 CategoryName: "Baby & Toys",
-                SubCategoryName: "Travel Gear"
+                SubCategoryName: "Travel Gear",
+                MenuKey:"travel-gear"
             }
         ]
     },
     {
-        CategoryName: "NEXT DAY DELIVERY"
+        CategoryName: "NEXT DAY DELIVERY",
+        MenuKey:"next-day-delivery"
     }
 
 
