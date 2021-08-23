@@ -1551,25 +1551,30 @@ export const CategoryList = [
     },
     {
         CategoryName: "Grocery",
+        MenuKey:"grocery",
         subCategoryList: [
             {
                 CategoryName: "Grocery",
                 SubCategoryName: "Baby Food",
+                MenuKey:"baby-food",
                 leafCategoryList: [
                     {
                         CategoryName: "Grocery",
                         SubCategoryName: "Baby Food",
-                        LeafCategory: "Cereal"
+                        LeafCategory: "Cereal",
+                        MenuKey:"cereal"
                     },
                     {
                         CategoryName: "Grocery",
                         SubCategoryName: "Baby Food",
-                        LeafCategory: "Formula"
+                        LeafCategory: "Formula",
+                        MenuKey:"formula"
                     },
                     {
                         CategoryName: "Grocery",
                         SubCategoryName: "Baby Food",
-                        LeafCategory: "Meals"
+                        LeafCategory: "Meals",
+                        MenuKey:"meals"
                     },
 
                 ]
@@ -1577,21 +1582,25 @@ export const CategoryList = [
             {
                 CategoryName: "Grocery",
                 SubCategoryName: "Beverages",
+                MenuKey:"beverages",
                 leafCategoryList: [
                     {
                         CategoryName: "Grocery",
                         SubCategoryName: "Beverages",
-                        LeafCategory: "Bottled Beverages, Water & Drink"
+                        LeafCategory: "Bottled Beverages, Water & Drink",
+                        MenuKey:"bottled-beverages-water-and-drink"
                     },
                     {
                         CategoryName: "Grocery",
                         SubCategoryName: "Beverages",
-                        LeafCategory: "Mixes"
+                        LeafCategory: "Mixes",
+                        MenuKey:"mixes"
                     },
                     {
                         CategoryName: "Grocery",
                         SubCategoryName: "Beverages",
-                        LeafCategory: "Coffee, Tea & Cocoa"
+                        LeafCategory: "Coffee, Tea & Cocoa",
+                        MenuKey:"Coffee-tea-and-cocoa"
                     },
                 ]
             },
@@ -1599,41 +1608,49 @@ export const CategoryList = [
             {
                 CategoryName: "Grocery",
                 SubCategoryName: "Candy & Chocolate",
+                MenuKey:"candy-and-chocolate",
                 leafCategoryList: [
                     {
                         CategoryName: "Grocery",
                         SubCategoryName: "Candy & Chocolate",
-                        LeafCategory: "Brittle, Caramel & Toffee"
+                        LeafCategory: "Brittle, Caramel & Toffee",
+                        MenuKey:"brittle-caramel-and-toffee"
                     },
                     {
                         CategoryName: "Grocery",
                         SubCategoryName: "Candy & Chocolate",
-                        LeafCategory: "Candied & Chocolate-Covered Snacks"
+                        LeafCategory: "Candied & Chocolate-Covered Snacks",
+                        MenuKey:"candied-and-chocolate-covered-snacks"
                     },
                     {
                         CategoryName: "Grocery",
                         SubCategoryName: "Candy & Chocolate",
-                        LeafCategory: "Candy & Chocolate Assortments"
+                        LeafCategory: "Candy & Chocolate Assortments",
+                        MenuKey:"candy-and-choloate-assortments"
+                    },
+                    {
+                        CategoryName: "Grocery",
+                        SubCategoryName: "candy-chocolate",
+                        LeafCategory: "Candy & Chocolate Bars",
+                        MenuKey:"candy-and-chocolate-bars"
                     },
                     {
                         CategoryName: "Grocery",
                         SubCategoryName: "Candy & Chocolate",
-                        LeafCategory: "Candy & Chocolate Bars"
+                        LeafCategory: "Candy & Chocolate Gifts",
+                        MenuKey:"candy-and-chocolate-gifts"
                     },
                     {
                         CategoryName: "Grocery",
                         SubCategoryName: "Candy & Chocolate",
-                        LeafCategory: "Candy & Chocolate Gifts"
+                        LeafCategory: "Marshmallows",
+                        MenuKey:"marshmallows"
                     },
                     {
                         CategoryName: "Grocery",
                         SubCategoryName: "Candy & Chocolate",
-                        LeafCategory: "Marshmallows"
-                    },
-                    {
-                        CategoryName: "Grocery",
-                        SubCategoryName: "Candy & Chocolate",
-                        LeafCategory: "Mints"
+                        LeafCategory: "Mints",
+                        MenuKey:"mints"
                     },
 
 
@@ -1646,33 +1663,39 @@ export const CategoryList = [
                     {
                         CategoryName: "Grocery",
                         SubCategoryName: "Snack Food",
-                        LeafCategory: "Bars"
+                        LeafCategory: "Bars",
+                        MenuKey:"bars"
                     },
                     {
                         CategoryName: "Grocery",
                         SubCategoryName: "Snack Food",
-                        LeafCategory: "Chips & Crisps"
+                        LeafCategory: "Chips & Crisps",
+                        MenuKey:"chips-and-crisps"
                     },
                     {
                         CategoryName: "Grocery",
                         SubCategoryName: "Snack Food",
-                        LeafCategory: "Cookies"
+                        LeafCategory: "Cookies",
+                        MenuKey:"cookies"
                     },
                     {
                         CategoryName: "Grocery",
                         SubCategoryName: "Snack Food",
-                        LeafCategory: "Crackers"
+                        LeafCategory: "Crackers",
+                        MenuKey:"crackers"
                     },
                     {
                         CategoryName: "Grocery",
                         SubCategoryName: "Snack Food",
-                        LeafCategory: "Dried Food & Raisins"
+                        LeafCategory: "Dried Food & Raisins",
+                        MenuKey:"dried-food-and-raisins"
                     },
                 ]
             },
             {
                 CategoryName: "Grocery",
-                SubCategoryName: "Canned, Dry & Packaged Food"
+                SubCategoryName: "Canned, Dry & Packaged Food",
+                MenuKey:"canned-dry-and-packaged-food"
             },
             {
                 CategoryName: "Grocery",
