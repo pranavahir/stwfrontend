@@ -14,100 +14,64 @@ import { CurrencyContext } from '../../../helpers/Currency/CurrencyContext';
 import Helmet from 'react-helmet';
 
 const GET_SINGLE_PRODUCTS = gql`
-    query product ($asin:String!,$type:String!,$country:String!,$panel:String!) {
-        product (asin:$asin,type:$type) { seqid
-            sku
-            title
-            description
-            bullepoints
-            brandid
-            categoryid
-            isvisible
-            isactive
-            warehouseid
-            metatagdescription
-            seokeywords
-            weight
-            height
-            width
-            length
-            fromcurrency
-            brandname
-            categoryvalue
-            asin
-      images{
-          productid
-          mainimageurl
+query($productAsin: String!, $productType: String!, $productCountry: String!, $productPanel: String!){
+    product(asin: $productAsin, type: $productType, country: $productCountry, panel: $productPanel) {
+      asin
+        brandname
+        bullepoints
+        category
+        description
+        fromcountry
+        height
+        insertts
+        isactive
+        length
+        packageheight
+        packagelength
+        packagewidth
+        promoflag
+        title
+        weight
+        width
+        images {
           additionalimage1
           additionalimage2
           additionalimage3
           additionalimage4
           additionalimage5
-      }
-         specifications
-      {
-           seqid
-            productid
-            upc
-            mpn
-            partnumber
-            isbn
-            screendisplaysize
-            maxscreenresolution
-            processor
-            ram
-            memoryspeed
-            harddrive
-            graphiccoprocessor
-            chipsetbrand
-            carddescription
-            wirelesstype
-            numberofusb2port
-            numberofusb3port
-            avgbatterylife
-            series
-            operatingsystem
-            processorbrand
-            processorcount
-            computermemorytype
-            flashmemorysize
-            hardriveinterface
-            harddriverotationalspeed
-            batteries
-            itemdimension
-            productdimension
-            opticalzoom
-            publisher
-            size
-
-       }
-      variants(country:$country,panel:$panel)
-      {
-            variantid
-            sku
-            productid
-            color
-            size
-            processor
-            graphics
-            discount
-            daystoship
-            pwfee
-            purchasetax
-            conversionrate
-                frieghtrate
-                duty
-                taxes
-                fees
-                margin
-            price 
-            quantity
-            domesticfreight
-      }
-
+          mainimageurl        
         }
+        specifications {
+          mpn
+          partnumber
+          screendisplaysize
+          ram
+          harddrive
+          operatingsystem
+          processorbrand
+        }
+        variants {
+          
+          purchasetax
+          pwfee
+          daystoship
+          pwfee
+          color
+          conversionrate
+          discount
+          domesticfreight
+          duty
+          fees
+          frieghtrate
+          graphics
+          margin
+          price
+          quantity
+          taxes
+        
     }
-`;
+  }
+  }`;
 
 const LeftSidebarPage = ({ pathId, type }) => {
 
@@ -145,11 +109,10 @@ const LeftSidebarPage = ({ pathId, type }) => {
     }
     var { loading, data } = useQuery(GET_SINGLE_PRODUCTS, {
         variables: {
-            // id: parseInt(pathId),
-            asin:asin,
-            type:type,
-            country:country,
-            panel:panel
+                productAsin: asin,
+                productType: "",  
+                productCountry: country,
+                productPanel: panel
         }
     });
 

@@ -63,20 +63,20 @@ const HeaderOne = ({
     ) {
       const pathname = window.location.pathname;
       setUrl(pathname);
-      if (pathname == geoLocation + "/shop/six_grid") {
+      if (pathname == geoLocation + "/s/") {
         var URL = pathname;
       } else {
-        var URL = geoLocation + "/shop/six_grid";
+        var URL = geoLocation + "/s/";
         if(geoLocation==null)
         {
-          URL = "/shop/six_grid";
+          URL = "/s/";
         }
 
       }
 
       filterContext.setselectedKeyword(e.target[0].value);
       var category = "";
-      router.push(`${URL}?${category}&brand=${selectedBrands}&color=${selectedColor}&size=${selectedSize}&minPrice=${selectedPrice.min}&maxPrice=${selectedPrice.max}&keyword=${selectedKeyword}`);
+      router.push(`${URL}${selectedKeyword}`);
       closeSearch();
     }
   };

@@ -10,71 +10,56 @@ import { useRouter } from 'next/router'
 import AutoFitImage from 'react-image-autofit-frame';
 
 const GET_PRODUCTS = gql`
-    query  products($type:String!,$indexFrom:Int! ,$limit:Int!,$color:String!,$brand:[String!]! ,$priceMax:Int!,$priceMin:Int!,$keyword:String!,$country:String!,$panel:String!,$promoflag:[String!],$relevantProduct:String) {
-        products (type: $type ,indexFrom:$indexFrom ,limit:$limit ,color:$color ,brand:$brand  ,priceMax:$priceMax,priceMin:$priceMin,keyword:$keyword,country:$country,panel:$panel,promoflag:$promoflag,relevantProduct:$relevantProduct){
-  total(keyword:$keyword,type:$type,promoflag:$promoflag,relevantProduct:$relevantProduct){
-            total
-        }
-        hasMore(limit:$limit,indexFrom:$indexFrom,keyword:$keyword,type:$type,promoflag:$promoflag,relevantProduct:$relevantProduct){
-            seqid
-        }
-        items(limit:$limit,indexFrom:$indexFrom,keyword:$keyword,type:$type,promoflag:$promoflag,relevantProduct:$relevantProduct){
-            seqid
-            sku
-            title
-            description
-            bullepoints
-            brandid
-            categoryid
-            isvisible
-            isactive
-            warehouseid
-            metatagdescription
-            seokeywords
-            weight
-            height
-            width
-            length
-      
-            fromcurrency
-            asin
-      images{
-            productid
-            mainimageurl
-            additionalimage1
-            additionalimage2
-            additionalimage3
-            additionalimage4
-            additionalimage5
+query($getProductsByMenuTableSearchFields: SearchFields){
+    getProductsByMenuTable (searchFields: $getProductsByMenuTableSearchFields){
+      hasMore {
+        seqid
       }
-      variants(country:$country,panel:$panel)
-      {
-            variantid
-            sku
-            productid
+      total {
+        total
+      }
+      items {
+        asin
+        title
+        description
+        
+        images {
+          mainimageurl
+          additionalimage1
+          additionalimage2
+          additionalimage3
+          additionalimage4
+          additionalimage5
+        }
+        specifications {
+          mpn
+          partnumber
+          screendisplaysize
+  
+        }
+        variants {
             color
-            size
             processor
-            graphics
-            discount
-            price 
-            daystoship
+            taxes
             pwfee
+            margin
+            price
+            quantity
+            duty
+            fees
+            frieghtrate
             purchasetax
             conversionrate
-            frieghtrate
-            duty
-            taxes
-            fees
-            margin
-            quantity
+            daystoship
+            discount
             domesticfreight
+            
+        }
       }
-        }
-
-        }
     }
+  }
 `;
+
 
 
 const ProductSection = ({ pathId, type }) => {
@@ -147,18 +132,29 @@ const ProductSection = ({ pathId, type }) => {
 
     var { loading, data, fetchMore } = useQuery(GET_PRODUCTS, {
         variables: {
-            type: "",
-            priceMax: 10,
-            priceMin: 1,
-            color: "red",
-            brand: "max",
-            indexFrom: 0,
-            limit: 15,
-            keyword:"",
-            country:country,
-            panel:panel,
-            promoflag:"",
-            relevantProduct:asinData 
+            // type: "",
+            // priceMax: 10,
+            // priceMin: 1,
+            // color: "red",
+            // brand: "max",
+            // indexFrom: 0,
+            // limit: 15,
+            // keyword:"",
+            // country:country,
+            // panel:panel,
+            // promoflag:"",
+            // relevantProduct:asinData 
+            getProductsByMenuTableSearchFields: {
+                limit:1,
+                indexFrom:1,
+                keyword:"",
+                country:country,
+                panel:panel,
+                priceMax:0,
+                priceMin:0,
+                selectedCategory:"",
+                relevantProduct:asinData 
+                }
         }
     });
 

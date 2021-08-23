@@ -3403,14 +3403,14 @@ const moveTo=(country)=>{
     setgeoLocation("/in")
     sessionStorage.setItem('geoLocation',"");
     tempGeoLocation= "/in";
-    window.location.replace("https://www.shoptheworld.in");
+    window.location.replace("https://www.shoptheworld.in"+window.location.pathname);
   }
   else if(country == "AE")
   {
     setgeoLocation("/ae")
     tempGeoLocation= "/ae";
     sessionStorage.setItem('geoLocation',"");
-    window.location.replace("https://www.shoptheworld.ae");
+    window.location.replace("https://www.shoptheworld.ae"+window.location.pathname);
   }
 
 
