@@ -940,7 +940,7 @@ export const CategoryList = [
                         CategoryName: "Home & Kitchen",
                         SubCategoryName: "Kitchen & Dining",
                         LeafCategory: "Bakeware",
-                        LeafCategory: "bakeware"
+                        MenuKey: "bakeware"
                     },
                     {
                         CategoryName: "Home & Kitchen",
@@ -1136,56 +1136,65 @@ export const CategoryList = [
             {
                 CategoryName: "Home & Kitchen",
                 SubCategoryName: "Heating, Cooling & Air Quality",
-                MenuKey: "heating-cooling & Air Quality"
+                MenuKey: "heating-cooling-and-air-quality"
             }
 
         ]
     },
     {
         CategoryName: "Beauty & Personal Care",
+        MenuKey: "beauty-and-personal-care",
         subCategoryList: [
             {
                 CategoryName: "Beauty & Personal Care",
                 SubCategoryName: "Foot, Hand & Nail Care",
+                MenuKey:"foot-hand-and-nail-care",
                 leafCategoryList: [
                     {
                         CategoryName: "Beauty & Personal Care",
                         SubCategoryName: "Foot, Hand & Nail Care",
-                        LeafCategory: "Foot & Hand Care"
+                        LeafCategory: "Foot & Hand Care",
+                        MenuKey:"foot-and-hand-care"
                     },
                     {
                         CategoryName: "Beauty & Personal Care",
                         SubCategoryName: "Foot, Hand & Nail Care",
-                        LeafCategory: "Nail Art & Polish"
+                        LeafCategory: "Nail Art & Polish",
+                        MenuKey:"nail-art-and-polish"
                     },
                     {
                         CategoryName: "Beauty & Personal Care",
                         SubCategoryName: "Foot, Hand & Nail Care",
-                        LeafCategory: "Nail Care"
+                        LeafCategory: "Nail Care",
+                        MenuKey:'nail-care'
                     },
                     {
                         CategoryName: "Beauty & Personal Care",
                         SubCategoryName: "Foot, Hand & Nail Care",
-                        LeafCategory: "Tools & Accessories"
-                    },
-                    {
-                        CategoryName: "Beauty & Personal Care",
-                        SubCategoryName: "Foot, Hand & Nail Care",
-                        LeafCategory: "Concealer"
+                        LeafCategory: "Tools & Accessories",
+                        MenuKey:"tools-and-accessories"
                     }
+                    // {
+                    //     CategoryName: "Beauty & Personal Care",
+                    //     SubCategoryName: "Foot, Hand & Nail Care",
+                    //     LeafCategory: "Concealer"
+                    // }
                 ]
             },
             {
                 CategoryName: "Beauty & Personal Care",
-                SubCategoryName: "Concealer"
+                SubCategoryName: "Concealer",
+                MenuKey:"concealer"
             },
             {
                 CategoryName: "Beauty & Personal Care",
-                SubCategoryName: "Foundation"
+                SubCategoryName: "Foundation",
+                MenuKey:"foundation"
             },
             {
                 CategoryName: "Beauty & Personal Care",
-                SubCategoryName: "Compact Powder"
+                SubCategoryName: "Compact Powder",
+                MenuKey:"compact-powder"
             },
             {
                 CategoryName: "Beauty & Personal Care",
@@ -1194,32 +1203,38 @@ export const CategoryList = [
                     {
                         CategoryName: "Beauty & Personal Care",
                         SubCategoryName: "Hair Care & Styling",
-                        LeafCategory: "Hair & Scalp Treatments"
+                        LeafCategory: "Hair & Scalp Treatments",
+                        MenuKey:"hair-and-scalp-treatements"
                     },
                     {
                         CategoryName: "Beauty & Personal Care",
                         SubCategoryName: "Hair Care & Styling",
-                        LeafCategory: "Hair Coloring Products"
+                        LeafCategory: "Hair Coloring Products",
+                        MenuKey:"hair-coloring-products"
                     },
                     {
                         CategoryName: "Beauty & Personal Care",
                         SubCategoryName: "Hair Care & Styling",
-                        LeafCategory: "Hair Dryers"
+                        LeafCategory: "Hair Dryers",
+                        MenuKey:"hair-dryers"
                     },
                     {
                         CategoryName: "Beauty & Personal Care",
                         SubCategoryName: "Hair Care & Styling",
-                        LeafCategory: "Shampoos"
+                        LeafCategory: "Shampoos",
+                        MenuKey:"shampoos"
                     },
                     {
                         CategoryName: "Beauty & Personal Care",
                         SubCategoryName: "Hair Care & Styling",
-                        LeafCategory: "Styling Products"
+                        LeafCategory: "Styling Products",
+                        MenuKey:"styling-products"
                     },
                     {
                         CategoryName: "Beauty & Personal Care",
                         SubCategoryName: "Hair Care & Styling",
-                        LeafCategory: "Styling Tools & Appliances"
+                        LeafCategory: "Styling Tools & Appliances",
+                        MenuKey:"styling-tools-and-appliances"
                     },
 
                 ]
@@ -1227,75 +1242,91 @@ export const CategoryList = [
             {
                 CategoryName: "Beauty & Personal Care",
                 SubCategoryName: "Makeup",
+                MenuKey:"makeup",
                 leafCategoryList: [
                     {
                         CategoryName: "Beauty & Personal Care",
                         SubCategoryName: "Makeup",
-                        LeafCategory: "Eyebrow Color"
+                        LeafCategory: "Eyebrow Color",
+                        MenuKey:"eyebrow-color"
                     },
                     {
                         CategoryName: "Beauty & Personal Care",
                         SubCategoryName: "Makeup",
-                        LeafCategory: "Eyeliners"
+                        LeafCategory: "Eyeliners",
+                        MenuKey:"eyeliners"
                     },
                     {
                         CategoryName: "Beauty & Personal Care",
                         SubCategoryName: "Makeup",
-                        LeafCategory: "Eyeshadow"
+                        LeafCategory: "Eyeshadow",
+                        MenuKey:"eyeshadow"
                     },
                     {
                         CategoryName: "Beauty & Personal Care",
                         SubCategoryName: "Makeup",
-                        LeafCategory: "Eyeshadow Bases & Primers"
+                        LeafCategory: "Eyeshadow Bases & Primers",
+                        MenuKey:"eyeshadow-bases-and-primers"
                     },
                     {
                         CategoryName: "Beauty & Personal Care",
                         SubCategoryName: "Makeup",
-                        LeafCategory: "Lipstick"
+                        LeafCategory: "Lipstick",
+                        MenuKey:"lipstick"
                     },
 
                 ]
             },
             {
                 CategoryName: "Beauty & Personal Care",
-                SubCategoryName: "Fragrance"
-
+                SubCategoryName: "Fragrance",
+                MenuKey:"fragrance"
             },
             {
                 CategoryName: "Beauty & Personal Care",
-                SubCategoryName: "Grooming"
+                SubCategoryName: "Grooming",
+                MenuKey:"grooming"
+                
             },
             {
                 CategoryName: "Beauty & Personal Care",
-                SubCategoryName: "Bleaches"
+                SubCategoryName: "Bleaches",
+                MenuKey:"bleaches"
             },
             {
                 CategoryName: "Beauty & Personal Care",
-                SubCategoryName: "Hair Oils"
+                SubCategoryName: "Hair Oils",
+                MenuKey:"hair-oils"
             },
             {
                 CategoryName: "Beauty & Personal Care",
-                SubCategoryName: "Cleansing Creams & Milks"
+                SubCategoryName: "Cleansing Creams & Milks",
+                MenuKey:"cleansing creams-and-milks"
             },
             {
                 CategoryName: "Beauty & Personal Care",
-                SubCategoryName: "Skin Care"
+                SubCategoryName: "Skin Care",
+                MenuKey:"skin-care"
             },
             {
                 CategoryName: "Beauty & Personal Care",
-                SubCategoryName: "Toners"
+                SubCategoryName: "Toners",
+                MenuKey:"toners"
             },
             {
                 CategoryName: "Beauty & Personal Care",
-                SubCategoryName: "Conditioners"
+                SubCategoryName: "Conditioners",
+                MenuKey:"conditioners"
             },
             {
                 CategoryName: "Beauty & Personal Care",
-                SubCategoryName: "Face Wash"
+                SubCategoryName: "Face Wash",
+                MenuKey:"face-wash"
             },
             {
                 CategoryName: "Beauty & Personal Care",
-                SubCategoryName: "Bath Oils"
+                SubCategoryName: "Bath Oils",
+                MenuKey:"bath-oil"
             },
 
 
@@ -1305,76 +1336,91 @@ export const CategoryList = [
     },
     {
         CategoryName: "Health & Wellness",
+        MenuKey:"health-and-wellness",
         subCategoryList: [
             {
                 CategoryName: "Health & Wellness",
                 SubCategoryName: "Sports Nutrition",
+                MenuKey:"sports-nutrition",
                 leafCategoryList: [
                     {
                         CategoryName: "Health & Wellness",
                         SubCategoryName: "Sports Nutrition",
-                        LeafCategory: "Amino Acids"
+                        LeafCategory: "Amino Acids",
+                        MenuKey:"amino-acids"
                     },
                     {
                         CategoryName: "Health & Wellness",
                         SubCategoryName: "Sports Nutrition",
-                        LeafCategory: "Endurance & Energy"
+                        LeafCategory: "Endurance & Energy",
+                        MenuKey:"endurance-and-energy"
                     },
                     {
                         CategoryName: "Health & Wellness",
                         SubCategoryName: "Sports Nutrition",
-                        LeafCategory: "Healthy Snacks & Beverages"
+                        LeafCategory: "Healthy Snacks & Beverages",
+                        MenuKey:"health-snacks-and-beverages"
                     },
                     {
                         CategoryName: "Health & Wellness",
                         SubCategoryName: "Sports Nutrition",
-                        LeafCategory: "Hydration"
+                        LeafCategory: "Hydration",
+                        MenuKey:"hydration"
                     },
                     {
                         CategoryName: "Health & Wellness",
                         SubCategoryName: "Sports Nutrition",
-                        LeafCategory: "Nutrition Bars"
+                        LeafCategory: "Nutrition Bars",
+                        MenuKey:"nutrition-bars"
                     },
                     {
                         CategoryName: "Health & Wellness",
                         SubCategoryName: "Sports Nutrition",
-                        LeafCategory: "Protein"
+                        LeafCategory: "Protein",
+                        MenuKey:"protein"
                     }
                 ]
             },
             {
                 CategoryName: "Health & Wellness",
                 SubCategoryName: "Vitamins & Dietary Supplements",
+                MenuKey:"vitamins-and-Dietary-supplements",
                 leafCategoryList: [
                     {
                         CategoryName: "Health & Wellness",
                         SubCategoryName: "Vitamins & Dietary Supplements",
-                        LeafCategory: "Blended Vitamin & Mineral Supplements"
+                        LeafCategory: "Blended Vitamin & Mineral Supplements",
+                        MenuKey:"blended-vitamin-and-mineral-supplements"
                     },
                     {
                         CategoryName: "Health & Wellness",
                         SubCategoryName: "Vitamins & Dietary Supplements",
-                        LeafCategory: "Herbal Supplements"
+                        LeafCategory: "Herbal Supplements",
+                        MenuKey:"herbal-supplements"
                     },
                     {
                         CategoryName: "Health & Wellness",
                         SubCategoryName: "Vitamins & Dietary Supplements",
-                        LeafCategory: "Minerals"
+                        LeafCategory: "Minerals",
+                        MenuKey:"minerals"
                     },
                     {
                         CategoryName: "Health & Wellness",
                         SubCategoryName: "Vitamins & Dietary Supplements",
-                        LeafCategory: "Supplements"
+                        LeafCategory: "Supplements",
+                        MenuKey:"supplements"
                     },
                     {
                         CategoryName: "Health & Wellness",
                         SubCategoryName: "Vitamins & Dietary Supplements",
-                        LeafCategory: "Vitamins"
+                        LeafCategory: "Vitamins",
+                        MenuKey:"vitamins"
                     },
                     {
                         CategoryName: "Health & Wellness",
                         SubCategoryName: "Vitamins & Dietary Supplements",
-                        LeafCategory: "Weight Loss"
+                        LeafCategory: "Weight Loss",
+                        MenuKey:"weight-loss"
                     }
 
 
@@ -1383,11 +1429,13 @@ export const CategoryList = [
             {
                 CategoryName: "Health & Wellness",
                 SubCategoryName: "Baby & Child Care",
+                MenuKey:"baby-and-child-care",
                 leafCategoryList: [
                     {
                         CategoryName: "Health & Wellness",
                         SubCategoryName: "Baby & Child Care",
-                        LeafCategory: "Diaper Care"
+                        LeafCategory: "Diaper Care",
+                        MenuKey:"diaper-care"
                     }
 
                 ]
@@ -1395,36 +1443,43 @@ export const CategoryList = [
             {
                 CategoryName: "Health & Wellness",
                 SubCategoryName: "Health Care",
+                MenuKey:"health-care",
                 leafCategoryList: [
                     {
                         CategoryName: "Health & Wellness",
                         SubCategoryName: "Health Care",
-                        LeafCategory: "Alternative Medicine"
+                        LeafCategory: "Alternative Medicine",
+                        MenuKey:"alternative-medicine"
                     },
                     {
                         CategoryName: "Health & Wellness",
                         SubCategoryName: "Health Care",
-                        LeafCategory: "Diabetes Care"
+                        LeafCategory: "Diabetes Care",
+                        MenuKey:"diabetes-care"
                     },
                     {
                         CategoryName: "Health & Wellness",
                         SubCategoryName: "Health Care",
-                        LeafCategory: "Ear Care"
+                        LeafCategory: "Ear Care",
+                        MenuKey:"ear-care"
                     },
                     {
                         CategoryName: "Health & Wellness",
                         SubCategoryName: "Health Care",
-                        LeafCategory: "Eye Health"
+                        LeafCategory: "Eye Health",
+                        MenuKey:"eye-health"
                     },
                     {
                         CategoryName: "Health & Wellness",
                         SubCategoryName: "Health Care",
-                        LeafCategory: "Feminine Care"
+                        LeafCategory: "Feminine Care",
+                        MenuKey:"feminine-care"
                     },
                     {
                         CategoryName: "Health & Wellness",
                         SubCategoryName: "Health Care",
-                        LeafCategory: "First Aid"
+                        LeafCategory: "First Aid",
+                        MenuKey:"first-aid"
                     }
 
 
@@ -1434,31 +1489,37 @@ export const CategoryList = [
             {
                 CategoryName: "Health & Wellness",
                 SubCategoryName: "Personal Care",
+                MenuKey:"personal-care",
                 leafCategoryList: [
                     {
                         CategoryName: "Health & Wellness",
                         SubCategoryName: "Personal Care",
-                        LeafCategory: "Bath & Bathing Accessories"
+                        LeafCategory: "Bath & Bathing Accessories",
+                        MenuKey:"bath-and-bathing-accessories"
                     },
                     {
                         CategoryName: "Health & Wellness",
                         SubCategoryName: "Personal Care",
-                        LeafCategory: "Deodorants & Antiperspirants"
+                        LeafCategory: "Deodorants & Antiperspirants",
+                        MenuKey: "deodorants-and-antiperspirants"
                     },
                     {
                         CategoryName: "Health & Wellness",
                         SubCategoryName: "Personal Care",
-                        LeafCategory: "Hair Care"
+                        LeafCategory: "Hair Care",
+                        LeafCategory: "hair-care"
                     },
                     {
                         CategoryName: "Health & Wellness",
                         SubCategoryName: "Personal Care",
-                        LeafCategory: "Lip Care"
+                        LeafCategory: "Lip Care",
+                        MenuKey:"lip-care"
                     },
                     {
                         CategoryName: "Health & Wellness",
                         SubCategoryName: "Personal Care",
-                        LeafCategory: "Skin Care"
+                        LeafCategory: "Skin Care",
+                        MenuKey:"skin-care"
                     }
 
 
@@ -1467,19 +1528,23 @@ export const CategoryList = [
             },
             {
                 CategoryName: "Health & Wellness",
-                SubCategoryName: "Aromatherapy"
+                SubCategoryName: "Aromatherapy",
+                MenuKey:"aromatherapy"
             },
             {
                 CategoryName: "Health & Wellness",
-                SubCategoryName: "Oral Care"
+                SubCategoryName: "Oral Care",
+                MenuKey:"oral-care"
             },
             {
                 CategoryName: "Health & Wellness",
-                SubCategoryName: "Cloth Face Mask"
+                SubCategoryName: "Cloth Face Mask",
+                MenuKey:"cloth-dace-mask"
             },
             {
                 CategoryName: "Health & Wellness",
-                SubCategoryName: "Vision Care"
+                SubCategoryName: "Vision Care",
+                MenuKey:"vision-care"
             }
 
         ]
