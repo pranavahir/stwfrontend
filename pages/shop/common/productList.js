@@ -15,72 +15,74 @@ import {CompareContext} from '../../../helpers/Compare/CompareContext';
 import CategoryCollection from '../../../components/common/Collections/CategoryCollection';
 
 
-const GET_PRODUCTS = gql`
-    query  products($type:String!,$indexFrom:Int! ,$limit:Int!,$color:String!,$brand:[String!]! ,$priceMax:Int!,$priceMin:Int!,$keyword:String!,$country:String!,$panel:String!,$promoflag:[String!],$relevantProduct:String) {
-        products (type: $type ,indexFrom:$indexFrom ,limit:$limit ,color:$color ,brand:$brand  ,priceMax:$priceMax,priceMin:$priceMin,keyword:$keyword,country:$country,panel:$panel,promoflag:$promoflag,relevantProduct:$relevantProduct){
-  total(keyword:$keyword,type:$type,promoflag:$promoflag,relevantProduct:$relevantProduct){
-            total
-        }
-        hasMore(limit:$limit,indexFrom:$indexFrom,keyword:$keyword,type:$type,promoflag:$promoflag,relevantProduct:$relevantProduct){
-            seqid
-        }
-        items(limit:$limit,indexFrom:$indexFrom,keyword:$keyword,type:$type,promoflag:$promoflag,relevantProduct:$relevantProduct){
-            seqid
-            sku
-            title
-            description
-            bullepoints
-            brandid
-            categoryid
-            isvisible
-            isactive
-            warehouseid
-            metatagdescription
-            seokeywords
-            weight
-            height
-            width
-            length
-      
-            fromcurrency
-            asin
-      images{
-            productid
-            mainimageurl
-            additionalimage1
-            additionalimage2
-            additionalimage3
-            additionalimage4
-            additionalimage5
-      }
-      variants(country:$country,panel:$panel)
-      {
-            variantid
-            sku
-            productid
-            color
-            size
-            processor
-            graphics
-            discount
-            price 
-            daystoship
-            pwfee
-            purchasetax
-            conversionrate
-            frieghtrate
-            duty
-            taxes
-            fees
-            margin
-            quantity
-            domesticfreight
-      }
-        }
 
+const GET_PRODUCTS = gql`
+query($lookupSearchFields: SearchFields){
+    lookup(searchFields: $lookupSearchFields) {
+      hasMore {
+        seqid
+      }
+      total {
+        total
+      }
+      items {
+        asin
+        sku
+        brandname
+        bullepoints
+        category
+        description
+        fromcountry
+        height
+        insertts
+        isactive
+        length
+        packageheight
+        packagelength
+        packagewidth
+        promoflag
+        title
+        weight
+        width
+        images {
+          additionalimage1
+          additionalimage2
+          additionalimage3
+          additionalimage4
+          additionalimage5
+          mainimageurl        
         }
+        specifications {
+          mpn
+          partnumber
+          screendisplaysize
+          ram
+          harddrive
+          operatingsystem
+          processorbrand
+        }
+        variants {
+          
+          purchasetax
+          pwfee
+          daystoship
+          pwfee
+          color
+          conversionrate
+          discount
+          domesticfreight
+          duty
+          fees
+          frieghtrate
+          graphics
+          margin
+          price
+          taxes
+        }
+      }
     }
-`;
+  }`;
+
 
 
 const ProductList = ({ colClass, type,parentCategory, layoutList,openSidebar,noSidebar,pathId }) => {
@@ -185,28 +187,28 @@ const ProductList = ({ colClass, type,parentCategory, layoutList,openSidebar,noS
     if(selectedKeyword)
         limitSet = 16;
  
-    var { loading, data, fetchMore } = useQuery(GET_PRODUCTS, {
-        variables: {
-            type: selectedCategory,
-            priceMax: 10,
-            priceMin: 1,
-            color: "red",
-            brand: "max",
-            indexFrom: 0,
-            limit: limitSet,
-            keyword:selectedKeyword,
-            country:country,
-            panel:panel,
-            promoflag:selectedPromaflag,
-            relevantProduct:""
+    var pageIndex = 1;
 
-            
+    var {errors, loading, data, fetchMore } = useQuery(GET_PRODUCTS, {
+        variables: {
+            lookupSearchFields: {
+                limit:limitSet,
+                indexFrom:pageIndex,
+                keyword:selectedKeyword,
+                promoflag:"",
+                relevantProduct:"",
+                selectedCategory:selectedCategory,
+                panel:panel,
+                country:country,
+                priceMin:0,
+                priceMax:0
+              }
         }
     });
     
     if(data!=undefined)
     {
-        if(data.products.total.total==0)
+        if(data.lookup.total.total==0)
         {
             // router.push("/page/coming-soon")
         }
@@ -214,22 +216,48 @@ const ProductList = ({ colClass, type,parentCategory, layoutList,openSidebar,noS
 
 
 
+    // const handlePagination = () => {
+    //     setIsLoading(true);
+    //     setTimeout(() =>
+    //         fetchMore({
+    //             variables: {
+    //                 indexFrom: data.lookup.items.length
+    //             },
+    //             updateQuery: (prev, { fetchMoreResult }) => {
+    //                 if (!fetchMoreResult) return prev;
+    //                 setIsLoading(false)
+    //                 return {
+    //                     products: {
+    //                         __typename: prev.products.__typename,
+    //                         total: prev.products.total,
+    //                         items: [...prev.products.items, ...fetchMoreResult.products.items],
+    //                         hasMore: fetchMoreResult.products.hasMore,
+    //                     },
+    //                 };
+    //             }
+    //         }), 1000)
+    // }
+
+
     const handlePagination = () => {
-        setIsLoading(true);
+
+
+        pageIndex = pageIndex+1
+        // setIsLoading(true);
         setTimeout(() =>
             fetchMore({
                 variables: {
-                    indexFrom: data.products.items.length
+                    indexFrom: pageIndex
                 },
                 updateQuery: (prev, { fetchMoreResult }) => {
                     if (!fetchMoreResult) return prev;
-                    setIsLoading(false)
+                    // setIsLoading(false)
                     return {
-                        products: {
-                            __typename: prev.products.__typename,
-                            total: prev.products.total,
-                            items: [...prev.products.items, ...fetchMoreResult.products.items],
-                            hasMore: fetchMoreResult.products.hasMore,
+                        lookup: {
+                            __typename: prev.lookup.__typename,
+                            total: prev.lookup.total,
+                            items: [...prev.lookup.items, ...fetchMoreResult.lookup.items],
+                            hasMore: fetchMoreResult.lookup.hasMore,
                         },
                     };
                 }
@@ -268,14 +296,14 @@ const ProductList = ({ colClass, type,parentCategory, layoutList,openSidebar,noS
                         
                         <CategoryCollection noTitle="null" backImage={true} type="fashion"  categoryData={SelectedSubCategoryList} productSlider={CategorySlider} designClass="ratio_asos" noSlider="false" cartClass="cart-info cart-wrap" />
 
-                            {data && data.products.total.total>0? 
+                            {data && data.lookup.total.total>0? 
                              
                             <div className="top-banner-content small-section">
                                 {/* <h4>{selectedCategory}</h4> */}
-                                <h5>{data ? `${selectedCategory}  1-${data.products.items.length} of ${data.products.total.total}` : 'loading'}</h5>
+                                <h5>{data ? `${selectedCategory}  1-${data.lookup.items.length} of ${data.lookup.total.total}` : 'loading'}</h5>
                             </div>
                             
-                            :  [( data && data.products.total.total==0? 
+                            :  [((data && (data.lookup.total.total==0 || data.lookup.total.total==null ))  ? 
                             <div>
                 <div className="container">
                     <div id="container" className="text-center">
@@ -337,7 +365,7 @@ const ProductList = ({ colClass, type,parentCategory, layoutList,openSidebar,noS
                                 )]
                             }
                         </div>
-                       {data && data.products.total.total>0? 
+                       {data && data.lookup.total.total>0? 
                        <Row>
                                     <Col xs="12">
                                         <ul className="product-filter-tags">
@@ -383,7 +411,7 @@ const ProductList = ({ colClass, type,parentCategory, layoutList,openSidebar,noS
                                 </Row>
                                 : data ? "":""
                                 }
-                                {data && data.products.total.total>0? 
+                                {data && data.lookup.total.total>0? 
                                  <div className="collection-product-wrapper">
                             <div>
                                 {!noSidebar?
@@ -402,7 +430,7 @@ const ProductList = ({ colClass, type,parentCategory, layoutList,openSidebar,noS
                                     <Col>
                                         <div className="product-filter-content">
                                             <div className="search-count">
-                                                <h5>{data ? `Showing Products 1-${data.products.items.length} of ${data.products.total.total}` : 'loading'} Result</h5>
+                                                <h5>{data ? `Showing Products 1-${data.lookup.items.length} of ${data.lookup.total.total}` : 'loading'} Result</h5>
                                             </div>
                                             <div className="collection-view">
                                                 <ul>
@@ -466,8 +494,8 @@ const ProductList = ({ colClass, type,parentCategory, layoutList,openSidebar,noS
                             <div className={`product-wrapper-grid ${layout}`}>
                                 <Row>
                                     {/* Product Box */}
-                                    {(!data || !data.products || !data.products || data.products.length === 0 || loading) ?
-                                        (data && data.products && data.products && data.products.length === 0) ?
+                                    {(!data || !data.lookup || !data.lookup || data.lookup.length === 0 || loading) ?
+                                        (data && data.lookup && data.lookup && data.lookup.length === 0) ?
                                             <Col xs="12">
                                                 <div>
                                                     <div className="col-sm-12 empty-cart-cls text-center">
@@ -492,7 +520,7 @@ const ProductList = ({ colClass, type,parentCategory, layoutList,openSidebar,noS
                                              <PostLoader />
                                          </div>
                                      </div>
-                                        : data && data.products.items.map((product, i) =>
+                                        : data && data.lookup.items.map((product, i) =>
                                             <div className={grid} key={i}>
                                             <div className="product-top-filter"></div>
                                                 <div className="product">
@@ -512,7 +540,7 @@ const ProductList = ({ colClass, type,parentCategory, layoutList,openSidebar,noS
                                 <div className="text-center">
                                     <Row>
                                         <Col xl="12" md="12" sm="12">
-                                            {data && data.products && data.products.hasMore!=null &&
+                                            {data && data.lookup && data.lookup.hasMore!=null &&
                                                 <Button onClick={() => handlePagination()}>
                                                     {isLoading &&
                                                         <Spinner animation="border" variant="light" />}
