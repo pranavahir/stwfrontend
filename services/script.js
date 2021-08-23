@@ -411,25 +411,30 @@ export const homeSlider = {
 export const CategoryList = [
     {
         CategoryName:"Electronics",
+        MenuKey:"electronics",
         subCategoryList:[
             {
                 CategoryName:"Electronics",
                 SubCategoryName:"Desktops",
+                MenuKey:"desktops",
                 leafCategoryList:[
                     {
                         CategoryName:"Electronics",
                         SubCategoryName:"Desktops",
-                        LeafCategory:"All in Ones"
+                        LeafCategory:"All in Ones",
+                        MenuKey:"all-in-Ones"
                     },
                     {
                         CategoryName:"Electronics",
                         SubCategoryName:"Desktops",
-                        LeafCategory:"Minis"
+                        LeafCategory:"Minis",
+                        MenuKey:"minis"
                     },
                     {
                         CategoryName:"Electronics",
                         SubCategoryName:"Desktops",
-                        LeafCategory:"Towers"
+                        LeafCategory:"Towers",
+                        MenuKey:"towers"
                     },
                 ]
                              
@@ -437,33 +442,37 @@ export const CategoryList = [
             {
                 CategoryName:"Electronics",
                 SubCategoryName: "Camera, Photo & Videos",
+                MenuKey:"camera-Photo-Videos",
                 leafCategoryList:[
                     {
                         CategoryName:"Electronics",
                         SubCategoryName: "Camera, Photo & Videos",
                         LeafCategory:"DSLR",
+                        MenuKey:"dslr"
                     },
                     {
                         CategoryName:"Electronics",
                         SubCategoryName: "Camera, Photo & Videos",
-                        LeafCategory:"Lenses"
-                        
+                        LeafCategory:"Lenses",
+                        MenuKey:"lenses"
                     },
                     {
                         CategoryName:"Electronics",
                         SubCategoryName: "Camera, Photo & Videos",
-                       LeafCategory:"Mirrorless Camera"
+                        LeafCategory:"Mirrorless Camera",
+                        MenuKey:"mirrorless-camera"
                     },
                     {
                         CategoryName:"Electronics",
                         SubCategoryName: "Camera, Photo & Videos",
-                       LeafCategory:"Tripods & Monopods"
-                        
+                       LeafCategory:"Tripods & Monopods",
+                       MenuKey:"tripods-and-monopods"
                     },
                     {   
                         CategoryName:"Electronics",
                         SubCategoryName: "Camera, Photo & Videos",
-                        LeafCategory:"Video Cameras"
+                        LeafCategory:"Video Cameras",
+                        MenuKey:"video-cameras"
                     }
 
                 ]
@@ -471,59 +480,68 @@ export const CategoryList = [
             {
                 CategoryName:"Electronics",
                 SubCategoryName: "Headphones & Earphones",
+                MenuKey:"headphone-earphones",
                 leafCategoryList:[
                     {
                         CategoryName:"Electronics",
                         SubCategoryName: "Headphones & Earphones",
-                        LeafCategory:"Bluetooth Headphones"
+                        LeafCategory:"Bluetooth Headphones",
+                        MenuKey:"bluetooth-headphones"
                     },
                     {
                         CategoryName:"Electronics",
                         SubCategoryName: "Headphones & Earphones",
-                        LeafCategory:"DJ/Professional Headphones"
-                        
+                        LeafCategory:"DJ/Professional Headphones",
+                        MenuKey:"dj-Professional-Headphones"
                     },
                     {
                         CategoryName:"Electronics",
                         SubCategoryName: "Headphones & Earphones",
-                       LeafCategory:"In Ear Earbud Headphones"
+                        LeafCategory:"In Ear Earbud Headphones",
+                        MenuKey:"in-ear-earbud-headphones"
                     },
                     {
                         CategoryName:"Electronics",
                         SubCategoryName: "Headphones & Earphones",
-                       LeafCategory:"Noise-Cancelling Headphones"
-                        
+                       LeafCategory:"Noise-Cancelling Headphones",
+                        MenuKey:"noise-cancelling-headphones"
                     },
                     {   
                         CategoryName:"Electronics",
                         SubCategoryName: "Headphones & Earphones",
-                        LeafCategory:"On-Ear Headphones"
+                        LeafCategory:"On-Ear Headphones",
+                        MenuKey:"on-ear-headphones"
                     },
                     {
                         CategoryName:"Electronics",
                         SubCategoryName: "Headphones & Earphones",
-                        LeafCategory:"Over-Ear Headphones"
+                        LeafCategory:"Over-Ear Headphones",
+                        MenuKey:"over-ear-headphones"
                     },
                     {
                         CategoryName:"Electronics",
                         SubCategoryName: "Headphones & Earphones",
-                        LeafCategory:"Premium Audio Headphones"
+                        LeafCategory:"Premium Audio Headphones",
+                        MenuKey:"premium-audio-headphones"
                     },
                     {
                         CategoryName:"Electronics",
                         SubCategoryName: "Headphones & Earphones",
-                        LeafCategory:"Sports & Fitness Headphones"
+                        LeafCategory:"Sports & Fitness Headphones",
+                        MenuKey:"sports-and-Fitness-headphones"
                     }
                 ]
             },
             {   
                 CategoryName:"Electronics",
                 SubCategoryName:"Speakers",
+                MenuKey:"speakers",
                 leafCategoryList:[
                     {
                         CategoryName:"Electronics",
                         SubCategoryName:"Speakers",
-                        LeafCategory:"Ceiling Speakers"
+                        LeafCategory:"Ceiling Speakers",
+                        MenuKey:"ceiling-speakers"
                     },
                         
                     {
@@ -534,22 +552,26 @@ export const CategoryList = [
                     {
                         CategoryName:"Electronics",
                         SubCategoryName:"Speakers",
-                        LeafCategory: "Portable Speakers"
+                        LeafCategory: "Portable Speakers",
+                        MenuKey:"portable-speakers",
                     },
                     {
                         CategoryName:"Electronics",
                         SubCategoryName:"Speakers",
-                        LeafCategory: "Soundbars"
+                        LeafCategory: "Soundbars",
+                        MenuKey:"soundbars",
                     },
                     {
                         CategoryName:"Electronics",
                         SubCategoryName:"Speakers",
-                        LeafCategory: "Subwoofers"
+                        LeafCategory: "Subwoofers",
+                        MenuKey:"subwoofers"
                     },
                     {   
                         CategoryName:"Electronics",
                         SubCategoryName:"Speakers",
-                        LeafCategory: "Wireless & Bluetooth Speakers"
+                        LeafCategory: "Wireless & Bluetooth Speakers",
+                        MenuKey:"wireless-and-bluetooth-speakers"
                     }
                     
                 ]
@@ -557,31 +579,36 @@ export const CategoryList = [
             },
             {
                 CategoryName:"Electronics",
-                SubCategoryName:"Laptops"
+                SubCategoryName:"Laptops",
+                MenuKey:"laptops"
             },      
             {
                 CategoryName:"Electronics",
-                SubCategoryName:"Phones"
+                SubCategoryName:"Phones",
+                MenuKey:"phones"
             },      
             {
                 CategoryName:"Electronics",
                 SubCategoryName:"Film Cameras",
+                MenuKey:"film-cameras",
                 leafCategoryList:[
                 {
                     CategoryName:"Electronics",
                     SubCategoryName:"Film Cameras",
-                    LeafCategory:"Instant Cameras"
-
+                    LeafCategory:"Instant Cameras",
+                    MenuKey:"instant-cameras"
                 }    
                 ]
             },  
             {
                 CategoryName:"Electronics",
-                SubCategoryName:"Monitors"
+                SubCategoryName:"Monitors",
+                MenuKey:"monitors",
             },      
             {
                 CategoryName:"Electronics",
-                SubCategoryName:"Tablets"
+                SubCategoryName:"Tablets",
+                
             },  
             {
                 CategoryName:"Electronics",
