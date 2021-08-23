@@ -100,18 +100,31 @@ const ProductList = ({ colClass, type,parentCategory, layoutList,openSidebar,noS
     const country = curContext.state.country;
     const panel = curContext.state.panel;
     const filterContext = useContext(FilterContext);
-    const selectedKeyword = filterContext.selectedKeyword;
+
     const selectedBrands = filterContext.selectedBrands;
     const selectedColor = filterContext.selectedColor;
     const selectedPrice = filterContext.selectedPrice;
     const selectedPromaflag = filterContext.selectedPromaflag;
+    var searchKey = "";
     var category = "";
     if(pathId!=null & pathId != undefined && pathId!="")
-    category = pathId;
+    {
+        if(type=="keyword")
+        {
+            searchKey = pathId; 
+        }
+        else
+        {
+            category = pathId;
+        }
+    }
     else
     category = filterContext.state;
     
     const selectedCategory = category;
+
+
+    const selectedKeyword=searchKey;
 
     
     const selectedSize = filterContext.selectedSize
@@ -122,6 +135,7 @@ const ProductList = ({ colClass, type,parentCategory, layoutList,openSidebar,noS
     const [url, setUrl] = useState();
     let leftSymbol=null;
     let rightSymbol = null;
+   
     if(IsRight ==true)
     {
         rightSymbol = symbol;
@@ -173,6 +187,10 @@ const ProductList = ({ colClass, type,parentCategory, layoutList,openSidebar,noS
                 }
         }
     }
+  
+
+
+  
 
     const SelectedSubCategoryList= setSelectedSubCategoryList;
     
