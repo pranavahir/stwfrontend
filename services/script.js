@@ -1631,7 +1631,7 @@ export const CategoryList = [
                     },
                     {
                         CategoryName: "Grocery",
-                        SubCategoryName: "candy-chocolate",
+                        SubCategoryName: "Candy & Chocolate",
                         LeafCategory: "Candy & Chocolate Bars",
                         MenuKey:"candy-and-chocolate-bars"
                     },
@@ -1660,6 +1660,7 @@ export const CategoryList = [
             {
                 CategoryName: "Grocery",
                 SubCategoryName: "Snack Food",
+                MenuKey:"sncak-food",
                 leafCategoryList: [
                     {
                         CategoryName: "Grocery",
