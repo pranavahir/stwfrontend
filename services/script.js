@@ -4,7 +4,7 @@ export const Product3 = {
     slidesToShow: 3,
     slidesToScroll: 3,
     autoplay: false,
-    arrows:false,
+    arrows: false,
     autoplaySpeed: 3000,
     responsive: [
         {
@@ -17,7 +17,7 @@ export const Product3 = {
         {
             breakpoint: 991,
             settings: {
-                slidesToShow:2,
+                slidesToShow: 2,
                 slidesToScroll: 2
             }
         }
@@ -30,21 +30,21 @@ export const tools_product_4 = {
     slidesToScroll: 4,
     autoplay: true,
     autoplaySpeed: 5000,
-    arrows:false,
+    arrows: false,
     responsive: [{
-            breakpoint: 1200,
-            settings: {
-                slidesToShow: 3,
-                slidesToScroll: 3
-            }
-        },
-        {
-            breakpoint: 767,
-            settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2
-            }
+        breakpoint: 1200,
+        settings: {
+            slidesToShow: 3,
+            slidesToScroll: 3
         }
+    },
+    {
+        breakpoint: 767,
+        settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2
+        }
+    }
     ]
 }
 
@@ -54,7 +54,7 @@ export const Product4 = {
     slidesToShow: 4,
     slidesToScroll: 1,
     autoplay: true,
-    arrows:false,
+    arrows: false,
     autoplaySpeed: 3000,
     responsive: [
         {
@@ -67,7 +67,7 @@ export const Product4 = {
         {
             breakpoint: 991,
             settings: {
-                slidesToShow:2,
+                slidesToShow: 2,
                 slidesToScroll: 1
             }
         }
@@ -80,7 +80,7 @@ export const Product7 = {
     slidesToShow: 4,
     slidesToScroll: 4,
     autoplay: false,
-    arrows:false,
+    arrows: false,
     autoplaySpeed: 3000,
     responsive: [
         {
@@ -93,7 +93,7 @@ export const Product7 = {
         {
             breakpoint: 991,
             settings: {
-                slidesToShow:2,
+                slidesToShow: 2,
                 slidesToScroll: 2
             }
         }
@@ -139,7 +139,7 @@ export const Product6 = {
     slidesToShow: 5,
     slidesToScroll: 5,
     autoplay: false,
-    arrows:false,
+    arrows: false,
     autoplay: true,
     autoplaySpeed: 3000,
     responsive: [
@@ -153,7 +153,7 @@ export const Product6 = {
         {
             breakpoint: 991,
             settings: {
-                slidesToShow:2,
+                slidesToShow: 2,
                 slidesToScroll: 2
             }
         }
@@ -274,7 +274,7 @@ export const Slider5 = {
     infinite: true,
     slidesToScroll: 1,
     autoplay: true,
-    arrows:true,
+    arrows: true,
     autoplaySpeed: 2000,
     responsive: [
         {
@@ -308,7 +308,7 @@ export const Slider6 = {
     speed: 300,
     slidesToShow: 6,
     slidesToScroll: 6,
-    
+
     responsive: [
         {
             breakpoint: 1367,
@@ -346,14 +346,14 @@ export const Slider6 = {
 }
 
 export const CategorySlider = {
- 
+
     dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
     autoplay: true,
-    arrows:true,
+    arrows: true,
     autoplaySpeed: 2000,
     responsive: [
         {
@@ -362,7 +362,7 @@ export const CategorySlider = {
                 slidesToShow: 4,
                 slidesToScroll: 1,
                 infinite: true,
-                arrows:true,
+                arrows: true,
             }
         },
         {
@@ -371,7 +371,7 @@ export const CategorySlider = {
                 slidesToShow: 4,
                 slidesToScroll: 1,
                 infinite: true,
-                arrows:true,
+                arrows: true,
             }
         },
         {
@@ -387,7 +387,7 @@ export const CategorySlider = {
             settings: {
                 slidesToShow: 2,
                 slidesToScroll: 2,
-                arrows:true,
+                arrows: true,
             }
         }
 
@@ -395,1520 +395,1602 @@ export const CategorySlider = {
 }
 
 export const homeSlider = {
- 
+
     dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    arrows:true,
+    arrows: true,
     autoplaySpeed: 2000,
-   
+
 }
 
 
 export const CategoryList = [
     {
-        CategoryName:"Electronics",
-        MenuKey:"electronics",
-        subCategoryList:[
+        CategoryName: "Electronics",
+        MenuKey: "electronics",
+        subCategoryList: [
             {
-                CategoryName:"Electronics",
-                SubCategoryName:"Desktops",
-                MenuKey:"desktops",
-                leafCategoryList:[
+                CategoryName: "Electronics",
+                SubCategoryName: "Desktops",
+                MenuKey: "desktops",
+                leafCategoryList: [
                     {
-                        CategoryName:"Electronics",
-                        SubCategoryName:"Desktops",
-                        LeafCategory:"All in Ones",
-                        MenuKey:"all-in-Ones"
+                        CategoryName: "Electronics",
+                        SubCategoryName: "Desktops",
+                        LeafCategory: "All in Ones",
+                        MenuKey: "all-in-Ones"
                     },
                     {
-                        CategoryName:"Electronics",
-                        SubCategoryName:"Desktops",
-                        LeafCategory:"Minis",
-                        MenuKey:"minis"
+                        CategoryName: "Electronics",
+                        SubCategoryName: "Desktops",
+                        LeafCategory: "Minis",
+                        MenuKey: "minis"
                     },
                     {
-                        CategoryName:"Electronics",
-                        SubCategoryName:"Desktops",
-                        LeafCategory:"Towers",
-                        MenuKey:"towers"
+                        CategoryName: "Electronics",
+                        SubCategoryName: "Desktops",
+                        LeafCategory: "Towers",
+                        MenuKey: "towers"
                     },
                 ]
-                             
+
             },
             {
-                CategoryName:"Electronics",
+                CategoryName: "Electronics",
                 SubCategoryName: "Camera, Photo & Videos",
-                MenuKey:"camera-Photo-Videos",
-                leafCategoryList:[
+                MenuKey: "camera-Photo-and-Videos",
+                leafCategoryList: [
                     {
-                        CategoryName:"Electronics",
+                        CategoryName: "Electronics",
                         SubCategoryName: "Camera, Photo & Videos",
-                        LeafCategory:"DSLR",
-                        MenuKey:"dslr"
+                        LeafCategory: "DSLR",
+                        MenuKey: "dslr"
                     },
                     {
-                        CategoryName:"Electronics",
+                        CategoryName: "Electronics",
                         SubCategoryName: "Camera, Photo & Videos",
-                        LeafCategory:"Lenses",
-                        MenuKey:"lenses"
+                        LeafCategory: "Lenses",
+                        MenuKey: "lenses"
                     },
                     {
-                        CategoryName:"Electronics",
+                        CategoryName: "Electronics",
                         SubCategoryName: "Camera, Photo & Videos",
-                        LeafCategory:"Mirrorless Camera",
-                        MenuKey:"mirrorless-camera"
+                        LeafCategory: "Mirrorless Camera",
+                        MenuKey: "mirrorless-camera"
                     },
                     {
-                        CategoryName:"Electronics",
+                        CategoryName: "Electronics",
                         SubCategoryName: "Camera, Photo & Videos",
-                       LeafCategory:"Tripods & Monopods",
-                       MenuKey:"tripods-and-monopods"
+                        LeafCategory: "Tripods & Monopods",
+                        MenuKey: "tripods-and-monopods"
                     },
-                    {   
-                        CategoryName:"Electronics",
+                    {
+                        CategoryName: "Electronics",
                         SubCategoryName: "Camera, Photo & Videos",
-                        LeafCategory:"Video Cameras",
-                        MenuKey:"video-cameras"
+                        LeafCategory: "Video Cameras",
+                        MenuKey: "video-cameras"
                     }
 
                 ]
             },
             {
-                CategoryName:"Electronics",
+                CategoryName: "Electronics",
                 SubCategoryName: "Headphones & Earphones",
-                MenuKey:"headphone-earphones",
-                leafCategoryList:[
+                MenuKey: "headphone-earphones",
+                leafCategoryList: [
                     {
-                        CategoryName:"Electronics",
+                        CategoryName: "Electronics",
                         SubCategoryName: "Headphones & Earphones",
-                        LeafCategory:"Bluetooth Headphones",
-                        MenuKey:"bluetooth-headphones"
+                        LeafCategory: "Bluetooth Headphones",
+                        MenuKey: "bluetooth-headphones"
                     },
                     {
-                        CategoryName:"Electronics",
+                        CategoryName: "Electronics",
                         SubCategoryName: "Headphones & Earphones",
-                        LeafCategory:"DJ/Professional Headphones",
-                        MenuKey:"dj-Professional-Headphones"
+                        LeafCategory: "DJ/Professional Headphones",
+                        MenuKey: "dj-Professional-Headphones"
                     },
                     {
-                        CategoryName:"Electronics",
+                        CategoryName: "Electronics",
                         SubCategoryName: "Headphones & Earphones",
-                        LeafCategory:"In Ear Earbud Headphones",
-                        MenuKey:"in-ear-earbud-headphones"
+                        LeafCategory: "In Ear Earbud Headphones",
+                        MenuKey: "in-ear-earbud-headphones"
                     },
                     {
-                        CategoryName:"Electronics",
+                        CategoryName: "Electronics",
                         SubCategoryName: "Headphones & Earphones",
-                       LeafCategory:"Noise-Cancelling Headphones",
-                        MenuKey:"noise-cancelling-headphones"
-                    },
-                    {   
-                        CategoryName:"Electronics",
-                        SubCategoryName: "Headphones & Earphones",
-                        LeafCategory:"On-Ear Headphones",
-                        MenuKey:"on-ear-headphones"
+                        LeafCategory: "Noise-Cancelling Headphones",
+                        MenuKey: "noise-cancelling-headphones"
                     },
                     {
-                        CategoryName:"Electronics",
+                        CategoryName: "Electronics",
                         SubCategoryName: "Headphones & Earphones",
-                        LeafCategory:"Over-Ear Headphones",
-                        MenuKey:"over-ear-headphones"
+                        LeafCategory: "On-Ear Headphones",
+                        MenuKey: "on-ear-headphones"
                     },
                     {
-                        CategoryName:"Electronics",
+                        CategoryName: "Electronics",
                         SubCategoryName: "Headphones & Earphones",
-                        LeafCategory:"Premium Audio Headphones",
-                        MenuKey:"premium-audio-headphones"
+                        LeafCategory: "Over-Ear Headphones",
+                        MenuKey: "over-ear-headphones"
                     },
                     {
-                        CategoryName:"Electronics",
+                        CategoryName: "Electronics",
                         SubCategoryName: "Headphones & Earphones",
-                        LeafCategory:"Sports & Fitness Headphones",
-                        MenuKey:"sports-and-Fitness-headphones"
+                        LeafCategory: "Premium Audio Headphones",
+                        MenuKey: "premium-audio-headphones"
+                    },
+                    {
+                        CategoryName: "Electronics",
+                        SubCategoryName: "Headphones & Earphones",
+                        LeafCategory: "Sports & Fitness Headphones",
+                        MenuKey: "sports-and-Fitness-headphones"
                     }
                 ]
             },
-            {   
-                CategoryName:"Electronics",
-                SubCategoryName:"Speakers",
-                MenuKey:"speakers",
-                leafCategoryList:[
+            {
+                CategoryName: "Electronics",
+                SubCategoryName: "Speakers",
+                MenuKey: "speakers",
+                leafCategoryList: [
                     {
-                        CategoryName:"Electronics",
-                        SubCategoryName:"Speakers",
-                        LeafCategory:"Ceiling Speakers",
-                        MenuKey:"ceiling-speakers"
+                        CategoryName: "Electronics",
+                        SubCategoryName: "Speakers",
+                        LeafCategory: "Ceiling Speakers",
+                        MenuKey: "ceiling-speakers"
                     },
-                        
+
                     {
-                        CategoryName:"Electronics",
-                        SubCategoryName:"Speakers",
-                        LeafCategory: "Center Channel Speakers"
+                        CategoryName: "Electronics",
+                        SubCategoryName: "Speakers",
+                        LeafCategory: "Center Channel Speakers",
+                        MenuKey: "center-channel-speakers"
                     },
                     {
-                        CategoryName:"Electronics",
-                        SubCategoryName:"Speakers",
+                        CategoryName: "Electronics",
+                        SubCategoryName: "Speakers",
                         LeafCategory: "Portable Speakers",
-                        MenuKey:"portable-speakers",
+                        MenuKey: "portable-speakers",
                     },
                     {
-                        CategoryName:"Electronics",
-                        SubCategoryName:"Speakers",
+                        CategoryName: "Electronics",
+                        SubCategoryName: "Speakers",
                         LeafCategory: "Soundbars",
-                        MenuKey:"soundbars",
+                        MenuKey: "soundbars",
                     },
                     {
-                        CategoryName:"Electronics",
-                        SubCategoryName:"Speakers",
+                        CategoryName: "Electronics",
+                        SubCategoryName: "Speakers",
                         LeafCategory: "Subwoofers",
-                        MenuKey:"subwoofers"
+                        MenuKey: "subwoofers"
                     },
-                    {   
-                        CategoryName:"Electronics",
-                        SubCategoryName:"Speakers",
+                    {
+                        CategoryName: "Electronics",
+                        SubCategoryName: "Speakers",
                         LeafCategory: "Wireless & Bluetooth Speakers",
-                        MenuKey:"wireless-and-bluetooth-speakers"
+                        MenuKey: "wireless-and-bluetooth-speakers"
                     }
-                    
+
                 ]
-            
+
             },
             {
-                CategoryName:"Electronics",
-                SubCategoryName:"Laptops",
-                MenuKey:"laptops"
-            },      
+                CategoryName: "Electronics",
+                SubCategoryName: "Laptops",
+                MenuKey: "laptops"
+            },
             {
-                CategoryName:"Electronics",
-                SubCategoryName:"Phones",
-                MenuKey:"phones"
-            },      
+                CategoryName: "Electronics",
+                SubCategoryName: "Phones",
+                MenuKey: "phones"
+            },
             {
-                CategoryName:"Electronics",
-                SubCategoryName:"Film Cameras",
-                MenuKey:"film-cameras",
-                leafCategoryList:[
-                {
-                    CategoryName:"Electronics",
-                    SubCategoryName:"Film Cameras",
-                    LeafCategory:"Instant Cameras",
-                    MenuKey:"instant-cameras"
-                }    
-                ]
-            },  
-            {
-                CategoryName:"Electronics",
-                SubCategoryName:"Monitors",
-                MenuKey:"monitors",
-            },      
-            {
-                CategoryName:"Electronics",
-                SubCategoryName:"Tablets",
-                
-            },  
-            {
-                CategoryName:"Electronics",
-                SubCategoryName:"Video Games",
-                leafCategoryList:[
+                CategoryName: "Electronics",
+                SubCategoryName: "Film Cameras",
+                MenuKey: "film-cameras",
+                leafCategoryList: [
                     {
-                        CategoryName:"Electronics",
-                        SubCategoryName:"Video Games",
-                        LeafCategory:"Accessories"
-                    },
-                    {
-                        CategoryName:"Electronics",
-                        SubCategoryName:"Video Games",
-                        LeafCategory:"Consoles"
-                    },
-                    {
-                        CategoryName:"Electronics",
-                        SubCategoryName:"Video Games",
-                        LeafCategory:"Consoles"
-                    },
-                    {
-                        CategoryName:"Electronics",
-                        SubCategoryName:"Video Games",
-                        LeafCategory:"Games"
-                    },
-                    {
-                        CategoryName:"Electronics",
-                        SubCategoryName:"Video Games",
-                        LeafCategory:"Nintendo"
+                        CategoryName: "Electronics",
+                        SubCategoryName: "Film Cameras",
+                        LeafCategory: "Instant Cameras",
+                        MenuKey: "instant-cameras"
                     }
                 ]
-            },  
+            },
             {
-                CategoryName:"Electronics",
-                SubCategoryName:"Computer & Accessories",
-                leafCategoryList:[
+                CategoryName: "Electronics",
+                SubCategoryName: "Monitors",
+                MenuKey: "monitors",
+            },
+            {
+                CategoryName: "Electronics",
+                SubCategoryName: "Tablets",
+                MenuKey: "tablets"
+            },
+            {
+                CategoryName: "Electronics",
+                SubCategoryName: "Video Games",
+                MenuKey: "video-games",
+                leafCategoryList: [
                     {
-                        CategoryName:"Electronics",
-                        SubCategoryName:"Computer & Accessories",
-                        LeafCategory:"Chargers & Adapters"
+                        CategoryName: "Electronics",
+                        SubCategoryName: "Video Games",
+                        LeafCategory: "Accessories",
+                        MenuKey: "accessories"
                     },
                     {
-                        CategoryName:"Electronics",
-                        SubCategoryName:"Computer & Accessories",
-                        LeafCategory:"Data Storage"
+                        CategoryName: "Electronics",
+                        SubCategoryName: "Video Games",
+                        LeafCategory: "Consoles",
+                        MenuKey: "consoles"
                     },
                     {
-                        CategoryName:"Electronics",
-                        SubCategoryName:"Computer & Accessories",
-                        LeafCategory:"Keyboards"
+                        CategoryName: "Electronics",
+                        SubCategoryName: "Video Games",
+                        LeafCategory: "Games",
+                        MenuKey: "games"
+                    },
+                    {
+                        CategoryName: "Electronics",
+                        SubCategoryName: "Video Games",
+                        LeafCategory: "Nintendo",
+                        MenuKey: "nintendo"
+                    }
+                ]
+            },
+            {
+                CategoryName: "Electronics",
+                SubCategoryName: "Computer & Accessories",
+                MenuKey: "computer-and-accessories",
+                leafCategoryList: [
+                    {
+                        CategoryName: "Electronics",
+                        SubCategoryName: "Computer & Accessories",
+                        LeafCategory: "Chargers & Adapters",
+                        MenuKey: "chargers-and-adapters"
+                    },
+                    {
+                        CategoryName: "Electronics",
+                        SubCategoryName: "Computer & Accessories",
+                        LeafCategory: "Data Storage",
+                        MenuKey: "data-storage"
+                    },
+                    {
+                        CategoryName: "Electronics",
+                        SubCategoryName: "Computer & Accessories",
+                        LeafCategory: "Keyboards",
+                        MenuKey: "keyboards"
                     }
                 ]
             }
-        ] 
-        
+        ]
+
     },
-        {
-            CategoryName: "Fashion",
-            subCategoryList:[
-                {
-                  CategoryName: "Fashion",
-                  SubCategoryName:"Clothing, Shoes & Jewelry",
-                  leafCategoryList:[
-                      {
+    {
+        CategoryName: "Fashion",
+        MenuKey: "fashion",
+        subCategoryList: [
+            {
+                CategoryName: "Fashion",
+                SubCategoryName: "Clothing, Shoes & Jewelry",
+                MenuKey: "clothing-shoes-and-jewelry",
+                leafCategoryList: [
+                    {
                         CategoryName: "Fashion",
-                        SubCategoryName:"Clothing, Shoes & Jewelry",
-                          LeafCategory:"Kid's Fashion"
-                      },
-                      {
+                        SubCategoryName: "Clothing, Shoes & Jewelry",
+                        LeafCategory: "Kid's Fashion",
+                        MenuKey: "kid's-fashion"
+                    },
+                    {
                         CategoryName: "Fashion",
-                        SubCategoryName:"Clothing, Shoes & Jewelry",
-                          LeafCategory:"Men's Fashion"
-                      },
-                      {
+                        SubCategoryName: "Clothing, Shoes & Jewelry",
+                        LeafCategory: "Men's Fashion",
+                        MenuKey: "men's-fashion",
+                    },
+                    {
                         CategoryName: "Fashion",
-                        SubCategoryName:"Clothing, Shoes & Jewelry",
-                          LeafCategory:"Shoes"
-                      },    
-                      {
+                        SubCategoryName: "Clothing, Shoes & Jewelry",
+                        LeafCategory: "Shoes",
+                        MenuKey: "shoes"
+                    },
+                    {
                         CategoryName: "Fashion",
-                        SubCategoryName:"Clothing, Shoes & Jewelry",
-                          LeafCategory:"Women's Fashion"
-                      }
-                  ]
-
-                   
-                },
-                {
-                    CategoryName: "Fashion",
-                    SubCategoryName:"Eyewear",
-                    leafCategoryList:[
-                      
-                        {
-                            CategoryName: "Fashion",
-                    SubCategoryName:"Eyewear",
-                           LeafCategory:"Eyeglass Cases"
-                            
-                        },
-                        {    
-                            CategoryName: "Fashion",
-                    SubCategoryName:"Eyewear",
-                           LeafCategory:"Eyeglass Chains"
-                            
-                        },   
-                        {
-                            CategoryName: "Fashion",
-                    SubCategoryName:"Eyewear",
-                           LeafCategory:"Eyeglass Frames"
-                        },
-                        {
-                            CategoryName: "Fashion",
-                    SubCategoryName:"Eyewear",
-                           LeafCategory:"Replacement Sunglass Lenses"
-                        },    
-                        {
-                            CategoryName: "Fashion",
-                    SubCategoryName:"Eyewear",
-                           LeafCategory:"Sunglasses"
-                        }
-                    ]
-                },
-                {
-                    CategoryName: "Fashion",
-                    SubCategoryName:"Handbags",
-                    leafCategoryList:[
-                        {
-                            CategoryName: "Fashion",
-                            SubCategoryName:"Handbags",
-                            LeafCategory:"Clutches & Evening Bags"
-                        },
-                        {
-                            CategoryName: "Fashion",
-                            SubCategoryName:"Handbags",
-                            LeafCategory:"Crossbody Bags"
-                        },
-                        {
-                            CategoryName: "Fashion",
-                            SubCategoryName:"Handbags",
-                            LeafCategory:"Fashion Backpacks"
-                        },
-                        {
-                            CategoryName: "Fashion",
-                            SubCategoryName:"Handbags",
-                            LeafCategory:"Hobo Bags"
-                        },
-                        {
-                            CategoryName: "Fashion",
-                            SubCategoryName:"Handbags",
-                            LeafCategory:"Satchels"
-
-                        },
-                        {
-                            CategoryName: "Fashion",
-                            SubCategoryName:"Handbags",
-                            LeafCategory:"Shoulder Bags"
-                        },
-                        {
-                            CategoryName: "Fashion",
-                            SubCategoryName:"Handbags",
-                            LeafCategory:"Top-Handle Bags"
-                        },
-                        {
-                            CategoryName: "Fashion",
-                            SubCategoryName:"Handbags",
-                            LeafCategory:"Totes"
-                        },
-                        {
-                            CategoryName: "Fashion",
-                            SubCategoryName:"Handbags",
-                            LeafCategory:"Wallets"
-                        },
-                        {
-                            CategoryName: "Fashion",
-                            SubCategoryName:"Handbags",
-                            LeafCategory:"Wristlets"
-                        }
-                    ]
-                },
-                {
-                    CategoryName: "Fashion",
-                    SubCategoryName:"Backpacks"
-                },
-                {
-                    CategoryName: "Fashion",
-                    SubCategoryName:"Watches",
-                    leafCategoryList:[
-                        {
-                            CategoryName: "Fashion",
-                    SubCategoryName:"Watches",
-                            LeafCategory:"Pocket Watches"
-                        },
-                        {
-                            CategoryName: "Fashion",
-                    SubCategoryName:"Watches",
-                            LeafCategory:"Smartwatches"
-                        },
-                        {
-                            CategoryName: "Fashion",
-                    SubCategoryName:"Watches",
-                            LeafCategory:"Watch Bands"
-                        },
-                        {
-                            CategoryName: "Fashion",
-                    SubCategoryName:"Watches",
-                            LeafCategory:"Wrist Watches"
-                        }
-                    ]
-                },
-                {
-                    CategoryName: "Fashion",
-                    SubCategoryName:"Jewellery"
-                }
+                        SubCategoryName: "Clothing, Shoes & Jewelry",
+                        LeafCategory: "Women's Fashion",
+                        MenuKey: "women's-fashion"
+                    }
+                ]
 
 
-            ]
-            
-        },
-        {
-            CategoryName:"Home & Kitchen",
-            subCategoryList:[
-                {
-                    CategoryName:"Home & Kitchen",
-                    SubCategoryName:"Bedding",
-                    leafCategoryList:[
-                        {
-                            CategoryName:"Home & Kitchen",
-                    SubCategoryName:"Bedding",
-                            LeafCategory:"Bedding & Accessories"
-                        },
-                        {
-                            CategoryName:"Home & Kitchen",
-                    SubCategoryName:"Bedding",
-                            LeafCategory:"Bedding Sets & Collections"
-                        },
-                        {
-                            CategoryName:"Home & Kitchen",
-                    SubCategoryName:"Bedding",
-                            LeafCategory:"Bedspreads, Coverlets & Sets"
-                        },
-                        {
-                            CategoryName:"Home & Kitchen",
-                    SubCategoryName:"Bedding",
-                            LeafCategory:"Kid's Bedding"
-                        },
-                        {
-                            CategoryName:"Home & Kitchen",
-                    SubCategoryName:"Bedding",
-                            LeafCategory:"Kid's Bedding"
-                        }
-                    ]
-                },
-                {
-                    CategoryName:"Home & Kitchen",
-                    SubCategoryName:"Towel Rings"
-                },
-                {
-                    CategoryName:"Home & Kitchen",
-                    SubCategoryName:"Wall Art"
-                },
-                {
-                    CategoryName:"Home & Kitchen",
-                    SubCategoryName:"Wall Clocks"
-                },
-                {
-                    CategoryName:"Home & Kitchen",
-                    SubCategoryName:"Cleaning Supplies"
-                },
-                {
-                    CategoryName:"Home & Kitchen",
-                    SubCategoryName:"Bath"
-                },
-                {
-                    CategoryName:"Home & Kitchen",
-                    SubCategoryName:"Bathroom Accessories"
-                },
-                {                    
-                    CategoryName:"Home & Kitchen",
-                    SubCategoryName:"Kitchen & Dining",
-                    leafCategoryList:[
-                        {
-                            CategoryName:"Home & Kitchen",
-                    SubCategoryName:"Kitchen & Dining",
-                            LeafCategory:"Bakeware"
-                        },
-                        {
-                            CategoryName:"Home & Kitchen",
-                    SubCategoryName:"Kitchen & Dining",
-                            LeafCategory:"Coffee, Tea & Espresso"
-                        },
-                        {
-                            CategoryName:"Home & Kitchen",
-                    SubCategoryName:"Kitchen & Dining",
-                            LeafCategory:"Cookware"
-                        },
-                        {
-                            CategoryName:"Home & Kitchen",
-                    SubCategoryName:"Kitchen & Dining",
-                            LeafCategory:"Cutlery & Knife Accessories"
-                        },
-                        {
-                            CategoryName:"Home & Kitchen",
-                    SubCategoryName:"Kitchen & Dining",
-                            LeafCategory:"Dining & Entertaining"
-                        },
-                        {
-                            CategoryName:"Home & Kitchen",
-                    SubCategoryName:"Kitchen & Dining",
-                            LeafCategory:"Small Appliances"
-                        }
-                    ]
-                },
-                {
-                    CategoryName:"Home & Kitchen",
-                    SubCategoryName:"Tools & Home Improvement",
-                    leafCategoryList:[
-                        {
-                            CategoryName:"Home & Kitchen",
-                    SubCategoryName:"Tools & Home Improvement",
-                            LeafCategory:"Ceramic Tiles"
-                        },
-                        {
-                            CategoryName:"Home & Kitchen",
-                    SubCategoryName:"Tools & Home Improvement",
-                            LeafCategory:"Wall Plates"
-                        }
-                        
-                    ]
-                },
-                {
-                    CategoryName:"Home & Kitchen",
-                    SubCategoryName:"Home Appliances"
-                },
-                {
-                    CategoryName:"Home & Kitchen",
-                    SubCategoryName:"Bar Tools & Drinkware"
-                },
-                {
-                    CategoryName:"Home & Kitchen",
-                    SubCategoryName:"Home Decor",
-                    leafCategoryList:[
-                        {
-                            CategoryName:"Home & Kitchen",
-                            SubCategoryName:"Home Decor",
-                            LeafCategory:"Artificial Plants & Flowers"
-                        },
-                        {
-                            CategoryName:"Home & Kitchen",
-                            SubCategoryName:"Home Decor",
-                            LeafCategory:"Candles & Holders"
-                        },
-                        {
-                            CategoryName:"Home & Kitchen",
-                            SubCategoryName:"Home Decor",
-                            LeafCategory:"Clocks"
-                        },
-                        {
-                            CategoryName:"Home & Kitchen",
-                            SubCategoryName:"Home Decor",
-                            LeafCategory:"Decorative Pillows"
-                        },
-                        {
-                            CategoryName:"Home & Kitchen",
-                            SubCategoryName:"Home Decor",
-                            LeafCategory:"Home Decor Accents"
-                        },
-                        {
-                            CategoryName:"Home & Kitchen",
-                            SubCategoryName:"Home Decor",
-                            LeafCategory:"Home Fragrance"
-                        },
-                        {
-                            CategoryName:"Home & Kitchen",
-                            SubCategoryName:"Home Decor",
-                            LeafCategory:"Mirrors"
-                        },
-                        {
-                            CategoryName:"Home & Kitchen",
-                            SubCategoryName:"Home Decor",
-                            LeafCategory:"Nursery Decor"
-                        }
-                    ]
-                },
-                {
-                    CategoryName:"Home & Kitchen",
-                    SubCategoryName:"Kids' Home Store"
-                },
-                {
-                    CategoryName:"Home & Kitchen",
-                    SubCategoryName:"Seasonal Decor"
-                },
-                {
-                    CategoryName:"Home & Kitchen",
-                    SubCategoryName:"Storage & Organization"
-                },
-                {
-                    CategoryName:"Home & Kitchen",
-                    SubCategoryName:"Towel Bars"
-                },
-            
-            
-                
-                {
-                    CategoryName:"Home & Kitchen",
-                    SubCategoryName:"Vacuum & Floor care",
-                            leafCategoryList:[
-                            {
-                                CategoryName:"Home & Kitchen",
-                                SubCategoryName:"Vacuum & Floor care",
-                                LeafCategory:"Carpet & Upholstery Cleaners & Accessories"
-                            },
-                            {
-                                CategoryName:"Home & Kitchen",
-                                SubCategoryName:"Vacuum & Floor care",
-                                LeafCategory:"Floor Buffers & Parts"
-                            },
-                            {
-                                CategoryName:"Home & Kitchen",
-                                SubCategoryName:"Vacuum & Floor care",
-                                LeafCategory:"Vacuum Parts & Accessories"
-                            },
-                            {
-                                CategoryName:"Home & Kitchen",
-                                SubCategoryName:"Vacuum & Floor care",
-                                LeafCategory:"Vacuum"
-                            }
-                    ]
-                },
-                {
-                    CategoryName:"Home & Kitchen",
-                     SubCategoryName:"Coasters"
-                },
-                {
-                    CategoryName:"Home & Kitchen",
-                    SubCategoryName:"Event & Party Supplies"
-                },
-                {
-                    CategoryName:"Home & Kitchen",
-                    SubCategoryName:"Furniture"
-                },
-                {
-                    CategoryName:"Home & Kitchen",
-                    SubCategoryName:"Glassware & Drinkware"
-                },
-                {
-                    CategoryName:"Home & Kitchen",
-                    SubCategoryName:"Heating, Cooling & Air Quality"
-                }
-            
-            ]
-            },
-        {
-            CategoryName:"Beauty & Personal Care",
-            subCategoryList:[
-                {
-                    CategoryName:"Beauty & Personal Care",
-                    SubCategoryName:"Foot, Hand & Nail Care",
-                    leafCategoryList:[
-                        {
-                            CategoryName:"Beauty & Personal Care",
-                            SubCategoryName:"Foot, Hand & Nail Care",
-                            LeafCategory: "Foot & Hand Care"
-                        },
-                        {
-                            CategoryName:"Beauty & Personal Care",
-                            SubCategoryName:"Foot, Hand & Nail Care",
-                            LeafCategory: "Nail Art & Polish"
-                        },
-                        {
-                            CategoryName:"Beauty & Personal Care",
-                            SubCategoryName:"Foot, Hand & Nail Care",
-                            LeafCategory: "Nail Care"
-                        },
-                        {
-                            CategoryName:"Beauty & Personal Care",
-                            SubCategoryName:"Foot, Hand & Nail Care",
-                            LeafCategory: "Tools & Accessories"
-                        },
-                        {
-                            CategoryName:"Beauty & Personal Care",
-                            SubCategoryName:"Foot, Hand & Nail Care",
-                            LeafCategory: "Concealer"
-                        }
-                    ]   
-                },
-                {
-                    CategoryName:"Beauty & Personal Care",
-                    SubCategoryName:"Concealer"
-                },
-                {
-                    CategoryName:"Beauty & Personal Care",
-                    SubCategoryName:"Foundation"
-                },
-                {
-                    CategoryName:"Beauty & Personal Care",
-                    SubCategoryName:"Compact Powder"
-                },
-                {
-                    CategoryName:"Beauty & Personal Care",
-                    SubCategoryName:"Hair Care & Styling",
-                    leafCategoryList:[
-                        {
-                            CategoryName:"Beauty & Personal Care",
-                            SubCategoryName:"Hair Care & Styling",
-                            LeafCategory:"Hair & Scalp Treatments"
-                        },
-                        {
-                            CategoryName:"Beauty & Personal Care",
-                            SubCategoryName:"Hair Care & Styling",
-                            LeafCategory:"Hair Coloring Products"
-                        },
-                        {
-                            CategoryName:"Beauty & Personal Care",
-                            SubCategoryName:"Hair Care & Styling",
-                            LeafCategory:"Hair Dryers"
-                        },
-                        {
-                            CategoryName:"Beauty & Personal Care",
-                            SubCategoryName:"Hair Care & Styling",
-                            LeafCategory:"Shampoos"
-                        },
-                        {
-                            CategoryName:"Beauty & Personal Care",
-                            SubCategoryName:"Hair Care & Styling",
-                            LeafCategory:"Styling Products"
-                        },
-                        {
-                            CategoryName:"Beauty & Personal Care",
-                            SubCategoryName:"Hair Care & Styling",
-                            LeafCategory:"Styling Tools & Appliances"
-                        },
-                        
-                    ]
-                },
-                {
-                    CategoryName:"Beauty & Personal Care",
-                    SubCategoryName:"Makeup",
-                    leafCategoryList:[
-                        {
-                            CategoryName:"Beauty & Personal Care",
-                            SubCategoryName:"Makeup",
-                            LeafCategory:"Eyebrow Color"
-                        },
-                        {
-                            CategoryName:"Beauty & Personal Care",
-                            SubCategoryName:"Makeup",
-                            LeafCategory:"Eyeliners"
-                        },
-                        {
-                            CategoryName:"Beauty & Personal Care",
-                            SubCategoryName:"Makeup",
-                            LeafCategory:"Eyeshadow"
-                        },
-                        {
-                            CategoryName:"Beauty & Personal Care",
-                            SubCategoryName:"Makeup",
-                            LeafCategory:"Eyeshadow Bases & Primers"
-                        },
-                        {
-                            CategoryName:"Beauty & Personal Care",
-                            SubCategoryName:"Makeup",
-                            LeafCategory:"Lipstick"
-                        },
-                        
-                    ]
-                },
-                {
-                    CategoryName:"Beauty & Personal Care",
-                    SubCategoryName:"Fragrance"
-                
-                },
-                {
-                    CategoryName:"Beauty & Personal Care",
-                    SubCategoryName:"Grooming"
-                },
-                {
-                    CategoryName:"Beauty & Personal Care",
-                    SubCategoryName:"Bleaches"
-                },
-                {
-                    CategoryName:"Beauty & Personal Care",
-                    SubCategoryName:"Hair Oils"
-                },
-                {
-                    CategoryName:"Beauty & Personal Care",
-                    SubCategoryName:"Cleansing Creams & Milks"
-                },
-                {
-                    CategoryName:"Beauty & Personal Care",
-                    SubCategoryName:"Skin Care"
-                },
-                {
-                    CategoryName:"Beauty & Personal Care",
-                    SubCategoryName:"Toners"
-                },
-                {
-                    CategoryName:"Beauty & Personal Care",
-                    SubCategoryName:"Conditioners"
-                },
-                {
-                    CategoryName:"Beauty & Personal Care",
-                    SubCategoryName:"Face Wash"
-                },
-                {
-                    CategoryName:"Beauty & Personal Care",
-                    SubCategoryName:"Bath Oils"
-                },
-                       
-
-                    ]
-        
-                    
             },
             {
-                CategoryName:"Health & Wellness",
-                subCategoryList:[
-                    {
-                        CategoryName:"Health & Wellness",
-                        SubCategoryName:"Sports Nutrition",
-                        leafCategoryList:[
-                            {
-                                CategoryName:"Health & Wellness",
-                                SubCategoryName:"Sports Nutrition",
-                                LeafCategory:"Amino Acids"
-                            },
-                            {
-                                CategoryName:"Health & Wellness",
-                                SubCategoryName:"Sports Nutrition",
-                                LeafCategory:"Endurance & Energy"
-                            },
-                            {
-                                CategoryName:"Health & Wellness",
-                                SubCategoryName:"Sports Nutrition",
-                                LeafCategory:"Healthy Snacks & Beverages"
-                            },
-                            {
-                                CategoryName:"Health & Wellness",
-                                SubCategoryName:"Sports Nutrition",
-                                LeafCategory:"Hydration"
-                            },
-                            {
-                                CategoryName:"Health & Wellness",
-                                SubCategoryName:"Sports Nutrition",
-                                LeafCategory:"Nutrition Bars"
-                            },
-                            {
-                                CategoryName:"Health & Wellness",
-                                SubCategoryName:"Sports Nutrition",
-                                LeafCategory:"Protein"
-                            }
-                        ]
-                    },
-                    {
-                        CategoryName:"Health & Wellness",
-                        SubCategoryName:"Vitamins & Dietary Supplements",
-                        leafCategoryList:[
-                            {
-                                CategoryName:"Health & Wellness",
-                                SubCategoryName:"Vitamins & Dietary Supplements",
-                                LeafCategory:"Blended Vitamin & Mineral Supplements"
-                            },
-                            {
-                                CategoryName:"Health & Wellness",
-                                SubCategoryName:"Vitamins & Dietary Supplements",
-                                LeafCategory:"Herbal Supplements"
-                            },
-                            {
-                                CategoryName:"Health & Wellness",
-                                SubCategoryName:"Vitamins & Dietary Supplements",
-                                LeafCategory:"Minerals"
-                            },
-                            {
-                                CategoryName:"Health & Wellness",
-                                SubCategoryName:"Vitamins & Dietary Supplements",
-                                LeafCategory:"Supplements"
-                            },
-                            {
-                                CategoryName:"Health & Wellness",
-                                SubCategoryName:"Vitamins & Dietary Supplements",
-                                LeafCategory:"Vitamins"
-                            },
-                            {
-                                CategoryName:"Health & Wellness",
-                                SubCategoryName:"Vitamins & Dietary Supplements",
-                                LeafCategory:"Weight Loss"
-                            }
-                            
+                CategoryName: "Fashion",
+                SubCategoryName: "Eyewear",
+                MenuKey: "eyewear",
+                leafCategoryList: [
 
-                        ]
+                    {
+                        CategoryName: "Fashion",
+                        SubCategoryName: "Eyewear",
+                        LeafCategory: "Eyeglass Cases",
+                        MenuKey: "eyeglass-cases"
                     },
                     {
-                        CategoryName:"Health & Wellness",
-                        SubCategoryName:"Baby & Child Care",
-                        leafCategoryList:[
-                            {
-                                CategoryName:"Health & Wellness",
-                                SubCategoryName:"Baby & Child Care",
-                                LeafCategory:"Diaper Care"
-                            }
+                        CategoryName: "Fashion",
+                        SubCategoryName: "Eyewear",
+                        LeafCategory: "Eyeglass Chains",
+                        MenuKey: "eyeglass-chains"
 
-                        ]
                     },
                     {
-                        CategoryName:"Health & Wellness",
-                        SubCategoryName:"Health Care",
-                        leafCategoryList:[
-                            {
-                                CategoryName:"Health & Wellness",
-                                SubCategoryName:"Health Care",
-                                LeafCategory:"Alternative Medicine"
-                            },
-                            {
-                                CategoryName:"Health & Wellness",
-                                SubCategoryName:"Health Care",
-                                LeafCategory:"Diabetes Care"
-                            },
-                            {
-                                CategoryName:"Health & Wellness",
-                                SubCategoryName:"Health Care",
-                                LeafCategory:"Ear Care"
-                            },
-                            {
-                                CategoryName:"Health & Wellness",
-                                SubCategoryName:"Health Care",
-                                LeafCategory:"Eye Health"
-                            },
-                            {
-                                CategoryName:"Health & Wellness",
-                                SubCategoryName:"Health Care",
-                                LeafCategory:"Feminine Care"
-                            },
-                            {
-                                CategoryName:"Health & Wellness",
-                                SubCategoryName:"Health Care",
-                                LeafCategory:"First Aid"
-                            }
-                            
-
-                        
-                        ]
+                        CategoryName: "Fashion",
+                        SubCategoryName: "Eyewear",
+                        LeafCategory: "Eyeglass Frames",
+                        MenuKey: "eyeglass-frames"
                     },
                     {
-                        CategoryName:"Health & Wellness",
-                        SubCategoryName:"Personal Care",
-                        leafCategoryList:[
-                            {
-                                CategoryName:"Health & Wellness",
-                                SubCategoryName:"Personal Care",
-                                LeafCategory:"Bath & Bathing Accessories"
-                            },
-                            {
-                                CategoryName:"Health & Wellness",
-                                SubCategoryName:"Personal Care",
-                                LeafCategory:"Deodorants & Antiperspirants"
-                            },
-                            {
-                                CategoryName:"Health & Wellness",
-                                SubCategoryName:"Personal Care",
-                                LeafCategory:"Hair Care"
-                            },
-                            {
-                                CategoryName:"Health & Wellness",
-                                SubCategoryName:"Personal Care",
-                                LeafCategory:"Lip Care"
-                            },
-                            {
-                                CategoryName:"Health & Wellness",
-                                SubCategoryName:"Personal Care",
-                                LeafCategory:"Skin Care"
-                            }
-
-
-
-                        ]
+                        CategoryName: "Fashion",
+                        SubCategoryName: "Eyewear",
+                        LeafCategory: "Replacement Sunglass Lenses",
+                        MenuKey: "replacement-sunglass-lenses"
                     },
                     {
-                        CategoryName:"Health & Wellness",
-                        SubCategoryName:"Aromatherapy"
-                    },
-                    {
-                        CategoryName:"Health & Wellness",
-                        SubCategoryName:"Oral Care"
-                    },
-                    {
-                        CategoryName:"Health & Wellness",
-                        SubCategoryName:"Cloth Face Mask"
-                    },
-                    {
-                        CategoryName:"Health & Wellness",
-                        SubCategoryName:"Vision Care"
+                        CategoryName: "Fashion",
+                        SubCategoryName: "Eyewear",
+                        LeafCategory: "Sunglasses",
+                        MenuKey:"sunglasses"
                     }
-                    
                 ]
             },
             {
-              CategoryName:"Grocery",
-              subCategoryList:[
-                  {
-                    CategoryName:"Grocery",  
-                    SubCategoryName:"Baby Food",
-                    leafCategoryList:[
-                        {
-                            CategoryName:"Grocery",  
-                            SubCategoryName:"Baby Food",
-                            LeafCategory:"Cereal"
-                        },
-                        {
-                            CategoryName:"Grocery",  
-                            SubCategoryName:"Baby Food",
-                            LeafCategory:"Formula"
-                        },
-                        {
-                            CategoryName:"Grocery",  
-                            SubCategoryName:"Baby Food",
-                            LeafCategory:"Meals"
-                        },
-                        
-                    ]
-                  },
-                  {
-                    CategoryName:"Grocery",
-                    SubCategoryName:"Beverages",
-                    leafCategoryList:[
-                        {
-                            CategoryName:"Grocery",
-                            SubCategoryName:"Beverages",
-                            LeafCategory:"Bottled Beverages, Water & Drink"
-                        },
-                        {
-                            CategoryName:"Grocery",
-                            SubCategoryName:"Beverages",
-                            LeafCategory:"Mixes"
-                        },
-                        {
-                            CategoryName:"Grocery",
-                            SubCategoryName:"Beverages",
-                            LeafCategory:"Coffee, Tea & Cocoa"
-                        },
-                    ]
-                  },
-                  
-                  {
-                    CategoryName:"Grocery",  
-                    SubCategoryName:"Candy & Chocolate",
-                    leafCategoryList:[
-                        {
-                            CategoryName:"Grocery",  
-                            SubCategoryName:"Candy & Chocolate",
-                            LeafCategory:"Brittle, Caramel & Toffee"
-                        },
-                        {
-                            CategoryName:"Grocery",  
-                            SubCategoryName:"Candy & Chocolate",
-                            LeafCategory:"Candied & Chocolate-Covered Snacks"
-                        },
-                        {
-                            CategoryName:"Grocery",  
-                            SubCategoryName:"Candy & Chocolate",
-                            LeafCategory:"Candy & Chocolate Assortments"
-                        },
-                        {
-                            CategoryName:"Grocery",  
-                            SubCategoryName:"Candy & Chocolate",
-                            LeafCategory:"Candy & Chocolate Bars"
-                        },
-                        {
-                            CategoryName:"Grocery",  
-                            SubCategoryName:"Candy & Chocolate",
-                            LeafCategory:"Candy & Chocolate Gifts"
-                        },
-                        {
-                            CategoryName:"Grocery",  
-                            SubCategoryName:"Candy & Chocolate",
-                            LeafCategory:"Marshmallows"
-                        },
-                        {
-                            CategoryName:"Grocery",  
-                            SubCategoryName:"Candy & Chocolate",
-                            LeafCategory:"Mints"
-                        },
-                    
+                CategoryName: "Fashion",
+                SubCategoryName: "Handbags",
+                MenuKey: "handbags",
+                leafCategoryList: [
+                    {
+                        CategoryName: "Fashion",
+                        SubCategoryName: "Handbags",
+                        LeafCategory: "Clutches & Evening Bags",
+                        MenuKey: "clutches-and-evening-bags"
+                    },
+                    {
+                        CategoryName: "Fashion",
+                        SubCategoryName: "Handbags",
+                        LeafCategory: "Crossbody Bags",
+                        MenuKey: "crossbody-bags"
+                    },
+                    {
+                        CategoryName: "Fashion",
+                        SubCategoryName: "Handbags",
+                        LeafCategory: "Fashion Backpacks",
+                        MenuKey: "fashion-backpacks"
+                    },
+                    {
+                        CategoryName: "Fashion",
+                        SubCategoryName: "Handbags",
+                        LeafCategory: "Hobo Bags",
+                        MenuKey: "hobo-bags"
+                    },
+                    {
+                        CategoryName: "Fashion",
+                        SubCategoryName: "Handbags",
+                        LeafCategory: "Satchels",
+                        MenuKey: "satchels"
 
-                    ]  
-                  },
-                  {
-                        CategoryName:"Grocery",
-                        SubCategoryName:"Snack Food",
-                        leafCategoryList:[
-                            {
-                                CategoryName:"Grocery",
-                                SubCategoryName:"Snack Food",
-                                LeafCategory:"Bars"
-                            },
-                            {
-                                CategoryName:"Grocery",
-                                SubCategoryName:"Snack Food",
-                                LeafCategory:"Chips & Crisps"
-                            },
-                            {
-                                CategoryName:"Grocery",
-                                SubCategoryName:"Snack Food",
-                                LeafCategory:"Cookies"
-                            },
-                            {
-                                CategoryName:"Grocery",
-                                SubCategoryName:"Snack Food",
-                                LeafCategory:"Crackers"
-                            },
-                            {
-                                CategoryName:"Grocery",
-                                SubCategoryName:"Snack Food",
-                                LeafCategory:"Dried Food & Raisins"
-                            },
-                        ]
-                  },
-                  {
-                    CategoryName:"Grocery",
-                    SubCategoryName:"Canned, Dry & Packaged Food"
-                  },
-                  {
-                    CategoryName:"Grocery",
-                    SubCategoryName:"Cooking Essentials"
-                  },
-                  {
-                    CategoryName:"Grocery",
-                    SubCategoryName:"Household Supplies"
-                  },
-                  {
-                    CategoryName:"Grocery",
-                    SubCategoryName:"Pet Supplies"
-                  },
-                  {
-                    CategoryName:"Grocery",
-                    SubCategoryName:"Breakfast Food",
-                    leafCategoryList:[
-                        {
-                            CategoryName:"Grocery",
-                            SubCategoryName:"Breakfast Food",
-                            LeafCategory:"Canned, Dry & Packaged Food" 
-                        },
-                        {
-                            CategoryName:"Grocery",
-                            SubCategoryName:"Breakfast Food",
-                            LeafCategory:"Cooking Essentials" 
-                        },
-                        {
-                            CategoryName:"Grocery",
-                            SubCategoryName:"Breakfast Food",
-                            LeafCategory:"Household Supplies" 
-                        },
-                        {
-                            CategoryName:"Grocery",
-                            SubCategoryName:"Breakfast Food",
-                            LeafCategory:"Pet Supplies" 
-                        }
-                    ]
-                  }
-                ]    
-              
-                  },
-                
-                  {
-                      
-                      CategoryName:"Sports & Outdoors",
-                      subCategoryList:[
-                          {
-                            CategoryName:"Sports & Outdoors",
-                            SubCategoryName:"Camping & Hiking"
-                          },
-                          {
-                            CategoryName:"Sports & Outdoors",
-                            SubCategoryName:"Cycling"
-                          },
-                          {
-                            CategoryName:"Sports & Outdoors",
-                            SubCategoryName:"Scooters & Accessories"
-                          },
-                          {
-                            CategoryName:"Sports & Outdoors",
-                            SubCategoryName:"Strength Training"
-                          },
-                          {
-                            CategoryName:"Sports & Outdoors",
-                            SubCategoryName:"Cardio Training"
-                          },
-                          {
-                            CategoryName:"Sports & Outdoors",
-                            SubCategoryName:"Yoga"
-                          },
-                          {
-                            CategoryName:"Sports & Outdoors",
-                            SubCategoryName:"Exercise Accessories"
-                          },
-                          {
-                            CategoryName:"Sports & Outdoors",
-                            SubCategoryName:"Combat Sports"
-                          },
-                          {
-                            CategoryName:"Sports & Outdoors",
-                            SubCategoryName:"Team Sports"
-                          },
-                          {
-                            CategoryName:"Sports & Outdoors",
-                            SubCategoryName:"Racquet Sports"
-                          },
-                          {
-                            CategoryName:"Sports & Outdoors",
-                            SubCategoryName:"Water Sports"
-                          },
-                          {
-                            CategoryName:"Sports & Outdoors",
-                            SubCategoryName:"Sports Nutrition"
-                          }
+                    },
+                    {
+                        CategoryName: "Fashion",
+                        SubCategoryName: "Handbags",
+                        LeafCategory: "Shoulder Bags",
+                        MenuKey: "shoulder-bags"
+                    },
+                    {
+                        CategoryName: "Fashion",
+                        SubCategoryName: "Handbags",
+                        LeafCategory: "Top-Handle Bags",
+                        MenuKey: "top-handle-bags"
+                    },
+                    {
+                        CategoryName: "Fashion",
+                        SubCategoryName: "Handbags",
+                        LeafCategory: "Totes",
+                        MenuKey: "totes"
+                    },
+                    {
+                        CategoryName: "Fashion",
+                        SubCategoryName: "Handbags",
+                        LeafCategory: "Wallets",
+                        MenuKey: "wallets"
+                    },
+                    {
+                        CategoryName: "Fashion",
+                        SubCategoryName: "Handbags",
+                        LeafCategory: "Wristlets",
+                        MenuKey: "wristlets"
+                    }
+                ]
+            },
+            {
+                CategoryName: "Fashion",
+                SubCategoryName: "Backpacks",
+                MenuKey: "backpacks"
+            },
+            {
+                CategoryName: "Fashion",
+                SubCategoryName: "Watches",
+                MenuKey: "watches",
+                leafCategoryList: [
+                    {
+                        CategoryName: "Fashion",
+                        SubCategoryName: "Watches",
+                        LeafCategory: "Pocket Watches",
+                        MenuKey: "pocket-watches"
+                    },
+                    {
+                        CategoryName: "Fashion",
+                        SubCategoryName: "Watches",
+                        LeafCategory: "Smartwatches",
+                        MenuKey: "smartwatches"
+                    },
+                    {
+                        CategoryName: "Fashion",
+                        SubCategoryName: "Watches",
+                        LeafCategory: "Watch Bands",
+                        MenuKey: "watch-bands"
+                    },
+                    {
+                        CategoryName: "Fashion",
+                        SubCategoryName: "Watches",
+                        LeafCategory: "Wrist Watches",
+                        MenuKey: "wrist-watches"
+                    }
+                ]
+            },
+            {
+                CategoryName: "Fashion",
+                SubCategoryName: "Jewellery",
+                MenuKey: "jewellery"
+            }
 
 
-                      ]
-                 
-                    
-                
-                      
-                 
-                },
-                {
-                      CategoryName:"Baby & Toys",
-                      subCategoryList:[
-                          {
-                            CategoryName:"Baby & Toys",  
-                            SubCategoryName:"Baby & Clothing Accessories"
-                          },
-                          {
-                            CategoryName:"Baby & Toys",  
-                            SubCategoryName:"Car Seats"
-                          },
-                          {
-                            CategoryName:"Baby & Toys",  
-                            SubCategoryName:"Diapering"
-                          },
-                          {
-                            CategoryName:"Baby & Toys",  
-                            SubCategoryName:"Feeding"
-                          },
-                          {
-                            CategoryName:"Baby & Toys",  
-                            SubCategoryName:"Gifts"
-                          },
-                          {
-                            CategoryName:"Baby & Toys",  
-                            SubCategoryName:"Nursery"
-                          },
-                          {
-                            CategoryName:"Baby & Toys",  
-                            SubCategoryName:"Toys & Games"
-                          },
-                          {
-                            CategoryName:"Baby & Toys",  
-                            SubCategoryName:"Travel Gear"
-                          }
-                      ]
-                  },
-                  {
-                      CategoryName:"NEXT DAY DELIVERY"
-                  }
-                
-            
-            
+        ]
+
+    },
+    {
+        CategoryName: "Home & Kitchen",
+        MenuKey: "home-and-kitchen",
+        subCategoryList: [
+            {
+                CategoryName: "Home & Kitchen",
+                SubCategoryName: "Bedding",
+                MenuKey: "bedding",
+                leafCategoryList: [
+                    {
+                        CategoryName: "Home & Kitchen",
+                        SubCategoryName: "Bedding",
+                        LeafCategory: "Bedding & Accessories",
+                        MenuKey: "bedding-and-accessories"
+                    },
+                    {
+                        CategoryName: "Home & Kitchen",
+                        SubCategoryName: "Bedding",
+                        LeafCategory: "Bedding Sets & Collections",
+                        MenuKey: "bedding-sets-and-collections"
+                    },
+                    {
+                        CategoryName: "Home & Kitchen",
+                        SubCategoryName: "Bedding",
+                        LeafCategory: "Bedspreads, Coverlets & Sets",
+                        MenuKey: "bedspreads-coverlets-and-sets"
+                    },
+                    {
+                        CategoryName: "Home & Kitchen",
+                        SubCategoryName: "Bedding",
+                        LeafCategory: "Kid's Bedding",
+                        MenuKey: "kid's-bedding"
+                    },
+                    {
+                        CategoryName: "Home & Kitchen",
+                        SubCategoryName: "Bedding",
+                        LeafCategory: "Kid's Bedding",
+                        MenuKey: "kid's bedding"
+                    }
+                ]
+            },
+            {
+                CategoryName: "Home & Kitchen",
+                SubCategoryName: "Towel Rings",
+                MenuKey: "towel-rings"
+            },
+            {
+                CategoryName: "Home & Kitchen",
+                SubCategoryName: "Wall Art",
+                MenuKey: "wall-art"
+            },
+            {
+                CategoryName: "Home & Kitchen",
+                SubCategoryName: "Wall Clocks",
+                MenuKey: "wall-clocks"
+            },
+            {
+                CategoryName: "Home & Kitchen",
+                SubCategoryName: "Cleaning Supplies",
+                MenuKey: "cleaning-supplies"
+            },
+            {
+                CategoryName: "Home & Kitchen",
+                SubCategoryName: "Bath",
+                MenuKey: "bath"
+            },
+            {
+                CategoryName: "Home & Kitchen",
+                SubCategoryName: "Bathroom Accessories",
+                MenuKey: "bathroom-accessories"
+            },
+            {
+                CategoryName: "Home & Kitchen",
+                SubCategoryName: "Kitchen & Dining",
+                MenuKey: "kitchen-and-dining",
+                leafCategoryList: [
+                    {
+                        CategoryName: "Home & Kitchen",
+                        SubCategoryName: "Kitchen & Dining",
+                        LeafCategory: "Bakeware",
+                        LeafCategory: "bakeware"
+                    },
+                    {
+                        CategoryName: "Home & Kitchen",
+                        SubCategoryName: "Kitchen & Dining",
+                        LeafCategory: "Coffee, Tea & Espresso",
+                        MenuKey: "coffee-tea-and-espresso"
+                    },
+                    {
+                        CategoryName: "Home & Kitchen",
+                        SubCategoryName: "Kitchen & Di.ning",
+                        LeafCategory: "Cookware",
+                        MenuKey: "cookware"
+                    },
+                    {
+                        CategoryName: "Home & Kitchen",
+                        SubCategoryName: "Kitchen & Dining",
+                        LeafCategory: "Cutlery & Knife Accessories",
+                        MenuKey: "cutlery-and-knife-accessories"
+                    },
+                    {
+                        CategoryName: "Home & Kitchen",
+                        SubCategoryName: "Kitchen & Dining",
+                        LeafCategory: "Dining & Entertaining",
+                        MenuKey: "tining-and-entertaining"
+                    },
+                    {
+                        CategoryName: "Home & Kitchen",
+                        SubCategoryName: "Kitchen & Dining",
+                        LeafCategory: "Small Appliances",
+                        MenuKey: "small-appliances"
+                    }
+                ]
+            },
+            {
+                CategoryName: "Home & Kitchen",
+                SubCategoryName: "Tools & Home Improvement",
+                MenuKey: "tools-and-home-improvement",
+                leafCategoryList: [
+                    {
+                        CategoryName: "Home & Kitchen",
+                        SubCategoryName: "Tools & Home Improvement",
+                        LeafCategory: "Ceramic Tiles",
+                        MenuKey: "ceramic-tiles"
+                    },
+                    {
+                        CategoryName: "Home & Kitchen",
+                        SubCategoryName: "Tools & Home Improvement",
+                        LeafCategory: "Wall Plates",
+                        MenuKey: "wall-plates"
+                    }
+
+                ]
+            },
+            {
+                CategoryName: "Home & Kitchen",
+                SubCategoryName: "Home Appliances",
+                MenuKey: "home-appliances"
+            },
+            {
+                CategoryName: "Home & Kitchen",
+                SubCategoryName: "Bar Tools & Drinkware",
+                MenuKey: "bar-tools-and-drinkware"
+            },
+            {
+                CategoryName: "Home & Kitchen",
+                SubCategoryName: "Home Decor",
+                MenuKey: "home-decor",
+                leafCategoryList: [
+                    {
+                        CategoryName: "Home & Kitchen",
+                        SubCategoryName: "Home Decor",
+                        LeafCategory: "Artificial Plants & Flowers",
+                        MenuKey: "artificial-plants-and-flowers"
+                    },
+                    {
+                        CategoryName: "Home & Kitchen",
+                        SubCategoryName: "Home Decor",
+                        LeafCategory: "Candles & Holders",
+                        MenuKey: "candles-and-holders"
+                    },
+                    {
+                        CategoryName: "Home & Kitchen",
+                        SubCategoryName: "Home Decor",
+                        LeafCategory: "Clocks",
+                        MenuKey: "clocks"
+                    },
+                    {
+                        CategoryName: "Home & Kitchen",
+                        SubCategoryName: "Home Decor",
+                        LeafCategory: "Decorative Pillows",
+                        MenuKey: "decorative-pillows"
+                    },
+                    {
+                        CategoryName: "Home & Kitchen",
+                        SubCategoryName: "Home Decor",
+                        LeafCategory: "Home Decor Accents",
+                        MenuKey: "home-decor-accents"
+                    },
+                    {
+                        CategoryName: "Home & Kitchen",
+                        SubCategoryName: "Home Decor",
+                        LeafCategory: "Home Fragrance",
+                        MenuKey: "home-fragrance"
+                    },
+                    {
+                        CategoryName: "Home & Kitchen",
+                        SubCategoryName: "Home Decor",
+                        LeafCategory: "Mirrors",
+                        MenuKey: "mirrors"
+                    },
+                    {
+                        CategoryName: "Home & Kitchen",
+                        SubCategoryName: "Home Decor",
+                        LeafCategory: "Nursery Decor",
+                        MenuKey: "nursery-decor"
+                    }
+                ]
+            },
+            {
+                CategoryName: "Home & Kitchen",
+                SubCategoryName: "Kids' Home Store",
+                MenuKey: "kids'-home-store"
+            },
+            {
+                CategoryName: "Home & Kitchen",
+                SubCategoryName: "Seasonal Decor",
+                MenuKey: "seasonal-decor"
+            },
+            {
+                CategoryName: "Home & Kitchen",
+                SubCategoryName: "Storage & Organization",
+                MenuKey: "storage-and-organization"
+            },
+            {
+                CategoryName: "Home & Kitchen",
+                SubCategoryName: "Towel Bars",
+                MenuKey: "towel-bars"
+            },
+
+
+
+            {
+                CategoryName: "Home & Kitchen",
+                SubCategoryName: "Vacuum & Floor care",
+                MenuKey: "vacuum-and-floor-care",
+                leafCategoryList: [
+                    {
+                        CategoryName: "Home & Kitchen",
+                        SubCategoryName: "Vacuum & Floor care",
+                        LeafCategory: "Carpet & Upholstery Cleaners & Accessories",
+                        MenuKey: "carpet-and-pholstery-cleaners-and-accessories"
+                    },
+                    {
+                        CategoryName: "Home & Kitchen",
+                        SubCategoryName: "Vacuum & Floor care",
+                        LeafCategory: "Floor Buffers & Parts",
+                        MenuKey: "floor-buffers-and-parts"
+                    },
+                    {
+                        CategoryName: "Home & Kitchen",
+                        SubCategoryName: "Vacuum & Floor care",
+                        LeafCategory: "Vacuum Parts & Accessories",
+                        MenuKey: "vacuum-parts-and-accessories"
+                    },
+                    {
+                        CategoryName: "Home & Kitchen",
+                        SubCategoryName: "Vacuum & Floor care",
+                        LeafCategory: "Vacuum",
+                        MenuKey: "vacuum"
+                    }
+                ]
+            },
+            {
+                CategoryName: "Home & Kitchen",
+                SubCategoryName: "Coasters",
+                MenuKey: "coasters"
+            },
+            {
+                CategoryName: "Home & Kitchen",
+                SubCategoryName: "Event & Party Supplies",
+                MenuKey: "event-and-party-supplies"
+            },
+            {
+                CategoryName: "Home & Kitchen",
+                SubCategoryName: "Furniture",
+                MenuKey: "furniture"
+            },
+            {
+                CategoryName: "Home & Kitchen",
+                SubCategoryName: "Glassware & Drinkware",
+                MenuKey: "glassware-and-drinkware"
+            },
+            {
+                CategoryName: "Home & Kitchen",
+                SubCategoryName: "Heating, Cooling & Air Quality",
+                MenuKey: "heating-cooling & Air Quality"
+            }
+
+        ]
+    },
+    {
+        CategoryName: "Beauty & Personal Care",
+        subCategoryList: [
+            {
+                CategoryName: "Beauty & Personal Care",
+                SubCategoryName: "Foot, Hand & Nail Care",
+                leafCategoryList: [
+                    {
+                        CategoryName: "Beauty & Personal Care",
+                        SubCategoryName: "Foot, Hand & Nail Care",
+                        LeafCategory: "Foot & Hand Care"
+                    },
+                    {
+                        CategoryName: "Beauty & Personal Care",
+                        SubCategoryName: "Foot, Hand & Nail Care",
+                        LeafCategory: "Nail Art & Polish"
+                    },
+                    {
+                        CategoryName: "Beauty & Personal Care",
+                        SubCategoryName: "Foot, Hand & Nail Care",
+                        LeafCategory: "Nail Care"
+                    },
+                    {
+                        CategoryName: "Beauty & Personal Care",
+                        SubCategoryName: "Foot, Hand & Nail Care",
+                        LeafCategory: "Tools & Accessories"
+                    },
+                    {
+                        CategoryName: "Beauty & Personal Care",
+                        SubCategoryName: "Foot, Hand & Nail Care",
+                        LeafCategory: "Concealer"
+                    }
+                ]
+            },
+            {
+                CategoryName: "Beauty & Personal Care",
+                SubCategoryName: "Concealer"
+            },
+            {
+                CategoryName: "Beauty & Personal Care",
+                SubCategoryName: "Foundation"
+            },
+            {
+                CategoryName: "Beauty & Personal Care",
+                SubCategoryName: "Compact Powder"
+            },
+            {
+                CategoryName: "Beauty & Personal Care",
+                SubCategoryName: "Hair Care & Styling",
+                leafCategoryList: [
+                    {
+                        CategoryName: "Beauty & Personal Care",
+                        SubCategoryName: "Hair Care & Styling",
+                        LeafCategory: "Hair & Scalp Treatments"
+                    },
+                    {
+                        CategoryName: "Beauty & Personal Care",
+                        SubCategoryName: "Hair Care & Styling",
+                        LeafCategory: "Hair Coloring Products"
+                    },
+                    {
+                        CategoryName: "Beauty & Personal Care",
+                        SubCategoryName: "Hair Care & Styling",
+                        LeafCategory: "Hair Dryers"
+                    },
+                    {
+                        CategoryName: "Beauty & Personal Care",
+                        SubCategoryName: "Hair Care & Styling",
+                        LeafCategory: "Shampoos"
+                    },
+                    {
+                        CategoryName: "Beauty & Personal Care",
+                        SubCategoryName: "Hair Care & Styling",
+                        LeafCategory: "Styling Products"
+                    },
+                    {
+                        CategoryName: "Beauty & Personal Care",
+                        SubCategoryName: "Hair Care & Styling",
+                        LeafCategory: "Styling Tools & Appliances"
+                    },
+
+                ]
+            },
+            {
+                CategoryName: "Beauty & Personal Care",
+                SubCategoryName: "Makeup",
+                leafCategoryList: [
+                    {
+                        CategoryName: "Beauty & Personal Care",
+                        SubCategoryName: "Makeup",
+                        LeafCategory: "Eyebrow Color"
+                    },
+                    {
+                        CategoryName: "Beauty & Personal Care",
+                        SubCategoryName: "Makeup",
+                        LeafCategory: "Eyeliners"
+                    },
+                    {
+                        CategoryName: "Beauty & Personal Care",
+                        SubCategoryName: "Makeup",
+                        LeafCategory: "Eyeshadow"
+                    },
+                    {
+                        CategoryName: "Beauty & Personal Care",
+                        SubCategoryName: "Makeup",
+                        LeafCategory: "Eyeshadow Bases & Primers"
+                    },
+                    {
+                        CategoryName: "Beauty & Personal Care",
+                        SubCategoryName: "Makeup",
+                        LeafCategory: "Lipstick"
+                    },
+
+                ]
+            },
+            {
+                CategoryName: "Beauty & Personal Care",
+                SubCategoryName: "Fragrance"
+
+            },
+            {
+                CategoryName: "Beauty & Personal Care",
+                SubCategoryName: "Grooming"
+            },
+            {
+                CategoryName: "Beauty & Personal Care",
+                SubCategoryName: "Bleaches"
+            },
+            {
+                CategoryName: "Beauty & Personal Care",
+                SubCategoryName: "Hair Oils"
+            },
+            {
+                CategoryName: "Beauty & Personal Care",
+                SubCategoryName: "Cleansing Creams & Milks"
+            },
+            {
+                CategoryName: "Beauty & Personal Care",
+                SubCategoryName: "Skin Care"
+            },
+            {
+                CategoryName: "Beauty & Personal Care",
+                SubCategoryName: "Toners"
+            },
+            {
+                CategoryName: "Beauty & Personal Care",
+                SubCategoryName: "Conditioners"
+            },
+            {
+                CategoryName: "Beauty & Personal Care",
+                SubCategoryName: "Face Wash"
+            },
+            {
+                CategoryName: "Beauty & Personal Care",
+                SubCategoryName: "Bath Oils"
+            },
+
+
+        ]
+
+
+    },
+    {
+        CategoryName: "Health & Wellness",
+        subCategoryList: [
+            {
+                CategoryName: "Health & Wellness",
+                SubCategoryName: "Sports Nutrition",
+                leafCategoryList: [
+                    {
+                        CategoryName: "Health & Wellness",
+                        SubCategoryName: "Sports Nutrition",
+                        LeafCategory: "Amino Acids"
+                    },
+                    {
+                        CategoryName: "Health & Wellness",
+                        SubCategoryName: "Sports Nutrition",
+                        LeafCategory: "Endurance & Energy"
+                    },
+                    {
+                        CategoryName: "Health & Wellness",
+                        SubCategoryName: "Sports Nutrition",
+                        LeafCategory: "Healthy Snacks & Beverages"
+                    },
+                    {
+                        CategoryName: "Health & Wellness",
+                        SubCategoryName: "Sports Nutrition",
+                        LeafCategory: "Hydration"
+                    },
+                    {
+                        CategoryName: "Health & Wellness",
+                        SubCategoryName: "Sports Nutrition",
+                        LeafCategory: "Nutrition Bars"
+                    },
+                    {
+                        CategoryName: "Health & Wellness",
+                        SubCategoryName: "Sports Nutrition",
+                        LeafCategory: "Protein"
+                    }
+                ]
+            },
+            {
+                CategoryName: "Health & Wellness",
+                SubCategoryName: "Vitamins & Dietary Supplements",
+                leafCategoryList: [
+                    {
+                        CategoryName: "Health & Wellness",
+                        SubCategoryName: "Vitamins & Dietary Supplements",
+                        LeafCategory: "Blended Vitamin & Mineral Supplements"
+                    },
+                    {
+                        CategoryName: "Health & Wellness",
+                        SubCategoryName: "Vitamins & Dietary Supplements",
+                        LeafCategory: "Herbal Supplements"
+                    },
+                    {
+                        CategoryName: "Health & Wellness",
+                        SubCategoryName: "Vitamins & Dietary Supplements",
+                        LeafCategory: "Minerals"
+                    },
+                    {
+                        CategoryName: "Health & Wellness",
+                        SubCategoryName: "Vitamins & Dietary Supplements",
+                        LeafCategory: "Supplements"
+                    },
+                    {
+                        CategoryName: "Health & Wellness",
+                        SubCategoryName: "Vitamins & Dietary Supplements",
+                        LeafCategory: "Vitamins"
+                    },
+                    {
+                        CategoryName: "Health & Wellness",
+                        SubCategoryName: "Vitamins & Dietary Supplements",
+                        LeafCategory: "Weight Loss"
+                    }
+
+
+                ]
+            },
+            {
+                CategoryName: "Health & Wellness",
+                SubCategoryName: "Baby & Child Care",
+                leafCategoryList: [
+                    {
+                        CategoryName: "Health & Wellness",
+                        SubCategoryName: "Baby & Child Care",
+                        LeafCategory: "Diaper Care"
+                    }
+
+                ]
+            },
+            {
+                CategoryName: "Health & Wellness",
+                SubCategoryName: "Health Care",
+                leafCategoryList: [
+                    {
+                        CategoryName: "Health & Wellness",
+                        SubCategoryName: "Health Care",
+                        LeafCategory: "Alternative Medicine"
+                    },
+                    {
+                        CategoryName: "Health & Wellness",
+                        SubCategoryName: "Health Care",
+                        LeafCategory: "Diabetes Care"
+                    },
+                    {
+                        CategoryName: "Health & Wellness",
+                        SubCategoryName: "Health Care",
+                        LeafCategory: "Ear Care"
+                    },
+                    {
+                        CategoryName: "Health & Wellness",
+                        SubCategoryName: "Health Care",
+                        LeafCategory: "Eye Health"
+                    },
+                    {
+                        CategoryName: "Health & Wellness",
+                        SubCategoryName: "Health Care",
+                        LeafCategory: "Feminine Care"
+                    },
+                    {
+                        CategoryName: "Health & Wellness",
+                        SubCategoryName: "Health Care",
+                        LeafCategory: "First Aid"
+                    }
+
+
+
+                ]
+            },
+            {
+                CategoryName: "Health & Wellness",
+                SubCategoryName: "Personal Care",
+                leafCategoryList: [
+                    {
+                        CategoryName: "Health & Wellness",
+                        SubCategoryName: "Personal Care",
+                        LeafCategory: "Bath & Bathing Accessories"
+                    },
+                    {
+                        CategoryName: "Health & Wellness",
+                        SubCategoryName: "Personal Care",
+                        LeafCategory: "Deodorants & Antiperspirants"
+                    },
+                    {
+                        CategoryName: "Health & Wellness",
+                        SubCategoryName: "Personal Care",
+                        LeafCategory: "Hair Care"
+                    },
+                    {
+                        CategoryName: "Health & Wellness",
+                        SubCategoryName: "Personal Care",
+                        LeafCategory: "Lip Care"
+                    },
+                    {
+                        CategoryName: "Health & Wellness",
+                        SubCategoryName: "Personal Care",
+                        LeafCategory: "Skin Care"
+                    }
+
+
+
+                ]
+            },
+            {
+                CategoryName: "Health & Wellness",
+                SubCategoryName: "Aromatherapy"
+            },
+            {
+                CategoryName: "Health & Wellness",
+                SubCategoryName: "Oral Care"
+            },
+            {
+                CategoryName: "Health & Wellness",
+                SubCategoryName: "Cloth Face Mask"
+            },
+            {
+                CategoryName: "Health & Wellness",
+                SubCategoryName: "Vision Care"
+            }
+
+        ]
+    },
+    {
+        CategoryName: "Grocery",
+        subCategoryList: [
+            {
+                CategoryName: "Grocery",
+                SubCategoryName: "Baby Food",
+                leafCategoryList: [
+                    {
+                        CategoryName: "Grocery",
+                        SubCategoryName: "Baby Food",
+                        LeafCategory: "Cereal"
+                    },
+                    {
+                        CategoryName: "Grocery",
+                        SubCategoryName: "Baby Food",
+                        LeafCategory: "Formula"
+                    },
+                    {
+                        CategoryName: "Grocery",
+                        SubCategoryName: "Baby Food",
+                        LeafCategory: "Meals"
+                    },
+
+                ]
+            },
+            {
+                CategoryName: "Grocery",
+                SubCategoryName: "Beverages",
+                leafCategoryList: [
+                    {
+                        CategoryName: "Grocery",
+                        SubCategoryName: "Beverages",
+                        LeafCategory: "Bottled Beverages, Water & Drink"
+                    },
+                    {
+                        CategoryName: "Grocery",
+                        SubCategoryName: "Beverages",
+                        LeafCategory: "Mixes"
+                    },
+                    {
+                        CategoryName: "Grocery",
+                        SubCategoryName: "Beverages",
+                        LeafCategory: "Coffee, Tea & Cocoa"
+                    },
+                ]
+            },
+
+            {
+                CategoryName: "Grocery",
+                SubCategoryName: "Candy & Chocolate",
+                leafCategoryList: [
+                    {
+                        CategoryName: "Grocery",
+                        SubCategoryName: "Candy & Chocolate",
+                        LeafCategory: "Brittle, Caramel & Toffee"
+                    },
+                    {
+                        CategoryName: "Grocery",
+                        SubCategoryName: "Candy & Chocolate",
+                        LeafCategory: "Candied & Chocolate-Covered Snacks"
+                    },
+                    {
+                        CategoryName: "Grocery",
+                        SubCategoryName: "Candy & Chocolate",
+                        LeafCategory: "Candy & Chocolate Assortments"
+                    },
+                    {
+                        CategoryName: "Grocery",
+                        SubCategoryName: "Candy & Chocolate",
+                        LeafCategory: "Candy & Chocolate Bars"
+                    },
+                    {
+                        CategoryName: "Grocery",
+                        SubCategoryName: "Candy & Chocolate",
+                        LeafCategory: "Candy & Chocolate Gifts"
+                    },
+                    {
+                        CategoryName: "Grocery",
+                        SubCategoryName: "Candy & Chocolate",
+                        LeafCategory: "Marshmallows"
+                    },
+                    {
+                        CategoryName: "Grocery",
+                        SubCategoryName: "Candy & Chocolate",
+                        LeafCategory: "Mints"
+                    },
+
+
+                ]
+            },
+            {
+                CategoryName: "Grocery",
+                SubCategoryName: "Snack Food",
+                leafCategoryList: [
+                    {
+                        CategoryName: "Grocery",
+                        SubCategoryName: "Snack Food",
+                        LeafCategory: "Bars"
+                    },
+                    {
+                        CategoryName: "Grocery",
+                        SubCategoryName: "Snack Food",
+                        LeafCategory: "Chips & Crisps"
+                    },
+                    {
+                        CategoryName: "Grocery",
+                        SubCategoryName: "Snack Food",
+                        LeafCategory: "Cookies"
+                    },
+                    {
+                        CategoryName: "Grocery",
+                        SubCategoryName: "Snack Food",
+                        LeafCategory: "Crackers"
+                    },
+                    {
+                        CategoryName: "Grocery",
+                        SubCategoryName: "Snack Food",
+                        LeafCategory: "Dried Food & Raisins"
+                    },
+                ]
+            },
+            {
+                CategoryName: "Grocery",
+                SubCategoryName: "Canned, Dry & Packaged Food"
+            },
+            {
+                CategoryName: "Grocery",
+                SubCategoryName: "Cooking Essentials"
+            },
+            {
+                CategoryName: "Grocery",
+                SubCategoryName: "Household Supplies"
+            },
+            {
+                CategoryName: "Grocery",
+                SubCategoryName: "Pet Supplies"
+            },
+            {
+                CategoryName: "Grocery",
+                SubCategoryName: "Breakfast Food",
+                leafCategoryList: [
+                    {
+                        CategoryName: "Grocery",
+                        SubCategoryName: "Breakfast Food",
+                        LeafCategory: "Canned, Dry & Packaged Food"
+                    },
+                    {
+                        CategoryName: "Grocery",
+                        SubCategoryName: "Breakfast Food",
+                        LeafCategory: "Cooking Essentials"
+                    },
+                    {
+                        CategoryName: "Grocery",
+                        SubCategoryName: "Breakfast Food",
+                        LeafCategory: "Household Supplies"
+                    },
+                    {
+                        CategoryName: "Grocery",
+                        SubCategoryName: "Breakfast Food",
+                        LeafCategory: "Pet Supplies"
+                    }
+                ]
+            }
+        ]
+
+    },
+
+    {
+
+        CategoryName: "Sports & Outdoors",
+        subCategoryList: [
+            {
+                CategoryName: "Sports & Outdoors",
+                SubCategoryName: "Camping & Hiking"
+            },
+            {
+                CategoryName: "Sports & Outdoors",
+                SubCategoryName: "Cycling"
+            },
+            {
+                CategoryName: "Sports & Outdoors",
+                SubCategoryName: "Scooters & Accessories"
+            },
+            {
+                CategoryName: "Sports & Outdoors",
+                SubCategoryName: "Strength Training"
+            },
+            {
+                CategoryName: "Sports & Outdoors",
+                SubCategoryName: "Cardio Training"
+            },
+            {
+                CategoryName: "Sports & Outdoors",
+                SubCategoryName: "Yoga"
+            },
+            {
+                CategoryName: "Sports & Outdoors",
+                SubCategoryName: "Exercise Accessories"
+            },
+            {
+                CategoryName: "Sports & Outdoors",
+                SubCategoryName: "Combat Sports"
+            },
+            {
+                CategoryName: "Sports & Outdoors",
+                SubCategoryName: "Team Sports"
+            },
+            {
+                CategoryName: "Sports & Outdoors",
+                SubCategoryName: "Racquet Sports"
+            },
+            {
+                CategoryName: "Sports & Outdoors",
+                SubCategoryName: "Water Sports"
+            },
+            {
+                CategoryName: "Sports & Outdoors",
+                SubCategoryName: "Sports Nutrition"
+            }
+
+
+        ]
+
+
+
+
+
+    },
+    {
+        CategoryName: "Baby & Toys",
+        subCategoryList: [
+            {
+                CategoryName: "Baby & Toys",
+                SubCategoryName: "Baby & Clothing Accessories"
+            },
+            {
+                CategoryName: "Baby & Toys",
+                SubCategoryName: "Car Seats"
+            },
+            {
+                CategoryName: "Baby & Toys",
+                SubCategoryName: "Diapering"
+            },
+            {
+                CategoryName: "Baby & Toys",
+                SubCategoryName: "Feeding"
+            },
+            {
+                CategoryName: "Baby & Toys",
+                SubCategoryName: "Gifts"
+            },
+            {
+                CategoryName: "Baby & Toys",
+                SubCategoryName: "Nursery"
+            },
+            {
+                CategoryName: "Baby & Toys",
+                SubCategoryName: "Toys & Games"
+            },
+            {
+                CategoryName: "Baby & Toys",
+                SubCategoryName: "Travel Gear"
+            }
+        ]
+    },
+    {
+        CategoryName: "NEXT DAY DELIVERY"
+    }
+
+
+
 ]
 
 
 
 
 // export const CategoryList = [
-    // {
-    //     CategoryName:"Electronics",
-    //     subCategoryList:[
-    //         {
-    //             CategoryName:"Electronics",
-    //             SubCategoryName:"Desktops",
-    //             leafCategoryList:[
-    //                 {
-    //                     CategoryName:"Electronics",
-    //                     SubCategoryName:"Desktops",
-    //                     LeafCategory:"All In Ones"
-    //                 },
-    //                 {
-    //                     CategoryName:"Electronics",
-    //                     SubCategoryName:"Desktops",
-    //                     LeafCategory:"Minis"
-    //                 },
-    //                 {
-    //                     CategoryName:"Electronics",
-    //                     SubCategoryName:"Desktops",
-    //                     LeafCategory:"Towers"
-    //                 },
-    //             ]
-                             
-    //         },
-    //         {
-    //             CategoryName:"Electronics",
-    //             SubCategoryName: "Camera, Photo & Videos",
-    //             leafCategoryList:[
-    //                 {
-    //                     CategoryName:"Electronics",
-    //                     SubCategoryName: "Camera, Photo & Videos",
-    //                     LeafCategory:"DSLR",
-    //                 },
-    //                 {
-    //                     CategoryName:"Electronics",
-    //                     SubCategoryName: "Camera, Photo & Videos",
-    //                     LeafCategory:"Lenses"
-                        
-    //                 },
-    //                 {
-    //                     CategoryName:"Electronics",
-    //                     SubCategoryName: "Camera, Photo & Videos",
-    //                    LeafCategory:"Mirrorless Camera"
-    //                 },
-    //                 {
-    //                     CategoryName:"Electronics",
-    //                     SubCategoryName: "Camera, Photo & Videos",
-    //                    LeafCategory:"Tripods & Monopods"
-                        
-    //                 },
-    //                 {   
-    //                     CategoryName:"Electronics",
-    //                     SubCategoryName: "Camera, Photo & Videos",
-    //                     LeafCategory:"Video Cameras"
-    //                 }
+// {
+//     CategoryName:"Electronics",
+//     subCategoryList:[
+//         {
+//             CategoryName:"Electronics",
+//             SubCategoryName:"Desktops",
+//             leafCategoryList:[
+//                 {
+//                     CategoryName:"Electronics",
+//                     SubCategoryName:"Desktops",
+//                     LeafCategory:"All In Ones"
+//                 },
+//                 {
+//                     CategoryName:"Electronics",
+//                     SubCategoryName:"Desktops",
+//                     LeafCategory:"Minis"
+//                 },
+//                 {
+//                     CategoryName:"Electronics",
+//                     SubCategoryName:"Desktops",
+//                     LeafCategory:"Towers"
+//                 },
+//             ]
 
-    //             ]
-    //         },
-    //         {
-    //             CategoryName:"Electronics",
-    //             SubCategoryName: "Headphones & Earphones",
-    //             leafCategoryList:[
-    //                 {
-    //                     CategoryName:"Electronics",
-    //                     SubCategoryName: "Headphones & Earphones",
-    //                     LeafCategory:"Bluetooth Headphones"
-    //                 },
-    //                 {
-    //                     CategoryName:"Electronics",
-    //                     SubCategoryName: "Headphones & Earphones",
-    //                     LeafCategory:"DJ/Professional Headphones"
-                        
-    //                 },
-    //                 {
-    //                     CategoryName:"Electronics",
-    //                     SubCategoryName: "Headphones & Earphones",
-    //                    LeafCategory:"In Ear Earbud Headphones"
-    //                 },
-    //                 {
-    //                     CategoryName:"Electronics",
-    //                     SubCategoryName: "Headphones & Earphones",
-    //                    LeafCategory:"Noise-Cancelling Headphones"
-                        
-    //                 },
-    //                 {   
-    //                     CategoryName:"Electronics",
-    //                     SubCategoryName: "Headphones & Earphones",
-    //                     LeafCategory:"On-Ear Headphones"
-    //                 },
-    //                 {
-    //                     CategoryName:"Electronics",
-    //                     SubCategoryName: "Headphones & Earphones",
-    //                     LeafCategory:"Over-Ear Headphones"
-    //                 },
-    //                 {
-    //                     CategoryName:"Electronics",
-    //                     SubCategoryName: "Headphones & Earphones",
-    //                     LeafCategory:"Premium Audio Headphones"
-    //                 },
-    //                 {
-    //                     CategoryName:"Electronics",
-    //                     SubCategoryName: "Headphones & Earphones",
-    //                     LeafCategory:"Sports & Fitness Headphones"
-    //                 }
-    //             ]
-    //         },
-    //         {   
-    //             CategoryName:"Electronics",
-    //             SubCategoryName:"Speakers",
-    //             leafCategoryList:[
-    //                 {
-    //                     CategoryName:"Electronics",
-    //                     SubCategoryName:"Speakers",
-    //                     LeafCategory:"Ceiling Speakers"
-    //                 },
-                        
-    //                 {
-    //                     CategoryName:"Electronics",
-    //                     SubCategoryName:"Speakers",
-    //                     LeafCategory: "Center Channel Speakers"
-    //                 },
-    //                 {
-    //                     CategoryName:"Electronics",
-    //                     SubCategoryName:"Speakers",
-    //                     LeafCategory: "Portable Speakers"
-    //                 },
-    //                 {
-    //                     CategoryName:"Electronics",
-    //                     SubCategoryName:"Speakers",
-    //                     LeafCategory: "Soundbars"
-    //                 },
-    //                 {
-    //                     CategoryName:"Electronics",
-    //                     SubCategoryName:"Speakers",
-    //                     LeafCategory: "Subwoofers"
-    //                 },
-    //                 {   
-    //                     CategoryName:"Electronics",
-    //                     SubCategoryName:"Speakers",
-    //                     LeafCategory: "Wireless & Bluetooth Speakers"
-    //                 }
-                    
-    //             ]
-            
-    //         },
-    //         {
-    //             CategoryName:"Electronics",
-    //             SubCategoryName:"Laptops"
-    //         },      
-    //         {
-    //             CategoryName:"Electronics",
-    //             SubCategoryName:"Phones"
-    //         },      
-    //         {
-    //             CategoryName:"Electronics",
-    //             SubCategoryName:"Film Cameras",
-    //             leafCategoryList:[
-    //             {
-    //                 CategoryName:"Electronics",
-    //                 SubCategoryName:"Film Cameras",
-    //                 LeafCategory:"Instant Cameras"
+//         },
+//         {
+//             CategoryName:"Electronics",
+//             SubCategoryName: "Camera, Photo & Videos",
+//             leafCategoryList:[
+//                 {
+//                     CategoryName:"Electronics",
+//                     SubCategoryName: "Camera, Photo & Videos",
+//                     LeafCategory:"DSLR",
+//                 },
+//                 {
+//                     CategoryName:"Electronics",
+//                     SubCategoryName: "Camera, Photo & Videos",
+//                     LeafCategory:"Lenses"
 
-    //             }    
-    //             ]
-    //         },  
-    //         {
-    //             CategoryName:"Electronics",
-    //             SubCategoryName:"Monitors"
-    //         },      
-    //         {
-    //             CategoryName:"Electronics",
-    //             SubCategoryName:"Tablets"
-    //         },  
-    //         {
-    //             CategoryName:"Electronics",
-    //             SubCategoryName:"Video Games",
-    //             leafCategoryList:[
-    //                 {
-    //                     CategoryName:"Electronics",
-    //                     SubCategoryName:"Video Games",
-    //                     LeafCategory:"Accessories"
-    //                 },
-    //                 {
-    //                     CategoryName:"Electronics",
-    //                     SubCategoryName:"Video Games",
-    //                     LeafCategory:"Consoles"
-    //                 },
-    //                 {
-    //                     CategoryName:"Electronics",
-    //                     SubCategoryName:"Video Games",
-    //                     LeafCategory:"Consoles"
-    //                 },
-    //                 {
-    //                     CategoryName:"Electronics",
-    //                     SubCategoryName:"Video Games",
-    //                     LeafCategory:"Games"
-    //                 },
-    //                 {
-    //                     CategoryName:"Electronics",
-    //                     SubCategoryName:"Video Games",
-    //                     LeafCategory:"Nintendo"
-    //                 }
-    //             ]
-    //         },  
-    //         {
-    //             CategoryName:"Electronics",
-    //             SubCategoryName:"Computer & Accessories",
-    //             leafCategoryList:[
-    //                 {
-    //                     CategoryName:"Electronics",
-    //                     SubCategoryName:"Computer & Accessories",
-    //                     LeafCategory:"Chargers & Adapters"
-    //                 },
-    //                 {
-    //                     CategoryName:"Electronics",
-    //                     SubCategoryName:"Computer & Accessories",
-    //                     LeafCategory:"Data Storage"
-    //                 },
-    //                 {
-    //                     CategoryName:"Electronics",
-    //                     SubCategoryName:"Computer & Accessories",
-    //                     LeafCategory:"Keyboards"
-    //                 }
-    //             ]
-    //         }
-    //     ] 
-        
-    // }
-    
+//                 },
+//                 {
+//                     CategoryName:"Electronics",
+//                     SubCategoryName: "Camera, Photo & Videos",
+//                    LeafCategory:"Mirrorless Camera"
+//                 },
+//                 {
+//                     CategoryName:"Electronics",
+//                     SubCategoryName: "Camera, Photo & Videos",
+//                    LeafCategory:"Tripods & Monopods"
+
+//                 },
+//                 {   
+//                     CategoryName:"Electronics",
+//                     SubCategoryName: "Camera, Photo & Videos",
+//                     LeafCategory:"Video Cameras"
+//                 }
+
+//             ]
+//         },
+//         {
+//             CategoryName:"Electronics",
+//             SubCategoryName: "Headphones & Earphones",
+//             leafCategoryList:[
+//                 {
+//                     CategoryName:"Electronics",
+//                     SubCategoryName: "Headphones & Earphones",
+//                     LeafCategory:"Bluetooth Headphones"
+//                 },
+//                 {
+//                     CategoryName:"Electronics",
+//                     SubCategoryName: "Headphones & Earphones",
+//                     LeafCategory:"DJ/Professional Headphones"
+
+//                 },
+//                 {
+//                     CategoryName:"Electronics",
+//                     SubCategoryName: "Headphones & Earphones",
+//                    LeafCategory:"In Ear Earbud Headphones"
+//                 },
+//                 {
+//                     CategoryName:"Electronics",
+//                     SubCategoryName: "Headphones & Earphones",
+//                    LeafCategory:"Noise-Cancelling Headphones"
+
+//                 },
+//                 {   
+//                     CategoryName:"Electronics",
+//                     SubCategoryName: "Headphones & Earphones",
+//                     LeafCategory:"On-Ear Headphones"
+//                 },
+//                 {
+//                     CategoryName:"Electronics",
+//                     SubCategoryName: "Headphones & Earphones",
+//                     LeafCategory:"Over-Ear Headphones"
+//                 },
+//                 {
+//                     CategoryName:"Electronics",
+//                     SubCategoryName: "Headphones & Earphones",
+//                     LeafCategory:"Premium Audio Headphones"
+//                 },
+//                 {
+//                     CategoryName:"Electronics",
+//                     SubCategoryName: "Headphones & Earphones",
+//                     LeafCategory:"Sports & Fitness Headphones"
+//                 }
+//             ]
+//         },
+//         {   
+//             CategoryName:"Electronics",
+//             SubCategoryName:"Speakers",
+//             leafCategoryList:[
+//                 {
+//                     CategoryName:"Electronics",
+//                     SubCategoryName:"Speakers",
+//                     LeafCategory:"Ceiling Speakers"
+//                 },
+
+//                 {
+//                     CategoryName:"Electronics",
+//                     SubCategoryName:"Speakers",
+//                     LeafCategory: "Center Channel Speakers"
+//                 },
+//                 {
+//                     CategoryName:"Electronics",
+//                     SubCategoryName:"Speakers",
+//                     LeafCategory: "Portable Speakers"
+//                 },
+//                 {
+//                     CategoryName:"Electronics",
+//                     SubCategoryName:"Speakers",
+//                     LeafCategory: "Soundbars"
+//                 },
+//                 {
+//                     CategoryName:"Electronics",
+//                     SubCategoryName:"Speakers",
+//                     LeafCategory: "Subwoofers"
+//                 },
+//                 {   
+//                     CategoryName:"Electronics",
+//                     SubCategoryName:"Speakers",
+//                     LeafCategory: "Wireless & Bluetooth Speakers"
+//                 }
+
+//             ]
+
+//         },
+//         {
+//             CategoryName:"Electronics",
+//             SubCategoryName:"Laptops"
+//         },      
+//         {
+//             CategoryName:"Electronics",
+//             SubCategoryName:"Phones"
+//         },      
+//         {
+//             CategoryName:"Electronics",
+//             SubCategoryName:"Film Cameras",
+//             leafCategoryList:[
+//             {
+//                 CategoryName:"Electronics",
+//                 SubCategoryName:"Film Cameras",
+//                 LeafCategory:"Instant Cameras"
+
+//             }    
+//             ]
+//         },  
+//         {
+//             CategoryName:"Electronics",
+//             SubCategoryName:"Monitors"
+//         },      
+//         {
+//             CategoryName:"Electronics",
+//             SubCategoryName:"Tablets"
+//         },  
+//         {
+//             CategoryName:"Electronics",
+//             SubCategoryName:"Video Games",
+//             leafCategoryList:[
+//                 {
+//                     CategoryName:"Electronics",
+//                     SubCategoryName:"Video Games",
+//                     LeafCategory:"Accessories"
+//                 },
+//                 {
+//                     CategoryName:"Electronics",
+//                     SubCategoryName:"Video Games",
+//                     LeafCategory:"Consoles"
+//                 },
+//                 {
+//                     CategoryName:"Electronics",
+//                     SubCategoryName:"Video Games",
+//                     LeafCategory:"Consoles"
+//                 },
+//                 {
+//                     CategoryName:"Electronics",
+//                     SubCategoryName:"Video Games",
+//                     LeafCategory:"Games"
+//                 },
+//                 {
+//                     CategoryName:"Electronics",
+//                     SubCategoryName:"Video Games",
+//                     LeafCategory:"Nintendo"
+//                 }
+//             ]
+//         },  
+//         {
+//             CategoryName:"Electronics",
+//             SubCategoryName:"Computer & Accessories",
+//             leafCategoryList:[
+//                 {
+//                     CategoryName:"Electronics",
+//                     SubCategoryName:"Computer & Accessories",
+//                     LeafCategory:"Chargers & Adapters"
+//                 },
+//                 {
+//                     CategoryName:"Electronics",
+//                     SubCategoryName:"Computer & Accessories",
+//                     LeafCategory:"Data Storage"
+//                 },
+//                 {
+//                     CategoryName:"Electronics",
+//                     SubCategoryName:"Computer & Accessories",
+//                     LeafCategory:"Keyboards"
+//                 }
+//             ]
+//         }
+//     ] 
+
+// }
+
 // ]
 
 
@@ -1951,109 +2033,109 @@ export const Slider7 = {
     ]
 }
 
-export const SlideUpDown = function(classnames) {
-        var accords = document.querySelectorAll("."+classnames+" h4");
-        [].forEach.call(accords, function(elemt) {
-            elemt.innerHTML += '<span class="according-menu"></span>';
-        })
+export const SlideUpDown = function (classnames) {
+    var accords = document.querySelectorAll("." + classnames + " h4");
+    [].forEach.call(accords, function (elemt) {
+        elemt.innerHTML += '<span class="according-menu"></span>';
+    })
 
-        var anchors = document.getElementsByClassName(classnames);
-        for(var i = 0; i < anchors.length; i++) {
-            var anchor = anchors[i];
-            anchor.onclick = function() {
-                var elems = document.querySelectorAll("."+classnames);
-                [].forEach.call(elems, function(elemt) {
-                    elemt.classList.remove("active");
-                    var el = elemt.nextElementSibling;
-                    el.style.height = el.offsetHeight + 'px'
-                    el.style.transitionProperty = `height, margin, padding`
-                    el.style.transitionDuration = '500ms'
-                    el.offsetHeight // eslint-disable-line no-unused-expressions
-                    el.style.overflow = 'hidden'
-                    el.style.height = 0
-                    el.style.paddingTop = 0
-                    el.style.paddingBottom = 0
-                    el.style.marginTop = 0
-                    el.style.marginBottom = 0
-                    el.style.display = 'none'
-                    el.style.removeProperty('height')
-                    el.style.removeProperty('padding-top')
-                    el.style.removeProperty('padding-bottom')
-                    el.style.removeProperty('margin-top')
-                    el.style.removeProperty('margin-bottom')
-                    el.style.removeProperty('overflow')
-                    el.style.removeProperty('transition-duration')
-                    el.style.removeProperty('transition-property')
+    var anchors = document.getElementsByClassName(classnames);
+    for (var i = 0; i < anchors.length; i++) {
+        var anchor = anchors[i];
+        anchor.onclick = function () {
+            var elems = document.querySelectorAll("." + classnames);
+            [].forEach.call(elems, function (elemt) {
+                elemt.classList.remove("active");
+                var el = elemt.nextElementSibling;
+                el.style.height = el.offsetHeight + 'px'
+                el.style.transitionProperty = `height, margin, padding`
+                el.style.transitionDuration = '500ms'
+                el.offsetHeight // eslint-disable-line no-unused-expressions
+                el.style.overflow = 'hidden'
+                el.style.height = 0
+                el.style.paddingTop = 0
+                el.style.paddingBottom = 0
+                el.style.marginTop = 0
+                el.style.marginBottom = 0
+                el.style.display = 'none'
+                el.style.removeProperty('height')
+                el.style.removeProperty('padding-top')
+                el.style.removeProperty('padding-bottom')
+                el.style.removeProperty('margin-top')
+                el.style.removeProperty('margin-bottom')
+                el.style.removeProperty('overflow')
+                el.style.removeProperty('transition-duration')
+                el.style.removeProperty('transition-property')
 
-                });
+            });
 
-                this.classList.add('active');
-                var element = this.nextElementSibling;
-                element.style.removeProperty('display')
-                let display = window.getComputedStyle(element).display
+            this.classList.add('active');
+            var element = this.nextElementSibling;
+            element.style.removeProperty('display')
+            let display = window.getComputedStyle(element).display
 
-                if(element.classList.contains('show')) {
-                    element.classList.remove('show');
+            if (element.classList.contains('show')) {
+                element.classList.remove('show');
 
-                    this.classList.remove("active");
-                    element.style.height = element.offsetHeight + 'px'
-                    element.style.transitionProperty = `height, margin, padding`
-                    element.style.transitionDuration = '500ms'
-                    element.offsetHeight // eslint-disable-line no-unused-expressions
-                    element.style.overflow = 'hidden'
-                    element.style.height = 0
-                    element.style.paddingTop = 0
-                    element.style.paddingBottom = 0
-                    element.style.marginTop = 0
-                    element.style.marginBottom = 0
-                    element.style.display = 'none'
-                    element.style.transitionProperty = `height, margin, padding`
-                    element.style.transitionDuration = '500ms'
+                this.classList.remove("active");
+                element.style.height = element.offsetHeight + 'px'
+                element.style.transitionProperty = `height, margin, padding`
+                element.style.transitionDuration = '500ms'
+                element.offsetHeight // eslint-disable-line no-unused-expressions
+                element.style.overflow = 'hidden'
+                element.style.height = 0
+                element.style.paddingTop = 0
+                element.style.paddingBottom = 0
+                element.style.marginTop = 0
+                element.style.marginBottom = 0
+                element.style.display = 'none'
+                element.style.transitionProperty = `height, margin, padding`
+                element.style.transitionDuration = '500ms'
+                element.style.removeProperty('height')
+                element.style.removeProperty('padding-top')
+                element.style.removeProperty('padding-bottom')
+                element.style.removeProperty('margin-top')
+                element.style.removeProperty('margin-bottom')
+                window.setTimeout(function () {
+                    element.style.removeProperty('overflow')
+                    element.style.removeProperty('transition-duration')
+                    element.style.removeProperty('transition-property')
+                }, 500)
+
+            } else {
+                element.classList.add('show');
+                if (display === 'none') display = 'block'
+                element.style.display = display
+                let height = element.offsetHeight
+                element.style.overflow = 'hidden'
+                element.style.height = 0
+                element.style.paddingTop = 0
+                element.style.paddingBottom = 0
+                element.style.marginTop = 0
+                element.style.marginBottom = 0
+                element.offsetHeight // eslint-disable-line no-unused-expressions
+                element.style.transitionProperty = `height, margin, padding`
+                element.style.transitionDuration = '500ms'
+                element.style.height = height + 'px'
+                element.style.removeProperty('padding-top')
+                element.style.removeProperty('padding-bottom')
+                element.style.removeProperty('margin-top')
+                element.style.removeProperty('margin-bottom')
+                window.setTimeout(function () {
                     element.style.removeProperty('height')
-                    element.style.removeProperty('padding-top')
-                    element.style.removeProperty('padding-bottom')
-                    element.style.removeProperty('margin-top')
-                    element.style.removeProperty('margin-bottom')
-                    window.setTimeout(function () {
-                        element.style.removeProperty('overflow')
-                        element.style.removeProperty('transition-duration')
-                        element.style.removeProperty('transition-property')
-                    }, 500)
-
-                }else{
-                    element.classList.add('show');
-                    if (display === 'none') display = 'block'
-                    element.style.display = display
-                    let height = element.offsetHeight
-                    element.style.overflow = 'hidden'
-                    element.style.height = 0
-                    element.style.paddingTop = 0
-                    element.style.paddingBottom = 0
-                    element.style.marginTop = 0
-                    element.style.marginBottom = 0
-                    element.offsetHeight // eslint-disable-line no-unused-expressions
-                    element.style.transitionProperty = `height, margin, padding`
-                    element.style.transitionDuration = '500ms'
-                    element.style.height = height + 'px'
-                    element.style.removeProperty('padding-top')
-                    element.style.removeProperty('padding-bottom')
-                    element.style.removeProperty('margin-top')
-                    element.style.removeProperty('margin-bottom')
-                    window.setTimeout(function () {
-                        element.style.removeProperty('height')
-                        element.style.removeProperty('overflow')
-                        element.style.removeProperty('transition-duration')
-                        element.style.removeProperty('transition-property')
-                    }, 500)
-                }
+                    element.style.removeProperty('overflow')
+                    element.style.removeProperty('transition-duration')
+                    element.style.removeProperty('transition-property')
+                }, 500)
             }
         }
+    }
 
-        var elems = document.querySelectorAll("."+classnames);
-        [].forEach.call(elems, function(elemt) {
-            let el = elemt.nextElementSibling;
-            el.style = "display: none";
-        });
+    var elems = document.querySelectorAll("." + classnames);
+    [].forEach.call(elems, function (elemt) {
+        let el = elemt.nextElementSibling;
+        el.style = "display: none";
+    });
 
 }
 
