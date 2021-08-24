@@ -176,7 +176,7 @@ const SideBar = () => {
           </a>
           <ul id="sub-menu" className="sidebar-menu">
             <li  onClick={(e) => handleMegaSubmenu(e)}>
-              <Link href={`/c/Electronics`}  >
+              <Link href={`/c/electronics`}  >
                         <a>Electronics
                         <span className="sub-arrow"></span>
                         </a>
@@ -187,7 +187,7 @@ const SideBar = () => {
                     <Col xl="4">
                       <div className="link-section">
                         <h5>
-                          <Link  style={linkStyle} href={`/c/Electronics/Camera, Photo & Videos`}>
+                          <Link  style={linkStyle} href={`/c/electronics/camera-photo-and-videos`}>
                           <div style={linkStyle} >
                             Camera, Photo & Videos
                           </div>
@@ -195,7 +195,7 @@ const SideBar = () => {
                         </h5>
                         <ul>
                           <li>
-                            <Link href={`/c/Electronics/Camera, Photo & Videos/DSLR`}>
+                            <Link href={`/c/electronics/camera-photo-and-videos/dslr`}>
                             <div style={linkStyle} >DSLR</div>
                             </Link>
                           </li>
@@ -204,61 +204,61 @@ const SideBar = () => {
                               style={linkStyle}
                               onClick={() => CategoryFilter("Lenses")}
                             > */}
-                            <Link href={`/c/Electronics/Camera, Photo & Videos/Lenses`}>
+                            <Link href={`/c/electronics/camera-photo-and-videos/lenses`}>
                             <div style={linkStyle} >Lenses</div>
                             </Link>
                               
                             {/* </a> */}
                           </li>
                           <li>
-                          <Link href={`/c/Electronics/Camera, Photo & Videos/Mirrorless Camera`}>
+                          <Link href={`/c/electronics/camera-photo-and-videos/mirrorless-camera`}>
                             <div style={linkStyle} >Mirrorless Camera</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/c/Electronics/Camera, Photo & Videos/Tripods & Monopods`}>
+                          <Link href={`/c/electronics/camera-photo-and-videos/tripods-and-monopods`}>
                             <div style={linkStyle} >Tripods & Monopods</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/c/Electronics/Camera, Photo & Videos/Video Cameras`}>
+                          <Link href={`/c/electronics/camera-photo-and-videos/video-cameras`}>
                             <div style={linkStyle} >Video Cameras</div>
                             </Link>
                           </li>
                         </ul>
                         <h5>
-                        <Link href={`/c/Electronics/Speakers`}>
+                        <Link href={`/c/electronics/speakers`}>
                             <div style={linkStyle} >Speakers</div>
                             </Link>
                         </h5>
                         <ul>
                           <li>
-                          <Link href={`/c/Electronics/Speakers/Ceiling Speakers`}>
+                          <Link href={`/c/electronics/speakers/ceiling-speakers`}>
                             <div style={linkStyle} >Ceiling Speakers</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/c/Electronics/Speakers/Center Channel Speakers`}>
+                          <Link href={`/c/electronics/speakers/center-channel-speakers`}>
                             <div style={linkStyle} >Center Channel Speakers</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/c/Electronics/Speakers/Portable Speakers`}>
+                          <Link href={`/c/electronics/Speakers/Portable Speakers`}>
                             <div style={linkStyle} >Portable Speakers</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/c/Electronics/Speakers/Soundbars`}>
+                          <Link href={`/c/electronics/speakers/soundbars`}>
                             <div style={linkStyle} >Soundbars</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/c/Electronics/Speakers/Subwoofers`}>
+                          <Link href={`/c/electronics/speakers/subwoofers`}>
                             <div style={linkStyle} >Subwoofers</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/c/Electronics/Speakers/Wireless & Bluetooth Speakers`}>
+                          <Link href={`/c/electronics/speakers/wireless-and-bluetooth-speakers`}>
                             <div style={linkStyle} >Wireless & Bluetooth Speakers</div>
                             </Link>
                           </li>
@@ -268,34 +268,34 @@ const SideBar = () => {
                     <Col xl="4">
                       <div className="link-section">
                         <h5>
-                        <Link href={`/c/Electronics/Desktops`}>
+                        <Link href={`/c/electronics/desktops`}>
                             <div style={linkStyle} >Desktops</div>
                             </Link>
                         </h5>
                         <ul>
                           <li>
-                          <Link href={`/c/Electronics/Desktops/All in Ones`}>
+                          <Link href={`/c/electronics/desktops/all-in-Ones`}>
                             <div style={linkStyle} >All in Ones</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/c/Electronics/Desktops/Minis`}>
+                          <Link href={`/c/electronics/desktops/minis`}>
                             <div style={linkStyle} >Minis</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/c/Electronics/Desktops/Towers`}>
+                          <Link href={`/c/electronics/desktops/towers`}>
                             <div style={linkStyle} >Towers</div>
                             </Link>
                           </li>
                         </ul>
                         <h5>
-                        <Link href={`/c/Electronics/Laptops`}>
+                        <Link href={`/c/electronics/laptops`}>
                             <div style={linkStyle} >Laptops</div>
                             </Link>
                         </h5>
                         <h5>
-                        <Link href={`/c/Electronics/Phones`}>
+                        <Link href={`/c/electronics/phones`}>
                             <div style={linkStyle} >Phones</div>
                             </Link>
                         </h5>
@@ -311,50 +311,50 @@ const SideBar = () => {
                                                     </li>
                                                 </ul> */}
                         <h5>
-                        <Link href={`/c/Electronics/Film Cameras`}>
+                        <Link href={`/c/electronics/film-cameras`}>
                             <div style={linkStyle} >Film Cameras</div>
                             </Link>
                         </h5>
                         <ul>
                           <li>
-                          <Link href={`/c/Electronics/Film Cameras/Instant Cameras`}>
+                          <Link href={`/c/electronics/film-Cameras/instant-Cameras`}>
                             <div style={linkStyle} >Instant Cameras</div>
                             </Link>
                           </li>
                         </ul>
                         <h5>
-                         <Link href={`/c/Electronics/Monitors`}>
+                         <Link href={`/c/electronics/monitors`}>
                             <div style={linkStyle} >Monitors</div>
                             </Link>
                         </h5>
                         <h5>
-                        <Link href={`/c/Electronics/Tablets`}>
+                        <Link href={`/c/electronics/tablets`}>
                             <div style={linkStyle} >Tablets</div>
                             </Link>
                         </h5>
                         <h5>
-                        <Link href={`/c/Electronics/Video Games`}>
+                        <Link href={`/c/electronics/video-games`}>
                             <div style={linkStyle} >Video Games</div>
                             </Link>
                         </h5>
                         <ul>
                           <li>
-                          <Link href={`/c/Electronics/Video Games/Accessories`}>
+                          <Link href={`/c/electronics/video-games/accessories`}>
                             <div style={linkStyle} >Accessories</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/c/Electronics/Video Games/Consoles`}>
+                          <Link href={`/c/electronics/video-games/consoles`}>
                             <div style={linkStyle} >Consoles</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/c/Electronics/Video Games/Games`}>
+                          <Link href={`/c/electronics/video-games/games`}>
                             <div style={linkStyle} >Games</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/c/Electronics/Video Games/Nintendo`}>
+                          <Link href={`/c/electronics/video-games/nintendo`}>
                             <div style={linkStyle} >Nintendo</div>
                             </Link>
                           </li>
@@ -364,70 +364,70 @@ const SideBar = () => {
                     <Col xl="4">
                       <div className="link-section">
                         <h5>
-                        <Link href={`/c/Electronics/Headphones & Earphones`}>
+                        <Link href={`/c/electronics/headphones-and-earphones`}>
                             <div style={linkStyle} >Headphones & Earphones</div>
                             </Link>
                         </h5>
                         <ul>
                           <li>
-                          <Link href={`/c/Electronics/Headphones & Earphones/Bluetooth Headphones`}>
+                          <Link href={`/c/electronics/headphones-and-earphones/bluetooth-headphones`}>
                             <div style={linkStyle} >Bluetooth Headphones</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/c/Electronics/Headphones & Earphones/DJ & Professional Headphones`}>
+                          <Link href={`/c/electronics/headphones-and-earphones/dj-Professional-Headphones`}>
                             <div style={linkStyle} >DJ & Professional Headphones</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/c/Electronics/Headphones & Earphones/In Ear Earbud Headphones`}>
+                          <Link href={`/c/electronics/headphones-and-earphones/in-ear-earbud-headphones`}>
                             <div style={linkStyle} >In Ear Earbud Headphones</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/c/Electronics/Headphones & Earphones/Noise-Cancelling Headphones`}>
+                          <Link href={`/c/electronics/headphones-and-earphones/Noise-Cancelling Headphones`}>
                             <div style={linkStyle} >Noise-Cancelling Headphones</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/c/Electronics/Headphones & Earphones/On-Ear Headphones`}>
+                          <Link href={`/c/electronics/headphones-and-earphones/on-ear-headphones`}>
                             <div style={linkStyle} >On-Ear Headphones</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/c/Electronics/Headphones & Earphones/Over-Ear Headphones`}>
+                          <Link href={`/c/electronics/headphones-and-earphones/over-ear-headphones`}>
                             <div style={linkStyle} >Over-Ear Headphones</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/c/Electronics/Headphones & Earphones/Premium Audio Headphones`}>
+                          <Link href={`/c/electronics/headphones-and-earphones/premium-audio-headphones`}>
                             <div style={linkStyle} >Premium Audio Headphones</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/c/Electronics/Headphones & Earphones/Sports & Fitness Headphones`}>
+                          <Link href={`/c/electronics/headphones-and-earphones/sports-and-fitness-headphones`}>
                             <div style={linkStyle} >Sports & Fitness Headphones</div>
                             </Link>
                           </li>
                         </ul>
                         <h5>
-                        <Link href={`/c/Electronics/Computer & Accessories`}>
+                        <Link href={`/c/electronics/computer-and-accessories`}>
                             <div style={linkStyle} >Computer & Accessories</div>
                             </Link>
                         </h5>
                         <ul>
                           <li>
-                          <Link href={`/c/Electronics/Computer & Accessories/Chargers & Adapters`}>
+                          <Link href={`/c/electronics/computer-and-accessories/chargers-and-adapters`}>
                             <div style={linkStyle} >Chargers & Adapters</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/c/Electronics/Computer & Accessories/Data Storage`}>
+                          <Link href={`/c/electronics/computer-and-accessories/data-storage`}>
                             <div style={linkStyle} >Data Storage</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/c/Electronics/Computer & Accessories/Keyboards`}>
+                          <Link href={`/c/electronics/computer-and-accessories/keyboards`}>
                             <div style={linkStyle} >Keyboards</div>
                             </Link>
                           </li>
@@ -439,7 +439,7 @@ const SideBar = () => {
               </ul>
             </li>
             <li onClick={(e) => handleMegaSubmenu(e)}>
-            <Link href={`/c/Fashion`}>
+            <Link href={`/c/fashion`}>
                         <a>Fashion
                         <span className="sub-arrow"></span>
                         </a>
@@ -450,62 +450,62 @@ const SideBar = () => {
                     <Col xl="4">
                       <div className="link-section">
                         <h5>
-                        <Link href={`/c/Fashion/Clothing, Shoes & Jewelry`}>
+                        <Link href={`/c/fashion/Clothing-Shoes-and-jewelry`}>
                             <div style={linkStyle} > Clothing, Shoes & Jewelry</div>
                             </Link>
                           
                         </h5>
                         <ul>
                           <li>
-                          <Link href={`/c/Fashion/Clothing, Shoes & Jewelry/Kid's Fashion`}>
+                          <Link href={`/c/Fashion/Clothing-Shoes-and-jewelry/kids-fashion`}>
                             <div style={linkStyle} >Kid's Fashion</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/c/Fashion/Clothing, Shoes & Jewelry/Men's Fashion`}>
+                          <Link href={`/c/Fashion/Clothing-Shoes-and-jewelry/mens-fashion`}>
                             <div style={linkStyle} >Men's Fashion</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/c/Fashion/Clothing, Shoes & Jewelry/Shoes`}>
+                          <Link href={`/c/Fashion/Clothing-Shoes-and-jewelry/shoes`}>
                             <div style={linkStyle} >Shoes</div>
                             </Link>  
                           </li>
                           <li>
-                          <Link href={`/c/Fashion/Clothing, Shoes & Jewelry/Women's Fashion`}>
+                          <Link href={`/c/Fashion/Clothing-Shoes-and-jewelry/womens-fashion`}>
                             <div style={linkStyle} >Women's Fashion</div>
                             </Link>
                             
                           </li>
                         </ul>
                         <h5>
-                        <Link href={`/c/Fashion/Eyewear`}>
+                        <Link href={`/c/Fashion/eyewear`}>
                             <div style={linkStyle} >Eyewear</div>
                             </Link>
                         </h5>
                         <ul>
                           <li>
-                          <Link href={`/c/Fashion/Eyewear/Eyeglass Cases`}>
+                          <Link href={`/c/Fashion/eyewear/eyeglass-cases`}>
                             <div style={linkStyle} >Eyeglass Cases</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/c/Fashion/Eyewear/Eyeglass Chains`}>
+                          <Link href={`/c/Fashion/eyewear/Eyeglass Chains`}>
                             <div style={linkStyle} >Eyeglass Chains</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/c/Fashion/Eyewear/Eyeglass Frames`}>
+                          <Link href={`/c/Fashion/eyewear/Eyeglass Frames`}>
                             <div style={linkStyle} >Eyeglass Frames</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/c/Fashion/Eyewear/Replacement Sunglass Lenses`}>
+                          <Link href={`/c/Fashion/eyewear/Replacement Sunglass Lenses`}>
                             <div style={linkStyle} >Replacement Sunglass Lenses</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/c/Fashion/Eyewear/Sunglasses`}>
+                          <Link href={`/c/Fashion/eyewear/Sunglasses`}>
                             <div style={linkStyle} >Sunglasses</div>
                             </Link>
                           </li>
