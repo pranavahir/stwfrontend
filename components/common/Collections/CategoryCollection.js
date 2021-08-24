@@ -149,7 +149,7 @@ const CategoryCollection = ({ type, categoryData, title, subtitle, designClass, 
                                                 {/* <center> 
                                                 <AutoFitImage frameWidth="150px" imgSize="contain" frameHeight="160px" imgSrc={collection.imguRL}/> 
                                                 </center>  */}
-                                                 <Link href={`/c/${collection.CategoryName}/${collection.SubCategoryName}`}><div className="categoreCollection">
+                                                 <Link href={`/category/${collection.CategoryName}/${collection.SubCategoryName}`}><div className="categoreCollection">
                                                      {collection.SubCategoryName}
                                                      {/* <AutoFitImage frameWidth="72px" imgSize="contain" frameHeight="53px" imgSrc={getImage("Desktops")}/>  */}
                                                 </div></Link> 
@@ -160,7 +160,7 @@ const CategoryCollection = ({ type, categoryData, title, subtitle, designClass, 
                                                 {/* <center> 
                                                 <AutoFitImage frameWidth="150px" imgSize="contain" frameHeight="160px" imgSrc={collection.imguRL}/> 
                                                 </center>  */}
-                                                 <Link href={`/c/${collection.CategoryName}/${collection.SubCategoryName}/${collection.LeafCategory}`}><div className="categoreCollection">
+                                                 <Link href={`/category/${collection.CategoryName}/${collection.SubCategoryName}/${collection.LeafCategory}`}><div className="categoreCollection">
                                                      {collection.LeafCategory}
                                                      {/* <AutoFitImage frameWidth="72px" imgSize="contain" frameHeight="53px" imgSrc={getImage("Desktops")}/>  */}
                                                 </div></Link> 

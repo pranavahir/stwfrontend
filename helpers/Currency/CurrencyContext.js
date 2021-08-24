@@ -136,7 +136,7 @@ var ListConfig=[
       
       {
         imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
-        categoryUrl:"/c/Phone",
+        categoryUrl:"/category/Phone",
         category:["phone"],
         keyWorld:"More phone >>",
       
@@ -144,25 +144,25 @@ var ListConfig=[
       },
       {
         imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
-        categoryUrl:"/c/Laptop",
+        categoryUrl:"/category/Laptop",
         category:"laptop",
         keyWorld:"More Laptops >>"
       },
       {
         imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
-        categoryUrl:"/c/Tablet",
+        categoryUrl:"/category/Tablet",
         category:"tablet",
         keyWorld:"More Tablet >>"
       },
       {
         imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
-        categoryUrl:"/c/HeadPhone",
+        categoryUrl:"/category/HeadPhone",
         category:"HeadPhone",
         keyWorld:"More HeadPhone >>"
       },
       {
         imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
-        categoryUrl:"/c/Phone",
+        categoryUrl:"/category/Phone",
         category:["phone"],
         keyWorld:"More phone >>",
         
@@ -170,19 +170,19 @@ var ListConfig=[
       },
       {
         imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
-        categoryUrl:"/c/Laptop",
+        categoryUrl:"/category/Laptop",
         category:"laptop",
         keyWorld:"More Laptops >>"
       },
       {
         imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
-        categoryUrl:"/c/Tablet",
+        categoryUrl:"/category/Tablet",
         category:"tablet",
         keyWorld:"More Tablet >>"
       },
       {
         imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
-        categoryUrl:"/c/HeadPhone",
+        categoryUrl:"/category/HeadPhone",
         category:"HeadPhone",
         keyWorld:"More HeadPhone >>"
       },
@@ -320,7 +320,7 @@ var ListConfig=[
     topCollections:[
       {
         imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
-        categoryUrl:"/c/Phone",
+        categoryUrl:"/category/Phone",
         category:["phone"],
         keyWorld:"More phone >>",
         
@@ -328,25 +328,25 @@ var ListConfig=[
       },
       {
         imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
-        categoryUrl:"/c/Laptop",
+        categoryUrl:"/category/Laptop",
         category:"laptop",
         keyWorld:"More Laptops >>"
       },
       {
         imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
-        categoryUrl:"/c/Tablet",
+        categoryUrl:"/category/Tablet",
         category:"tablet",
         keyWorld:"More Tablet >>"
       },
       {
         imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
-        categoryUrl:"/c/HeadPhone",
+        categoryUrl:"/category/HeadPhone",
         category:"HeadPhone",
         keyWorld:"More HeadPhone >>"
       },
       {
         imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
-        categoryUrl:"/c/Phone",
+        categoryUrl:"/category/Phone",
         category:["phone"],
         keyWorld:"More phone >>",
         
@@ -354,19 +354,19 @@ var ListConfig=[
       },
       {
         imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
-        categoryUrl:"/c/Laptop",
+        categoryUrl:"/category/Laptop",
         category:"laptop",
         keyWorld:"More Laptops >>"
       },
       {
         imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
-        categoryUrl:"/c/Tablet",
+        categoryUrl:"/category/Tablet",
         category:"tablet",
         keyWorld:"More Tablet >>"
       },
       {
         imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
-        categoryUrl:"/c/HeadPhone",
+        categoryUrl:"/category/HeadPhone",
         category:"HeadPhone",
         keyWorld:"More HeadPhone >>"
       },
@@ -499,7 +499,7 @@ var ListConfig=[
     topCollections:[
       {
         imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
-        categoryUrl:"/c/Phone",
+        categoryUrl:"/category/Phone",
         category:["phone"],
         keyWorld:"More phone >>",
         
@@ -507,25 +507,25 @@ var ListConfig=[
       },
       {
         imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
-        categoryUrl:"/c/Laptop",
+        categoryUrl:"/category/Laptop",
         category:"laptop",
         keyWorld:"More Laptops >>"
       },
       {
         imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
-        categoryUrl:"/c/Tablet",
+        categoryUrl:"/category/Tablet",
         category:"tablet",
         keyWorld:"More Tablet >>"
       },
       {
         imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
-        categoryUrl:"/c/HeadPhone",
+        categoryUrl:"/category/HeadPhone",
         category:"HeadPhone",
         keyWorld:"More HeadPhone >>"
       },
       {
         imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
-        categoryUrl:"/c/Phone",
+        categoryUrl:"/category/Phone",
         category:["phone"],
         keyWorld:"More phone >>",
         
@@ -533,19 +533,19 @@ var ListConfig=[
       },
       {
         imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
-        categoryUrl:"/c/Laptop",
+        categoryUrl:"/category/Laptop",
         category:"laptop",
         keyWorld:"More Laptops >>"
       },
       {
         imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
-        categoryUrl:"/c/Tablet",
+        categoryUrl:"/category/Tablet",
         category:"tablet",
         keyWorld:"More Tablet >>"
       },
       {
         imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
-        categoryUrl:"/c/HeadPhone",
+        categoryUrl:"/category/HeadPhone",
         category:"HeadPhone",
         keyWorld:"More HeadPhone >>"
       },
@@ -678,7 +678,7 @@ var ListConfig=[
     topCollections:[
       {
         imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
-        categoryUrl:"/c/Phone",
+        categoryUrl:"/category/Phone",
         category:["iphone","oneplus","samsung"],
         keyWorld:"More phone >>",
         
@@ -686,25 +686,25 @@ var ListConfig=[
       },
       {
         imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
-        categoryUrl:"/c/Laptop",
+        categoryUrl:"/category/Laptop",
         category:"laptop",
         keyWorld:"More Laptops >>"
       },
       {
         imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
-        categoryUrl:"/c/Tablet",
+        categoryUrl:"/category/Tablet",
         category:"tablet",
         keyWorld:"More Tablet >>"
       },
       {
         imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
-        categoryUrl:"/c/HeadPhone",
+        categoryUrl:"/category/HeadPhone",
         category:"HeadPhone",
         keyWorld:"More HeadPhone >>"
       },
       {
         imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
-        categoryUrl:"/c/Phone",
+        categoryUrl:"/category/Phone",
         category:["iphone","oneplus","samsung"],
         keyWorld:"More phone >>",
         
@@ -712,19 +712,19 @@ var ListConfig=[
       },
       {
         imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
-        categoryUrl:"/c/Laptop",
+        categoryUrl:"/category/Laptop",
         category:"laptop",
         keyWorld:"More Laptops >>"
       },
       {
         imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
-        categoryUrl:"/c/Tablet",
+        categoryUrl:"/category/Tablet",
         category:"tablet",
         keyWorld:"More Tablet >>"
       },
       {
         imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
-        categoryUrl:"/c/HeadPhone",
+        categoryUrl:"/category/HeadPhone",
         category:"HeadPhone",
         keyWorld:"More HeadPhone >>"
       },
@@ -857,7 +857,7 @@ var ListConfig=[
     topCollections:[
       {
         imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
-        categoryUrl:"/c/Phone",
+        categoryUrl:"/category/Phone",
         category:["phone"],
         keyWorld:"More phone >>",
         
@@ -865,25 +865,25 @@ var ListConfig=[
       },
       {
         imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
-        categoryUrl:"/c/Laptop",
+        categoryUrl:"/category/Laptop",
         category:"laptop",
         keyWorld:"More Laptops >>"
       },
       {
         imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
-        categoryUrl:"/c/Tablet",
+        categoryUrl:"/category/Tablet",
         category:"tablet",
         keyWorld:"More Tablet >>"
       },
       {
         imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
-        categoryUrl:"/c/HeadPhone",
+        categoryUrl:"/category/HeadPhone",
         category:"HeadPhone",
         keyWorld:"More HeadPhone >>"
       },
       {
         imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
-        categoryUrl:"/c/Phone",
+        categoryUrl:"/category/Phone",
         category:["phone"],
         keyWorld:"More phone >>",
         
@@ -891,19 +891,19 @@ var ListConfig=[
       },
       {
         imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
-        categoryUrl:"/c/Laptop",
+        categoryUrl:"/category/Laptop",
         category:"laptop",
         keyWorld:"More Laptops >>"
       },
       {
         imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
-        categoryUrl:"/c/Tablet",
+        categoryUrl:"/category/Tablet",
         category:"tablet",
         keyWorld:"More Tablet >>"
       },
       {
         imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
-        categoryUrl:"/c/HeadPhone",
+        categoryUrl:"/category/HeadPhone",
         category:"HeadPhone",
         keyWorld:"More HeadPhone >>"
       },
@@ -1035,7 +1035,7 @@ var ListConfig=[
   topCollections:[
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
-      categoryUrl:"/c/Phone",
+      categoryUrl:"/category/Phone",
       category:["phone"],
       keyWorld:"More phone >>",
       
@@ -1043,25 +1043,25 @@ var ListConfig=[
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
-      categoryUrl:"/c/Laptop",
+      categoryUrl:"/category/Laptop",
       category:"laptop",
       keyWorld:"More Laptops >>"
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
-      categoryUrl:"/c/Tablet",
+      categoryUrl:"/category/Tablet",
       category:"tablet",
       keyWorld:"More Tablet >>"
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
-      categoryUrl:"/c/HeadPhone",
+      categoryUrl:"/category/HeadPhone",
       category:"headphone",
       keyWorld:"More HeadPhone >>"
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
-      categoryUrl:"/c/Phone",
+      categoryUrl:"/category/Phone",
       category:["phone"],
       keyWorld:"More phone >>",
       
@@ -1069,19 +1069,19 @@ var ListConfig=[
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
-      categoryUrl:"/c/Laptop",
+      categoryUrl:"/category/Laptop",
       category:"laptop",
       keyWorld:"More Laptops >>"
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
-      categoryUrl:"/c/Tablet",
+      categoryUrl:"/category/Tablet",
       category:"tablet",
       keyWorld:"More Tablet >>"
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
-      categoryUrl:"/c/HeadPhone",
+      categoryUrl:"/category/HeadPhone",
       category:"HeadPhone",
       keyWorld:"More HeadPhone >>"
     },
@@ -1214,7 +1214,7 @@ var ListConfig=[
   topCollections:[
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
-      categoryUrl:"/c/Phone",
+      categoryUrl:"/category/Phone",
       category:["phone"],
       keyWorld:"More phone >>",
       
@@ -1222,25 +1222,25 @@ var ListConfig=[
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
-      categoryUrl:"/c/Laptop",
+      categoryUrl:"/category/Laptop",
       category:"laptop",
       keyWorld:"More Laptops >>"
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
-      categoryUrl:"/c/Tablet",
+      categoryUrl:"/category/Tablet",
       category:"tablet",
       keyWorld:"More Tablet >>"
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
-      categoryUrl:"/c/HeadPhone",
+      categoryUrl:"/category/HeadPhone",
       category:"headphone",
       keyWorld:"More HeadPhone >>"
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
-      categoryUrl:"/c/Phone",
+      categoryUrl:"/category/Phone",
       category:["phone"],
       keyWorld:"More phone >>",
       
@@ -1248,19 +1248,19 @@ var ListConfig=[
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
-      categoryUrl:"/c/Laptop",
+      categoryUrl:"/category/Laptop",
       category:"laptop",
       keyWorld:"More Laptops >>"
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
-      categoryUrl:"/c/Tablet",
+      categoryUrl:"/category/Tablet",
       category:"tablet",
       keyWorld:"More Tablet >>"
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
-      categoryUrl:"/c/HeadPhone",
+      categoryUrl:"/category/HeadPhone",
       category:"HeadPhone",
       keyWorld:"More HeadPhone >>"
     },
@@ -1395,7 +1395,7 @@ var ListConfig=[
   topCollections:[
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
-      categoryUrl:"/c/Phone",
+      categoryUrl:"/category/Phone",
       category:["phone"],
       keyWorld:"More phone >>",
       
@@ -1403,25 +1403,25 @@ var ListConfig=[
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
-      categoryUrl:"/c/Laptop",
+      categoryUrl:"/category/Laptop",
       category:"laptop",
       keyWorld:"More Laptops >>"
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
-      categoryUrl:"/c/Tablet",
+      categoryUrl:"/category/Tablet",
       category:"tablet",
       keyWorld:"More Tablet >>"
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
-      categoryUrl:"/c/HeadPhone",
+      categoryUrl:"/category/HeadPhone",
       category:"headphone",
       keyWorld:"More HeadPhone >>"
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
-      categoryUrl:"/c/Phone",
+      categoryUrl:"/category/Phone",
       category:["phone"],
       keyWorld:"More phone >>",
       
@@ -1429,19 +1429,19 @@ var ListConfig=[
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
-      categoryUrl:"/c/Laptop",
+      categoryUrl:"/category/Laptop",
       category:"laptop",
       keyWorld:"More Laptops >>"
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
-      categoryUrl:"/c/Tablet",
+      categoryUrl:"/category/Tablet",
       category:"tablet",
       keyWorld:"More Tablet >>"
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
-      categoryUrl:"/c/HeadPhone",
+      categoryUrl:"/category/HeadPhone",
       category:"HeadPhone",
       keyWorld:"More HeadPhone >>"
     },
@@ -1576,7 +1576,7 @@ var ListConfig=[
   topCollections:[
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
-      categoryUrl:"/c/Phone",
+      categoryUrl:"/category/Phone",
       category:["phone"],
       keyWorld:"More phone >>",
       
@@ -1584,25 +1584,25 @@ var ListConfig=[
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
-      categoryUrl:"/c/Laptop",
+      categoryUrl:"/category/Laptop",
       category:"laptop",
       keyWorld:"More Laptops >>"
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
-      categoryUrl:"/c/Tablet",
+      categoryUrl:"/category/Tablet",
       category:"tablet",
       keyWorld:"More Tablet >>"
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
-      categoryUrl:"/c/HeadPhone",
+      categoryUrl:"/category/HeadPhone",
       category:"headphone",
       keyWorld:"More HeadPhone >>"
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
-      categoryUrl:"/c/Phone",
+      categoryUrl:"/category/Phone",
       category:["phone"],
       keyWorld:"More phone >>",
       
@@ -1610,19 +1610,19 @@ var ListConfig=[
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
-      categoryUrl:"/c/Laptop",
+      categoryUrl:"/category/Laptop",
       category:"laptop",
       keyWorld:"More Laptops >>"
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
-      categoryUrl:"/c/Tablet",
+      categoryUrl:"/category/Tablet",
       category:"tablet",
       keyWorld:"More Tablet >>"
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
-      categoryUrl:"/c/HeadPhone",
+      categoryUrl:"/category/HeadPhone",
       category:"HeadPhone",
       keyWorld:"More HeadPhone >>"
     },
@@ -1755,7 +1755,7 @@ var ListConfig=[
   topCollections:[
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
-      categoryUrl:"/c/Phone",
+      categoryUrl:"/category/Phone",
       category:["phone"],
       keyWorld:"More phone >>",
       
@@ -1763,25 +1763,25 @@ var ListConfig=[
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
-      categoryUrl:"/c/Laptop",
+      categoryUrl:"/category/Laptop",
       category:"laptop",
       keyWorld:"More Laptops >>"
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
-      categoryUrl:"/c/Tablet",
+      categoryUrl:"/category/Tablet",
       category:"tablet",
       keyWorld:"More Tablet >>"
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
-      categoryUrl:"/c/HeadPhone",
+      categoryUrl:"/category/HeadPhone",
       category:"headphone",
       keyWorld:"More HeadPhone >>"
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
-      categoryUrl:"/c/Phone",
+      categoryUrl:"/category/Phone",
       category:["phone"],
       keyWorld:"More phone >>",
       
@@ -1789,19 +1789,19 @@ var ListConfig=[
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
-      categoryUrl:"/c/Laptop",
+      categoryUrl:"/category/Laptop",
       category:"laptop",
       keyWorld:"More Laptops >>"
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
-      categoryUrl:"/c/Tablet",
+      categoryUrl:"/category/Tablet",
       category:"tablet",
       keyWorld:"More Tablet >>"
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
-      categoryUrl:"/c/HeadPhone",
+      categoryUrl:"/category/HeadPhone",
       category:"HeadPhone",
       keyWorld:"More HeadPhone >>"
     },
@@ -1934,7 +1934,7 @@ var ListConfig=[
   topCollections:[
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
-      categoryUrl:"/c/Phone",
+      categoryUrl:"/category/Phone",
       category:["phone"],
       keyWorld:"More phone >>",
       
@@ -1942,25 +1942,25 @@ var ListConfig=[
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
-      categoryUrl:"/c/Laptop",
+      categoryUrl:"/category/Laptop",
       category:"laptop",
       keyWorld:"More Laptops >>"
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
-      categoryUrl:"/c/Tablet",
+      categoryUrl:"/category/Tablet",
       category:"tablet",
       keyWorld:"More Tablet >>"
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
-      categoryUrl:"/c/HeadPhone",
+      categoryUrl:"/category/HeadPhone",
       category:"headphone",
       keyWorld:"More HeadPhone >>"
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
-      categoryUrl:"/c/Phone",
+      categoryUrl:"/category/Phone",
       category:["phone"],
       keyWorld:"More phone >>",
       
@@ -1968,19 +1968,19 @@ var ListConfig=[
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
-      categoryUrl:"/c/Laptop",
+      categoryUrl:"/category/Laptop",
       category:"laptop",
       keyWorld:"More Laptops >>"
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
-      categoryUrl:"/c/Tablet",
+      categoryUrl:"/category/Tablet",
       category:"tablet",
       keyWorld:"More Tablet >>"
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
-      categoryUrl:"/c/HeadPhone",
+      categoryUrl:"/category/HeadPhone",
       category:"HeadPhone",
       keyWorld:"More HeadPhone >>"
     },
@@ -2113,7 +2113,7 @@ var ListConfig=[
   topCollections:[
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
-      categoryUrl:"/c/Phone",
+      categoryUrl:"/category/Phone",
       category:["phone"],
       keyWorld:"More phone >>",
       
@@ -2121,25 +2121,25 @@ var ListConfig=[
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
-      categoryUrl:"/c/Laptop",
+      categoryUrl:"/category/Laptop",
       category:"laptop",
       keyWorld:"More Laptops >>"
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
-      categoryUrl:"/c/Tablet",
+      categoryUrl:"/category/Tablet",
       category:"tablet",
       keyWorld:"More Tablet >>"
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
-      categoryUrl:"/c/HeadPhone",
+      categoryUrl:"/category/HeadPhone",
       category:"headphone",
       keyWorld:"More HeadPhone >>"
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
-      categoryUrl:"/c/Phone",
+      categoryUrl:"/category/Phone",
       category:["phone"],
       keyWorld:"More phone >>",
       
@@ -2147,19 +2147,19 @@ var ListConfig=[
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
-      categoryUrl:"/c/Laptop",
+      categoryUrl:"/category/Laptop",
       category:"laptop",
       keyWorld:"More Laptops >>"
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
-      categoryUrl:"/c/Tablet",
+      categoryUrl:"/category/Tablet",
       category:"tablet",
       keyWorld:"More Tablet >>"
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
-      categoryUrl:"/c/HeadPhone",
+      categoryUrl:"/category/HeadPhone",
       category:"HeadPhone",
       keyWorld:"More HeadPhone >>"
     },
@@ -2292,7 +2292,7 @@ var ListConfig=[
   topCollections:[
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
-      categoryUrl:"/c/Phone",
+      categoryUrl:"/category/Phone",
       category:["phone"],
       keyWorld:"More phone >>",
       
@@ -2300,25 +2300,25 @@ var ListConfig=[
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
-      categoryUrl:"/c/Laptop",
+      categoryUrl:"/category/Laptop",
       category:"laptop",
       keyWorld:"More Laptops >>"
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
-      categoryUrl:"/c/Tablet",
+      categoryUrl:"/category/Tablet",
       category:"tablet",
       keyWorld:"More Tablet >>"
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
-      categoryUrl:"/c/HeadPhone",
+      categoryUrl:"/category/HeadPhone",
       category:"headphone",
       keyWorld:"More HeadPhone >>"
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
-      categoryUrl:"/c/Phone",
+      categoryUrl:"/category/Phone",
       category:["phone"],
       keyWorld:"More phone >>",
       
@@ -2326,19 +2326,19 @@ var ListConfig=[
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
-      categoryUrl:"/c/Laptop",
+      categoryUrl:"/category/Laptop",
       category:"laptop",
       keyWorld:"More Laptops >>"
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
-      categoryUrl:"/c/Tablet",
+      categoryUrl:"/category/Tablet",
       category:"tablet",
       keyWorld:"More Tablet >>"
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
-      categoryUrl:"/c/HeadPhone",
+      categoryUrl:"/category/HeadPhone",
       category:"HeadPhone",
       keyWorld:"More HeadPhone >>"
     },
@@ -2471,7 +2471,7 @@ var ListConfig=[
   topCollections:[
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
-      categoryUrl:"/c/Phone",
+      categoryUrl:"/category/Phone",
       category:["phone"],
       keyWorld:"More phone >>",
       
@@ -2479,25 +2479,25 @@ var ListConfig=[
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
-      categoryUrl:"/c/Laptop",
+      categoryUrl:"/category/Laptop",
       category:"laptop",
       keyWorld:"More Laptops >>"
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
-      categoryUrl:"/c/Tablet",
+      categoryUrl:"/category/Tablet",
       category:"tablet",
       keyWorld:"More Tablet >>"
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
-      categoryUrl:"/c/HeadPhone",
+      categoryUrl:"/category/HeadPhone",
       category:"headphone",
       keyWorld:"More HeadPhone >>"
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
-      categoryUrl:"/c/Phone",
+      categoryUrl:"/category/Phone",
       category:["phone"],
       keyWorld:"More phone >>",
       
@@ -2505,19 +2505,19 @@ var ListConfig=[
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
-      categoryUrl:"/c/Laptop",
+      categoryUrl:"/category/Laptop",
       category:"laptop",
       keyWorld:"More Laptops >>"
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
-      categoryUrl:"/c/Tablet",
+      categoryUrl:"/category/Tablet",
       category:"tablet",
       keyWorld:"More Tablet >>"
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
-      categoryUrl:"/c/HeadPhone",
+      categoryUrl:"/category/HeadPhone",
       category:"HeadPhone",
       keyWorld:"More HeadPhone >>"
     },
@@ -2674,7 +2674,7 @@ var ListConfig=[
   topCollections:[
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
-      categoryUrl:"/c/Phone",
+      categoryUrl:"/category/Phone",
       category:["phone"],
       keyWorld:"More phone >>",
       
@@ -2682,25 +2682,25 @@ var ListConfig=[
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
-      categoryUrl:"/c/Laptop",
+      categoryUrl:"/category/Laptop",
       category:"laptop",
       keyWorld:"More Laptops >>"
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
-      categoryUrl:"/c/Tablet",
+      categoryUrl:"/category/Tablet",
       category:"tablet",
       keyWorld:"More Tablet >>"
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
-      categoryUrl:"/c/HeadPhone",
+      categoryUrl:"/category/HeadPhone",
       category:"headphone",
       keyWorld:"More HeadPhone >>"
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
-      categoryUrl:"/c/Phone",
+      categoryUrl:"/category/Phone",
       category:["phone"],
       keyWorld:"More phone >>",
       
@@ -2708,19 +2708,19 @@ var ListConfig=[
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
-      categoryUrl:"/c/Laptop",
+      categoryUrl:"/category/Laptop",
       category:"laptop",
       keyWorld:"More Laptops >>"
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
-      categoryUrl:"/c/Tablet",
+      categoryUrl:"/category/Tablet",
       category:"tablet",
       keyWorld:"More Tablet >>"
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
-      categoryUrl:"/c/HeadPhone",
+      categoryUrl:"/category/HeadPhone",
       category:"HeadPhone",
       keyWorld:"More HeadPhone >>"
     },
@@ -2853,7 +2853,7 @@ var ListConfig=[
   topCollections:[
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
-      categoryUrl:"/c/Phone",
+      categoryUrl:"/category/Phone",
       category:["phone"],
       keyWorld:"More phone >>",
       
@@ -2861,25 +2861,25 @@ var ListConfig=[
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
-      categoryUrl:"/c/Laptop",
+      categoryUrl:"/category/Laptop",
       category:"laptop",
       keyWorld:"More Laptops >>"
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
-      categoryUrl:"/c/Tablet",
+      categoryUrl:"/category/Tablet",
       category:"tablet",
       keyWorld:"More Tablet >>"
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
-      categoryUrl:"/c/HeadPhone",
+      categoryUrl:"/category/HeadPhone",
       category:"headphone",
       keyWorld:"More HeadPhone >>"
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
-      categoryUrl:"/c/Phone",
+      categoryUrl:"/category/Phone",
       category:["phone"],
       keyWorld:"More phone >>",
       
@@ -2887,19 +2887,19 @@ var ListConfig=[
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
-      categoryUrl:"/c/Laptop",
+      categoryUrl:"/category/Laptop",
       category:"laptop",
       keyWorld:"More Laptops >>"
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
-      categoryUrl:"/c/Tablet",
+      categoryUrl:"/category/Tablet",
       category:"tablet",
       keyWorld:"More Tablet >>"
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
-      categoryUrl:"/c/HeadPhone",
+      categoryUrl:"/category/HeadPhone",
       category:"HeadPhone",
       keyWorld:"More HeadPhone >>"
     },
@@ -3032,7 +3032,7 @@ var ListConfig=[
   topCollections:[
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
-      categoryUrl:"/c/Phone",
+      categoryUrl:"/category/Phone",
       category:["phone"],
       keyWorld:"More phone >>",
       
@@ -3040,25 +3040,25 @@ var ListConfig=[
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
-      categoryUrl:"/c/Laptop",
+      categoryUrl:"/category/Laptop",
       category:"laptop",
       keyWorld:"More Laptops >>"
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
-      categoryUrl:"/c/Tablet",
+      categoryUrl:"/category/Tablet",
       category:"tablet",
       keyWorld:"More Tablet >>"
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
-      categoryUrl:"/c/HeadPhone",
+      categoryUrl:"/category/HeadPhone",
       category:"headphone",
       keyWorld:"More HeadPhone >>"
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
-      categoryUrl:"/c/Phone",
+      categoryUrl:"/category/Phone",
       category:["phone"],
       keyWorld:"More phone >>",
       
@@ -3066,19 +3066,19 @@ var ListConfig=[
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
-      categoryUrl:"/c/Laptop",
+      categoryUrl:"/category/Laptop",
       category:"laptop",
       keyWorld:"More Laptops >>"
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
-      categoryUrl:"/c/Tablet",
+      categoryUrl:"/category/Tablet",
       category:"tablet",
       keyWorld:"More Tablet >>"
     },
     {
       imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
-      categoryUrl:"/c/HeadPhone",
+      categoryUrl:"/category/HeadPhone",
       category:"HeadPhone",
       keyWorld:"More HeadPhone >>"
     },

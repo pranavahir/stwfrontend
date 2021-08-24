@@ -63,7 +63,7 @@ const Banner = () => {
       <section className="p-0">
         <Slider {...homeSlider} className="slide-1 home-slider">
           <div>
-          <Link href={`/c/Electronics`}>
+          <Link href={`/category/Electronics`}>
           <div className="home home1 text-center">
               <Container>
                 <Row>
@@ -82,7 +82,7 @@ const Banner = () => {
           </Link> 
           </div>
           <div>
-          <Link href={`/c/Makeup`}>
+          <Link href={`/category/Makeup`}>
           <div className="home home2 text-center">
               <Container>
                 <Row>
@@ -101,7 +101,7 @@ const Banner = () => {
           </Link>
           </div>
           <div>
-          <Link href={`/c/Home & Kitchen`}>
+          <Link href={`/category/Home & Kitchen`}>
           <div className="home home3 text-center">
               <Container>
                 <Row>

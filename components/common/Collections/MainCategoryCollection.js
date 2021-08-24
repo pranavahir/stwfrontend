@@ -110,7 +110,7 @@ const MainCategoryCollection = ({ type, categoryData, title, subtitle, designCla
                                         
                                         {categoryData && categoryData.map((collection, index) =>
                                             <div style={linkStyle} className="front" key={index}  >
-                                                 <Link href={`/c/${collection.CategoryName}`}><div className="MaincategoreCollection">
+                                                 <Link href={`/category/${collection.CategoryName}`}><div className="MaincategoreCollection">
                                                      {collection.CategoryName}
                                                 </div></Link> 
                                             </div>)}
