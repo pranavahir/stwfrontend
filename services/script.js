@@ -442,7 +442,7 @@ export const CategoryList = [
             {
                 CategoryName: "Electronics",
                 SubCategoryName: "Camera, Photo & Videos",
-                MenuKey: "camera-Photo-and-Videos",
+                MenuKey: "camera-photo-and-videos",
                 leafCategoryList: [
                     {
                         CategoryName: "Electronics",
@@ -480,7 +480,7 @@ export const CategoryList = [
             {
                 CategoryName: "Electronics",
                 SubCategoryName: "Headphones & Earphones",
-                MenuKey: "headphone-and-earphones",
+                MenuKey: "headphones-and-earphones",
                 leafCategoryList: [
                     {
                         CategoryName: "Electronics",
