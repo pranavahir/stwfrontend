@@ -32,11 +32,11 @@ const LeftSidebar = () => {
       }
    
   return (
-    <CommonLayout title={MCategory} subTitle={MSCategory} parent="home" >
+    <CommonLayout title={MCategory} menu={category} submenu={subCategory}  subTitle={MSCategory} parent="home" >
     {/* <section className="section-b-space"> */}
    <Container>
        <Row>
-           <ProductList colClass="col-lg-3 col-6 col-grid-box" layoutList='' type="SubCategory" parentCategory={category} pathId={subCategory} noSidebar={true} />
+           <ProductList colClass="col-lg-3 col-6 col-grid-box" layoutList='' type="SubCategory" parentCategory={MCategory} pathId={MSCategory} noSidebar={true} />
        </Row>
    </Container>
    {/* </section> */}

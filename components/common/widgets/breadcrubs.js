@@ -3,7 +3,7 @@ import { Container, Row ,Col } from 'reactstrap';
 import Link from "next/link";
 
 
-const Breadcrubs = ({title ,parent ,subTitle,leafTitle}) => {
+const Breadcrubs = ({title ,parent ,subTitle,leafTitle,menu, submenu, leafMenu,}) => {
 
     return (
         <div className="breadcrumb-section">
@@ -21,7 +21,7 @@ const Breadcrubs = ({title ,parent ,subTitle,leafTitle}) => {
                                     
                                     subTitle === undefined ?  
                                    <li className="breadcrumb-item" aria-current="page"><b>{title}</b></li> : 
-                                   <li className="breadcrumb-item" aria-current="page"><b><Link href={`/category/${title}`}>{title}</Link></b></li> 
+                                   <li className="breadcrumb-item" aria-current="page"><b><Link href={`/category/${menu}`}>{title}</Link></b></li> 
                                    
                                    }
                                    
@@ -29,7 +29,7 @@ const Breadcrubs = ({title ,parent ,subTitle,leafTitle}) => {
                                 {subTitle === undefined ? '' : 
                                    (leafTitle == undefined ? 
                                        <li className="breadcrumb-item active" aria-current="page"><b>{subTitle}</b></li> :
-                                       <li className="breadcrumb-item active" aria-current="page"><b><Link href={`/category/${title}/${subTitle}`}>{subTitle}</Link></b></li>
+                                       <li className="breadcrumb-item active" aria-current="page"><b><Link href={`/category/${menu}/${submenu}`}>{subTitle}</Link></b></li>
                                        )
                                     }
                                 {
