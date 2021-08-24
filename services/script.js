@@ -1660,7 +1660,7 @@ export const CategoryList = [
             {
                 CategoryName: "Grocery",
                 SubCategoryName: "Snack Food",
-                MenuKey:"sncak-food",
+                MenuKey:"snack-food",
                 leafCategoryList: [
                     {
                         CategoryName: "Grocery",

@@ -14,6 +14,7 @@ class MyDocument extends Document {
           <link href="https://fonts.googleapis.com/css2?family=https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet" />
           <script src="https://snippets.freshchat.com/js/fc-pre-chat-form-v2.min.js"></script>
           <script src="https://wchat.freshchat.com/js/widget.js" async></script>
+          <meta property="og:title" content="Shop The World"/>
           <script dangerouslySetInnerHTML={{ __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
