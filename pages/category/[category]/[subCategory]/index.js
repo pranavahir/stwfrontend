@@ -4,6 +4,7 @@ import CommonLayout from '../../../../components/shop/common-layout';
 import { withApollo } from '../../../../helpers/apollo/apollo';
 import ProductList from '../../../shop/common/productList';
 import { Row, Container } from 'reactstrap';
+import { CategoryList } from '../../../../services/script';
 
 const LeftSidebar = () => {
   
@@ -12,8 +13,26 @@ const LeftSidebar = () => {
   const subCategory = router.query.subCategory;
   
   
+  var MCategory = "";
+  var MSCategory = "";
+ 
+  for(var i=0; i<CategoryList.length ;i++)
+      {
+          if(CategoryList[i].subCategoryList!=undefined && CategoryList[i].MenuKey==category)
+          {
+            MCategory = CategoryList[i].CategoryName;
+            for(var j=0;j<CategoryList[i].subCategoryList.length ;j++)
+              {
+                  if(CategoryList[i].subCategoryList[j].MenuKey == subCategory)
+                  {
+                    MSCategory = CategoryList[i].subCategoryList[j].SubCategoryName;
+                  }
+              }
+          }
+      }
+   
   return (
-    <CommonLayout title={category} subTitle={subCategory} parent="home" >
+    <CommonLayout title={MCategory} subTitle={MSCategory} parent="home" >
     {/* <section className="section-b-space"> */}
    <Container>
        <Row>

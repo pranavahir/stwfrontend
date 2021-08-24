@@ -70,9 +70,9 @@ const Banner = () => {
                   <Col>
                     <div className="slider-contain">
                       <div>
-                        {/* <h4>welcome to Shop The World</h4>
-                        <h1>Fashion</h1> */}
-                          {/* <a onClick={() => CategoryFilter("Fashion")} className="btn btn-solid">shop now </a> */}
+                        <h4>welcome to Shop The World</h4>
+                        <h1>Fashion</h1>
+                          <a onClick={() => CategoryFilter("Fashion")} className="btn btn-solid">shop now </a>
                       </div>
                     </div>
                   </Col>

@@ -121,6 +121,59 @@ const ProductList = ({ colClass, type,parentCategory, layoutList,openSidebar,noS
     else
     category = filterContext.state;
     
+
+    
+    // var MCategory = "";
+    // if(type=="Category")
+    // {
+    //     for(var i=0; i<CategoryList.length ;i++)
+    //     {
+    //         if(CategoryList[i].MenuKey == category)
+    //         {
+    //             MCategory = CategoryList[i].MenuKey;
+    //         }
+    //     }
+    // }
+    // else if(type=="SubCategory")
+    // {
+    //     for(var i=0; i<CategoryList.length ;i++)
+    //     {
+    //         if(CategoryList[i].subCategoryList!=undefined)
+    //         {
+    //           for(var j=0;j<CategoryList[i].subCategoryList.length ;j++)
+    //             {
+    //                 if(CategoryList[i].subCategoryList[j].MenuKey == category)
+    //                 {
+    //                     MCategory = CategoryList[i].subCategoryList[j].MenuKey;
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
+    // else if(type=="leafCategory")
+    // {
+    //     for(var i=0; i<CategoryList.length ;i++)
+    //     {
+    //         if(CategoryList[i].subCategoryList!=undefined)
+    //         {
+    //         for(var j=0;j<CategoryList[i].subCategoryList.length ;j++)
+    //         {
+    //             if(CategoryList[i].subCategoryList[j].leafCategoryList != undefined)
+    //             {
+    //                 for(var k=0;k<CategoryList[i].subCategoryList[j].leafCategoryList.length ;k++)
+    //             {
+    //                 if(CategoryList[i].subCategoryList[j].leafCategoryList[k].MenuKey == category)
+    //                 {
+    //                     MCategory = CategoryList[i].subCategoryList[j].leafCategoryList[k].MenuKey;
+    //                 }
+    //             }
+    //             }
+    //         }
+    //     }
+    //     }
+    // }
+
+
     const selectedCategory = category;
 
 

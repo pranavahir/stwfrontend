@@ -4,6 +4,8 @@ import CommonLayout from '../../../../../components/shop/common-layout';
 import { withApollo } from '../../../../../helpers/apollo/apollo';
 import ProductList from '../../../../shop/common/productList';
 import { Row, Container } from 'reactstrap';
+import { CategoryList } from '../../../../../services/script';
+
 
 const LeftSidebar = () => {
   
@@ -13,8 +15,42 @@ const LeftSidebar = () => {
   const leafCategory = router.query.leafCategory;
   
   
+   
+  var MCategory = "";
+  var MSCategory = "";
+  var MLCategory = "";
+
+        
+ 
+ 
+  for(var i=0; i<CategoryList.length ;i++)
+      {
+          if(CategoryList[i].subCategoryList!=undefined && CategoryList[i].MenuKey!=category)
+          {
+            MCategory = CategoryList[i].CategoryName;
+            for(var j=0;j<CategoryList[i].subCategoryList.length ;j++)
+              {
+                  if(CategoryList[i].subCategoryList[j].MenuKey == subCategory)
+                  {
+                    MSCategory = CategoryList[i].subCategoryList[j].MenuKey;
+                    if(CategoryList[i].subCategoryList[j].leafCategoryList != undefined && CategoryList[i].subCategoryList[j].MenuKey == subCategory)
+                    {
+                        for(var k=0;k<CategoryList[i].subCategoryList[j].leafCategoryList.length ;k++)
+                    {
+                        if(CategoryList[i].subCategoryList[j].leafCategoryList[k].MenuKey == leafCategory)
+                        {
+                            MLCategory = CategoryList[i].subCategoryList[j].leafCategoryList[k].LeafCategory;
+                        }
+                    }
+                    }
+                  }
+              }
+          }
+      }
+
+  
   return (
-    <CommonLayout title={category} subTitle={subCategory} leafTitle={leafCategory} parent="home" >
+    <CommonLayout title={MCategory} subTitle={MSCategory} leafTitle={MLCategory} parent="home" >
     {/* <section className="section-b-space"> */}
    <Container>
        <Row>
