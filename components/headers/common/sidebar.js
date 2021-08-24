@@ -624,7 +624,7 @@ const SideBar = () => {
             </li>
             <li onClick={(e) => handleMegaSubmenu(e)}>
 
-            <Link href={`/category/Home & Kitchen`}>
+            <Link href={`/c/home-and-kitchen`}>
                         <a>Home & Kitchen
                         <span className="sub-arrow"></span>
                         </a>
@@ -635,64 +635,64 @@ const SideBar = () => {
                     <Col xl="3">
                       <div className="link-section">
                         <h5>
-                        <Link href={`/category/Home & Kitchen/Bedding`}>
+                        <Link href={`/c/home-and-kitchen/bedding`}>
                             <div style={linkStyle} >Bedding</div>
                             </Link>
                         </h5>
                         <ul>
                           <li>
-                          <Link href={`/category/Home & Kitchen/Bedding/Bedding & Accessories`}>
+                          <Link href={`/c/home-&-kitchen/bedding/bedding-and-accessories`}>
                             <div style={linkStyle} >Bedding & Accessories</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/category/Home & Kitchen/Bedding/Bedding Sets & Collections`}>
+                          <Link href={`/c/home-and-kitchen/bedding/bedding-sets-and-collections`}>
                             <div style={linkStyle} >Bedding Sets & Collections</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/category/Home & Kitchen/Bedding/Bedspreads, Coverlets & Sets`}>
+                          <Link href={`/c/home-and-kitchen/bedding/bedspreads-coverlets-sets`}>
                             <div style={linkStyle} >Bedspreads, Coverlets & Sets</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/category/Home & Kitchen/Bedding/Kid's Bedding`}>
+                          <Link href={`/c/home-and-kitchen/bedding/kids-bedding`}>
                             <div style={linkStyle} >Kid's Bedding</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/category/Home & Kitchen/Bedding/Quilts & Sets`}>
+                          <Link href={`/c/home-and-kitchen/bedding/quilts-and-sets`}>
                             <div style={linkStyle} >Quilts & Sets</div>
                             </Link>
                           </li>
                         </ul>
                         <h5>
-                        <Link href={`/category/Home & Kitchen/Towel Rings`}>
+                        <Link href={`/c/home-and-kitchen/towel-rings`}>
                             <div style={linkStyle} >Towel Rings</div>
                             </Link>
                         </h5>
                         <h5>
-                        <Link href={`/category/Home & Kitchen/Wall Art`}>
+                        <Link href={`/c/home-and-kitchen/wall-art`}>
                             <div style={linkStyle} >Wall Art</div>
                             </Link>
                         </h5>
                         <h5>
-                        <Link href={`/category/Home & Kitchen/Wall Clocks`}>
+                        <Link href={`/c/home-and-kitchen/wall-clocks`}>
                             <div style={linkStyle} >Wall Clocks</div>
                             </Link>
                         </h5>
                         <h5>
-                        <Link href={`/category/Home & Kitchen/Cleaning Supplies`}>
+                        <Link href={`/c/home-and-kitchen/cleaning-supplies`}>
                             <div style={linkStyle} >Cleaning Supplies</div>
                             </Link>
                         </h5>
                         <h5>
-                        <Link href={`/category/Home & Kitchen/Bath`}>
+                        <Link href={`/c/home-and-kitchen/bath`}>
                             <div style={linkStyle} >Bath</div>
                             </Link>
                         </h5>
                         <h5>
-                        <Link href={`/category/Home & Kitchen/Bathroom Accessories`}>
+                        <Link href={`/c/home-and-kitchen/bathroom-accessories`}>
                             <div style={linkStyle} >Bathroom Accessories</div>
                             </Link>
                         </h5>
@@ -701,66 +701,66 @@ const SideBar = () => {
                     <Col xl="3">
                       <div className="link-section">
                         <h5>
-                        <Link href={`/category/Home & Kitchen/Kitchen & Dining`}>
+                        <Link href={`/c/home-and-kitchen/kitchen-and-dining`}>
                             <div style={linkStyle} >Kitchen & Dining</div>
                             </Link> 
                         </h5>
                         <ul>
                           <li>
-                          <Link href={`/category/Home & Kitchen/Kitchen & Dining/Bakeware`}>
+                          <Link href={`/c/home-and-kitchen/kitchen-and-dining/bakeware`}>
                             <div style={linkStyle} >Bakeware</div>
                             </Link> 
                           </li>
                           <li>
-                          <Link href={`/category/Home & Kitchen/Kitchen & Dining/Coffee, Tea & Espresso`}>
+                          <Link href={`/c/home-and-kitchen/kitchen-and-dining/coffee-tea-and-espresso`}>
                             <div style={linkStyle} >Coffee, Tea & Espresso</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/category/Home & Kitchen/Kitchen & Dining/Cookware`}>
+                          <Link href={`/c/home-and-kitchen/kitchen-and-dining/cookware`}>
                             <div style={linkStyle} >Cookware</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/category/Home & Kitchen/Kitchen & Dining/Cutlery & Knife Accessories`}>
+                          <Link href={`/c/home-and-kitchen/kitchen-and-dining/cutlery-and-knife-accessories`}>
                             <div style={linkStyle} >Cutlery & Knife Accessories</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/category/Home & Kitchen/Kitchen & Dining/Dining & Entertaining`}>
+                          <Link href={`/c/home-and-kitchen/kitchen-and-dining/dining-and-entertaining`}>
                             <div style={linkStyle} >Dining & Entertaining</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/category/Home & Kitchen/Kitchen & Dining/Small Appliances`}>
+                          <Link href={`/c/home-and-kitchen/kitchen-and-dining/small-appliances`}>
                             <div style={linkStyle} >Small Appliances</div>
                             </Link>
                           </li>
                         </ul>
                         <h5>
-                        <Link href={`/category/Home & Kitchen/Tools & Home Improvement`}>
+                        <Link href={`/c/home-and-kitchen/tools-and-home-improvement`}>
                             <div style={linkStyle} >Tools & Home Improvement</div>
                             </Link>
                         </h5>
                         <ul>
                           <li>
-                          <Link href={`/category/Home & Kitchen/Tools & Home Improvement/Ceramic Tiles`}>
+                          <Link href={`/c/home-and-kitchen/tools-and-home-improvement/ceramic-tiles`}>
                             <div style={linkStyle} >Ceramic Tiles</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/category/Home & Kitchen/Tools & Home Improvement/Wall Plates`}>
+                          <Link href={`/c/home-and-kitchen/tools-and-home-improvement/wall plates`}>
                             <div style={linkStyle} >Wall Plates</div>
                             </Link>
                           </li>
                         </ul>
                         <h5>
-                        <Link href={`/category/Home & Kitchen/Home Appliances`}>
+                        <Link href={`/c/home-and-kitchen/home-appliances`}>
                             <div style={linkStyle} >Home Appliances</div>
                             </Link>
                         </h5>
                         <h5>
-                        <Link href={`/category/Home & Kitchen/Bar Tools & Drinkware`}>
+                        <Link href={`/c/home-and-kitchen/bar-tools-and-drinkware`}>
                             <div style={linkStyle} >Bar Tools & Drinkware</div>
                             </Link>
                         </h5>
@@ -769,69 +769,69 @@ const SideBar = () => {
                     <Col xl="3">
                       <div className="link-section">
                         <h5>
-                        <Link href={`/category/Home & Kitchen/Home Decor`}>
+                        <Link href={`/c/home-and-kitchen/home-decor`}>
                             <div style={linkStyle} >Home Decor</div>
                             </Link>
                         </h5>
                         <ul>
                           <li>
-                          <Link href={`/category/Home & Kitchen/Home Decor/Artificial Plants & Flowers`}>
+                          <Link href={`/c/home-and-kitchen/home-decor/artificial-plants-and-flowers`}>
                             <div style={linkStyle} >Artificial Plants & Flowers</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/category/Home & Kitchen/Home Decor/Candles & Holders`}>
+                          <Link href={`/c/home-and-kitchen/home-decor/candles-and-holders`}>
                             <div style={linkStyle} >Candles & Holders</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/category/Home & Kitchen/Home Decor/Clocks`}>
+                          <Link href={`/c/home-and-kitchen/home-decor/clocks`}>
                             <div style={linkStyle} >Clocks</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/category/Home & Kitchen/Home Decor/Decorative Pillows`}>
+                          <Link href={`/c/home-and-kitchen/home-decor/decorative-pillows`}>
                             <div style={linkStyle} >Decorative Pillows</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/category/Home & Kitchen/Home Decor/Home Decor Accents`}>
+                          <Link href={`/c/home-and-kitchen/home-decor/hom-decor-accents`}>
                             <div style={linkStyle} >Home Decor Accents</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/category/Home & Kitchen/Home Decor/Home Fragrance`}>
+                          <Link href={`/c/home-and-kitchen/home-decor/home-fragrance`}>
                             <div style={linkStyle} >Home Fragrance</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/category/Home & Kitchen/Home Decor/Mirrors`}>
+                          <Link href={`/c/home-and-kitchen/home-decor/mirrors`}>
                             <div style={linkStyle} >Mirrors</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/category/Home & Kitchen/Home Decor/Nursery Decor`}>
+                          <Link href={`/c/home-and-kitchen/home-decor/nursery-decor`}>
                             <div style={linkStyle} >Nursery Decor</div>
                             </Link>
                           </li>
                         </ul>
                         <h5>
-                        <Link href={`/category/Home & Kitchen/Kids' Home Store`}>
+                        <Link href={`/c/home-and-kitchen/kids-home-store`}>
                             <div style={linkStyle} >Kids' Home Store</div>
                             </Link>
                         </h5>
                         <h5>
-                        <Link href={`/category/Home & Kitchen/Seasonal Decor`}>
+                        <Link href={`/c/home-and-kitchen/seasonal-decor`}>
                             <div style={linkStyle} >Seasonal Decor</div>
                             </Link>
                         </h5>
                         <h5>
-                        <Link href={`/category/Home & Kitchen/Storage & Organization`}>
+                        <Link href={`/c/home-and-kitchen/storage-and-organization`}>
                             <div style={linkStyle} >Storage & Organization</div>
                             </Link>
                         </h5>
                         <h5>
-                        <Link href={`/category/Home & Kitchen/Towel Bars`}>
+                        <Link href={`/c/home-and-kitchen/towel-bars`}>
                             <div style={linkStyle} >Towel Bars</div>
                             </Link>
                         </h5>
@@ -840,54 +840,54 @@ const SideBar = () => {
                     <Col xl="3">
                       <div className="link-section">
                         <h5>
-                        <Link href={`/category/Home & Kitchen/Vacuum & Floor care`}>
+                        <Link href={`/c/home-and-kitchen/vacuum-and-floor-care`}>
                             <div style={linkStyle} >Vacuum & Floor care</div>
                             </Link>
                         </h5>
                         <ul>
                           <li>
-                          <Link href={`/category/Home & Kitchen/Vacuum & Floor care/Carpet & Upholstery Cleaners & Accessories`}>
+                          <Link href={`/c/home-and-kitchen/vacuum-and-floor care/carpet-and-upholstery-cleaners-accessories`}>
                             <div style={linkStyle} >Carpet & Upholstery Cleaners & Accessories</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/category/Home & Kitchen/Vacuum & Floor care/Floor Buffers & Parts`}>
+                          <Link href={`/c/home-and-kitchen/vacuum-and-floor-care/floor-buffers-parts`}>
                             <div style={linkStyle} >Floor Buffers & Parts</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/category/Home & Kitchen/Vacuum & Floor care/Vacuum Parts & Accessories`}>
+                          <Link href={`/c/home-and-kitchen/vacuum-and-floor-care/vacuum-parts-and-accessories`}>
                             <div style={linkStyle} >Vacuum Parts & Accessories</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/category/Home & Kitchen/Vacuum & Floor care/Vacuum`}>
+                          <Link href={`/c/home-and-kitchen/vacuum-and-floor-care/vacuum`}>
                             <div style={linkStyle} >Vacuum</div>
                             </Link>
                           </li>
                         </ul>
                         <h5>
-                        <Link href={`/category/Home & Kitchen/Coasters`}>
+                        <Link href={`/c/home-and-kitchen/coasters`}>
                             <div style={linkStyle} >Coasters</div>
                             </Link>
                         </h5>
                         <h5>
-                        <Link href={`/category/Home & Kitchen/Event & Party Supplies`}>
+                        <Link href={`/c/home-and-kitchen/event-and-party-supplies`}>
                             <div style={linkStyle} >Event & Party Supplies</div>
                             </Link>
                         </h5>
                         <h5>
-                        <Link href={`/category/Home & Kitchen/Furniture`}>
+                        <Link href={`/c/home-and-kitchen/furniture`}>
                             <div style={linkStyle} >Furniture</div>
                             </Link>
                         </h5>
                         <h5>
-                        <Link href={`/category/Home & Kitchen/Glassware & Drinkware`}>
+                        <Link href={`/c/home-and-kitchen/glassware-and-drinkware`}>
                             <div style={linkStyle} >Glassware & Drinkware</div>
                             </Link>
                         </h5>
                         <h5>
-                        <Link href={`/category/Home & Kitchen/Heating, Cooling & Air Quality`}>
+                        <Link href={`/c/home-and-kitchen/heating-cooling-air-quality`}>
                             <div style={linkStyle} >Heating, Cooling & Air Quality</div>
                             </Link>
                         </h5>
@@ -897,8 +897,9 @@ const SideBar = () => {
                 </li>
               </ul>
             </li>
+
             <li onClick={(e) => handleMegaSubmenu(e)}>
-            <Link href={`/category/Beauty & Personal Care`}>
+            <Link href={`/c/beauty-and-personal-care`}>
                         <a>Beauty & Personal Care
                         <span className="sub-arrow"></span>
                         </a>
@@ -916,44 +917,44 @@ const SideBar = () => {
                     <Col xl="3">
                       <div className="link-section">
                         <h5>
-                        <Link href={`/category/Beauty & Personal Care/Foot, Hand & Nail Care`}>
-                            <div style={linkStyle} >Foot, Hand & Nail Care</div>
+                        <Link href={`/c/beauty-and-personal-care/foot-hand-and-nail-care`}>
+                            <div style={linkStyle} >Foot-Hand & Nail Care</div>
                             </Link>
                         </h5>
                         <ul>
                           <li>
-                          <Link href={`/category/Beauty & Personal Care/Foot, Hand & Nail Care/Foot & Hand Care`}>
+                          <Link href={`/c/beauty-and-personal-care/foot-hand-and-nail-care/foot-and-hand-care`}>
                             <div style={linkStyle} >Foot & Hand Care</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/category/Beauty & Personal Care/Foot, Hand & Nail Care/Nail Art & Polish`}>
+                          <Link href={`/c/beauty-and-personal-care/foot-hand-and-nail-care/nail-art-and-polish`}>
                             <div style={linkStyle} >Nail Art & Polish</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/category/Beauty & Personal Care/Foot, Hand & Nail Care/Nail Care`}>
+                          <Link href={`/c/beauty-and-personal-care/foot-hand-and-nail-care/nail-care`}>
                             <div style={linkStyle} >Nail Care</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/category/Beauty & Personal Care/Foot, Hand & Nail Care/Tools & Accessories`}>
+                          <Link href={`/c/beauty-and-personal-care/foot-hand-and-nail-care/tools-and-accessories`}>
                             <div style={linkStyle} >Tools & Accessories</div>
                             </Link>
                           </li>
                         </ul>
                         <h5>
-                        <Link href={`/category/Beauty & Personal Care/Concealer`}>
+                        <Link href={`/c/beauty-and-personal-care/concealer`}>
                             <div style={linkStyle} >Concealer</div>
                             </Link>
                         </h5>
                         <h5>
-                        <Link href={`/category/Beauty & Personal Care/Foundation`}>
+                        <Link href={`/c/beauty-and-personal-care/foundation`}>
                             <div style={linkStyle} >Foundation</div>
                             </Link>
                         </h5>
                         <h5>
-                        <Link href={`/category/Beauty & Personal Care/Compact Powder`}>
+                        <Link href={`/c/beauty-and-personal-care/compact-powder`}>
                             <div style={linkStyle} >Compact Powder</div>
                             </Link>
                         </h5>
@@ -962,38 +963,38 @@ const SideBar = () => {
                     <Col xl="3">
                       <div className="link-section">
                         <h5>
-                        <Link href={`/category/Beauty & Personal Care/Hair Care & Styling`}>
+                        <Link href={`/c/beauty-and-personal-care/hair-care-and-styling`}>
                             <div style={linkStyle} >Hair Care & Styling</div>
                             </Link>
                         </h5>
                         <ul>
                           <li>
-                          <Link href={`/category/Beauty & Personal Care/Hair Care & Styling/Hair & Scalp Treatments`}>
+                          <Link href={`/c/beauty-and-personal-care/hair-care-and-styling/hair-and-scalp-treatments`}>
                             <div style={linkStyle} >Hair & Scalp Treatments</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/category/Beauty & Personal Care/Hair Care & Styling/Hair Coloring Products`}>
+                          <Link href={`/c/beauty-and-personal-care/hair-care-and-styling/hair-coloring-products`}>
                             <div style={linkStyle} >Hair Coloring Products</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/category/Beauty & Personal Care/Hair Care & Styling/Hair Dryers`}>
+                          <Link href={`/c/beauty-and-personal-care/hair-care-and-styling/hair-dryers`}>
                             <div style={linkStyle} >Hair Dryers</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/category/Beauty & Personal Care/Hair Care & Styling/Shampoos`}>
+                          <Link href={`/c/beauty-and-personal-care/hair-care-and-styling/shampoos`}>
                             <div style={linkStyle} >Shampoos</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/category/Beauty & Personal Care/Hair Care & Styling/Styling Products`}>
+                          <Link href={`/c/beauty-and-personal-care/hair-care-and-styling/styling-products`}>
                             <div style={linkStyle} >Styling Products</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/category/Beauty & Personal Care/Hair Care & Styling/Styling Tools & Appliances`}>
+                          <Link href={`/c/beauty-and-personal-care/hair-care-and-styling/styling-tools-and-appliances`}>
                             <div style={linkStyle} >Styling Tools & Appliances</div>
                             </Link>
                           </li>
@@ -1003,49 +1004,49 @@ const SideBar = () => {
                     <Col xl="3">
                       <div className="link-section">
                         <h5>
-                        <Link href={`/category/Beauty & Personal Care/Makeup`}>
+                        <Link href={`/c/beauty-and-personal-care/makeup`}>
                             <div style={linkStyle} >Makeup</div>
                             </Link>
                         </h5>
                         <ul>
                           <li>
-                          <Link href={`/category/Beauty & Personal Care/Makeup/Eyebrow Color`}>
+                          <Link href={`/c/beauty-and-personal-care/makeup/eyebrow-color`}>
                             <div style={linkStyle} >Eyebrow Color</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/category/Beauty & Personal Care/Makeup/Eyeliners`}>
+                          <Link href={`/c/beauty-and-personal-care/makeup/eyeliners`}>
                             <div style={linkStyle} >Eyeliners</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/category/Beauty & Personal Care/Makeup/Eyeshadow`}>
+                          <Link href={`/c/beauty-and-personal-care/makeup/eyeshadow`}>
                             <div style={linkStyle} >Eyeshadow</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/category/Beauty & Personal Care/Makeup/Eyeshadow Bases & Primers`}>
+                          <Link href={`/c/beauty-and-personal-care/makeup/eyeshadow-bases-and-primers`}>
                             <div style={linkStyle} >Eyeshadow Bases & Primers</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/category/Beauty & Personal Care/Makeup/Lipstick`}>
+                          <Link href={`/c/beauty-and-personal-care/makeup/lipstick`}>
                             <div style={linkStyle} >Lipstick</div>
                             </Link>
                           </li>
                         </ul>
                         <h5>
-                        <Link href={`/category/Beauty & Personal Care/Fragrance`}>
+                        <Link href={`/c/beauty-and-personal-care/fragrance`}>
                             <div style={linkStyle} >Fragrance</div>
                             </Link>
                         </h5>
                         <h5>
-                        <Link href={`/category/Beauty & Personal Care/Grooming`}>
+                        <Link href={`/c/beauty-and-personal-care/grooming`}>
                             <div style={linkStyle} >Grooming</div>
                             </Link>
                         </h5>
                         <h5>
-                        <Link href={`/category/Beauty & Personal Care/Bleaches`}>
+                        <Link href={`/c/beauty-and-personal-care/bleaches`}>
                             <div style={linkStyle} >Bleaches</div>
                             </Link>
                         </h5>
@@ -1054,37 +1055,37 @@ const SideBar = () => {
                     <Col xl="3">
                       <div className="link-section">
                         <h5>
-                        <Link href={`/category/Beauty & Personal Care/Hair Oils`}>
+                        <Link href={`/c/beauty-and-personal-care/hair-oils`}>
                             <div style={linkStyle} >Hair Oils</div>
                             </Link>
                         </h5>
                         <h5>
-                        <Link href={`/category/Beauty & Personal Care/Cleansing Creams & Milks`}>
+                        <Link href={`/c/beauty-and-personal-care/cleansing-creams-and-milks`}>
                             <div style={linkStyle} >Cleansing Creams & Milks</div>
                             </Link>
                         </h5>
                         <h5>
-                        <Link href={`/category/Beauty & Personal Care/Skin Care`}>
+                        <Link href={`/c/beauty-and-personal-care/skin-care`}>
                             <div style={linkStyle} >Skin Care</div>
                             </Link>
                         </h5>
                         <h5>
-                        <Link href={`/category/Beauty & Personal Care/Toners`}>
+                        <Link href={`/c/beauty-and-personal-care/toners`}>
                             <div style={linkStyle} >Toners</div>
                             </Link>
                         </h5>
                         <h5>
-                        <Link href={`/category/Beauty & Personal Care/Conditioners`}>
+                        <Link href={`/c/beauty-and-personal-care/conditioners`}>
                             <div style={linkStyle} >Conditioners</div>
                             </Link>
                         </h5>
                         <h5>
-                        <Link href={`/category/Beauty & Personal Care/Face Wash`}>
+                        <Link href={`/c/beauty-and-personal-care/face-wash`}>
                             <div style={linkStyle} >Face Wash</div>
                             </Link>
                         </h5>
                         <h5>
-                        <Link href={`/category/Beauty & Personal Care/Bath Oils`}>
+                        <Link href={`/c/beauty-and-personal-care/bath-oils`}>
                             <div style={linkStyle} >Bath Oils</div>
                             </Link>
                         </h5>
@@ -1095,7 +1096,7 @@ const SideBar = () => {
               </ul>
             </li>
             <li onClick={(e) => handleMegaSubmenu(e)}>
-            <Link href={`/category/Health & Wellness`}>
+            <Link href={`/category/health-and-wellness`}>
                         <a>Health & Wellness
                         <span className="sub-arrow"></span>
                         </a>
@@ -1113,75 +1114,75 @@ const SideBar = () => {
                     <Col xl="4">
                       <div className="link-section">
                         <h5>
-                        <Link href={`/category/Health & Wellness/Sports Nutrition`}>
+                        <Link href={`/category/health-and-wellness/sports-nutrition`}>
                             <div style={linkStyle} >Sports Nutrition</div>
                             </Link>
                         </h5>
                         <ul>
                           <li>
-                          <Link href={`/category/Health & Wellness/Sports Nutrition/Amino Acids`}>
+                          <Link href={`/category/health-and-wellness/sports-nutrition/amino-acids`}>
                             <div style={linkStyle} >Amino Acids</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/category/Health & Wellness/Sports Nutrition/Endurance & Energy`}>
+                          <Link href={`/category/health-and-wellness/sports-nutrition/endurance-and-energy`}>
                             <div style={linkStyle} >Endurance & Energy</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/category/Health & Wellness/Sports Nutrition/Healthy Snacks & Beverages`}>
+                          <Link href={`/category/health-and-wellness/sports-nutrition/healthy-snacks-and-beverages`}>
                             <div style={linkStyle} >Healthy Snacks & Beverages</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/category/Health & Wellness/Sports Nutrition/Hydration`}>
+                          <Link href={`/category/health-and-wellness/sports-nutrition/hydration`}>
                             <div style={linkStyle} >Hydration</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/category/Health & Wellness/Sports Nutrition/Nutrition Bars`}>
+                          <Link href={`/category/health-and-wellness/sports-nutrition/nutrition-bars`}>
                             <div style={linkStyle} >Sports Nutrition</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/category/Health & Wellness/Sports Nutrition/Protein`}>
+                          <Link href={`/category/health-and-wellness/sports-nutrition/protein`}>
                             <div style={linkStyle} >Protein</div>
                             </Link>
                           </li>
                         </ul>
                         <h5>
-                        <Link href={`/category/Health & Wellness/Vitamins & Dietary Supplements`}>
+                        <Link href={`/category/health-and-wellness/vitamins-and-dietary-supplements`}>
                             <div style={linkStyle} >Vitamins & Dietary Supplements</div>
                             </Link>
                         </h5>
                         <ul>
                           <li>
-                          <Link href={`/category/Health & Wellness/Vitamins & Dietary Supplements/Blended Vitamin & Mineral Supplements`}>
+                          <Link href={`/category/health-and-wellness/vitamins-and-dietary-supplements/blended-vitamin-and-mineral-supplements`}>
                             <div style={linkStyle} >Blended Vitamin & Mineral Supplements</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/category/Health & Wellness/Vitamins & Dietary Supplements/Herbal Supplements`}>
+                          <Link href={`/category/health-and-wellness/vitamins-and-dietary-supplements/herbal-supplements`}>
                             <div style={linkStyle} >Herbal Supplements</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/category/Health & Wellness/Vitamins & Dietary Supplements/Minerals`}>
+                          <Link href={`/category/health-and-wellness/vitamins-and-dietary-supplements/minerals`}>
                             <div style={linkStyle} >Minerals</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/category/Health & Wellness/Vitamins & Dietary Supplements/Supplements`}>
+                          <Link href={`/category/health-and-wellness/vitamins-and-dietary-supplements/supplements`}>
                             <div style={linkStyle} >Supplements</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/category/Health & Wellness/Vitamins & Dietary Supplements/Vitamins`}>
+                          <Link href={`/category/health-and-wellness/vitamins-and-dietary-supplements/vitamins`}>
                             <div style={linkStyle} >Vitamins</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/category/Health & Wellness/Vitamins & Dietary Supplements/Weight Loss`}>
+                          <Link href={`/category/health-and-wellness/vitamins-and-dietary-supplements/weight-loss`}>
                             <div style={linkStyle} >Weight Loss</div>
                             </Link>
                           </li>
@@ -1191,50 +1192,50 @@ const SideBar = () => {
                     <Col xl="4">
                       <div className="link-section">
                         <h5>
-                        <Link href={`/category/Health & Wellness/Baby & Child Care`}>
+                        <Link href={`/category/health-and-wellness/baby-and-child-care`}>
                             <div style={linkStyle} >Baby & Child Care</div>
                             </Link>
                         </h5>
                         <ul>
                           <li>
-                          <Link href={`/category/Health & Wellness/Baby & Child Care/Diaper Care`}>
+                          <Link href={`/category/health-and-wellness/baby-and-child-care/diaper-care`}>
                             <div style={linkStyle} >Diaper Care</div>
                             </Link>
                           </li>
                         </ul>
                         <h5>
-                        <Link href={`/category/Health & Wellness/Health Care`}>
+                        <Link href={`/category/health-and-wellness/health-care`}>
                             <div style={linkStyle} >Health Care</div>
                             </Link>
                         </h5>
                         <ul>
                           <li>
-                          <Link href={`/category/Health & Wellness/Health Care/Alternative Medicine`}>
+                          <Link href={`/category/health-and-wellness/health-care/alternative-medicine`}>
                             <div style={linkStyle} >Alternative Medicine</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/category/Health & Wellness/Health Care/Diabetes Care`}>
+                          <Link href={`/category/health-and-wellness/health-care/diabetes-care`}>
                             <div style={linkStyle} >Diabetes Care</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/category/Health & Wellness/Health Care/Ear Care`}>
+                          <Link href={`/category/health-and-wellness/health-care/ear-care`}>
                             <div style={linkStyle} >Ear Care</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/category/Health & Wellness/Health Care/Eye Health`}>
+                          <Link href={`/category/health-and-wellness/health-care/eye-health`}>
                             <div style={linkStyle} >Eye Health</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/category/Health & Wellness/Health Care/Feminine Care`}>
+                          <Link href={`/category/health-and-wellness/health-care/feminine-care`}>
                             <div style={linkStyle} >Feminine Care</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/category/Health & Wellness/Health Care/First Aid`}>
+                          <Link href={`/category/health-and-wellness/health-care/first-aid`}>
                             <div style={linkStyle} >First Aid</div>
                             </Link>
                           </li>
@@ -1244,54 +1245,54 @@ const SideBar = () => {
                     <Col xl="4">
                       <div className="link-section">
                         <h5>
-                        <Link href={`/category/Health & Wellness/Personal Care`}>
+                        <Link href={`/category/health-and-wellness/personal-care`}>
                             <div style={linkStyle} >Personal Care</div>
                             </Link>
                         </h5>
                         <ul>
                           <li>
-                          <Link href={`/category/Health & Wellness/Personal Care/Bath & Bathing Accessories`}>
+                          <Link href={`/category/health-and-wellness/personal-care/bath-and-bathing-accessories`}>
                             <div style={linkStyle} >Bath & Bathing Accessories</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/category/Health & Wellness/Personal Care/Deodorants & Antiperspirants`}>
+                          <Link href={`/category/health-and-wellness/personal-care/deodorants-and-antiperspirants`}>
                             <div style={linkStyle} >Deodorants & Antiperspirants</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/category/Health & Wellness/Personal Care/Hair Care`}>
+                          <Link href={`/category/health-and-wellness/personal-care/hair-care`}>
                             <div style={linkStyle} >Hair Care</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/category/Health & Wellness/Personal Care/Lip Care`}>
+                          <Link href={`/category/health-and-wellness/personal-care/lip-care`}>
                             <div style={linkStyle} >Lip Care</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/category/Health & Wellness/Personal Care/Skin Care`}>
+                          <Link href={`/category/health-and-wellness/personal-care/skin-care`}>
                             <div style={linkStyle} >Skin Care</div>
                             </Link>
                           </li>
                         </ul>
                         <h5>
-                        <Link href={`/category/Health & Wellness/Aromatherapy`}>
+                        <Link href={`/category/health-and-wellness/aromatherapy`}>
                             <div style={linkStyle} >Aromatherapy</div>
                             </Link>
                         </h5>
                         <h5>
-                        <Link href={`/category/Health & Wellness/Oral Care`}>
+                        <Link href={`/category/health-and-wellness/oral-care`}>
                             <div style={linkStyle} >Oral Care</div>
                             </Link>
                         </h5>
                         <h5>
-                        <Link href={`/category/Health & Wellness/Cloth Face Mask`}>
+                        <Link href={`/category/health-and-wellness/cloth-face-mask`}>
                             <div style={linkStyle} >Cloth Face Mask</div>
                             </Link>
                         </h5>
                         <h5>
-                        <Link href={`/category/Health & Wellness/Vision Care`}>
+                        <Link href={`/category/health-and-wellness/vision-care`}>
                             <div style={linkStyle} >Vision Care</div>
                             </Link>
                         </h5>
