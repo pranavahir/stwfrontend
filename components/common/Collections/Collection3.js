@@ -13,72 +13,10 @@ import FilterContext from '../../../helpers/filter/FilterContext';
 import { useRouter } from 'next/router';
 import { CurrencyContext } from '../../../helpers/Currency/CurrencyContext';
 import AutoFitImage from 'react-image-autofit-frame';
+import Link from "next/link";
 
-const GET_PRODUCTS = gql`
-    query  products($type:String!,$indexFrom:Int! ,$limit:Int!,$color:String!,$brand:[String!]! ,$priceMax:Int!,$priceMin:Int!,$keyword:String!,$country:String!,$panel:String!,$promoflag:String!,$relevantProduct:String) {
-        products (type: $type ,indexFrom:$indexFrom ,limit:$limit ,color:$color ,brand:$brand  ,priceMax:$priceMax,priceMin:$priceMin,keyword:$keyword,country:$country,panel:$panel,promoflag:$promoflag,relevantProduct:$relevantProduct){
-  total(keyword:$keyword,type:$type,promoflag:$promoflag,relevantProduct:$relevantProduct){
-            total
-        }
-        hasMore(limit:$limit,indexFrom:$indexFrom,keyword:$keyword,type:$type,promoflag:$promoflag,relevantProduct:$relevantProduct){
-            seqid
-        }
-        items(limit:$limit,indexFrom:$indexFrom,keyword:$keyword,type:$type,promoflag:$promoflag,relevantProduct:$relevantProduct){
-            seqid
-            sku
-            title
-            description
-            bullepoints
-            brandid
-            categoryid
-            isvisible
-            isactive
-            warehouseid
-            metatagdescription
-            seokeywords
-            weight
-            height
-            width
-            length
-      
-            fromcurrency
-            asin
-      images{
-            productid
-            mainimageurl
-            additionalimage1
-            additionalimage2
-            additionalimage3
-            additionalimage4
-            additionalimage5
-      }
-      variants(country:$country,panel:$panel)
-      {
-            variantid
-            sku
-            productid
-            color
-            size
-            processor
-            graphics
-            discount
-            price 
-            daystoship
-            pwfee
-            purchasetax
-            conversionrate
-            frieghtrate
-            duty
-            taxes
-            fees
-            margin
-            quantity
-      }
-        }
 
-        }
-    }
-`;
+ 
 
 const TopCollection = ({ type, title, subtitle, designClass, noSlider, cartClass, productSlider, titleClass, noTitle, innerClass, inner, backImage }) => {
 
@@ -112,13 +50,7 @@ const TopCollection = ({ type, title, subtitle, designClass, noSlider, cartClass
         marginBottom: "29px"
     }
 
-    // var { loading, data } =  useQuery(GET_PRODUCTS, {
-    //     variables: {
-    //         type: type,
-    //         indexFrom: 0,
-    //         limit: 8
-    //     }
-    // });
+ 
         const loaderStyle={
         margin: "auto",
         width: "60%",
@@ -136,25 +68,13 @@ const TopCollection = ({ type, title, subtitle, designClass, noSlider, cartClass
         gLocation="";
         else
         gLocation = geoLocation;
+        
+        var url ="/promo/"+data.category 
 
-        router.push(`${gLocation}/shop/six_grid?&brand=&color=&size=&minPrice=&maxPrice=&promoflag=${data.category}`)
+        return url;
     }
 
-    // var { loading, data } = useQuery(GET_PRODUCTS, {
-    //     variables: {
-    //         type: "",
-    //         priceMax: 10,
-    //         priceMin: 1,
-    //         color: "red",
-    //         brand: "max",
-    //         indexFrom: 0,
-    //         limit: 8,
-    //         keyword:"",
-    //         country:country,
-    //         panel:panel,
-    //         promoflag:"highlight1"
-    //     }
-    // });
+   
     useEffect(() => {
         if (topCollections === undefined) {
             noSlider === false;
@@ -194,10 +114,12 @@ const TopCollection = ({ type, title, subtitle, designClass, noSlider, cartClass
                                 <Slider {...productSlider} className="product-m no-arrow">
                                         
                                         {topCollections && topCollections.slice(0, 10).map((collection, index) =>
-                                            <div style={linkStyle} className="front" key={index} onClick={() => getURL(collection)}  >
+                                            <Link href={getURL(collection)}>
+                                            <div style={linkStyle} className="front" key={index} >
                                                 <center> <AutoFitImage frameWidth="260px" imgSize="contain" frameHeight="200px" imgSrc={collection.imguRL}/> </center> 
                                                 {/* <center style={lableStyle}> <a style={{color:"white"}}  href="#" onClick={() => getURL(collection)} >{collection.keyWorld} </a></center>  */}
-                                            </div>)}
+                                            </div>
+                                            </Link>)}
                                 </Slider>
 
                                 :

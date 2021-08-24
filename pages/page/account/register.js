@@ -9,12 +9,29 @@ import { useMutation } from "@apollo/react-hooks";
 import gql from "graphql-tag";
 
 const CREATE_CUSTOMER = gql`
-  mutation CreateCustomerDetail($Customer: Customerinfo!) {
-    CreateCustomerDetail(Customer: $Customer) {
-      customerredid
-    }
+mutation($createCustomerCustomerInput: CustomerInput){
+  createCustomer(customerInput: $createCustomerCustomerInput) {
+    address1
+    address2
+    city
+    country
+    customerid
+    customerlastname
+    customername
+    customerredid
+    emailid
+    facebookid
+    googleid
+    phonenumber
+    pincode
+    state    
   }
+}
 `;
+
+
+
+
 
 const Register = () => {
   const router = useRouter();
@@ -24,7 +41,7 @@ const Register = () => {
   
   
   const { register, handleSubmit, errors } = useForm(); // initialise the hook
-  const [CreateCustomer, { CustomerData }] = useMutation(CREATE_CUSTOMER);
+  const [CreateCustomer, { createCustomer }] = useMutation(CREATE_CUSTOMER);
   //Create User with Email and Password
   const [name, setName] = useState(localStorage.getItem("Name"));
 
@@ -145,7 +162,7 @@ const emailVarification = async (event) => {
             setName(data.email);
 
             var customerData = {
-              customerredid: result.user.uid,
+              customerid: result.user.uid,
               customername: data.first_name + " " + data.last_name,
               phonenumber: "",
               address1: "",
@@ -162,7 +179,7 @@ const emailVarification = async (event) => {
             // emailLinkSend(result.user.email);
 
             var CustomerData = CreateCustomer({
-              variables: { Customer: { ...customerData } },
+              variables: { createCustomerCustomerInput: { ...customerData } },
             });
             router.push(`/`);
           });

@@ -13,6 +13,7 @@ import emptySearch from '../../../public/assets/images/empty-search.jpg';
 import AutoFitImage from 'react-image-autofit-frame';
 import FilterContext from '../../../helpers/filter/FilterContext';
 import { useRouter } from 'next/router';
+import Link from "next/link";
 
 
 const GET_PRODUCTS = gql`
@@ -118,11 +119,21 @@ const SpecialProducts = ({ type, fluid, designClass, cartClass, heading, noTitle
         filterContext.setselectedKeyword("");
         filterContext.setSelectedCategory("");
         filterContext.setSelectedPromaflag(data.category);
-        if(geoLocation==null)
-        router.push(`/shop/six_grid?&brand=&color=&size=&minPrice=&maxPrice=&promoflag=${data.category}`)
-        else
-        router.push(`${geoLocation}/shop/six_grid?&brand=&color=&size=&minPrice=&maxPrice=&promoflag=${data.category}`)
 
+        var url =""
+        if(geoLocation==null)
+        {
+            url = "/promo/"+data.category;
+        }
+        else
+        {
+            url = geoLocation+"/promo/"+data.category;
+        }
+        // router.push(`/shop/six_grid?&brand=&color=&size=&minPrice=&maxPrice=&promoflag=${data.category}`)
+        // else
+        // router.push(`${geoLocation}/shop/six_grid?&brand=&color=&size=&minPrice=&maxPrice=&promoflag=${data.category}`)
+
+        return url;
         
     }
     // var { loading, data } = useQuery(GET_PRODUCTS, {
@@ -235,10 +246,13 @@ const SpecialProducts = ({ type, fluid, designClass, cartClass, heading, noTitle
                                     :
 
                                     newProducts && newProducts.slice(0, 4).map((collection, index) =>
-                                            <div style={linkStyle} className="front col-xl-3 col-lg-4 col-12 ClickableContainer" key={index} onClick={() => getURL(collection)} >
+                                            
+                                            <Link href={getURL(collection)}>
+                                            <div style={linkStyle} className="front col-xl-3 col-lg-4 col-12 ClickableContainer" key={index}  >
                                                 <AutoFitImage  frameWidth="212px" imgSize="contain" positionX="center" positionY="center" frameHeight="205px" className="ClickableContainer" onClick={() => getURL(collection)}  imgSrc={collection.imguRL}/>
                                                 {/* <center style={lableStyle}> <a style={{color:"white"}}  href="#" onClick={() => getURL(collection)} >{collection.keyWorld} </a></center>  */}
-                                            </div>)
+                                            </div>
+                                            </Link> )
                                     }
                             </Row>
 
@@ -266,10 +280,11 @@ const SpecialProducts = ({ type, fluid, designClass, cartClass, heading, noTitle
 
                                
                                     featureProducts && featureProducts.slice(0, 4).map((collection, index) =>
-                                            <div style={linkStyle} className="front col-xl-3 col-lg-4 col-12 ClickableContainer" key={index} onClick={() => getURL(collection)}  >
+                                    <Link href={getURL(collection)}>
+                                            <div style={linkStyle} className="front col-xl-3 col-lg-4 col-12 ClickableContainer" key={index} >
                                                 <AutoFitImage  frameWidth="212px" imgSize="contain" frameHeight="205px" positionX="center" positionY="center" className="ClickableContainer" onClick={() => getURL(collection)}  imgSrc={collection.imguRL}/>
                                                 {/* <center style={lableStyle}> <a style={{color:"white"}}  href="#" onClick={() => getURL(collection)} >{collection.keyWorld} </a></center>  */}
-                                            </div>)
+                                            </div></Link> )
                                     }
                             </Row>
                         </TabPanel>
@@ -296,10 +311,11 @@ const SpecialProducts = ({ type, fluid, designClass, cartClass, heading, noTitle
 
                              
                                     specialproducts && specialproducts.slice(0, 4).map((collection, index) =>
-                                            <div style={linkStyle} className="front col-xl-3 col-lg-4 col-12 ClickableContainer" key={index} onClick={() => getURL(collection)}  >
+                                    <Link href={getURL(collection)}>
+                                            <div style={linkStyle} className="front col-xl-3 col-lg-4 col-12 ClickableContainer" key={index}>
                                                 <AutoFitImage frameWidth="212px" imgSize="contain" frameHeight="205px" positionX="center" style={{backgroundColor:"#f7f7f7"}} positionY="center" className="ClickableContainer" onClick={() => getURL(collection)}  imgSrc={collection.imguRL}/>
                                                 {/* <center style={lableStyle}> <a style={{color:"white"}}  href="#" onClick={() => getURL(collection)} >{collection.keyWorld} </a></center>  */}
-                                            </div>)
+                                            </div> </Link>)
                                     }
                             </Row>
                         </TabPanel>

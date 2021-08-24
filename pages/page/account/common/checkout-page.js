@@ -16,20 +16,118 @@ import { CurrencyContext } from "../../../../helpers/Currency/CurrencyContext";
 import GooglePayButton from "@google-pay/button-react";
 import { useQuery,useLazyQuery } from '@apollo/react-hooks';
 
+// const CREATE_OREDER = gql`
+//   mutation CreateOrderDetail($order: OrderDetail!) {
+//     CreateOrderDetail(order: $order) {
+//       orderdetailid
+//     }
+//   }
+// `;
+
+// const CREATE_ABANDONED_CART = gql`
+//   mutation Createabandonedcart($abandonedcart: abandonedcart!) {
+//     Createabandonedcart(abandonedcart: $abandonedcart) {
+//       orderdetailid
+//     }
+//   }
+// `;
+
+// const UPDATE_CUSTOMER = gql`
+//   mutation UpdateCustomerDetail($Customer: Customerinfo!) {
+//     UpdateCustomerDetail(Customer: $Customer) {
+//         customerredid
+//     }
+//   }
+// `;
+
+// const GET_CUSTOMER_BY_UID = gql`
+// query CustomerByUID ($uid:String!) {
+//     CustomerByUID (uid:$uid) {
+//   customerredid
+//   customername
+//   customerlastname
+//   phonenumber
+//   address1
+//   address2
+//   city
+//   state
+//   country
+//   emailid
+//   googleid
+//   facebookid
+//   pincode
+//     }
+// }
+// `;
+
 const CREATE_OREDER = gql`
-  mutation CreateOrderDetail($order: OrderDetail!) {
-    CreateOrderDetail(order: $order) {
+  mutation($createOrder: OrderDetail){
+    createOrder (orderDetail: $createOrder){
+      address1
+      address2
+      asin
+      city
+      country
+      createdAt
+      customerid
+      customername
+      emailid
+      gst
+      gstname
+      orderdate
       orderdetailid
+      orderreferencenumber
+      orderstatus
+      paymentdate
+      paymentmethod
+      phone
+      pin
+      productimage
+      productsku
+      producttitle
+      quantity
+      state
+      totalprice
+      trackingnumber
+      updatedAt
     }
   }
+
+
 `;
 
 const CREATE_ABANDONED_CART = gql`
-  mutation Createabandonedcart($abandonedcart: abandonedcart!) {
-    Createabandonedcart(abandonedcart: $abandonedcart) {
-      orderdetailid
-    }
+mutation($createAbandonedCart: AbandonedInput){
+  createAbandonedCart(abandonedInput: $createAbandonedCart) {
+    address1
+    address2
+    asin
+    city
+    country
+    customerid
+    customername
+    emailid
+    gst
+    gstname
+    orderdate
+    orderdetailid
+    orderstatus
+    paymentdate
+    orderdetailid
+    orderstatus
+    paymentdate
+    paymentmethod
+    phone
+    pin
+    productimage
+    productsku
+    producttitle
+    quantity
+    state
+    totalprice
+    trackingnumber
   }
+}
 `;
 
 const UPDATE_CUSTOMER = gql`
@@ -37,8 +135,18 @@ const UPDATE_CUSTOMER = gql`
     UpdateCustomerDetail(Customer: $Customer) {
         customerredid
     }
-  }
-`;
+  }`;
+
+
+  const GET_REFNUMBER = gql`
+  mutation($referenceNumberTable: String!){
+    ReferenceNumber(table: $referenceNumberTable) {
+      seqnumber
+      startsfrom
+    }
+  }`;
+
+  
 
 const GET_CUSTOMER_BY_UID = gql`
 query CustomerByUID ($uid:String!) {
@@ -59,6 +167,9 @@ query CustomerByUID ($uid:String!) {
     }
 }
 `;
+
+
+
 const  CheckoutPage = ({ isPublic = false }) => {
   
   const cartContext = useContext(CartContext);
@@ -171,9 +282,15 @@ useEffect(() => {
   // const [createOrder] = useMutation(CREATE_OREDER);
 
   
+  // const [createOrder, { orderedData }] = useMutation(CREATE_OREDER);
+  // const [createAbandonedCart, { abandonedCartData }] = useMutation(CREATE_ABANDONED_CART);
+  // const [UpdateCustomer, { CustomerData }] = useMutation(UPDATE_CUSTOMER);
+
   const [createOrder, { orderedData }] = useMutation(CREATE_OREDER);
   const [createAbandonedCart, { abandonedCartData }] = useMutation(CREATE_ABANDONED_CART);
   const [UpdateCustomer, { CustomerData }] = useMutation(UPDATE_CUSTOMER);
+    const [referenceNumber, { TableName }] = useMutation(GET_REFNUMBER);
+
 
   window.addEventListener('beforeunload', function (e) {
     // Cancel the event
