@@ -14,7 +14,7 @@ import FilterContext from "../../helpers/filter/FilterContext";
 import Currency from "./common/currency";
 import { useRouter } from "next/router";
 import classes from "./Header-one.module.css";
-
+import Link from "next/link";
 const HeaderOne = ({
   logoName,
   headerClass,
@@ -35,6 +35,7 @@ const HeaderOne = ({
   const selectedCategory = filterContext.state;
   const selectedSize = filterContext.selectedSize;
   const [url, setUrl] = useState();
+  const [searchKeyword, setSearchKeyword] = useState("");
   var gLocation = sessionStorage.getItem('geoLocation')
     if(gLocation==null){gLocation=""}
     const [geoLocation, setgeoLocation] = useState(gLocation);
@@ -54,6 +55,18 @@ const HeaderOne = ({
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const searchInputChange =(e)=>{
+    if (
+      e.target.value != null &&
+      e.target.value != undefined  
+    ) {
+      setSearchKeyword(e.target.value);
+      console.log(searchKeyword)
+    }
+  }
+
+
 
   const onSubmit = (data, e) => {
     if (
@@ -170,14 +183,14 @@ const HeaderOne = ({
                       <ul className="d-flex justify-center align-items-center">
                         <li className="onhover-div mobile-search">
                           {/* <div><Media src={search} onClick={openSearch} className="img-fluid" alt="" />
-														<i className="fa fa-search" onClick={openSearch}></i></div> */}
+														<i className="fa fa-search" onClick={openSearch}></i></div> onSubmit={handleSubmit(onSubmit)} */}
                           <section className="search-block">
                             <Container>
                               <Row>
                                 <Col lg="12">
                                   <form
                                     className="form-header"
-                                    onSubmit={handleSubmit(onSubmit)}
+                                    
                                   >
                                     <div className="input-group">
                                       <Input
@@ -186,12 +199,13 @@ const HeaderOne = ({
                                         aria-label="Amount (to the nearest dollar)"
                                         placeholder="Search Products......"
                                         name="keyword"
+                                        onChange={searchInputChange}
                                       />
+                                       <Link href={`/s/${searchKeyword}`}>
                                       <div className="input-group-append">
-                                        <button className="btn btn-solid">
-                                          <i className="fa fa-search"></i>Search
-                                        </button>
+                                        <button className="btn btn-solid"> <i className="fa fa-search"></i>Search </button>
                                       </div>
+                                      </Link>
                                     </div>
                                   </form>
                                 </Col>

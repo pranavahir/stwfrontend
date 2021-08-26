@@ -73,6 +73,7 @@
     "react-freshchat": "^1.0.11",
     "react-full-page": "^0.1.11",
     "react-fullpage": "^0.1.19",
+    "react-gif-loader": "^0.6.0",
     "react-google-charts": "^3.0.14",
     "react-gtm-module": "^2.0.11",
     "react-helmet": "^6.1.0",

@@ -88,7 +88,9 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
         titleProps = titleProps.replace(/[^\w\s]/gi, '-');
         titleProps = titleProps.replace(/---/gi, '-');
         titleProps = titleProps.replace(/--/gi, '-');
-        router.push(`${geoLocation}/p/${product.asin}` + '-' + `${titleProps}`);
+        titleProps = titleProps.toLowerCase();
+        var asin = product.asin.toLowerCase();
+        router.push(`${geoLocation}/p/${asin}` + '-' + `${titleProps}`);
     }
 
     const makeURL = () => {
@@ -97,8 +99,9 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
         titleProps = titleProps.replace(/[^\w\s]/gi, '-');
         titleProps = titleProps.replace(/---/gi, '-');
         titleProps = titleProps.replace(/--/gi, '-');
-        
-        var url = `${geoLocation}/p/${product.asin}` + '-' + `${titleProps}`;
+        titleProps = titleProps.toLowerCase();
+        var asin = product.asin.toLowerCase();
+        var url = `${geoLocation}/p/${asin}` + '-' + `${titleProps}`;
         return url;
     }
 

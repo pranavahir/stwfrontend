@@ -172,8 +172,7 @@ const emailVarification = async (event) => {
               country: "",
               emailid: result.user.email,
               googleid: "",
-              facebookid: "",
-              createdAt: "",
+              facebookid: ""
             };
 
             // emailLinkSend(result.user.email);

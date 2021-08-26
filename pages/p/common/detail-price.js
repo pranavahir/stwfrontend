@@ -137,7 +137,7 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
             <div className={`product-right ${stickyClass}`}>
                 
                 
-                <h3 style={titleSize}> {product.title} </h3>
+                <h1 style={titleSize}> {product.title} </h1>
                 <h4 style={objbrand}> {product.brandname} </h4>
 
                 {/* <h4> {product.categoryvalue} </h4> parseFloat(Math.floor(withDiscount(product.variants)).toFixed(2)).toLocaleString('en') */}

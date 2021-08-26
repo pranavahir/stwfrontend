@@ -149,22 +149,23 @@ const UPDATE_CUSTOMER = gql`
   
 
 const GET_CUSTOMER_BY_UID = gql`
-query CustomerByUID ($uid:String!) {
-    CustomerByUID (uid:$uid) {
-  customerredid
-  customername
-  customerlastname
-  phonenumber
-  address1
-  address2
-  city
-  state
-  country
-  emailid
-  googleid
-  facebookid
-  pincode
-    }
+query($getCustomerByIdCustomerId: String){
+  getCustomerByID(customerID: $getCustomerByIdCustomerId){
+    address1
+    address2
+    city
+    country
+    customerid
+    customerlastname
+    customername
+    customerredid
+    emailid
+    facebookid
+    googleid
+    phonenumber
+    pincode
+    state
+  }
 }
 `;
 
@@ -205,7 +206,7 @@ const  CheckoutPage = ({ isPublic = false }) => {
 
 var { loading, data } =  useQuery(GET_CUSTOMER_BY_UID, {
   variables: {
-      uid: customerId,
+    getCustomerByIdCustomerId: customerId,
   }
 });
 

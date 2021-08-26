@@ -105,6 +105,7 @@ const ProductList = ({ colClass, type,parentCategory, layoutList,openSidebar,noS
     const selectedColor = filterContext.selectedColor;
     const selectedPrice = filterContext.selectedPrice;
     const selectedPromaflag = filterContext.selectedPromaflag;
+    const [pageIndex, setPageIndex] = useState(1);
     var searchKey = "";
     var category = "";
     if(pathId!=null & pathId != undefined && pathId!="")
@@ -121,59 +122,7 @@ const ProductList = ({ colClass, type,parentCategory, layoutList,openSidebar,noS
     else
     category = filterContext.state;
     
-
-    
-    // var MCategory = "";
-    // if(type=="Category")
-    // {
-    //     for(var i=0; i<CategoryList.length ;i++)
-    //     {
-    //         if(CategoryList[i].MenuKey == category)
-    //         {
-    //             MCategory = CategoryList[i].MenuKey;
-    //         }
-    //     }
-    // }
-    // else if(type=="SubCategory")
-    // {
-    //     for(var i=0; i<CategoryList.length ;i++)
-    //     {
-    //         if(CategoryList[i].subCategoryList!=undefined)
-    //         {
-    //           for(var j=0;j<CategoryList[i].subCategoryList.length ;j++)
-    //             {
-    //                 if(CategoryList[i].subCategoryList[j].MenuKey == category)
-    //                 {
-    //                     MCategory = CategoryList[i].subCategoryList[j].MenuKey;
-    //                 }
-    //             }
-    //         }
-    //     }
-    // }
-    // else if(type=="leafCategory")
-    // {
-    //     for(var i=0; i<CategoryList.length ;i++)
-    //     {
-    //         if(CategoryList[i].subCategoryList!=undefined)
-    //         {
-    //         for(var j=0;j<CategoryList[i].subCategoryList.length ;j++)
-    //         {
-    //             if(CategoryList[i].subCategoryList[j].leafCategoryList != undefined)
-    //             {
-    //                 for(var k=0;k<CategoryList[i].subCategoryList[j].leafCategoryList.length ;k++)
-    //             {
-    //                 if(CategoryList[i].subCategoryList[j].leafCategoryList[k].MenuKey == category)
-    //                 {
-    //                     MCategory = CategoryList[i].subCategoryList[j].leafCategoryList[k].MenuKey;
-    //                 }
-    //             }
-    //             }
-    //         }
-    //     }
-    //     }
-    // }
-
-
+ 
     const selectedCategory = category;
 
 
@@ -258,7 +207,7 @@ const ProductList = ({ colClass, type,parentCategory, layoutList,openSidebar,noS
     if(selectedKeyword)
         limitSet = 16;
  
-    var pageIndex = 1;
+ 
 
     var {errors, loading, data, fetchMore } = useQuery(GET_PRODUCTS, {
         variables: {
@@ -313,12 +262,33 @@ const ProductList = ({ colClass, type,parentCategory, layoutList,openSidebar,noS
     const handlePagination = () => {
 
 
-        pageIndex = pageIndex+1
+        // setPageIndex(pageIndex+1);
+        var nextPage = 1;
+        if(data &&  data.lookup && data.lookup.items.length)
+        {
+            console.log(data.lookup.length,"count");
+            console.log(limitSet,"limit");
+            nextPage = (data.lookup.items.length / limitSet)+1;
+            console.log(nextPage,"nextPage");
+        }
+
+
         // setIsLoading(true);
         setTimeout(() =>
             fetchMore({
                 variables: {
-                    indexFrom: pageIndex
+                    lookupSearchFields: {
+                        limit:limitSet,
+                        indexFrom:nextPage,
+                        keyword:selectedKeyword,
+                        promoflag:"",
+                        relevantProduct:"",
+                        selectedCategory:selectedCategory,
+                        panel:panel,
+                        country:country,
+                        priceMin:0,
+                        priceMax:0
+                      }
                 },
                 updateQuery: (prev, { fetchMoreResult }) => {
                     if (!fetchMoreResult) return prev;
@@ -374,7 +344,13 @@ const ProductList = ({ colClass, type,parentCategory, layoutList,openSidebar,noS
                                 <h5>{data ? `${selectedCategory}  1-${data.lookup.items.length} of ${data.lookup.total.total}` : 'loading'}</h5>
                             </div>
                             
-                            :  [((data &&  (data.lookup!=null && data.lookup!=undefined && data.lookup!="") &&  (data.lookup.total.total==0 || data.lookup.total.total==null ))  ? 
+                            :     [((loading)?        <div className="typography_section"> 
+            <div className="typography-box"> 
+            <div  className="custom-load typo-content loader-typo">
+                                    <div className="pre-loader"></div>
+                                </div>
+                                </div>
+                                </div>: 
                             <div>
                 <div className="container">
                     <div id="container" className="text-center">
@@ -424,16 +400,9 @@ const ProductList = ({ colClass, type,parentCategory, layoutList,openSidebar,noS
                         </div>
                     </div>
                 </div>
-            </div>:
+            </div>)]
              
-            <div className="typography_section"> 
-            <div className="typography-box"> 
-            <div  className="custom-load typo-content loader-typo">
-                                    <div className="pre-loader"></div>
-                                </div>
-                                </div>
-                                </div>
-                                )]
+                         
                             }
                         </div>
                        {data &&  (data.lookup!=null && data.lookup!=undefined && data.lookup!="") &&  data.lookup.total.total>0? 

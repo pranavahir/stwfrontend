@@ -67,11 +67,14 @@ const ProductSection = ({ pathId, type }) => {
     if(type == "url")
     {
         asinData = pathId;
+        
     }
     else
     {
         if(pathId!=undefined && pathId!="" && pathId!=null)
         {
+            
+
             if(pathId.search("-")==0)
             asinData =  pathId
             else
@@ -122,7 +125,12 @@ const ProductSection = ({ pathId, type }) => {
         titleProps = titleProps.replace(/--/gi, '-');
         // var url = "/p/"+product.asin + "-" + titleProps;
         // return url;
-        router.push(`/p/${product.asin}` + '-' + `${titleProps}`);
+
+        titleProps = titleProps.toLowerCase();
+        var asin = product.asin.toLowerCase();
+        // var url = `${geoLocation}/p/${asin}` + '-' + `${titleProps}`;
+
+        router.push(`/p/${asin}` + '-' + `${titleProps}`);
     }   
    
     const getSelectedProduct = (item) => {

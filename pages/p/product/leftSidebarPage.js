@@ -75,6 +75,8 @@ query($productAsin: String!, $productType: String!, $productCountry: String!, $p
 
 const LeftSidebarPage = ({ pathId, type }) => {
 
+ 
+
     var asinData = "";
     if(type == "url")
     {
@@ -82,9 +84,9 @@ const LeftSidebarPage = ({ pathId, type }) => {
     }
     else
     {
+        pathId = pathId.toUpperCase();
         if(pathId.search("-")==-1){
-            asinData =  pathId
-            console.log(pathId);
+            asinData = pathId;
         }
         else
         asinData =  pathId.slice(0,pathId.search("-"));
