@@ -15,6 +15,7 @@ import { CurrencyContext } from '../../../helpers/Currency/CurrencyContext';
 import AutoFitImage from 'react-image-autofit-frame';
 import cImg from '../../../public/assets/images/Category/Desktops.jpg';
 import Link from "next/link";
+import { CategoryList } from '../../../services/script';
 
 
 const MainCategoryCollection = ({ type, categoryData, title, subtitle, designClass, noSlider, cartClass, productSlider, titleClass, noTitle, innerClass, inner, backImage }) => {
