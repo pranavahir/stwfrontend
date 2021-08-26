@@ -4,7 +4,7 @@ import Slider from 'react-slick';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { Container, Row, Col } from 'reactstrap';
-import { homeSlider,CategorySlider } from '../../../../services/script';
+import { homeSlider,CategorySlider,CategoryList } from '../../../../services/script';
 import MainCategoryCollection from '../../../../components/common/Collections/MainCategoryCollection'
 
 
@@ -24,17 +24,17 @@ const Banner = () => {
     const [geoLocation, setgeoLocation] = useState(gLocation);
 
 
-  const CategoryList=[
-    { CategoryName:"Electronics"},
-    { CategoryName:"Fashion"},
-    { CategoryName:"Home & Kitchen"},
-    { CategoryName:"Beauty & Personal Care"},
-    { CategoryName:"Health & Wellness"},
-    { CategoryName:"Grocery"},
-    { CategoryName:"Sports & Outdoors"},
-    { CategoryName:"Baby & Toys"},
-    { CategoryName:"Next Day Delivery"},
-]
+//   const CategoryList=[
+//     { CategoryName:"Electronics"},
+//     { CategoryName:"Fashion"},
+//     { CategoryName:"Home & Kitchen"},
+//     { CategoryName:"Beauty & Personal Care"},
+//     { CategoryName:"Health & Wellness"},
+//     { CategoryName:"Grocery"},
+//     { CategoryName:"Sports & Outdoors"},
+//     { CategoryName:"Baby & Toys"},
+//     { CategoryName:"Next Day Delivery"},
+// ]
 
   const CategoryFilter = (category) => {
     // router.push(`/p/${product.id}` + '-' + `${titleProps}`);
