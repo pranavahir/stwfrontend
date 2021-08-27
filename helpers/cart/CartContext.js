@@ -33,6 +33,7 @@ const CartProvider = (props) => {
   // Add Product To Cart
   const addToCart = (item ,quantity) => {
     // toast.success("Product Added Successfully !");
+    console.log(item);
     if(withDiscount(item.variants) > 0)
     {
       const index = cartItems.findIndex(itm => itm.seqid === item.seqid)

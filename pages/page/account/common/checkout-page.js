@@ -41,8 +41,8 @@ import { useQuery,useLazyQuery } from '@apollo/react-hooks';
 // `;
 
 // const GET_CUSTOMER_BY_UID = gql`
-// query CustomerByUID ($uid:String!) {
-//     CustomerByUID (uid:$uid) {
+// query getCustomerByID ($uid:String!) {
+//     getCustomerByID (uid:$uid) {
 //   customerredid
 //   customername
 //   customerlastname
@@ -131,11 +131,25 @@ mutation($createAbandonedCart: AbandonedInput){
 `;
 
 const UPDATE_CUSTOMER = gql`
-  mutation UpdateCustomerDetail($Customer: Customerinfo!) {
-    UpdateCustomerDetail(Customer: $Customer) {
-        customerredid
-    }
-  }`;
+mutation($updateCustomerDetailsCustomerInput: CustomerInput){
+  updateCustomerDetails(customerInput: $updateCustomerDetailsCustomerInput){
+    address1
+    address2
+    city
+    country
+    customerid
+    customerlastname
+    customerlastname
+    customername
+    customerredid
+    emailid
+    facebookid
+    googleid
+    phonenumber
+    pincode
+    state
+  }
+}`;
 
 
   const GET_REFNUMBER = gql`
@@ -256,7 +270,8 @@ useEffect(() => {
   sessionStorage.setItem('orderObj', orderObj);
   if(data!=undefined)
   {
-    setState({first_name:data.CustomerByUID.customername})
+    console.log(data);
+    setState({first_name:data.getCustomerByID.customername})
   }
 
      
@@ -328,15 +343,15 @@ useEffect(() => {
   if(data !=undefined)
   {
     customerData={
-      first_name:(obj.first_name==undefined ||  obj.first_name==null || obj.first_name=="" )?data.CustomerByUID.customername:obj.first_name,
-      last_name:obj.last_name==undefined?data.CustomerByUID.customerlastname:obj.last_name,
-      phone:obj.phone==undefined?data.CustomerByUID.phonenumber:obj.phone,
-      email:obj.email==undefined?data.CustomerByUID.emailid:obj.email,
+      first_name:(obj.first_name==undefined ||  obj.first_name==null || obj.first_name=="" )?data.getCustomerByID.customername:obj.first_name,
+      last_name:obj.last_name==undefined?data.getCustomerByID.customerlastname:obj.last_name,
+      phone:obj.phone==undefined?data.getCustomerByID.phonenumber:obj.phone,
+      email:obj.email==undefined?data.getCustomerByID.emailid:obj.email,
       country:country,
-      address:obj.address==undefined?data.CustomerByUID.address1:obj.address,
-      city:obj.city==undefined?data.CustomerByUID.city:obj.city,
-      state:obj.state==undefined?data.CustomerByUID.state:obj.state,
-      pincode:obj.pincode==undefined?data.CustomerByUID.pincode:obj.pincode,
+      address:obj.address==undefined?data.getCustomerByID.address1:obj.address,
+      city:obj.city==undefined?data.getCustomerByID.city:obj.city,
+      state:obj.state==undefined?data.getCustomerByID.state:obj.state,
+      pincode:obj.pincode==undefined?data.getCustomerByID.pincode:obj.pincode,
     }
   }   
 
@@ -372,6 +387,7 @@ useEffect(() => {
 
       OrderDetail = {
         productsku: item.sku,
+        asin:item.asin,
         producttitle: titleTrim(item.title),
         quantity: (item.qty * 1),
         totalprice: withDiscountWithQty(item.variants,item.qty),
@@ -640,7 +656,7 @@ const changeGstcheck = (e) => {
       if(paymentGateway == "Razorpay")
       {
         var OrderDetail = {
-          orderdetailid: 2,
+          orderdetailid: "2",
           productsku: "item.sku",
           producttitle: "item.title",
           quantity: 1,
@@ -666,8 +682,9 @@ const changeGstcheck = (e) => {
         var orderResult = 0;
         cartItems.map((item, index) => {
           OrderDetail = {
-            orderdetailid: 2,
+            orderdetailid: "2",
             productsku: item.sku,
+            asin:item.asin,
             producttitle: titleTrim(item.title),
             quantity: (item.qty * 1),
             totalprice: withDiscountWithQty(item.variants,item.qty),
@@ -696,7 +713,7 @@ const changeGstcheck = (e) => {
 
             // console.log(OrderDetail);
             var orderData = createOrder({
-              variables: { order: { ...OrderDetail } },
+              variables: { createOrder: { ...OrderDetail } },
             });
 
             
@@ -725,7 +742,7 @@ const changeGstcheck = (e) => {
       }
   
         var CustomerData = UpdateCustomer({
-          variables: { Customer: { ...NewCustomerData } },
+          variables: { updateCustomerDetailsCustomerInput: { ...NewCustomerData } },
         });
 
       
@@ -752,7 +769,7 @@ const changeGstcheck = (e) => {
       else if(paymentGateway=="Stripe")
       {
           var OrderDetail = {
-            orderdetailid: 2,
+            orderdetailid: "2",
             productsku: "item.sku",
             producttitle: "item.title",
             quantity: 1,
@@ -777,7 +794,8 @@ const changeGstcheck = (e) => {
           var orderResult = 0;
           cartItems.map((item, index) => {
             OrderDetail = {
-              orderdetailid: 2,
+              orderdetailid: "2",
+              asin:item.asin,
               productsku: item.sku,
               producttitle: titleTrim(item.title),
               quantity: (item.qty * 1),
@@ -805,7 +823,7 @@ const changeGstcheck = (e) => {
 
             try {
               var orderData = createOrder({
-                variables: { order: { ...OrderDetail } },
+                variables: { createOrder: { ...OrderDetail } },
               });
 
               //  history.push('/multikart-admin/menus/list-menu')
@@ -830,7 +848,7 @@ const changeGstcheck = (e) => {
         }
     
           var CustomerData = UpdateCustomer({
-            variables: { Customer: { ...NewCustomerData } },
+            variables: { updateCustomerDetailsCustomerInput: { ...NewCustomerData } },
           });
 
              //Order mail 
@@ -857,7 +875,7 @@ const changeGstcheck = (e) => {
       else if(paymentGateway=="PayPal")
       {
           var OrderDetail = {
-            orderdetailid: 2,
+            orderdetailid: "2",
             productsku: "item.sku",
             producttitle: "item.title",
             quantity: 1,
@@ -882,8 +900,9 @@ const changeGstcheck = (e) => {
           var orderResult = 0;
           cartItems.map((item, index) => {
             OrderDetail = {
-              orderdetailid: 2,
+              orderdetailid: "2",
               productsku: item.sku,
+              asin:item.asin,
               producttitle: titleTrim(item.title),
               quantity: (item.qty * 1),
               totalprice: withDiscountWithQty(item.variants,item.qty),
@@ -909,7 +928,7 @@ const changeGstcheck = (e) => {
             
             try {
               var orderData = createOrder({
-                variables: { order: { ...OrderDetail } },
+                variables: { createOrder: { ...OrderDetail } },
               });
 
               //  history.push('/multikart-admin/menus/list-menu')
@@ -934,7 +953,7 @@ const changeGstcheck = (e) => {
         }
     
           var CustomerData = UpdateCustomer({
-            variables: { Customer: { ...NewCustomerData } },
+            variables: { updateCustomerDetailsCustomerInput: { ...NewCustomerData } },
           });
 
               //Order mail 
@@ -1201,15 +1220,15 @@ const changeGstcheck = (e) => {
 
 
     var CustDetails={
-      first_name:(obj.first_name==undefined ||  obj.first_name==null || obj.first_name=="" )?data.CustomerByUID.customername:obj.first_name,
-      last_name:obj.last_name==undefined?data.CustomerByUID.customerlastname:obj.last_name,
-      phone:obj.phone==undefined?data.CustomerByUID.phonenumber:obj.phone,
-      email:obj.email==undefined?data.CustomerByUID.emailid:obj.email,
+      first_name:(obj.first_name==undefined ||  obj.first_name==null || obj.first_name=="" )?data.getCustomerByID.customername:obj.first_name,
+      last_name:obj.last_name==undefined?data.getCustomerByID.customerlastname:obj.last_name,
+      phone:obj.phone==undefined?data.getCustomerByID.phonenumber:obj.phone,
+      email:obj.email==undefined?data.getCustomerByID.emailid:obj.email,
       country:country,
-      address:obj.address==undefined?data.CustomerByUID.address1:obj.address,
-      city:obj.city==undefined?data.CustomerByUID.city:obj.city,
-      state:obj.state==undefined?data.CustomerByUID.state:obj.state,
-      pincode:obj.pincode==undefined?data.CustomerByUID.pincode:obj.pincode,
+      address:obj.address==undefined?data.getCustomerByID.address1:obj.address,
+      city:obj.city==undefined?data.getCustomerByID.city:obj.city,
+      state:obj.state==undefined?data.getCustomerByID.state:obj.state,
+      pincode:obj.pincode==undefined?data.getCustomerByID.pincode:obj.pincode,
     }
 
     Orderconformation("PayPal",payment,CustDetails);
@@ -1315,74 +1334,74 @@ const changeGstcheck = (e) => {
     obj[event.target.name] = event.target.value;
     
      
-    // last_name:obj.last_name==undefined?data.CustomerByUID.customerlastname:obj.last_name,
-    // phonenumber:obj.phonenumber==undefined?data.CustomerByUID.phonenumber:obj.phonenumber,
-    // email:obj.email==undefined?data.CustomerByUID.emailid:obj.email,
+    // last_name:obj.last_name==undefined?data.getCustomerByID.customerlastname:obj.last_name,
+    // phonenumber:obj.phonenumber==undefined?data.getCustomerByID.phonenumber:obj.phonenumber,
+    // email:obj.email==undefined?data.getCustomerByID.emailid:obj.email,
     // country:country,
-    // address:obj.address==undefined?data.CustomerByUID.address1:obj.address,
-    // city:obj.city==undefined?data.CustomerByUID.city:obj.city,
-    // state:obj.state==undefined?data.CustomerByUID.state:obj.state,
-    // pincode:obj.pincode==undefined?data.CustomerByUID.pincode:obj.pincode,
+    // address:obj.address==undefined?data.getCustomerByID.address1:obj.address,
+    // city:obj.city==undefined?data.getCustomerByID.city:obj.city,
+    // state:obj.state==undefined?data.getCustomerByID.state:obj.state,
+    // pincode:obj.pincode==undefined?data.getCustomerByID.pincode:obj.pincode,
 
     if(event.target.name == "first_name" )
     {
       setState({first_name:event.target.value})
       if(data!=undefined)
-      data.CustomerByUID.customername = event.target.value;
+      data.getCustomerByID.customername = event.target.value;
     }  
     
     if(event.target.name == "last_name" )
     {
       setState({last_name:event.target.value})
       if(data!=undefined)
-      data.CustomerByUID.customerlastname = event.target.value;
+      data.getCustomerByID.customerlastname = event.target.value;
     }  
     
     if(event.target.name == "phone" )
     {
       setState({phone:event.target.value})
       if(data!=undefined)
-      data.CustomerByUID.phonenumber = event.target.value;
+      data.getCustomerByID.phonenumber = event.target.value;
     }  
     
     if(event.target.name == "email" )
     {
       setState({email:event.target.value})
       if(data!=undefined)
-        data.CustomerByUID.emailid = event.target.value;
+        data.getCustomerByID.emailid = event.target.value;
       
     }  
      
       setState({country:country})
       if(data!=undefined)
-        data.CustomerByUID.country = country;
+        data.getCustomerByID.country = country;
      
     if(event.target.name == "address" )
     {
       setState({address:event.target.value})
       if(data!=undefined)
-      data.CustomerByUID.address1 = event.target.value;
+      data.getCustomerByID.address1 = event.target.value;
     }  
     
     if(event.target.name == "city" )
     {
       setState({city:event.target.value})
       if(data!=undefined)
-      data.CustomerByUID.city = event.target.value;
+      data.getCustomerByID.city = event.target.value;
     }  
     
     if(event.target.name == "state" )
     {
       setState({state:event.target.value})
       if(data!=undefined)
-      data.CustomerByUID.state = event.target.value;
+      data.getCustomerByID.state = event.target.value;
     }  
     
     if(event.target.name == "pincode" )
     {
       setState({pincode:event.target.value})
       if(data!=undefined)
-      data.CustomerByUID.pincode = event.target.value;
+      data.getCustomerByID.pincode = event.target.value;
     }  
     
 
@@ -1461,18 +1480,18 @@ const [geoLocation, setgeoLocation] = useState(gLocation);
                   <div className="row check-out">
                     <div className="form-group col-md-6 col-sm-6 col-xs-12">
                       <div className="field-label">First Name</div>
-                      {(data.CustomerByUID.customername!="" && data.CustomerByUID.customername!=null) ? <input
+                      {(data.getCustomerByID.customername!="" && data.getCustomerByID.customername!=null) ? <input
                         type="text"
                         className={`${errors.first_name ? "error_border" : ""}`}
                         name="first_name"
                         onChange={setStateFromInput}
-                        value={data.CustomerByUID.customername}
+                        value={data.getCustomerByID.customername}
                         ref={register({ required: true })}
                       /> : <input
                         type="text"
                         className={`${errors.first_name ? "error_border" : ""}`}
                         name="first_name"
-                        value={data.CustomerByUID.customername}
+                        value={data.getCustomerByID.customername}
                         onChange={setStateFromInput}
                         ref={register({ required: true })}
                       />}
@@ -1482,10 +1501,10 @@ const [geoLocation, setgeoLocation] = useState(gLocation);
                     </div>
                     <div className="form-group col-md-6 col-sm-6 col-xs-12">
                       <div className="field-label">Last Name</div>
-                      {(data.CustomerByUID.customerlastname!="" && data.CustomerByUID.customerlastname!=null) ?  <input
+                      {(data.getCustomerByID.customerlastname!="" && data.getCustomerByID.customerlastname!=null) ?  <input
                         type="text"
                         className={`${errors.last_name ? "error_border" : ""}`}
-                        value={data.CustomerByUID.customerlastname}
+                        value={data.getCustomerByID.customerlastname}
                         name="last_name"
                         onChange={setStateFromInput}
                         ref={register({ required: true })}
@@ -1502,11 +1521,11 @@ const [geoLocation, setgeoLocation] = useState(gLocation);
                     </div>
                     <div className="form-group col-md-6 col-sm-6 col-xs-12">
                       <div className="field-label">Phone</div>
-                      {(data.CustomerByUID.phonenumber!="" && data.CustomerByUID.customerlastname!=null) ?  <input
+                      {(data.getCustomerByID.phonenumber!="" && data.getCustomerByID.customerlastname!=null) ?  <input
                         type="text"
                         name="phone"
                         onChange={setStateFromInput}
-                        value={data.CustomerByUID.phonenumber}
+                        value={data.getCustomerByID.phonenumber}
                         className={`${errors.phone ? "error_border" : ""}`}
                         ref={register({ pattern: /\d+/ })}
                       />:<input
@@ -1523,7 +1542,7 @@ const [geoLocation, setgeoLocation] = useState(gLocation);
                     </div>
                     <div className="form-group col-md-6 col-sm-6 col-xs-12">
                       <div className="field-label">Email Address</div> 
-                      {(data.CustomerByUID.emailid!="" && data.CustomerByUID.emailid!=null) ? <input
+                      {(data.getCustomerByID.emailid!="" && data.getCustomerByID.emailid!=null) ? <input
                         className="form-control"
                         className={`${errors.email ? "error_border" : ""}`}
                         type="text"
@@ -1531,7 +1550,7 @@ const [geoLocation, setgeoLocation] = useState(gLocation);
                         onBlur={emailVarification}
                         autocomplete="off"
                         onChange={setStateFromInput}
-                        value={data.CustomerByUID.emailid}
+                        value={data.getCustomerByID.emailid}
                         ref={register({
                           required: true,
                           pattern: /^\S+@\S+$/i,
@@ -1606,13 +1625,13 @@ const [geoLocation, setgeoLocation] = useState(gLocation);
 
                     <div className="form-group col-md-12 col-sm-12 col-xs-12">
                       <div className="field-label">Address</div>
-                      {(data.CustomerByUID.address1!="" && data.CustomerByUID.address1!=null) ?  <input
+                      {(data.getCustomerByID.address1!="" && data.getCustomerByID.address1!=null) ?  <input
                         className="form-control"
                         className={`${errors.address ? "error_border" : ""}`}
                         type="text"
                         name="address"
                         onChange={setStateFromInput}
-                        value={data.CustomerByUID.address1}
+                        value={data.getCustomerByID.address1}
                         ref={register({ required: true, min: 20, max: 120 })}
                         placeholder="Street address"
                       />:<input
@@ -1630,11 +1649,11 @@ const [geoLocation, setgeoLocation] = useState(gLocation);
                     </div>
                     <div className="form-group col-md-12 col-sm-12 col-xs-12">
                       <div className="field-label">Town/City</div>
-                      {(data.CustomerByUID.city!="" && data.CustomerByUID.city!=null) ?  <input
+                      {(data.getCustomerByID.city!="" && data.getCustomerByID.city!=null) ?  <input
                         className="form-control"
                         type="text"
                         className={`${errors.city ? "error_border" : ""}`}
-                        value={data.CustomerByUID.city}
+                        value={data.getCustomerByID.city}
                         name="city"
                         ref={register({ required: true })}
                         onChange={setStateFromInput}
@@ -1652,12 +1671,12 @@ const [geoLocation, setgeoLocation] = useState(gLocation);
                     </div>
                     <div className="form-group col-md-12 col-sm-6 col-xs-12">
                       <div className="field-label">State / County</div>
-                      {(data.CustomerByUID.state!="" && data.CustomerByUID.state!=null) ?  <input
+                      {(data.getCustomerByID.state!="" && data.getCustomerByID.state!=null) ?  <input
                         className="form-control"
                         type="text"
                         className={`${errors.state ? "error_border" : ""}`}
                         name="state"
-                        value={data.CustomerByUID.state}
+                        value={data.getCustomerByID.state}
                         ref={register({ required: true })}
                         onChange={setStateFromInput}
                       />:<input
@@ -1674,12 +1693,12 @@ const [geoLocation, setgeoLocation] = useState(gLocation);
                     </div>
                     <div className="form-group col-md-12 col-sm-6 col-xs-12">
                       <div className="field-label">Postal Code</div>
-                      {(data.CustomerByUID.pincode!="" && data.CustomerByUID.pincode!=null) ?  <input
+                      {(data.getCustomerByID.pincode!="" && data.getCustomerByID.pincode!=null) ?  <input
                         className="form-control"
                         type="text"
                         name="pincode"
                         onChange={setStateFromInput}
-                        value={data.CustomerByUID.pincode}
+                        value={data.getCustomerByID.pincode}
                         className={`${errors.pincode ? "error_border" : ""}`}
                         ref={register({ pattern: /\d+/ })}
                       />:<input

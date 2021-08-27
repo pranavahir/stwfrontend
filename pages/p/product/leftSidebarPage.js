@@ -33,6 +33,7 @@ query($productAsin: String!, $productType: String!, $productCountry: String!, $p
         title
         weight
         width
+        sku
         images {
           additionalimage1
           additionalimage2
