@@ -217,12 +217,15 @@ const  CheckoutPage = ({ isPublic = false }) => {
     localStorage.getItem('CustomerId')
 );
 
+if(customerId!=null && customerId!=undefined && customerId!="")
+{
+  var { loading, data } =  useQuery(GET_CUSTOMER_BY_UID, {
+    variables: {
+      getCustomerByIdCustomerId: customerId,
+    }
+  });
+}
 
-var { loading, data } =  useQuery(GET_CUSTOMER_BY_UID, {
-  variables: {
-    getCustomerByIdCustomerId: customerId,
-  }
-});
 
 const errStyle={
     fontSize: "12px",
