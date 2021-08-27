@@ -13,6 +13,7 @@ import CartContext from '../../../helpers/cart';
 import {WishlistContext} from '../../../helpers/wishlist/WishlistContext';
 import {CompareContext} from '../../../helpers/Compare/CompareContext';
 import CategoryCollection from '../../../components/common/Collections/CategoryCollection';
+import Head from 'next/head';
 
 
 
@@ -124,8 +125,8 @@ const ProductList = ({ colClass, type,parentCategory, layoutList,openSidebar,noS
     
  
     const selectedCategory = category;
-
-
+    const metatitle = "Buy "+selectedCategory+" Online at the lowest price on Shop The World in "+curContext.state.country;
+    const metadesc  = selectedCategory + ": Shop for "+ selectedCategory + " online at the lowest prices in "+ curContext.state.country +" at Shop The World. Always cheaper than Amazon Price"
     const selectedKeyword=searchKey;
 
     
@@ -329,8 +330,17 @@ const ProductList = ({ colClass, type,parentCategory, layoutList,openSidebar,noS
     }
    
     return (
+        
         <Col className="collection-content">
+            <Head>
+                <title>{metatitle}</title>
+                <meta name="description" content={metadesc}/>
+                <meta property="og:title" content={metatitle}/>
+                <meta property="og:description" content={metadesc}/>
+                <meta property="og:image" content="https://shoptheworld.store/assets/images/icon/logo.png"/>
+            </Head>
             <div className="page-main-content">
+            
                 <Row>
                     <Col sm="12">
                         <div className="top-banner-wrapper">
@@ -598,6 +608,7 @@ const ProductList = ({ colClass, type,parentCategory, layoutList,openSidebar,noS
                 
             </div>
         </Col>
+        
     )
 }
 
