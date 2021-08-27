@@ -641,7 +641,7 @@ const SideBar = () => {
                         </h5>
                         <ul>
                           <li>
-                          <Link href={`/category/home-&-kitchen/bedding/bedding-and-accessories`}>
+                          <Link href={`/category/home-and-kitchen/bedding/bedding-and-accessories`}>
                             <div style={linkStyle} >Bedding & Accessories</div>
                             </Link>
                           </li>
