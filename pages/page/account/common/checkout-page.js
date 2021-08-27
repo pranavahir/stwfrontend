@@ -268,7 +268,7 @@ const [GstView,setGSTView] = useState(false)
     
 useEffect(() => {
   sessionStorage.setItem('orderObj', orderObj);
-  if(data!=undefined)
+  if(data!=undefined && (data.getCustomerByID!=null && data.getCustomerByID!=undefined))
   {
     console.log(data);
     setState({first_name:data.getCustomerByID.customername})
@@ -1346,61 +1346,61 @@ const changeGstcheck = (e) => {
     if(event.target.name == "first_name" )
     {
       setState({first_name:event.target.value})
-      if(data!=undefined)
+      if(data!=undefined && (data.getCustomerByID!=null && data.getCustomerByID!=undefined))
       data.getCustomerByID.customername = event.target.value;
     }  
     
     if(event.target.name == "last_name" )
     {
       setState({last_name:event.target.value})
-      if(data!=undefined)
+      if(data!=undefined && (data.getCustomerByID!=null && data.getCustomerByID!=undefined))
       data.getCustomerByID.customerlastname = event.target.value;
     }  
     
     if(event.target.name == "phone" )
     {
       setState({phone:event.target.value})
-      if(data!=undefined)
+      if(data!=undefined && (data.getCustomerByID!=null && data.getCustomerByID!=undefined))
       data.getCustomerByID.phonenumber = event.target.value;
     }  
     
     if(event.target.name == "email" )
     {
       setState({email:event.target.value})
-      if(data!=undefined)
+      if(data!=undefined && (data.getCustomerByID!=null && data.getCustomerByID!=undefined))
         data.getCustomerByID.emailid = event.target.value;
       
     }  
      
       setState({country:country})
-      if(data!=undefined)
+      if(data!=undefined && (data.getCustomerByID!=null && data.getCustomerByID!=undefined))
         data.getCustomerByID.country = country;
      
     if(event.target.name == "address" )
     {
       setState({address:event.target.value})
-      if(data!=undefined)
+      if(data!=undefined && (data.getCustomerByID!=null && data.getCustomerByID!=undefined))
       data.getCustomerByID.address1 = event.target.value;
     }  
     
     if(event.target.name == "city" )
     {
       setState({city:event.target.value})
-      if(data!=undefined)
+      if(data!=undefined && (data.getCustomerByID!=null && data.getCustomerByID!=undefined))
       data.getCustomerByID.city = event.target.value;
     }  
     
     if(event.target.name == "state" )
     {
       setState({state:event.target.value})
-      if(data!=undefined)
+      if(data!=undefined && (data.getCustomerByID!=null && data.getCustomerByID!=undefined))
       data.getCustomerByID.state = event.target.value;
     }  
     
     if(event.target.name == "pincode" )
     {
       setState({pincode:event.target.value})
-      if(data!=undefined)
+      if(data!=undefined && (data.getCustomerByID!=null && data.getCustomerByID!=undefined))
       data.getCustomerByID.pincode = event.target.value;
     }  
     
