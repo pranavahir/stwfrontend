@@ -710,16 +710,12 @@ const changeGstcheck = (e) => {
           ListOrder.push(OrderDetail);
 
           try {
-
             // console.log(OrderDetail);
             var orderData = createOrder({
               variables: { createOrder: { ...OrderDetail } },
             });
-
-            
             //  history.push('/multikart-admin/menus/list-menu')
             //  toast.success("Successfully Added !")
-      
           } catch (err) {
             console.log(err.message);
           }

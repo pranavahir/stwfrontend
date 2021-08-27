@@ -273,13 +273,14 @@ const HeaderOne = ({
                 "onhover-div mobile-search " + classes.fullSizeContainer
               }
             >
+                        {/* onSubmit={handleSubmit(onSubmit)} */}
+
               <section className="search-block">
                 <Container>
                   <Row>
                     <Col lg="12">
                       <form
                         className="form-header"
-                        onSubmit={handleSubmit(onSubmit)}
                       >
                         <div className="input-group">
                           <Input
@@ -288,7 +289,9 @@ const HeaderOne = ({
                             aria-label="Amount (to the nearest dollar)"
                             placeholder="Search Products......"
                             name="keyword"
+                            onChange={searchInputChange}
                           />
+                            <Link href={`/s/${searchKeyword}`}>
                           <div className="input-group-append">
                             <div className={classes.searchMobile}>
                               <button className={classes.mobileButton}>
@@ -304,7 +307,7 @@ const HeaderOne = ({
                                 <i className={"fa fa-search "}></i>Search
                               </button>
                             </div>
-                          </div>
+                          </div></Link>
                         </div>
                       </form>
                     </Col>

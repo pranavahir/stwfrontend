@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect } from 'react';
-import { Col, Row, Media, Button, Spinner,Container } from 'reactstrap';
+import {  Form, Label, Input, Col, Row, Media, Button, Spinner,Container } from 'reactstrap';
 import { CategorySlider,CategoryList } from '../../../services/script';
 import Menu2 from '../../../public/assets/images/mega-menu/2.jpg';
 import { useQuery } from '@apollo/react-hooks';
@@ -353,7 +353,7 @@ const ProductList = ({ colClass, type,parentCategory, layoutList,openSidebar,noS
                                 </div>: 
                             <div>
                 <div className="container">
-                    <div id="container" className="text-center">
+                    <div id="container" >
                         <div>
                             <div id="login">
                                 <div>
@@ -362,31 +362,46 @@ const ProductList = ({ colClass, type,parentCategory, layoutList,openSidebar,noS
                                             {/* <img src="../assets/images/icon/logo.png" alt="Multikart_fashion" className="img-fluid" /> */}
                                         </a>
                                     </div>
-                                    <h2 className="mb-3">
-                                     Will be Coming Soon!
-                            </h2>
+                                    <h3 className="mb-3">
+                                     Share us the product details, we will make it available.
+                            </h3>
                                 </div>
-                                <div className="row">
-                                    <div className="col-sm-12">
-                                        <form action="#" className="theme-form">
-                                            <div className="col-md-12 mt-2">
-                                                <h3>Enter Your Email: </h3>
-                                            </div>
-                                            <div className="form-row">
-                                                <div className="col-md-12">
-                                                    <input type="password" name="password" id="password" className="form-control"
-                                                        autoFocus="" />
-                                                </div>
-                                                <div className="col-md-12">
-                                                    <div className="actions">
-                                                        <button type="submit" className="btn btn-solid">notify me</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </form>
-                                    </div>
-                                </div>
+                                <section className="contact-page section-b-space">
+                                <Row>
+                        <Col sm="12">
+                            <Form className="theme-form">
+                                <Row>
+                                    <Col md="6">
+                                        <Label for="name">First Name</Label>
+                                        <Input type="text" className="form-control" id="name" placeholder="Enter Your name"
+                                            required="" />
+                                    </Col>
+                                    <Col md="6">
+                                        <Label for="email">Last Name</Label>
+                                        <Input type="text" className="form-control" id="last-name" placeholder="Email" required="" />
+                                    </Col>
+                                    <Col md="6">
+                                        <Label for="review">Phone number</Label>
+                                        <Input type="text" className="form-control" id="review" placeholder="Enter your number"
+                                            required="" />
+                                    </Col>
+                                    <Col md="6">
+                                        <Label for="email">Email</Label>
+                                        <Input type="text" className="form-control" id="email" placeholder="Email" required="" />
+                                    </Col>
+                                    <Col md="12">
+                                        <Label for="review">Write Your Message</Label>
+                                        <textarea className="form-control" placeholder="Write Your Message"
+                                            id="exampleFormControlTextarea1" rows="6"></textarea>
+                                    </Col>
+                                    <Col md="12">
+                                        <button className="btn btn-solid" type="submit">Send Your Message</button>
+                                    </Col>
+                                </Row>
+                            </Form>
+                        </Col>
+                    </Row>
+                                </section>
                                 <div id="footer" className="mt-4">
                                     <div id="owner">
                                         <a href="#">Log in here</a> or <a href="#">change your password

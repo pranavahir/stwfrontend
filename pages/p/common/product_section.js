@@ -74,7 +74,7 @@ const ProductSection = ({ pathId, type }) => {
         if(pathId!=undefined && pathId!="" && pathId!=null)
         {
             
-
+            pathId = pathId.toUpperCase();
             if(pathId.search("-")==0)
             asinData =  pathId
             else
@@ -153,7 +153,7 @@ const ProductSection = ({ pathId, type }) => {
             // promoflag:"",
             // relevantProduct:asinData 
             getProductsByMenuTableSearchFields: {
-                limit:1,
+                limit:10,
                 indexFrom:1,
                 keyword:"",
                 country:country,
@@ -175,11 +175,11 @@ const ProductSection = ({ pathId, type }) => {
                     </Col>
                 </Row>
                 <Row className="search-product">
-                    {(!data || !data.products || data.products.items.length === 0 || loading) ?
+                    {(!data || !data.getProductsByMenuTable || data.getProductsByMenuTable.items.length === 0 || loading) ?
                         'loading'
                         :
                         <>
-                            {data && data.products.items.slice(0, 6).map((product, index) =>
+                            {data && data.getProductsByMenuTable.items.slice(0, 6).map((product, index) =>
                                 <Col xl="2" md="4" sm="6" key={index}>
                                     <div className="product-box">
                                         <div className="img-wrapper">
