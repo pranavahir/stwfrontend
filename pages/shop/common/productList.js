@@ -109,12 +109,18 @@ const ProductList = ({ colClass, type,parentCategory, layoutList,openSidebar,noS
     const [pageIndex, setPageIndex] = useState(1);
     var searchKey = "";
     var category = "";
+    var promokey = "";
     if(pathId!=null & pathId != undefined && pathId!="")
     {
         if(type=="keyword")
         {
             searchKey = pathId; 
         }
+        else if(type=="promo")
+        {
+            promokey = pathId; 
+        }
+
         else
         {
             category = pathId;
@@ -125,6 +131,9 @@ const ProductList = ({ colClass, type,parentCategory, layoutList,openSidebar,noS
     
  
     const selectedCategory = category;
+    const selectedPromo = promokey;
+
+
     const metatitle = "Buy "+selectedCategory+" Online at the lowest price on Shop The World in "+curContext.state.country;
     const metadesc  = selectedCategory + ": Shop for "+ selectedCategory + " online at the lowest prices in "+ curContext.state.country +" at Shop The World. Always cheaper than Amazon Price"
     const selectedKeyword=searchKey;
@@ -216,7 +225,7 @@ const ProductList = ({ colClass, type,parentCategory, layoutList,openSidebar,noS
                 limit:limitSet,
                 indexFrom:pageIndex,
                 keyword:selectedKeyword,
-                promoflag:"",
+                promoflag:selectedPromo,
                 relevantProduct:"",
                 selectedCategory:selectedCategory,
                 panel:panel,
