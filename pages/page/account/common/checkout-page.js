@@ -1476,7 +1476,7 @@ const [geoLocation, setgeoLocation] = useState(gLocation);
                   <div className="checkout-title">
                     <h3>Billing Details</h3>
                   </div>
-                  {data != undefined ? 
+                  {data != undefined && (data.getCustomerByID != undefined && data.getCustomerByID != null) ? 
                   <div className="row check-out">
                     <div className="form-group col-md-6 col-sm-6 col-xs-12">
                       <div className="field-label">First Name</div>
