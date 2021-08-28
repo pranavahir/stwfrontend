@@ -14,8 +14,8 @@ import {WishlistContext} from '../../../helpers/wishlist/WishlistContext';
 import {CompareContext} from '../../../helpers/Compare/CompareContext';
 import CategoryCollection from '../../../components/common/Collections/CategoryCollection';
 import Head from 'next/head';
-
-
+import { useMutation } from "@apollo/react-hooks";
+import { toast } from 'react-toastify'
 
 const GET_PRODUCTS = gql`
 query($lookupSearchFields: SearchFields){
@@ -84,7 +84,20 @@ query($lookupSearchFields: SearchFields){
     }
   }`;
 
-
+  const CREATE_AVAILABLITY_NOTIFICATION = gql` mutation($country: String, $date: String, $email: String, $mobile: String, $name: String, $product: String, $quantity: String, $status: String, $url: String, $userId: String){
+    createNotifyCustomerInfo(country: $country,date: $date,email: $email,mobile: $mobile,name: $name,product: $product,quantity: $quantity,status: $status,url: $url,userID: $userId){
+      country
+      date
+      email
+      mobile
+      name
+      product
+      quantity
+      status
+      url
+      userID
+    }
+  }`
 
 const ProductList = ({ colClass, type,parentCategory, layoutList,openSidebar,noSidebar,pathId }) => {
      
@@ -101,7 +114,10 @@ const ProductList = ({ colClass, type,parentCategory, layoutList,openSidebar,noS
     const country = curContext.state.country;
     const panel = curContext.state.panel;
     const filterContext = useContext(FilterContext);
+    const [obj, setObj] = useState({});
 
+    const [CreateAvailNotifiy, { NotifiyData }] = useMutation(CREATE_AVAILABLITY_NOTIFICATION);
+    
     const selectedBrands = filterContext.selectedBrands;
     const selectedColor = filterContext.selectedColor;
     const selectedPrice = filterContext.selectedPrice;
@@ -218,7 +234,7 @@ const ProductList = ({ colClass, type,parentCategory, layoutList,openSidebar,noS
         limitSet = 16;
  
  
-
+        // CREATE_AVAILABLITY_NOTIFICATION
     var {errors, loading, data, fetchMore } = useQuery(GET_PRODUCTS, {
         variables: {
             lookupSearchFields: {
@@ -337,7 +353,48 @@ const ProductList = ({ colClass, type,parentCategory, layoutList,openSidebar,noS
         filterContext.setSelectedColor("")
         router.push(`${url}?${filterContext.state}&brand=${selectedBrands}&color=${selectedColor}&size=${selectedSize}&minPrice=${selectedPrice.min}&maxPrice=${selectedPrice.max}`)
     }
+   const AddNotification=()=>{
+    obj.country = country;
+    obj.url = window.location.href;
+    obj.status = "Open";
+    
+
+    // createNotifyCustomerInfoNotifyCustomerInfoInput
+
+    try {
+        var NotifiyData = CreateAvailNotifiy({
+          variables:obj ,
+        });
+        toast.success("Thanks for your submission");
+        router.push("/")
+        //  history.push('/multikart-admin/menus/list-menu')
+        //  toast.success("Successfully Added !")
+      } catch (err) {
+        console.log(err.message);
+      }
+
+   }
    
+  const setStateFromInput = (event) => {
+
+
+    // "country":"test",
+    // "date":"2021-08-25T05:24:28.828Z",
+    // "email":"test",
+    // "mobile":"mobile",
+    // "name":"test",
+    // "product":"test",
+    // "quantity":2,
+    // "status":"testr",
+    // "url":"test",
+    // "userID":"test"
+
+    if(obj == null || obj == undefined )
+        obj={};
+        obj[event.target.id] = event.target.value;
+        setObj(obj);
+      };
+
     return (
         
         <Col className="collection-content">
@@ -381,9 +438,21 @@ const ProductList = ({ colClass, type,parentCategory, layoutList,openSidebar,noS
                                             {/* <img src="../assets/images/icon/logo.png" alt="Multikart_fashion" className="img-fluid" /> */}
                                         </a>
                                     </div>
-                                    <h3 className="mb-3">
-                                     Share us the product details, we will make it available.
+                                    <h3 className="mb-3 text-center">
+                                    Can't find the product you're looking for? 
                             </h3>
+                            <h3 className="mb-3 text-center">
+                            Don't Worry...! 
+                            </h3>
+                            <br/>
+                            <br/>
+                            <h3 className="mb-3 text-center"> Reach us at the below Options </h3>  
+ 
+ 
+                             
+                                 <h4 className="mb-3 text-center"><p><i className="fa fa-hashtag"></i>Drop us a message with the product details on chatbot . <a href="javascript:void(Tawk_API.toggle())"> Click to Chat </a> </p></h4> 
+                                 <h4 className="mb-3 text-center"><p> <i className="fa fa-hashtag"></i>Share us the details of the product you're looking for by filling the form below</p></h4> 
+                             
                                 </div>
                                 <section className="contact-page section-b-space">
                                 <Row>
@@ -391,30 +460,35 @@ const ProductList = ({ colClass, type,parentCategory, layoutList,openSidebar,noS
                             <Form className="theme-form">
                                 <Row>
                                     <Col md="6">
-                                        <Label for="name">First Name</Label>
-                                        <Input type="text" className="form-control" id="name" placeholder="Enter Your name"
+                                        <Label for="name">Name</Label>
+                                        <Input type="text" className="form-control" id="name"  onChange={setStateFromInput} placeholder="Enter Your name"
                                             required="" />
                                     </Col>
                                     <Col md="6">
-                                        <Label for="email">Last Name</Label>
-                                        <Input type="text" className="form-control" id="last-name" placeholder="Email" required="" />
-                                    </Col>
-                                    <Col md="6">
-                                        <Label for="review">Phone number</Label>
-                                        <Input type="text" className="form-control" id="review" placeholder="Enter your number"
-                                            required="" />
+                                        <Label for="email">Phone Number</Label>
+                                        <Input type="text" className="form-control" id="phone"  onChange={setStateFromInput} placeholder="phone" required="" />
                                     </Col>
                                     <Col md="6">
                                         <Label for="email">Email</Label>
-                                        <Input type="text" className="form-control" id="email" placeholder="Email" required="" />
+                                        <Input type="text" className="form-control" id="email"  onChange={setStateFromInput} placeholder="Email" required="" />
+                                    </Col>
+                                    <Col md="6">
+                                        <Label for="review">Product</Label>
+                                        <Input type="text" className="form-control" id="product"  onChange={setStateFromInput} placeholder="Enter product name"
+                                            required="" />
+                                    </Col>
+                                    <Col md="6">
+                                        <Label for="review">Quantity</Label>
+                                        <Input type="text" className="form-control" id="quantity"  onChange={setStateFromInput} placeholder="Enter quantity"
+                                            required="" />
                                     </Col>
                                     <Col md="12">
                                         <Label for="review">Write Your Message</Label>
                                         <textarea className="form-control" placeholder="Write Your Message"
-                                            id="exampleFormControlTextarea1" rows="6"></textarea>
+                                            id="review" rows="6"></textarea>
                                     </Col>
                                     <Col md="12">
-                                        <button className="btn btn-solid" type="submit">Send Your Message</button>
+                                        <button className="btn btn-solid" type="button" onClick={AddNotification} >Send Your Message</button>
                                     </Col>
                                 </Row>
                             </Form>
