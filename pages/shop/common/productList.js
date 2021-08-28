@@ -446,7 +446,7 @@ const ProductList = ({ colClass, type,parentCategory, layoutList,openSidebar,noS
                             </h3>
                             <br/>
                             <br/>
-                            <h3 className="mb-3 text-center"> Reach us at the below Options </h3>  
+                            <h3 className="mb-3 text-center"> Reach us at with the below options </h3>  
  
  
                              

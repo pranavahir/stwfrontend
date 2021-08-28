@@ -462,17 +462,17 @@ const SideBar = () => {
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/category/fashion/clothing-Shoes-and-jewelry/mens-fashion`}>
+                          <Link href={`/category/fashion/clothing-shoes-and-jewelry/mens-fashion`}>
                             <div style={linkStyle} >Men's Fashion</div>
                             </Link>
                           </li>
                           <li>
-                          <Link href={`/category/fashion/clothing-Shoes-and-jewelry/shoes`}>
+                          <Link href={`/category/fashion/clothing-shoes-and-jewelry/shoes`}>
                             <div style={linkStyle} >Shoes</div>
                             </Link>  
                           </li>
                           <li>
-                          <Link href={`/category/fashion/clothing-Shoes-and-jewelry/womens-fashion`}>
+                          <Link href={`/category/fashion/clothing-shoes-and-jewelry/womens-fashion`}>
                             <div style={linkStyle} >Women's Fashion</div>
                             </Link>
                             
