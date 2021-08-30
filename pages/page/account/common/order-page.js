@@ -7,38 +7,23 @@ import Link from 'next/link'
 import gql from 'graphql-tag';
 import { useQuery } from '@apollo/react-hooks';
 import { CurrencyContext } from "../../../../helpers/Currency/CurrencyContext";
-const GET_ORDER = gql`
-    query OrderDetailByCustomerId ($CustomerId:String!) {
-        OrderDetailByCustomerId (CustomerId:$CustomerId) {  
-            orderdetailid
-            orderdate 
-            productsku 
-            producttitle 
-            quantity
-            totalprice
-            customerid 
-            customername 
-            paymentmethod 
-            paymentdate 
-            trackingnumber 
-            orderstatus 
-            CreatedAt 
-            UpdatedAt 
-            address1 
-            address2 
-            city 
-            state 
-            country 
-            pin 
-            phone 
-            emailid 
-            gst 
-            gstname
-            productimage
-        }
-    }
-`;
 
+const GET_ORDER = gql`
+query($customerID: String, $indexFrom: Int, $limit: Int){
+    getOrdersByCustomerID (customerID: $customerID,indexFrom: $indexFrom,limit: $limit){
+        productimage
+        producttitle
+        quantity
+        totalprice
+        address1
+        address2
+        orderstatus  
+    }
+  }
+`;
+/*
+
+*/
 const OrderPage = () => {
     const router = useRouter(); 
     const context = useContext(WishlistContext)
@@ -61,14 +46,18 @@ const OrderPage = () => {
     const removeFromWish = context.removeFromWish;
     const addCart = cartContext.addToCart;
 
-    const [customerId, setCustomerId] = useState(
+    const [CustomerId, setCustomerID] = useState(
+        // localStorage.getItem('CustomerID')
         localStorage.getItem('CustomerId')
-    );
 
+    );
+    const [pageIndex, setPageIndex] = useState(1)
     var { loading, data } = useQuery(GET_ORDER, {
         variables: {
             // id: parseInt(pathId),
-            CustomerId:customerId
+            customerID:CustomerId,
+            indexFrom:1,
+            limit:15
         }
     });
 
@@ -76,10 +65,14 @@ const OrderPage = () => {
     const checkOut = () => {
         router.push('/page/account/checkout');
     }
-
+    const trim = (string) => {
+        if(string.length > 65){
+            return string.substring(0, 64) + "...";
+        }
+    }
     return (
         <>
-            {(!data || !data.OrderDetailByCustomerId || loading) ? "Loading" : <section className="wishlist-section section-b-space">
+            {(!data || !data.getOrdersByCustomerID || loading) ? "Loading" : <section className="wishlist-section section-b-space">
                     <Container>
                         <Row>
                             <Col sm="12">
@@ -95,14 +88,17 @@ const OrderPage = () => {
                                         </tr>
                                     </thead>
                                     
-                                    {data.OrderDetailByCustomerId.map((item, i) =>
+                                    {data.getOrdersByCustomerID.map((item, i) =>
                                         <tbody key={i}>
                                             <tr>
                                                 <td>
                                                 {item.productimage==null ? "" : <a href="#"><img src={item.productimage} alt="" /></a>}
                                                     
                                                 </td>
-                                                <td align="left"><a  href="#">{item.producttitle}</a>
+                                                <td>
+                                                  
+                                                    <a href="#" align="left">{trim(item.producttitle)}</a>
+                                                   
                                                     <Row className="mobile-cart-content">
                                                         {/* <div className="col-xs-3">
                                                             <p>out of stock</p>
