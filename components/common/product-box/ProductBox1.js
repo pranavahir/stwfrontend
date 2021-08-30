@@ -172,7 +172,7 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
                         }`}
                         className="img-fluid"
                         alt="" /> */}
-                           <AutoFitImage frameWidth="200px" imgSize="contain" frameHeight="160px" alt={"Buy "+`${product.title}`+" Online"} title={product.title} imgSrc={`${image ?
+                           <AutoFitImage frameWidth="auto" imgSize="contain" frameHeight="160px" alt={"Buy "+`${product.title}`+" Online"} title={product.title} imgSrc={`${image ?
                         image : product.images.length>0 ? product.images[0].mainimageurl :"" 
                         }`}/>
                 </div>
