@@ -20,9 +20,9 @@ import ApolloClient from "apollo-boost"
 
 // import * as ga from '../pages/lib/ga'
 const client = new ApolloClient({
-    // uri: "http://localhost:4000/api/graphql"  //local stwapi
+     uri: "http://test.digitechniq.in/api/graphql"  //local stwapi
     // uri: "http://localhost:4000/graphql"  //local stwapi
-    uri: "http://localhost:4000"  //local stwapi
+    //uri: "http://localhost:4000"  //local stwapi
     // http://162.0.210.5:4458/
     // uri: "http://162.0.210.5:4457/api/graphql"  //local stwapi
     // uri: "https://cryptic-mountain-48315.herokuapp.com/api/graphql"  //Test env
