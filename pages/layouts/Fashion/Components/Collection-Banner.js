@@ -51,7 +51,7 @@ const CollectionBanner = () => {
                     <Row className="partition2">
                         <Col md='6'>
                              
-                                <a href="/category/fashion/clothing-shoes-and-jewelry/mens-fashion" onClick={() => CategoryFilter("Men's Fashion")}><div className="collection-banner p-right text-center">
+                                <a href="/category/fashion/clothing-shoes-and-jewelry/mens-fashion" ><div className="collection-banner p-right text-center">
                                     <Media src={banner1} className="img-fluid" alt="" />
                                     <div className="contain-banner">
                                         <div>
@@ -65,7 +65,7 @@ const CollectionBanner = () => {
                         </Col>
                         <Col md='6'>
                             
-                                <a href="/category/fashion/clothing-shoes-and-jewelry/womens-fashion" onClick={() => CategoryFilter("Women's Fashion")}>
+                                <a href="/category/fashion/clothing-shoes-and-jewelry/womens-fashion">
                                     <div className="collection-banner p-right text-center">
                                         <Media src={banner2} className="img-fluid" alt="" />
                                         <div className="contain-banner">
