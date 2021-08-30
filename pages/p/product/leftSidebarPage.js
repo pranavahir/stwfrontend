@@ -125,12 +125,19 @@ const LeftSidebarPage = ({ pathId, type }) => {
 
     const getUrl = (product) => {
         
+        
         var domain = window.location.hostname;
-        var titleProps = product.title.split(' ').join('-');
-        titleProps = titleProps.replace(/[^\w\s]/gi, '-');
-        titleProps = titleProps.replace(/---/gi, '-');
-        titleProps = titleProps.replace(/--/gi, '-');
+        var titleProps = product.asin;
+        if(product.title!=null && product.title!=undefined && product.title!="")
+        {
+            titleProps = product.title.split(' ').join('-');
+            titleProps = titleProps.replace(/[^\w\s]/gi, '-');
+            titleProps = titleProps.replace(/---/gi, '-');
+            titleProps = titleProps.replace(/--/gi, '-');
+        }
         var url = domain + '/p/'+ product.asin  + '-' + titleProps.toLowerCase();
+        
+        
         
         return url;
     }

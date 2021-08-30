@@ -22,7 +22,7 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
     const discountCalculation = cartContext.discountCalculation;
     const priceCollection = cartContext.priceCollection;
     const withDiscount = cartContext.withDiscount;
-     
+     const numberWithCommas = cartContext.numberWithCommas;
     let leftSymbol=null;
     let rightSymbol = null;
     if(IsRight ==true)
@@ -115,6 +115,20 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
         })
     }
 
+    const GetProductTitle = (titleData) => {
+        var title = "";
+        if(titleData!=null && titleData!=undefined && titleData!="")
+        {   
+            title = titleData.slice(0, 80)
+        }
+        else
+        {
+            title = titleData;
+        }
+         
+        return (title+"....");
+    }
+
     const descriptionFormation=(description)=>{
         var str = description;
         var res =null;
@@ -139,11 +153,13 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
         height: "100%"
     }
 
+    
+
      
     // console.log(product.variants.length)
     // console.log(product.variants[0].daystoship)
     return (
-        <div className="product-box product-wrap">
+        <div className="product-box product-wrap product_box_new">
             <div className="img-wrapper">
                 <div className="lable-block">
                     {(product.new === true) ? <span className="lable3">new</span> : ''}
@@ -240,7 +256,7 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
                     <div className="rating">
                         {RatingStars}
                     </div>: ''}
-                     <div style={linkStyle} onClick = {clickProductDetail}> {product.title} </div>
+                     <div style={linkStyle} onClick = {clickProductDetail} title = {product.title}> {GetProductTitle(product.title)} </div>
                     {des ?
                         <p>{product.description}</p>
                         : ''
@@ -249,10 +265,10 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
                     {withDiscount(product.variants) > 0 ?
                         <div>
                     {product.variants.length && product.variants[0].daystoship > 0 ? <h6 style={smallobj} >Shipping in {product.variants[0].daystoship} days.</h6>:""} 
-                    <h4>
-                    {currency.symbol} {Math.floor(withDiscount(product.variants)).toFixed(2)}
+                    <h4 className="priceStyle">
+                    {currency.symbol} {numberWithCommas(Math.floor(withDiscount(product.variants)).toFixed(2))}
                         <br/>
-                        {discountCalculation(product.variants)? <del><span className="money">{currency.symbol}{(withDiscount(product.variants) * 1).toFixed(2) }</span></del>:""}
+                        {discountCalculation(product.variants)? <del><span className="money">{currency.symbol}{numberWithCommas ((withDiscount(product.variants) * 1).toFixed(2)) }</span></del>:""}
                     </h4>
                     </div> : <h5 style={smallredobj}> Unavailable...! </h5>
                      }

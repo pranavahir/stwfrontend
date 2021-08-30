@@ -67,7 +67,7 @@ const CREATE_OREDER = gql`
       address2
       asin
       city
-      country
+      country 
       createdAt
       customerid
       customername

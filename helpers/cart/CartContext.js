@@ -165,6 +165,11 @@ const withDiscount = (variantData) =>{
   return finalPrice;
 }
 
+const numberWithCommas=(x)=> {
+  return x.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+}
+
+
 const withDiscountWithQty = (variantData,qty) =>{
 
 try{
@@ -271,6 +276,7 @@ const discountCalculation = (variantData) =>{
         priceCollection:priceCollection,
         withDiscount:withDiscount,
         withDiscountWithQty:withDiscountWithQty,
+        numberWithCommas:numberWithCommas,
         removeAllItems:removeAllItems
       }}
     >

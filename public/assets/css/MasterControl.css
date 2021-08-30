@@ -24,8 +24,29 @@
 .categoreCollection p :active  {
     color: #ffffff;
 }
-
-
+.product
+{
+border-radius: 12px;
+box-shadow: 3px 4px 12px 1px #acacac59;
+margin-bottom: 5px;
+font-family: 'open sans';
+font-weight: 600;
+padding: 15px;
+font-variant: stacked-fractions;
+height: 96%;
+}
+.priceStyle{
+    color: black;
+    padding: 10px;
+}
+ /* .product-hover
+{
+border:1px solid white;
+}
+ .product-hover :hover
+{
+border:1px solid yellow;
+} */
 .MaincategoreCollection{
 
     width: 100%;

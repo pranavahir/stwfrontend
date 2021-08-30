@@ -94,6 +94,7 @@ const ProductSection = ({ pathId, type }) => {
     const minusQty = cartCtx.minusQty;
     const setQuantity = cartCtx.setQuantity;
     const withDiscount = cartCtx.withDiscount;
+    const numberWithCommas = cartCtx.numberWithCommas;
     const country = curContext.state.country;
     const panel = curContext.state.panel;
     const [selectedProduct,setSelectedProduct] = useState()
@@ -117,6 +118,25 @@ const ProductSection = ({ pathId, type }) => {
         setQuantity(parseInt(e.target.value))
     }
 
+    const GetProductTitle = (titleData) => {
+        var title = "";
+        if(titleData!=null && titleData!=undefined && titleData!="")
+        {   
+            title = titleData.slice(0, 80)
+        }
+        else
+        {
+            title = titleData;
+        }
+         
+        return (title+"...");
+    }
+
+    const smallredobj={
+        fontSize: "15px",
+        fontWeight: "bold",
+        color: "red"
+    }
     const clickProductDetail = (product) => {
 
         var titleProps = product.title.split(' ').join('-');
@@ -179,9 +199,9 @@ const ProductSection = ({ pathId, type }) => {
                         'loading'
                         :
                         <>
-                            {data && data.getProductsByMenuTable.items.slice(0, 6).map((product, index) =>
-                                <Col xl="2" md="4" sm="6" key={index}>
-                                    <div className="product-box">
+                            {data && data.getProductsByMenuTable.items.slice(0, 4).map((product, index) =>
+                                <Col xl="3" md="4" sm="6" key={index}>
+                                    <div className="product-box product">
                                         <div className="img-wrapper">
                                             <div className="front">
                                                 <a href="#" onClick={() => clickProductDetail(product)} >
@@ -222,9 +242,13 @@ const ProductSection = ({ pathId, type }) => {
                                             <div className="rating"><i className="fa fa-star"></i> <i className="fa fa-star"></i> <i
                                                 className="fa fa-star"></i> <i className="fa fa-star"></i> <i className="fa fa-star"></i></div>
                                             <a href="#" onClick={() => clickProductDetail(product)} >
-                                                <h6>{product.title}</h6>
+                                                <h6 title = {product.title} >{GetProductTitle(product.title)}</h6>
                                             </a>
-                                            <h4>{leftSymbol}{Math.floor(withDiscount(product.variants)).toFixed(2)}{rightSymbol}</h4>
+                                            {withDiscount(product.variants) > 0 ?
+                                            <h4 className="priceStyle">{leftSymbol}{numberWithCommas(Math.floor(withDiscount(product.variants)).toFixed(2))}{rightSymbol}</h4>
+                                            : <h5 className="priceStyle" style={smallredobj}> Unavailable...! </h5>
+                     }
+                    
                                             {/* <ul className="color-variant">
                                                 <li className="bg-light0"></li>
                                                 <li className="bg-light1"></li>

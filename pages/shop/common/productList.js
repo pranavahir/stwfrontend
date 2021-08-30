@@ -671,7 +671,7 @@ const ProductList = ({ colClass, type,parentCategory, layoutList,openSidebar,noS
                                         : data &&  (data.lookup!=null && data.lookup!=undefined && data.lookup!="") &&  data.lookup.items.map((product, i) =>
                                             <div className={grid} key={i}>
                                             <div className="product-top-filter"></div>
-                                                <div className="product">
+                                                <div className="product product-hover">
                                                     <div>
                                                         <ProductItem des={true} product={product} symbol={symbol}  cartClass="cart-info cart-wrap"
                                                             addCompare={() => compareContext.addToCompare(product)}
