@@ -27,7 +27,7 @@ const LeftSidebar = () => {
     {/* <section className="section-b-space"> */}
    <Container>
        <Row>
-           <ProductList colClass="col-lg-3 col-6 col-grid-box"  layoutList='' type="Category" pathId={MCategory} noSidebar={true} />
+           <ProductList colClass="col-lg-3 col-12 col-grid-box"  layoutList='' type="Category" pathId={MCategory} noSidebar={true} />
        </Row>
    </Container>
    {/* </section> */}

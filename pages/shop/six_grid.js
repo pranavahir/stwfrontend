@@ -10,7 +10,7 @@ const SixGrid = () => {
              {/* <section className="section-b-space"> */}
             <Container>
                 <Row>
-                    <ProductList colClass="col-lg-3 col-6 col-grid-box" layoutList='' noSidebar={true} />
+                    <ProductList colClass="col-lg-3 col-12 col-grid-box" layoutList='' noSidebar={true} />
                 </Row>
             </Container>
             {/* </section> */}
