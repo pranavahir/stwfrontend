@@ -11,7 +11,8 @@ import DetailsWithPrice from '../common/detail-price';
 import Filter from '../common/filter';
 import { Container, Row, Col, Media } from 'reactstrap';
 import { CurrencyContext } from '../../../helpers/Currency/CurrencyContext';
-import Helmet from 'react-helmet';
+
+import classes from "../../../components/headers/Header-one.module.css";
 
 const GET_SINGLE_PRODUCTS = gql`
 query($productAsin: String!, $productType: String!, $productCountry: String!, $productPanel: String!){
@@ -125,7 +126,6 @@ const LeftSidebarPage = ({ pathId, type }) => {
 
     const getUrl = (product) => {
         
-        
         var domain = window.location.hostname;
         var titleProps = product.asin;
         if(product.title!=null && product.title!=undefined && product.title!="")
@@ -137,10 +137,9 @@ const LeftSidebarPage = ({ pathId, type }) => {
         }
         var url = domain + '/p/'+ product.asin  + '-' + titleProps.toLowerCase();
         
-        
-        
         return url;
     }
+
     const getMetaInfo = (product) => {
         var metaInfo={
             metatitle:"Buy "+product.title+" Online at Lowest Price Ever in "+ country +" | Check Reviews & Ratings - Shop The World",
@@ -161,7 +160,15 @@ const LeftSidebarPage = ({ pathId, type }) => {
         slidesToScroll: 1,
         dots: false,
         arrows: true,
-        fade: true
+        fade: true,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    dots: true,
+                }
+            }
+        ]
     };
     var productsnav = {
         slidesToShow: 3,
@@ -279,7 +286,7 @@ const LeftSidebarPage = ({ pathId, type }) => {
                                         </section>
                                     :
                                     <Row>
-                                        <Col lg="6" className="product-thumbnail">
+                                        <Col lg="6"   className={`product-thumbnail`}>
                                         <Slider {...products} asNavFor={nav2} ref={slider => (slider1.current = slider)} className="product-slick">
 {/*                                     
                                         <Media src={`${data.product.images[0].mainimageurl}`}   className="img-fluid image_zoom_cls-0" />
@@ -333,7 +340,7 @@ const LeftSidebarPage = ({ pathId, type }) => {
                                                     ''}
                                             </Slider>
 
-                                            <Slider className="slider-nav" {...productsnav} asNavFor={nav1} ref={slider => (slider2.current = slider)}>
+                                            <Slider className={`slider-nav ${classes.desktopHeader}`} {...productsnav} asNavFor={nav1} ref={slider => (slider2.current = slider)}>
 
                                                 {data.product.images[0].mainimageurl?
                                                     <div>
