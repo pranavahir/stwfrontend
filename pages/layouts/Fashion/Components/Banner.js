@@ -70,8 +70,8 @@ const Banner = () => {
                   <Col>
                     <div className="slider-contain">
                       <div>
-                        <h4>welcome to Shop The World</h4>
-                        <h1>Electronics</h1>
+                        <h4 style={{color:"white"}}>welcome to Shop The World</h4>
+                        <h1 style={{color:"white"}}>Electronics</h1>
                            <a className="btn btn-solid">shop now </a>
                       </div>
                     </div>
