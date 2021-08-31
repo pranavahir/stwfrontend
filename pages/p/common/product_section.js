@@ -196,7 +196,13 @@ const ProductSection = ({ pathId, type }) => {
                 </Row>
                 <Row className="search-product">
                     {(!data || !data.getProductsByMenuTable || data.getProductsByMenuTable.items.length === 0 || loading) ?
-                        'loading'
+                        <div className="typography_section"> 
+                        <div className="typography-box"> 
+                        <div  className="custom-load typo-content loader-typo">
+                                                <div className="pre-loader"></div>
+                                            </div>
+                                            </div>
+                                            </div>
                         :
                         <>
                             {data && data.getProductsByMenuTable.items.slice(0, 4).map((product, index) =>
@@ -205,7 +211,7 @@ const ProductSection = ({ pathId, type }) => {
                                         <div className="img-wrapper">
                                             <div className="front">
                                                 <a href="#" onClick={() => clickProductDetail(product)} >
-                                                <AutoFitImage frameWidth="200px" imgSize="contain" className="img-fluid blur-up lazyload bg-img" frameHeight="160px" imgSrc={`${image ?
+                                                <AutoFitImage frameWidth="auto" imgSize="contain" className="img-fluid blur-up lazyload bg-img" frameHeight="160px" imgSrc={`${image ?
                         image : product.images.length>0 ? product.images[0].mainimageurl :""
                         }`}/>
                                                     {/* <Media onClick={() => clickProductDetail(product)} src={product.images[0].mainimageurl}
@@ -217,14 +223,14 @@ const ProductSection = ({ pathId, type }) => {
                                             <a href="#" onClick={() => clickProductDetail(product)} >
                                                 {/* <Media src={product.images[0].mainimageurl}
                                                     className="img-fluid blur-up lazyload bg-img" alt="" /> */}
-                                                                       <AutoFitImage frameWidth="200px" className="img-fluid blur-up lazyload bg-img" imgSize="contain" frameHeight="160px" imgSrc={`${image ?
+                                                                       <AutoFitImage frameWidth="auto" className="img-fluid blur-up lazyload bg-img" imgSize="contain" frameHeight="160px" imgSrc={`${image ?
                         image : product.images.length>0 ? product.images[0].mainimageurl :""
                         }`}/>
                                                     </a>
                                             </div>
                                             <div className="cart-info cart-wrap">
-                                                <button data-toggle="modal" data-target="#addtocart" title="Add to cart" onClick={() => addToCart(product,quantity)}>
-                                                    <i className="fa fa-shopping-cart"></i></button>
+                                                {/* <button data-toggle="modal" data-target="#addtocart" title="Add to cart" onClick={() => addToCart(product,quantity)}>
+                                                    <i className="fa fa-shopping-cart"></i></button> */}
                                                 <a href="#"  onClick={() => wishlistContext.addToWish(product)}
                                                     title="Add to Wishlist"><i className="fa fa-heart" aria-hidden="true">
                                                     </i>
@@ -241,8 +247,8 @@ const ProductSection = ({ pathId, type }) => {
                                         <div className="product-detail">
                                             <div className="rating"><i className="fa fa-star"></i> <i className="fa fa-star"></i> <i
                                                 className="fa fa-star"></i> <i className="fa fa-star"></i> <i className="fa fa-star"></i></div>
-                                            <a href="#" onClick={() => clickProductDetail(product)} >
-                                                <h6 title = {product.title} >{GetProductTitle(product.title)}</h6>
+                                            <a href="#"  onClick={() => clickProductDetail(product)} >
+                                                <h6 style={{lineHeight:"initial"}}  title = {product.title} >{GetProductTitle(product.title)}</h6>
                                             </a>
                                             {withDiscount(product.variants) > 0 ?
                                             <h4 className="priceStyle">{leftSymbol}{numberWithCommas(Math.floor(withDiscount(product.variants)).toFixed(2))}{rightSymbol}</h4>
