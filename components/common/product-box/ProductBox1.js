@@ -162,8 +162,8 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
         <div className="product-box product-wrap product_box_new">
             <div className="img-wrapper">
                 <div className="lable-block">
-                    {(product.new === true) ? <span className="lable3">new</span> : ''}
-                    {(product.sale === true) ? <span className="lable4">on sale</span> : ''}
+                    {(product.new === true) ? <span className="lable3">new</span> : <span className="lable3">new</span>}
+                    {(product.sale === true) ? <span className="lable4">on sale</span> : <span className="lable4">on sale</span> }
                 </div>
              
                 <div style={linkStyle} className="front" onClick={clickProductDetail}>
