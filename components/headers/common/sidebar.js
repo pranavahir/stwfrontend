@@ -1563,7 +1563,7 @@ const SideBar = () => {
                             </Link>
                         </h5>
                         <h5>
-                        <Link href={`/category/Sports & Outdoors/sports-nutrition`}>
+                        <Link href={`/category/sports-and-Outdoors/sports-nutrition`}>
                             <div style={linkStyle} >Sports Nutrition</div>
                             </Link>
                         </h5>
