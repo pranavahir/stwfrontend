@@ -294,7 +294,7 @@ const ProductList = ({ colClass, type,parentCategory, layoutList,openSidebar,noS
         {
             console.log(data.lookup.length,"count");
             console.log(limitSet,"limit");
-            nextPage = (data.lookup.items.length / limitSet)+1;
+            nextPage = (Math.floor(data.lookup.items.length / limitSet))+1;
             console.log(nextPage,"nextPage");
         }
 
@@ -688,7 +688,7 @@ const ProductList = ({ colClass, type,parentCategory, layoutList,openSidebar,noS
                                 <div className="text-center">
                                     <Row>
                                         <Col xl="12" md="12" sm="12">
-                                            {data &&  (data.lookup!=null && data.lookup!=undefined && data.lookup!="") &&    data.lookup.hasMore!=null &&
+                                            {data &&  (data.lookup!=null && data.lookup!=undefined && data.lookup!="") &&  data.lookup.hasMore!=null &&
                                                 <Button onClick={() => handlePagination()}>
                                                     {isLoading &&
                                                         <Spinner animation="border" variant="light" />}
