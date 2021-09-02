@@ -97,8 +97,8 @@ const CREATE_OREDER = gql`
 `;
 
 const CREATE_ABANDONED_CART = gql`
-mutation($createAbandonedCart: AbandonedInput){
-  createAbandonedCart(abandonedInput: $createAbandonedCart) {
+mutation($abandonedInput: AbandonedInput){
+  createAbandonedCart(abandonedInput: $abandonedInput) {
     address1
     address2
     asin
@@ -267,6 +267,7 @@ const [GstView,setGSTView] = useState(false)
     
     
 useEffect(() => {
+
   sessionStorage.setItem('orderObj', orderObj);
   if(data!=undefined && (data.getCustomerByID!=null && data.getCustomerByID!=undefined))
   {
@@ -274,10 +275,12 @@ useEffect(() => {
     setState({first_name:data.getCustomerByID.customername})
   }
 
+  window.addEventListener("beforeunload", makePayment);
+  return () => window.removeEventListener("beforeunload", makePayment);
      
   
 
-}, [orderObj]);
+}, [makePayment,orderObj]);
 
 
   const [url, setUrl] = useState();
@@ -308,20 +311,20 @@ useEffect(() => {
     const [referenceNumber, { TableName }] = useMutation(GET_REFNUMBER);
 
 
-  window.addEventListener('beforeunload', function (e) {
-    // Cancel the event
+  // window.addEventListener('beforeunload', function (e) {
+  //   // Cancel the event
 
-    // makePayment();.
-    alert(e);
-    console.log(e);
-    // e.preventDefault(); 
-    // If you prevent default behavior in Mozilla Firefox prompt will always be shown
-    // Chrome requires returnValue to be set
+  
+  //   alert(e);
+  //   console.log(e);
+  //   e.preventDefault(); 
+  //   // If you prevent default behavior in Mozilla Firefox prompt will always be shown
+  //   // Chrome requires returnValue to be set
 
-    e.returnValue = 'test';
+  //   e.returnValue = 'test';
 
     
-  });
+  // });
   
 
   const makePayment = () =>{
@@ -358,6 +361,7 @@ useEffect(() => {
     // console.log(data);
     var ListOrder = [];
     var OrderDetail = {
+      orderdetailid:"",
       productsku: "item.sku",
       producttitle: "item.title",
       quantity: 1,
@@ -386,13 +390,14 @@ useEffect(() => {
       console.log(index);
 
       OrderDetail = {
+        orderdetailid:"",
         productsku: item.sku,
         asin:item.asin,
         producttitle: titleTrim(item.title),
         quantity: (item.qty * 1),
         totalprice: withDiscountWithQty(item.variants,item.qty),
         customerid: customerId,
-        customername: "Karupu",
+        customername: customerData.first_name,
         paymentmethod: "",
         trackingnumber: "",
         orderstatus: "",
@@ -416,7 +421,7 @@ useEffect(() => {
   
         // console.log(OrderDetail);
         var AbandonedCartData = createAbandonedCart({
-          variables: { abandonedcart: { ...OrderDetail } },
+          variables: { abandonedInput: OrderDetail  },
         });
 
 
@@ -1234,7 +1239,7 @@ const changeGstcheck = (e) => {
 
   const onSubmit = (data, e,paymentinfo) => {
 
-    if (data !== "") {
+    if (data !== "" && IsOTPVerfied=="Verified" ) {
 
      
       setPageLoad(true);
@@ -1251,9 +1256,10 @@ const changeGstcheck = (e) => {
         onSuccess(data);
         // razorPayPaymentHandler(data);
       }
-    } else {
-      errors.showMessages();
-    }
+    } 
+    // else {
+    //   errors.showMessages();
+    // }
   };
 
 
@@ -1466,7 +1472,7 @@ const [geoLocation, setgeoLocation] = useState(gLocation);
       <Container>
         <div className="checkout-page">
           <div className="checkout-form">
-            <Form onSubmit={handleSubmit(onSubmit)}>
+            <Form   autocomplete="off" onSubmit={handleSubmit(onSubmit)}>
               <Row>
                 <Col lg="6" sm="12" xs="12">
                   <div className="checkout-title">
@@ -1720,6 +1726,7 @@ const [geoLocation, setgeoLocation] = useState(gLocation);
                       &ensp;{" "}
                       <label htmlFor="account-option">Create An Account?</label>
                     </div> : "" }
+                    {/* <Button type="submit" onClick={() => makePayment()} className="btn btn-solid">Make Payment</Button> */}
                     
 
                   </div>
@@ -1811,8 +1818,9 @@ const [geoLocation, setgeoLocation] = useState(gLocation);
                    {(OTP!=null && OTP!="") ? (IsOTPVerfied!="Verified" ? <div>
                     <div className="row form-group col-md-6 col-sm-6 col-xs-12">
                       <input
+                        autocomplete="off"
                         className="form-control"
-                        type="text"
+                        type="number"
                         name="otp"
                         onBlur={OTPVerification}
                         onChange={OTPVerification}
@@ -1823,8 +1831,8 @@ const [geoLocation, setgeoLocation] = useState(gLocation);
                       </span>:<span className="error-message">
                          OTP has been sent on your Email. 
                       </span>}
-                    </div> : (IsOTPVerfied=="Verified" ? <span className="error-message">
-                        OTP has been Verified.
+                    </div> : (IsOTPVerfied=="Verified" ? <span className="instock-cls">
+                    <i className="fa fa-check"></i> OTP has been Verified.
                       </span>:(IsOTPVerfied=="NotVerfied" ? <span className="error-message">
                         Invalid OTP, Please enter valid OTP.
                       </span>:""))

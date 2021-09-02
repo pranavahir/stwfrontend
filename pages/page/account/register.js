@@ -48,21 +48,23 @@ const Register = () => {
   const emailLinkSend = (email) => {
     // [START auth_email_link_send]
 
+    var url = window.location.href;
     var actionCodeSettings = {
       // URL you want to redirect back to. The domain (www.example.com) for this
       // URL must be in the authorized domains list in the Firebase Console.
       url: "https://shoptheworld.in/",
       // This must be true.
       handleCodeInApp: true,
-      iOS: {
-        bundleId: 'com.example.ios'
-      },
-      android: {
-        packageName: 'com.example.android',
-        installApp: true,
-        minimumVersion: '12'
-      },
-      dynamicLinkDomain: 'example.page.link'
+      // iOS: {
+      //   bundleId: 'com.example.ios'
+      // },
+      // android: {
+      //   packageName: 'com.example.android',
+      //   installApp: true,
+      //   minimumVersion: '12'
+      // },
+      
+      dynamicLinkDomain: url
     };
 
     

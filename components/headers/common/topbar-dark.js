@@ -83,7 +83,7 @@ const TopBarDark = ({ topClass, fluid }) => {
     <div className={topClass}>
       <Container fluid={fluid}>
         <Row>
-          <Col lg="6">
+          <Col lg="7">
             <div className="header-contact">
               <ul>
                 <li>Welcome to Shop The World</li>
@@ -98,7 +98,7 @@ const TopBarDark = ({ topClass, fluid }) => {
               </ul>
             </div>
           </Col>
-          <Col lg="6" className="text-right">
+          <Col lg="5" className="text-right">
             <ul className={"header-dropdown " + classes.alignMobile}>
               {customerId != "" &&
               customerId != null &&

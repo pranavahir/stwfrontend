@@ -675,6 +675,7 @@ button {
 }
 
 .btn-solid {
+  border-radius:5px;
   padding: 13px 29px;
   color: $white !important;
   letter-spacing: 0.05em;
@@ -11523,7 +11524,8 @@ footer {
 }
 
 .instock-cls {
-  color: var(--theme-deafult);
+  color:#00d053;
+  //  var(--theme-deafult);
   font-weight: 700;
 }
 
@@ -11756,7 +11758,7 @@ footer {
     margin-bottom: 20px;
     .btn-solid,
     .btn-outline {
-      padding: 7px 25px;
+      padding: 5px 17px;
     }
     a,
     button {

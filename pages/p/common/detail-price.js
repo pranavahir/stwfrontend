@@ -122,6 +122,11 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
             setStock("Out of Stock !")
           }
     }
+    let RatingStars = []
+    let rating = 5;
+    for (var i = 0; i < rating; i++) {
+        RatingStars.push(<i className="fa fa-star" key={i}></i>)
+    }
     const descriptionFormation=(description)=>{
         var str = description;
         var res =null;
@@ -142,12 +147,14 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
             <h1 className={`${classes.mobileHeader}`} style={{marginTop:"20px",}} >&nbsp; </h1>
                 <h1 style={titleSize} > {product.title} </h1>
                 <h4 style={objbrand}> {product.brandname} </h4>
-
+                <h5><div className="rating">
+                        {RatingStars}
+                    </div> 4 Stars | <a href="javascript:void(Tawk_API.toggle())"> Ask Questions</a></h5>
                 {/* <h4> {product.categoryvalue} </h4> parseFloat(Math.floor(withDiscount(product.variants)).toFixed(2)).toLocaleString('en') */}
-                {product.variants.length?<h6 style={smallobj} >Shipping in {product.variants[0].daystoship} days.</h6>:""} 
+                {product.variants.length && product.variants[0].daystoship ?<h6 style={smallobj} >Shipping in {product.variants[0].daystoship} days.</h6>:""} 
                 {discountCalculation(product.variants)?<h4><del>{leftSymbol}{((priceCollection(product.variants) * 1)+gstCollection(product.variants)).toFixed(2)}{rightSymbol}</del>
                     <span>{discountCalculation(product.variants)}% off</span></h4>:""}
-                <h2 style={titleSize}>{leftSymbol}{numberWithCommas(Math.floor(withDiscount(product.variants)).toFixed(2))}{rightSymbol} </h2>
+                <h2 style={titleSize}>Your Price : {leftSymbol}{numberWithCommas(Math.floor(withDiscount(product.variants)).toFixed(2))}{rightSymbol} </h2>
                 {product.variants.map(vari => {
                     var findItem = uniqueColor.find(x => x.color === vari.color);
                     if (!findItem)
@@ -206,7 +213,7 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
                         </div> : ''} */}
                         {product.variants.length > 0 && product.variants[0].quantity > 0 ?   
                         <div>
-                        <span className="instock-cls">{stock}</span>
+                        <span className="instock-cls">     <i className="fa fa-check"></i>{stock}</span>
                     <h6 className="product-title">quantity</h6>
                     <div className="qty-box">
                         <div className="input-group">
@@ -226,8 +233,8 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
                             : ""}
                             </div>
                    <div className="product-buttons" >
-                    <a href={null} className="btn btn-solid" onClick={() => context.addToCart(product, productQty)}>add to cart</a>
-                     <a className="btn btn-solid" onClick={() => buyNow(product, productQty)}  >buy now</a> 
+                    <a href={null} className="btn btn-solid" onClick={() => context.addToCart(product, productQty)}> <i class="fa fa-shopping-cart"></i> add to cart</a>
+                     <a className="btn btn-solid" onClick={() => buyNow(product, productQty)}  ><i class="fa fa-shopping-bag"></i>  buy now</a> 
                      
                 </div> </div> :
                 <h5 style={smallredobj}> unavailable...! </h5> }
@@ -241,7 +248,7 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
                                                 <ul>
                                                     {descriptionFormation(product.bullepoints).map((size, i) => {
                                                         return <li key={i}><i className="fa fa-angle-double-right mr-2"></i>{size}<br/></li>
-                                                    })}
+                                                    })} 
                                                 </ul>
                                             </div> : ''}
                 </div>
