@@ -307,7 +307,7 @@ const ProductList = ({ colClass, type,parentCategory, layoutList,openSidebar,noS
                         limit:limitSet,
                         indexFrom:nextPage,
                         keyword:selectedKeyword,
-                        promoflag:"",
+                        promoflag:selectedPromo,
                         relevantProduct:"",
                         selectedCategory:selectedCategory,
                         panel:panel,
