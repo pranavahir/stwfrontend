@@ -59,6 +59,15 @@ font-weight: bolder;
     color: black;
     padding: 10px;
 }
+
+.keyPointsStyle{
+    font-size: 12px !important;
+    color: #007bff;
+    text-transform: inherit !important;
+    font-weight: 500;
+    margin-bottom: 7px !important;
+    text-align: left;
+}
  /* .product-hover
 {
 border:1px solid white;

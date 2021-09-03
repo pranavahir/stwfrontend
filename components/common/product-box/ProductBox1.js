@@ -154,7 +154,7 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
     }
 
     
-
+// this from pc
      
     // console.log(product.variants.length)
     // console.log(product.variants[0].daystoship)
@@ -165,7 +165,7 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
                     {(product.new === true) ? <span className="lable3">new</span> : <span className="lable3">new</span>}
                     {(product.sale === true) ? <span className="lable4">on sale</span> : <span className="lable4">on sale</span> }
                 </div>
-             
+
                 <div style={linkStyle} className="front" onClick={clickProductDetail}>
                     {/* <Media src={`${image ?
                         image : product.images.length>0 ? product.images[0].mainimageurl :""
