@@ -155,7 +155,8 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
                 {discountCalculation(product.variants)?<h4><del>{leftSymbol}{((priceCollection(product.variants) * 1)+gstCollection(product.variants)).toFixed(2)}{rightSymbol}</del>
                     <span>{discountCalculation(product.variants)}% off</span></h4>:""}
                 <h2 style={titleSize}>Your Price : {leftSymbol}{numberWithCommas(Math.floor(withDiscount(product.variants)).toFixed(2))}{rightSymbol} </h2>
-
+                <div><h2 style={titleSize}> <i class="fa fa-amazon"></i> Amazon Price : {leftSymbol}{numberWithCommas(Math.floor(withDiscount(product.variants)).toFixed(2))}{rightSymbol} </h2></div>
+                
                 <h2 style={titleSize} className="keyPointsStyle">     <i className="fa fa-asterisk"></i> 3 days fast and free shipping</h2>
                 <h2 style={titleSize} className="keyPointsStyle">     <i className="fa fa-asterisk"></i> 7 days return window </h2>
                 <h2 style={titleSize}  className="keyPointsStyle">     <i className="fa fa-asterisk"></i> Standard manufacturer warranty</h2> 
