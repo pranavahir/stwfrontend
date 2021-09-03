@@ -11,6 +11,7 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
+          <meta name="facebook-domain-verification" content="5u56o7jr8zo9zooh8zu7e7paqjhys7" /> 
           <link href="https://fonts.googleapis.com/css2?family=https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet" />
           <script src="https://snippets.freshchat.com/js/fc-pre-chat-form-v2.min.js"></script>
           <script src="https://wchat.freshchat.com/js/widget.js" async></script>
