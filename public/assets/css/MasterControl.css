@@ -14,6 +14,17 @@
     font-family: 'Open Sans' !important;
   }
 
+  @media (min-width: 768px) {
+    .priceTagDetail{
+        text-align: left !important;
+    }
+  }
+  @media (max-width: 768px) {
+    .priceTagDetail{
+        text-align: center !important;
+    }
+  }
+
 .categoreCollection{
 
     width: 100%;
@@ -62,7 +73,7 @@ font-weight: bolder;
 
 .keyPointsStyle{
     font-size: 12px !important;
-    color: #007bff;
+    color: #ff4c3b;
     text-transform: inherit !important;
     font-weight: 500;
     margin-bottom: 7px !important;
@@ -116,4 +127,63 @@ border:1px solid yellow;
 .ClickableContainer{
     background-color: #f7f7f7;
     
+}
+.priceTagDetail{
+    color: black;
+    font-size: 11px !important;
+    margin-left: 24px;
+}
+.card-price {
+	display: inline-block;
+    margin-bottom: -2px !important;
+  width: auto;
+	height: 38px;
+	
+	background-color: #f59f17;
+	-webkit-border-radius: 3px 4px 4px 3px;
+	-moz-border-radius: 3px 4px 4px 3px;
+	border-radius: 3px 4px 4px 3px;
+	
+	border-left: 1px solid #f59f17;
+
+	/* This makes room for the triangle */
+	margin-left: 19px;
+	
+	position: relative;
+	
+	color: white;
+	font-weight: 300;
+	font-size: 22px;
+	line-height: 38px;
+
+	padding: 0 10px 0 10px;
+}
+.tagPrice{
+margin-top: 10px;
+    color: black;
+}
+/* Makes the triangle */
+.card-price:before {
+	content: "";
+	position: absolute;
+	display: block;
+	left: -19px;
+	width: 0;
+	height: 0;
+	border-top: 19px solid transparent;
+	border-bottom: 19px solid transparent;
+	border-right: 19px solid #f59f17;
+}
+
+/* Makes the circle */
+.card-price:after {
+	content: "";
+	background-color: white;
+	border-radius: 50%;
+	width: 4px;
+	height: 4px;
+	display: block;
+	position: absolute;
+	left: -9px;
+	top: 17px;
 }
