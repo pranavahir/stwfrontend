@@ -155,6 +155,14 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
                 {discountCalculation(product.variants)?<h4><del>{leftSymbol}{((priceCollection(product.variants) * 1)+gstCollection(product.variants)).toFixed(2)}{rightSymbol}</del>
                     <span>{discountCalculation(product.variants)}% off</span></h4>:""}
                 <h2 style={titleSize}>Your Price : {leftSymbol}{numberWithCommas(Math.floor(withDiscount(product.variants)).toFixed(2))}{rightSymbol} </h2>
+
+                <h2 style={titleSize} className="keyPointsStyle">     <i className="fa fa-asterisk"></i> 3 days fast and free shipping</h2>
+                <h2 style={titleSize} className="keyPointsStyle">     <i className="fa fa-asterisk"></i> 7 days return window </h2>
+                <h2 style={titleSize}  className="keyPointsStyle">     <i className="fa fa-asterisk"></i> Standard manufacturer warranty</h2> 
+                <h2 style={titleSize}  className="keyPointsStyle">     <i className="fa fa-asterisk"></i> 24* 7 customer support available </h2>
+                <h2 style={titleSize}  className="keyPointsStyle">     <i className="fa fa-asterisk"></i> Better price guarantee (Min 5% less than amazon/flipkart price).</h2>
+                <h2 style={titleSize}  className="keyPointsStyle">     <i className="fa fa-asterisk"></i> follow us for more products and deals.</h2>
+
                 {product.variants.map(vari => {
                     var findItem = uniqueColor.find(x => x.color === vari.color);
                     if (!findItem)
@@ -239,7 +247,7 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
                 </div> </div> :
                 <h5 style={smallredobj}> unavailable...! </h5> }
                 
-                <h6><p style={smallh6obj} >Within 8 days of delivery, you may return new, unopened merchandise in its original condition. Exceptions and restrictions apply. See our <a href="#"><Link href={(geoLocation==null?"":geoLocation)+`/page/returns-refund`} >Returns & Refunds</Link></a></p></h6>
+                <h5><p style={smallh6obj} >Within 8 days of delivery, you may return new, unopened merchandise in its original condition. Exceptions and restrictions apply. See our <a href="#"><Link href={(geoLocation==null?"":geoLocation)+`/page/returns-refund`} >Returns & Refunds</Link></a></p></h5>
                 <div className="border-product">
                     <h6 className="product-title">product details</h6>
                     
