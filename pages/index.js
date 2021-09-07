@@ -36,7 +36,7 @@ const router = useRouter();
     const curContext = useContext(CurrencyContext);
     const country = curContext.state.country;
     const metadesc = country +"'s best online store for Mobiles, Fashion, Electronics, Home, Kitchen, Grocery, Sporting goods, Health, Wellness Care and more only at Shop The World! Find the largest collection of products at the lowest prices &amp; fast shipping worldwide.";
-    const metatitle =  'The Best Online Shopping Site in ' + country + ' for Mobiles, Electronics, Fashion, Home, Kitchen, Health, Wellness, Beauty &amp; More'; 
+    const metatitle =  'Online Shopping Site in ' + country + ' for Mobiles, Electronics, Fashion, Home, Kitchen, Health, Wellness, Beauty &amp; More'; 
     if(domain == "localhost" || domain == "shoptheworld.store" || domain == "www.shoptheworld.store" || domain == "wwww.shoptheworld.store" || domain == "shoptheworldonline.com" || domain == "www.shoptheworldonline.com" || domain == "test.digitechniq.in"){
           fetch('https://extreme-ip-lookup.com/json/')
         .then( res => res.json())
