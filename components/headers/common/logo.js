@@ -8,7 +8,7 @@ const LogoImage = ({ logo }) => {
       <Link href={"/"}>
         <a>
           <img
-            src={`/assets/images/icon/${logo ? logo : "logo.png"}`}
+            src={`https://shoptheworldimage.digitechniq.in/logo/logo.png`}
             alt=""
             className={"img-fluid " + classes.headerLogoSize}
           />
