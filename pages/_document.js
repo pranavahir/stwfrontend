@@ -13,8 +13,6 @@ class MyDocument extends Document {
         <Head>
           <meta name="facebook-domain-verification" content="5u56o7jr8zo9zooh8zu7e7paqjhys7" /> 
           <link href="https://fonts.googleapis.com/css2?family=https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet" />
-          <script src="https://snippets.freshchat.com/js/fc-pre-chat-form-v2.min.js"></script>
-          <script src="https://wchat.freshchat.com/js/widget.js" async></script>
           <meta property="og:title" content="Shop The World"/>
           <script dangerouslySetInnerHTML={{ __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -46,7 +44,7 @@ s0.parentNode.insertBefore(s1,s0);
 })();`,
 }} />
 
-<script dangerouslySetInnerHTML={{  
+{/* <script dangerouslySetInnerHTML={{  
   __html:`!function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -62,7 +60,7 @@ fbq('track', 'PageView');`}}/>
 __html:`<img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=207794044711941&ev=PageView&noscript=1"`
 }}/>
- 
+  */}
 
 
 

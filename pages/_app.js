@@ -5,7 +5,7 @@ import '../public/assets/css/react-confirm-alert.css';
 import '../public/assets/css/MasterControl.css';
 import { ToastContainer } from 'react-toastify';
 import TapTop from '../components/common/widgets/Tap-Top';
-import MessengerCustomerChat from 'react-messenger-customer-chat';
+// import MessengerCustomerChat from 'react-messenger-customer-chat';
 import { MenuContextProvider } from '../helpers/menu/MenuContext';
 import CartContextProvider from '../helpers/cart/CartContext';
 import { WishlistContextProvider } from '../helpers/wishlist/WishlistContext';
@@ -79,11 +79,11 @@ export default function MyApp({ Component, pageProps }) {
           </div>
           :
           <>
-            <MessengerCustomerChat
+            {/* <MessengerCustomerChat
               pageId="2123438804574660"
               appId="406252930752412"
               htmlRef="https://connect.facebook.net/en_US/sdk.js"
-            />
+            /> */}
           <Helmet>
             
            
