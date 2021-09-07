@@ -5,9 +5,9 @@ import gql from 'graphql-tag';
 import { useQuery } from '@apollo/react-hooks';
 import { Slider3 } from "../../../services/script"
 import { Media, Container, Row, Col } from 'reactstrap';
-import ser1 from '../../../public/assets/images/blog/1_1.jpg';
-import ser2 from '../../../public/assets/images/blog/1_2.jpg';
-import ser3 from '../../../public/assets/images/blog/1_3.jpg';
+// import ser1 from 'https://shoptheworldimage.digitechniq.in/static/1_3-0201c26a0216c936e406ba330bda550c-min.jpg';
+// import ser2 from 'https://shoptheworldimage.digitechniq.in/static/1_2-4515231fbf7bd724e9c2c7e6bae4824d-min.jpg';
+// import ser3 from 'https://shoptheworldimage.digitechniq.in/static/1_1-5ded0356660ec2f0cbd8e8c107d15f08-min.jpg';
 
 
 const GET_PRODUCTS = gql`
@@ -51,7 +51,7 @@ const BlogSection = ({ type, sectionClass, title, inner, hrClass }) => {
                                     <Col md="12">
                                          
                                             <div className="classic-effect" >
-                                                <Media src={ser1} className="img-fluid" alt="" />
+                                                <Media src="https://shoptheworldimage.digitechniq.in/static/1_3-0201c26a0216c936e406ba330bda550c-min.jpg" className="img-fluid" alt="" />
                                                 <span></span>
                                             </div>
                                         <div className="blog-details">
@@ -64,7 +64,7 @@ const BlogSection = ({ type, sectionClass, title, inner, hrClass }) => {
                                     <Col md="12">
                                          
                                             <div className="classic-effect" >
-                                                <Media src={ser2} className="img-fluid" alt="" />
+                                                <Media src="https://shoptheworldimage.digitechniq.in/static/1_2-4515231fbf7bd724e9c2c7e6bae4824d-min.jpg" className="img-fluid" alt="" />
                                                 <span></span>
                                             </div>
                                         <div className="blog-details">
@@ -77,7 +77,7 @@ const BlogSection = ({ type, sectionClass, title, inner, hrClass }) => {
                                     <Col md="12">
                                          
                                             <div className="classic-effect" >
-                                                <Media src={ser3} className="img-fluid" alt="" />
+                                                <Media src="https://shoptheworldimage.digitechniq.in/static/1_1-5ded0356660ec2f0cbd8e8c107d15f08-min.jpg" className="img-fluid" alt="" />
                                                 <span></span>
                                             </div>
                                         <div className="blog-details">
