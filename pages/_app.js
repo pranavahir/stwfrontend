@@ -17,11 +17,12 @@ import Helmet from 'react-helmet';
 import { useRouter } from 'next/router'
 import { ApolloProvider, useQuery } from "@apollo/react-hooks"
 import ApolloClient from "apollo-boost"
+import { useAmp } from 'next/amp'
 
 // import * as ga from '../pages/lib/ga'
 const client = new ApolloClient({
       uri: "https://test.digitechniq.in/api/graphql"  //local stwapi
-    //uri: "http://localhost:4000/graphql"  //local stwapi
+    // uri: "http://localhost:5000/graphql"  //local stwapi
     //uri: "https://test.digitechniq.in/api/graphql" //local stwapi
     // http://162.0.210.5:4458/
     // uri: "http://162.0.210.5:4457/api/graphql"  //local stwapi
@@ -32,6 +33,8 @@ const client = new ApolloClient({
     
 })
 
+
+export const config = { amp: 'hybrid' }
 export default function MyApp({ Component, pageProps }) {
   const [isLoading, setIsLoading] = useState(true);
   const [url, setUrl] = useState();
