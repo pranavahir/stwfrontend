@@ -54,7 +54,7 @@ const CartProvider = (props) => {
 
   const removeFromCart = (item) => {
     // toast.error("Product Removed Successfully !");
-    setCartItems(cartItems.filter((e) => (e.seqid !== item.seqid)))
+    setCartItems(cartItems.filter((e) => (e.asin !== item.asin)))
   }
 
   const removeAllItems = ()=>{
