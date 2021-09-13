@@ -166,7 +166,7 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
                     {product.fromcountry == country ? <div>
               <p class="card-price"><div><h2 style={titleSize} class="tagPrice">   Amazon Price : {leftSymbol}{numberWithCommas(product.variants[0].price)}{rightSymbol} </h2></div></p><br/>
                 
-                <p class="card-price-STW card-price-STW-margin"><div><h2 style={titleSize} class="tagPrice_STW"> Our Price : {leftSymbol}{numberWithCommas(Math.floor(withDiscount(product.variants)).toFixed(2))}{rightSymbol}</h2></div></p>
+                <p class="card-price-STW card-price-STW-margin"><div><h2 style={titleSize} class="tagPrice_STW"> Our Price : {leftSymbol}{numberWithCommas(Math.floor(withDiscount(product.variants)).toFixed(2))}{rightSymbol} &nbsp; &nbsp; &nbsp; &nbsp; </h2></div></p>
 
                 <h5 className="keyPointsStyle priceTagDetail"> You save <u>{leftSymbol}{Math.abs(Math.floor(withDiscount(product.variants)).toFixed(2) - (product.variants[0].price*1)).toFixed(2)}{rightSymbol} </u> extra over amazon price</h5>
               </div>     :  <p class="card-price-STW card-price-STW-margin1"><div><h2 style={titleSize} class="tagPrice_STW"> Our Price : {leftSymbol}{numberWithCommas(Math.floor(withDiscount(product.variants)).toFixed(2))}{rightSymbol}</h2></div></p>} 
