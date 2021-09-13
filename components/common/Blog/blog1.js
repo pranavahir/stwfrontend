@@ -10,25 +10,25 @@ import { Media, Container, Row, Col } from 'reactstrap';
 // import ser3 from 'https://shoptheworldimage.digitechniq.in/static/1_1-5ded0356660ec2f0cbd8e8c107d15f08-min.jpg';
 
 
-const GET_PRODUCTS = gql`
-query blog ($type:String!) {
-    blog(type:$type){
-    img
-   	link
-    title
-    desc
-    date
-  }
-} 
-`;
+// const GET_PRODUCTS = gql`
+// query blog ($type:String!) {
+//     blog(type:$type){
+//     img
+//    	link
+//     title
+//     desc
+//     date
+//   }
+// } 
+// `;
 
 const BlogSection = ({ type, sectionClass, title, inner, hrClass }) => {
 
-    var { loading, data } = useQuery(GET_PRODUCTS, {
-        variables: {
-            type: type
-        }
-    });
+    // var { loading, data } = useQuery(GET_PRODUCTS, {
+    //     variables: {
+    //         type: type
+    //     }
+    // });
 
     return (
         <Fragment>

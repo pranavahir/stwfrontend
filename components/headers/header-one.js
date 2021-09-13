@@ -257,7 +257,7 @@ const HeaderOne = ({
               </div>
             </div>
             <div className="col-6 menu-right justify-content-end">
-              <ul class="d-flex align-items-center justify-content-end">
+              <ul className="d-flex align-items-center justify-content-end">
                 <li className={"mobile-search " + classes.customSizingAcc}></li>
                 {direction === undefined ? (
                   <CartContainer layout={direction} icon={cart} />

@@ -1,8 +1,8 @@
 import React, { useState, useContext } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import { useQuery } from '@apollo/react-hooks';
+// import { useQuery } from '@apollo/react-hooks';
 import gql from 'graphql-tag';
-import ProductItem from '../product-box/ProductBox1';
+// import ProductItem from '../product-box/ProductBox1';
 import CartContext from '../../../helpers/cart/index'
 import { Container, Row, Col, Media } from 'reactstrap';
 import { WishlistContext } from '../../../helpers/wishlist/WishlistContext';
@@ -105,13 +105,13 @@ const SpecialProducts = ({ type, fluid, designClass, cartClass, heading, noTitle
         sessionStorage.getItem('geoLocation')
     );
 
-    var { loading, data } = useQuery(GET_PRODUCTS, {
-        variables: {
-            type: activeTab,
-            indexFrom: 0,
-            limit: 8
-        }
-    });
+    // var { loading, data } = useQuery(GET_PRODUCTS, {
+    //     variables: {
+    //         type: activeTab,
+    //         indexFrom: 0,
+    //         limit: 8
+    //     }
+    // });
 
  
 
@@ -290,7 +290,7 @@ const SpecialProducts = ({ type, fluid, designClass, cartClass, heading, noTitle
                         </TabPanel>
                         <TabPanel>
                             <Row className="no-slider">
-                                {(!specialproducts ||  specialproducts.length === 0 || loading) ?
+                                {(!specialproducts ||  specialproducts.length === 0 ) ?
                                     (specialproducts &&  specialproducts.length === 0) ?
                                         <Col xs="12">
                                             <div>

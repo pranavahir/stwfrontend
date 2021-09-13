@@ -67,7 +67,12 @@ const CopyRight = ({layout, fluid}) => {
                                 
                             <ul style={styleHeaderObj}>
                                     <li>
-                                    <p> <h6><i className="fa fa-copyright" aria-hidden="true"></i> 2020-21 Shop The World | All Rights Reserved.</h6></p>
+                                    
+                                            <h6>
+                                                <i className="fa fa-copyright" aria-hidden="true"></i> 
+                                                <p>2020-21 Shop The World | All Rights Reserved.</p> 
+                                            </h6>
+                                    
                                     </li>   
                                     <li>
                                     <Link href={`${geoLocation}/page/privacy-policy`} >
