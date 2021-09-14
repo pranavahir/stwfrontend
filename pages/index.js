@@ -24,12 +24,7 @@ import { CurrencyContext } from '../helpers/Currency/CurrencyContext';
 
 const Fashion = () => {
 const router = useRouter();
-
-
-  useEffect(()=>{
  
-  
-    },[])
     const url = window.location;
     var domain = window.location.hostname;
     var path = window.location.pathname
@@ -76,7 +71,6 @@ const router = useRouter();
   return (
     <>
       <Head>
-        
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" type="image/x-icon" href={favicon?favicon:''} />
         <link data-react-helmet="true" href={favicon?favicon:''} sizes="32x32" type="png" rel="icon"/>

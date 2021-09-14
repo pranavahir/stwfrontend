@@ -132,7 +132,8 @@ border:1px solid yellow;
 }
 .priceTagDetail{
     color: black;
-    font-size: 11px !important;
+    font-size: 11.5px !important;
+    font-weight: bolder;
     margin-left: 24px;
 }
 .card-price {
@@ -141,7 +142,7 @@ border:1px solid yellow;
   width: auto;
 	height: 38px;
 	
-	background-color: #f59f17;
+	background-color: #f5b859;
 	-webkit-border-radius: 3px 4px 4px 3px;
 	-moz-border-radius: 3px 4px 4px 3px;
 	border-radius: 3px 4px 4px 3px;

@@ -158,18 +158,24 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
                         {RatingStars}
                     </div> 4 Stars | <a href="javascript:void(Tawk_API.toggle())"> Ask Questions</a></h5>
                 {/* <h4> {product.categoryvalue} </h4> parseFloat(Math.floor(withDiscount(product.variants)).toFixed(2)).toLocaleString('en') */}
+                
+                {/* <h2 style={titleSize}>Your Price : {leftSymbol}{numberWithCommas(Math.floor(withDiscount(product.variants)).toFixed(2))}{rightSymbol} </h2> */}
+              
+              {withDiscount(product.variants) > 0 ? 
+                <div>
                 {product.variants.length && product.variants[0].daystoship ?<h6 style={smallobj} >Shipping in {product.variants[0].daystoship} days.</h6>:""} 
                 {discountCalculation(product.variants)?<h4><del>{leftSymbol}{((priceCollection(product.variants) * 1)+gstCollection(product.variants)).toFixed(2)}{rightSymbol}</del>
                     <span>{discountCalculation(product.variants)}% off</span></h4>:""}
-                {/* <h2 style={titleSize}>Your Price : {leftSymbol}{numberWithCommas(Math.floor(withDiscount(product.variants)).toFixed(2))}{rightSymbol} </h2> */}
-                
-                    {product.fromcountry == country ? <div>
-              <p class="card-price"><div><h2 style={titleSize} class="tagPrice">   Amazon Price : {leftSymbol}{numberWithCommas(product.variants[0].price)}{rightSymbol} </h2></div></p><br/>
-                
-                <p class="card-price-STW card-price-STW-margin"><div><h2 style={titleSize} class="tagPrice_STW"> Our Price : {leftSymbol}{numberWithCommas(Math.floor(withDiscount(product.variants)).toFixed(2))}{rightSymbol} &nbsp; &nbsp; &nbsp; &nbsp; </h2></div></p>
-
-                <h5 className="keyPointsStyle priceTagDetail"> You save <u>{leftSymbol}{Math.abs(Math.floor(withDiscount(product.variants)).toFixed(2) - (product.variants[0].price*1)).toFixed(2)}{rightSymbol} </u> extra over amazon price</h5>
-              </div>     :  <p class="card-price-STW card-price-STW-margin1"><div><h2 style={titleSize} class="tagPrice_STW"> Our Price : {leftSymbol}{numberWithCommas(Math.floor(withDiscount(product.variants)).toFixed(2))}{rightSymbol}</h2></div></p>} 
+                {product.fromcountry == country ? 
+                    <div>
+                        <p class="card-price"><div><h2 style={titleSize} class="tagPrice">   Amazon Price :<strike> {leftSymbol}{numberWithCommas(product.variants[0].amazonprice)}{rightSymbol} </strike></h2></div></p><br/>
+                        {/* <p class="card-price"><div><h2 style={titleSize} class="tagPrice">   Amazon Price : {leftSymbol}{numberWithCommas(product.variants[0].price)}{rightSymbol} </h2></div></p><br/> */}
+                        <p class="card-price-STW card-price-STW-margin"><div><h2 style={titleSize} class="tagPrice_STW"> Our Price : {leftSymbol}{numberWithCommas(Math.floor(withDiscount(product.variants)))}{rightSymbol} &nbsp; &nbsp; &nbsp; &nbsp; </h2></div></p>
+                        <h5 className="keyPointsStyle priceTagDetail"> You save {leftSymbol}{numberWithCommas(Math.abs(Math.floor(withDiscount(product.variants)).toFixed(2) - (product.variants[0].price*1)))}{rightSymbol} extra over amazon price</h5>
+                        </div>
+                        :  <p class="card-price-STW card-price-STW-margin1"><div><h2 style={titleSize} class="tagPrice_STW"> Our Price : {leftSymbol}{numberWithCommas(Math.floor(withDiscount(product.variants)))}{rightSymbol}</h2></div></p>} </div>  
+                        :""}
+                    
               
 
                 <h2 style={titleSize} className="keyPointsStyle">     <i className="fa fa-check"></i> 3 days fast and free shipping</h2>
@@ -211,7 +217,7 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
                 }
 
                
-                {(product.variants.length > 0 && product.variants[0].quantity > 0) && (withDiscount(product.variants) > 0) ?  
+                {(product.variants.length > 0 && product.variants[0].quantity > 0) && (withDiscount(product.variants) > 0)  ?  
                 <div>
                     <div className="product-description border-product">
                     {/* {product.variants ?
@@ -234,7 +240,7 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
                                 </ul>
                             </div>
                         </div> : ''} */}
-                        {product.variants.length > 0 && product.variants[0].quantity > 0 ?   
+                        {(product.variants.length > 0 && product.variants[0].quantity > 0)  ?   
                         <div>
                         <span className="instock-cls">     <i className="fa fa-check"></i>{stock}</span>
                     <h6 className="product-title">quantity</h6>
@@ -260,7 +266,7 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
                      <a className="btn btn-solid" onClick={() => buyNow(product, productQty)}  ><i class="fa fa-shopping-bag"></i>  buy now</a> 
                      
                 </div> </div> :
-                <h5 style={smallredobj}> unavailable...! </h5> }
+                <div> <h5 style={smallredobj}> unavailable...! </h5> <h6><a href="javascript:void(Tawk_API.toggle())"> Connect with our customer support</a></h6></div> }
                 
                 <h5><p style={smallh6obj} >Within 8 days of delivery, you may return new, unopened merchandise in its original condition. Exceptions and restrictions apply. See our <a href="#"><Link href={(geoLocation==null?"":geoLocation)+`/page/returns-refund`} >Returns & Refunds</Link></a></p></h5>
                 <div className="border-product">

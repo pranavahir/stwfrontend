@@ -115,13 +115,25 @@ const CartProvider = (props) => {
     var sellPrice = null;
     if(variantData !=null && variantData !=undefined)
     {
-        if(variantData.length > 0 && variantData[0].price)
+        if(variantData.length > 0 && (variantData[0].price || variantData[0].amazonprice))
         {
-            // sellPrice = Math.floor(((variantData[0].conversionrate *  ((variantData[0].price +2 ) * 1.0825 )  + (variantData[0].frieghtrate)) * (1 + variantData[0].duty)) * (1/(1-((variantData[0].fees / (1 + (variantData[0].fees)))+(variantData[0].margin / (1 + (variantData[0].margin)))))),-1);
-            // sellPrice = Math.floor(((variantData[0].conversionrate * ((variantData[0].price +2 ) * 1.0825 )  + (variantData[0].frieghtrate)) * (1 + variantData[0].duty)) * (1/(1-((variantData[0].fees / (1 + (variantData[0].fees)))+(variantData[0].margin / (1 + (variantData[0].margin)))))),0);
-            
-              sellPrice =  Math.floor(((variantData[0].conversionrate *  ((variantData[0].price +variantData[0].pwfee ) * (1+ (variantData[0].purchasetax/100)))    + (variantData[0].frieghtrate)) * (1 + variantData[0].duty)) * (1/(1-((variantData[0].fees / (1 + (variantData[0].fees)))+(variantData[0].margin / (1 + (variantData[0].margin)))))),0);
-        }
+            if(variantData[0].amazonprice !=undefined)
+            {
+              if((variantData[0].amazonprice > 0))
+              {
+                sellPrice =  Math.floor(((variantData[0].conversionrate *  ((variantData[0].amazonprice  +variantData[0].pwfee ) * (1+ (variantData[0].purchasetax/100)))    + (variantData[0].frieghtrate)) * (1 + variantData[0].duty)) * (1/(1-((variantData[0].fees / (1 + (variantData[0].fees)))+(variantData[0].margin / (1 + (variantData[0].margin)))))),0);
+              }
+              else
+              {
+                sellPrice = 0;
+              }
+            }
+            else
+            {
+              sellPrice =  Math.floor(((variantData[0].conversionrate *  ((variantData[0].price  +variantData[0].pwfee ) * (1+ (variantData[0].purchasetax/100)))    + (variantData[0].frieghtrate)) * (1 + variantData[0].duty)) * (1/(1-((variantData[0].fees / (1 + (variantData[0].fees)))+(variantData[0].margin / (1 + (variantData[0].margin)))))),0);
+            }
+
+          }
         else
         {
             sellPrice = 0;
@@ -139,9 +151,18 @@ const gstCollection = (variantData) =>{
   {
       if(variantData.length > 0)
       {
+        
         // gstPrice = Math.floor(((variantData[0].conversionrate *  ((variantData[0].price +2 ) * 1.0825 )  + (variantData[0].frieghtrate)) * (1 + variantData[0].duty)) * (1/(1-((variantData[0].taxes / (1 + (variantData[0].taxes)))+(variantData[0].fees / (1 + (variantData[0].fees)))+(variantData[0].margin / (1 + (variantData[0].margin)))))),-1) - Math.floor(((variantData[0].conversionrate *  ((variantData[0].price +2 ) * 1.0825 )  + (variantData[0].frieghtrate)) * (1 + variantData[0].duty)) * (1/(1-((variantData[0].fees / (1 + (variantData[0].fees)))+(variantData[0].margin / (1 + (variantData[0].margin)))))),-1);
         // gstPrice = Math.floor(((variantData[0].conversionrate * ((variantData[0].price +2 ) * 1.0825 )  + (variantData[0].frieghtrate)) * (1 + variantData[0].duty)) * (1/(1-((variantData[0].fees / (1 + (variantData[0].fees)))+(variantData[0].margin / (1 + (variantData[0].margin))))))  *  variantData[0].taxes ,0)
-        gstPrice = Math.floor(((variantData[0].conversionrate *  ((variantData[0].price +variantData[0].pwfee ) * (1+ (variantData[0].purchasetax/100)))    + (variantData[0].frieghtrate)) * (1 + variantData[0].duty)) * (1/(1-((variantData[0].fees / (1 + (variantData[0].fees)))+(variantData[0].margin / (1 + (variantData[0].margin))))))  *  variantData[0].taxes ,0)
+        if(variantData[0].amazonprice!=undefined)
+        {
+          gstPrice = Math.floor(((variantData[0].conversionrate *  ((variantData[0].amazonprice +variantData[0].pwfee ) * (1+ (variantData[0].purchasetax/100)))    + (variantData[0].frieghtrate)) * (1 + variantData[0].duty)) * (1/(1-((variantData[0].fees / (1 + (variantData[0].fees)))+(variantData[0].margin / (1 + (variantData[0].margin))))))  *  variantData[0].taxes ,0)
+        }
+        else
+        {
+          gstPrice = Math.floor(((variantData[0].conversionrate *  ((variantData[0].price +variantData[0].pwfee ) * (1+ (variantData[0].purchasetax/100)))    + (variantData[0].frieghtrate)) * (1 + variantData[0].duty)) * (1/(1-((variantData[0].fees / (1 + (variantData[0].fees)))+(variantData[0].margin / (1 + (variantData[0].margin))))))  *  variantData[0].taxes ,0)
+        }
+        
       }
       else
       {
@@ -166,7 +187,16 @@ const withDiscount = (variantData) =>{
 }
 
 function numberWithCommas(x) {
-  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  console.log(x);
+  x=x.toString();
+  var lastThree = x.substring(x.length-3);
+  var otherNumbers = x.substring(0,x.length-3);
+  if(otherNumbers != '')
+      lastThree = ',' + lastThree;
+  var res = otherNumbers.replace(/\B(?=(\d{2})+(?!\d))/g, ",") + lastThree;
+
+  return res
+  // x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
 

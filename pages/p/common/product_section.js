@@ -10,8 +10,8 @@ import { useRouter } from 'next/router'
 import AutoFitImage from 'react-image-autofit-frame';
 
 const GET_PRODUCTS = gql`
-query($getProductsByMenuTableSearchFields: SearchFields){
-    getProductsByMenuTable (searchFields: $getProductsByMenuTableSearchFields){
+query($lookupSearchFields: SearchFields){
+    lookup(searchFields: $lookupSearchFields) {
       hasMore {
         seqid
       }
@@ -20,40 +20,56 @@ query($getProductsByMenuTableSearchFields: SearchFields){
       }
       items {
         asin
-        title
+        brandname
+        bullepoints
+        category
         description
-        
+        fromcountry
+        height
+        insertts
+        isactive
+        length
+        packageheight
+        packagelength
+        packagewidth
+        promoflag
+        title
+        weight
+        width
         images {
-          mainimageurl
           additionalimage1
           additionalimage2
           additionalimage3
           additionalimage4
           additionalimage5
+          mainimageurl        
         }
         specifications {
           mpn
           partnumber
           screendisplaysize
-  
+          ram
+          harddrive
+          operatingsystem
+          processorbrand
         }
         variants {
-            color
-            processor
-            taxes
-            pwfee
-            margin
-            price
-            quantity
-            duty
-            fees
-            frieghtrate
-            purchasetax
-            conversionrate
-            daystoship
-            discount
-            domesticfreight
-            
+          
+          purchasetax
+          pwfee
+          daystoship
+          pwfee
+          color
+          conversionrate
+          discount
+          domesticfreight
+          duty
+          fees
+          frieghtrate
+          graphics
+          margin
+          price
+          taxes
         }
       }
     }
@@ -172,7 +188,7 @@ const ProductSection = ({ pathId, type }) => {
             // panel:panel,
             // promoflag:"",
             // relevantProduct:asinData 
-            getProductsByMenuTableSearchFields: {
+            lookupSearchFields: {
                 limit:10,
                 indexFrom:1,
                 keyword:"",
@@ -195,7 +211,7 @@ const ProductSection = ({ pathId, type }) => {
                     </Col>
                 </Row>
                 <Row className="search-product">
-                    {(!data || !data.getProductsByMenuTable || data.getProductsByMenuTable.items.length === 0 || loading) ?
+                    {(!data || !data.lookup || data.lookup.items.length === 0 || loading) ?
                         <div className="typography_section"> 
                         <div className="typography-box"> 
                         <div  className="custom-load typo-content loader-typo">
@@ -205,7 +221,7 @@ const ProductSection = ({ pathId, type }) => {
                                             </div>
                         :
                         <>
-                            {data && data.getProductsByMenuTable.items.slice(0, 4).map((product, index) =>
+                            {data && data.lookup.items.slice(0, 4).map((product, index) =>
                                 <Col xl="3" md="4" sm="6" key={index}>
                                     <div className="product-box product">
                                         <div className="img-wrapper">

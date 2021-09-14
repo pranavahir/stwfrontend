@@ -18,6 +18,7 @@ const GET_SINGLE_PRODUCTS = gql`
 query($productAsin: String!, $productType: String!, $productCountry: String!, $productPanel: String!){
     product(asin: $productAsin, type: $productType, country: $productCountry, panel: $productPanel) {
       asin
+      
         brandname
         bullepoints
         category
@@ -53,7 +54,7 @@ query($productAsin: String!, $productType: String!, $productCountry: String!, $p
           processorbrand
         }
         variants {
-          
+          amazonprice 
           purchasetax
           pwfee
           daystoship
@@ -111,7 +112,7 @@ const LeftSidebarPage = ({ pathId, type }) => {
     {
         leftSymbol = symbol;
     }
-    var { loading, data } = useQuery(GET_SINGLE_PRODUCTS, {
+    var { loading, data, error} = useQuery(GET_SINGLE_PRODUCTS, {
         variables: {
                 productAsin: asin,
                 productType: "",  
@@ -255,7 +256,7 @@ const LeftSidebarPage = ({ pathId, type }) => {
                                         </div>
                                     </Col>
                                 </Row>
-                                {(!data || loading) ?
+                                {(!data || loading) && error == null ?
                                     <div className="top-banner-wrapper" style={loaderStyle}>
                                      
                                     <div className="row mx-0 margin-default">
@@ -270,7 +271,7 @@ const LeftSidebarPage = ({ pathId, type }) => {
                                             </div>
                                             </div>
                                             </div>
-                                    :[(!data || !data.product || data.product == null ? 
+                                    :[(!data || !data.product || data.product == null || error != null ? 
                                         <section className="p-0">
                                             <Container>
                                                 <Row>
