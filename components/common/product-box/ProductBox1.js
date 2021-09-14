@@ -159,7 +159,7 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
     // console.log(product.variants.length)
     // console.log(product.variants[0].daystoship)
     return (
-        <div className="product-box product-wrap product_box_new">
+        <div className="product-box product-wrap product_box_new priceContainer" >
             <div className="img-wrapper">
                 <div className="lable-block">
                     {(product.new === true) ? <span className="lable3">new</span> : <span className="lable3">new</span>}
@@ -266,11 +266,11 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
                         <div>
                     {product.variants.length && product.variants[0].daystoship > 0 ? <h6 style={smallobj} >Shipping in {product.variants[0].daystoship} days.</h6>:""} 
                     <h4 className="priceStyle">
-                    {currency.symbol} {numberWithCommas(Math.floor(withDiscount(product.variants)).toFixed(2))}
+                    {currency.symbol} {numberWithCommas(Math.floor(withDiscount(product.variants)))}
                         <br/>
-                        {discountCalculation(product.variants)? <del><span className="money">{currency.symbol}{numberWithCommas ((withDiscount(product.variants) * 1).toFixed(2)) }</span></del>:""}
+                        {discountCalculation(product.variants)? <del><span className="money">{currency.symbol}{numberWithCommas ((withDiscount(product.variants) * 1)) }</span></del>:""}
                     </h4>
-                    </div> : <h5 style={smallredobj}> Unavailable...! </h5>
+                    </div> : <h5 style={smallredobj}>Sold out ...! </h5>
                      }
                     
 
@@ -313,9 +313,9 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
                                 <h2> {product.title} </h2>
                                 { (product.variants.length > 0 && product.variants[0].quantity > 0) && (withDiscount(product.variants) > 0)  ?
                                 <div>
-                                {discountCalculation(product.variants)?<h4><del>{leftSymbol}{(withDiscount(product.variants) * 1).toFixed(2)}{rightSymbol}</del>
+                                {discountCalculation(product.variants)?<h4><del>{leftSymbol}{numberWithCommas(withDiscount(product.variants) * 1)}{rightSymbol}</del>
                                 <span>{discountCalculation(product.variants)}% off</span></h4>:""} 
-                                <h3>{leftSymbol}{Math.floor(withDiscount(product.variants)).toFixed(2)}{rightSymbol} </h3>
+                                <h3>{leftSymbol}{numberWithCommas(Math.floor(withDiscount(product.variants)))}{rightSymbol} </h3>
                                 </div>:""}
 
 

@@ -268,7 +268,7 @@ const ProductSection = ({ pathId, type }) => {
                                             </a>
                                             {withDiscount(product.variants) > 0 ?
                                             <h4 className="priceStyle">{leftSymbol}{numberWithCommas(Math.floor(withDiscount(product.variants)).toFixed(2))}{rightSymbol}</h4>
-                                            : <h5 className="priceStyle" style={smallredobj}> Unavailable...! </h5>
+                                            : <h5 className="priceStyle" style={smallredobj}>Sold out ...! </h5>
                      }
                     
                                             {/* <ul className="color-variant">

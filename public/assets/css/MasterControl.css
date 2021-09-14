@@ -130,6 +130,10 @@ border:1px solid yellow;
     background-color: #f7f7f7;
     
 }
+.priceContainer{
+    /* display: flex; */
+    align-items: flex-end;
+}
 .priceTagDetail{
     color: black;
     font-size: 11.5px !important;

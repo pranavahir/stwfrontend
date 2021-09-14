@@ -36,7 +36,7 @@ const CartProvider = (props) => {
     console.log(item);
     if(withDiscount(item.variants) > 0)
     {
-      const index = cartItems.findIndex(itm => itm.seqid === item.seqid)
+      const index = cartItems.findIndex(itm => itm.asin === item.asin)
     if (index !== -1) {
        const product = cartItems[index];
       cartItems.push({ ...item, qty: quantity,gst:gstCollection(item.variants), total: ((withDiscount(item.variants))) * quantity  });  
@@ -48,7 +48,7 @@ const CartProvider = (props) => {
     }
     else
     {
-      toast.error("unable to add the Product, The Product is unavailable!");
+      toast.error("unable to add the Product, The Product isSold out !");
     }
   }
 
@@ -92,7 +92,6 @@ const CartProvider = (props) => {
         setStock("Out of Stock !")
       }
     }
-    
   }
 
 
@@ -281,7 +280,7 @@ const discountCalculation = (variantData) =>{
     }
     else
     {
-      toast.error("unable to add the Product, The Product is unavailable!");
+      toast.error("unable to add the Product, The Product isSold out !");
     }
 
     

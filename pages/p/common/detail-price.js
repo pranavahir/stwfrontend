@@ -266,7 +266,7 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
                      <a className="btn btn-solid" onClick={() => buyNow(product, productQty)}  ><i class="fa fa-shopping-bag"></i>  buy now</a> 
                      
                 </div> </div> :
-                <div> <h5 style={smallredobj}> unavailable...! </h5> <h6><a href="javascript:void(Tawk_API.toggle())"> Connect with our customer support</a></h6></div> }
+                <div> <h5 style={smallredobj}> Sold out...! </h5> <h6><a href="javascript:void(Tawk_API.toggle())"> Connect with our customer support</a></h6></div> }
                 
                 <h5><p style={smallh6obj} >Within 8 days of delivery, you may return new, unopened merchandise in its original condition. Exceptions and restrictions apply. See our <a href="#"><Link href={(geoLocation==null?"":geoLocation)+`/page/returns-refund`} >Returns & Refunds</Link></a></p></h5>
                 <div className="border-product">
