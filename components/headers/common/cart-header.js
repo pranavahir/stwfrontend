@@ -45,6 +45,7 @@ const CartHeader = ({ item, symbol }) => {
         titleProps = titleProps.replace(/---/gi, '-');
         titleProps = titleProps.replace(/--/gi, '-');
         titleProps = titleProps.toLowerCase();
+        titleProps = titleProps.slice(0, titleProps.length - 1);
         var asin = item.asin.toLowerCase();
         // router.push(`${geoLocation}/p/${asin}` + '-' + `${titleProps}`);
         router.push(`/p/${asin}` + '-' + `${titleProps}`);

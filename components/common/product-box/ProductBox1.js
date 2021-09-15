@@ -89,6 +89,7 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
         titleProps = titleProps.replace(/---/gi, '-');
         titleProps = titleProps.replace(/--/gi, '-');
         titleProps = titleProps.toLowerCase();
+        titleProps = titleProps.slice(0, titleProps.length - 1);
         var asin = product.asin.toLowerCase();
         router.push(`${geoLocation}/p/${asin}` + '-' + `${titleProps}`);
     }
@@ -100,6 +101,7 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
         titleProps = titleProps.replace(/---/gi, '-');
         titleProps = titleProps.replace(/--/gi, '-');
         titleProps = titleProps.toLowerCase();
+        titleProps = titleProps.slice(0, titleProps.length - 1);
         var asin = product.asin.toLowerCase();
         var url = `${geoLocation}/p/${asin}` + '-' + `${titleProps}`;
         return url;

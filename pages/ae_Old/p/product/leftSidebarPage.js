@@ -163,6 +163,7 @@ const LeftSidebarPage = ({ pathId, type }) => {
         titleProps = titleProps.replace(/[^\w\s]/gi, '-');
         titleProps = titleProps.replace(/---/gi, '-');
         titleProps = titleProps.replace(/--/gi, '-');
+        titleProps = titleProps.slice(0, titleProps.length - 1);
         var url = domain + '/p/'+ product.asin  + '-' + 'titleProps';
         return url;
     }
@@ -255,14 +256,14 @@ const LeftSidebarPage = ({ pathId, type }) => {
                         </Col>
                         <Col lg="9" sm="12" xs="12" >
                             <Container fluid={true}>
-                                <Row>
+                                {/* <Row>
                                     <Col cl="12">
                                         <div className="filter-main-btn mb-2">
                                             <span onClick={filterClick} className="filter-btn" >
                                                 <i className="fa fa-filter" aria-hidden="true"></i> filter</span>
                                         </div>
                                     </Col>
-                                </Row>
+                                </Row> */}
                                 {(!data || loading) ?
                                     <div className="top-banner-wrapper" style={loaderStyle}>
                                      

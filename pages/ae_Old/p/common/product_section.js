@@ -135,6 +135,7 @@ const ProductSection = ({ pathId, type }) => {
         titleProps = titleProps.replace(/[^\w\s]/gi, '-');
         titleProps = titleProps.replace(/---/gi, '-');
         titleProps = titleProps.replace(/--/gi, '-');
+        titleProps = titleProps.slice(0, titleProps.length - 1);
         // var url = "/p/"+product.asin + "-" + titleProps;
         // return url;
         router.push(`/p/${product.asin}` + '-' + `${titleProps}`);

@@ -163,6 +163,7 @@ const LeftSidebarPage = ({ pathId, type }) => {
         titleProps = titleProps.replace(/[^\w\s]/gi, '-');
         titleProps = titleProps.replace(/---/gi, '-');
         titleProps = titleProps.replace(/--/gi, '-');
+        titleProps = titleProps.slice(0, titleProps.length - 1);
         var url = domain + '/p/'+ product.asin  + '-' + 'titleProps';
         return url;
     }

@@ -158,9 +158,7 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
                         {RatingStars}
                     </div> 4 Stars | <a href="javascript:void(Tawk_API.toggle())"> Ask Questions</a></h5>
                 {/* <h4> {product.categoryvalue} </h4> parseFloat(Math.floor(withDiscount(product.variants)).toFixed(2)).toLocaleString('en') */}
-                
                 {/* <h2 style={titleSize}>Your Price : {leftSymbol}{numberWithCommas(Math.floor(withDiscount(product.variants)).toFixed(2))}{rightSymbol} </h2> */}
-              
               {withDiscount(product.variants) > 0 ? 
                 <div>
                 {product.variants.length && product.variants[0].daystoship ?<h6 style={smallobj} >Shipping in {product.variants[0].daystoship} days.</h6>:""} 
@@ -175,9 +173,6 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
                         </div>
                         :  <p class="card-price-STW card-price-STW-margin1"><div><h2 style={titleSize} class="tagPrice_STW"> Our Price : {leftSymbol}{numberWithCommas(Math.floor(withDiscount(product.variants)))}{rightSymbol}</h2></div></p>} </div>  
                         :""}
-                    
-              
-
                 <h2 style={titleSize} className="keyPointsStyle">     <i className="fa fa-check"></i> 3 days fast and free shipping.</h2>
                 <h2 style={titleSize} className="keyPointsStyle">     <i className="fa fa-check"></i> 7 days return window. *</h2>
                 <h2 style={titleSize}  className="keyPointsStyle">     <i className="fa fa-check"></i> Standard manufacturer warranty.</h2> 
@@ -215,8 +210,6 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
                                 : ''}
                         </>
                 }
-
-               
                 {(product.variants.length > 0 && product.variants[0].quantity > 0) && (withDiscount(product.variants) > 0)  ?  
                 <div>
                     <div className="product-description border-product">

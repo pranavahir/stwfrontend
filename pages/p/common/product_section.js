@@ -163,6 +163,7 @@ const ProductSection = ({ pathId, type }) => {
         // return url;
 
         titleProps = titleProps.toLowerCase();
+        titleProps = titleProps.slice(0, titleProps.length - 1);
         var asin = product.asin.toLowerCase();
         // var url = `${geoLocation}/p/${asin}` + '-' + `${titleProps}`;
 
@@ -267,7 +268,7 @@ const ProductSection = ({ pathId, type }) => {
                                                 <h6 style={{lineHeight:"initial"}}  title = {product.title} >{GetProductTitle(product.title)}</h6>
                                             </a>
                                             {withDiscount(product.variants) > 0 ?
-                                            <h4 className="priceStyle">{leftSymbol}{numberWithCommas(Math.floor(withDiscount(product.variants)).toFixed(2))}{rightSymbol}</h4>
+                                            <h4 className="priceStyle">{leftSymbol}{numberWithCommas(Math.floor(withDiscount(product.variants)))}{rightSymbol}</h4>
                                             : <h5 className="priceStyle" style={smallredobj}>Sold out ...! </h5>
                      }
                     
