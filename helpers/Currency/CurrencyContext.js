@@ -3198,7 +3198,6 @@ var selectedConfig=null;
 var domain = window.location.hostname;
 var  url  = window.location.href;
 var tempGeoLocation = "";
-console.log(url);
  
 // if(url.search("/ae/") > 0)
 // {

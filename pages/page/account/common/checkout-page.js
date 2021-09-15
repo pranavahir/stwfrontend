@@ -16,49 +16,6 @@ import { CurrencyContext } from "../../../../helpers/Currency/CurrencyContext";
 import GooglePayButton from "@google-pay/button-react";
 import { useQuery,useLazyQuery } from '@apollo/react-hooks';
 
-// const CREATE_OREDER = gql`
-//   mutation CreateOrderDetail($order: OrderDetail!) {
-//     CreateOrderDetail(order: $order) {
-//       orderdetailid
-//     }
-//   }
-// `;
-
-// const CREATE_ABANDONED_CART = gql`
-//   mutation Createabandonedcart($abandonedcart: abandonedcart!) {
-//     Createabandonedcart(abandonedcart: $abandonedcart) {
-//       orderdetailid
-//     }
-//   }
-// `;
-
-// const UPDATE_CUSTOMER = gql`
-//   mutation UpdateCustomerDetail($Customer: Customerinfo!) {
-//     UpdateCustomerDetail(Customer: $Customer) {
-//         customerredid
-//     }
-//   }
-// `;
-
-// const GET_CUSTOMER_BY_UID = gql`
-// query getCustomerByID ($uid:String!) {
-//     getCustomerByID (uid:$uid) {
-//   customerredid
-//   customername
-//   customerlastname
-//   phonenumber
-//   address1
-//   address2
-//   city
-//   state
-//   country
-//   emailid
-//   googleid
-//   facebookid
-//   pincode
-//     }
-// }
-// `;
 
 const CREATE_OREDER = gql`
   mutation($createOrder: OrderDetail){
@@ -250,7 +207,6 @@ else
 {
     leftSymbol = symbol;
 }
-  // const [successObj, setSuccessObj] = useState({});
   const [state, setState] = useState({
     payment: null,
     items: null,
@@ -296,14 +252,6 @@ useEffect(() => {
     setPayment(value);
   };
 
-  
-
-  // const [createOrder] = useMutation(CREATE_OREDER);
-
-  
-  // const [createOrder, { orderedData }] = useMutation(CREATE_OREDER);
-  // const [createAbandonedCart, { abandonedCartData }] = useMutation(CREATE_ABANDONED_CART);
-  // const [UpdateCustomer, { CustomerData }] = useMutation(UPDATE_CUSTOMER);
 
   const [createOrder, { orderedData }] = useMutation(CREATE_OREDER);
   const [createAbandonedCart, { abandonedCartData }] = useMutation(CREATE_ABANDONED_CART);
@@ -311,20 +259,6 @@ useEffect(() => {
     const [referenceNumber, { TableName }] = useMutation(GET_REFNUMBER);
 
 
-  // window.addEventListener('beforeunload', function (e) {
-  //   // Cancel the event
-
-  
-  //   alert(e);
-  //   console.log(e);
-  //   e.preventDefault(); 
-  //   // If you prevent default behavior in Mozilla Firefox prompt will always be shown
-  //   // Chrome requires returnValue to be set
-
-  //   e.returnValue = 'test';
-
-    
-  // });
   
 
   const makePayment = () =>{
@@ -424,13 +358,7 @@ useEffect(() => {
           variables: { abandonedInput: OrderDetail  },
         });
 
-
         //Order mail 
-       
-       
-        //  history.push('/multikart-admin/menus/list-menu')
-        //  toast.success("Successfully Added !")
-  
       } catch (err) {
         console.log(err.message);
       }
@@ -584,6 +512,7 @@ const changeGstcheck = (e) => {
 
   const OrderedMail = async (productDetail,customerDetail) =>{
 
+ 
     
     // https://mailservice.digitechniq.in/  http://localhost/mailService/
     const { error: backendMailError, clientMail } = await fetch(
@@ -715,12 +644,9 @@ const changeGstcheck = (e) => {
           ListOrder.push(OrderDetail);
 
           try {
-            // console.log(OrderDetail);
             var orderData = createOrder({
               variables: { createOrder: { ...OrderDetail } },
             });
-            //  history.push('/multikart-admin/menus/list-menu')
-            //  toast.success("Successfully Added !")
           } catch (err) {
             console.log(err.message);
           }
@@ -750,7 +676,6 @@ const changeGstcheck = (e) => {
         //Order mail 
         OrderedMail(ListOrder,customerData);
        
-        // console.log(successObj);
          var newObj={
           payment: payment,
             items: cartItems,
@@ -826,9 +751,6 @@ const changeGstcheck = (e) => {
               var orderData = createOrder({
                 variables: { createOrder: { ...OrderDetail } },
               });
-
-              //  history.push('/multikart-admin/menus/list-menu')
-              //  toast.success("Successfully Added !")
             } catch (err) {
               console.log(err.message);
             }
@@ -855,7 +777,6 @@ const changeGstcheck = (e) => {
              //Order mail 
              OrderedMail(ListOrder,customerData);
 
-        // console.log(successObj);
         var newObj={
           payment: payment,
             items: cartItems,
@@ -931,9 +852,6 @@ const changeGstcheck = (e) => {
               var orderData = createOrder({
                 variables: { createOrder: { ...OrderDetail } },
               });
-
-              //  history.push('/multikart-admin/menus/list-menu')
-              //  toast.success("Successfully Added !")
             } catch (err) {
               console.log(err.message);
             }
@@ -1078,6 +996,7 @@ const changeGstcheck = (e) => {
   };
 
   const stripeSubmit = async (e, customerData) => {
+
     // Orderconformation("Stripe","paymentIntent",customerData);
     // We don't want to let default form submission happen here,
     // which would refresh the page.
@@ -1240,7 +1159,8 @@ const changeGstcheck = (e) => {
   const onSubmit = (data, e,paymentinfo) => {
 
     if (data !== "" && IsOTPVerfied=="Verified" ) {
-
+      
+      data.email = (data.email==undefined || data.email=="" ) ? obj.email : "";
      
       setPageLoad(true);
 
@@ -1250,11 +1170,9 @@ const changeGstcheck = (e) => {
         razorPayPaymentHandler(data);
       } else if (payment == "Gpay") {
         onBuyClicked();
-        // razorPayPaymentHandler(data);
       }
       else if (payment == "paypal") {
         onSuccess(data);
-        // razorPayPaymentHandler(data);
       }
     } 
     // else {
@@ -1303,10 +1221,6 @@ const changeGstcheck = (e) => {
           }
           setOTP(G_OTP);
           setIsOTPVerfied("Generated");
-          
-          //  console.log(OTP);
-          // https://mailservice.digitechniq.in/  http://localhost/mailService/
-          // alert(event.target.value);
           setOldMail(event.target.value);
           await fetch("https://mailservice.digitechniq.in/",
          {
@@ -1333,8 +1247,8 @@ const changeGstcheck = (e) => {
 
 
   const setStateFromInput = (event) => {
-    obj[event.target.name] = event.target.value;
     
+    obj[event.target.name] = event.target.value;
      
     // last_name:obj.last_name==undefined?data.getCustomerByID.customerlastname:obj.last_name,
     // phonenumber:obj.phonenumber==undefined?data.getCustomerByID.phonenumber:obj.phonenumber,

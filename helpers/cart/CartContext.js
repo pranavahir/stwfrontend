@@ -33,14 +33,18 @@ const CartProvider = (props) => {
   // Add Product To Cart
   const addToCart = (item ,quantity) => {
     // toast.success("Product Added Successfully !");
-    console.log(item);
+    
     if(withDiscount(item.variants) > 0)
     {
       const index = cartItems.findIndex(itm => itm.asin === item.asin)
     if (index !== -1) {
        const product = cartItems[index];
-      cartItems.push({ ...item, qty: quantity,gst:gstCollection(item.variants), total: ((withDiscount(item.variants))) * quantity  });  
-      setCartItems([...cartItems])
+       if((quantity+product.qty) <= item.variants[0].quantity)
+      {
+      // cartItems.push({ ...item, qty: quantity,gst:gstCollection(item.variants), total: ((withDiscount(item.variants))) * quantity  });  
+      setCartItems([{ ...product, ...item, qty: (quantity+product.qty), total: (withDiscount(item.variants)) * (quantity+product.qty)  }])
+      // setCartItems([...cartItems])
+      }
     } else {
       const product = { ...item, qty: quantity,gst:gstCollection(item.variants), total: ((withDiscount(item.variants))) * quantity  }
       setCartItems([...cartItems, product])
@@ -186,7 +190,6 @@ const withDiscount = (variantData) =>{
 }
 
 function numberWithCommas(x) {
-  console.log(x);
   x=x.toString();
   var lastThree = x.substring(x.length-3);
   var otherNumbers = x.substring(0,x.length-3);

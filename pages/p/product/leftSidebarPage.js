@@ -1,17 +1,17 @@
 import Head from 'next/head';
 import React, { useState, useEffect, useRef, useContext } from 'react';
 import ProductTab from '../common/product-tab';
-import Service from '../common/service'
-import NewProduct from '../../shop/common/newProduct';
+// import Service from '../common/service'
+// import NewProduct from '../../shop/common/newProduct';
 import Slider from 'react-slick';
 import gql from 'graphql-tag';
 import { useQuery } from '@apollo/react-hooks';
 import ImageZoom from '../common/image-zoom';
 import DetailsWithPrice from '../common/detail-price';
-import Filter from '../common/filter';
-import { Container, Row, Col, Media } from 'reactstrap';
+// import Filter from '../common/filter';
+import { Container, Row, Col, Modal, ModalBody, ModalHeader, Media, Input } from 'reactstrap';
 import { CurrencyContext } from '../../../helpers/Currency/CurrencyContext';
-
+import CartContext from '../../../helpers/cart';
 import classes from "../../../components/headers/Header-one.module.css";
 
 const GET_SINGLE_PRODUCTS = gql`
@@ -95,13 +95,26 @@ const LeftSidebarPage = ({ pathId, type }) => {
         asinData =  pathId.slice(0,pathId.search("-"));
     }
 
+    const buyNow = (product, productQty) => {
+        context.addToCart(product, productQty);
+        router.push({
+            pathname: "/page/account/checkout",
+          });
+    };
+
     const asin = asinData;
     const curContext = useContext(CurrencyContext);
+    const context = useContext(CartContext);
     const symbol = curContext.state.symbol;
     const IsRight = curContext.state.IsRight;
     const country = curContext.state.country;
     const panel = curContext.state.panel;
     const currency = curContext.state.currency
+    const [productQty, setproductQty] = useState(1);
+    // const setproductQty = context.setproductQty;
+    const [stock, setStock] = useState('InStock');
+    const withDiscount = context.withDiscount
+
     let leftSymbol=null;
     let rightSymbol = null;
     if(IsRight ==true)
@@ -124,6 +137,46 @@ const LeftSidebarPage = ({ pathId, type }) => {
     // const getUrl = (data.product.title) => {
         
     // }
+
+    const smallredobj={
+        fontSize: "15px",
+        fontWeight: "bold",
+        color: "red"
+    }
+    const titleSize={
+        fontSize: "14px"
+    }
+    
+    const changeQty = (e) => {
+        if(e.target.value != "")
+        {
+            if(e.target.value <=product.variants[0].quantity )
+            {
+                setproductQty(parseInt(e.target.value));
+            }
+            else
+            {
+                e.preventDefault();
+                e.target.value = product.variants[0].quantity;
+            }
+        }
+        else
+        setproductQty("");
+    }
+ 
+    const minusProductQty = () =>{
+        if (productQty > 1) {
+              setproductQty(productQty - 1);
+              setStock('InStock')
+          }
+    }
+    const plusQty = (item) =>{
+        if (item.quantity > productQty) {
+            setproductQty(productQty + 1);
+          } else {
+            setStock("Out of Stock !")
+          }
+    }
 
     const getUrl = (product) => {
         
@@ -239,13 +292,7 @@ const LeftSidebarPage = ({ pathId, type }) => {
 
                 <Container>
                     <Row>
-                        <Col sm="3" className="collection-filter">
-                            {/* <Filter /> */}
-                            <Service />
-                            {/* <!-- side-bar single product slider start --> */}
-                            {/* <NewProduct /> */}
-                            {/* <!-- side-bar single product slider end --> */}
-                        </Col>
+                        
                         <Col lg="9" sm="12" xs="12" >
                             <Container fluid={true}>
                                 <Row>
@@ -404,6 +451,14 @@ const LeftSidebarPage = ({ pathId, type }) => {
 
                             {(!data || !data.product || data.product.length === 0 || data.product==null) ? "" :  <ProductTab selectedItem={data} /> }
                           
+                        </Col>
+                        <Col sm="3" className="collection-filter">
+                       
+                            {/* <Filter />   */}
+                            {/* <Service /> */}
+                            {/* <!-- side-bar single product slider start --> */}
+                            {/* <NewProduct /> */}
+                            {/* <!-- side-bar single product slider end --> */}
                         </Col>
                     </Row>
                 </Container>
