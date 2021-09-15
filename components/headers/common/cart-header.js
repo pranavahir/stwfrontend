@@ -13,6 +13,7 @@ const CartHeader = ({ item, symbol }) => {
     const gstCollection = context.gstCollection;
     const discountCalculation = context.discountCalculation;
     const priceCollection = context.priceCollection;
+    const numberWithCommas = context.numberWithCommas;
     const withDiscount = context.withDiscount;
     let leftSymbol=null;
     let rightSymbol = null;
@@ -62,7 +63,7 @@ const CartHeader = ({ item, symbol }) => {
                     
                     <div className="media-body">
                             <a href="#" onClick={clickProductDetail}> <h4>{getName(item.title)}</h4></a>
-                        <h4><span>{item.qty} x {symbol} {(withDiscount(item.variants)) }</span></h4>
+                        <h4><span>{item.qty} x {symbol} {numberWithCommas(Math.floor((withDiscount(item.variants))).toFixed(2))}</span></h4>
                     </div>
                 </div>
                 <div className="close-circle">

@@ -14,7 +14,7 @@ const CartContainer = ({ icon }) => {
   const total = context.cartTotal;
   const IsRight = currContext.state.IsRight;
   var geoLocation = sessionStorage.getItem("geoLocation");
-
+  const numberWithCommas = context.numberWithCommas;
   if(geoLocation==null)
   geoLocation="";
 
@@ -51,7 +51,7 @@ const CartContainer = ({ icon }) => {
                     subtotal :{" "}
                     <span>
                       {leftSymbol}
-                      {total.toFixed(2)}
+                      {numberWithCommas(Math.floor(total).toFixed(2))}
                       {rightSymbol}
                     </span>
                   </h5>

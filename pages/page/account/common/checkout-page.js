@@ -155,7 +155,7 @@ const  CheckoutPage = ({ isPublic = false }) => {
   const withDiscountWithQty = cartContext.withDiscountWithQty;
   const priceCollection = cartContext.priceCollection;
   const discountCalculation  = cartContext.discountCalculation ;
-
+  const numberWithCommas = cartContext.numberWithCommas;
   
  
   
@@ -1908,7 +1908,7 @@ const [geoLocation, setgeoLocation] = useState(gLocation);
                               <span style = {rightAligh}>
                                 {symbol}
                                 {/* {item.total.toFixed(2)} */}
-                                {(withDiscount(item.variants))}
+                                {numberWithCommas(Math.floor(withDiscount(item.variants)).toFixed(2))}
                               </span>
                             </li>
                           ))}
@@ -1934,7 +1934,7 @@ const [geoLocation, setgeoLocation] = useState(gLocation);
                             Subtotal
                             <span className="count" style = {rightAligh}>
                               {symbol}
-                              {fullPrice}
+                              {numberWithCommas(Math.floor(fullPrice).toFixed(2))}
                             </span>
                           </li>
                         </ul>
@@ -1943,7 +1943,7 @@ const [geoLocation, setgeoLocation] = useState(gLocation);
                             Total{" "}
                             <span className="count" style = {rightAligh}>
                               {symbol}
-                              {fullPrice}
+                              {numberWithCommas(Math.floor(fullPrice).toFixed(2))}
                             </span>
                           </li>
                         </ul>

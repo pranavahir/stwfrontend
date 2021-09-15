@@ -21,6 +21,7 @@ const CartPage = () => {
     const discountCalculation = context.discountCalculation;
     const priceCollection = context.priceCollection;
     const withDiscount= context.withDiscount;
+    const numberWithCommas = context.numberWithCommas;
     let leftSymbol=null;
     let rightSymbol = null;
     if(IsRight ==true)
@@ -133,7 +134,7 @@ const CartPage = () => {
                                                         </div>{(item.qty >= item.stock) ? 'out of Stock' : ''}
                                                             </div>
                                                             <div className="col-xs-3">
-                                                                <h2 className="td-color">{leftSymbol}{(withDiscount(item.variants))}{leftSymbol}</h2>
+                                                                <h2 className="td-color">{leftSymbol}{ numberWithCommas(Math.floor(withDiscount(item.variants)).toFixed(2))}{leftSymbol}</h2>
                                                             </div>
                                                             <div className="col-xs-3">
                                                                 <h2 className="td-color"><a href="#" className="icon"><i className="fa fa-times"  onClick={() => removeFromCart(item)}></i></a>
@@ -141,7 +142,7 @@ const CartPage = () => {
                                                             </div>
                                                         </div>
                                                     </td>
-                                                    <td><h2>{leftSymbol}{(priceCollection(item.variants))}{rightSymbol}</h2></td>
+                                                    <td><h2>{leftSymbol}{numberWithCommas(Math.floor(priceCollection(item.variants)).toFixed(2))}{rightSymbol}</h2></td>
                                                     <td><h2>{leftSymbol}{item.gst}{rightSymbol}</h2></td>
                                                     <td>
                                                         <div className="qty-box">
@@ -162,7 +163,7 @@ const CartPage = () => {
                                                         <i className="fa fa-times" onClick={() => removeFromCart(item)}></i>
                                                        
                                                     </td>
-                                                    <td><h2 className="td-color">{leftSymbol}{item.total.toFixed(2)}{rightSymbol}</h2></td>
+                                                    <td><h2 className="td-color">{leftSymbol}{numberWithCommas(Math.floor(item.total).toFixed(2))}{rightSymbol}</h2></td>
                                                 </tr>
                                             </tbody>)
                                     })}
@@ -171,7 +172,7 @@ const CartPage = () => {
                                     <tfoot>
                                         <tr>
                                             <td>total price :</td>
-                                            <td><h2>{leftSymbol} {total.toFixed(2)} {rightSymbol}</h2></td>
+                                            <td><h2>{leftSymbol} {numberWithCommas(Math.floor(total).toFixed(2))} {rightSymbol}</h2></td>
                                         </tr>
                                     </tfoot>
                                 </table>
