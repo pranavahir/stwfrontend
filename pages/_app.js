@@ -23,13 +23,13 @@ import { useAmp } from 'next/amp'
 const client = new ApolloClient({
       // uri: "https://test.digitechniq.in/api/graphql"  //local stwapi
     // uri: "http://localhost:4000/graphql"  //local stwapi
-    //uri: "https://test.digitechniq.in/api/graphql" //local stwapi
+    uri: "https://test.digitechniq.in/graphql" //local stwapi
     // http://162.0.210.5:4458/
     // uri: "http://162.0.210.5:4457/api/graphql"  //local stwapi
     // uri: "https://cryptic-mountain-48315.herokuapp.com/api/graphql"  //Test env
     //uri:'https://docker.digitechniq.in/api/graphql', //production env 001
     
-    uri:'https://stwecommerceapi.digitechniq.in/graphql', //production env 002
+    // uri:'https://stwecommerceapi.digitechniq.in/graphql', //production env 002
     
     
 })
