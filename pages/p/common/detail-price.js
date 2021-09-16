@@ -173,12 +173,16 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
                         </div>
                         :  <p class="card-price-STW card-price-STW-margin1"><div><h2 style={titleSize} class="tagPrice_STW"> Our Price : {leftSymbol}{numberWithCommas(Math.floor(withDiscount(product.variants)).toFixed(2))}{rightSymbol}</h2></div></p>} </div>  
                         :""}
+                        <div className="productKeyPoint">
+
+                        
                 <h2 style={titleSize} className="keyPointsStyle">     <i className="fa fa-check"></i> 3 days fast and free shipping.</h2>
                 <h2 style={titleSize} className="keyPointsStyle">     <i className="fa fa-check"></i> 7 days return window. *</h2>
                 <h2 style={titleSize}  className="keyPointsStyle">     <i className="fa fa-check"></i> Standard manufacturer warranty.</h2> 
                 <h2 style={titleSize}  className="keyPointsStyle">     <i className="fa fa-check"></i> 24* 7 customer support available. </h2>
                 <h2 style={titleSize}  className="keyPointsStyle">     <i className="fa fa-check"></i> Better price guarantee (Min 5% less than amazon, flipkart any other stores price).</h2>
                 <h2 style={titleSize}  className="keyPointsStyle">     <i className="fa fa-check"></i> Subscribe below channels for the mind blowing offers.</h2>
+                </div>
                 {/* {product.variants.map(vari => {
                     var findItem = uniqueColor.find(x => x.color === vari.color);
                     if (!findItem)

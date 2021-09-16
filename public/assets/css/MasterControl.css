@@ -140,8 +140,13 @@ border:1px solid yellow;
     border-radius: 9px;
     padding: 17px;
     box-shadow: 1.2px 1.2px 5.2px 1.2px #acacac;
-    background-color: #f1f1f1;
 }
+.productKeyPoint{
+    border: 1px solid #acacac;
+    border-radius: 16px;
+    padding: 8px;
+}
+
 .priceContainer{
     /* display: flex; */
     align-items: flex-end;
