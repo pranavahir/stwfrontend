@@ -130,6 +130,18 @@ border:1px solid yellow;
     background-color: #f7f7f7;
     
 }
+.new-btncls{
+    margin: 8px;
+    border-radius: 33px;
+    padding: 8px 30px;
+}
+.productPriceCont{
+    border: 1px solid #acacac;
+    border-radius: 9px;
+    padding: 17px;
+    box-shadow: 1.2px 1.2px 5.2px 1.2px #acacac;
+    background-color: #f1f1f1;
+}
 .priceContainer{
     /* display: flex; */
     align-items: flex-end;

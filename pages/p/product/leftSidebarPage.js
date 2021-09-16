@@ -466,8 +466,59 @@ const LeftSidebarPage = ({ pathId, type }) => {
                             {(!data || !data.product || data.product.length === 0 || data.product==null) ? "" :  <ProductTab selectedItem={data} /> }
                           
                         </Col>
-                        <Col sm="3" className="collection-filter">
-                      
+                        <Col sm="3" className={`collection-filter ${classes.desktopHeader}`} >
+                        {!data || !data.product || data.product == null || error != null ?"":<div>
+                        {(data.product.variants.length > 0 && data.product.variants[0].quantity > 0) && (withDiscount(data.product.variants) > 0)  ?  
+                <div className="productPriceCont">
+                    <div className="product-description border-product">
+                    {/* {product.variants ?
+                        <div>
+                            <h6 className="product-title size-text">select size
+                                    <span><a href={null} data-toggle="modal"
+                                    data-target="#sizemodal" onClick={toggle} >size chart</a></span></h6>
+                            <Modal isOpen={modal} toggle={toggle} centered>
+                                <ModalHeader toggle={toggle}>Sheer Straight Kurta
+                                    </ModalHeader>
+                                <ModalBody>
+                                    <Media src={sizeChart} alt="size" className="img-fluid" />
+                                </ModalBody>
+                            </Modal>
+                            <div className="size-box">
+                                <ul>
+                                    {uniqueSize.map((data, i) => {
+                                        return <li key={i}><a href={null}>{data}</a></li>
+                                    })}
+                                </ul>
+                            </div>
+                        </div> : ''} */}
+                        {(data.product.variants.length > 0 && data.product.variants[0].quantity > 0)  ?   
+                        <div >
+                       <center> {stock=="InStock"? <span className="instock-cls">     <i className="fa fa-check"></i>{stock}</span> : <span className="instock-cls-red">     <i class="fa fa-times"></i>{stock}</span> } </center>
+                        <center> <h6 className="product-title">quantity</h6></center>
+                    <div className="qty-box">
+                        <div className="input-group text-center">
+                            <span className="input-group-prepend">
+                                <button type="button" className="btn quantity-left-minus" onClick={() => minusProductQty()} data-type="minus" data-field="">
+                                    <i className="fa fa-minus"></i>
+                                </button>
+                            </span>
+                            <Input type="text" name="quantity" value={productQty} onChange={changeQty} className="form-control input-number" />
+                            <span className="input-group-prepend">
+                                <button type="button" className="btn quantity-right-plus" onClick={() => plusQty(data.product.variants[0])} data-type="plus" data-field="">
+                                    <i className="fa fa-plus"></i>
+                                </button>
+                            </span>
+                        </div>
+                    </div> </div>
+                            : ""}
+                            </div>
+                   <div className="product-buttons" >
+                   <center> <a href={null} className="btn btn-solid new-btncls" onClick={() => context.addToCart(data.product, productQty)}> <i class="fa fa-shopping-cart"></i> add to cart</a></center>
+                   <center> <a className="btn btn-solid new-btncls" onClick={() => buyNow(data.product, productQty)}  ><i class="fa fa-shopping-bag"></i>  buy now</a> </center>
+                     <center><i class="fa fa-lock"></i> Secure transaction</center>
+                </div> </div> :
+                <div> <h5 style={smallredobj}> Sold out...! </h5> <h6><a href="javascript:void(Tawk_API.toggle())"> Connect with our customer support</a></h6></div> }
+                        </div>}
                             {/* <Filter />   */}
                             {/* <Service /> */}
                             {/* <!-- side-bar single product slider start --> */}

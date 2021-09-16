@@ -179,7 +179,7 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
                 <h2 style={titleSize}  className="keyPointsStyle">     <i className="fa fa-check"></i> 24* 7 customer support available. </h2>
                 <h2 style={titleSize}  className="keyPointsStyle">     <i className="fa fa-check"></i> Better price guarantee (Min 5% less than amazon, flipkart any other stores price).</h2>
                 <h2 style={titleSize}  className="keyPointsStyle">     <i className="fa fa-check"></i> Subscribe below channels for the mind blowing offers.</h2>
-                {product.variants.map(vari => {
+                {/* {product.variants.map(vari => {
                     var findItem = uniqueColor.find(x => x.color === vari.color);
                     if (!findItem)
                         uniqueColor.push(vari);
@@ -209,9 +209,9 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
                                 </ul>
                                 : ''}
                         </>
-                }
+                } */}
                 {(product.variants.length > 0 && product.variants[0].quantity > 0) && (withDiscount(product.variants) > 0)  ?  
-                <div>
+                <div className={`${classes.mobileHeader}`}  >
                     <div className="product-description border-product">
                     {/* {product.variants ?
                         <div>
