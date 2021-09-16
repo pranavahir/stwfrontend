@@ -143,19 +143,19 @@ var ListConfig=[
   
       },
       {
-        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp",
         categoryUrl:"/category/Laptop",
         category:"laptop",
         keyWorld:"More Laptops >>"
       },
       {
-        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.webp",
         categoryUrl:"/category/Tablet",
         category:"tablet",
         keyWorld:"More Tablet >>"
       },
       {
-        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.webp",
         categoryUrl:"/category/HeadPhone",
         category:"HeadPhone",
         keyWorld:"More HeadPhone >>"
@@ -169,59 +169,59 @@ var ListConfig=[
   
       },
       {
-        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp",
         categoryUrl:"/category/Laptop",
         category:"laptop",
         keyWorld:"More Laptops >>"
       },
       {
-        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.webp",
         categoryUrl:"/category/Tablet",
         category:"tablet",
         keyWorld:"More Tablet >>"
       },
       {
-        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.webp",
         categoryUrl:"/category/HeadPhone",
         category:"HeadPhone",
         keyWorld:"More HeadPhone >>"
       },
 
-      // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
+      // http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp
     ],
     newProducts:[
       {
-        imguRL:"http://shoptheworldimage.digitechniq.in/AB/projectors.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/projectors.webp",
         categoryUrl:"projector",
         category:"projector",
         keyWorld:"More Projectors >>"
       },
       {
-        imguRL:"http://shoptheworldimage.digitechniq.in/AB/smartwatches.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/smartwatches.webp",
         categoryUrl:"smartwatch",
         category:"smartwatch",
         keyWorld:"More Smartwatches >>"
       },
       {
-        imguRL:"http://shoptheworldimage.digitechniq.in/AB/cameras.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/cameras.webp",
         categoryUrl:"camera",
         category:"camera",
         keyWorld:"More Camera's >>"
       },
       {
-        imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.webp",
         categoryUrl:"homenkitchen",
         category:"homenkitchen",
         keyWorld:"More Home & kitchen >>"
       },
       {
-        imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.webp",
         categoryUrl:"homenkitchen",
         category:"homenkitchen",
         keyWorld:"More Home & kitchen >>"
       }  
 
-      // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
+      // http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp
     ],
     featureProducts:[
       {
@@ -254,7 +254,7 @@ var ListConfig=[
         category:"networking",
         keyWorld:"More Networking >>"
       },
-      // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
+      // http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp
     ],
     specialproducts:[
       {
@@ -287,7 +287,7 @@ var ListConfig=[
         category:"amazonbasics",
         keyWorld:"More Amazonzon Basics >>"
       } 
-      // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
+      // http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp
     ],
     facebookacct: null,
     googleacct: null,
@@ -327,19 +327,19 @@ var ListConfig=[
   
       },
       {
-        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp",
         categoryUrl:"/category/Laptop",
         category:"laptop",
         keyWorld:"More Laptops >>"
       },
       {
-        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.webp",
         categoryUrl:"/category/Tablet",
         category:"tablet",
         keyWorld:"More Tablet >>"
       },
       {
-        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.webp",
         categoryUrl:"/category/HeadPhone",
         category:"HeadPhone",
         keyWorld:"More HeadPhone >>"
@@ -353,19 +353,19 @@ var ListConfig=[
   
       },
       {
-        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp",
         categoryUrl:"/category/Laptop",
         category:"laptop",
         keyWorld:"More Laptops >>"
       },
       {
-        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.webp",
         categoryUrl:"/category/Tablet",
         category:"tablet",
         keyWorld:"More Tablet >>"
       },
       {
-        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.webp",
         categoryUrl:"/category/HeadPhone",
         category:"HeadPhone",
         keyWorld:"More HeadPhone >>"
@@ -373,37 +373,37 @@ var ListConfig=[
     ],
     newProducts:[
       {
-        imguRL:"http://shoptheworldimage.digitechniq.in/AB/projectors.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/projectors.webp",
         categoryUrl:"projector",
         category:"projector",
         keyWorld:"More Projectors >>"
       },
       {
-        imguRL:"http://shoptheworldimage.digitechniq.in/AB/smartwatches.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/smartwatches.webp",
         categoryUrl:"smartwatch",
         category:"smartwatch",
         keyWorld:"More Smartwatches >>"
       },
       {
-        imguRL:"http://shoptheworldimage.digitechniq.in/AB/cameras.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/cameras.webp",
         categoryUrl:"camera",
         category:"camera",
         keyWorld:"More Camera's >>"
       },
       {
-        imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.webp",
         categoryUrl:"homenkitchen",
         category:"homenkitchen",
         keyWorld:"More Home & kitchen >>"
       },
       {
-        imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.webp",
         categoryUrl:"homenkitchen",
         category:"homenkitchen",
         keyWorld:"More Home & kitchen >>"
       }  
 
-      // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
+      // http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp
     ],
     featureProducts:[
       {
@@ -436,7 +436,7 @@ var ListConfig=[
         category:"networking",
         keyWorld:"More Networking >>"
       },
-      // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
+      // http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp
     ],
     specialproducts:[
       {
@@ -469,7 +469,7 @@ var ListConfig=[
         category:"amazonbasics",
         keyWorld:"More Amazonzon Basics >>"
       } 
-      // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
+      // http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp
     ],
     instagramacct: null,
     paymentforbusiness: "stripe",
@@ -506,19 +506,19 @@ var ListConfig=[
   
       },
       {
-        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp",
         categoryUrl:"/category/Laptop",
         category:"laptop",
         keyWorld:"More Laptops >>"
       },
       {
-        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.webp",
         categoryUrl:"/category/Tablet",
         category:"tablet",
         keyWorld:"More Tablet >>"
       },
       {
-        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.webp",
         categoryUrl:"/category/HeadPhone",
         category:"HeadPhone",
         keyWorld:"More HeadPhone >>"
@@ -532,19 +532,19 @@ var ListConfig=[
   
       },
       {
-        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp",
         categoryUrl:"/category/Laptop",
         category:"laptop",
         keyWorld:"More Laptops >>"
       },
       {
-        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.webp",
         categoryUrl:"/category/Tablet",
         category:"tablet",
         keyWorld:"More Tablet >>"
       },
       {
-        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.webp",
         categoryUrl:"/category/HeadPhone",
         category:"HeadPhone",
         keyWorld:"More HeadPhone >>"
@@ -552,37 +552,37 @@ var ListConfig=[
     ],
     newProducts:[
       {
-        imguRL:"http://shoptheworldimage.digitechniq.in/AB/projectors.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/projectors.webp",
         categoryUrl:"projector",
         category:"projector",
         keyWorld:"More Projectors >>"
       },
       {
-        imguRL:"http://shoptheworldimage.digitechniq.in/AB/smartwatches.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/smartwatches.webp",
         categoryUrl:"smartwatch",
         category:"smartwatch",
         keyWorld:"More Smartwatches >>"
       },
       {
-        imguRL:"http://shoptheworldimage.digitechniq.in/AB/cameras.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/cameras.webp",
         categoryUrl:"camera",
         category:"camera",
         keyWorld:"More Camera's >>"
       },
       {
-        imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.webp",
         categoryUrl:"homenkitchen",
         category:"homenkitchen",
         keyWorld:"More Home & kitchen >>"
       },
       {
-        imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.webp",
         categoryUrl:"homenkitchen",
         category:"homenkitchen",
         keyWorld:"More Home & kitchen >>"
       }  
 
-      // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
+      // http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp
     ],
     featureProducts:[
       {
@@ -615,7 +615,7 @@ var ListConfig=[
         category:"networking",
         keyWorld:"More Networking >>"
       },
-      // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
+      // http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp
     ],
     specialproducts:[
       {
@@ -648,7 +648,7 @@ var ListConfig=[
         category:"amazonbasics",
         keyWorld:"More Amazonzon Basics >>"
       } 
-      // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
+      // http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp
     ],
     instagramacct: null,
     paymentforbusiness: "stripe",
@@ -685,19 +685,19 @@ var ListConfig=[
   
       },
       {
-        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp",
         categoryUrl:"/category/Laptop",
         category:"laptop",
         keyWorld:"More Laptops >>"
       },
       {
-        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.webp",
         categoryUrl:"/category/Tablet",
         category:"tablet",
         keyWorld:"More Tablet >>"
       },
       {
-        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.webp",
         categoryUrl:"/category/HeadPhone",
         category:"HeadPhone",
         keyWorld:"More HeadPhone >>"
@@ -711,19 +711,19 @@ var ListConfig=[
   
       },
       {
-        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp",
         categoryUrl:"/category/Laptop",
         category:"laptop",
         keyWorld:"More Laptops >>"
       },
       {
-        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.webp",
         categoryUrl:"/category/Tablet",
         category:"tablet",
         keyWorld:"More Tablet >>"
       },
       {
-        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.webp",
         categoryUrl:"/category/HeadPhone",
         category:"HeadPhone",
         keyWorld:"More HeadPhone >>"
@@ -731,37 +731,37 @@ var ListConfig=[
     ],
     newProducts:[
       {
-        imguRL:"http://shoptheworldimage.digitechniq.in/AB/projectors.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/projectors.webp",
         categoryUrl:"projector",
         category:"projector",
         keyWorld:"More Projectors >>"
       },
       {
-        imguRL:"http://shoptheworldimage.digitechniq.in/AB/smartwatches.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/smartwatches.webp",
         categoryUrl:"smartwatch",
         category:"smartwatch",
         keyWorld:"More Smartwatches >>"
       },
       {
-        imguRL:"http://shoptheworldimage.digitechniq.in/AB/cameras.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/cameras.webp",
         categoryUrl:"camera",
         category:"camera",
         keyWorld:"More Camera's >>"
       },
       {
-        imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.webp",
         categoryUrl:"homenkitchen",
         category:"homenkitchen",
         keyWorld:"More Home & kitchen >>"
       },
       {
-        imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.webp",
         categoryUrl:"homenkitchen",
         category:"homenkitchen",
         keyWorld:"More Home & kitchen >>"
       }  
 
-      // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
+      // http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp
     ],
     featureProducts:[
       {
@@ -794,7 +794,7 @@ var ListConfig=[
         category:"networking",
         keyWorld:"More Networking >>"
       },
-      // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
+      // http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp
     ],
     specialproducts:[
       {
@@ -827,7 +827,7 @@ var ListConfig=[
         category:"amazonbasics",
         keyWorld:"More Amazonzon Basics >>"
       } 
-      // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
+      // http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp
     ],
     instagramacct: null,
     paymentforbusiness: "stripe",
@@ -864,19 +864,19 @@ var ListConfig=[
   
       },
       {
-        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp",
         categoryUrl:"/category/Laptop",
         category:"laptop",
         keyWorld:"More Laptops >>"
       },
       {
-        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.webp",
         categoryUrl:"/category/Tablet",
         category:"tablet",
         keyWorld:"More Tablet >>"
       },
       {
-        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.webp",
         categoryUrl:"/category/HeadPhone",
         category:"HeadPhone",
         keyWorld:"More HeadPhone >>"
@@ -890,19 +890,19 @@ var ListConfig=[
   
       },
       {
-        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp",
         categoryUrl:"/category/Laptop",
         category:"laptop",
         keyWorld:"More Laptops >>"
       },
       {
-        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.webp",
         categoryUrl:"/category/Tablet",
         category:"tablet",
         keyWorld:"More Tablet >>"
       },
       {
-        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.webp",
         categoryUrl:"/category/HeadPhone",
         category:"HeadPhone",
         keyWorld:"More HeadPhone >>"
@@ -910,37 +910,37 @@ var ListConfig=[
     ],
     newProducts:[
       {
-        imguRL:"http://shoptheworldimage.digitechniq.in/AB/projectors.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/projectors.webp",
         categoryUrl:"projector",
         category:"projector",
         keyWorld:"More Projectors >>"
       },
       {
-        imguRL:"http://shoptheworldimage.digitechniq.in/AB/smartwatches.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/smartwatches.webp",
         categoryUrl:"smartwatch",
         category:"smartwatch",
         keyWorld:"More Smartwatches >>"
       },
       {
-        imguRL:"http://shoptheworldimage.digitechniq.in/AB/cameras.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/cameras.webp",
         categoryUrl:"camera",
         category:"camera",
         keyWorld:"More Camera's >>"
       },
       {
-        imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.webp",
         categoryUrl:"homenkitchen",
         category:"homenkitchen",
         keyWorld:"More Home & kitchen >>"
       },
       {
-        imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.webp",
         categoryUrl:"homenkitchen",
         category:"homenkitchen",
         keyWorld:"More Home & kitchen >>"
       }  
 
-      // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
+      // http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp
     ],
     featureProducts:[
       {
@@ -973,7 +973,7 @@ var ListConfig=[
         category:"networking",
         keyWorld:"More Networking >>"
       },
-      // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
+      // http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp
     ],
     specialproducts:[
       {
@@ -1006,7 +1006,7 @@ var ListConfig=[
         category:"amazonbasics",
         keyWorld:"More Amazonzon Basics >>"
       } 
-      // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
+      // http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp
     ],
     instagramacct: null,
     paymentforbusiness: "stripe",
@@ -1042,19 +1042,19 @@ var ListConfig=[
 
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp",
       categoryUrl:"/category/Laptop",
       category:"laptop",
       keyWorld:"More Laptops >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.webp",
       categoryUrl:"/category/Tablet",
       category:"tablet",
       keyWorld:"More Tablet >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.webp",
       categoryUrl:"/category/HeadPhone",
       category:"headphone",
       keyWorld:"More HeadPhone >>"
@@ -1068,19 +1068,19 @@ var ListConfig=[
 
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp",
       categoryUrl:"/category/Laptop",
       category:"laptop",
       keyWorld:"More Laptops >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.webp",
       categoryUrl:"/category/Tablet",
       category:"tablet",
       keyWorld:"More Tablet >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.webp",
       categoryUrl:"/category/HeadPhone",
       category:"HeadPhone",
       keyWorld:"More HeadPhone >>"
@@ -1088,37 +1088,37 @@ var ListConfig=[
   ],
   newProducts:[
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/AB/projectors.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/projectors.webp",
       categoryUrl:"projector",
       category:"projector",
       keyWorld:"More Projectors >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/AB/smartwatches.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/smartwatches.webp",
       categoryUrl:"smartwatch",
       category:"smartwatch",
       keyWorld:"More Smartwatches >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/AB/cameras.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/cameras.webp",
       categoryUrl:"camera",
       category:"camera",
       keyWorld:"More Camera's >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.webp",
       categoryUrl:"homenkitchen",
       category:"homenkitchen",
       keyWorld:"More Home & kitchen >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.webp",
       categoryUrl:"homenkitchen",
       category:"homenkitchen",
       keyWorld:"More Home & kitchen >>"
     }  
 
-    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
+    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp
   ],
   featureProducts:[
     {
@@ -1151,7 +1151,7 @@ var ListConfig=[
       category:"networking",
       keyWorld:"More Networking >>"
     },
-    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
+    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp
   ],
   specialproducts:[
     {
@@ -1184,7 +1184,7 @@ var ListConfig=[
       category:"amazonbasics",
       keyWorld:"More Amazonzon Basics >>"
     } 
-    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
+    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp
   ],
   gstortax: "GST",
   instagramacct: null,
@@ -1221,19 +1221,19 @@ var ListConfig=[
 
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp",
       categoryUrl:"/category/Laptop",
       category:"laptop",
       keyWorld:"More Laptops >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.webp",
       categoryUrl:"/category/Tablet",
       category:"tablet",
       keyWorld:"More Tablet >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.webp",
       categoryUrl:"/category/HeadPhone",
       category:"headphone",
       keyWorld:"More HeadPhone >>"
@@ -1247,19 +1247,19 @@ var ListConfig=[
 
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp",
       categoryUrl:"/category/Laptop",
       category:"laptop",
       keyWorld:"More Laptops >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.webp",
       categoryUrl:"/category/Tablet",
       category:"tablet",
       keyWorld:"More Tablet >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.webp",
       categoryUrl:"/category/HeadPhone",
       category:"HeadPhone",
       keyWorld:"More HeadPhone >>"
@@ -1267,37 +1267,37 @@ var ListConfig=[
   ],
   newProducts:[
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/AB/projectors.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/projectors.webp",
       categoryUrl:"projector",
       category:"projector",
       keyWorld:"More Projectors >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/AB/smartwatches.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/smartwatches.webp",
       categoryUrl:"smartwatch",
       category:"smartwatch",
       keyWorld:"More Smartwatches >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/AB/cameras.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/cameras.webp",
       categoryUrl:"camera",
       category:"camera",
       keyWorld:"More Camera's >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.webp",
       categoryUrl:"homenkitchen",
       category:"homenkitchen",
       keyWorld:"More Home & kitchen >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.webp",
       categoryUrl:"homenkitchen",
       category:"homenkitchen",
       keyWorld:"More Home & kitchen >>"
     }  
 
-    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
+    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp
   ],
   featureProducts:[
     {
@@ -1330,7 +1330,7 @@ var ListConfig=[
       category:"networking",
       keyWorld:"More Networking >>"
     },
-    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
+    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp
   ],
   specialproducts:[
     {
@@ -1363,7 +1363,7 @@ var ListConfig=[
       category:"amazonbasics",
       keyWorld:"More Amazonzon Basics >>"
     } 
-    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
+    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp
   ],
   gstortax: "Tax",
   instagramacct: null,
@@ -1402,19 +1402,19 @@ var ListConfig=[
 
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp",
       categoryUrl:"/category/Laptop",
       category:"laptop",
       keyWorld:"More Laptops >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.webp",
       categoryUrl:"/category/Tablet",
       category:"tablet",
       keyWorld:"More Tablet >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.webp",
       categoryUrl:"/category/HeadPhone",
       category:"headphone",
       keyWorld:"More HeadPhone >>"
@@ -1428,19 +1428,19 @@ var ListConfig=[
 
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp",
       categoryUrl:"/category/Laptop",
       category:"laptop",
       keyWorld:"More Laptops >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.webp",
       categoryUrl:"/category/Tablet",
       category:"tablet",
       keyWorld:"More Tablet >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.webp",
       categoryUrl:"/category/HeadPhone",
       category:"HeadPhone",
       keyWorld:"More HeadPhone >>"
@@ -1448,37 +1448,37 @@ var ListConfig=[
   ],
   newProducts:[
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/AB/projectors.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/projectors.webp",
       categoryUrl:"projector",
       category:"projector",
       keyWorld:"More Projectors >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/AB/smartwatches.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/smartwatches.webp",
       categoryUrl:"smartwatch",
       category:"smartwatch",
       keyWorld:"More Smartwatches >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/AB/cameras.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/cameras.webp",
       categoryUrl:"camera",
       category:"camera",
       keyWorld:"More Camera's >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.webp",
       categoryUrl:"homenkitchen",
       category:"homenkitchen",
       keyWorld:"More Home & kitchen >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.webp",
       categoryUrl:"homenkitchen",
       category:"homenkitchen",
       keyWorld:"More Home & kitchen >>"
     }  
 
-    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
+    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp
   ],
   featureProducts:[
     {
@@ -1511,7 +1511,7 @@ var ListConfig=[
       category:"networking",
       keyWorld:"More Networking >>"
     },
-    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
+    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp
   ],
   specialproducts:[
     {
@@ -1544,7 +1544,7 @@ var ListConfig=[
       category:"amazonbasics",
       keyWorld:"More Amazonzon Basics >>"
     } 
-    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
+    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp
   ],
   gstortax: "VAT",
   instagramacct: null,
@@ -1583,19 +1583,19 @@ var ListConfig=[
 
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp",
       categoryUrl:"/category/Laptop",
       category:"laptop",
       keyWorld:"More Laptops >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.webp",
       categoryUrl:"/category/Tablet",
       category:"tablet",
       keyWorld:"More Tablet >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.webp",
       categoryUrl:"/category/HeadPhone",
       category:"headphone",
       keyWorld:"More HeadPhone >>"
@@ -1609,19 +1609,19 @@ var ListConfig=[
 
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp",
       categoryUrl:"/category/Laptop",
       category:"laptop",
       keyWorld:"More Laptops >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.webp",
       categoryUrl:"/category/Tablet",
       category:"tablet",
       keyWorld:"More Tablet >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.webp",
       categoryUrl:"/category/HeadPhone",
       category:"HeadPhone",
       keyWorld:"More HeadPhone >>"
@@ -1629,37 +1629,37 @@ var ListConfig=[
   ],
   newProducts:[
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/AB/projectors.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/projectors.webp",
       categoryUrl:"projector",
       category:"projector",
       keyWorld:"More Projectors >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/AB/smartwatches.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/smartwatches.webp",
       categoryUrl:"smartwatch",
       category:"smartwatch",
       keyWorld:"More Smartwatches >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/AB/cameras.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/cameras.webp",
       categoryUrl:"camera",
       category:"camera",
       keyWorld:"More Camera's >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.webp",
       categoryUrl:"homenkitchen",
       category:"homenkitchen",
       keyWorld:"More Home & kitchen >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.webp",
       categoryUrl:"homenkitchen",
       category:"homenkitchen",
       keyWorld:"More Home & kitchen >>"
     }  
 
-    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
+    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp
   ],
   featureProducts:[
     {
@@ -1692,7 +1692,7 @@ var ListConfig=[
       category:"networking",
       keyWorld:"More Networking >>"
     },
-    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
+    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp
   ],
   specialproducts:[
     {
@@ -1725,7 +1725,7 @@ var ListConfig=[
       category:"amazonbasics",
       keyWorld:"More Amazonzon Basics >>"
     } 
-    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
+    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp
   ],
   gstortax: "VAT",
   instagramacct: null,
@@ -1762,19 +1762,19 @@ var ListConfig=[
 
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp",
       categoryUrl:"/category/Laptop",
       category:"laptop",
       keyWorld:"More Laptops >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.webp",
       categoryUrl:"/category/Tablet",
       category:"tablet",
       keyWorld:"More Tablet >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.webp",
       categoryUrl:"/category/HeadPhone",
       category:"headphone",
       keyWorld:"More HeadPhone >>"
@@ -1788,19 +1788,19 @@ var ListConfig=[
 
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp",
       categoryUrl:"/category/Laptop",
       category:"laptop",
       keyWorld:"More Laptops >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.webp",
       categoryUrl:"/category/Tablet",
       category:"tablet",
       keyWorld:"More Tablet >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.webp",
       categoryUrl:"/category/HeadPhone",
       category:"HeadPhone",
       keyWorld:"More HeadPhone >>"
@@ -1808,37 +1808,37 @@ var ListConfig=[
   ],
   newProducts:[
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/AB/projectors.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/projectors.webp",
       categoryUrl:"projector",
       category:"projector",
       keyWorld:"More Projectors >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/AB/smartwatches.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/smartwatches.webp",
       categoryUrl:"smartwatch",
       category:"smartwatch",
       keyWorld:"More Smartwatches >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/AB/cameras.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/cameras.webp",
       categoryUrl:"camera",
       category:"camera",
       keyWorld:"More Camera's >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.webp",
       categoryUrl:"homenkitchen",
       category:"homenkitchen",
       keyWorld:"More Home & kitchen >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.webp",
       categoryUrl:"homenkitchen",
       category:"homenkitchen",
       keyWorld:"More Home & kitchen >>"
     }  
 
-    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
+    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp
   ],
   featureProducts:[
     {
@@ -1871,7 +1871,7 @@ var ListConfig=[
       category:"networking",
       keyWorld:"More Networking >>"
     },
-    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
+    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp
   ],
   specialproducts:[
     {
@@ -1904,7 +1904,7 @@ var ListConfig=[
       category:"amazonbasics",
       keyWorld:"More Amazonzon Basics >>"
     } 
-    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
+    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp
   ],
   gstortax: "VAT",
   instagramacct: null,
@@ -1941,19 +1941,19 @@ var ListConfig=[
 
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp",
       categoryUrl:"/category/Laptop",
       category:"laptop",
       keyWorld:"More Laptops >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.webp",
       categoryUrl:"/category/Tablet",
       category:"tablet",
       keyWorld:"More Tablet >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.webp",
       categoryUrl:"/category/HeadPhone",
       category:"headphone",
       keyWorld:"More HeadPhone >>"
@@ -1967,19 +1967,19 @@ var ListConfig=[
 
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp",
       categoryUrl:"/category/Laptop",
       category:"laptop",
       keyWorld:"More Laptops >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.webp",
       categoryUrl:"/category/Tablet",
       category:"tablet",
       keyWorld:"More Tablet >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.webp",
       categoryUrl:"/category/HeadPhone",
       category:"HeadPhone",
       keyWorld:"More HeadPhone >>"
@@ -1987,37 +1987,37 @@ var ListConfig=[
   ],
   newProducts:[
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/AB/projectors.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/projectors.webp",
       categoryUrl:"projector",
       category:"projector",
       keyWorld:"More Projectors >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/AB/smartwatches.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/smartwatches.webp",
       categoryUrl:"smartwatch",
       category:"smartwatch",
       keyWorld:"More Smartwatches >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/AB/cameras.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/cameras.webp",
       categoryUrl:"camera",
       category:"camera",
       keyWorld:"More Camera's >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.webp",
       categoryUrl:"homenkitchen",
       category:"homenkitchen",
       keyWorld:"More Home & kitchen >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.webp",
       categoryUrl:"homenkitchen",
       category:"homenkitchen",
       keyWorld:"More Home & kitchen >>"
     }  
 
-    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
+    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp
   ],
   featureProducts:[
     {
@@ -2050,7 +2050,7 @@ var ListConfig=[
       category:"networking",
       keyWorld:"More Networking >>"
     },
-    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
+    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp
   ],
   specialproducts:[
     {
@@ -2083,7 +2083,7 @@ var ListConfig=[
       category:"amazonbasics",
       keyWorld:"More Amazonzon Basics >>"
     } 
-    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
+    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp
   ],
   gstortax: "VAT",
   instagramacct: null,
@@ -2120,19 +2120,19 @@ var ListConfig=[
 
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp",
       categoryUrl:"/category/Laptop",
       category:"laptop",
       keyWorld:"More Laptops >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.webp",
       categoryUrl:"/category/Tablet",
       category:"tablet",
       keyWorld:"More Tablet >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.webp",
       categoryUrl:"/category/HeadPhone",
       category:"headphone",
       keyWorld:"More HeadPhone >>"
@@ -2146,19 +2146,19 @@ var ListConfig=[
 
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp",
       categoryUrl:"/category/Laptop",
       category:"laptop",
       keyWorld:"More Laptops >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.webp",
       categoryUrl:"/category/Tablet",
       category:"tablet",
       keyWorld:"More Tablet >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.webp",
       categoryUrl:"/category/HeadPhone",
       category:"HeadPhone",
       keyWorld:"More HeadPhone >>"
@@ -2166,37 +2166,37 @@ var ListConfig=[
   ],
   newProducts:[
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/AB/projectors.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/projectors.webp",
       categoryUrl:"projector",
       category:"projector",
       keyWorld:"More Projectors >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/AB/smartwatches.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/smartwatches.webp",
       categoryUrl:"smartwatch",
       category:"smartwatch",
       keyWorld:"More Smartwatches >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/AB/cameras.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/cameras.webp",
       categoryUrl:"camera",
       category:"camera",
       keyWorld:"More Camera's >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.webp",
       categoryUrl:"homenkitchen",
       category:"homenkitchen",
       keyWorld:"More Home & kitchen >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.webp",
       categoryUrl:"homenkitchen",
       category:"homenkitchen",
       keyWorld:"More Home & kitchen >>"
     }  
 
-    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
+    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp
   ],
   featureProducts:[
     {
@@ -2229,7 +2229,7 @@ var ListConfig=[
       category:"networking",
       keyWorld:"More Networking >>"
     },
-    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
+    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp
   ],
   specialproducts:[
     {
@@ -2262,7 +2262,7 @@ var ListConfig=[
       category:"amazonbasics",
       keyWorld:"More Amazonzon Basics >>"
     } 
-    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
+    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp
   ],
   gstortax: "VAT",
   instagramacct: null,
@@ -2299,19 +2299,19 @@ var ListConfig=[
 
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp",
       categoryUrl:"/category/Laptop",
       category:"laptop",
       keyWorld:"More Laptops >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.webp",
       categoryUrl:"/category/Tablet",
       category:"tablet",
       keyWorld:"More Tablet >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.webp",
       categoryUrl:"/category/HeadPhone",
       category:"headphone",
       keyWorld:"More HeadPhone >>"
@@ -2325,19 +2325,19 @@ var ListConfig=[
 
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp",
       categoryUrl:"/category/Laptop",
       category:"laptop",
       keyWorld:"More Laptops >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.webp",
       categoryUrl:"/category/Tablet",
       category:"tablet",
       keyWorld:"More Tablet >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.webp",
       categoryUrl:"/category/HeadPhone",
       category:"HeadPhone",
       keyWorld:"More HeadPhone >>"
@@ -2345,37 +2345,37 @@ var ListConfig=[
   ],
   newProducts:[
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/AB/projectors.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/projectors.webp",
       categoryUrl:"projector",
       category:"projector",
       keyWorld:"More Projectors >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/AB/smartwatches.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/smartwatches.webp",
       categoryUrl:"smartwatch",
       category:"smartwatch",
       keyWorld:"More Smartwatches >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/AB/cameras.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/cameras.webp",
       categoryUrl:"camera",
       category:"camera",
       keyWorld:"More Camera's >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.webp",
       categoryUrl:"homenkitchen",
       category:"homenkitchen",
       keyWorld:"More Home & kitchen >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.webp",
       categoryUrl:"homenkitchen",
       category:"homenkitchen",
       keyWorld:"More Home & kitchen >>"
     }  
 
-    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
+    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp
   ],
   featureProducts:[
     {
@@ -2408,7 +2408,7 @@ var ListConfig=[
       category:"networking",
       keyWorld:"More Networking >>"
     },
-    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
+    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp
   ],
   specialproducts:[
     {
@@ -2441,7 +2441,7 @@ var ListConfig=[
       category:"amazonbasics",
       keyWorld:"More Amazonzon Basics >>"
     } 
-    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
+    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp
   ],
   gstortax: "VAT",
   instagramacct: null,
@@ -2478,19 +2478,19 @@ var ListConfig=[
 
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp",
       categoryUrl:"/category/Laptop",
       category:"laptop",
       keyWorld:"More Laptops >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.webp",
       categoryUrl:"/category/Tablet",
       category:"tablet",
       keyWorld:"More Tablet >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.webp",
       categoryUrl:"/category/HeadPhone",
       category:"headphone",
       keyWorld:"More HeadPhone >>"
@@ -2504,19 +2504,19 @@ var ListConfig=[
 
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp",
       categoryUrl:"/category/Laptop",
       category:"laptop",
       keyWorld:"More Laptops >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.webp",
       categoryUrl:"/category/Tablet",
       category:"tablet",
       keyWorld:"More Tablet >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.webp",
       categoryUrl:"/category/HeadPhone",
       category:"HeadPhone",
       keyWorld:"More HeadPhone >>"
@@ -2524,37 +2524,37 @@ var ListConfig=[
   ],
   newProducts:[
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/AB/projectors.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/projectors.webp",
       categoryUrl:"projector",
       category:"projector",
       keyWorld:"More Projectors >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/AB/smartwatches.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/smartwatches.webp",
       categoryUrl:"smartwatch",
       category:"smartwatch",
       keyWorld:"More Smartwatches >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/AB/cameras.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/cameras.webp",
       categoryUrl:"camera",
       category:"camera",
       keyWorld:"More Camera's >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.webp",
       categoryUrl:"homenkitchen",
       category:"homenkitchen",
       keyWorld:"More Home & kitchen >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.webp",
       categoryUrl:"homenkitchen",
       category:"homenkitchen",
       keyWorld:"More Home & kitchen >>"
     }  
 
-    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
+    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp
   ],
   featureProducts:[
     {
@@ -2587,7 +2587,7 @@ var ListConfig=[
       category:"networking",
       keyWorld:"More Networking >>"
     },
-    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
+    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp
   ],
   specialproducts:[
     {
@@ -2620,7 +2620,7 @@ var ListConfig=[
       category:"amazonbasics",
       keyWorld:"More Amazonzon Basics >>"
     } 
-    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
+    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp
   ],
   gstortax: "VAT",
   instagramacct: null,
@@ -2681,19 +2681,19 @@ var ListConfig=[
 
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp",
       categoryUrl:"/category/Laptop",
       category:"laptop",
       keyWorld:"More Laptops >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.webp",
       categoryUrl:"/category/Tablet",
       category:"tablet",
       keyWorld:"More Tablet >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.webp",
       categoryUrl:"/category/HeadPhone",
       category:"headphone",
       keyWorld:"More HeadPhone >>"
@@ -2707,19 +2707,19 @@ var ListConfig=[
 
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp",
       categoryUrl:"/category/Laptop",
       category:"laptop",
       keyWorld:"More Laptops >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.webp",
       categoryUrl:"/category/Tablet",
       category:"tablet",
       keyWorld:"More Tablet >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.webp",
       categoryUrl:"/category/HeadPhone",
       category:"HeadPhone",
       keyWorld:"More HeadPhone >>"
@@ -2727,37 +2727,37 @@ var ListConfig=[
   ],
   newProducts:[
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/AB/projectors.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/projectors.webp",
       categoryUrl:"projector",
       category:"projector",
       keyWorld:"More Projectors >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/AB/smartwatches.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/smartwatches.webp",
       categoryUrl:"smartwatch",
       category:"smartwatch",
       keyWorld:"More Smartwatches >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/AB/cameras.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/cameras.webp",
       categoryUrl:"camera",
       category:"camera",
       keyWorld:"More Camera's >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.webp",
       categoryUrl:"homenkitchen",
       category:"homenkitchen",
       keyWorld:"More Home & kitchen >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.webp",
       categoryUrl:"homenkitchen",
       category:"homenkitchen",
       keyWorld:"More Home & kitchen >>"
     }  
 
-    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
+    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp
   ],
   featureProducts:[
     {
@@ -2790,7 +2790,7 @@ var ListConfig=[
       category:"networking",
       keyWorld:"More Networking >>"
     },
-    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
+    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp
   ],
   specialproducts:[
     {
@@ -2823,7 +2823,7 @@ var ListConfig=[
       category:"amazonbasics",
       keyWorld:"More Amazonzon Basics >>"
     } 
-    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
+    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp
   ],
   gstortax: "VAT",
   instagramacct: null,
@@ -2860,19 +2860,19 @@ var ListConfig=[
 
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp",
       categoryUrl:"/category/Laptop",
       category:"laptop",
       keyWorld:"More Laptops >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.webp",
       categoryUrl:"/category/Tablet",
       category:"tablet",
       keyWorld:"More Tablet >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.webp",
       categoryUrl:"/category/HeadPhone",
       category:"headphone",
       keyWorld:"More HeadPhone >>"
@@ -2886,19 +2886,19 @@ var ListConfig=[
 
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp",
       categoryUrl:"/category/Laptop",
       category:"laptop",
       keyWorld:"More Laptops >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.webp",
       categoryUrl:"/category/Tablet",
       category:"tablet",
       keyWorld:"More Tablet >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.webp",
       categoryUrl:"/category/HeadPhone",
       category:"HeadPhone",
       keyWorld:"More HeadPhone >>"
@@ -2906,37 +2906,37 @@ var ListConfig=[
   ],
   newProducts:[
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/AB/projectors.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/projectors.webp",
       categoryUrl:"projector",
       category:"projector",
       keyWorld:"More Projectors >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/AB/smartwatches.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/smartwatches.webp",
       categoryUrl:"smartwatch",
       category:"smartwatch",
       keyWorld:"More Smartwatches >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/AB/cameras.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/cameras.webp",
       categoryUrl:"camera",
       category:"camera",
       keyWorld:"More Camera's >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.webp",
       categoryUrl:"homenkitchen",
       category:"homenkitchen",
       keyWorld:"More Home & kitchen >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.webp",
       categoryUrl:"homenkitchen",
       category:"homenkitchen",
       keyWorld:"More Home & kitchen >>"
     }  
 
-    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
+    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp
   ],
   featureProducts:[
     {
@@ -2969,7 +2969,7 @@ var ListConfig=[
       category:"networking",
       keyWorld:"More Networking >>"
     },
-    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
+    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp
   ],
   specialproducts:[
     {
@@ -3002,7 +3002,7 @@ var ListConfig=[
       category:"amazonbasics",
       keyWorld:"More Amazonzon Basics >>"
     } 
-    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
+    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp
   ],
   gstortax: "VAT",
   instagramacct: null,
@@ -3039,19 +3039,19 @@ var ListConfig=[
 
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp",
       categoryUrl:"/category/Laptop",
       category:"laptop",
       keyWorld:"More Laptops >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.webp",
       categoryUrl:"/category/Tablet",
       category:"tablet",
       keyWorld:"More Tablet >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.webp",
       categoryUrl:"/category/HeadPhone",
       category:"headphone",
       keyWorld:"More HeadPhone >>"
@@ -3065,19 +3065,19 @@ var ListConfig=[
 
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp",
       categoryUrl:"/category/Laptop",
       category:"laptop",
       keyWorld:"More Laptops >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/tablets.webp",
       categoryUrl:"/category/Tablet",
       category:"tablet",
       keyWorld:"More Tablet >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/headphones.webp",
       categoryUrl:"/category/HeadPhone",
       category:"HeadPhone",
       keyWorld:"More HeadPhone >>"
@@ -3085,37 +3085,37 @@ var ListConfig=[
   ],
   newProducts:[
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/AB/projectors.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/projectors.webp",
       categoryUrl:"projector",
       category:"projector",
       keyWorld:"More Projectors >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/AB/smartwatches.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/smartwatches.webp",
       categoryUrl:"smartwatch",
       category:"smartwatch",
       keyWorld:"More Smartwatches >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/AB/cameras.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/cameras.webp",
       categoryUrl:"camera",
       category:"camera",
       keyWorld:"More Camera's >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.webp",
       categoryUrl:"homenkitchen",
       category:"homenkitchen",
       keyWorld:"More Home & kitchen >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/AB/homeandkitchen.webp",
       categoryUrl:"homenkitchen",
       category:"homenkitchen",
       keyWorld:"More Home & kitchen >>"
     }  
 
-    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
+    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp
   ],
   featureProducts:[
     {
@@ -3148,7 +3148,7 @@ var ListConfig=[
       category:"networking",
       keyWorld:"More Networking >>"
     },
-    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
+    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp
   ],
   specialproducts:[
     {
@@ -3181,7 +3181,7 @@ var ListConfig=[
       category:"amazonbasics",
       keyWorld:"More Amazonzon Basics >>"
     } 
-    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.jpg
+    // http://shoptheworldimage.digitechniq.in/eotcn/laptops.webp
   ],
   gstortax: "VAT",
   instagramacct: null,
