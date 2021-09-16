@@ -135,7 +135,7 @@ var ListConfig=[
     topCollections:[
       
       {
-        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.webp",
         categoryUrl:"/category/Phone",
         category:["phone"],
         keyWorld:"More phone >>",
@@ -161,7 +161,7 @@ var ListConfig=[
         keyWorld:"More HeadPhone >>"
       },
       {
-        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.webp",
         categoryUrl:"/category/Phone",
         category:["phone"],
         keyWorld:"More phone >>",
@@ -319,7 +319,7 @@ var ListConfig=[
     IpInfo: null,
     topCollections:[
       {
-        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.webp",
         categoryUrl:"/category/Phone",
         category:["phone"],
         keyWorld:"More phone >>",
@@ -345,7 +345,7 @@ var ListConfig=[
         keyWorld:"More HeadPhone >>"
       },
       {
-        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.webp",
         categoryUrl:"/category/Phone",
         category:["phone"],
         keyWorld:"More phone >>",
@@ -498,7 +498,7 @@ var ListConfig=[
     IpInfo: null,
     topCollections:[
       {
-        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.webp",
         categoryUrl:"/category/Phone",
         category:["phone"],
         keyWorld:"More phone >>",
@@ -524,7 +524,7 @@ var ListConfig=[
         keyWorld:"More HeadPhone >>"
       },
       {
-        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.webp",
         categoryUrl:"/category/Phone",
         category:["phone"],
         keyWorld:"More phone >>",
@@ -677,7 +677,7 @@ var ListConfig=[
     IpInfo: null,
     topCollections:[
       {
-        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.webp",
         categoryUrl:"/category/Phone",
         category:["iphone","oneplus","samsung"],
         keyWorld:"More phone >>",
@@ -703,7 +703,7 @@ var ListConfig=[
         keyWorld:"More HeadPhone >>"
       },
       {
-        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.webp",
         categoryUrl:"/category/Phone",
         category:["iphone","oneplus","samsung"],
         keyWorld:"More phone >>",
@@ -856,7 +856,7 @@ var ListConfig=[
     IpInfo: null,
     topCollections:[
       {
-        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.webp",
         categoryUrl:"/category/Phone",
         category:["phone"],
         keyWorld:"More phone >>",
@@ -882,7 +882,7 @@ var ListConfig=[
         keyWorld:"More HeadPhone >>"
       },
       {
-        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
+        imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.webp",
         categoryUrl:"/category/Phone",
         category:["phone"],
         keyWorld:"More phone >>",
@@ -1034,7 +1034,7 @@ var ListConfig=[
   IpInfo: null,
   topCollections:[
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.webp",
       categoryUrl:"/category/Phone",
       category:["phone"],
       keyWorld:"More phone >>",
@@ -1060,7 +1060,7 @@ var ListConfig=[
       keyWorld:"More HeadPhone >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.webp",
       categoryUrl:"/category/Phone",
       category:["phone"],
       keyWorld:"More phone >>",
@@ -1213,7 +1213,7 @@ var ListConfig=[
   IpInfo: null,
   topCollections:[
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.webp",
       categoryUrl:"/category/Phone",
       category:["phone"],
       keyWorld:"More phone >>",
@@ -1239,7 +1239,7 @@ var ListConfig=[
       keyWorld:"More HeadPhone >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.webp",
       categoryUrl:"/category/Phone",
       category:["phone"],
       keyWorld:"More phone >>",
@@ -1394,7 +1394,7 @@ var ListConfig=[
   IpInfo: null,
   topCollections:[
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.webp",
       categoryUrl:"/category/Phone",
       category:["phone"],
       keyWorld:"More phone >>",
@@ -1420,7 +1420,7 @@ var ListConfig=[
       keyWorld:"More HeadPhone >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.webp",
       categoryUrl:"/category/Phone",
       category:["phone"],
       keyWorld:"More phone >>",
@@ -1575,7 +1575,7 @@ var ListConfig=[
   IpInfo: null,
   topCollections:[
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.webp",
       categoryUrl:"/category/Phone",
       category:["phone"],
       keyWorld:"More phone >>",
@@ -1601,7 +1601,7 @@ var ListConfig=[
       keyWorld:"More HeadPhone >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.webp",
       categoryUrl:"/category/Phone",
       category:["phone"],
       keyWorld:"More phone >>",
@@ -1754,7 +1754,7 @@ var ListConfig=[
   IpInfo: null,
   topCollections:[
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.webp",
       categoryUrl:"/category/Phone",
       category:["phone"],
       keyWorld:"More phone >>",
@@ -1780,7 +1780,7 @@ var ListConfig=[
       keyWorld:"More HeadPhone >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.webp",
       categoryUrl:"/category/Phone",
       category:["phone"],
       keyWorld:"More phone >>",
@@ -1933,7 +1933,7 @@ var ListConfig=[
   IpInfo: null,
   topCollections:[
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.webp",
       categoryUrl:"/category/Phone",
       category:["phone"],
       keyWorld:"More phone >>",
@@ -1959,7 +1959,7 @@ var ListConfig=[
       keyWorld:"More HeadPhone >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.webp",
       categoryUrl:"/category/Phone",
       category:["phone"],
       keyWorld:"More phone >>",
@@ -2112,7 +2112,7 @@ var ListConfig=[
   IpInfo: null,
   topCollections:[
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.webp",
       categoryUrl:"/category/Phone",
       category:["phone"],
       keyWorld:"More phone >>",
@@ -2138,7 +2138,7 @@ var ListConfig=[
       keyWorld:"More HeadPhone >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.webp",
       categoryUrl:"/category/Phone",
       category:["phone"],
       keyWorld:"More phone >>",
@@ -2291,7 +2291,7 @@ var ListConfig=[
   IpInfo: null,
   topCollections:[
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.webp",
       categoryUrl:"/category/Phone",
       category:["phone"],
       keyWorld:"More phone >>",
@@ -2317,7 +2317,7 @@ var ListConfig=[
       keyWorld:"More HeadPhone >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.webp",
       categoryUrl:"/category/Phone",
       category:["phone"],
       keyWorld:"More phone >>",
@@ -2470,7 +2470,7 @@ var ListConfig=[
   IpInfo: null,
   topCollections:[
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.webp",
       categoryUrl:"/category/Phone",
       category:["phone"],
       keyWorld:"More phone >>",
@@ -2496,7 +2496,7 @@ var ListConfig=[
       keyWorld:"More HeadPhone >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.webp",
       categoryUrl:"/category/Phone",
       category:["phone"],
       keyWorld:"More phone >>",
@@ -2673,7 +2673,7 @@ var ListConfig=[
   IpInfo: null,
   topCollections:[
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.webp",
       categoryUrl:"/category/Phone",
       category:["phone"],
       keyWorld:"More phone >>",
@@ -2699,7 +2699,7 @@ var ListConfig=[
       keyWorld:"More HeadPhone >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.webp",
       categoryUrl:"/category/Phone",
       category:["phone"],
       keyWorld:"More phone >>",
@@ -2852,7 +2852,7 @@ var ListConfig=[
   IpInfo: null,
   topCollections:[
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.webp",
       categoryUrl:"/category/Phone",
       category:["phone"],
       keyWorld:"More phone >>",
@@ -2878,7 +2878,7 @@ var ListConfig=[
       keyWorld:"More HeadPhone >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.webp",
       categoryUrl:"/category/Phone",
       category:["phone"],
       keyWorld:"More phone >>",
@@ -3031,7 +3031,7 @@ var ListConfig=[
   IpInfo: null,
   topCollections:[
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.webp",
       categoryUrl:"/category/Phone",
       category:["phone"],
       keyWorld:"More phone >>",
@@ -3057,7 +3057,7 @@ var ListConfig=[
       keyWorld:"More HeadPhone >>"
     },
     {
-      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.jpg",
+      imguRL:"http://shoptheworldimage.digitechniq.in/eotcn/morephones.webp",
       categoryUrl:"/category/Phone",
       category:["phone"],
       keyWorld:"More phone >>",
