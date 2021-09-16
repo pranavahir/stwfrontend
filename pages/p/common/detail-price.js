@@ -171,7 +171,7 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
                         <p class="card-price-STW card-price-STW-margin"><div><h2 style={titleSize} class="tagPrice_STW"> Our Price : {leftSymbol}{numberWithCommas(Math.floor(withDiscount(product.variants)).toFixed(2))}{rightSymbol} &nbsp; &nbsp; &nbsp; &nbsp; </h2></div></p>
                         <h5 className="keyPointsStyle priceTagDetail"> You save {leftSymbol}{numberWithCommas(Math.abs(Math.floor(withDiscount(product.variants)).toFixed(2) - (product.variants[0].price*1)).toFixed(2))}{rightSymbol} extra over amazon price</h5>
                         </div>
-                        :  <p class="card-price-STW card-price-STW-margin1"><div><h2 style={titleSize} class="tagPrice_STW"> Our Price : {leftSymbol}{numberWithCommas(Math.floor(withDiscount(product.variants).toFixed(2)))}{rightSymbol}</h2></div></p>} </div>  
+                        :  <p class="card-price-STW card-price-STW-margin1"><div><h2 style={titleSize} class="tagPrice_STW"> Our Price : {leftSymbol}{numberWithCommas(Math.floor(withDiscount(product.variants)).toFixed(2))}{rightSymbol}</h2></div></p>} </div>  
                         :""}
                 <h2 style={titleSize} className="keyPointsStyle">     <i className="fa fa-check"></i> 3 days fast and free shipping.</h2>
                 <h2 style={titleSize} className="keyPointsStyle">     <i className="fa fa-check"></i> 7 days return window. *</h2>
