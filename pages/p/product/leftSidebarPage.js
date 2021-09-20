@@ -2,6 +2,7 @@ import Head from 'next/head';
 import React, { useState, useEffect, useRef, useContext } from 'react';
 import ProductTab from '../common/product-tab';
 // import Service from '../common/service'
+import { useRouter } from "next/router";
 // import NewProduct from '../../shop/common/newProduct';
 import Slider from 'react-slick';
 import gql from 'graphql-tag';
@@ -115,7 +116,7 @@ const LeftSidebarPage = ({ pathId, type }) => {
     // const setproductQty = context.setproductQty;
     const [stock, setStock] = useState('InStock');
     const withDiscount = context.withDiscount
-
+    const router = useRouter();
     let leftSymbol=null;
     let rightSymbol = null;
     if(IsRight ==true)
