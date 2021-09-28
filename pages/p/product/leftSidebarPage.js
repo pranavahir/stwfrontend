@@ -227,14 +227,26 @@ const LeftSidebarPage = ({ pathId, type }) => {
             }
         ]
     };
-    var productsnav = {
-        slidesToShow: 3,
-        swipeToSlide: true,
-        arrows: false,
-        dots: false,
-        focusOnSelect: true
-    };
+    
+    const getProps  = (Product)=>{
+        var productsnav = {
+            slidesToShow: 3,
+            swipeToSlide: true,
+            arrows: false,
+            dots: false,
+            focusOnSelect: true
+        };
+        if(Product.images[0].additionalimage5 != null || Product.images[0].additionalimage4 != null || Product.images[0].additionalimage3!=null )
+        productsnav.slidesToShow = 3;
+        else if(Product.images[0].additionalimage2 != null) 
+        productsnav.slidesToShow = 2;
+        else if(Product.images[0].additionalimage1 != null) 
+        productsnav.slidesToShow = 1;
 
+        return productsnav
+
+
+    }
     useEffect(() => {
         setState({
             nav1: slider1.current,
@@ -397,7 +409,7 @@ const LeftSidebarPage = ({ pathId, type }) => {
                                                     ''}
                                             </Slider>
 
-                                            <Slider className={`slider-nav ${classes.desktopHeader}`} {...productsnav} asNavFor={nav1} ref={slider => (slider2.current = slider)}>
+                                            <Slider className={`slider-nav ${classes.desktopHeader}`} {...getProps(data.product)} asNavFor={nav1} ref={slider => (slider2.current = slider)}>
 
                                                 {data.product.images[0].mainimageurl?
                                                     <div>

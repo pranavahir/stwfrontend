@@ -398,12 +398,12 @@ export const homeSlider = {
 
     dots: false,
     infinite: true,
-    speed: 500,
+    speed: 1500,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
     arrows: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 3000,
 
 }
 

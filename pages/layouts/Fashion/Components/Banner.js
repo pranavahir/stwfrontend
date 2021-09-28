@@ -70,7 +70,7 @@ const Banner = () => {
                   <Col>
                     <div className="slider-contain">
                       <div>
-                        <h4 style={{color:"white"}}>welcome to Shop The World</h4>
+                        <h4  style={{color:"white"}}>Welcome to Shop The World</h4>
                         <h1 style={{color:"white"}}>Electronics</h1>
                            <a className="btn btn-solid">shop now </a>
                       </div>
@@ -81,7 +81,7 @@ const Banner = () => {
             </div>
           </Link> 
           </div>
-          {/* <div>
+          <div>
           <Link href={`/category/beauty-and-personal-care/makeup`}>
           <div className="home home2 text-center">
               <Container>
@@ -89,9 +89,10 @@ const Banner = () => {
                   <Col>
                     <div className="slider-contain">
                       <div>
-                        <h4>welcome to Shop The World</h4>
-                        <h1>women's <br/> fashion</h1> 
-                         <a onClick={() => CategoryFilter("women's fashion")} className="btn btn-solid">shop now </a>
+                      <h4 style={{color:"white"}}>The World of Savings</h4>
+                      <br/>
+                        <h2 style={{color:"white"}}>Beauty & Personal Care</h2>
+                           <a className="btn btn-solid">shop now </a>
                       </div>
                     </div>
                   </Col>
@@ -108,9 +109,9 @@ const Banner = () => {
                   <Col>
                     <div className="slider-contain">
                       <div>
-                         <h4>welcome to Shop The World</h4>
-                        <h1>women's <br/> fashion</h1> 
-                         <a onClick={() => CategoryFilter("women's fashion")} className="btn btn-solid">shop now </a> 
+                      <h4 style={{color:"Orange"}}>The World of Savings</h4>
+                        <h1 style={{color:"Orange"}}>Home & Kitchen</h1>
+                           <a className="btn btn-solid">shop now </a> 
                       </div>
                     </div>
                   </Col>
@@ -118,7 +119,83 @@ const Banner = () => {
               </Container>
             </div>
           </Link>
-          </div> */}
+          </div>
+          <div>
+          <Link href={`/category/fashion`}>
+          <div className="home home4 text-center">
+              <Container>
+                <Row>
+                  <Col>
+                    <div className="slider-contain">
+                      <div>
+                      <h4 style={{color:"White"}}>The World of Savings</h4>
+                        <h1 style={{color:"White"}}>Fashion</h1>
+                           <a className="btn btn-solid">shop now </a> 
+                      </div>
+                    </div>
+                  </Col>
+                </Row>
+              </Container>
+            </div>
+          </Link>
+          </div>
+          <div>
+          <Link href={`/category/baby-and-toys`}>
+          <div className="home home5 text-center">
+              <Container>
+                <Row>
+                  <Col>
+                    <div className="slider-contain">
+                      <div>
+                      <h4 style={{color:"White"}}>The World of Savings</h4>
+                        <h1 style={{color:"White"}}>Baby & Toys</h1>
+                           <a className="btn btn-solid">shop now </a> 
+                      </div>
+                    </div>
+                  </Col>
+                </Row>
+              </Container>
+            </div>
+          </Link>
+          </div>
+          <div>
+          <Link href={`/category/grocery`}>
+          <div className="home home6 text-center">
+              <Container>
+                <Row>
+                  <Col>
+                    <div className="slider-contain">
+                      <div>
+                      <h4 style={{color:"Orange"}}>The World of Savings</h4>
+                        <h1 style={{color:"Orange"}}>Grocery</h1>
+                           <a className="btn btn-solid">shop now </a> 
+                      </div>
+                    </div>
+                  </Col>
+                </Row>
+              </Container>
+            </div>
+          </Link>
+          </div>
+          <div>
+          <Link href={`/category/health-and-wellness`}>
+          <div className="home home7 text-center">
+              <Container>
+                <Row>
+                  <Col>
+                    <div className="slider-contain">
+                      <div>
+                      <h4 style={{color:"White"}}>The World of Savings</h4>
+                        <h1 style={{color:"White"}}>Health & Wellness</h1>
+                           <a className="btn btn-solid">shop now </a> 
+                      </div>
+                    </div>
+                  </Col>
+                </Row>
+              </Container>
+            </div>
+          </Link>
+          </div>
         </Slider>
         <MainCategoryCollection backImage={true} type="fashion"  categoryData={CategoryList} productSlider={CategorySlider} designClass="ratio_asos" noSlider="false" cartClass="cart-info cart-wrap" />
       </section>
