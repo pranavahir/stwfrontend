@@ -49,39 +49,52 @@ const BlogSection = ({ type, sectionClass, title, inner, hrClass }) => {
                             <Slider {...Slider3} className="slide-3 no-arrow ">
                                  
                                     <Col md="12">
-                                         
+                                            
+                                            <Link href={`/brand/apple`}>
                                             <div className="classic-effect" >
-                                                <Media src="https://shoptheworldimage.digitechniq.in/static/1_3-0201c26a0216c936e406ba330bda550c-min.jpg" className="img-fluid" alt="" />
+                                                <Media src="https://shoptheworldimage.digitechniq.in/static/apple.webp" className="img-fluid" alt="" />
                                                 <span></span>
                                             </div>
+                                            </Link>
+                                            
                                         <div className="blog-details">
-                                            <h4>Cheaper than amazon Price</h4>
+                                        <Link href={`/brand/apple`} >
+                                            <h4>Apple</h4></Link>
                                                 {/* <p> </p> */}
                                             <hr className="style1" />
                                             <h6>Best Deal</h6>
                                         </div>
+                                        
+                                        
                                     </Col>
                                     <Col md="12">
                                          
+                                            <Link href={`/brand/samsung`} >
                                             <div className="classic-effect" >
-                                                <Media src="https://shoptheworldimage.digitechniq.in/static/1_2-4515231fbf7bd724e9c2c7e6bae4824d-min.jpg" className="img-fluid" alt="" />
+                                                <Media src="https://shoptheworldimage.digitechniq.in/static/samsung.webp" className="img-fluid" alt="" />
                                                 <span></span>
                                             </div>
+                                            </Link>
                                         <div className="blog-details">
-                                            <h4>Same day shipping</h4>
+                                        <Link href={`/brand/samsung`} >
+                                            <h4>Samsung</h4>
+                                            </Link>
                                                 {/* <p> </p> */}
                                             <hr className="style1" />
-                                            <h6>Fast Delivery</h6>
+                                            <h6>Hot Selling</h6>
                                         </div>
                                     </Col>
                                     <Col md="12">
-                                         
+                                    <Link href={`/brand/boat`} >
                                             <div className="classic-effect" >
-                                                <Media src="https://shoptheworldimage.digitechniq.in/static/1_1-5ded0356660ec2f0cbd8e8c107d15f08-min.jpg" className="img-fluid" alt="" />
+                                                <Media src="https://shoptheworldimage.digitechniq.in/static/boat.webp" className="img-fluid" alt="" />
                                                 <span></span>
                                             </div>
+                                            </Link>
                                         <div className="blog-details">
-                                            <h4>Less than 99.Rs products</h4>
+                                        <Link href={`/brand/boat`} >
+                                            <h4>Boat</h4>
+                                            </Link>
                                                 {/* <p> </p> */}
                                             <hr className="style1" />
                                             <h6>Cheap and Best Quality</h6>
