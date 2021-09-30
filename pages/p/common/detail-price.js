@@ -84,7 +84,8 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
     const objbrand={
         fontSize: "12px",
         fontWeight: "bold",
-        color: "#ec693f"
+        color: "#ec693f",
+        cursor:"pointer"
     }
 
     const buyNow = (product, productQty) => {
@@ -153,7 +154,7 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
                 
             <h1 className={`${classes.mobileHeader}`} style={{marginTop:"20px",}} >&nbsp; </h1>
                 <h1 style={titleSize} > {product.title} </h1>
-                <h4 style={objbrand}> {product.brandname} </h4>
+                <Link href={`/brand/${product.brandname}`}><h4 style={objbrand}> {product.brandname} </h4></Link>
                 <h5><div className="rating">
                         {RatingStars}
                     </div> 4 Stars | <a href="javascript:void(Tawk_API.toggle())"> Ask Questions</a></h5>
@@ -167,7 +168,7 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
                 {product.fromcountry == country ? 
                     <div>
                        <span>{product.variants.overrideprice}</span> 
-                       {(product.variants.overrideprice != 0 && product.variants.overrideprice != undefined && product.variants.overrideprice != null) ?"":<div><p class="card-price"><div><h2 style={titleSize} class="tagPrice">   Amazon Price :<strike> {leftSymbol}{numberWithCommas((product.variants[0].amazonprice).toFixed(2))}{rightSymbol} </strike></h2></div></p><br/></div>} 
+                       {(product.variants[0].overrideprice != 0 && product.variants[0].overrideprice != undefined && product.variants[0].overrideprice != null) ?"":<div><p class="card-price"><div><h2 style={titleSize} class="tagPrice">   Amazon Price :<strike> {leftSymbol}{numberWithCommas((product.variants[0].amazonprice).toFixed(2))}{rightSymbol} </strike></h2></div></p><br/></div>} 
                         {/* <p class="card-price"><div><h2 style={titleSize} class="tagPrice">   Amazon Price : {leftSymbol}{numberWithCommas(product.variants[0].price)}{rightSymbol} </h2></div></p><br/> */}
                         <p class="card-price-STW card-price-STW-margin"><div><h2 style={titleSize} class="tagPrice_STW"> Our Price : {leftSymbol}{numberWithCommas(Math.floor(withDiscount(product.variants)).toFixed(2))}{rightSymbol} &nbsp; &nbsp; &nbsp; &nbsp; </h2></div></p>
                         <h5 className="keyPointsStyle priceTagDetail"> You save {leftSymbol}{numberWithCommas(Math.abs(Math.floor(withDiscount(product.variants)).toFixed(2) - (product.variants[0].amazonprice*1)).toFixed(2))}{rightSymbol} extra over amazon price</h5>

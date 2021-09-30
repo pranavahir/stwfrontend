@@ -50,7 +50,7 @@ const BlogSection = ({ type, sectionClass, title, inner, hrClass }) => {
                                  
                                     <Col md="12">
                                             
-                                            <Link href={`/brand/apple`}>
+                                            <Link href={`/brand/Apple`}>
                                             <div className="classic-effect" >
                                                 <Media src="https://shoptheworldimage.digitechniq.in/static/apple.webp" className="img-fluid" alt="" />
                                                 <span></span>
@@ -58,7 +58,7 @@ const BlogSection = ({ type, sectionClass, title, inner, hrClass }) => {
                                             </Link>
                                             
                                         <div className="blog-details">
-                                        <Link href={`/brand/apple`} >
+                                        <Link href={`/brand/Apple`} >
                                             <h4>Apple</h4></Link>
                                                 {/* <p> </p> */}
                                             <hr className="style1" />
@@ -69,14 +69,14 @@ const BlogSection = ({ type, sectionClass, title, inner, hrClass }) => {
                                     </Col>
                                     <Col md="12">
                                          
-                                            <Link href={`/brand/samsung`} >
+                                            <Link href={`/brand/Samsung`} >
                                             <div className="classic-effect" >
                                                 <Media src="https://shoptheworldimage.digitechniq.in/static/samsung.webp" className="img-fluid" alt="" />
                                                 <span></span>
                                             </div>
                                             </Link>
                                         <div className="blog-details">
-                                        <Link href={`/brand/samsung`} >
+                                        <Link href={`/brand/Samsung`} >
                                             <h4>Samsung</h4>
                                             </Link>
                                                 {/* <p> </p> */}
@@ -85,14 +85,14 @@ const BlogSection = ({ type, sectionClass, title, inner, hrClass }) => {
                                         </div>
                                     </Col>
                                     <Col md="12">
-                                    <Link href={`/brand/boat`} >
+                                    <Link href={`/brand/Boat`} >
                                             <div className="classic-effect" >
                                                 <Media src="https://shoptheworldimage.digitechniq.in/static/boat.webp" className="img-fluid" alt="" />
                                                 <span></span>
                                             </div>
                                             </Link>
                                         <div className="blog-details">
-                                        <Link href={`/brand/boat`} >
+                                        <Link href={`/brand/Boat`} >
                                             <h4>Boat</h4>
                                             </Link>
                                                 {/* <p> </p> */}

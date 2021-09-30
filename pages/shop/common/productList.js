@@ -127,6 +127,7 @@ const ProductList = ({ colClass, type,parentCategory, layoutList,openSidebar,noS
     var searchKey = "";
     var category = "";
     var promokey = "";
+    var brand ="";
     if(pathId!=null & pathId != undefined && pathId!="")
     {
         if(type=="keyword")
@@ -137,7 +138,10 @@ const ProductList = ({ colClass, type,parentCategory, layoutList,openSidebar,noS
         {
             promokey = pathId; 
         }
-
+        else if(type == "brand")
+        {
+            brand = pathId;
+        }
         else
         {
             category = pathId;
@@ -248,7 +252,8 @@ const ProductList = ({ colClass, type,parentCategory, layoutList,openSidebar,noS
                 panel:panel,
                 country:country,
                 priceMin:0,
-                priceMax:0
+                priceMax:0,
+                brand:brand
               }
         }
     });
@@ -314,7 +319,8 @@ const ProductList = ({ colClass, type,parentCategory, layoutList,openSidebar,noS
                         panel:panel,
                         country:country,
                         priceMin:0,
-                        priceMax:0
+                        priceMax:0,
+                        brand:brand
                       }
                 },
                 updateQuery: (prev, { fetchMoreResult }) => {
