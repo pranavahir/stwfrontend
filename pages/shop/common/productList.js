@@ -73,6 +73,7 @@ query($lookupSearchFields: SearchFields){
           discount
           domesticfreight
           duty
+          overrideprice
           fees
           frieghtrate
           graphics

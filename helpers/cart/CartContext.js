@@ -124,14 +124,27 @@ const CartProvider = (props) => {
             {
               if((variantData[0].amazonprice > 0))
               {
-                console.log(variantData[0].frieghtrate);
-                if(variantData[0].frieghtrate.length == undefined)
+                if(variantData[0].overrideprice==0)
                 {
-                  sellPrice =  Math.floor(((variantData[0].conversionrate *  ((variantData[0].amazonprice  +variantData[0].pwfee ) * (1+ (variantData[0].purchasetax/100)))    + (variantData[0].frieghtrate)) * (1 + variantData[0].duty)) * (1/(1-((variantData[0].fees / (1 + (variantData[0].fees)))+(variantData[0].margin / (1 + (variantData[0].margin)))))),0);
+                  if(variantData[0].frieghtrate.length == undefined)
+                  {
+                    sellPrice =  Math.floor(((variantData[0].conversionrate *  ((variantData[0].amazonprice  +variantData[0].pwfee ) * (1+ (variantData[0].purchasetax/100)))    + (variantData[0].frieghtrate)) * (1 + variantData[0].duty)) * (1/(1-((variantData[0].fees / (1 + (variantData[0].fees)))+(variantData[0].margin / (1 + (variantData[0].margin)))))),0);
+                  }
+                  else
+                  {
+                    sellPrice =  Math.floor(((variantData[0].conversionrate *  ((variantData[0].amazonprice  +variantData[0].pwfee ) * (1+ (variantData[0].purchasetax/100)))    + (variantData[0].frieghtrate[0])) * (1 + variantData[0].duty)) * (1/(1-((variantData[0].fees / (1 + (variantData[0].fees)))+(variantData[0].margin / (1 + (variantData[0].margin)))))),0);
+                  }
                 }
-                else
+                else if(variantData[0].overrideprice>0)
                 {
-                  sellPrice =  Math.floor(((variantData[0].conversionrate *  ((variantData[0].amazonprice  +variantData[0].pwfee ) * (1+ (variantData[0].purchasetax/100)))    + (variantData[0].frieghtrate[0])) * (1 + variantData[0].duty)) * (1/(1-((variantData[0].fees / (1 + (variantData[0].fees)))+(variantData[0].margin / (1 + (variantData[0].margin)))))),0);
+                  if(variantData[0].frieghtrate.length == undefined)
+                  {
+                    sellPrice =  Math.floor(((variantData[0].conversionrate *  ((variantData[0].overrideprice  +variantData[0].pwfee ) * (1+ (variantData[0].purchasetax/100)))    + (variantData[0].frieghtrate)) * (1 + variantData[0].duty)) * (1/(1-((variantData[0].fees / (1 + (variantData[0].fees)))+(variantData[0].margin / (1 + (variantData[0].margin)))))),0);
+                  }
+                  else
+                  {
+                    sellPrice =  Math.floor(((variantData[0].conversionrate *  ((variantData[0].overrideprice  +variantData[0].pwfee ) * (1+ (variantData[0].purchasetax/100)))    + (variantData[0].frieghtrate[0])) * (1 + variantData[0].duty)) * (1/(1-((variantData[0].fees / (1 + (variantData[0].fees)))+(variantData[0].margin / (1 + (variantData[0].margin)))))),0);
+                  }
                 }
               }
               else
@@ -141,12 +154,26 @@ const CartProvider = (props) => {
             }
             else
             {
+              if(variantData[0].overrideprice==0)
+                {
               if(variantData[0].frieghtrate.length == undefined)
                 {
               sellPrice =  Math.floor(((variantData[0].conversionrate *  ((variantData[0].price  +variantData[0].pwfee ) * (1+ (variantData[0].purchasetax/100)))    + (variantData[0].frieghtrate)) * (1 + variantData[0].duty)) * (1/(1-((variantData[0].fees / (1 + (variantData[0].fees)))+(variantData[0].margin / (1 + (variantData[0].margin)))))),0);
                 }
                 else{
                   sellPrice =  Math.floor(((variantData[0].conversionrate *  ((variantData[0].price  +variantData[0].pwfee ) * (1+ (variantData[0].purchasetax/100)))    + (variantData[0].frieghtrate[0])) * (1 + variantData[0].duty)) * (1/(1-((variantData[0].fees / (1 + (variantData[0].fees)))+(variantData[0].margin / (1 + (variantData[0].margin)))))),0);
+                }
+              }
+                else if(variantData[0].overrideprice>0)
+                {
+                  if(variantData[0].frieghtrate.length == undefined)
+                  {
+                    sellPrice =  Math.floor(((variantData[0].conversionrate *  ((variantData[0].overrideprice  +variantData[0].pwfee ) * (1+ (variantData[0].purchasetax/100)))    + (variantData[0].frieghtrate)) * (1 + variantData[0].duty)) * (1/(1-((variantData[0].fees / (1 + (variantData[0].fees)))+(variantData[0].margin / (1 + (variantData[0].margin)))))),0);
+                  }
+                  else
+                  {
+                    sellPrice =  Math.floor(((variantData[0].conversionrate *  ((variantData[0].overrideprice  +variantData[0].pwfee ) * (1+ (variantData[0].purchasetax/100)))    + (variantData[0].frieghtrate[0])) * (1 + variantData[0].duty)) * (1/(1-((variantData[0].fees / (1 + (variantData[0].fees)))+(variantData[0].margin / (1 + (variantData[0].margin)))))),0);
+                  }
                 }
             }
 
