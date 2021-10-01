@@ -156,9 +156,18 @@ const  CheckoutPage = ({ isPublic = false }) => {
   const priceCollection = cartContext.priceCollection;
   const discountCalculation  = cartContext.discountCalculation ;
   const numberWithCommas = cartContext.numberWithCommas;
-  
- 
-  
+  var newGSTFlag = true;
+ for (var i=0;i<cartItems.length;i++)
+ {
+  if(cartItems[i].fromcountry=="India")
+  {
+    newGSTFlag = false;
+  }
+
+ }
+  const GSTFLAG = newGSTFlag;
+
+  console.log(GSTFLAG);
   const GST = curContext.state.gstortax;
   const [obj, setObj] = useState({});
   const [paymentErr, setPaymentErr] = useState("");
@@ -1059,11 +1068,11 @@ const changeGstcheck = (e) => {
       // Show error to your customer (e.g., insufficient funds)
       console.log(stripeError.message);
       setPaymentErr(stripeError.message);
-      if(customerData.country=="India")
-      {
-      checkhandle("Razorpay");
-      razorPayPaymentHandler(customerData);   
-      }
+      // if(customerData.country=="India")
+      // {
+      // checkhandle("Razorpay");
+      // razorPayPaymentHandler(customerData);   
+      // }
       
       setPageLoad(false);
       return;
@@ -1489,7 +1498,7 @@ const [geoLocation, setgeoLocation] = useState(gLocation);
                       </span>
                     </div>
                     <div className="form-group col-md-12 col-sm-12 col-xs-12">
-                    <div className="shopping-option">
+                    {GSTFLAG ? <div className="shopping-option">
                                 <input
                                   type="checkbox"
                                   name="free_shipping"
@@ -1499,10 +1508,10 @@ const [geoLocation, setgeoLocation] = useState(gLocation);
                                 <label htmlFor="free-shipping" className="field-label">
                                 {GST} Invoice
                                 </label>
-                              </div>
+                              </div>:""}
                        
                     </div>
-                   {GstView==true?
+                   {GstView==true && GSTFLAG?
  
                    <div className="form-group col-md-6 col-sm-6 col-xs-12">
                       <div className="field-label">{GST} Number</div>
@@ -1518,7 +1527,7 @@ const [geoLocation, setgeoLocation] = useState(gLocation);
                         {errors.GST && "Please enter number for " + {Gst} +"Number."}
                       </span>
                     </div>:""} 
-                    {GstView==true?
+                    {GstView==true && GSTFLAG?
                     <div className="form-group col-md-6 col-sm-6 col-xs-12">
                       <div className="field-label">Company name as in {GST}</div>
                       <input
@@ -1772,7 +1781,7 @@ const [geoLocation, setgeoLocation] = useState(gLocation);
                       
                     </div>
                     <div className="form-group col-md-12 col-sm-12 col-xs-12">
-                    <div className="shopping-option">
+                    {GSTFLAG ? <div className="shopping-option">
                                 <input
                                   type="checkbox"
                                   name="free_shipping"
@@ -1782,10 +1791,10 @@ const [geoLocation, setgeoLocation] = useState(gLocation);
                                 <label htmlFor="free-shipping" className="field-label">
                                 {GST} Invoice
                                 </label>
-                              </div>
+                              </div>:"" }
                        
                     </div>
-                   {GstView==true?
+                   {GstView==true && GSTFLAG?
  
                    <div className="form-group col-md-6 col-sm-6 col-xs-12">
                       <div className="field-label">{GST} Number</div>
@@ -1801,7 +1810,7 @@ const [geoLocation, setgeoLocation] = useState(gLocation);
                         {errors.GST && "Please enter number for " + {Gst} +"Number."}
                       </span>
                     </div>:""} 
-                    {GstView==true?
+                    {GstView==true && GSTFLAG?
                     <div className="form-group col-md-6 col-sm-6 col-xs-12">
                       <div className="field-label">Company name as in {GST}</div>
                       <input
