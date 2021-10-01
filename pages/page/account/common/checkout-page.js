@@ -167,7 +167,16 @@ const  CheckoutPage = ({ isPublic = false }) => {
  }
   const GSTFLAG = newGSTFlag;
 
-  console.log(GSTFLAG);
+  const getTranDiscount=()=>
+  {
+
+    var discount = 0;
+    if(payment == "stripe" && GSTFLAG && country=="India")
+    discount = 300;
+
+    return discount;
+  }
+
   const GST = curContext.state.gstortax;
   const [obj, setObj] = useState({});
   const [paymentErr, setPaymentErr] = useState("");
@@ -236,7 +245,6 @@ useEffect(() => {
   sessionStorage.setItem('orderObj', orderObj);
   if(data!=undefined && (data.getCustomerByID!=null && data.getCustomerByID!=undefined))
   {
-    console.log(data);
     setState({first_name:data.getCustomerByID.customername})
   }
 
@@ -330,7 +338,6 @@ useEffect(() => {
     var orderResult = 0;
     cartItems.map((item, index) => {
 
-      console.log(index);
 
       OrderDetail = {
         orderdetailid:"",
@@ -537,7 +544,7 @@ const changeGstcheck = (e) => {
           CustomerDetail:customerDetail,
           leftSymbol:leftSymbol,
           rightSymbol:rightSymbol,
-          fullPrice:fullPrice
+          fullPrice:fullPrice-getTranDiscount()
         }),
       }
     ).then((r) => r.json());
@@ -789,7 +796,7 @@ const changeGstcheck = (e) => {
         var newObj={
           payment: payment,
             items: cartItems,
-            orderTotal: fullPrice,
+            orderTotal: fullPrice-getTranDiscount(),
             symbol: symbol,
             OrderDetail:OrderDetail
         }
@@ -1019,7 +1026,7 @@ const changeGstcheck = (e) => {
       return;
     }
 
-    var amount = fullPrice * 100;
+    var amount = (fullPrice-getTranDiscount()) * 100;
     const { error: backendError, clientSecret } = await fetch(
       "https://stripeserver.digitechniq.in/create-payment-intent",
       {
@@ -1101,7 +1108,7 @@ const changeGstcheck = (e) => {
     // const API_URL = `http://localhost:7000/razorpay/`;
     
     const orderUrl = `${API_URL}order`;
-    const response = await Axios.post(orderUrl, { amount: fullPrice });
+    const response = await Axios.post(orderUrl, { amount: (fullPrice) });
     const { data } = response;
     // console.log("App -> razorPayPaymentHandler -> data", data);
 
@@ -1922,6 +1929,19 @@ const [geoLocation, setgeoLocation] = useState(gLocation);
                             </li>
                           ))}
                         </ul>
+                     
+                        {getTranDiscount() == 0?"":<ul className="sub-total">
+                        
+                        <li>
+                        Discount
+                           
+                          <span className="count" style = {rightAligh}>
+                          - {symbol}{getTranDiscount()}   
+                          </span>
+                           
+                        </li>
+                        </ul> } 
+
                         <ul className="sub-total">
                         
                           <li>
@@ -1938,12 +1958,13 @@ const [geoLocation, setgeoLocation] = useState(gLocation);
                              }
                           </li>
                           </ul>
+                           
                           <ul className="sub-total">
                           <li>
                             Subtotal
                             <span className="count" style = {rightAligh}>
                               {symbol}
-                              {numberWithCommas(Math.floor(fullPrice).toFixed(2))}
+                              {numberWithCommas(Math.floor(fullPrice-getTranDiscount()).toFixed(2))}
                             </span>
                           </li>
                         </ul>
@@ -1952,7 +1973,7 @@ const [geoLocation, setgeoLocation] = useState(gLocation);
                             Total{" "}
                             <span className="count" style = {rightAligh}>
                               {symbol}
-                              {numberWithCommas(Math.floor(fullPrice).toFixed(2))}
+                              {numberWithCommas(Math.floor(fullPrice-getTranDiscount()).toFixed(2))}
                             </span>
                           </li>
                         </ul>
@@ -1974,19 +1995,18 @@ const [geoLocation, setgeoLocation] = useState(gLocation);
                                   <label htmlFor="payment-4">Gpay</label>
                                 </div>
                               </li> */}
-                              {(GstView && country == "India")?<li>
-                                <div className="radio-option Razorpay">
-                                  <input
-                                    type="radio"
-                                    name="payment-group"
-                                    id="payment-3"
-                                    defaultChecked={true}
-                                    onClick={() => checkhandle("Razorpay")}
-                                  />
-                                  <label htmlFor="payment-3">Razorpay</label>
+                               
+                              {/* {!GstView || (GstView && country != "India") ? */}
+                              
+                         {GSTFLAG? <li>
+                                <div className="radio-option stripe count" style={{color:"red"}}>
+                                 
+                          Save additional Rs. 300 by choosing Credit Cards / Debit Cards method.
+                           
                                 </div>
-                              </li> : ""  } 
-                              {!GstView || (GstView && country != "India") ?<li>
+                                {/* {cartTotal !== 0 ? (<div className="text-right">{payment === "stripe" ? (<Card />) :""} </div>):""} */}
+                              </li>:""}
+                              <li>
                                 <div className="radio-option stripe">
                                   <input
                                     type="radio"
@@ -1998,7 +2018,19 @@ const [geoLocation, setgeoLocation] = useState(gLocation);
                                   <label htmlFor="payment-2">Credit Cards / Debit Cards</label>
                                 </div>
                                 {/* {cartTotal !== 0 ? (<div className="text-right">{payment === "stripe" ? (<Card />) :""} </div>):""} */}
-                              </li>: ""  } 
+                              </li>
+                              {/* : ""  }  */}
+                              {((GstView || GSTFLAG) && country == "India")?<li>
+                                <div className="radio-option Razorpay">
+                                  <input
+                                    type="radio"
+                                    name="payment-group"
+                                    id="payment-3"
+                                    onClick={() => checkhandle("Razorpay")}
+                                  />
+                                  <label htmlFor="payment-3">Razorpay</label>
+                                </div>
+                              </li> : ""  }
                               <li>
                                 <div className="radio-option paypal">
                                   <input
@@ -2034,10 +2066,12 @@ const [geoLocation, setgeoLocation] = useState(gLocation);
                                 onApprove={(onSubmit)}
                                 onPaymentCancel={onCancel}
                               />
-                            ) : payment === "Razorpay" ? (
+                            ) : payment === "Razorpay" ? (<div>
                               <button type="submit" className="btn-solid btn">
                                 Razorpay Place Order
                               </button>
+                              <h5>Save additional Rs. 300 by choosing Credit Cards / Debit Cards method.</h5>
+                              </div>
                             ) : (
                               <GooglePayButton
                                 environment="PRODUCTION"

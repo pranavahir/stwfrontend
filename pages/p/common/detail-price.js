@@ -178,7 +178,10 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
                         <div className="productKeyPoint">
 
                         
-                <h2 style={titleSize} className="keyPointsStyle">     <i className="fa fa-check"></i> 3 days fast and free shipping.</h2>
+                        {product.variants[0].daystoship==3 ? <h2 style={titleSize} className="keyPointsStyle">     <i className="fa fa-check"></i> 3 days fast and free shipping.</h2>:""}
+                        {(product.fromcountry=="USA" && country=="India") ? <h2 style={titleSize} className="keyPointsStyle">     <i className="fa fa-check"></i> GST invoice available.</h2>:""}
+                        {(product.fromcountry=="USA" && country=="India") ? <h2 style={titleSize} className="keyPointsStyle">     <i className="fa fa-check"></i> EMI (monthly installment) available.</h2>:""}
+                        
                 <h2 style={titleSize} className="keyPointsStyle">     <i className="fa fa-check"></i> 7 days return window *. </h2>
                 <h2 style={titleSize}  className="keyPointsStyle">     <i className="fa fa-check"></i> Standard manufacturer warranty.</h2> 
                 <h2 style={titleSize}  className="keyPointsStyle">     <i className="fa fa-check"></i> 24* 7 customer support available. </h2>
