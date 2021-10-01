@@ -1998,7 +1998,7 @@ const [geoLocation, setgeoLocation] = useState(gLocation);
                                
                               {/* {!GstView || (GstView && country != "India") ? */}
                               
-                         {GSTFLAG? <li>
+                         {GSTFLAG && country=="India"? <li>
                                 <div className="radio-option stripe count" style={{color:"red"}}>
                                  
                           Save additional Rs. 300 by choosing Credit Cards / Debit Cards method.
