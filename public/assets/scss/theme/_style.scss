@@ -12343,8 +12343,8 @@ footer {
   .checkout-form {
     .checkout-details {
       position: relative;
-      background-color: $grey-lighter;
-      border: 1px solid $round-border;
+      // background-color: $grey-lighter;
+      border-left: 1px solid $round-border;
       padding: 40px;
     }
 
@@ -12458,7 +12458,7 @@ footer {
     color: $grey4;
     font-weight: 600;
     font-size: 22px;
-    border-bottom: 1px solid #ededed;
+    // border-bottom: 1px solid #ededed;
     margin-bottom: 20px;
 
     span {

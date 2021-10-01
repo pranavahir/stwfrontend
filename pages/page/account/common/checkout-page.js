@@ -11,6 +11,7 @@ import Card from "../../../../components/stripeCard/Card";
 import Axios from "axios";
 import { useMutation } from "@apollo/react-hooks";
 import gql from "graphql-tag";
+import AutoFitImage from 'react-image-autofit-frame';
 
 import { CurrencyContext } from "../../../../helpers/Currency/CurrencyContext";
 import GooglePayButton from "@google-pay/button-react";
@@ -176,6 +177,31 @@ const  CheckoutPage = ({ isPublic = false }) => {
 
     return discount;
   }
+
+  const GetProductTitle = (titleData) => {
+    
+          var title = "";
+    
+          if(titleData!=null && titleData!=undefined && titleData!="")
+    
+          {
+    
+              title = titleData.slice(0, 80)
+    
+          }
+    
+          else
+    
+          {
+    
+              title = titleData;
+    
+          }
+    
+    
+          return (title+"....");
+    
+      }
 
   const GST = curContext.state.gstortax;
   const [obj, setObj] = useState({});
@@ -1914,19 +1940,41 @@ const [geoLocation, setgeoLocation] = useState(gLocation);
                       <div className="order-box">
                         <div className="title-box">
                           <div>
-                            Product <span>Total</span>
+                            Product 
+                            {/* <span>Total</span> */}
                           </div>
                         </div>
                         <ul className="qty">
                           {cartItems.map((item, index) => (
-                            <li key={index}>
-                              {item.title} × {item.qty}
+                            // <li key={index}>
+                            //   {item.title} × {item.qty}
+                            //   <span style = {rightAligh}>
+                            //     {symbol}
+                            //     {/* {item.total.toFixed(2)} */}
+                            //     {numberWithCommas(Math.floor(withDiscount(item.variants)).toFixed(2))}
+                            //   </span>
+                            // </li>
+
+                            <li key={index} title = {item.title}>
+                            <Row className="swt-cartcontainer">
+                            <Col lg="4" sm="4" xs="4">
+                            <AutoFitImage frameWidth="auto" imgSize="contain" frameHeight="70px" alt={"Buy "+`${item.title}`+" Online"} title={item.title} imgSrc={`${item.images.length>0 ? item.images[0].mainimageurl :"" }`}/>
+                            </Col>
+                            <Col lg="8" sm="8" xs="8" className="swt-cartTextcontainer">
+                            <a href={null} onClick={() => cartContext.removeFromCart(item)}>
+                        <span className="stw-close"><i className="fa fa-times-circle"></i></span>
+                    </a>
+                            {GetProductTitle(item.title)} × {item.quantity}
                               <span style = {rightAligh}>
                                 {symbol}
                                 {/* {item.total.toFixed(2)} */}
                                 {numberWithCommas(Math.floor(withDiscount(item.variants)).toFixed(2))}
                               </span>
+                            </Col>
+                            </Row>
                             </li>
+                            
+
                           ))}
                         </ul>
                      
