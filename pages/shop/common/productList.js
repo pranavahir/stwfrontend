@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react';
-import {  Form, Label, Input, Col, Row, Media, Button, Spinner,Container } from 'reactstrap';
-import { CategorySlider,CategoryList } from '../../../services/script';
+import { Form, Label, Input, Col, Row, Media, Button, Spinner, Container } from 'reactstrap';
+import { CategorySlider, CategoryList } from '../../../services/script';
 import Menu2 from '../../../public/assets/images/mega-menu/2.jpg';
 import { useQuery } from '@apollo/react-hooks';
 import gql from 'graphql-tag';
@@ -10,12 +10,13 @@ import { CurrencyContext } from '../../../helpers/Currency/CurrencyContext';
 import { useRouter } from 'next/router';
 import PostLoader from '../../../components/common/PostLoader';
 import CartContext from '../../../helpers/cart';
-import {WishlistContext} from '../../../helpers/wishlist/WishlistContext';
-import {CompareContext} from '../../../helpers/Compare/CompareContext';
+import { WishlistContext } from '../../../helpers/wishlist/WishlistContext';
+import { CompareContext } from '../../../helpers/Compare/CompareContext';
 import CategoryCollection from '../../../components/common/Collections/CategoryCollection';
 import Head from 'next/head';
 import { useMutation } from "@apollo/react-hooks";
-import { toast } from 'react-toastify'
+import { toast } from 'react-toastify';
+import InfiniteScroll from "react-infinite-scroll-component";
 
 const GET_PRODUCTS = gql`
 query($lookupSearchFields: SearchFields){
@@ -85,7 +86,7 @@ query($lookupSearchFields: SearchFields){
     }
   }`;
 
-  const CREATE_AVAILABLITY_NOTIFICATION = gql` mutation($country: String, $date: String, $email: String, $mobile: String, $name: String, $product: String, $quantity: String, $status: String, $url: String, $userId: String){
+const CREATE_AVAILABLITY_NOTIFICATION = gql` mutation($country: String, $date: String, $email: String, $mobile: String, $name: String, $product: String, $quantity: String, $status: String, $url: String, $userId: String){
     createNotifyCustomerInfo(country: $country,date: $date,email: $email,mobile: $mobile,name: $name,product: $product,quantity: $quantity,status: $status,url: $url,userID: $userId){
       country
       date
@@ -100,8 +101,8 @@ query($lookupSearchFields: SearchFields){
     }
   }`
 
-const ProductList = ({ colClass, type,parentCategory, layoutList,openSidebar,noSidebar,pathId }) => {
-     
+const ProductList = ({ colClass, type, parentCategory, layoutList, openSidebar, noSidebar, pathId }) => {
+
     const cartContext = useContext(CartContext);
     const quantity = cartContext.quantity;
     const wishlistContext = useContext(WishlistContext);
@@ -116,9 +117,13 @@ const ProductList = ({ colClass, type,parentCategory, layoutList,openSidebar,noS
     const panel = curContext.state.panel;
     const filterContext = useContext(FilterContext);
     const [obj, setObj] = useState({});
+    const [hasMore, sethasMore] = useState(true);
+
+    const [noMore, setnoMore] = useState(true);
+    const [page, setpage] = useState(2);
 
     const [CreateAvailNotifiy, { NotifiyData }] = useMutation(CREATE_AVAILABLITY_NOTIFICATION);
-    
+
     const selectedBrands = filterContext.selectedBrands;
     const selectedColor = filterContext.selectedColor;
     const selectedPrice = filterContext.selectedPrice;
@@ -134,9 +139,8 @@ const ProductList = ({ colClass, type,parentCategory, layoutList,openSidebar,noS
         {
             searchKey = pathId; 
         }
-        else if(type=="promo")
-        {
-            promokey = pathId; 
+        else if (type == "promo") {
+            promokey = pathId;
         }
         else if(type == "brand")
         {
@@ -148,99 +152,87 @@ const ProductList = ({ colClass, type,parentCategory, layoutList,openSidebar,noS
         }
     }
     else
-    category = filterContext.state;
-    
- 
+        category = filterContext.state;
+
+
     const selectedCategory = category;
     const selectedPromo = promokey;
 
 
-    const metatitle = "Buy "+selectedCategory+" Online at the lowest price on Shop The World in "+curContext.state.country;
-    const metadesc  = selectedCategory + ": Shop for "+ selectedCategory + " online at the lowest prices in "+ curContext.state.country +" at Shop The World. Always cheaper than Amazon Price"
-    const selectedKeyword=searchKey;
+    const metatitle = "Buy " + selectedCategory + " Online at the lowest price on Shop The World in " + curContext.state.country;
+    const metadesc = selectedCategory + ": Shop for " + selectedCategory + " online at the lowest prices in " + curContext.state.country + " at Shop The World. Always cheaper than Amazon Price"
+    const selectedKeyword = searchKey;
 
-    
+
     const selectedSize = filterContext.selectedSize
     const [sortBy, setSortBy] = useState('AscOrder');
     const [isLoading, setIsLoading] = useState(false);
-    
+
     const [layout, setLayout] = useState(layoutList);
     const [url, setUrl] = useState();
-    let leftSymbol=null;
+    let leftSymbol = null;
     let rightSymbol = null;
-   
-    if(IsRight ==true)
-    {
+
+    if (IsRight == true) {
         rightSymbol = symbol;
     }
-    else
-    {
+    else {
         leftSymbol = symbol;
     }
 
     var setSelectedSubCategoryList = "";
 
-    if(type=="Category")
-    {
-        if(selectedCategory!=null &&  selectedCategory!=""  &&  selectedCategory!=undefined)
-        {
-                
-                for(var i =0;i<CategoryList.length;i++)
-                {
-                    if(CategoryList[i].CategoryName == selectedCategory)
-                    {
-                        setSelectedSubCategoryList = CategoryList[i];
-                    }
+    if (type == "Category") {
+        if (selectedCategory != null && selectedCategory != "" && selectedCategory != undefined) {
+
+            for (var i = 0; i < CategoryList.length; i++) {
+                if (CategoryList[i].CategoryName == selectedCategory) {
+                    setSelectedSubCategoryList = CategoryList[i];
                 }
+            }
         }
     }
-    else if(type=="SubCategory")
-    {
-        if(selectedCategory!=null &&  selectedCategory!=""  &&  selectedCategory!=undefined)
-        {
-                
-                for(var i =0;i<CategoryList.length;i++)
-                {
-                    if(CategoryList[i].CategoryName == parentCategory)
-                    {
-                        for(var j=0;j<CategoryList[i].subCategoryList.length;j++)
-                        {
-                            if(CategoryList[i].subCategoryList[j].SubCategoryName==selectedCategory)
-                            {
-                                if(CategoryList[i].subCategoryList[j].leafCategoryList!=undefined)
+    else if (type == "SubCategory") {
+        if (selectedCategory != null && selectedCategory != "" && selectedCategory != undefined) {
+
+            for (var i = 0; i < CategoryList.length; i++) {
+                if (CategoryList[i].CategoryName == parentCategory) {
+                    for (var j = 0; j < CategoryList[i].subCategoryList.length; j++) {
+                        if (CategoryList[i].subCategoryList[j].SubCategoryName == selectedCategory) {
+                            if (CategoryList[i].subCategoryList[j].leafCategoryList != undefined)
                                 setSelectedSubCategoryList = CategoryList[i].subCategoryList[j].leafCategoryList;
-                                else
+                            else
                                 setSelectedSubCategoryList = [];
-                            }
-                        
-                        
                         }
-                        
+
+
                     }
+
                 }
+            }
         }
     }
-  
 
 
-  
 
-    const SelectedSubCategoryList= setSelectedSubCategoryList;
-    
+
+
+    const SelectedSubCategoryList = setSelectedSubCategoryList;
+
     useEffect(() => {
         const pathname = window.location.pathname;
         setUrl(pathname);
         router.push(`${pathname}`)
-        
+
     }, [selectedBrands, selectedColor, selectedSize, selectedPrice]);
 
     var limitSet = 12;
-    if(selectedKeyword)
+    if (selectedKeyword)
         limitSet = 16;
- 
- 
-        // CREATE_AVAILABLITY_NOTIFICATION
-    var {errors, loading, data, fetchMore } = useQuery(GET_PRODUCTS, {
+
+
+    // CREATE_AVAILABLITY_NOTIFICATION
+    var { errors, loading, data, fetchMore } = useQuery(GET_PRODUCTS, {
         variables: {
             lookupSearchFields: {
                 limit:limitSet,
@@ -257,7 +249,7 @@ const ProductList = ({ colClass, type,parentCategory, layoutList,openSidebar,noS
               }
         }
     });
-    
+
     // if(data!=undefined)
     // {
     //     if(data.lookup.total.total==0)
@@ -290,21 +282,25 @@ const ProductList = ({ colClass, type,parentCategory, layoutList,openSidebar,noS
     //         }), 1000)
     // }
 
+    const length = CategoryList.length;
+    console.log("CategoryList.length", CategoryList.length);
 
-    const handlePagination = () => {
-
-
-        // setPageIndex(pageIndex+1);
+    const handlePagination = async () => {
+        // sethasMore(data.lookup.hasMore.seqid);
         var nextPage = 1;
-        if(data &&  data.lookup && data.lookup.items.length)
-        {
-            console.log(data.lookup.length,"count");
-            console.log(limitSet,"limit");
-            nextPage = (Math.floor(data.lookup.items.length / limitSet))+1;
-            console.log(nextPage,"nextPage");
+        // setPageIndex(pageIndex+1);
+        if (data.lookup.items.length === 0 || data.lookup.items.length < 12) {
+            console.log("AAAAAAA", data.lookup.items.length)
+            sethasMore(false);
         }
 
-
+        if (data && data.lookup && data.lookup.items.length) {
+            console.log(data.lookup.items.length, "count");
+            console.log(limitSet, "limit");
+            // nextPage = data.lookup.items.length ;
+            nextPage = (Math.floor(data.lookup.items.length / limitSet)) + 1;
+            console.log(nextPage, "nextPage");
+        }
         // setIsLoading(true);
         setTimeout(() =>
             fetchMore({
@@ -326,6 +322,7 @@ const ProductList = ({ colClass, type,parentCategory, layoutList,openSidebar,noS
                 updateQuery: (prev, { fetchMoreResult }) => {
                     if (!fetchMoreResult) return prev;
                     // setIsLoading(false)
+                    sethasMore(false)
                     return {
                         lookup: {
                             __typename: prev.lookup.__typename,
@@ -336,7 +333,34 @@ const ProductList = ({ colClass, type,parentCategory, layoutList,openSidebar,noS
                     };
                 }
             }), 1000)
+
     }
+
+    // export const getStaticProps = async () => {
+    //     const data = await fetch(
+    //       "https://jsonplaceholder.typicode.com/todos?_limit=10"
+    //     ).then((response) => response.json());
+    //     return {
+    //       props: { data }
+    //     };
+    //   };
+
+    // console.log("handlePagination@@@@@@@@@",handlePagination)
+    // console.log("items@@@@@@@@@",data.lookup.items)
+
+    // const fetchData = async () => {
+    //     console.log("haiiiiiiii");
+    //     const commentsFormServer = await handlePagination();
+
+    //     // setItems([...items, ...commentsFormServer]);
+    //     if (data.lookup.items.length === 0 || data.lookup.items.length < 12) {
+    //         console.log("AAAAAAA",data.lookup.items.length)
+    //         setnoMore(false);
+    //     }
+    //     // setPageIndex(pageIndex+1);
+    //     // setpage(page + 1);
+    //     // setnoMore(false);
+    //   };
 
     const removeBrand = (val) => {
         const temp = [...selectedBrands];
@@ -360,200 +384,202 @@ const ProductList = ({ colClass, type,parentCategory, layoutList,openSidebar,noS
         filterContext.setSelectedColor("")
         router.push(`${url}?${filterContext.state}&brand=${selectedBrands}&color=${selectedColor}&size=${selectedSize}&minPrice=${selectedPrice.min}&maxPrice=${selectedPrice.max}`)
     }
-   const AddNotification=()=>{
-    obj.country = country;
-    obj.url = window.location.href;
-    obj.status = "Open";
-    
-
-    // createNotifyCustomerInfoNotifyCustomerInfoInput
-
-    try {
-        var NotifiyData = CreateAvailNotifiy({
-          variables:obj ,
-        });
-        toast.success("Thanks for your submission");
-        router.push("/")
-        //  history.push('/multikart-admin/menus/list-menu')
-        //  toast.success("Successfully Added !")
-      } catch (err) {
-        console.log(err.message);
-      }
-
-   }
-   
-  const setStateFromInput = (event) => {
+    const AddNotification = () => {
+        obj.country = country;
+        obj.url = window.location.href;
+        obj.status = "Open";
 
 
-    // "country":"test",
-    // "date":"2021-08-25T05:24:28.828Z",
-    // "email":"test",
-    // "mobile":"mobile",
-    // "name":"test",
-    // "product":"test",
-    // "quantity":2,
-    // "status":"testr",
-    // "url":"test",
-    // "userID":"test"
+        // createNotifyCustomerInfoNotifyCustomerInfoInput
 
-    if(obj == null || obj == undefined )
-        obj={};
+        try {
+            var NotifiyData = CreateAvailNotifiy({
+                variables: obj,
+            });
+            toast.success("Thanks for your submission");
+            router.push("/")
+            //  history.push('/multikart-admin/menus/list-menu')
+            //  toast.success("Successfully Added !")
+        } catch (err) {
+            console.log(err.message);
+        }
+
+    }
+
+    const setStateFromInput = (event) => {
+
+
+        // "country":"test",
+        // "date":"2021-08-25T05:24:28.828Z",
+        // "email":"test",
+        // "mobile":"mobile",
+        // "name":"test",
+        // "product":"test",
+        // "quantity":2,
+        // "status":"testr",
+        // "url":"test",
+        // "userID":"test"
+
+        if (obj == null || obj == undefined)
+            obj = {};
         obj[event.target.id] = event.target.value;
         setObj(obj);
-      };
+    };
 
     return (
-        
+
         <Col className="collection-content">
+
             <Head>
                 <title>{metatitle}</title>
-                <meta name="description" content={metadesc}/>
-                <meta property="og:title" content={metatitle}/>
-                <meta property="og:description" content={metadesc}/>
-                <meta property="og:image" content="https://shoptheworld.store/assets/images/icon/logo.png"/>
+                <meta name="description" content={metadesc} />
+                <meta property="og:title" content={metatitle} />
+                <meta property="og:description" content={metadesc} />
+                <meta property="og:image" content="https://shoptheworld.store/assets/images/icon/logo.png" />
             </Head>
             <div className="page-main-content">
-            
+
                 <Row>
                     <Col sm="12">
                         <div className="top-banner-wrapper">
-                        
-                        <CategoryCollection noTitle="null" backImage={true} type="fashion"  categoryData={SelectedSubCategoryList} productSlider={CategorySlider} designClass="ratio_asos" noSlider="false" cartClass="cart-info cart-wrap" />
 
-                            {data &&  (data.lookup!=null && data.lookup!=undefined && data.lookup!="") &&  data.lookup.total.total>0? 
-                             
-                            <div className="top-banner-content small-section">
-                                {/* <h4>{selectedCategory}</h4> */}
-                                <h5>{data ? `${selectedCategory}  1-${data.lookup.items.length} of ${data.lookup.total.total}` : 'loading'}</h5>
-                            </div>
-                            
-                            :     [((loading)?        <div className="typography_section"> 
-            <div className="typography-box"> 
-            <div  className="custom-load typo-content loader-typo">
-                                    <div className="pre-loader"></div>
+                            <CategoryCollection noTitle="null" backImage={true} type="fashion" categoryData={SelectedSubCategoryList} productSlider={CategorySlider} designClass="ratio_asos" noSlider="false" cartClass="cart-info cart-wrap" />
+
+                            {data && (data.lookup != null && data.lookup != undefined && data.lookup != "") && data.lookup.total.total > 0 ?
+
+                                <div className="top-banner-content small-section">
+                                    {/* <h4>{selectedCategory}</h4> */}
+                                    <h5>{data ? `${selectedCategory}  1-${data.lookup.items.length} of ${data.lookup.total.total}` : 'loading'}</h5>
                                 </div>
-                                </div>
-                                </div>: 
-                            <div>
-                <div className="container">
-                    <div id="container" >
-                        <div>
-                            <div id="login">
-                                <div>
-                                    <div className="logo mb-4">
-                                        <a href="#">
-                                            {/* <img src="../assets/images/icon/logo.png" alt="Multikart_fashion" className="img-fluid" /> */}
-                                        </a>
+
+                                : [((loading) ? <div className="typography_section">
+                                    <div className="typography-box">
+                                        <div className="custom-load typo-content loader-typo">
+                                            <div className="pre-loader"></div>
+                                        </div>
                                     </div>
-                                    <h3 className="mb-3 text-center">
-                                    Can't find the product you're looking for? 
-                            </h3>
-                            <h3 className="mb-3 text-center">
-                            Don't Worry...! 
-                            </h3>
-                            <br/>
-                            <br/>
-                            <h3 className="mb-3 text-center"> Reach us at with the below options </h3>  
- 
- 
-                             
-                                 <h4 className="mb-3 text-center"><p><i className="fa fa-hashtag"></i>Drop us a message with the product details on chatbot . <a href="javascript:void(Tawk_API.toggle())"> Click to Chat </a> </p></h4> 
-                                 <h4 className="mb-3 text-center"><p> <i className="fa fa-hashtag"></i>Share us the details of the product you're looking for by filling the form below</p></h4> 
-                             
-                                </div>
-                                <section className="contact-page section-b-space">
-                                <Row>
-                        <Col sm="12">
-                            <Form className="theme-form">
-                                <Row>
-                                    <Col md="6">
-                                        <Label for="name">Name</Label>
-                                        <Input type="text" className="form-control" id="name"  onChange={setStateFromInput} placeholder="Enter Your name"
-                                            required="" />
-                                    </Col>
-                                    <Col md="6">
-                                        <Label for="email">Phone Number</Label>
-                                        <Input type="text" className="form-control" id="phone"  onChange={setStateFromInput} placeholder="phone" required="" />
-                                    </Col>
-                                    <Col md="6">
-                                        <Label for="email">Email</Label>
-                                        <Input type="text" className="form-control" id="email"  onChange={setStateFromInput} placeholder="Email" required="" />
-                                    </Col>
-                                    <Col md="6">
-                                        <Label for="review">Product</Label>
-                                        <Input type="text" className="form-control" id="product"  onChange={setStateFromInput} placeholder="Enter product name"
-                                            required="" />
-                                    </Col>
-                                    <Col md="6">
-                                        <Label for="review">Quantity</Label>
-                                        <Input type="text" className="form-control" id="quantity"  onChange={setStateFromInput} placeholder="Enter quantity"
-                                            required="" />
-                                    </Col>
-                                    <Col md="12">
-                                        <Label for="review">Write Your Message</Label>
-                                        <textarea className="form-control" placeholder="Write Your Message"
-                                            id="review" rows="6"></textarea>
-                                    </Col>
-                                    <Col md="12">
-                                        <button className="btn btn-solid" type="button" onClick={AddNotification} >Send Your Message</button>
-                                    </Col>
-                                </Row>
-                            </Form>
-                        </Col>
-                    </Row>
-                                </section>
-                                <div id="footer" className="mt-4">
-                                    <div id="owner">
-                                        <a href="#">Log in here</a> or <a href="#">change your password
-                                    settings</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="powered">
-                                <p>© 2021, Powered by Shop The World.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>)]
-             
-                         
+                                </div> :
+                                    <div>
+                                        <div className="container">
+                                            <div id="container" >
+                                                <div>
+                                                    <div id="login">
+                                                        <div>
+                                                            <div className="logo mb-4">
+                                                                <a href="#">
+                                                                    {/* <img src="../assets/images/icon/logo.png" alt="Multikart_fashion" className="img-fluid" /> */}
+                                                                </a>
+                                                            </div>
+                                                            <h3 className="mb-3 text-center">
+                                                                Can't find the product you're looking for?
+                                                            </h3>
+                                                            <h3 className="mb-3 text-center">
+                                                                Don't Worry...!
+                                                            </h3>
+                                                            <br />
+                                                            <br />
+                                                            <h3 className="mb-3 text-center"> Reach us at with the below options </h3>
+
+
+
+                                                            <h4 className="mb-3 text-center"><p><i className="fa fa-hashtag"></i>Drop us a message with the product details on chatbot . <a href="javascript:void(Tawk_API.toggle())"> Click to Chat </a> </p></h4>
+                                                            <h4 className="mb-3 text-center"><p> <i className="fa fa-hashtag"></i>Share us the details of the product you're looking for by filling the form below</p></h4>
+
+                                                        </div>
+                                                        <section className="contact-page section-b-space">
+                                                            <Row>
+                                                                <Col sm="12">
+                                                                    <Form className="theme-form">
+                                                                        <Row>
+                                                                            <Col md="6">
+                                                                                <Label for="name">Name</Label>
+                                                                                <Input type="text" className="form-control" id="name" onChange={setStateFromInput} placeholder="Enter Your name"
+                                                                                    required="" />
+                                                                            </Col>
+                                                                            <Col md="6">
+                                                                                <Label for="email">Phone Number</Label>
+                                                                                <Input type="text" className="form-control" id="phone" onChange={setStateFromInput} placeholder="phone" required="" />
+                                                                            </Col>
+                                                                            <Col md="6">
+                                                                                <Label for="email">Email</Label>
+                                                                                <Input type="text" className="form-control" id="email" onChange={setStateFromInput} placeholder="Email" required="" />
+                                                                            </Col>
+                                                                            <Col md="6">
+                                                                                <Label for="review">Product</Label>
+                                                                                <Input type="text" className="form-control" id="product" onChange={setStateFromInput} placeholder="Enter product name"
+                                                                                    required="" />
+                                                                            </Col>
+                                                                            <Col md="6">
+                                                                                <Label for="review">Quantity</Label>
+                                                                                <Input type="text" className="form-control" id="quantity" onChange={setStateFromInput} placeholder="Enter quantity"
+                                                                                    required="" />
+                                                                            </Col>
+                                                                            <Col md="12">
+                                                                                <Label for="review">Write Your Message</Label>
+                                                                                <textarea className="form-control" placeholder="Write Your Message"
+                                                                                    id="review" rows="6"></textarea>
+                                                                            </Col>
+                                                                            <Col md="12">
+                                                                                <button className="btn btn-solid" type="button" onClick={AddNotification} >Send Your Message</button>
+                                                                            </Col>
+                                                                        </Row>
+                                                                    </Form>
+                                                                </Col>
+                                                            </Row>
+                                                        </section>
+                                                        <div id="footer" className="mt-4">
+                                                            <div id="owner">
+                                                                <a href="#">Log in here</a> or <a href="#">change your password
+                                                                    settings</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div id="powered">
+                                                        <p>© 2021, Powered by Shop The World.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>)]
+
+
                             }
                         </div>
-                       {data &&  (data.lookup!=null && data.lookup!=undefined && data.lookup!="") &&  data.lookup.total.total>0? 
-                       <Row>
-                                    <Col xs="12">
-                                        <ul className="product-filter-tags">
-                                            {
-                                                selectedBrands.map((brand, i) =>
-                                                    <li key={i}>
-                                                        <a href={null} className="filter_tag">
-                                                            {brand}
-                                                            <i className="fa fa-close" onClick={() => removeBrand(brand)} ></i>
-                                                        </a>
-                                                    </li>
-                                                )
-                                            }
-                                            {selectedColor?
-                                                <li>
+
+                        {data && (data.lookup != null && data.lookup != undefined && data.lookup != "") && data.lookup.total.total > 0 ?
+                            <Row>
+                                <Col xs="12">
+                                    <ul className="product-filter-tags">
+                                        {
+                                            selectedBrands.map((brand, i) =>
+                                                <li key={i}>
                                                     <a href={null} className="filter_tag">
-                                                        {selectedColor}
-                                                        <i className="fa fa-close" onClick={removeColor}></i>
+                                                        {brand}
+                                                        <i className="fa fa-close" onClick={() => removeBrand(brand)} ></i>
                                                     </a>
                                                 </li>
-                                                :''
-                                            }
-                                            {
-                                                selectedSize.map((size, i) =>
-                                                    <li key={i}>
-                                                        <a href={null} className="filter_tag">
-                                                            {size}
-                                                            <i className="fa fa-close" onClick={() => removeSize(size)}></i>
-                                                        </a>
-                                                    </li>
-                                                )
-                                            }
-                                            {/* {
+                                            )
+                                        }
+                                        {selectedColor ?
+                                            <li>
+                                                <a href={null} className="filter_tag">
+                                                    {selectedColor}
+                                                    <i className="fa fa-close" onClick={removeColor}></i>
+                                                </a>
+                                            </li>
+                                            : ''
+                                        }
+                                        {
+                                            selectedSize.map((size, i) =>
+                                                <li key={i}>
+                                                    <a href={null} className="filter_tag">
+                                                        {size}
+                                                        <i className="fa fa-close" onClick={() => removeSize(size)}></i>
+                                                    </a>
+                                                </li>
+                                            )
+                                        }
+                                        {/* {
                                                
                                                     <li>
                                                         <a href={null} className="filter_tag">
@@ -561,27 +587,29 @@ const ProductList = ({ colClass, type,parentCategory, layoutList,openSidebar,noS
                                                         </a>
                                                     </li>
                                             } */}
-                                        </ul>
-                                    </Col>
-                                </Row>
-                                : data ? "":""
-                                }
-                                {data &&  (data.lookup!=null && data.lookup!=undefined && data.lookup!="") &&  data.lookup.total.total>0? 
-                                 <div className="collection-product-wrapper">
-                            <div>
-                                {!noSidebar?
-                                <Row>
-                                    <Col xl="12">
-                                        <div className="filter-main-btn" onClick={() => openSidebar()}>
-                                            <span className="filter-btn btn btn-theme">
-                                                <i className="fa fa-filter" aria-hidden="true"></i> Filter
-                                            </span>
-                                        </div>
-                                    </Col>
-                                </Row>
-                                :""
-                                }   
-                                {/* <Row>
+                                    </ul>
+                                </Col>
+                            </Row>
+                            : data ? "" : ""
+                        }
+
+                        {data && (data.lookup != null && data.lookup != undefined && data.lookup != "") && data.lookup.total.total > 0 ?
+                            <div className="collection-product-wrapper">
+
+                                <div>
+                                    {!noSidebar ?
+                                        <Row>
+                                            <Col xl="12">
+                                                <div className="filter-main-btn" onClick={() => openSidebar()}>
+                                                    <span className="filter-btn btn btn-theme">
+                                                        <i className="fa fa-filter" aria-hidden="true"></i> Filter
+                                                    </span>
+                                                </div>
+                                            </Col>
+                                        </Row>
+                                        : ""
+                                    }
+                                    {/* <Row>
                                     <Col>
                                         <div className="product-filter-content">
                                             <div className="search-count">
@@ -645,53 +673,82 @@ const ProductList = ({ colClass, type,parentCategory, layoutList,openSidebar,noS
                                         </div>
                                     </Col>
                                 </Row> */}
-                            </div>
-                            <div className={`product-wrapper-grid ${layout}`}>
-                                <Row>
-                                    {/* Product Box */}
-                                    {(!data || !data.lookup || !data.lookup || data.lookup.length === 0 || loading) ?
-                                        (data &&  (data.lookup!=null && data.lookup!=undefined && data.lookup!="") &&  data.lookup.length === 0) ?
-                                            <Col xs="12">
-                                                <div>
-                                                    <div className="col-sm-12 empty-cart-cls text-center">
-                                                        <img src={`/assets/images/empty-search.jpg`} className="img-fluid mb-4 mx-auto" alt="" />
-                                                        <h3><strong>Your Cart is Empty</strong></h3>
-                                                        <h4>Explore more shortlist some items.</h4>
-                                                    </div>
-                                                </div>
-                                            </Col>
-                                            :
-                                            <div className="row mx-0 margin-default mt-4">
-                                         <div className="col-xl-3 col-lg-4 col-6">
-                                             <PostLoader />
-                                         </div>
-                                         <div className="col-xl-3 col-lg-4 col-6">
-                                             <PostLoader />
-                                         </div>
-                                         <div className="col-xl-3 col-lg-4 col-6">
-                                             <PostLoader />
-                                         </div>
-                                         <div className="col-xl-3 col-lg-4 col-6">
-                                             <PostLoader />
-                                         </div>
-                                     </div>
-                                        : data &&  (data.lookup!=null && data.lookup!=undefined && data.lookup!="") &&  data.lookup.items.map((product, i) =>
-                                            <div className={grid} key={i}>
-                                            <div className="product-top-filter"></div>
-                                                <div className="product product-hover">
-                                                    <div>
-                                                        <ProductItem des={true} product={product} symbol={symbol}  cartClass="cart-info cart-wrap"
-                                                            addCompare={() => compareContext.addToCompare(product)}
-                                                            addWishlist={() => wishlistContext.addToWish(product)}
-                                                            addCart={() => cartContext.addToCart(product,quantity)} />
-                                                    </div>
-                                                </div>
-                                                
-                                            </div>
-                                        )}
-                                </Row>
-                            </div>
-                            <div className="section-t-space">
+                                </div>
+
+                                <div className={`product-wrapper-grid ${layout}`}>
+
+                                    <InfiniteScroll
+                                        dataLength={data.lookup.items.length}
+                                        next={handlePagination}
+                                        hasMore={data.lookup.hasMore.seqid ? data.lookup.hasMore.seqid : false }
+                                        loader={<div className="row mx-0 margin-default mt-4">
+                                        <div className="col-xl-3 col-lg-4 col-6">
+                                            <PostLoader />
+                                        </div>
+                                        <div className="col-xl-3 col-lg-4 col-6">
+                                            <PostLoader />
+                                        </div>
+                                        <div className="col-xl-3 col-lg-4 col-6">
+                                            <PostLoader />
+                                        </div>
+                                        <div className="col-xl-3 col-lg-4 col-6">
+                                            <PostLoader />
+                                        </div>
+                                    </div>}
+                                        endMessage={<h4>Nothing more to show</h4>}
+
+                                    >
+                                        {data && (data.lookup != null && data.lookup != undefined && data.lookup != "") && data.lookup.hasMore != null &&
+
+
+                                            <Row>
+                                                {/* Product Box */}
+                                                {(!data || !data.lookup || !data.lookup || data.lookup.length === 0 || loading) ?
+                                                    (data && (data.lookup != null && data.lookup != undefined && data.lookup != "") && data.lookup.length === 0) ?
+                                                        <Col xs="12">
+                                                            <div>
+                                                                <div className="col-sm-12 empty-cart-cls text-center">
+                                                                    <img src={`/assets/images/empty-search.jpg`} className="img-fluid mb-4 mx-auto" alt="" />
+                                                                    <h3><strong>Your Cart is Empty</strong></h3>
+                                                                    <h4>Explore more shortlist some items.</h4>
+                                                                </div>
+                                                            </div>
+                                                        </Col>
+                                                        :
+                                                        <div className="row mx-0 margin-default mt-4">
+                                                            <div className="col-xl-3 col-lg-4 col-6">
+                                                                <PostLoader />
+                                                            </div>
+                                                            <div className="col-xl-3 col-lg-4 col-6">
+                                                                <PostLoader />
+                                                            </div>
+                                                            <div className="col-xl-3 col-lg-4 col-6">
+                                                                <PostLoader />
+                                                            </div>
+                                                            <div className="col-xl-3 col-lg-4 col-6">
+                                                                <PostLoader />
+                                                            </div>
+                                                        </div>
+                                                    : data && (data.lookup != null && data.lookup != undefined && data.lookup != "") && data.lookup.items.map((product, i) =>
+                                                        <div className={grid} key={i}>
+                                                            <div className="product-top-filter"></div>
+                                                            <div className="product product-hover">
+                                                                <div>
+                                                                    <ProductItem des={true} product={product} symbol={symbol} cartClass="cart-info cart-wrap"
+                                                                        addCompare={() => compareContext.addToCompare(product)}
+                                                                        addWishlist={() => wishlistContext.addToWish(product)}
+                                                                        addCart={() => cartContext.addToCart(product, quantity)} />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    )}
+                                            </Row>
+                                        }
+                                    </InfiniteScroll>
+
+                                </div>
+
+                                {/* <div className="section-t-space">
                                 <div className="text-center">
                                     <Row>
                                         <Col xl="12" md="12" sm="12">
@@ -704,16 +761,20 @@ const ProductList = ({ colClass, type,parentCategory, layoutList,openSidebar,noS
                                         </Col>
                                     </Row>
                                 </div>
+                            </div> */}
+
+
                             </div>
-                        </div>
-                        : data ? "":""
-                                }
+                            : data ? "" : ""
+                        }
+
                     </Col>
                 </Row>
-                
+
             </div>
+
         </Col>
-        
+
     )
 }
 
