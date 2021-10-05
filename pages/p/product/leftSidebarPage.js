@@ -66,6 +66,7 @@ query($productAsin: String!, $productType: String!, $productCountry: String!, $p
           discount
           domesticfreight
           overrideprice
+          isoverdcalculated
           duty
           fees
           frieghtrate

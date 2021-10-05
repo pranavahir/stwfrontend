@@ -75,6 +75,7 @@ query($lookupSearchFields: SearchFields){
           domesticfreight
           duty
           overrideprice
+          isoverdcalculated
           fees
           frieghtrate
           graphics
