@@ -40,7 +40,6 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
     const IsRight = CurContect.state.IsRight;
     let leftSymbol=null;
     let rightSymbol = null;
-    console.log(product);
     if(IsRight ==true)
     {
         rightSymbol = symbol;

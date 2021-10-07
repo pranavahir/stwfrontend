@@ -91,10 +91,16 @@ const ProductSection = ({ pathId, type }) => {
         {
             
             pathId = pathId.toUpperCase();
+            
             if(pathId.search("-")==0)
-            asinData =  pathId
+            {
+                asinData =  pathId
+            }
             else
-            asinData =  pathId.slice(0,pathId.search("-"));
+            {
+                asinData =  pathId.slice(0,pathId.search("-"));
+            }
+            
         }
     }
     const router = useRouter();

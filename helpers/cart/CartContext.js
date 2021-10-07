@@ -195,7 +195,7 @@ const CartProvider = (props) => {
             gstPrice = Math.floor(((objProduct.variants[0].conversionrate * ((objProduct.variants[0].amazonprice + objProduct.variants[0].pwfee) * (1 + (objProduct.variants[0].purchasetax / 100))) + (objProduct.variants[0].frieghtrate[0])) * (1 + objProduct.variants[0].duty)) * (1 / (1 - ((objProduct.variants[0].fees / (1 + (objProduct.variants[0].fees))) + (objProduct.variants[0].margin / (1 + (objProduct.variants[0].margin)))))) * objProduct.variants[0].taxes, 0)
           }
         }else{
-          if(objProduct.variants[0].isoverdcalculated==0){
+          if(objProduct.variants[0].isoverdcalculated == 0 && objProduct.fromcountry == country){
             gstPrice = 0
           }
           else
@@ -222,7 +222,7 @@ const CartProvider = (props) => {
           }
           else
           {
-            if(objProduct.variants[0].isoverdcalculated==0){
+            if(objProduct.variants[0].isoverdcalculated == 0 && objProduct.fromcountry == country){
               gstPrice = 0
             }
             else
