@@ -3327,7 +3327,7 @@ if(tempGeoLocation == "" || tempGeoLocation == null || tempGeoLocation == undefi
 {
   if(domain == "shoptheworld.store" ||  domain == "www.shoptheworld.store" || domain == "shoptheworldonline.com" ||  domain == "www.shoptheworldonline.com" ||  domain == "localhost" )
   {
-    var subDomain = "shoptheworldonline.com";
+  var subDomain = "shoptheworldonline.com";
 
     for(var i=0;i<ListConfig.length;i++)
     {

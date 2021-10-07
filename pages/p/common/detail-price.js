@@ -98,20 +98,22 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
 
      const ShowComparePricing = (objProduct)=>{
         
-        var result =true; 
-            
-        if(objProduct.fromcountry != country)
-        {
-            console.log(withDiscount(objProduct.variants));
-            console.log(amazonPriceCalculation(objProduct.variants));
-            if(withDiscount(objProduct.variants) > amazonPriceCalculation(objProduct.variants))
-            result = false;
-        }
-        else
-        {
-            if(withDiscount(objProduct.variants) > objProduct.variants[0].amazonprice)
-             result = false;
-        }
+        var result =false; 
+        if(objProduct.fromcountry == country && objProduct.variants[0].amazonprice > 0)
+            result = true;
+
+        // if(objProduct.fromcountry != country)
+        // {
+        //     console.log(withDiscount(objProduct.variants));
+        //     console.log(amazonPriceCalculation(objProduct.variants));
+        //     if(withDiscount(objProduct.variants) > amazonPriceCalculation(objProduct.variants))
+        //     result = false;
+        // }
+        // else
+        // {
+        //     if(withDiscount(objProduct.variants) > objProduct.variants[0].amazonprice)
+        //      result = false;
+        // }
         
 
          return result;
@@ -187,7 +189,7 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
                     <span>{discountCalculation(product.variants)}% off</span></h4>:""}
                 {(ShowComparePricing(product)) ? 
                         <div>
-                        <div><p class="card-price"><div><h2 style={titleSize} class="tagPrice">   Others : {product.fromcountry != country? <strike> {leftSymbol}{numberWithCommas((amazonPriceCalculation(product.variants)).toFixed(2))}{rightSymbol} </strike>:<strike> {leftSymbol}{numberWithCommas((product.variants[0].amazonprice).toFixed(2))}{rightSymbol} </strike>}</h2></div></p><br/></div>
+                        <div><p class="card-price"><div><h2 style={titleSize} class="tagPrice">   Others : {product.fromcountry != country ? <strike> {leftSymbol}{numberWithCommas((amazonPriceCalculation(product.variants)).toFixed(2))}{rightSymbol} </strike>:<strike> {leftSymbol}{numberWithCommas((product.variants[0].amazonprice).toFixed(2))}{rightSymbol} </strike>}</h2></div></p><br/></div>
                         <p class="card-price-STW card-price-STW-margin"><div><h2 style={titleSize} class="tagPrice_STW"> Our Price : {leftSymbol}{numberWithCommas(Math.floor(withDiscount(product.variants)).toFixed(2))}{rightSymbol} &nbsp; &nbsp; &nbsp; &nbsp; </h2></div></p>
                         <h5 className="keyPointsStyle priceTagDetail"> You save {leftSymbol}{numberWithCommas(Math.abs(Math.floor(withDiscount(product.variants)).toFixed(2) - (product.variants[0].amazonprice*1)).toFixed(2))}{rightSymbol} extra over Others</h5>
                         </div>

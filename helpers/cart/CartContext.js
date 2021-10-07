@@ -123,7 +123,7 @@ const CartProvider = (props) => {
   const priceCollection = (variantData) => {
     var sellPrice = null;
     if (variantData != null && variantData != undefined) {
-      if (variantData.length > 0 && (variantData[0].price || variantData[0].amazonprice)) {
+      if (variantData.length > 0 && (variantData[0].price || variantData[0].amazonprice || variantData[0].overrideprice)) {
         if (variantData[0].amazonprice != undefined) {
           if ((variantData[0].amazonprice > 0)) {
             if (variantData[0].overrideprice == 0) {
@@ -151,7 +151,25 @@ const CartProvider = (props) => {
             }
           }
           else {
-            sellPrice = 0;
+            if (variantData[0].overrideprice > 0) {
+              if(variantData[0].isoverdcalculated==0){
+                sellPrice = variantData[0].overrideprice;
+              }
+              else
+              {
+                if (variantData[0].frieghtrate.length == undefined) {
+                  sellPrice = Math.floor(((variantData[0].conversionrate * ((variantData[0].overrideprice + variantData[0].pwfee) * (1 + (variantData[0].purchasetax / 100))) + (variantData[0].frieghtrate)) * (1 + variantData[0].duty)) * (1 / (1 - ((variantData[0].fees / (1 + (variantData[0].fees))) + (variantData[0].margin / (1 + (variantData[0].margin)))))), 0);
+                }
+                else {
+                  sellPrice = Math.floor(((variantData[0].conversionrate * ((variantData[0].overrideprice + variantData[0].pwfee) * (1 + (variantData[0].purchasetax / 100))) + (variantData[0].frieghtrate[0])) * (1 + variantData[0].duty)) * (1 / (1 - ((variantData[0].fees / (1 + (variantData[0].fees))) + (variantData[0].margin / (1 + (variantData[0].margin)))))), 0);
+                }
+              }
+              
+            }
+            else
+            {
+              sellPrice = 0;
+            }
           }
         }
         else {
@@ -262,6 +280,7 @@ const CartProvider = (props) => {
   const withDiscount = (variantData) => {
 
     var totalPrice = withTax(variantData);
+    console.log(totalPrice);
     var finalPrice = 0;
     if (totalPrice > 0) {
       var discount = discountCalculation(variantData);
