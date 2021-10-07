@@ -483,7 +483,7 @@ const LeftSidebarPage = ({ pathId, type }) => {
                         </Col>
                         <Col sm="3" className={`collection-filter ${classes.desktopHeader}`} >
                         {!data || !data.product || data.product == null || error != null ?"":<div>
-                        {(data.product.variants.length > 0 && data.product.variants[0].quantity > 0) && (withDiscount(data.product.variants) > 0)  ?  
+                        {(data.product.variants.length > 0 && data.product.variants[0].quantity > 0) && (withDiscount(data.product) > 0)  ?  
                 <div className="productPriceCont">
                     <div className="product-description border-product">
                     {/* {product.variants ?

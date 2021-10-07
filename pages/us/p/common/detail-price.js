@@ -137,11 +137,11 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
                 <h3> {product.title} </h3>
                 <h4 style={objbrand}> {product.brandname} </h4>
 
-                {/* <h4> {product.categoryvalue} </h4> parseFloat(Math.floor(withDiscount(product.variants)).toFixed(2)).toLocaleString('en') */}
+                {/* <h4> {product.categoryvalue} </h4> parseFloat(Math.floor(withDiscount(product)).toFixed(2)).toLocaleString('en') */}
                 {product.variants.length?<h6 style={smallobj} >Shipping in {product.variants[0].daystoship} days.</h6>:""} 
-                {discountCalculation(product.variants)?<h4><del>{leftSymbol}{((priceCollection(product.variants) * 1)+gstCollection(product.variants)).toFixed(2)}{rightSymbol}</del>
-                    <span>{discountCalculation(product.variants)}% off</span></h4>:""}
-                <h3>{leftSymbol}{ Math.floor(withDiscount(product.variants)).toFixed(2)}{rightSymbol} </h3>
+                {discountCalculation (product)?<h4><del>{leftSymbol}{((priceCollection (product) * 1)+gstCollection (product)).toFixed(2)}{rightSymbol}</del>
+                    <span>{discountCalculation (product)}% off</span></h4>:""}
+                <h3>{leftSymbol}{ Math.floor(withDiscount(product)).toFixed(2)}{rightSymbol} </h3>
                 {product.variants.map(vari => {
                     var findItem = uniqueColor.find(x => x.color === vari.color);
                     if (!findItem)
@@ -175,7 +175,7 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
                 }
 
                
-                {(product.variants.length > 0 && product.variants[0].quantity > 0) && (withDiscount(product.variants) > 0) ?  
+                {(product.variants.length > 0 && product.variants[0].quantity > 0) && (withDiscount(product) > 0) ?  
                 <div>
                     <div className="product-description border-product">
                     {/* {product.variants ?

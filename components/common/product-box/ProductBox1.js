@@ -196,7 +196,7 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
                 }
 
                 <div className={cartClass}>
-                { (product.variants.length > 0 && product.variants[0].quantity > 0) && (withDiscount(product.variants) > 0)  ?
+                { (product.variants.length > 0 && product.variants[0].quantity > 0) && (withDiscount(product) > 0)  ?
                     <button title="Add to cart" onClick={addCart}>
                         <i className="fa fa-shopping-cart" aria-hidden="true"></i>
                     </button> :""}
@@ -264,13 +264,13 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
                         : ''
                     }
 
-                    {withDiscount(product.variants) > 0 ?
+                    {withDiscount(product) > 0 ?
                         <div>
                     {product.variants.length && product.variants[0].daystoship > 0 ? <h6 style={smallobj} >Shipping in {product.variants[0].daystoship} days.</h6>:""} 
                     <h4 className="priceStyle">
-                    {currency.symbol} {numberWithCommas(Math.floor(withDiscount(product.variants)).toFixed(2))}
+                    {currency.symbol} {numberWithCommas(Math.floor(withDiscount(product)).toFixed(2))}
                         <br/>
-                        {discountCalculation(product.variants)? <del><span className="money">{currency.symbol}{numberWithCommas((withDiscount(product.variants) * 1).toFixed(2)) }</span></del>:""}
+                        {discountCalculation(product)? <del><span className="money">{currency.symbol}{numberWithCommas((withDiscount(product) * 1).toFixed(2)) }</span></del>:""}
                     </h4>
                     </div> : <h5 style={smallredobj}>Sold out ...! </h5>
                      }
@@ -313,11 +313,11 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
                         <Col lg="6" className="rtl-text">
                             <div className="product-right">
                                 <h2> {product.title} </h2>
-                                { (product.variants.length > 0 && product.variants[0].quantity > 0) && (withDiscount(product.variants) > 0)  ?
+                                { (product.variants.length > 0 && product.variants[0].quantity > 0) && (withDiscount(product) > 0)  ?
                                 <div>
-                                {discountCalculation(product.variants)?<h4><del>{leftSymbol}{numberWithCommas(withDiscount(product.variants) * 1).toFixed(2)}{rightSymbol}</del>
-                                <span>{discountCalculation(product.variants)}% off</span></h4>:""} 
-                                <h3>{leftSymbol}{numberWithCommas(Math.floor(withDiscount(product.variants).toFixed(2)))}{rightSymbol} </h3>
+                                {discountCalculation(product)?<h4><del>{leftSymbol}{numberWithCommas(withDiscount(product) * 1).toFixed(2)}{rightSymbol}</del>
+                                <span>{discountCalculation(product)}% off</span></h4>:""} 
+                                <h3>{leftSymbol}{numberWithCommas(Math.floor(withDiscount(product).toFixed(2)))}{rightSymbol} </h3>
                                 </div>:""}
 
 
@@ -354,7 +354,7 @@ const ProductItem = ({ product, addCart, backImage, des, addWishlist, cartClass,
                                             </div> : ''}
                 </div>
                                 
-                { (product.variants.length > 0 && product.variants[0].quantity > 0) && (withDiscount(product.variants) > 0)  ?
+                { (product.variants.length > 0 && product.variants[0].quantity > 0) && (withDiscount(product) > 0)  ?
                                 <div>
                                 <div className="product-description border-product">
                                     {/* {product.size ?

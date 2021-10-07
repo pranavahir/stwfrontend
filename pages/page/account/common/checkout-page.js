@@ -371,7 +371,7 @@ useEffect(() => {
         asin:item.asin,
         producttitle: titleTrim(item.title),
         quantity: (item.qty * 1),
-        totalprice: withDiscountWithQty(item.variants,item.qty),
+        totalprice: withDiscountWithQty(item,item.qty),
         customerid: customerId,
         customername: customerData.first_name,
         paymentmethod: "",
@@ -663,7 +663,7 @@ const changeGstcheck = (e) => {
             asin:item.asin,
             producttitle: titleTrim(item.title),
             quantity: (item.qty * 1),
-            totalprice: withDiscountWithQty(item.variants,item.qty),
+            totalprice: withDiscountWithQty(item,item.qty),
             customerid: customerId,
             customername: customerData.first_name,
             paymentmethod: "Card - Razorpay - " + PaymentDetail.id,
@@ -767,7 +767,7 @@ const changeGstcheck = (e) => {
               productsku: item.sku,
               producttitle: titleTrim(item.title),
               quantity: (item.qty * 1),
-              totalprice: withDiscountWithQty(item.variants,item.qty),
+              totalprice: withDiscountWithQty(item,item.qty),
               customerid: customerId,
               customername: customerData.first_name,
               paymentmethod: "Card - Stripe - "+PaymentDetail.id,
@@ -869,7 +869,7 @@ const changeGstcheck = (e) => {
               asin:item.asin,
               producttitle: titleTrim(item.title),
               quantity: (item.qty * 1),
-              totalprice: withDiscountWithQty(item.variants,item.qty),
+              totalprice: withDiscountWithQty(item,item.qty),
               customerid: customerId,
               customername: customerData.first_name,
               paymentmethod: "Card - Paypal - "+PaymentDetail.id,
@@ -1951,7 +1951,7 @@ const [geoLocation, setgeoLocation] = useState(gLocation);
                             //   <span style = {rightAligh}>
                             //     {symbol}
                             //     {/* {item.total.toFixed(2)} */}
-                            //     {numberWithCommas(Math.floor(withDiscount(item.variants)).toFixed(2))}
+                            //     {numberWithCommas(Math.floor(withDiscount(item)).toFixed(2))}
                             //   </span>
                             // </li>
 
@@ -1968,7 +1968,7 @@ const [geoLocation, setgeoLocation] = useState(gLocation);
                               <span style = {rightAligh}>
                                 {symbol}
                                 {/* {item.total.toFixed(2)} */}
-                                {numberWithCommas(Math.floor(withDiscount(item.variants)).toFixed(2))}
+                                {numberWithCommas(Math.floor(withDiscount(item)).toFixed(2))}
                               </span>
                             </Col>
                             </Row>

@@ -133,7 +133,7 @@ const CartPage = () => {
                                                         </div>{(item.qty >= item.stock) ? 'out of Stock' : ''}
                                                             </div>
                                                             <div className="col-xs-3">
-                                                                <h2 className="td-color">{leftSymbol}{(withDiscount(item.variants))}{leftSymbol}</h2>
+                                                                <h2 className="td-color">{leftSymbol}{(withDiscount(item))}{leftSymbol}</h2>
                                                             </div>
                                                             <div className="col-xs-3">
                                                                 <h2 className="td-color"><a href="#" className="icon"><i className="fa fa-times"  onClick={() => removeFromCart(item)}></i></a>

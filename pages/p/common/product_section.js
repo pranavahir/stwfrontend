@@ -267,8 +267,8 @@ const ProductSection = ({ pathId, type }) => {
                                             <a href="#"  onClick={() => clickProductDetail(product)} >
                                                 <h6 style={{lineHeight:"initial"}}  title = {product.title} >{GetProductTitle(product.title)}</h6>
                                             </a>
-                                            {withDiscount(product.variants) > 0 ?
-                                            <h4 className="priceStyle">{leftSymbol}{numberWithCommas(Math.floor(withDiscount(product.variants)).toFixed(2))}{rightSymbol}</h4>
+                                            {withDiscount(product) > 0 ?
+                                            <h4 className="priceStyle">{leftSymbol}{numberWithCommas(Math.floor(withDiscount(product)).toFixed(2))}{rightSymbol}</h4>
                                             : <h5 className="priceStyle" style={smallredobj}>Sold out ...! </h5>
                      }
                     
@@ -301,7 +301,7 @@ const ProductSection = ({ pathId, type }) => {
                             <Col lg="6" className="rtl-text">
                                 <div className="product-right">
                                     <h2> {selectedProduct.title} </h2>
-                                    <h3>{leftSymbol}{Math.floor(withDiscount(selectedProduct.variants)).toFixed(2)}{rightSymbol}</h3>
+                                    <h3>{leftSymbol}{Math.floor( withDiscount(selectedProduct)).toFixed(2)}{rightSymbol}</h3>
                                     {selectedProduct.variants ?
                                         <ul className="color-variant">
                                             {uniqueTags ?

@@ -220,7 +220,7 @@ const ProductSection = ({ pathId, type }) => {
                                             <a href="#" onClick={() => clickProductDetail(product)} >
                                                 <h6>{product.title}</h6>
                                             </a>
-                                            <h4>{leftSymbol}{Math.floor(withDiscount(product.variants)).toFixed(2)}{rightSymbol}</h4>
+                                            <h4>{leftSymbol}{Math.floor(withDiscount(product)).toFixed(2)}{rightSymbol}</h4>
                                             {/* <ul className="color-variant">
                                                 <li className="bg-light0"></li>
                                                 <li className="bg-light1"></li>
@@ -250,7 +250,7 @@ const ProductSection = ({ pathId, type }) => {
                             <Col lg="6" className="rtl-text">
                                 <div className="product-right">
                                     <h2> {selectedProduct.title} </h2>
-                                    <h3>{leftSymbol}{Math.floor(withDiscount(selectedProduct.variants)).toFixed(2)}{rightSymbol}</h3>
+                                    <h3>{leftSymbol}{Math.floor( withDiscount(selectedProduct)).toFixed(2)}{rightSymbol}</h3>
                                     {selectedProduct.variants ?
                                         <ul className="color-variant">
                                             {uniqueTags ?

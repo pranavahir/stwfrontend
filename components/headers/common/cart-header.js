@@ -63,7 +63,7 @@ const CartHeader = ({ item, symbol }) => {
                     
                     <div className="media-body">
                             <a href="#" onClick={clickProductDetail}> <h4>{getName(item.title)}</h4></a>
-                        <h4><span>{item.qty} x {symbol} {numberWithCommas(Math.floor((withDiscount(item.variants))).toFixed(2))}</span></h4>
+                        <h4><span>{item.qty} x {symbol} {numberWithCommas(Math.floor((withDiscount(item))).toFixed(2))}</span></h4>
                     </div>
                 </div>
                 <div className="close-circle">

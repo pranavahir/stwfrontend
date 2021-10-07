@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect,useContext } from 'react';
+import { CurrencyContext } from '../Currency/CurrencyContext';
 import Context from './index';
 import { toast } from 'react-toastify'
 
@@ -16,10 +17,12 @@ const getLocalCartItems = () => {
 };
 
 const CartProvider = (props) => {
+  const CurContect = useContext(CurrencyContext);
   const [cartItems, setCartItems] = useState(getLocalCartItems())
   const [cartTotal, setCartTotal] = useState(0);
   const [quantity, setQuantity] = useState(1);
   const [stock, setStock] = useState('InStock');
+  const country = CurContect.state.country;
 
   var nQuality = 1
 
@@ -34,17 +37,17 @@ const CartProvider = (props) => {
   const addToCart = (item, quantity) => {
     // toast.success("Product Added Successfully !");
 
-    if (withDiscount(item.variants) > 0) {
+    if (withDiscount(item) > 0) {
       const index = cartItems.findIndex(itm => itm.asin === item.asin)
       if (index !== -1) {
         const product = cartItems[index];
         if ((quantity + product.qty) <= item.variants[0].quantity) {
-          // cartItems.push({ ...item, qty: quantity,gst:gstCollection(item.variants), total: ((withDiscount(item.variants))) * quantity  });  
-          setCartItems([{ ...product, ...item, qty: (quantity + product.qty), total: (withDiscount(item.variants)) * (quantity + product.qty) }])
+          // cartItems.push({ ...item, qty: quantity,gst:gstCollection(item), total: ((withDiscount(item))) * quantity  });  
+          setCartItems([{ ...product, ...item, qty: (quantity + product.qty), total: (withDiscount(item)) * (quantity + product.qty) }])
           // setCartItems([...cartItems])
         }
       } else {
-        const product = { ...item, qty: quantity, gst: gstCollection(item.variants), total: ((withDiscount(item.variants))) * quantity }
+        const product = { ...item, qty: quantity, gst: gstCollection(item), total: ((withDiscount(item))) * quantity }
         setCartItems([...cartItems, product])
       }
     }
@@ -109,159 +112,126 @@ const CartProvider = (props) => {
     }
   }
 
-  const amazonPriceCalculation=(variantData)=>{
+  const amazonPriceCalculation=(objProduct)=>{
     var sellPrice = 0;
-    if (variantData[0].frieghtrate.length == undefined) {
-      sellPrice = Math.floor(((variantData[0].conversionrate * ((variantData[0].amazonprice + variantData[0].pwfee) * (1 + (variantData[0].purchasetax / 100))) + (variantData[0].frieghtrate)) * (1 + variantData[0].duty)) * (1 / (1 - ((variantData[0].fees / (1 + (variantData[0].fees))) + (variantData[0].margin / (1 + (variantData[0].margin)))))), 0);
+    if (objProduct.variants[0].frieghtrate.length == undefined) {
+      sellPrice = Math.floor(((objProduct.variants[0].conversionrate * ((objProduct.variants[0].amazonprice + objProduct.variants[0].pwfee) * (1 + (objProduct.variants[0].purchasetax / 100))) + (objProduct.variants[0].frieghtrate)) * (1 + objProduct.variants[0].duty)) * (1 / (1 - ((objProduct.variants[0].fees / (1 + (objProduct.variants[0].fees))) + (objProduct.variants[0].margin / (1 + (objProduct.variants[0].margin)))))), 0);
     }
     else {
-      sellPrice = Math.floor(((variantData[0].conversionrate * ((variantData[0].amazonprice + variantData[0].pwfee) * (1 + (variantData[0].purchasetax / 100))) + (variantData[0].frieghtrate[0])) * (1 + variantData[0].duty)) * (1 / (1 - ((variantData[0].fees / (1 + (variantData[0].fees))) + (variantData[0].margin / (1 + (variantData[0].margin)))))), 0);
+      sellPrice = Math.floor(((objProduct.variants[0].conversionrate * ((objProduct.variants[0].amazonprice + objProduct.variants[0].pwfee) * (1 + (objProduct.variants[0].purchasetax / 100))) + (objProduct.variants[0].frieghtrate[0])) * (1 + objProduct.variants[0].duty)) * (1 / (1 - ((objProduct.variants[0].fees / (1 + (objProduct.variants[0].fees))) + (objProduct.variants[0].margin / (1 + (objProduct.variants[0].margin)))))), 0);
     }
     return sellPrice;
   }
-
-  const priceCollection = (variantData) => {
+  const priceCollection = (objProduct) => {
     var sellPrice = null;
-    if (variantData != null && variantData != undefined) {
-      if (variantData.length > 0 && (variantData[0].price || variantData[0].amazonprice || variantData[0].overrideprice)) {
-        if (variantData[0].amazonprice != undefined) {
-          if ((variantData[0].amazonprice > 0)) {
-            if (variantData[0].overrideprice == 0) {
-              if (variantData[0].frieghtrate.length == undefined) {
-                sellPrice = Math.floor(((variantData[0].conversionrate * ((variantData[0].amazonprice + variantData[0].pwfee) * (1 + (variantData[0].purchasetax / 100))) + (variantData[0].frieghtrate)) * (1 + variantData[0].duty)) * (1 / (1 - ((variantData[0].fees / (1 + (variantData[0].fees))) + (variantData[0].margin / (1 + (variantData[0].margin)))))), 0);
-              }
-              else {
-                sellPrice = Math.floor(((variantData[0].conversionrate * ((variantData[0].amazonprice + variantData[0].pwfee) * (1 + (variantData[0].purchasetax / 100))) + (variantData[0].frieghtrate[0])) * (1 + variantData[0].duty)) * (1 / (1 - ((variantData[0].fees / (1 + (variantData[0].fees))) + (variantData[0].margin / (1 + (variantData[0].margin)))))), 0);
-              }
-            }
-            else if (variantData[0].overrideprice > 0) {
-              if(variantData[0].isoverdcalculated==0){
-                sellPrice = variantData[0].overrideprice;
-              }
-              else
-              {
-                if (variantData[0].frieghtrate.length == undefined) {
-                  sellPrice = Math.floor(((variantData[0].conversionrate * ((variantData[0].overrideprice + variantData[0].pwfee) * (1 + (variantData[0].purchasetax / 100))) + (variantData[0].frieghtrate)) * (1 + variantData[0].duty)) * (1 / (1 - ((variantData[0].fees / (1 + (variantData[0].fees))) + (variantData[0].margin / (1 + (variantData[0].margin)))))), 0);
+    if (objProduct.variants != null && objProduct.variants != undefined) {
+        if (objProduct.variants.length > 0 && (objProduct.variants[0].price || objProduct.variants[0].amazonprice || objProduct.variants[0].overrideprice)) {
+
+            if (objProduct.variants[0].overrideprice > 0 ) {
+
+                    if (objProduct.variants[0].isoverdcalculated == 0 && objProduct.fromcountry == country) {
+                        sellPrice = objProduct.variants[0].overrideprice;
+                    }
+                    else {
+                        if (objProduct.variants[0].frieghtrate.length == undefined) {
+                            sellPrice = Math.floor(((objProduct.variants[0].conversionrate * ((objProduct.variants[0].overrideprice + objProduct.variants[0].pwfee) * (1 + (objProduct.variants[0].purchasetax / 100))) + (objProduct.variants[0].frieghtrate)) * (1 + objProduct.variants[0].duty)) * (1 / (1 - ((objProduct.variants[0].fees / (1 + (objProduct.variants[0].fees))) + (objProduct.variants[0].margin / (1 + (objProduct.variants[0].margin)))))), 0);
+                        }
+                        else {
+                            sellPrice = Math.floor(((objProduct.variants[0].conversionrate * ((objProduct.variants[0].overrideprice + objProduct.variants[0].pwfee) * (1 + (objProduct.variants[0].purchasetax / 100))) + (objProduct.variants[0].frieghtrate[0])) * (1 + objProduct.variants[0].duty)) * (1 / (1 - ((objProduct.variants[0].fees / (1 + (objProduct.variants[0].fees))) + (objProduct.variants[0].margin / (1 + (objProduct.variants[0].margin)))))), 0);
+                        }
+                    }
+                }
+                else if (objProduct.variants[0].amazonprice != undefined) {
+                    if ((objProduct.variants[0].amazonprice > 0)) {
+                        if (objProduct.variants[0].frieghtrate.length == undefined) {
+                            sellPrice = Math.floor(((objProduct.variants[0].conversionrate * ((objProduct.variants[0].amazonprice + objProduct.variants[0].pwfee) * (1 + (objProduct.variants[0].purchasetax / 100))) + (objProduct.variants[0].frieghtrate)) * (1 + objProduct.variants[0].duty)) * (1 / (1 - ((objProduct.variants[0].fees / (1 + (objProduct.variants[0].fees))) + (objProduct.variants[0].margin / (1 + (objProduct.variants[0].margin)))))), 0);
+                        }
+                        else {
+                            sellPrice = Math.floor(((objProduct.variants[0].conversionrate * ((objProduct.variants[0].amazonprice + objProduct.variants[0].pwfee) * (1 + (objProduct.variants[0].purchasetax / 100))) + (objProduct.variants[0].frieghtrate[0])) * (1 + objProduct.variants[0].duty)) * (1 / (1 - ((objProduct.variants[0].fees / (1 + (objProduct.variants[0].fees))) + (objProduct.variants[0].margin / (1 + (objProduct.variants[0].margin)))))), 0);
+                        }
+                    }
+                    else {
+                        if (objProduct.variants[0].frieghtrate.length == undefined) {
+                            sellPrice = Math.floor(((objProduct.variants[0].conversionrate * ((objProduct.variants[0].price + objProduct.variants[0].pwfee) * (1 + (objProduct.variants[0].purchasetax / 100))) + (objProduct.variants[0].frieghtrate)) * (1 + objProduct.variants[0].duty)) * (1 / (1 - ((objProduct.variants[0].fees / (1 + (objProduct.variants[0].fees))) + (objProduct.variants[0].margin / (1 + (objProduct.variants[0].margin)))))), 0);
+                        }
+                        else {
+                            sellPrice = Math.floor(((objProduct.variants[0].conversionrate * ((objProduct.variants[0].price + objProduct.variants[0].pwfee) * (1 + (objProduct.variants[0].purchasetax / 100))) + (objProduct.variants[0].frieghtrate[0])) * (1 + objProduct.variants[0].duty)) * (1 / (1 - ((objProduct.variants[0].fees / (1 + (objProduct.variants[0].fees))) + (objProduct.variants[0].margin / (1 + (objProduct.variants[0].margin)))))), 0);
+                        }
+                    }
                 }
                 else {
-                  sellPrice = Math.floor(((variantData[0].conversionrate * ((variantData[0].overrideprice + variantData[0].pwfee) * (1 + (variantData[0].purchasetax / 100))) + (variantData[0].frieghtrate[0])) * (1 + variantData[0].duty)) * (1 / (1 - ((variantData[0].fees / (1 + (variantData[0].fees))) + (variantData[0].margin / (1 + (variantData[0].margin)))))), 0);
+                    if (objProduct.variants[0].frieghtrate.length == undefined) {
+                        sellPrice = Math.floor(((objProduct.variants[0].conversionrate * ((objProduct.variants[0].price + objProduct.variants[0].pwfee) * (1 + (objProduct.variants[0].purchasetax / 100))) + (objProduct.variants[0].frieghtrate)) * (1 + objProduct.variants[0].duty)) * (1 / (1 - ((objProduct.variants[0].fees / (1 + (objProduct.variants[0].fees))) + (objProduct.variants[0].margin / (1 + (objProduct.variants[0].margin)))))), 0);
+                    }
+                    else {
+                        sellPrice = Math.floor(((objProduct.variants[0].conversionrate * ((objProduct.variants[0].price + objProduct.variants[0].pwfee) * (1 + (objProduct.variants[0].purchasetax / 100))) + (objProduct.variants[0].frieghtrate[0])) * (1 + objProduct.variants[0].duty)) * (1 / (1 - ((objProduct.variants[0].fees / (1 + (objProduct.variants[0].fees))) + (objProduct.variants[0].margin / (1 + (objProduct.variants[0].margin)))))), 0);
+                    }
                 }
-              }
-              
-            }
-          }
-          else {
-            if (variantData[0].overrideprice > 0) {
-              if(variantData[0].isoverdcalculated==0){
-                sellPrice = variantData[0].overrideprice;
-              }
-              else
-              {
-                if (variantData[0].frieghtrate.length == undefined) {
-                  sellPrice = Math.floor(((variantData[0].conversionrate * ((variantData[0].overrideprice + variantData[0].pwfee) * (1 + (variantData[0].purchasetax / 100))) + (variantData[0].frieghtrate)) * (1 + variantData[0].duty)) * (1 / (1 - ((variantData[0].fees / (1 + (variantData[0].fees))) + (variantData[0].margin / (1 + (variantData[0].margin)))))), 0);
-                }
-                else {
-                  sellPrice = Math.floor(((variantData[0].conversionrate * ((variantData[0].overrideprice + variantData[0].pwfee) * (1 + (variantData[0].purchasetax / 100))) + (variantData[0].frieghtrate[0])) * (1 + variantData[0].duty)) * (1 / (1 - ((variantData[0].fees / (1 + (variantData[0].fees))) + (variantData[0].margin / (1 + (variantData[0].margin)))))), 0);
-                }
-              }
-              
-            }
-            else
-            {
-              sellPrice = 0;
-            }
-          }
-        }
-        else {
-          if (variantData[0].overrideprice == 0) {
-            if (variantData[0].frieghtrate.length == undefined) {
-              sellPrice = Math.floor(((variantData[0].conversionrate * ((variantData[0].price + variantData[0].pwfee) * (1 + (variantData[0].purchasetax / 100))) + (variantData[0].frieghtrate)) * (1 + variantData[0].duty)) * (1 / (1 - ((variantData[0].fees / (1 + (variantData[0].fees))) + (variantData[0].margin / (1 + (variantData[0].margin)))))), 0);
             }
             else {
-              sellPrice = Math.floor(((variantData[0].conversionrate * ((variantData[0].price + variantData[0].pwfee) * (1 + (variantData[0].purchasetax / 100))) + (variantData[0].frieghtrate[0])) * (1 + variantData[0].duty)) * (1 / (1 - ((variantData[0].fees / (1 + (variantData[0].fees))) + (variantData[0].margin / (1 + (variantData[0].margin)))))), 0);
+                sellPrice = 0;
             }
-          }
-          else if (variantData[0].overrideprice > 0) {
-            if(variantData[0].isoverdcalculated==0){
-              sellPrice = variantData[0].overrideprice;
-            }
-            else
-            {
-            if (variantData[0].frieghtrate.length == undefined) {
-              sellPrice = Math.floor(((variantData[0].conversionrate * ((variantData[0].overrideprice + variantData[0].pwfee) * (1 + (variantData[0].purchasetax / 100))) + (variantData[0].frieghtrate)) * (1 + variantData[0].duty)) * (1 / (1 - ((variantData[0].fees / (1 + (variantData[0].fees))) + (variantData[0].margin / (1 + (variantData[0].margin)))))), 0);
-            }
-            else {
-              sellPrice = Math.floor(((variantData[0].conversionrate * ((variantData[0].overrideprice + variantData[0].pwfee) * (1 + (variantData[0].purchasetax / 100))) + (variantData[0].frieghtrate[0])) * (1 + variantData[0].duty)) * (1 / (1 - ((variantData[0].fees / (1 + (variantData[0].fees))) + (variantData[0].margin / (1 + (variantData[0].margin)))))), 0);
-            }
-          }
-          }
+
         }
-
-      }
-      else {
-        sellPrice = 0;
-      }
-
-    }
-    return sellPrice
-  }
+        return sellPrice
+}
 
 
-  const gstCollection = (variantData) => {
+  const gstCollection = (objProduct) => {
     var gstPrice = null;
 
-    if (variantData != null && variantData != undefined) {
-      if (variantData.length > 0) {
+    if (objProduct != null && objProduct != undefined) {
+      if (objProduct.length > 0) {
 
-        // gstPrice = Math.floor(((variantData[0].conversionrate *  ((variantData[0].price +2 ) * 1.0825 )  + (variantData[0].frieghtrate)) * (1 + variantData[0].duty)) * (1/(1-((variantData[0].taxes / (1 + (variantData[0].taxes)))+(variantData[0].fees / (1 + (variantData[0].fees)))+(variantData[0].margin / (1 + (variantData[0].margin)))))),-1) - Math.floor(((variantData[0].conversionrate *  ((variantData[0].price +2 ) * 1.0825 )  + (variantData[0].frieghtrate)) * (1 + variantData[0].duty)) * (1/(1-((variantData[0].fees / (1 + (variantData[0].fees)))+(variantData[0].margin / (1 + (variantData[0].margin)))))),-1);
-        // gstPrice = Math.floor(((variantData[0].conversionrate * ((variantData[0].price +2 ) * 1.0825 )  + (variantData[0].frieghtrate)) * (1 + variantData[0].duty)) * (1/(1-((variantData[0].fees / (1 + (variantData[0].fees)))+(variantData[0].margin / (1 + (variantData[0].margin))))))  *  variantData[0].taxes ,0)
-        if (variantData[0].amazonprice != undefined) {
+        // gstPrice = Math.floor(((objProduct.variants[0].conversionrate *  ((objProduct.variants[0].price +2 ) * 1.0825 )  + (objProduct.variants[0].frieghtrate)) * (1 + objProduct.variants[0].duty)) * (1/(1-((objProduct.variants[0].taxes / (1 + (objProduct.variants[0].taxes)))+(objProduct.variants[0].fees / (1 + (objProduct.variants[0].fees)))+(objProduct.variants[0].margin / (1 + (objProduct.variants[0].margin)))))),-1) - Math.floor(((objProduct.variants[0].conversionrate *  ((objProduct.variants[0].price +2 ) * 1.0825 )  + (objProduct.variants[0].frieghtrate)) * (1 + objProduct.variants[0].duty)) * (1/(1-((objProduct.variants[0].fees / (1 + (objProduct.variants[0].fees)))+(objProduct.variants[0].margin / (1 + (objProduct.variants[0].margin)))))),-1);
+        // gstPrice = Math.floor(((objProduct.variants[0].conversionrate * ((objProduct.variants[0].price +2 ) * 1.0825 )  + (objProduct.variants[0].frieghtrate)) * (1 + objProduct.variants[0].duty)) * (1/(1-((objProduct.variants[0].fees / (1 + (objProduct.variants[0].fees)))+(objProduct.variants[0].margin / (1 + (objProduct.variants[0].margin))))))  *  objProduct.variants[0].taxes ,0)
+        if (objProduct.variants[0].amazonprice != undefined) {
           
-          if (variantData[0].overrideprice == 0) {
-            if (variantData[0].frieghtrate.length == undefined) {
-            gstPrice = Math.floor(((variantData[0].conversionrate * ((variantData[0].amazonprice + variantData[0].pwfee) * (1 + (variantData[0].purchasetax / 100))) + (variantData[0].frieghtrate)) * (1 + variantData[0].duty)) * (1 / (1 - ((variantData[0].fees / (1 + (variantData[0].fees))) + (variantData[0].margin / (1 + (variantData[0].margin)))))) * variantData[0].taxes, 0)
+          if (objProduct.variants[0].overrideprice == 0) {
+            if (objProduct.variants[0].frieghtrate.length == undefined) {
+            gstPrice = Math.floor(((objProduct.variants[0].conversionrate * ((objProduct.variants[0].amazonprice + objProduct.variants[0].pwfee) * (1 + (objProduct.variants[0].purchasetax / 100))) + (objProduct.variants[0].frieghtrate)) * (1 + objProduct.variants[0].duty)) * (1 / (1 - ((objProduct.variants[0].fees / (1 + (objProduct.variants[0].fees))) + (objProduct.variants[0].margin / (1 + (objProduct.variants[0].margin)))))) * objProduct.variants[0].taxes, 0)
           }
           else {
-            gstPrice = Math.floor(((variantData[0].conversionrate * ((variantData[0].amazonprice + variantData[0].pwfee) * (1 + (variantData[0].purchasetax / 100))) + (variantData[0].frieghtrate[0])) * (1 + variantData[0].duty)) * (1 / (1 - ((variantData[0].fees / (1 + (variantData[0].fees))) + (variantData[0].margin / (1 + (variantData[0].margin)))))) * variantData[0].taxes, 0)
+            gstPrice = Math.floor(((objProduct.variants[0].conversionrate * ((objProduct.variants[0].amazonprice + objProduct.variants[0].pwfee) * (1 + (objProduct.variants[0].purchasetax / 100))) + (objProduct.variants[0].frieghtrate[0])) * (1 + objProduct.variants[0].duty)) * (1 / (1 - ((objProduct.variants[0].fees / (1 + (objProduct.variants[0].fees))) + (objProduct.variants[0].margin / (1 + (objProduct.variants[0].margin)))))) * objProduct.variants[0].taxes, 0)
           }
         }else{
-          if(variantData[0].isoverdcalculated==0){
+          if(objProduct.variants[0].isoverdcalculated==0){
             gstPrice = 0
           }
           else
           {
-            if (variantData[0].frieghtrate.length == undefined) {
-              gstPrice = Math.floor(((variantData[0].conversionrate * ((variantData[0].overrideprice + variantData[0].pwfee) * (1 + (variantData[0].purchasetax / 100))) + (variantData[0].frieghtrate)) * (1 + variantData[0].duty)) * (1 / (1 - ((variantData[0].fees / (1 + (variantData[0].fees))) + (variantData[0].margin / (1 + (variantData[0].margin)))))) * variantData[0].taxes, 0)
+            if (objProduct.variants[0].frieghtrate.length == undefined) {
+              gstPrice = Math.floor(((objProduct.variants[0].conversionrate * ((objProduct.variants[0].overrideprice + objProduct.variants[0].pwfee) * (1 + (objProduct.variants[0].purchasetax / 100))) + (objProduct.variants[0].frieghtrate)) * (1 + objProduct.variants[0].duty)) * (1 / (1 - ((objProduct.variants[0].fees / (1 + (objProduct.variants[0].fees))) + (objProduct.variants[0].margin / (1 + (objProduct.variants[0].margin)))))) * objProduct.variants[0].taxes, 0)
             }
             else {
-              gstPrice = Math.floor(((variantData[0].conversionrate * ((variantData[0].overrideprice + variantData[0].pwfee) * (1 + (variantData[0].purchasetax / 100))) + (variantData[0].frieghtrate[0])) * (1 + variantData[0].duty)) * (1 / (1 - ((variantData[0].fees / (1 + (variantData[0].fees))) + (variantData[0].margin / (1 + (variantData[0].margin)))))) * variantData[0].taxes, 0)
+              gstPrice = Math.floor(((objProduct.variants[0].conversionrate * ((objProduct.variants[0].overrideprice + objProduct.variants[0].pwfee) * (1 + (objProduct.variants[0].purchasetax / 100))) + (objProduct.variants[0].frieghtrate[0])) * (1 + objProduct.variants[0].duty)) * (1 / (1 - ((objProduct.variants[0].fees / (1 + (objProduct.variants[0].fees))) + (objProduct.variants[0].margin / (1 + (objProduct.variants[0].margin)))))) * objProduct.variants[0].taxes, 0)
             }
         }
         }
 
         }
         else {
-          if (variantData[0].overrideprice == 0) {
-            if (variantData[0].frieghtrate.length == undefined) {
-              gstPrice = Math.floor(((variantData[0].conversionrate * ((variantData[0].price + variantData[0].pwfee) * (1 + (variantData[0].purchasetax / 100))) + (variantData[0].frieghtrate)) * (1 + variantData[0].duty)) * (1 / (1 - ((variantData[0].fees / (1 + (variantData[0].fees))) + (variantData[0].margin / (1 + (variantData[0].margin)))))) * variantData[0].taxes, 0)
+          if (objProduct.variants[0].overrideprice == 0) {
+            if (objProduct.variants[0].frieghtrate.length == undefined) {
+              gstPrice = Math.floor(((objProduct.variants[0].conversionrate * ((objProduct.variants[0].price + objProduct.variants[0].pwfee) * (1 + (objProduct.variants[0].purchasetax / 100))) + (objProduct.variants[0].frieghtrate)) * (1 + objProduct.variants[0].duty)) * (1 / (1 - ((objProduct.variants[0].fees / (1 + (objProduct.variants[0].fees))) + (objProduct.variants[0].margin / (1 + (objProduct.variants[0].margin)))))) * objProduct.variants[0].taxes, 0)
             }
             else {
-              gstPrice = Math.floor(((variantData[0].conversionrate * ((variantData[0].price + variantData[0].pwfee) * (1 + (variantData[0].purchasetax / 100))) + (variantData[0].frieghtrate[0])) * (1 + variantData[0].duty)) * (1 / (1 - ((variantData[0].fees / (1 + (variantData[0].fees))) + (variantData[0].margin / (1 + (variantData[0].margin)))))) * variantData[0].taxes, 0)
+              gstPrice = Math.floor(((objProduct.variants[0].conversionrate * ((objProduct.variants[0].price + objProduct.variants[0].pwfee) * (1 + (objProduct.variants[0].purchasetax / 100))) + (objProduct.variants[0].frieghtrate[0])) * (1 + objProduct.variants[0].duty)) * (1 / (1 - ((objProduct.variants[0].fees / (1 + (objProduct.variants[0].fees))) + (objProduct.variants[0].margin / (1 + (objProduct.variants[0].margin)))))) * objProduct.variants[0].taxes, 0)
             }
 
           }
           else
           {
-            if(variantData[0].isoverdcalculated==0){
+            if(objProduct.variants[0].isoverdcalculated==0){
               gstPrice = 0
             }
             else
             {
-              if (variantData[0].frieghtrate.length == undefined) {
-                gstPrice = Math.floor(((variantData[0].conversionrate * ((variantData[0].overrideprice + variantData[0].pwfee) * (1 + (variantData[0].purchasetax / 100))) + (variantData[0].frieghtrate)) * (1 + variantData[0].duty)) * (1 / (1 - ((variantData[0].fees / (1 + (variantData[0].fees))) + (variantData[0].margin / (1 + (variantData[0].margin)))))) * variantData[0].taxes, 0)
+              if (objProduct.variants[0].frieghtrate.length == undefined) {
+                gstPrice = Math.floor(((objProduct.variants[0].conversionrate * ((objProduct.variants[0].overrideprice + objProduct.variants[0].pwfee) * (1 + (objProduct.variants[0].purchasetax / 100))) + (objProduct.variants[0].frieghtrate)) * (1 + objProduct.variants[0].duty)) * (1 / (1 - ((objProduct.variants[0].fees / (1 + (objProduct.variants[0].fees))) + (objProduct.variants[0].margin / (1 + (objProduct.variants[0].margin)))))) * objProduct.variants[0].taxes, 0)
               }
               else {
-                gstPrice = Math.floor(((variantData[0].conversionrate * ((variantData[0].overrideprice + variantData[0].pwfee) * (1 + (variantData[0].purchasetax / 100))) + (variantData[0].frieghtrate[0])) * (1 + variantData[0].duty)) * (1 / (1 - ((variantData[0].fees / (1 + (variantData[0].fees))) + (variantData[0].margin / (1 + (variantData[0].margin)))))) * variantData[0].taxes, 0)
+                gstPrice = Math.floor(((objProduct.variants[0].conversionrate * ((objProduct.variants[0].overrideprice + objProduct.variants[0].pwfee) * (1 + (objProduct.variants[0].purchasetax / 100))) + (objProduct.variants[0].frieghtrate[0])) * (1 + objProduct.variants[0].duty)) * (1 / (1 - ((objProduct.variants[0].fees / (1 + (objProduct.variants[0].fees))) + (objProduct.variants[0].margin / (1 + (objProduct.variants[0].margin)))))) * objProduct.variants[0].taxes, 0)
               }    
           }
           }
@@ -277,16 +247,21 @@ const CartProvider = (props) => {
   }
 
 
-  const withDiscount = (variantData) => {
+  const withDiscount = (objProduct) => {
 
-    var totalPrice = withTax(variantData);
-    console.log(totalPrice);
+    var totalPrice = withTax(objProduct);
     var finalPrice = 0;
-    if (totalPrice > 0) {
-      var discount = discountCalculation(variantData);
-      finalPrice = (totalPrice * (1 - discount / 100)).toFixed(2);
-    }
 
+    if (objProduct.variants[0].isoverdcalculated == 0 && objProduct.fromcountry == country) {
+      finalPrice = totalPrice;
+    }
+    else
+    {
+      if (totalPrice > 0 ) {
+        var discount = discountCalculation(objProduct);
+        finalPrice = (totalPrice * (1 - discount / 100)).toFixed(2);
+      }
+    }
     return finalPrice;
   }
 
@@ -316,13 +291,13 @@ const CartProvider = (props) => {
   }
 
 
-  const withDiscountWithQty = (variantData, qty) => {
+  const withDiscountWithQty = (objProduct, qty) => {
 
     try {
       var finalPrice = 0;
-      var totalPrice = withTax(variantData);
+      var totalPrice = withTax(objProduct);
       if (totalPrice > 0) {
-        var discount = discountCalculation(variantData);
+        var discount = discountCalculation(objProduct);
         finalPrice = parseFloat(((totalPrice * (1 - discount / 100)) * qty).toFixed(2));
       }
     }
@@ -334,12 +309,20 @@ const CartProvider = (props) => {
     return finalPrice;
   }
 
-  const withTax = (variantData) => {
+  const withTax = (objProduct) => {
 
     var totalPrice = 0;
-    var sellprice = priceCollection(variantData);
+    var sellprice = priceCollection(objProduct);
+    var tax = 0;
 
-    var tax = gstCollection(variantData);
+    if (objProduct.variants[0].isoverdcalculated == 0 && objProduct.fromcountry == country) {
+      tax = 0;
+    }
+    else
+    {
+      tax = gstCollection(objProduct);
+    }
+    
     if (sellprice) {
       totalPrice = (sellprice + tax).toFixed(2);
     }
@@ -348,12 +331,12 @@ const CartProvider = (props) => {
   }
 
 
-  const discountCalculation = (variantData) => {
+  const discountCalculation = (objProduct) => {
     var discount = null;
     // CommonFun.publicMethod();
-    if (variantData != null && variantData != undefined) {
-      if (variantData.length > 0) {
-        discount = variantData[0].discount;
+    if (objProduct != null && objProduct != undefined) {
+      if (objProduct.length > 0) {
+        discount = objProduct.variants[0].discount;
       }
       else {
         discount = 0;
@@ -365,16 +348,16 @@ const CartProvider = (props) => {
   // Update Product Quantity
   const updateQty = (item, quantity) => {
 
-    if (withDiscount(item.variants) > 0) {
+    if (withDiscount(item) > 0) {
       if (quantity >= 1) {
         if (quantity <= item.variants[0].quantity) {
           const index = cartItems.findIndex(itm => itm.id === item.id)
           if (index !== -1) {
             const product = cartItems[index];
-            setCartItems([{ ...product, ...item, qty: quantity, total: (withDiscount(item.variants)) * quantity }])
+            setCartItems([{ ...product, ...item, qty: quantity, total: (withDiscount(item)) * quantity }])
             // toast.info("Product Quantity Updated !");
           } else {
-            const product = { ...item, qty: quantity, total: (withDiscount(item.variants)) * quantity }
+            const product = { ...item, qty: quantity, total: (withDiscount(item)) * quantity }
             setCartItems([...cartItems, product])
           }
         }
