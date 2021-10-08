@@ -12,7 +12,7 @@ import {
 
 const faqData = [
   {
-    qus: "RETURNS & REFUNDS",
+    qus: "REFUND POLICY",
     ans: [
       {
         Header: "RETURNS",

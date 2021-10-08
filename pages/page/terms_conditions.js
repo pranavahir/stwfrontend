@@ -12,7 +12,7 @@ import {
 
 const termsData = [
   {
-    qus: "Terms Conditions",
+    qus: "Billing Terms & Conditions",
     ans: [
       {
         Header: "Terms and Conditions of Use",
