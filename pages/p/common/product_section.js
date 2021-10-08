@@ -92,7 +92,7 @@ const ProductSection = ({ pathId, type }) => {
             
             pathId = pathId.toUpperCase();
             
-            if(pathId.search("-")==0)
+            if(pathId.search("-")== -1)
             {
                 asinData =  pathId
             }
