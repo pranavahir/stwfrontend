@@ -123,7 +123,7 @@ const termsData = [
             point: "These Terms and Conditions of Use, including our Privacy Policy, constitute the entire agreement between you and STW regarding the Website and supersedes any and all other terms, representations, promises or discussions. Only STW has the authority to agree to amendments to these Terms and Conditions of Use, and to be and be considered binding, any amendments must be in writing and executed by STW.",
           },
           {
-            point:"Questions or comments regarding this Website, including reports of non-functioning links, should be submitted using our contact us form or via U.S. mail to: "  +"\n \n" + " Haylie Pomroy Group, Inc. \n  351 Linden St. #160 \n Fort Collins, CO 80524 \n United States \n info@hayliepomroy.com ",
+            point:"Questions or comments regarding this Website, including reports of non-functioning links, should be submitted using our contact us form or mail to: "  +"\n \n" + " care@shoptheworldonline.com ",
           }
         ],
       },

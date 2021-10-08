@@ -177,9 +177,9 @@ const allSmall = {
                                 </div>
                                 <div className="footer-contant">
                                     <ul>
-                                        <li><a href={`${geoLocation}/page/returns-refund`}>Returns & Refunds</a></li>
+                                        <li><a href={`${geoLocation}/page/returns-refund`}>Refund Policy</a></li>
                                         <li><a href="#">Wholesale</a></li>
-                                        <li><a href={`${geoLocation}/page/terms_conditions`}> Terms & Conditions</a></li>
+                                        <li><a href={`${geoLocation}/page/terms_conditions`}> Billing Terms & Conditions</a></li>
                                         <li><a href={`${geoLocation}/page/privacy_policy`}>Privacy Policy</a></li>
                                         <li>
                                         <Link href={`${geoLocation}/page/account/contact`} >
@@ -193,7 +193,7 @@ const allSmall = {
                         <Col>
                             <div className="sub-title">
                                 <div className="footer-title">
-                                    <h4>store information</h4>
+                                    <h4>Contact Information</h4>
                                 </div>
                                 <div className="footer-contant">
                                     <ul className="contact-list">
