@@ -99,12 +99,12 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
         
         var result ="NoCompare"; 
         console.log(objProduct.fromcountry);
-        if(objProduct.fromcountry == country && objProduct.variants[0].amazonprice > 0)
+        if(objProduct.fromcountry == country && objProduct.variants[0].amazonprice > 0 && (objProduct.variants[0].amazonprice > withDiscount(objProduct)))
         {
             result = "SameCountry";
         }
             
-            else if(objProduct.variants[0].tcap > 0 && objProduct.fromcountry != country)
+            else if(objProduct.variants[0].tcap > 0 && objProduct.fromcountry != country && (country=="India" || country=="USA"))
             {
                 if(objProduct.variants[0].tcap > withDiscount(objProduct))
                     result = "OtherCountry";
