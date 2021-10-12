@@ -203,7 +203,7 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
                         </div>
 
                         :  
-                        product.variants[0].tcap > 0 ?
+                        (ShowComparePricing(product) == "OtherCountry") ?
                         <div>
                         <div><p class="card-price"><div><h2 style={titleSize} class="tagPrice">   Others : <strike> {leftSymbol}{numberWithCommas((product.variants[0].tcap).toFixed(2))}{rightSymbol} </strike></h2></div></p><br/></div>
                         <p class="card-price-STW card-price-STW-margin"><div><h2 style={titleSize} class="tagPrice_STW"> Our Price : {leftSymbol}{numberWithCommas(Math.floor(withDiscount(product)).toFixed(2))}{rightSymbol} &nbsp; &nbsp; &nbsp; &nbsp; </h2></div></p>
