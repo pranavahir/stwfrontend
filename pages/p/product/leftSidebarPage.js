@@ -61,6 +61,7 @@ query($productAsin: String!, $productType: String!, $productCountry: String!, $p
           pwfee
           daystoship
           pwfee
+          tcap
           color
           conversionrate
           discount

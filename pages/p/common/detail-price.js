@@ -97,9 +97,18 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
 
      const ShowComparePricing = (objProduct)=>{
         
-        var result =false; 
+        var result ="NoCompare"; 
+        console.log(objProduct.fromcountry);
         if(objProduct.fromcountry == country && objProduct.variants[0].amazonprice > 0)
-            result = true;
+        {
+            result = "SameCountry";
+        }
+            
+            else if(objProduct.variants[0].tcap > 0 && objProduct.fromcountry != country)
+            {
+                if(objProduct.variants[0].tcap > withDiscount(objProduct))
+                    result = "OtherCountry";
+            }
 
         // if(objProduct.fromcountry != country)
         // {
@@ -186,14 +195,23 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
                 {product.variants.length && product.variants[0].daystoship ?<h6 style={smallobj} >Shipping in {product.variants[0].daystoship} days.</h6>:""} 
                 {discountCalculation (product)?<h4><del>{leftSymbol}{((priceCollection (product) * 1)+gstCollection (product)).toFixed(2)}{rightSymbol}</del>
                     <span>{discountCalculation (product)}% off</span></h4>:""}
-                {(ShowComparePricing(product)) ? 
+                {(ShowComparePricing(product) == "SameCountry") ? 
                         <div>
                         <div><p class="card-price"><div><h2 style={titleSize} class="tagPrice">   Others : {product.fromcountry != country ? <strike> {leftSymbol}{numberWithCommas((amazonPriceCalculation (product)).toFixed(2))}{rightSymbol} </strike>:<strike> {leftSymbol}{numberWithCommas((product.variants[0].amazonprice).toFixed(2))}{rightSymbol} </strike>}</h2></div></p><br/></div>
                         <p class="card-price-STW card-price-STW-margin"><div><h2 style={titleSize} class="tagPrice_STW"> Our Price : {leftSymbol}{numberWithCommas(Math.floor(withDiscount(product)).toFixed(2))}{rightSymbol} &nbsp; &nbsp; &nbsp; &nbsp; </h2></div></p>
                         <h5 className="keyPointsStyle priceTagDetail"> You save {leftSymbol}{numberWithCommas(Math.abs(Math.floor(withDiscount(product)).toFixed(2) - (product.variants[0].amazonprice*1)).toFixed(2))}{rightSymbol} extra over Others</h5>
                         </div>
 
-                        :  <p class="card-price-STW card-price-STW-margin1"><div><h2 style={titleSize} class="tagPrice_STW"> Our Price : {leftSymbol}{numberWithCommas(Math.floor(withDiscount(product)).toFixed(2))}{rightSymbol}</h2></div></p>} </div>  
+                        :  
+                        product.variants[0].tcap > 0 ?
+                        <div>
+                        <div><p class="card-price"><div><h2 style={titleSize} class="tagPrice">   Others : <strike> {leftSymbol}{numberWithCommas((product.variants[0].tcap).toFixed(2))}{rightSymbol} </strike></h2></div></p><br/></div>
+                        <p class="card-price-STW card-price-STW-margin"><div><h2 style={titleSize} class="tagPrice_STW"> Our Price : {leftSymbol}{numberWithCommas(Math.floor(withDiscount(product)).toFixed(2))}{rightSymbol} &nbsp; &nbsp; &nbsp; &nbsp; </h2></div></p>
+                        <h5 className="keyPointsStyle priceTagDetail"> You save {leftSymbol}{numberWithCommas(Math.abs(Math.floor(withDiscount(product)).toFixed(2) - (product.variants[0].tcap*1)).toFixed(2))}{rightSymbol} extra over Others</h5>
+                        </div>: <p class="card-price-STW card-price-STW-margin1"><div><h2 style={titleSize} class="tagPrice_STW"> Our Price : {leftSymbol}{numberWithCommas(Math.floor(withDiscount(product)).toFixed(2))}{rightSymbol}</h2></div></p>} 
+
+                        {/*  */}
+                        </div>  
                         :""}
                         <div className="productKeyPoint">
 

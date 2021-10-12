@@ -6,10 +6,10 @@ const nextConfig = {
   env: {
   // API_URL: "http://localhost:4000/graphql"  //local stwapi
   //API_URL: "http://162.0.210.5:4457api/graphql"  //local stwapi
-  // API_URL: "https://test.digitechniq.in/graphql"  //local stwapi
+  API_URL: "https://test.digitechniq.in/graphql"  //local stwapi
   // 
   //API_URL: "https://cryptic-mountain-48315.herokuapp.com/api/graphql"  //Test env
-  API_URL:'https://stwecommerceapi.digitechniq.in/graphql', //production env
+  // API_URL:'https://stwecommerceapi.digitechniq.in/graphql', //production env
   // API_URL:'https://docker.digitechniq.in/api/graphql', //production env
   // docker.digitechniq.in
 
