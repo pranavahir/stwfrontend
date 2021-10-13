@@ -3716,7 +3716,7 @@ header {
         text-transform: uppercase;
         writing-mode: vertical-rl;
         transform: rotate(-180deg);
-        top: 7px;
+        top: 0px;
         right: 7px;
         letter-spacing: 0.1em;
       }
@@ -3764,7 +3764,7 @@ header {
     }
 
     &.cart-wrap {
-      bottom: 0;
+      bottom: -12px;
       text-align: right;
       left: unset;
 
