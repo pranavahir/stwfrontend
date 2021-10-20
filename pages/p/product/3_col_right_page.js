@@ -96,7 +96,6 @@ const GET_SINGLE_PRODUCTS = gql`
                 margin
             price 
       }
-
         }
     }
 `;

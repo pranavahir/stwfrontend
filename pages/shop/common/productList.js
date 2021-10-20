@@ -103,7 +103,8 @@ const CREATE_AVAILABLITY_NOTIFICATION = gql` mutation($country: String, $date: S
   }`
 
 const ProductList = ({ colClass, type, parentCategory, layoutList, openSidebar, noSidebar, pathId }) => {
-
+    console.log(type,"TYPE")
+    console.log(pathId,"PATH")
     const cartContext = useContext(CartContext);
     const quantity = cartContext.quantity;
     const wishlistContext = useContext(WishlistContext);

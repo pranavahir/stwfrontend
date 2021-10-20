@@ -21,8 +21,8 @@ import { useAmp } from 'next/amp'
 
 // import * as ga from '../pages/lib/ga'
 const client = new ApolloClient({
-      uri: "https://test.digitechniq.in/graphql"  //local stwapi
-    // uri: "http://localhost:4000/graphql"  //local stwapi
+      // uri: "https://test.digitechniq.in/graphql"  //local stwapi
+    uri: "http://localhost:4000/graphql"  //local stwapi
     // uri: "https://test.digitechniq.in/graphql" //local stwapi
     // http://162.0.210.5:4458/
     // uri: "http://162.0.210.5:4457/api/graphql"  //local stwapi

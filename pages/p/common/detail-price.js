@@ -8,11 +8,56 @@ import CartContext from '../../../helpers/cart';
 import CountdownComponent from '../../../components/common/widgets/countdownComponent';
 import {FacebookShareButton,WhatsappShareButton,TwitterShareButton,TelegramShareButton,EmailShareButton, TwitterIcon, FacebookIcon, WhatsappIcon, TelegramIcon, EmailIcon} from 'react-share'
 import classes from "../../../components/headers/Header-one.module.css";
-
+import gql from 'graphql-tag'
+import {useQuery} from '@apollo/react-hooks'
+import { Rating } from 'react-simple-star-rating'
 // import { CommonFun } from '../../../components/Utility/PriceCalculator';
-
+const GET_REVIEWS = gql`
+query($asin: String, $page: Int){
+    getAmazonReviews(asin: $asin,page: $page){
+      hasMore {
+        seqid
+      }
+      total_ratings
+      stars_stats {
+        onestar
+        twostar
+        threestar
+        fourstar
+        fivestar
+      }
+      result {
+        asin {
+          original
+          variant
+        }
+        date {
+          date
+          unix
+        }
+        id
+        name
+        rating
+        review
+        review_data
+        title
+        verified_purchase
+      }
+    }
+  }
+`
 const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
-
+    // console.log(item,"ITEMSS")
+    const {loading,data,error} =  useQuery(GET_REVIEWS,{
+        variables:{
+            asin: item.asin,
+            page: 1
+        }
+    })
+    // console.log(data,"Reviewssss")
+    
+    const RatingCalculator = data !== undefined?(5 * (data.getAmazonReviews.total_ratings * parseFloat(data.getAmazonReviews.stars_stats.fivestar)/100 ) + 4 * (data.getAmazonReviews.total_ratings * parseFloat(data.getAmazonReviews.stars_stats.fourstar)/100 ) + 3 * (data.getAmazonReviews.total_ratings * parseFloat(data.getAmazonReviews.stars_stats.threestar)/100 ) + 2 * (data.getAmazonReviews.total_ratings * parseFloat(data.getAmazonReviews.stars_stats.twostar)/100 ) + 1 * (data.getAmazonReviews.total_ratings * parseFloat(data.getAmazonReviews.stars_stats.onestar)/100 ))/ data.getAmazonReviews.total_ratings:0
+    // console.log(RatingCalculator)
     const [modal, setModal] = useState(false);
     const CurContect = useContext(CurrencyContext);
     const symbol = CurContect.state.symbol
@@ -98,7 +143,7 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
      const ShowComparePricing = (objProduct)=>{
         
         var result ="NoCompare"; 
-        console.log(objProduct.fromcountry);
+        // console.log(objProduct.fromcountry);
         if(objProduct.fromcountry == country && objProduct.variants[0].amazonprice > 0 && (objProduct.variants[0].amazonprice > withDiscount(objProduct)))
         {
             result = "SameCountry";
@@ -161,10 +206,20 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
           }
     }
     let RatingStars = []
-    let rating = 5;
-    for (var i = 0; i < rating; i++) {
-        RatingStars.push(<i className="fa fa-star" key={i}></i>)
-    }
+    let rating = RatingCalculator * 2;
+    // for (var i = 0; i <= rating; i++) {
+    //     RatingStars.push(<i className="fa fa-star" key={i}></i>)
+    // }
+    for (let i = 0; i < 10; i++) {
+        let klass = "fa-star-half-o";
+        if (rating >= i && rating !== null) {
+          klass = "fa fa-star";
+        }
+        RatingStars.push(
+            <i className={klass} key={i}></i>
+        );
+      }
+    // console.log(RatingStars)
     const descriptionFormation=(description)=>{
         var str = description;
         var res =null;
@@ -186,8 +241,9 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
                 <h1 style={titleSize} > {product.title} </h1>
                 <Link href={`/brand/${product.brandname}`}><h4 style={objbrand}> {product.brandname} </h4></Link>
                 <h5><div className="rating">
-                        {RatingStars}
-                    </div> 4 Stars | <a href="javascript:void(Tawk_API.toggle())"> Ask Questions</a></h5>
+                        {/* {RatingStars} */}
+                        {<Rating  ratingValue={Math.floor(RatingCalculator)}  />}
+                    </div> {RatingCalculator.toString().substring(0, 3)} Stars | <a href="javascript:void(Tawk_API.toggle())"> Ask Questions</a></h5>
                 {/* <h4> {product.categoryvalue} </h4> parseFloat(Math.floor(withDiscount(product)).toFixed(2)).toLocaleString('en') */}
                 {/* <h2 style={titleSize}>Your Price : {leftSymbol}{numberWithCommas(Math.floor(withDiscount(product)).toFixed(2))}{rightSymbol} </h2> */}
               {withDiscount(product) > 0 ? 
@@ -320,9 +376,8 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
                                                     })} 
                                                 </ul>
                                             </div> : ''}
-                </div>
-
-
+                </div>                               
+                    
                 <div className="border-product">
                     <h6 className="product-title">share it</h6>
                     <div className="product-icon">

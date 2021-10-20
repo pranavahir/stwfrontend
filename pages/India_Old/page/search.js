@@ -16,7 +16,7 @@ const Search = () => {
                                     <form className="form-header">
                                         <div className="input-group">
                                             <Input type="text" className="form-control" aria-label="Amount (to the nearest dollar)"
-                                                placeholder="Search Products......" />
+                                                placeholder="Search Anything" />
                                             <div className="input-group-append">
                                                 <button className="btn btn-solid"><i className="fa fa-search"></i>Search</button>
                                             </div>

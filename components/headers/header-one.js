@@ -15,6 +15,70 @@ import Currency from "./common/currency";
 import { useRouter } from "next/router";
 import classes from "./Header-one.module.css";
 import Link from "next/link";
+// import Dropdown from 'react-dropdown';
+// import 'react-dropdown/style.css';
+import Dropdown from "react-dropdown";
+import "react-dropdown/style.css";
+const options = [
+  { name:'',value:'All'},
+  { name: "Electronics", value: "Electronics" },
+  { name: "Fashion", value: "Fashion" },
+  { name: "Amazon Devices & Accessories", value: 'Amazon Devices & Accessories' },
+  { name: 'Automotive', value: 'Automotive' },
+  { name: 'Apps & Games', value: 'Apps & Games' },
+  { name: 'Arts, Crafts & Sewing', value: 'Arts, Crafts & Sewing' },
+  { name:  'Baby', value:  'Baby' },
+  { name: 'Baby Products', value: 'Baby Products' },
+  { name: 'Bags, Wallets and Luggage', value: 'Bags, Wallets and Luggage' },
+  { name: 'Beauty', value: 'Beauty' },
+  { name: 'Beauty & Personal Care', value: 'Beauty & Personal Care' },
+  { name: 'Books', value: 'Books' },
+  { name: 'CDs & Vinyl', value: 'CDs & Vinyl' },
+  { name: 'Car & Motorbike', value: 'Car & Motorbike' },
+  { name: 'Cell Phones & Accessories', value: 'Cell Phones & Accessories' },
+  { name: 'Clothing & Accessories', value: 'Clothing & Accessories' },
+  { name: 'Clothing, Shoes & Jewelry', value: 'Clothing, Shoes & Jewelry' },
+  { name: 'Collectibles & Fine Art', value: 'Collectibles & Fine Art' },
+  { name: 'Computers & Accessories', value: 'Computers & Accessories' },
+  { name: 'Electronics', value: 'Electronics' },
+  { name: 'Everything Else', value: 'Everything Else' },
+  { name: 'Furniture', value: 'Furniture' },
+  { name: 'Gift', value: 'Gift' },
+  { name: 'Gift Cards', value: 'Gift Cards' },
+  { name: 'Grocery & Gourmet Food', value: 'Grocery & Gourmet Food' },
+  { name: 'Grocery & Gourmet Foods', value: 'Grocery & Gourmet Foods' },
+  { name: 'Handmade Products', value: 'Handmade Products' },
+  { name: 'Health & Household', value: 'Health & Household' },
+  { name: 'Health & Personal Care', value: 'Health & Personal Care' },
+  { name: 'Home & Kitchen', value: 'Home & Kitchen' },
+  { name: 'Home Improvement', value: 'Home Improvement' },
+  { name: 'Industrial & Scientific', value: 'Industrial & Scientific' },
+  { name: 'Jewelery', value: 'Jewelery' },
+  { name: 'Jewellery', value: 'Jewellery' },
+  { name: 'Jewelry', value: 'Jewelry' },
+  { name: 'Kindle Store', value: 'Kindle Store' },
+  { name: 'Movies & TV', value: 'Movies & TV' },
+  { name: 'Movies & TV Shows', value: 'Movies & TV Shows' },
+  { name: 'Music', value: 'Music' },
+  { name: 'Musical Instruments', value: 'Musical Instruments' },
+  { name: 'Office Products', value: 'Office Products' },
+  { name:'Outdoor Living', value:'Outdoor Living' },
+  { name: 'PC Accessory', value: 'PC Accessory' },
+  { name: 'Patio, Lawn & Garden', value: 'Patio, Lawn & Garden' },
+  { name: 'Pet Supplies', value: 'Pet Supplies' },
+  { name: 'Purchase Circles', value: 'Purchase Circles' },
+  { name: 'Shoes & Handbags', value: 'Shoes & Handbags' },
+  { name: 'Software', value: 'Software' },
+  { name: 'Spine', value: 'Spine' },
+  { name: 'Sports & Outdoors', value: 'Sports & Outdoors' },
+  { name: 'Sports, Fitness & Outdoors', value: 'Sports, Fitness & Outdoors' },
+  { name: 'Tools & Home Improvement', value: 'Tools & Home Improvement' },
+  { name: 'Toys & Games', value: 'Toys & Games' },
+  { name: 'Video Games', value: 'Video Games' },
+  { name: 'Watches', value: 'Watches' }
+];
+const defaultOption = options[0];
+
 const HeaderOne = ({
   logoName,
   headerClass,
@@ -36,9 +100,12 @@ const HeaderOne = ({
   const selectedSize = filterContext.selectedSize;
   const [url, setUrl] = useState();
   const [searchKeyword, setSearchKeyword] = useState("");
-  var gLocation = sessionStorage.getItem('geoLocation')
-    if(gLocation==null){gLocation=""}
-    const [geoLocation, setgeoLocation] = useState(gLocation);
+  const [categoryvalue, setCategoryValue] = useState("");
+  var gLocation = sessionStorage.getItem("geoLocation");
+  if (gLocation == null) {
+    gLocation = "";
+  }
+  const [geoLocation, setgeoLocation] = useState(gLocation);
   /*=====================
 		 Pre loader
 		 ==========================*/
@@ -56,17 +123,17 @@ const HeaderOne = ({
     };
   }, []);
 
-  const searchInputChange =(e)=>{
-    if (
-      e.target.value != null &&
-      e.target.value != undefined  
-    ) {
+  const searchInputChange = (e) => {
+    if (e.target.value != null && e.target.value != undefined) {
       setSearchKeyword(e.target.value);
-      console.log(searchKeyword)
+      console.log(searchKeyword);
     }
-  }
-
-
+  };
+  const changeDropdownHandler = (event) => {
+    // console.log(event.value)
+    setCategoryValue(event.value);
+    console.log(categoryvalue);
+  };
 
   const onSubmit = (data, e) => {
     if (
@@ -80,11 +147,9 @@ const HeaderOne = ({
         var URL = pathname;
       } else {
         var URL = geoLocation + "/s/";
-        if(geoLocation==null)
-        {
+        if (geoLocation == null) {
           URL = "/s/";
         }
-
       }
 
       filterContext.setselectedKeyword(e.target[0].value);
@@ -188,11 +253,18 @@ const HeaderOne = ({
                             <Container>
                               <Row>
                                 <Col lg="12">
-                                  <form
-                                    className="form-header"
-                                    
-                                  >
+                                  <form className="form-header">
                                     <div className="input-group">
+                                      {/*IMP*/}
+                                      <Dropdown
+                                      // className="form-control"
+                                        type="text"
+                                        options={options}
+                                        value={defaultOption}
+                                        onChange={changeDropdownHandler}
+                                        placeholderClassName="Dropdown-placeholder"
+                                        name="categoryvalue"
+                                      />
                                       <Input
                                         type="text"
                                         className="form-control"
@@ -201,10 +273,18 @@ const HeaderOne = ({
                                         name="keyword"
                                         onChange={searchInputChange}
                                       />
-                                       <Link href={`/s/${searchKeyword}`}>
-                                      <div className="input-group-append">
-                                        <button className="btn btn-solid"> <i className="fa fa-search"></i>Search </button>
-                                      </div>
+                                      <Link
+                                        href={`/s/${
+                                          searchKeyword + " " + (categoryvalue !== 'All'? categoryvalue:'')
+                                        }`}
+                                      >
+                                        <div className="input-group-append">
+                                          <button className="btn btn-solid">
+                                            {" "}
+                                            <i className="fa fa-search"></i>
+                                            Search{" "}
+                                          </button>
+                                        </div>
                                       </Link>
                                     </div>
                                   </form>
@@ -273,41 +353,40 @@ const HeaderOne = ({
                 "onhover-div mobile-search " + classes.fullSizeContainer
               }
             >
-                        {/* onSubmit={handleSubmit(onSubmit)} */}
+              {/* onSubmit={handleSubmit(onSubmit)} */}
 
               <section className="search-block">
                 <Container>
                   <Row>
                     <Col lg="12">
-                      <form
-                        className="form-header"
-                      >
+                      <form className="form-header">
                         <div className="input-group">
                           <Input
                             type="text"
                             className={"form-control " + classes.inputContainer}
                             aria-label="Amount (to the nearest dollar)"
-                            placeholder="Search Products......"
+                            placeholder="Search Anything"
                             name="keyword"
                             onChange={searchInputChange}
                           />
-                            <Link href={`/s/${searchKeyword}`}>
-                          <div className="input-group-append">
-                            <div className={classes.searchMobile}>
-                              <button className={classes.mobileButton}>
-                                <i
-                                  className={
-                                    "fa fa-search " + classes.searchIcon
-                                  }
-                                ></i>
-                              </button>
+                          <Link href={`/s/${searchKeyword}`}>
+                            <div className="input-group-append">
+                              <div className={classes.searchMobile}>
+                                <button className={classes.mobileButton}>
+                                  <i
+                                    className={
+                                      "fa fa-search " + classes.searchIcon
+                                    }
+                                  ></i>
+                                </button>
+                              </div>
+                              <div className={classes.searchDesktop}>
+                                <button className={classes.desktopButton}>
+                                  <i className={"fa fa-search "}></i>Search
+                                </button>
+                              </div>
                             </div>
-                            <div className={classes.searchDesktop}>
-                              <button className={classes.desktopButton}>
-                                <i className={"fa fa-search "}></i>Search
-                              </button>
-                            </div>
-                          </div></Link>
+                          </Link>
                         </div>
                       </form>
                     </Col>

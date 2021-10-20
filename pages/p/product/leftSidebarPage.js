@@ -138,7 +138,7 @@ const LeftSidebarPage = ({ pathId, type }) => {
                 productPanel: panel
         }
     });
-
+    console.log(data,"Reviews")
     // const getUrl = (data.product.title) => {
         
     // }

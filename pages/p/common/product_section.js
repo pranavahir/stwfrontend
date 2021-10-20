@@ -1,5 +1,5 @@
 import React, { useContext,useState } from 'react';
-import { Container, Row, Col, Media,Modal,ModalBody } from 'reactstrap';
+import {Input, Container, Row, Col, Media,Modal,ModalBody,Label,Form } from 'reactstrap';
 import { useQuery } from '@apollo/react-hooks';
 import gql from 'graphql-tag';
 import { CurrencyContext } from '../../../helpers/Currency/CurrencyContext';
@@ -8,7 +8,7 @@ import {WishlistContext} from '../../../helpers/wishlist/WishlistContext';
 import { CompareContext } from '../../../helpers/Compare/CompareContext';
 import { useRouter } from 'next/router'
 import AutoFitImage from 'react-image-autofit-frame';
-
+import { Rating } from 'react-simple-star-rating'
 const GET_PRODUCTS = gql`
 query($lookupSearchFields: SearchFields){
     lookup(searchFields: $lookupSearchFields) {
@@ -75,10 +75,44 @@ query($lookupSearchFields: SearchFields){
     }
   }
 `;
-
+const GET_REVIEWS = gql`
+query($asin: String, $page: Int){
+    getAmazonReviews(asin: $asin,page: $page){
+      hasMore {
+        seqid
+      }
+      total_ratings
+      stars_stats {
+        onestar
+        twostar
+        threestar
+        fourstar
+        fivestar
+      }
+      result {
+        asin {
+          original
+          variant
+        }
+        date {
+          date
+          unix
+        }
+        id
+        name
+        rating
+        review
+        review_data
+        title
+        verified_purchase
+      }
+    }
+  }
+`
 
 
 const ProductSection = ({ pathId, type }) => {
+
     var asinData = "";
     if(type == "url")
     {
@@ -180,7 +214,16 @@ const ProductSection = ({ pathId, type }) => {
         setSelectedProduct(item)
         toggle()
     } 
-
+    console.log(asinData,"ASIN")
+    let reviews
+     var { loading, data, fetchMore } =  useQuery(GET_REVIEWS,{
+        variables:{
+            asin: asinData,
+            page: 1
+        }
+    })
+    reviews = data
+    console.log(reviews,"Amazon Reviewssss")
     var { loading, data, fetchMore } = useQuery(GET_PRODUCTS, {
         variables: {
             // type: "",
@@ -208,7 +251,8 @@ const ProductSection = ({ pathId, type }) => {
                 }
         }
     });
-
+//  let reviews = undefined
+    
     return (
         <section className="section-b-space ratio_asos">
             <Container>
@@ -328,6 +372,9 @@ const ProductSection = ({ pathId, type }) => {
                                                     }
                                                 </ul> : ''}
                                         </ul> : ''}
+                                        <div>
+                                            <h>Reviews</h>
+                                        </div>
                                     <div className="border-product">
                                         <h6 className="product-title">product details</h6>
                                         <p>{selectedProduct.description}</p>
@@ -370,8 +417,34 @@ const ProductSection = ({ pathId, type }) => {
                     </ModalBody>
                 </Modal>
                 :""}
-
-
+                <h3><strong>Product Reviews</strong></h3>
+                <div>
+                    {reviews !== undefined ? reviews.getAmazonReviews.result.map(({name,rating,review}) => (
+                        <div>
+                        <hr
+                        style={{
+                            color:"red",
+                            backgroundColor:"red",
+                            height: 1
+                        }}
+                        />
+                        <h4><strong>{name}</strong></h4>
+                        <br/>
+                        <h4><b>Review</b></h4>
+                        <p><strong>{review}</strong></p>    
+                        <br/>                   
+                        <h4><strong>Rating</strong></h4>
+                        <Rating  ratingValue={rating} size={25} />
+                        <hr 
+                         style={{
+                            color:"red",
+                            backgroundColor:"red",
+                            height: 1
+                        }}
+                        />
+                        </div>
+                    )):"No Reviews"}
+                </div>
             </Container>
         </section>
     )
