@@ -539,64 +539,7 @@ verified_purchase: true */}
 
                         <p className="line_space">{key.review}</p>    
                         </div>
-                    )):""}
-                   {/* {reviews && (reviews.getAmazonReviews != null && reviews.getAmazonReviews != undefined && reviews.getAmazonReviews != "") && reviews.getAmazonReviews.hasMore != null &&
-
-
-<Row>
-    {(!reviews || !reviews.getAmazonReviews || !reviews.getAmazonReviews || reviews.getAmazonReviews.result.length === 0 || loading) ?
-        (reviews && (reviews.getAmazonReviews != null && reviews.getAmazonReviews != undefined && reviews.getAmazonReviews != "") && reviews.getAmazonReviews.result.length === 0) ?
-            <Col xs="12">
-                <div>
-                    <div className="col-sm-12 empty-cart-cls text-center">
-                        <img src={`/assets/images/empty-search.jpg`} className="img-fluid mb-4 mx-auto" alt="" />
-                        <h3><strong>Your Cart is Empty</strong></h3>
-                        <h4>Explore more shortlist some items.</h4>
-                    </div>
-                </div>
-            </Col>
-            :
-            <div className="row mx-0 margin-default mt-4">
-                <div className="col-xl-3 col-lg-4 col-6">
-                    <PostLoader />
-                </div>
-                <div className="col-xl-3 col-lg-4 col-6">
-                    <PostLoader />
-                </div>
-                <div className="col-xl-3 col-lg-4 col-6">
-                    <PostLoader />
-                </div>
-                <div className="col-xl-3 col-lg-4 col-6">
-                    <PostLoader />
-                </div>
-            </div>
-        : reviews && (reviews.getAmazonReviews != null && reviews.getAmazonReviews != undefined && reviews.getAmazonReviews != "") && reviews.getAmazonReviews.result.map(({name,rating,review}) =>
-        <div>
-        <hr
-        style={{
-            color:"red",
-            backgroundColor:"red",
-            height: 1
-        }}
-        />
-        <h4><strong>{name}</strong></h4>
-        <br/>
-        <h4><b>Review</b></h4>
-        <p><strong>{review}</strong></p>    
-        <br/>                   
-        <h4><strong>Rating</strong></h4>
-        <Rating  ratingValue={rating} size={25} />
-        <hr 
-         style={{
-            color:"red",
-            backgroundColor:"red",
-            height: 1
-        }}
-        />
-        </div>
-        )}
-</Row>
-} */}
+                    )):""}<div></div>
                     </InfiniteScroll>
                 </div>
             </Container>
