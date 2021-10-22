@@ -256,7 +256,7 @@ const HeaderOne = ({
                                   <form className="form-header">
                                     <div className="input-group">
                                       {/*IMP*/}
-                                      <Dropdown
+                                      {/* <Dropdown
                                       // className="form-control"
                                         type="text"
                                         options={options}
@@ -264,7 +264,7 @@ const HeaderOne = ({
                                         onChange={changeDropdownHandler}
                                         placeholderClassName="Dropdown-placeholder"
                                         name="categoryvalue"
-                                      />
+                                      /> */}
                                       <Input
                                         type="text"
                                         className="form-control"
@@ -273,9 +273,14 @@ const HeaderOne = ({
                                         name="keyword"
                                         onChange={searchInputChange}
                                       />
-                                      <Link
+                                      {/* <Link
                                         href={`/s/${
                                           searchKeyword + " " + (categoryvalue !== 'All'? categoryvalue:'')
+                                        }`}
+                                      > */}
+                                         <Link
+                                        href={`/s/${
+                                          searchKeyword
                                         }`}
                                       >
                                         <div className="input-group-append">

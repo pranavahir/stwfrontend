@@ -299,3 +299,49 @@ margin-top: 10px;
 	left: -9px;
 	top: 17px;
 }
+
+
+.rating_review{
+    font-size: 10px;
+    font-family: 'Open Sans' !important;
+    font-weight: bolder;
+    padding: 10px 20px;
+    border-bottom: solid 0.5px #acacac;
+    margin-bottom: 15px;
+    border-radius: 16px;
+    font-feature-settings: "smcp", "c2sc";
+    font-variant: all-small-caps;
+    line-height: 13px;
+}
+
+.line_space{
+    line-height: 1.8 !important;
+    color: black;
+    font-size: 12px;
+    font-variant: historical-ligatures;
+    font-weight: 100;
+}
+
+.tim_style{
+    
+    
+    color: black;
+    font-variant: diagonal-fractions;
+    font-size: 11px;
+
+}
+
+.review_title{
+    font-size: 19px;
+    font-family: 'Open Sans';
+    font-weight: bolder;
+    color: black;
+}
+
+.verify_style{
+    color: seagreen;
+    font-weight: bolder;
+    margin-left: 9px;
+    font-size: 12px;
+    font-variant: diagonal-fractions;
+}

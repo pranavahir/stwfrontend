@@ -471,7 +471,7 @@ const ProductSection = ({ pathId, type }) => {
                     </ModalBody>
                 </Modal>
                 :""}
-                <h3><strong>Product Reviews</strong></h3>
+                <h3>Product Reviews</h3>
                 <div>
                         {/* {reviews !== undefined ? reviews.getAmazonReviews.result.map(({name,rating,review}) => (
                         <div>
@@ -517,33 +517,29 @@ const ProductSection = ({ pathId, type }) => {
                         <ReviewLoader />
                     </div>
                 </div>}
-                    endMessage={<h4>Nothing more to show</h4>}
+                    endMessage={<h4>No Reviews to Show</h4>}
                     >
-                        {reviews !== undefined ? reviews.getAmazonReviews.result.map(({name,rating,review}) => (
-                        <div>
-                        <hr
-                        style={{
-                            color:"red",
-                            backgroundColor:"red",
-                            height: 1
-                        }}
-                        />
-                        <h4><strong>{name}</strong></h4>
-                        <br/>
-                        <h4><b>Review</b></h4>
-                        <p><strong>{review}</strong></p>    
-                        <br/>                   
-                        <h4><strong>Rating</strong></h4>
-                        <Rating  ratingValue={rating} size={25} />
-                        <hr 
-                         style={{
-                            color:"red",
-                            backgroundColor:"red",
-                            height: 1
-                        }}
-                        />
+                        {reviews !== undefined ? reviews.getAmazonReviews.result.map((key , value) => (
+                        <div className="rating_review">
+                        
+                        <h4><b>{key.name}</b> {key.verified_purchase ? <span className="verify_style" >     Verified purchase <i class="fa fa-check-square-o"></i> </span> :"" }  </h4>
+
+                        <h3 className="review_title" ><Rating ratingValue={key.rating} size={18} /> {key.title}</h3>
+                        <h6 className="tim_style">{key.review_data}</h6>
+                        
+
+                        {/* id: "R1Q7ZH7QN3ELE9"
+name: "Junior"
+rating: 3
+review: "It did the job on till I got a better one"
+review_data: "Reviewed in the United States on December 24, 2018"
+title: "Okay"
+verified_purchase: true */}
+
+
+                        <p className="line_space">{key.review}</p>    
                         </div>
-                    )):"No Reviews"}
+                    )):""}
                    {/* {reviews && (reviews.getAmazonReviews != null && reviews.getAmazonReviews != undefined && reviews.getAmazonReviews != "") && reviews.getAmazonReviews.hasMore != null &&
 
 
