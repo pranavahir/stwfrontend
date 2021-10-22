@@ -9,6 +9,10 @@ import { CompareContext } from '../../../helpers/Compare/CompareContext';
 import { useRouter } from 'next/router'
 import AutoFitImage from 'react-image-autofit-frame';
 import { Rating } from 'react-simple-star-rating'
+import InfiniteScroll from "react-infinite-scroll-component";
+import ReactPaginate from 'react-paginate';
+import ReviewLoader from '../../../components/common/ReviewLoader';
+import Loader from 'react-loader-spinner'
 const GET_PRODUCTS = gql`
 query($lookupSearchFields: SearchFields){
     lookup(searchFields: $lookupSearchFields) {
@@ -112,6 +116,8 @@ query($asin: String, $page: Int){
 
 
 const ProductSection = ({ pathId, type }) => {
+    const [hasMore, sethasMore] = useState(true);
+    const [pageIndex, setPageIndex] = useState(1);
 
     var asinData = "";
     if(type == "url")
@@ -215,16 +221,64 @@ const ProductSection = ({ pathId, type }) => {
         toggle()
     } 
     console.log(asinData,"ASIN")
-    let reviews
+    var reviews
      var { loading, data, fetchMore } =  useQuery(GET_REVIEWS,{
         variables:{
             asin: asinData,
-            page: 1
+            page: pageIndex
         }
     })
     reviews = data
     console.log(reviews,"Amazon Reviewssss")
-    var { loading, data, fetchMore } = useQuery(GET_PRODUCTS, {
+    const handlePagination = async () => {
+        console.log("Handle")
+        // sethasMore(data.lookup.hasMore.seqid);
+        var nextPage = 1;
+        // setPageIndex(pageIndex+1);
+        if (reviews.getAmazonReviews.result.length === 0 || reviews.getAmazonReviews.result.length < 10) {
+            console.log("AAAAAAA", reviews.getAmazonReviews.result.length)
+            sethasMore(false);
+        }
+
+        if (reviews && reviews.getAmazonReviews && reviews.getAmazonReviews.result.length) {
+            console.log(reviews.getAmazonReviews.result.length, "count");
+            // console.log(limitSet, "limit");
+            // nextPage = data.lookup.items.length ;
+            nextPage = (Math.floor(reviews.getAmazonReviews.result.length / 10)) + 1;
+            console.log(nextPage, "nextPage");
+        }
+        // setIsLoading(true);
+        setTimeout(() =>
+            fetchMore({
+                variables:{
+                    asin: asinData,
+                    page: nextPage
+                },
+                updateQuery: (prev, { fetchMoreResult }) => {
+                    if (!fetchMoreResult) return prev;
+                    // setIsLoading(false)
+                    sethasMore(false)
+                    return {
+                        getAmazonReviews: {
+                            __typename: prev.getAmazonReviews.__typename,
+                            result: [...prev.getAmazonReviews.result, ...fetchMoreResult.getAmazonReviews.result],
+                            hasMore: fetchMoreResult.getAmazonReviews.hasMore,
+                            total_ratings:fetchMoreResult.getAmazonReviews.total_ratings,
+                            stars_stats:{
+                                onestar:fetchMoreResult.getAmazonReviews.stars_stats.onestar,
+                                twostar:fetchMoreResult.getAmazonReviews.stars_stats.twostar,
+                                threestar:fetchMoreResult.getAmazonReviews.stars_stats.threestar,
+                                fourstar:fetchMoreResult.getAmazonReviews.stars_stats.fourstar,
+                                fivestar:fetchMoreResult.getAmazonReviews.stars_stats.fivestar,
+                                __typename:fetchMoreResult.getAmazonReviews.stars_stats.__typename,
+                              }
+                        },
+                    };
+                }
+            }), 1000)
+
+    }
+    var { newloading, data } = useQuery(GET_PRODUCTS, {
         variables: {
             // type: "",
             // priceMax: 10,
@@ -419,7 +473,53 @@ const ProductSection = ({ pathId, type }) => {
                 :""}
                 <h3><strong>Product Reviews</strong></h3>
                 <div>
-                    {reviews !== undefined ? reviews.getAmazonReviews.result.map(({name,rating,review}) => (
+                        {/* {reviews !== undefined ? reviews.getAmazonReviews.result.map(({name,rating,review}) => (
+                        <div>
+                        <hr
+                        style={{
+                            color:"red",
+                            backgroundColor:"red",
+                            height: 1
+                        }}
+                        />
+                        <h4><strong>{name}</strong></h4>
+                        <br/>
+                        <h4><b>Review</b></h4>
+                        <p><strong>{review}</strong></p>    
+                        <br/>                   
+                        <h4><strong>Rating</strong></h4>
+                        <Rating  ratingValue={rating} size={25} />
+                        <hr 
+                         style={{
+                            color:"red",
+                            backgroundColor:"red",
+                            height: 1
+                        }}
+                        />
+                        </div>
+                    )):"No Reviews"} */}
+                    <InfiniteScroll
+                    dataLength={reviews !== undefined ? reviews.getAmazonReviews.result.length:10}
+                    next={handlePagination}
+                    hasMore={reviews !== undefined  ? reviews.getAmazonReviews.hasMore.seqid : false }
+                    // hasMore={true}
+                   loader={<div className="row mx-0 margin-default mt-4">
+                    <div className="col-xl-3 col-lg-4 col-6">
+                        <ReviewLoader />
+                    </div>
+                    <div className="col-xl-3 col-lg-4 col-6">
+                        <ReviewLoader />
+                    </div>
+                    <div className="col-xl-3 col-lg-4 col-6">
+                        <ReviewLoader />
+                    </div>
+                    <div className="col-xl-3 col-lg-4 col-6">
+                        <ReviewLoader />
+                    </div>
+                </div>}
+                    endMessage={<h4>Nothing more to show</h4>}
+                    >
+                        {reviews !== undefined ? reviews.getAmazonReviews.result.map(({name,rating,review}) => (
                         <div>
                         <hr
                         style={{
@@ -444,6 +544,64 @@ const ProductSection = ({ pathId, type }) => {
                         />
                         </div>
                     )):"No Reviews"}
+                   {/* {reviews && (reviews.getAmazonReviews != null && reviews.getAmazonReviews != undefined && reviews.getAmazonReviews != "") && reviews.getAmazonReviews.hasMore != null &&
+
+
+<Row>
+    {(!reviews || !reviews.getAmazonReviews || !reviews.getAmazonReviews || reviews.getAmazonReviews.result.length === 0 || loading) ?
+        (reviews && (reviews.getAmazonReviews != null && reviews.getAmazonReviews != undefined && reviews.getAmazonReviews != "") && reviews.getAmazonReviews.result.length === 0) ?
+            <Col xs="12">
+                <div>
+                    <div className="col-sm-12 empty-cart-cls text-center">
+                        <img src={`/assets/images/empty-search.jpg`} className="img-fluid mb-4 mx-auto" alt="" />
+                        <h3><strong>Your Cart is Empty</strong></h3>
+                        <h4>Explore more shortlist some items.</h4>
+                    </div>
+                </div>
+            </Col>
+            :
+            <div className="row mx-0 margin-default mt-4">
+                <div className="col-xl-3 col-lg-4 col-6">
+                    <PostLoader />
+                </div>
+                <div className="col-xl-3 col-lg-4 col-6">
+                    <PostLoader />
+                </div>
+                <div className="col-xl-3 col-lg-4 col-6">
+                    <PostLoader />
+                </div>
+                <div className="col-xl-3 col-lg-4 col-6">
+                    <PostLoader />
+                </div>
+            </div>
+        : reviews && (reviews.getAmazonReviews != null && reviews.getAmazonReviews != undefined && reviews.getAmazonReviews != "") && reviews.getAmazonReviews.result.map(({name,rating,review}) =>
+        <div>
+        <hr
+        style={{
+            color:"red",
+            backgroundColor:"red",
+            height: 1
+        }}
+        />
+        <h4><strong>{name}</strong></h4>
+        <br/>
+        <h4><b>Review</b></h4>
+        <p><strong>{review}</strong></p>    
+        <br/>                   
+        <h4><strong>Rating</strong></h4>
+        <Rating  ratingValue={rating} size={25} />
+        <hr 
+         style={{
+            color:"red",
+            backgroundColor:"red",
+            height: 1
+        }}
+        />
+        </div>
+        )}
+</Row>
+} */}
+                    </InfiniteScroll>
                 </div>
             </Container>
         </section>

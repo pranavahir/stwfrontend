@@ -57,7 +57,8 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
     // console.log(data,"Reviewssss")
     
     const RatingCalculator = data !== undefined?(5 * (data.getAmazonReviews.total_ratings * parseFloat(data.getAmazonReviews.stars_stats.fivestar)/100 ) + 4 * (data.getAmazonReviews.total_ratings * parseFloat(data.getAmazonReviews.stars_stats.fourstar)/100 ) + 3 * (data.getAmazonReviews.total_ratings * parseFloat(data.getAmazonReviews.stars_stats.threestar)/100 ) + 2 * (data.getAmazonReviews.total_ratings * parseFloat(data.getAmazonReviews.stars_stats.twostar)/100 ) + 1 * (data.getAmazonReviews.total_ratings * parseFloat(data.getAmazonReviews.stars_stats.onestar)/100 ))/ data.getAmazonReviews.total_ratings:0
-    // console.log(RatingCalculator)
+    console.log(RatingCalculator)
+    console.log(Math.floor(RatingCalculator),"FLOOR")
     const [modal, setModal] = useState(false);
     const CurContect = useContext(CurrencyContext);
     const symbol = CurContect.state.symbol
@@ -211,12 +212,23 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
     //     RatingStars.push(<i className="fa fa-star" key={i}></i>)
     // }
     for (let i = 0; i < 10; i++) {
-        let klass = "fa-star-half-o";
+        let klass = "ion-ios-star-outline";
         if (rating >= i && rating !== null) {
-          klass = "fa fa-star";
+          klass = "ion-ios-star";
         }
         RatingStars.push(
-            <i className={klass} key={i}></i>
+            <i
+      style={{ 
+          display: "inline-block", 
+          width: "7px", 
+          overflow: "hidden", 
+          direction: (i%2===0) ? "ltr" : "rtl"
+      }}
+      className={klass}
+      onMouseOver={() => this.handleMouseover(i)}
+      onClick={() => this.rate(i)}
+      onMouseOut={() => this.handleMouseout()}
+    />
         );
       }
     // console.log(RatingStars)
@@ -242,8 +254,8 @@ const DetailsWithPrice = ({item,stickyClass,changeColorVar}) => {
                 <Link href={`/brand/${product.brandname}`}><h4 style={objbrand}> {product.brandname} </h4></Link>
                 <h5><div className="rating">
                         {/* {RatingStars} */}
-                        {<Rating  ratingValue={Math.floor(RatingCalculator)}  />}
-                    </div> {RatingCalculator.toString().substring(0, 3)} Stars | <a href="javascript:void(Tawk_API.toggle())"> Ask Questions</a></h5>
+                        {<Rating  ratingValue={Math.round(RatingCalculator)}  />}
+                    </div> {!isNaN(RatingCalculator)  ?RatingCalculator.toString().substring(0, 3):0} Stars | <a href="javascript:void(Tawk_API.toggle())"> Ask Questions</a></h5>
                 {/* <h4> {product.categoryvalue} </h4> parseFloat(Math.floor(withDiscount(product)).toFixed(2)).toLocaleString('en') */}
                 {/* <h2 style={titleSize}>Your Price : {leftSymbol}{numberWithCommas(Math.floor(withDiscount(product)).toFixed(2))}{rightSymbol} </h2> */}
               {withDiscount(product) > 0 ? 
