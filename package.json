@@ -111,6 +111,7 @@
     "react-router-dom": "^5.0.1",
     "react-router-scroll-4": "^1.0.0-beta.2",
     "react-scripts": "^3.0.1",
+    "react-select-search": "^3.0.8",
     "react-share": "^4.4.0",
     "react-simple-star-rating": "^3.0.0",
     "react-slick": "^0.24.0",
