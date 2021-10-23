@@ -220,7 +220,7 @@ const ProductSection = ({ pathId, type }) => {
         setSelectedProduct(item)
         toggle()
     } 
-    console.log(asinData,"ASIN")
+    // console.log(asinData,"ASIN")
     var reviews
      var { loading, data, fetchMore } =  useQuery(GET_REVIEWS,{
         variables:{
@@ -229,23 +229,23 @@ const ProductSection = ({ pathId, type }) => {
         }
     })
     reviews = data
-    console.log(reviews,"Amazon Reviewssss")
+    // console.log(reviews,"Amazon Reviewssss")
     const handlePagination = async () => {
-        console.log("Handle")
+        // console.log("Handle")
         // sethasMore(data.lookup.hasMore.seqid);
         var nextPage = 1;
         // setPageIndex(pageIndex+1);
         if (reviews.getAmazonReviews.result.length === 0 || reviews.getAmazonReviews.result.length < 10) {
-            console.log("AAAAAAA", reviews.getAmazonReviews.result.length)
+            // console.log("AAAAAAA", reviews.getAmazonReviews.result.length)
             sethasMore(false);
         }
 
         if (reviews && reviews.getAmazonReviews && reviews.getAmazonReviews.result.length) {
-            console.log(reviews.getAmazonReviews.result.length, "count");
+            // console.log(reviews.getAmazonReviews.result.length, "count");
             // console.log(limitSet, "limit");
             // nextPage = data.lookup.items.length ;
             nextPage = (Math.floor(reviews.getAmazonReviews.result.length / 10)) + 1;
-            console.log(nextPage, "nextPage");
+            // console.log(nextPage, "nextPage");
         }
         // setIsLoading(true);
         setTimeout(() =>
