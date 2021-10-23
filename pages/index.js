@@ -21,7 +21,6 @@ import { useEffect } from 'react'
 import {useContext} from 'react';
 // import ModalComponent from '../components/common/Modal';
 import { CurrencyContext } from '../helpers/Currency/CurrencyContext';
-
 const Fashion = () => {
 const router = useRouter();
  
@@ -83,11 +82,15 @@ const router = useRouter();
         </Head>
       {/* <ModalComponent /> */}
       <HeaderOne logoName={'logo.png'} topClass="top-header" />
+  
+     
+      
       <Banner /> 
       <CollectionBanner />
       <Paragraph title="title1 section-t-space" inner="title-inner1" hrClass={false} />
       <TopCollection  noTitle="null" backImage={true} type="fashion" title="Explore Our Top Collection" subtitle="special offer"  productSlider={Product4} designClass="ratio_asos" noSlider="false" cartClass="cart-info cart-wrap" />
       {/* <Parallax /> */}
+      
       <SpecialProducts type="fashion" backImage={true} productSlider={Product4} line={true} title="title1" inner="title-inner1"  designClass="ratio_asos" noSlider="false" cartClass="cart-info cart-wrap" /> 
       <ServiceLayout sectionClass="border-section small-section" />
     
@@ -96,8 +99,8 @@ const router = useRouter();
       <div className="section-b-space">
       <LogoBlock />
       </div>
+  
 
-   
 
       <FooterOne logoName={'logo.png'} />
     </>

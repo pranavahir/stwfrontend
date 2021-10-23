@@ -15,6 +15,7 @@ import Currency from "./common/currency";
 import { useRouter } from "next/router";
 import classes from "./Header-one.module.css";
 import Link from "next/link";
+
 // import Dropdown from 'react-dropdown';
 // import 'react-dropdown/style.css';
 import Dropdown from "react-dropdown";
@@ -265,6 +266,8 @@ const HeaderOne = ({
                                         placeholderClassName="Dropdown-placeholder"
                                         name="categoryvalue"
                                       /> */}
+                                      {/* WhatsApp icon */}
+            
                                       <Input
                                         type="text"
                                         className="form-control"
@@ -273,6 +276,7 @@ const HeaderOne = ({
                                         name="keyword"
                                         onChange={searchInputChange}
                                       />
+                                      
                                       {/* <Link
                                         href={`/s/${
                                           searchKeyword + " " + (categoryvalue !== 'All'? categoryvalue:'')
@@ -291,6 +295,7 @@ const HeaderOne = ({
                                           </button>
                                         </div>
                                       </Link>
+            
                                     </div>
                                   </form>
                                 </Col>

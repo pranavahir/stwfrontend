@@ -10,7 +10,8 @@ import LogisticLogoBlock from '../../components/common/logistic-logo-block';
 import { useForm } from "react-hook-form";
 import Axios from "axios";
 import { toast } from 'react-toastify';
-
+import WhatsAppWidget from 'react-whatsapp-widget'
+import 'react-whatsapp-widget/dist/index.css'
 const FooterOne = ({ fluid, logoName ,layoutClass ,footerClass }) => {
 
     const curContext = useContext(CurrencyContext);
@@ -209,6 +210,7 @@ const allSmall = {
                                 </div>
                             </div>
                         </Col>
+                        
                     </Row>
                 </Container>
             </section>
@@ -218,6 +220,8 @@ const allSmall = {
                         </div>
             
             <CopyRight layout={layoutClass} fluid={fluid}  />
+            <WhatsAppWidget phoneNumber='9769586495' />
+                            
         </footer>
     )
 }
